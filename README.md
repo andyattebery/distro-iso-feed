@@ -48,7 +48,13 @@ uv run pytest
 uv run ruff check src tests
 uv run distro-iso-feed-refresh --dry-run          # resolve everything, write nothing
 uv run distro-iso-feed-discover --dry-run         # propose new variants, write nothing
+uv run distro-iso-feed-audit --strict             # untracked editions, pinned releases
 ```
+
+`audit` answers two questions no other check can: what does an upstream publish that
+no variant tracks, and is any source frozen to a literal release? A pinned source is
+the dangerous one — it resolves cleanly and publishes a valid checksum while serving
+a stale release forever. `--strict` exits 1 on either finding.
 
 ## Repo setting required
 

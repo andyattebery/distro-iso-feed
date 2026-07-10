@@ -88,7 +88,7 @@ class Release:
 
 @dataclass(frozen=True, slots=True)
 class VariantSpec:
-    """A variant proposed by `discover_variants`, not yet in the config."""
+    """A variant proposed by `discover_all`, not yet in the config."""
 
     distro: str
     variant: str

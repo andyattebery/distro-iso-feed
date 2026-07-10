@@ -5,13 +5,14 @@ This is the real seam. `directory_index`, `sourceforge`, `page_index` and
 `checksums`) is shared. §2 calls page-scraping a last resort because the listing
 step is fragile -- so the fragile code lives in this file and nowhere else.
 
-Every lister returns candidates. That is why `discover_variants` comes for free.
+Every lister returns candidates. That is why `discover_all` comes for free.
 """
 
 from __future__ import annotations
 
 import json
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime
 from email.utils import parsedate_to_datetime
@@ -20,6 +21,7 @@ from urllib.parse import urljoin
 from defusedxml import ElementTree
 
 from .client import Client
+from .select import is_prerelease
 
 _HREF = re.compile(r'href=["\']([^"\'?#]+)["\']', re.IGNORECASE)
 _ABS_ISO = re.compile(r'https?://[^\s"\'<>]+?\.(?:iso|img\.gz|img\.xz|raw\.xz)', re.IGNORECASE)
@@ -66,16 +68,46 @@ def version_dir(client: Client, url: str, pattern: str = r"^\d+(\.\d+)*$") -> li
     return sorted(n for n in names if rx.match(n))
 
 
-def candidate_probe(client: Client, candidates: list[str], template: str) -> str | None:
+def candidate_probe(
+    client: Client,
+    candidates: list[str],
+    template: str,
+    validate: Callable[[str], bool] | None = None,
+) -> str | None:
     """No index exists, so generate candidates and probe. NixOS is the only user.
 
     `channels.nixos.org/` serves nothing to list, so the highest channel cannot be
     read -- only guessed and confirmed. Distinct from `version_dir`, which reads.
+
+    `validate` inspects the body, because a 200 is not proof the release exists.
+    Pop's own web client guards with `if (body.errors != null) throw`, so upstream
+    anticipates a 200-with-error-envelope; a probe that trusts the status code would
+    select a release that isn't there and pin the feed to it -- silently, which is
+    the exact failure this machinery exists to prevent.
     """
     for value in candidates:
-        if client.exists(template.format(version=value)):
+        url = template.format(version=value)
+        if validate is None:
+            if client.exists(url):
+                return value
+            continue
+        text = client.text(url)
+        if text and validate(text):
             return value
     return None
+
+
+def json_has(field: str) -> Callable[[str], bool]:
+    """A `candidate_probe` validator: the body parses and carries a non-empty field."""
+
+    def check(text: str) -> bool:
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError:
+            return False
+        return isinstance(data, dict) and bool(data.get(field))
+
+    return check
 
 
 def rss(client: Client, url: str) -> list[Candidate]:
@@ -163,19 +195,27 @@ def gh_assets(client: Client, repo: str, token: str | None = None) -> list[Candi
     if not isinstance(releases, list):
         return []
 
-    out = []
-    for rel in releases:
-        tag = rel.get("tag_name") or ""
-        for asset in rel.get("assets") or []:
-            out.append(
-                Candidate(
-                    name=asset.get("name", ""),
-                    url=asset.get("browser_download_url"),
-                    size=asset.get("size"),
-                    row={"tag_name": tag},
-                )
-            )
-    return out
+    # Only the current release. Iterating every release resurrects artifacts from
+    # years ago: MiniOS still hosts `minios-bookworm-flux-minimum-...iso` from 2023,
+    # and discovery cheerfully proposed `minimum`/`maximum` as new variants.
+    # The API returns releases newest-first; take the first non-prerelease.
+    current = next(
+        (r for r in releases if not is_prerelease(r.get("tag_name") or "")),
+        None,
+    )
+    if current is None:
+        return []
+
+    tag = current.get("tag_name") or ""
+    return [
+        Candidate(
+            name=asset.get("name", ""),
+            url=asset.get("browser_download_url"),
+            size=asset.get("size"),
+            row={"tag_name": tag},
+        )
+        for asset in current.get("assets") or []
+    ]
 
 
 def json_doc(client: Client, url: str) -> list[Candidate]:

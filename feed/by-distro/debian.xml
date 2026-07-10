@@ -4,7 +4,22 @@
   <title>Distro ISO Feed — debian</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/debian.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-09T23:40:11+00:00</updated>
+  <updated>2026-07-10T12:40:44+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxde/13.5.0</id>
+    <title>Debian Live LXDE 13.5.0 (x86_64)</title>
+    <updated>2026-07-10T12:40:44+00:00</updated>
+    <published>2026-07-10T12:40:44+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-lxde.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-lxde" label="variant" />
+    <summary type="text">Debian Live LXDE 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-lxde.iso
+sha512: 87f248789dcbbb49b0cb745bb7ebcabd6d163c0ff0d9cf659b2e9c3e40efbc0fa528b8db151a2854ac0ba0a39544c1d6c9f9d3e9837c0a62cad87f4160ea9cd0
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-standard/13.5.0</id>
     <title>Debian Live Standard 13.5.0 (x86_64)</title>

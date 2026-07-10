@@ -3,6 +3,11 @@
 Opening a PR rather than committing is the checkpoint against a bad enumeration
 silently adding junk. And because only *variants* of already-configured distros are
 proposed, nothing here can ever re-add a distro that was deliberately left out.
+
+Every proposal is resolved against the live upstream before it is written, so the
+branch this opens is mergeable as-is rather than a list of `TODO`s. What could not
+be synthesized is reported too -- a discovery run that silently drops what it cannot
+explain is how eight Fedora spins stayed missing.
 """
 
 from __future__ import annotations
@@ -14,6 +19,7 @@ from pathlib import Path
 
 from .client import Client
 from .config import load, load_raw, yaml_rt
+from .propose import Proposal, Rejected, pr_body, propose_for
 from .strategies import REGISTRY
 
 log = logging.getLogger("distro-iso-feed-discover")
@@ -25,54 +31,69 @@ CONFIG = ROOT / "config" / "sources.yaml"
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="distro-iso-feed-discover")
     parser.add_argument("--dry-run", action="store_true", help="print proposals; write nothing")
+    parser.add_argument("--only", metavar="DISTRO", help="restrict to one distro")
+    parser.add_argument("--config", metavar="FILE", help="read and write this config instead")
+    parser.add_argument("--pr-body", metavar="FILE", help="write the evidence table here")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    defaults, sources = load(CONFIG, set(REGISTRY))
-    proposals: list[tuple[str, str]] = []
+    config = Path(args.config) if args.config else CONFIG
+    defaults, sources = load(config, set(REGISTRY))
+    if args.only:
+        sources = [s for s in sources if s.name == args.only]
+        if not sources:
+            log.error("no distro named %s", args.only)
+            return 2
+
+    doc = load_raw(config)
+    proposals: list[Proposal] = []
+    rejected: list[Rejected] = []
 
     with Client(defaults["user_agent"]) as client:
         for source in sources:
-            if not source.discover:
+            if source.discover.get("enumerable") is False:
                 continue
-            configured = {v.name for v in source.variants}
-            sample = source.variants[0]
-            strategy = REGISTRY[sample.strategy]()
-            params = dict(sample.params)
-            params["discover"] = source.discover
 
+            strategy = REGISTRY[source.variants[0].strategy]()
+            variant_params = [dict(v.params) for v in source.variants]
             try:
-                found = strategy.discover_variants(source.name, params, client)
+                found = strategy.discover_all(source.name, variant_params, source.discover, client)
+                candidates = strategy.enumerate_all(
+                    source.name, variant_params, source.discover, client
+                )
             except Exception as exc:
-                log.warning("%s: discovery raised %s", source.name, type(exc).__name__)
+                log.warning("%s: discovery raised %s: %s", source.name, type(exc).__name__, exc)
                 continue
 
-            for spec in found:
-                if spec.variant not in configured:
-                    proposals.append((source.name, spec.variant))
+            configured = {v.name for v in source.variants}
+            specs = [s for s in found if s.variant not in configured]
+            if not specs:
+                continue
+
+            new, bad = propose_for(source, specs, candidates, doc, client)
+            proposals.extend(new)
+            rejected.extend(bad)
+
+    for p in proposals:
+        log.info("propose %s -> %s (from %s)", p.key, p.release.filename, p.sibling)
+    for r in rejected:
+        log.warning("cannot synthesize %s: %s", r.key, r.reason)
+
+    if args.pr_body:
+        Path(args.pr_body).write_text(pr_body(proposals, rejected), encoding="utf-8")
 
     if not proposals:
-        log.info("no new variants")
+        log.info("no new variants (%d could not be synthesized)", len(rejected))
         return 0
-
-    for distro, variant in proposals:
-        print(f"{distro}: {variant}")
 
     if args.dry_run:
         return 0
 
-    yaml = yaml_rt()
-    doc = load_raw(CONFIG)
-    for distro, variant in proposals:
-        variants = doc["distros"][distro]["variants"]
-        if variant not in variants:
-            # Deliberately unusable placeholders: `TODO` matches nothing, so a merged
-            # PR that nobody filled in leaves the variant unresolved and loudly
-            # reported, rather than quietly publishing the wrong artifact.
-            variants[variant] = {"match": "TODO", "version_pattern": "TODO"}
-    with CONFIG.open("w", encoding="utf-8") as fh:
-        yaml.dump(doc, fh)  # round-trip: comments survive
-    log.info("proposed %d variants into %s", len(proposals), CONFIG)
+    for p in proposals:
+        doc["distros"][p.distro]["variants"].setdefault(p.variant, p.node)
+    with config.open("w", encoding="utf-8") as fh:
+        yaml_rt().dump(doc, fh)  # round-trip: comments survive
+    log.info("wrote %d verified variants into %s", len(proposals), config)
     return 0
 
 

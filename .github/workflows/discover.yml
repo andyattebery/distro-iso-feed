@@ -3,6 +3,11 @@
 # It proposes VARIANTS of already-configured distros, never new distros -- so a
 # distro deliberately left out of sources.yaml can never be re-added by automation.
 #
+# Every proposal is resolved against the live upstream before it is written, so the
+# PR is mergeable as-is rather than a list of `TODO`s. The audit runs first and
+# reports what could not be proposed at all, including pinned releases -- which
+# produce no proposal, because a pinned source resolves perfectly.
+#
 # Requires: Settings -> Actions -> "Allow GitHub Actions to create and approve pull
 # requests." Without it this fails with a 403 that reads like a token-scope bug.
 name: discover
@@ -28,11 +33,24 @@ jobs:
 
       - run: uv sync --frozen
 
+      # What upstream publishes that no variant tracks, and every source pinned to a
+      # literal release. Runs even when nothing is proposable -- a pin produces no
+      # proposal, because a pinned source resolves perfectly. Never `--strict`: an
+      # upstream adding a spin must not fail this job before it can open the PR.
+      - name: Audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run distro-iso-feed-audit --summary "$GITHUB_STEP_SUMMARY"
+
+      # Written outside the tree: `create-pull-request` commits what it finds, and
+      # the PR body is not part of the config change it is opening.
       - name: Enumerate upstream variants
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: uv run distro-iso-feed-discover
+        run: uv run distro-iso-feed-discover --pr-body "$RUNNER_TEMP/pr-body.md"
 
+      # `create-pull-request` opens nothing when the tree is clean, so a run that
+      # proposes nothing is silent by construction.
       - uses: peter-evans/create-pull-request@v8
         with:
           branch: discover/new-variants
@@ -40,15 +58,4 @@ jobs:
           commit-message: "discover: propose new variants"
           add-paths: config/sources.yaml
           delete-branch: true
-          body: |
-            Automated proposal from `distro-iso-feed-discover`.
-
-            Each added variant needs its `match` and `version_pattern` filled in —
-            they are placeholders. Verify with:
-
-            ```
-            uv run distro-iso-feed-refresh --dry-run --only <distro>:<variant>
-            ```
-
-            A `--dry-run` prints the **resolved artifact**, not a status code. Merge
-            only once every added variant resolves to a real filename and checksum.
+          body-path: ${{ runner.temp }}/pr-body.md

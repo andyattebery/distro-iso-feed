@@ -9,6 +9,7 @@ feed; a missing entry is indistinguishable from an upstream outage otherwise.
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 
@@ -18,9 +19,66 @@ from .models import Source, Variant
 
 DEFAULT_UA = "distro-iso-feed/1.0 (+https://github.com/andyattebery/distro-iso-feed)"
 
+_DISCOVER_KEYS = {"group", "group_field", "index", "match", "ignore", "enumerable", "reason"}
+_DISCOVER_REGEX_KEYS = ("group", "match")
+
 
 class ConfigError(ValueError):
     pass
+
+
+def _validate_discover(distro: str, discover: Any) -> None:
+    """A distro either says how to enumerate itself, or says why it cannot.
+
+    Twenty-one of twenty-seven distros once had no `discover:` block at all, so
+    nothing ever enumerated them and their completeness rested on a hand audit.
+    Silence was indistinguishable from "nothing to find". It is now a load error,
+    which is the only version of this rule that cannot be forgotten.
+
+    `enumerable: false` demands a `reason` because the reason is the whole product:
+    it is the difference between a fact someone checked and a label someone reached
+    for. Pop!_OS wore `enumerable: false` while its release sat pinned at 24.04.
+    """
+    if discover is None:
+        raise ConfigError(
+            f"{distro}: no `discover:` block. Give it `group:`, or `enumerable: false` "
+            f"with a `reason:` saying what you checked."
+        )
+    if not isinstance(discover, dict):
+        raise ConfigError(f"{distro}: `discover:` must be a mapping")
+
+    if unknown := set(discover) - _DISCOVER_KEYS:
+        raise ConfigError(
+            f"{distro}: unknown discover key(s) {', '.join(sorted(unknown))}; "
+            f"known: {', '.join(sorted(_DISCOVER_KEYS))}"
+        )
+
+    if discover.get("enumerable") is False:
+        if not str(discover.get("reason") or "").strip():
+            raise ConfigError(f"{distro}: `enumerable: false` needs a non-empty `reason:`")
+        # Both would be true of no source: a listing you can read and cannot read.
+        if extra := {"group", "index"} & set(discover):
+            raise ConfigError(
+                f"{distro}: `enumerable: false` contradicts {', '.join(sorted(extra))}"
+            )
+        return
+
+    if not str(discover.get("group") or "").strip():
+        raise ConfigError(f"{distro}: `discover:` needs `group:`, or `enumerable: false`")
+
+    # A broken regex here would otherwise surface only in the weekly discovery run,
+    # as a distro that silently proposes nothing.
+    for key in _DISCOVER_REGEX_KEYS:
+        if pattern := discover.get(key):
+            try:
+                re.compile(pattern)
+            except re.error as exc:
+                raise ConfigError(f"{distro}: discover.{key} is not a valid regex: {exc}") from exc
+    for pattern in discover.get("ignore") or []:
+        try:
+            re.compile(pattern)
+        except re.error as exc:
+            raise ConfigError(f"{distro}: discover.ignore {pattern!r}: {exc}") from exc
 
 
 def yaml_rt() -> YAML:
@@ -57,6 +115,8 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
     for distro, block in (raw["distros"] or {}).items():
         if not isinstance(block, dict):
             raise ConfigError(f"{distro}: block must be a mapping")
+
+        _validate_discover(distro, block.get("discover"))
 
         distro_strategy = block.get("strategy")
         distro_params = dict(block.get("params") or {})

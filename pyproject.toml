@@ -14,6 +14,7 @@ dependencies = [
 [project.scripts]
 distro-iso-feed-refresh = "distro_iso_feed.run_refresh:main"
 distro-iso-feed-discover = "distro_iso_feed.run_discover:main"
+distro-iso-feed-audit = "distro_iso_feed.run_audit:main"
 
 [dependency-groups]
 dev = [

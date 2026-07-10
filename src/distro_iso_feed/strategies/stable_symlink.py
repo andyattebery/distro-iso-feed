@@ -14,26 +14,16 @@ Token sources:
 
 from __future__ import annotations
 
-from datetime import UTC, datetime
 from urllib.parse import urljoin
 
 from ..client import Client
 from ..listers import Candidate, atom, candidate_probe, fixed
 from ..models import Release
+from ..releases import candidates_for
 from ..select import is_prerelease
 from ..tokens import from_atom_tag, from_sidecar_filename
 from ._common import _expand, fetch_integrity
 from .base import Strategy, title_for
-
-
-def nixos_channels(now: datetime | None = None) -> list[str]:
-    """NixOS releases YY.05 and YY.11. `channels.nixos.org/` serves no index, so
-    the highest channel can only be guessed and confirmed -- never listed."""
-    year = (now or datetime.now(UTC)).year % 100
-    out = []
-    for y in range(year + 1, year - 2, -1):
-        out.extend([f"{y:02d}.11", f"{y:02d}.05"])
-    return out
 
 
 class StableSymlink(Strategy):
@@ -43,6 +33,20 @@ class StableSymlink(Strategy):
         if repo := (params.get("token") or {}).get("repo"):
             return atom(client, repo)
         return fixed(params["url"]) if params.get("url") else []
+
+    def claims(self, candidate: Candidate, params: dict) -> bool:
+        """This strategy has no `match` regex -- it has one fixed URL.
+
+        A discovered candidate is either the artifact itself (Aurora enumerates
+        `dl.getaurora.dev/`, whose rows are ISOs) or the directory holding it (neon
+        enumerates `images/`, whose rows are editions). Both are named inside the
+        variant's own URL, so both are recognizable from it, and the audit can tell
+        which editions a `stable_symlink` distro already tracks.
+        """
+        url, name = params.get("url") or "", candidate.name
+        if not url or not name:
+            return False
+        return url.endswith(f"/{name}") or f"/{name}/" in url
 
     def _version(self, params: dict, client: Client, sidecar_text: str | None) -> str | None:
         token = params.get("token") or {}
@@ -66,8 +70,7 @@ class StableSymlink(Strategy):
         url = params["url"]
 
         if probe := params.get("probe_versions"):
-            candidates = probe.get("candidates") or nixos_channels()
-            found = candidate_probe(client, candidates, probe["template"])
+            found = candidate_probe(client, candidates_for(probe), probe["template"])
             if not found:
                 return None
             url = url.format(version=found)

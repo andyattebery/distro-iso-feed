@@ -54,6 +54,12 @@ def client() -> FakeClient:
     return FakeClient()
 
 
+# Every distro must declare how it is enumerated, or why it cannot be. Fixtures that
+# exercise something else say so explicitly rather than inheriting a default -- the
+# rule exists because twenty-one distros once inherited silence.
+NOT_ENUMERABLE = "    discover: {enumerable: false, reason: fixture}\n"
+
+
 def autoindex_html(names: list[str]) -> str:
     links = "\n".join(f'<a href="{n}">{n}</a>' for n in names)
     return f"<html><body><pre>{links}</pre></body></html>"

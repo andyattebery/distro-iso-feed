@@ -1,5 +1,12 @@
 # Distro ISO Feed — Specification
 
+> **Historical — the document this project was built from, kept as written.** The
+> implementation deliberately diverged in two ways worth knowing before you read on:
+> there is no GitHub Pages deployment (the feed is served from the repo's raw URL),
+> and `discover:` is **mandatory** on every distro rather than optional metadata.
+> Where this document and [`architecture.md`](architecture.md) disagree, architecture
+> is authoritative.
+
 A static-site generator that publishes a **unified RSS/Atom feed of the latest ISO releases**
 for a configurable set of Linux (and BSD) distributions. It runs daily as a GitHub Action,
 commits the regenerated feed to the repo, and serves it via GitHub Pages. A separate,

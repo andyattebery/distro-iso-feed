@@ -81,6 +81,45 @@ timestamp feels natural on a docs page.
 **Failure isolation.** A resolver returns `None` rather than raising. The variant's
 record is left untouched, so the feed degrades to **stale, never empty**.
 
+**No source names its own release.** A missing variant is visible — nothing appears
+in the feed. A **pinned** one is not: it resolves cleanly, publishes a valid
+checksum, and serves a stale release forever while every check in this repo stays
+green. Two shipped that way, `builds/24.04/intel` and `antiX-26`, and nothing here
+could see either. So a release-shaped literal in `url`, `index`, `path` or `match`
+is a finding: `audit.pins()` flags it, and a test asserts the real config is clean.
+A variant that finds its release another way — `version_dir`, `probe_versions` — is
+exempt, because that lookup is the mechanism, not an excuse for the literal.
+
+These are two independent questions, and conflating them is what let Pop's pin hide:
+
+| | Question | Enforced by |
+|---|---|---|
+| Variants | can we enumerate what upstream publishes? | `config.py` requires `discover:` |
+| Release | does the source find its own latest release? | `audit.pins()`, offline, in `pytest` |
+
+**Every distro answers the enumeration question.** `discover:` is mandatory: either
+a `group` regex, or `enumerable: false` with a **`reason`** saying what was checked.
+Twenty-one distros once had neither, so nothing enumerated them and their
+completeness rested on a hand audit done once. Silence read the same as "nothing to
+find". The `reason` is the product — it separates a fact someone verified from a
+label someone reached for. Pop!_OS wore `enumerable: false` while pinned to 24.04.
+
+**A proposal is executed, not guessed.** Discovery synthesizes a config node by
+diffing the new artifact's filename against the closest sibling's, substituting the
+changed tokens into that sibling's YAML node, and then calling `resolve()`. It is
+kept only if it resolves to *the artifact that produced the key* — a node resolving
+to the sibling's ISO is a silent duplicate variant, and that is exactly what a
+plausible-but-wrong substitution yields. What cannot be synthesized is reported,
+never dropped. `match: TODO` made the PR a to-do list, and a to-do list is a thing
+you skim: eight Fedora spins and five Nobara editions stayed missing while that PR
+sat open, accurately saying something was there.
+
+**The discovery surface is not always the resolve surface.** Aurora resolves a fixed
+URL while `dl.getaurora.dev/` is a plain index; neon resolves
+`images/<edition>/current/` while `images/` lists the editions. `discover.index`
+points enumeration at the right URL, and only rows *under* that URL survive — neon's
+listing carries forty links of KDE site navigation beside its six image directories.
+
 ## The checksum-format zoo
 
 Three formats, all live:
@@ -118,7 +157,15 @@ unverifiable entry. Do not delete it as dead code.
 3. Anchor `match`. Then look at what else lives in that directory and put every
    **decoy** in `ignore` — decoys belong there and not only in `match`, because
    `match` guards the feed while `ignore` guards the weekly discovery PR.
-4. Add a fixture-backed test if the source has an unusual shape.
+4. Write the `discover:` block. It is mandatory and `load()` rejects the config
+   without it: either a `group` regex that yields the variant keys you configured,
+   or `enumerable: false` with a `reason` recording what you actually checked.
+   A single-artifact source (Arch, Tails) still gets a `group` — one that proposes
+   nothing today and catches a genuinely new edition tomorrow. Calling it
+   unenumerable would hide a fact behind a label.
+5. `uv run distro-iso-feed-audit --only <distro>` — it must report nothing. A
+   finding here means the `group` regex produces a key you did not configure.
+6. Add a fixture-backed test if the source has an unusual shape.
 
 A genuinely new upstream *shape* needs a new **lister**, not a new strategy. A new
 strategy is only warranted when the URL-building rule itself is new.

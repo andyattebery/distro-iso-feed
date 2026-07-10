@@ -13,6 +13,7 @@ from datetime import UTC, datetime
 
 import pytest
 
+from conftest import NOT_ENUMERABLE
 from distro_iso_feed import docs, feed
 from distro_iso_feed.config import ConfigError, load
 from distro_iso_feed.models import Release
@@ -183,7 +184,12 @@ def write(tmp_path, body: str):
 
 
 def test_variant_inherits_distro_strategy(tmp_path):
-    p = write(tmp_path, "distros:\n  d:\n    strategy: json_api\n    variants:\n      v: {}\n")
+    p = write(
+        tmp_path,
+        "distros:\n  d:\n    strategy: json_api\n"
+        + NOT_ENUMERABLE
+        + "    variants:\n      v: {}\n",
+    )
     _, sources = load(p, set(REGISTRY))
     assert sources[0].variants[0].strategy == "json_api"
 
@@ -192,7 +198,9 @@ def test_variant_may_override_strategy_opensuse(tmp_path):
     """The one reason §6 gained an override: Leap lists a dir, Tumbleweed is fixed."""
     p = write(
         tmp_path,
-        "distros:\n  opensuse:\n    strategy: directory_index\n    variants:\n"
+        "distros:\n  opensuse:\n    strategy: directory_index\n"
+        + NOT_ENUMERABLE
+        + "    variants:\n"
         "      leap-dvd: {}\n      tumbleweed-dvd: {strategy: stable_symlink}\n",
     )
     _, sources = load(p, set(REGISTRY))
@@ -201,13 +209,18 @@ def test_variant_may_override_strategy_opensuse(tmp_path):
 
 
 def test_missing_strategy_is_a_load_time_error(tmp_path):
-    p = write(tmp_path, "distros:\n  d:\n    variants:\n      v: {}\n")
+    p = write(tmp_path, "distros:\n  d:\n" + NOT_ENUMERABLE + "    variants:\n      v: {}\n")
     with pytest.raises(ConfigError, match="no strategy"):
         load(p, set(REGISTRY))
 
 
 def test_unknown_strategy_is_a_load_time_error(tmp_path):
-    p = write(tmp_path, "distros:\n  d:\n    strategy: telepathy\n    variants:\n      v: {}\n")
+    p = write(
+        tmp_path,
+        "distros:\n  d:\n    strategy: telepathy\n"
+        + NOT_ENUMERABLE
+        + "    variants:\n      v: {}\n",
+    )
     with pytest.raises(ConfigError, match="unknown strategy"):
         load(p, set(REGISTRY))
 
@@ -218,7 +231,7 @@ def test_unknown_strategy_is_a_load_time_error(tmp_path):
 def test_catalog_is_generated_from_config_and_state(tmp_path):
     p = write(
         tmp_path,
-        "distros:\n  fedora:\n    strategy: json_api\n    variants:\n"
+        "distros:\n  fedora:\n    strategy: json_api\n" + NOT_ENUMERABLE + "    variants:\n"
         "      workstation: {}\n      server: {}\n",
     )
     _, sources = load(p, set(REGISTRY))
@@ -231,7 +244,12 @@ def test_catalog_is_generated_from_config_and_state(tmp_path):
 
 
 def test_catalog_has_no_build_timestamp(tmp_path):
-    p = write(tmp_path, "distros:\n  d:\n    strategy: json_api\n    variants:\n      v: {}\n")
+    p = write(
+        tmp_path,
+        "distros:\n  d:\n    strategy: json_api\n"
+        + NOT_ENUMERABLE
+        + "    variants:\n      v: {}\n",
+    )
     _, sources = load(p, set(REGISTRY))
     out_a, out_b = tmp_path / "a.md", tmp_path / "b.md"
     docs.render(sources, State(), out_a)

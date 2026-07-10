@@ -9,6 +9,7 @@ them. A test that parses its own output with its own writer proves very little.
 from __future__ import annotations
 
 import json
+import logging
 
 import feedparser
 import pytest
@@ -39,6 +40,7 @@ distros:
       workstation:
         label: Fedora Workstation
         select: {subvariant: Workstation, link_contains: Workstation-Live}
+    discover: {enumerable: false, reason: fixture}
 
   debian:
     strategy: directory_index
@@ -54,6 +56,7 @@ distros:
       ignore: [debian-edu-]
     variants:
       netinst: {label: Debian netinst}
+    discover: {enumerable: false, reason: fixture}
 
   batocera:
     strategy: directory_index
@@ -64,6 +67,7 @@ distros:
       sums: '{filename}.md5'
     variants:
       x86_64: {label: Batocera}
+    discover: {enumerable: false, reason: fixture}
 """
 
 RELEASES_JSON = json.dumps(
@@ -393,25 +397,33 @@ def discover_project(tmp_path, monkeypatch):
     return run_discover, cfg
 
 
-def test_discover_dry_run_writes_nothing(discover_project, capsys):
+def test_discover_dry_run_writes_nothing(discover_project, caplog):
     run_discover, cfg = discover_project
     before = cfg.read_text()
-    assert run_discover.main(["--dry-run"]) == 0
+    with caplog.at_level(logging.INFO):
+        assert run_discover.main(["--dry-run"]) == 0
     assert cfg.read_text() == before
-    assert "fedora: kde" in capsys.readouterr().out
+    assert "propose fedora:kde" in caplog.text
 
 
-def test_discover_proposes_only_new_non_ignored_iso_variants(discover_project, capsys):
+def test_discover_proposes_only_new_non_ignored_iso_variants(discover_project, caplog):
     run_discover, _ = discover_project
-    run_discover.main(["--dry-run"])
-    out = capsys.readouterr().out
-    assert "kde" in out  # new
-    assert "workstation" not in out  # already configured
-    assert "cloud" not in out  # in `ignore`
+    with caplog.at_level(logging.INFO):
+        run_discover.main(["--dry-run"])
+    out = caplog.text
+    assert "fedora:kde" in out  # new
+    assert "fedora:workstation" not in out  # already configured
+    assert "cloud" not in out.lower()  # in `ignore`
     assert "qcow2" not in out  # dropped by `match`
 
 
-def test_discover_writes_placeholders_and_keeps_comments(discover_project):
+def test_discover_writes_config_that_already_resolves(discover_project):
+    """The proposal is not a name and not a `TODO`; it is a node that has been run.
+
+    `match: TODO` made this PR a to-do list, and a to-do list is a thing you skim --
+    which is how eight Fedora spins stayed missing while the PR sat open saying,
+    accurately, that something was there.
+    """
     run_discover, cfg = discover_project
     assert run_discover.main([]) == 0
 
@@ -419,13 +431,37 @@ def test_discover_writes_placeholders_and_keeps_comments(discover_project):
     assert "# Keep this comment." in body
     assert "workstation:" in body  # never removes a variant
     assert "kde:" in body
-    assert "match: TODO" in body  # unusable on purpose
+    assert "TODO" not in body
 
-    # and the result must still load
+    # Synthesized from the sibling by substituting `Workstation` -> `KDE`, everywhere.
     from distro_iso_feed.config import load
 
     _, sources = load(cfg, set(REGISTRY))
-    assert {v.name for v in sources[0].variants} == {"workstation", "kde"}
+    kde = next(v for v in sources[0].variants if v.name == "kde")
+    assert kde.params["select"] == {"subvariant": "KDE", "link_contains": "KDE-Live"}
+
+    # And it resolves -- to the artifact that produced the key, not the sibling's.
+    release = REGISTRY[kde.strategy]().resolve(
+        "fedora",
+        "kde",
+        kde.params,
+        FakeClient({"https://fedoraproject.org/releases.json": DISCOVER_JSON}),
+    )
+    assert release.filename == "Fedora-KDE-Live-44-1.7.x86_64.iso"
+    assert release.checksum
+
+
+def test_discover_pr_body_carries_the_resolved_evidence(discover_project, tmp_path):
+    """The PR body is the artifact a reviewer reads. It names the sibling copied from
+    and the ISO that was actually fetched, so review is checking evidence rather than
+    trusting a variant name."""
+    run_discover, _ = discover_project
+    body = tmp_path / "pr.md"
+    assert run_discover.main(["--dry-run", "--pr-body", str(body)]) == 0
+
+    text = body.read_text()
+    assert "| `fedora:kde` | `workstation` | `Fedora-KDE-Live-44-1.7.x86_64.iso` |" in text
+    assert "TODO" not in text
 
 
 def test_discover_placeholder_never_silently_publishes(discover_project):

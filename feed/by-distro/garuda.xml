@@ -4,7 +4,21 @@
   <title>Distro ISO Feed — garuda</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/garuda.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-03-09T05:49:43+00:00</updated>
+  <updated>2026-03-09T06:00:48+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/garuda/mokka/260309</id>
+    <title>Garuda Mokka 260309 (x86_64)</title>
+    <updated>2026-03-09T06:00:48+00:00</updated>
+    <published>2026-03-09T06:00:48+00:00</published>
+    <link href="https://garudalinux.org/downloads" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/garuda-linux/files/garuda/mokka/260309/garuda-mokka-linux-zen-260309.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="garuda" label="distro" />
+    <category term="mokka" label="variant" />
+    <summary type="text">Garuda Mokka 260309 (x86_64)
+Filename: garuda-mokka-linux-zen-260309.iso
+sha256: 067262d8589febdd42003cebf0836696bf4c210570ea95ec08224761068c617e
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/garuda/sway/260309</id>
     <title>Garuda Sway 260309 (x86_64)</title>
@@ -59,6 +73,20 @@ Verify: checksum</summary>
     <summary type="text">Garuda Hyprland 260309 (x86_64)
 Filename: garuda-hyprland-linux-zen-260309.iso
 sha256: 98155bc036a029e480201483d2ef0e35759079950d4b94f16dc4767e95c5d4f4
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/garuda/kde-lite/260309</id>
+    <title>Garuda KDE Lite 260309 (x86_64)</title>
+    <updated>2026-03-09T05:12:27+00:00</updated>
+    <published>2026-03-09T05:12:27+00:00</published>
+    <link href="https://garudalinux.org/downloads" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/garuda-linux/files/garuda/kde-lite/260309/garuda-kde-lite-linux-zen-260309.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="garuda" label="distro" />
+    <category term="kde-lite" label="variant" />
+    <summary type="text">Garuda KDE Lite 260309 (x86_64)
+Filename: garuda-kde-lite-linux-zen-260309.iso
+sha256: be8e0573c342238e5b6c0fd69089d411551c4ecef2d81db29ce67ac5152eae6a
 Verify: checksum</summary>
   </entry>
   <entry>
