@@ -1,11 +1,12 @@
-"""GitHub *assets*. MiniOS is the only seeded user.
+"""GitHub *assets*. MiniOS and AnduinOS.
 
 The three ublue projects were once filed here; they belong to `stable_symlink`,
 because GitHub supplies only their version string. Reserving this name for
 "the artifact is a release asset" is what makes that distinction visible.
 
-elementary and AnduinOS are excluded precisely because their releases carry no
-eligible asset -- zero assets and torrents-only respectively.
+AnduinOS publishes 22 assets and every one is a `.torrent` -- no ISO exists. It is
+why `torrent_only` reaches this strategy at all. elementary stays excluded because
+its releases carry no assets whatsoever.
 """
 
 from __future__ import annotations
@@ -17,6 +18,7 @@ from ..listers import Candidate, gh_assets
 from ..models import Release
 from ..select import choose
 from ..tokens import from_filename
+from ._common import resolve_torrent_only
 from .base import Strategy, title_for
 
 
@@ -43,6 +45,15 @@ class GithubReleases(Strategy):
             return None
 
         best = by_name[filename]
+
+        # AnduinOS: the asset IS the torrent, and the torrent names the ISO.
+        if params.get("torrent_only"):
+            if not best.url:
+                return None
+            return resolve_torrent_only(
+                client, distro=distro, variant=variant, params=params, torrent_url=best.url
+            )
+
         version = from_filename(filename, params["version_pattern"])
         if not version:
             return None

@@ -120,6 +120,31 @@ URL while `dl.getaurora.dev/` is a plain index; neon resolves
 points enumeration at the right URL, and only rows *under* that URL survive — neon's
 listing carries forty links of KDE site navigation beside its six image directories.
 
+**A torrent names its own payload, and that is the only trustworthy name for it.**
+For a `torrent_only` variant, `filename` is `info.name` read out of the `.torrent`.
+Stripping `.torrent` off the URL is a guess, and it breaks the moment a project
+names the two differently — Fedora publishes `Fedora-Workstation-Live-x86_64-44.torrent`
+for `Fedora-Workstation-Live-44-1.7.x86_64.iso`.
+
+**Two checksums, for two different files.** `checksum` always describes `filename`
+(the ISO); `torrent_checksum` always describes `torrent_url` (the `.torrent`). Kali's
+signed `SHA256SUMS` lists both, so looking one up under the other's name publishes a
+valid, well-formed, wrong hash. The summary prints them as `sha256:` and
+`torrent-sha256:` so a consumer greps one and cannot pick up the other.
+
+**A torrent verifies itself against itself.** Its piece hashes prove the payload
+matches *that torrent file* — they say nothing about whether the torrent is the
+project's. A tampered one is perfectly self-consistent and every client reports
+success. So where an upstream signs a hash of the torrent, `resolve()` fetches the
+bytes and checks them, and returns `None` on mismatch. This is the only place in the
+codebase that verifies a payload rather than republishing a checksum. Where no such
+hash exists (AnduinOS), `verify` is `torrent`: the infohash covers every piece, on
+trust-on-first-use, and the summary says so rather than claiming `checksum`.
+
+**RSS 2.0 permits one `<enclosure>` per item.** Atom permits several. That asymmetry,
+not preference, is why torrents get their own `feed/torrent.rss` instead of riding
+along in `feed.rss`.
+
 ## The checksum-format zoo
 
 Three formats, all live:
@@ -177,13 +202,11 @@ Recorded so nobody re-investigates them. Several look trivially addable.
 | Source | Why not |
 |---|---|
 | **elementary** | Releases carry zero assets. The download host mints an expiring per-visitor link (`…/download/<base64-unix-timestamp>/…iso`), and the untokenized path is a catch-all `302` — so *any* filename appears to 200 under `curl -L`, including ones that do not exist. Its newest tags are RCs, and GitHub reports `8.1.0-rc3` with `prerelease: false`, so that flag cannot be used either. |
-| **AnduinOS** | Every release asset is a `.torrent`. Torrents are out of scope, so there is no eligible artifact. |
 | **Zorin** | The download page exposes no ISO link (downloads run through a Paddle checkout), and its SourceForge project `zorin-os` is an **archive**: versions 1, 10, 11 and a `16-Core-Beta`, with `/17` and `/18` empty. The 100-item RSS feed is what makes it look usable. |
 | **SparkyLinux** | No `.iso` in its SourceForge RSS at any path tried. |
 | **PikaOS** | `pika-os.com/download` 404s and there is no releases feed. |
 | **uCore** | Neither `download.ublue.it` nor `dl.ucore.dev` resolves. Bazzite, Bluefin and Aurora are all seeded; uCore alone has no reachable host. |
 | **BigLinux** | No SourceForge project under `biglinux`, `biglinux-iso` or `big-linux`. |
-| **Kali `live`, `live-everything`, `installer-everything`** | Listed in Kali's `SHA256SUMS`, but all three **404** as direct downloads — they ship by torrent. A checksum file is not an index. |
 | **Manjaro via SourceForge** | `manjarolinux` exists with 32 ISOs, and every one is a `-pre` prerelease. Skipping betas leaves nothing, so Manjaro stays a `page_index` source. |
 | **openSUSE Leap `-Current.iso`** | Exists, but is not linked from the index, so `directory_index` cannot see it. The listed `Build710.3-Media.iso` carries a better change-token anyway. |
 

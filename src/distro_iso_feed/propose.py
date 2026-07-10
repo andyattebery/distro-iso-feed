@@ -175,24 +175,32 @@ def _confirms(release: Release, candidate: Candidate) -> str | None:
     to the sibling's ISO is a silent duplicate variant, and that is precisely what a
     plausible-but-wrong substitution yields.
 
-    What "the artifact" means depends on what was enumerated. Aurora's rows are ISOs
-    and SourceForge's are paths ending in one, so the filename must match. Neon's
-    rows are *directories* -- the ISO sits two segments below one -- so the test is
-    that the resolved download lives under the directory the key came from.
-    Comparing a filename to a directory name would reject every neon edition
-    forever, on a technicality, in a message no reader could act on.
+    What "the artifact" means depends on what was enumerated:
+
+    * A `.torrent` row names an ISO it does not share a filename with, so the test is
+      that the release points at *that torrent*. Comparing `filename` here would
+      compare `x.iso` to `x.iso.torrent` and reject every torrent-only variant.
+    * Aurora's rows are ISOs and SourceForge's are paths ending in one, so the
+      filename must match.
+    * Neon's rows are *directories* -- the ISO sits two segments below one -- so the
+      resolved download must live under the directory the key came from. Comparing a
+      filename to a directory name would reject every neon edition forever, on a
+      technicality, in a message no reader could act on.
     """
-    if _suffix(candidate.name):
+    if _basename(candidate.name).endswith(".torrent"):
+        if release.torrent_url != candidate.url:
+            return f"resolved to torrent `{release.torrent_url}`, not the one behind this key"
+    elif _suffix(candidate.name):
         if release.filename != _basename(candidate.name):
             return f"resolved to `{release.filename}`, not the artifact behind this key"
     elif not candidate.url:
         # No extension and no URL: nothing ties this release to the key. Today every
         # lister sets one, and "cannot happen" is what was said about `enumerable`.
         return "no artifact or URL to confirm this key against"
-    elif not release.download_url.startswith(candidate.url):
+    elif not (release.download_url or "").startswith(candidate.url):
         return f"resolved to `{release.download_url}`, which is outside `{candidate.url}`"
-    if not (release.checksum or release.signature_url):
-        return "resolves, but publishes no checksum or signature"
+    if not (release.checksum or release.signature_url or release.info_hash):
+        return "resolves, but publishes no checksum, signature or infohash"
     return None
 
 
@@ -250,14 +258,21 @@ def _nodes_for(node: dict, sibling_sample: str, candidate: Candidate) -> list[di
        to copy. The artifact's own name, escaped and with its numbers loosened, is a
        `match` that selects it and nothing else. Last, because it discards the
        sibling's hand-tuned regex for a mechanical one.
+
+    A `.torrent` candidate is always case (3), and additionally carries
+    `torrent_only: true`. Kali's siblings all `match` an `\\.iso$`; appending
+    `.torrent` is an insertion, so substitution declines and no amount of copying a
+    sibling would ever produce a working node. Without this branch a new torrent-only
+    edition is reported "could not synthesize" every week until a human notices.
     """
     out: list[dict] = []
+    is_torrent = _basename(candidate.name).endswith(".torrent")
 
-    if tokens := diff_tokens(sibling_sample, candidate.name):
+    if not is_torrent and (tokens := diff_tokens(sibling_sample, candidate.name)):
         out.append(substitute(node, tokens))
 
     url = _node_url(node)
-    if url and candidate.url and _suffix(url) and _suffix(candidate.url) == _suffix(url):
+    if not is_torrent and url and candidate.url and _suffix(url) == _suffix(candidate.url) != "":
         observed = copy.deepcopy(node)
         _set_node_url(observed, candidate.url)
         out.append(observed)
@@ -265,7 +280,13 @@ def _nodes_for(node: dict, sibling_sample: str, candidate: Candidate) -> list[di
     if (where := _node_match_key(node)) and _suffix(candidate.name):
         derived = copy.deepcopy(node)
         target = derived["params"] if where == "params" else derived
+        # The full name, not the basename: SourceForge's `match` anchors on a path.
         target["match"] = generalize(candidate.name)
+        if is_torrent:
+            # Beside `match`, not at the node's top level: a sibling that is already
+            # torrent-only carries it in `params`, and writing both would commit a
+            # duplicated key for a human to puzzle over.
+            target["torrent_only"] = True
         out.append(derived)
 
     return out
@@ -365,14 +386,17 @@ def pr_body(proposals: list[Proposal], rejected: list[Rejected]) -> str:
             "Every artifact below was fetched and its checksum read; nothing here is a "
             "placeholder. Labels are generated -- reword them.",
             "",
-            "| Variant | Copied from | Artifact | Version | Verify |",
-            "|---|---|---|---|---|",
+            "| Variant | Copied from | Artifact | Version | Verify | Source |",
+            "|---|---|---|---|---|---|",
         ]
         for p in sorted(proposals, key=lambda p: p.key):
             algo = f" ({p.release.checksum_algo})" if p.release.checksum_algo else ""
+            # A torrent-only variant has no HTTP artifact. Say which one it is, or a
+            # reviewer cannot tell why the node carries `torrent_only: true`.
+            source = f"[torrent]({p.release.torrent_url})" if not p.release.download_url else "http"
             lines.append(
                 f"| `{p.key}` | `{p.sibling}` | `{p.release.filename}` | "
-                f"`{p.release.version}` | {p.release.verify}{algo} |"
+                f"`{p.release.version}` | {p.release.verify}{algo} | {source} |"
             )
         lines.append("")
     else:

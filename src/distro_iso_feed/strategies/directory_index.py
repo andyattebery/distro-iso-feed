@@ -1,9 +1,11 @@
 """Autoindex-backed sources: the largest family.
 
-Two capabilities §7 never mentions, both forced by real upstreams:
+Three capabilities §7 never mentions, all forced by real upstreams:
 
 * a **version-dir listing** (FreeBSD, Leap, Tails, Batocera, Ubuntu, Mint)
 * a **templated `sums`** -- FreeBSD's is ``CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-amd64``
+* **torrent-only artifacts** -- Kali's `live` images are in its signed `SHA256SUMS`
+  but 404 as direct downloads; the index offers only the `.torrent`
 """
 
 from __future__ import annotations
@@ -15,7 +17,7 @@ from ..listers import Candidate, autoindex, version_dir
 from ..models import Release
 from ..select import by_channel, choose, version_key
 from ..tokens import from_filename
-from ._common import fetch_integrity
+from ._common import fetch_integrity, resolve_torrent_only
 from .base import Strategy, title_for
 
 
@@ -61,6 +63,18 @@ class DirectoryIndex(Strategy):
         )
         if not filename:
             return None
+
+        # `filename` here is a `.torrent`; the ISO it names is not in this index.
+        if params.get("torrent_only"):
+            return resolve_torrent_only(
+                client,
+                distro=distro,
+                variant=variant,
+                params=params,
+                torrent_url=urljoin(index, filename),
+                base=index,
+                version_dirname=version_dirname,
+            )
 
         version = (
             from_filename(filename, params["version_pattern"])

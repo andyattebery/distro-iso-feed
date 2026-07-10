@@ -184,10 +184,15 @@ def main(argv: list[str] | None = None) -> int:
                 failures.append((variant.key, reason))
                 continue
 
-            # `hash` = the published checksum when there is one, else a digest of
-            # the resolved artifact identity. Catches a respin whose version froze.
-            fallback = hashlib.sha256(release.download_url.encode()).hexdigest()
-            payload = release.checksum or fallback
+            # `hash` = the published checksum when there is one, else the infohash,
+            # else a digest of the resolved artifact identity. Catches a respin whose
+            # version froze. The infohash outranks a URL digest because AnduinOS's
+            # torrent URL carries the version tag: a rebuild at the same version
+            # moves the infohash and nothing else, which is exactly the case this
+            # fallback exists to catch. It also has to cope with `download_url` being
+            # None, which a torrent-only release always is.
+            url_digest = hashlib.sha256(release.primary_url.encode()).hexdigest()
+            payload = release.checksum or release.info_hash or url_digest
 
             if args.dry_run:
                 # Print the artifact, never a status code: a 200 is what misled the

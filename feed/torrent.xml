@@ -1,10 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://github.com/andyattebery/distro-iso-feed/id/kali</id>
-  <title>Distro ISO Feed — kali</title>
-  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/kali.xml" rel="self" type="application/atom+xml" />
+  <id>https://github.com/andyattebery/distro-iso-feed/id/torrent</id>
+  <title>Distro ISO Feed — torrents</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-10T15:06:07+00:00</updated>
+  <updated>2026-07-10T15:06:49+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/anduinos/en-us/1.4.2</id>
+    <title>AnduinOS 1.4.2 (x86_64)</title>
+    <updated>2026-07-10T15:06:49+00:00</updated>
+    <published>2026-07-10T15:06:49+00:00</published>
+    <link href="https://www.anduinos.com/" rel="alternate" type="text/html" />
+    <link href="https://github.com/Anduin2017/AnduinOS/releases/download/1.4.2/AnduinOS-1.4.2-en_US.torrent" rel="enclosure" type="application/x-bittorrent" length="167645" />
+    <category term="anduinos" label="distro" />
+    <category term="en-us" label="variant" />
+    <summary type="text">AnduinOS 1.4.2 (x86_64)
+Filename: AnduinOS-1.4.2-en_US.iso
+Size: 2183045120
+Torrent: https://github.com/Anduin2017/AnduinOS/releases/download/1.4.2/AnduinOS-1.4.2-en_US.torrent
+Infohash: 9367e97fa9d2a98cab121eab005f099b717122c8
+Magnet: magnet:?xt=urn:btih:9367e97fa9d2a98cab121eab005f099b717122c8&amp;dn=AnduinOS-1.4.2-en_US.iso&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fopen.demonoid.ch%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&amp;tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker1.myporn.club%3A9337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.tryhackx.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.qu.ax%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.gmi.gd%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.filemail.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.bittor.pw%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.0x7c0.com%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftr4ck3r.duckdns.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ft.overflow.biz%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&amp;tr=udp%3A%2F%2Fretracker.lanta.me%3A2710%2Fannounce&amp;tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Fopentracker.io%3A6969%2Fannounce
+Verify: torrent
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/kali/live/2026.2</id>
     <title>Kali Live 2026.2 (x86_64)</title>
@@ -63,51 +81,6 @@ Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-everyt
 torrent-sha256: 6f88e1f3704d560b7e468ada37ea02ded4a7b60989cbd6b9aa6554bc83b0eaf3
 Infohash: 1f7482c9dad2653af474a806a93e6c266e1a1b3c
 Magnet: magnet:?xt=urn:btih:1f7482c9dad2653af474a806a93e6c266e1a1b3c&amp;dn=kali-linux-2026.2-installer-everything-amd64.iso&amp;tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&amp;tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&amp;tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer/2026.2</id>
-    <title>Kali Installer 2026.2 (x86_64)</title>
-    <updated>2026-07-09T23:40:11+00:00</updated>
-    <published>2026-07-09T23:40:11+00:00</published>
-    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="kali" label="distro" />
-    <category term="installer" label="variant" />
-    <summary type="text">Kali Installer 2026.2 (x86_64)
-Filename: kali-linux-2026.2-installer-amd64.iso
-sha256: 6dbefacc95e3b556c19c48e8bae39b8b505e2d3a1aba0bfb7ab62b036c3d2ba3
-Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer-purple/2026.2</id>
-    <title>Kali Purple 2026.2 (x86_64)</title>
-    <updated>2026-07-09T23:40:11+00:00</updated>
-    <published>2026-07-09T23:40:11+00:00</published>
-    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-purple-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="kali" label="distro" />
-    <category term="installer-purple" label="variant" />
-    <summary type="text">Kali Purple 2026.2 (x86_64)
-Filename: kali-linux-2026.2-installer-purple-amd64.iso
-sha256: bbde629937a9eabc110062989d49947fae7fd4c0fef19f590f990b1cb97a497c
-Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer-netinst/2026.2</id>
-    <title>Kali NetInstaller 2026.2 (x86_64)</title>
-    <updated>2026-07-09T23:40:11+00:00</updated>
-    <published>2026-07-09T23:40:11+00:00</published>
-    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="kali" label="distro" />
-    <category term="installer-netinst" label="variant" />
-    <summary type="text">Kali NetInstaller 2026.2 (x86_64)
-Filename: kali-linux-2026.2-installer-netinst-amd64.iso
-sha256: d32f929dacc48134a31461a09f2160d13ad1d26b820cee920446813ca979b39b
-Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
 Verify: gpg</summary>
   </entry>
 </feed>

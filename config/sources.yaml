@@ -131,10 +131,13 @@ distros:
     params:
       # NOT `current/`: a partial mirror. Use the versioned dir, which self-updates.
       #
-      # Kali's SHA256SUMS lists `live`, `live-everything` and `installer-everything`,
-      # but all three 404 as direct downloads -- they are distributed by torrent, and
-      # §17 puts torrents out of scope. A checksum file is not an index; only the
-      # three installer images below are actually fetchable.
+      # `live`, `live-everything` and `installer-everything` are in SHA256SUMS but
+      # 404 as direct downloads -- they ship by torrent. Their `match` therefore
+      # selects the `.torrent`, and the torrent names the ISO it serves.
+      #
+      # SHA256SUMS is signed and lists BOTH the ISO and the `.torrent`, so the
+      # torrent's bytes are checked against a signature before its infohash is
+      # published. A torrent's own piece hashes only prove it agrees with itself.
       version_dir: "https://cdimage.kali.org/"
       version_dir_match: '^kali-\d{4}\.\d+$'
       index: "{version}/"
@@ -146,9 +149,17 @@ distros:
       installer: {label: "Kali Installer", params: {match: '^kali-linux-[0-9.]+-installer-amd64\.iso$'}}
       installer-netinst: {label: "Kali NetInstaller", params: {match: '^kali-linux-[0-9.]+-installer-netinst-amd64\.iso$'}}
       installer-purple: {label: "Kali Purple", params: {match: '^kali-linux-[0-9.]+-installer-purple-amd64\.iso$'}}
+      live: {label: "Kali Live", params: {torrent_only: true, match: '^kali-linux-[0-9.]+-live-amd64\.iso\.torrent$'}}
+      live-everything: {label: "Kali Live (everything)", params: {torrent_only: true, match: '^kali-linux-[0-9.]+-live-everything-amd64\.iso\.torrent$'}}
+      installer-everything: {label: "Kali Installer (everything)", params: {torrent_only: true, match: '^kali-linux-[0-9.]+-installer-everything-amd64\.iso\.torrent$'}}
     discover:
-      match: '\.iso$'
-      group: '^kali-linux-[0-9.]+-(.+)-amd64\.iso$'
+      # `.iso.torrent` rows must reach `group`, or the three torrent-only variants
+      # above are reported UNEXPLAINED on every run. The suffix is NON-CAPTURING:
+      # `variant_key` joins every capture group, so `(\.torrent)?` yields the key
+      # `installer-.torrent`. The `.7z` torrents (hyperv/qemu/virtualbox/vmware)
+      # need no `ignore` -- `match` requires `.iso` before the suffix.
+      match: '\.iso(?:\.torrent)?$'
+      group: '^kali-linux-[0-9.]+-(.+)-amd64\.iso(?:\.torrent)?$'
       ignore: [arm64, i386]
 
   void:
@@ -567,8 +578,32 @@ distros:
     discover:
       group: '^/gui-installer/([a-z0-9-]+)/'
 
-  # ----------------------------------------------------------- github_releases (1)
+  # ----------------------------------------------------------- github_releases (2)
   # GitHub *assets*. The ublue projects are NOT here; they only borrow a version tag.
+
+  anduinos:
+    strategy: github_releases
+    page_url: "https://www.anduinos.com/"
+    params:
+      # Every release asset is a `.torrent` -- 22 of them, one per locale, and no
+      # ISO anywhere. The torrent names the ISO it serves (`AnduinOS-1.4.2-en_US.iso`).
+      #
+      # Nothing signs the torrent and no checksum is published, so `verify` is
+      # `torrent`: the infohash covers every piece, but only on trust-on-first-use.
+      # The tracker is a public one (opentrackr.org), not first-party.
+      repo: "Anduin2017/AnduinOS"
+      version_pattern: 'AnduinOS-([0-9.]+)-'
+    variants:
+      # `variant_key` lowercases and maps `_` to `-`, so the config key is `en-us`
+      # while the artifact is `en_US`. Naming it `en_US` makes the audit report
+      # `en-us` as UNEXPLAINED on every run, forever.
+      en-us: {label: "AnduinOS", params: {torrent_only: true, match: '^AnduinOS-[0-9.]+-en_US\.torrent$'}}
+    discover:
+      # 21 locale builds of the same release, not editions. One lookahead beats a
+      # 21-entry list; `ignore` is compiled with re.IGNORECASE.
+      match: '\.torrent$'
+      group: '^AnduinOS-[0-9.]+-([a-z]{2}_[A-Z]{2})\.torrent$'
+      ignore: ['-(?!en_US)[a-z]{2}_[A-Z]{2}\.torrent$']
 
   minios:
     strategy: github_releases

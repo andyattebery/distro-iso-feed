@@ -13,11 +13,13 @@ import pytest
 
 
 class FakeResponse:
-    def __init__(self, url: str, text: str) -> None:
+    """A real response carries bytes. `.torrent` bodies are not valid UTF-8."""
+
+    def __init__(self, url: str, body: str | bytes) -> None:
         self.url = url
         self.status_code = 200
-        self.text = text
-        self.content = text.encode()
+        self.content = body if isinstance(body, bytes) else body.encode()
+        self.text = self.content.decode("utf-8", errors="replace")
 
     @property
     def hash(self) -> str:
@@ -27,7 +29,9 @@ class FakeResponse:
 class FakeClient:
     """Serves a url->body map. Anything unmapped 404s, like the real world."""
 
-    def __init__(self, pages: dict[str, str] | None = None, existing: set[str] | None = None):
+    def __init__(
+        self, pages: dict[str, str | bytes] | None = None, existing: set[str] | None = None
+    ):
         self.pages = pages or {}
         self.existing = existing or set()
         self.requested: list[str] = []

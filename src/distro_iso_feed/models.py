@@ -3,6 +3,15 @@
 `Release` extends the spec's §5 shape: `arch`, `size`, `page_url` and a derived
 `content_type` are all required by real upstreams (Kali co-lists arm64; Fedora and
 Pop!_OS hand over sizes; Batocera ships a gzipped disk image, not an ISO).
+
+**Two checksums, for two different files.** `checksum` always describes `filename`
+-- the ISO. `torrent_checksum` always describes `torrent_url` -- the `.torrent`.
+Kali's `SHA256SUMS` lists both, so conflating them publishes the torrent's hash
+under the ISO's name: well-formed, plausible, and wrong.
+
+`download_url` is optional because some sources publish no HTTP artifact at all.
+AnduinOS ships 22 assets and every one is a `.torrent`; three of Kali's images are
+listed in `SHA256SUMS` but 404 as direct downloads.
 """
 
 from __future__ import annotations
@@ -19,8 +28,13 @@ CONTENT_TYPES: dict[str, str] = {
     ".raw.xz": "application/x-xz",
 }
 
+TORRENT_TYPE = "application/x-bittorrent"
+
 VERIFY_CHECKSUM = "checksum"
 VERIFY_GPG = "gpg"
+# The infohash covers every piece, but nothing signs the torrent: trust on first
+# use. Weaker than a signed checksum, stronger than nothing, and a lie to call either.
+VERIFY_TORRENT = "torrent"
 VERIFY_NONE = "none"
 
 
@@ -40,14 +54,20 @@ class Release:
     variant: str
     version: str
     title: str
-    download_url: str
     filename: str
+    download_url: str | None = None
     arch: str = "x86_64"
     published: datetime | None = None
     size: int | None = None
     checksum: str | None = None
     checksum_algo: str | None = None
     signature_url: str | None = None
+    torrent_url: str | None = None
+    torrent_size: int | None = None
+    torrent_checksum: str | None = None
+    torrent_checksum_algo: str | None = None
+    info_hash: str | None = None
+    magnet_uri: str | None = None
     page_url: str | None = None
     notes: str | None = None
 
@@ -61,11 +81,18 @@ class Release:
         return f"{self.distro}:{self.variant}"
 
     @property
+    def primary_url(self) -> str:
+        """What the feed links. A torrent-only release has no HTTP artifact."""
+        return self.download_url or self.torrent_url or self.page_url or ""
+
+    @property
     def verify(self) -> str:
         if self.signature_url:
             return VERIFY_GPG
         if self.checksum:
             return VERIFY_CHECKSUM
+        if self.info_hash:
+            return VERIFY_TORRENT
         return VERIFY_NONE
 
     @property

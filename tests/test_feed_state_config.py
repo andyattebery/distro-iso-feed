@@ -239,8 +239,8 @@ def test_catalog_is_generated_from_config_and_state(tmp_path):
     out = tmp_path / "catalog.md"
     docs.render(sources, s, out)
     body = out.read_text()
-    assert "| fedora | workstation | json_api | checksum | 44-1.7 |" in body
-    assert "| fedora | server | json_api | — | — |" in body  # configured, unresolved
+    assert "| fedora | workstation | json_api | checksum | — | 44-1.7 |" in body
+    assert "| fedora | server | json_api | — | — | — |" in body  # configured, unresolved
 
 
 def test_catalog_has_no_build_timestamp(tmp_path):

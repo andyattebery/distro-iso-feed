@@ -18,17 +18,20 @@ from email.utils import format_datetime
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-from .models import Release
+from .models import TORRENT_TYPE, Release
 from .state import Record, State
 
 REPO_URL = "https://github.com/andyattebery/distro-iso-feed"
 RAW_BASE = "https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main"
 FEED_SELF = f"{RAW_BASE}/feed/feed.xml"
+TORRENT_SELF = f"{RAW_BASE}/feed/torrent.xml"
 FEED_TITLE = "Distro ISO Feed"
-SCHEMA_VERSION = 1
+TORRENT_TITLE = "Distro ISO Feed — torrents"
+SCHEMA_VERSION = 2
 ATOM_NS = "http://www.w3.org/2005/Atom"
 
 WARNING_NO_CHECKSUM = "WARNING: no published checksum — integrity unverifiable"
+NOTE_UNSIGNED_TORRENT = "NOTE: infohash is unsigned — trust on first use"
 
 
 def atom_id(release: Release) -> str:
@@ -45,9 +48,13 @@ def atom_id(release: Release) -> str:
 def summary_for(release: Release) -> str:
     """Machine-greppable, one field per line.
 
-    Four shapes, because checksum and signature vary independently: Tails signs
-    without publishing a checksum, and Batocera's algo is md5, not sha256 -- so the
-    label is never hardcoded.
+    Checksum, signature and torrent vary independently: Tails signs without
+    publishing a checksum, Batocera's algo is md5 rather than sha256, and AnduinOS
+    publishes nothing but a torrent -- so no label is ever hardcoded.
+
+    The two hashes carry different prefixes on purpose. `sha256:` is the **ISO**;
+    `torrent-sha256:` is the **`.torrent` file**. A consumer greps one and must never
+    pick up the other.
     """
     lines = [release.title, f"Filename: {release.filename}"]
     if release.size:
@@ -56,12 +63,41 @@ def summary_for(release: Release) -> str:
         lines.append(f"{release.checksum_algo}: {release.checksum}")
     if release.signature_url:
         lines.append(f"Signature: {release.signature_url}")
+    if release.torrent_url:
+        lines.append(f"Torrent: {release.torrent_url}")
+    if release.torrent_checksum and release.torrent_checksum_algo:
+        lines.append(f"torrent-{release.torrent_checksum_algo}: {release.torrent_checksum}")
+    if release.info_hash:
+        lines.append(f"Infohash: {release.info_hash}")
+    if release.magnet_uri:
+        lines.append(f"Magnet: {release.magnet_uri}")
     lines.append(f"Verify: {release.verify}")
-    if not release.checksum:
+    if not release.checksum and not release.info_hash:
         lines.append(WARNING_NO_CHECKSUM)
+    # A torrent's piece hashes verify the payload against the torrent, not against
+    # the project. Without a signature that is trust on first use, and saying so is
+    # the difference between `verify: torrent` and a claim we cannot support.
+    if release.info_hash and not release.signature_url and not release.torrent_checksum:
+        lines.append(NOTE_UNSIGNED_TORRENT)
     if release.notes:
         lines.append(release.notes)
     return "\n".join(lines)
+
+
+def _enclosures(r: Release, *, torrent_only: bool = False) -> list[tuple[str, str, str | None]]:
+    """`(url, type, length)` for each artifact, HTTP first.
+
+    Type **and** length follow the URL being linked, never the release: RSS defines
+    `length` as the size of the enclosure object, not of what it points at. So a
+    torrent enclosure carries the size of the `.torrent`, and the ISO's own size
+    stays in `Size:` and `latest.json`.
+    """
+    out: list[tuple[str, str, str | None]] = []
+    if not torrent_only and r.download_url:
+        out.append((r.download_url, r.content_type, str(r.size) if r.size else None))
+    if r.torrent_url:
+        out.append((r.torrent_url, TORRENT_TYPE, str(r.torrent_size) if r.torrent_size else None))
+    return out
 
 
 def _sub(parent: ET.Element, tag: str, text: str | None = None, **attrs: str) -> ET.Element:
@@ -75,7 +111,14 @@ def _stamp(record: Record):
     return record.release.published or record.seen_dt
 
 
-def _atom(records: list[Record], *, title: str, self_url: str, feed_id: str) -> bytes:
+def _atom(
+    records: list[Record],
+    *,
+    title: str,
+    self_url: str,
+    feed_id: str,
+    torrent_only: bool = False,
+) -> bytes:
     feed = ET.Element("feed", {"xmlns": ATOM_NS})
     _sub(feed, "id", feed_id)
     _sub(feed, "title", title)
@@ -94,14 +137,10 @@ def _atom(records: list[Record], *, title: str, self_url: str, feed_id: str) -> 
         _sub(entry, "published", stamp)
         if r.page_url:
             _sub(entry, "link", href=r.page_url, rel="alternate", type="text/html")
-        _sub(
-            entry,
-            "link",
-            href=r.download_url,
-            rel="enclosure",
-            type=r.content_type,
-            length=str(r.size) if r.size else None,
-        )
+        # Atom permits several enclosures per entry; RSS 2.0 permits exactly one.
+        # That asymmetry is why the torrent feed is a separate file.
+        for url, mime, length in _enclosures(r, torrent_only=torrent_only):
+            _sub(entry, "link", href=url, rel="enclosure", type=mime, length=length)
         _sub(entry, "category", term=r.distro, label="distro")
         _sub(entry, "category", term=r.variant, label="variant")
         _sub(entry, "summary", summary_for(r), type="text")
@@ -110,7 +149,7 @@ def _atom(records: list[Record], *, title: str, self_url: str, feed_id: str) -> 
     return ET.tostring(feed, encoding="utf-8", xml_declaration=True) + b"\n"
 
 
-def _rss(records: list[Record], *, title: str, self_url: str) -> bytes:
+def _rss(records: list[Record], *, title: str, self_url: str, torrent_only: bool = False) -> bytes:
     rss = ET.Element("rss", {"version": "2.0"})
     channel = _sub(rss, "channel")
     _sub(channel, "title", title)
@@ -122,19 +161,22 @@ def _rss(records: list[Record], *, title: str, self_url: str) -> bytes:
 
     for record in records:
         r = record.release
+        enclosures = _enclosures(r, torrent_only=torrent_only)
+        if not enclosures:
+            continue
+
         item = _sub(channel, "item")
         _sub(item, "title", r.title)
-        _sub(item, "link", r.download_url)
+        # A torrent-only release has no HTTP artifact, so `link` follows the one
+        # enclosure it does have rather than emitting an empty element.
+        _sub(item, "link", r.torrent_url if torrent_only else r.primary_url)
         _sub(item, "guid", r.guid(), isPermaLink="false")
         _sub(item, "pubDate", format_datetime(_stamp(record)))
         _sub(item, "description", summary_for(r))
-        _sub(
-            item,
-            "enclosure",
-            url=r.download_url,
-            type=r.content_type,
-            length=str(r.size) if r.size else "0",
-        )
+        # RSS 2.0 allows one enclosure per item. Take the first: HTTP where there is
+        # one, the torrent otherwise. `feed/torrent.rss` carries the torrents.
+        url, mime, length = enclosures[0]
+        _sub(item, "enclosure", url=url, type=mime, length=length or "0")
         _sub(item, "category", r.distro)
 
     ET.indent(rss, space="  ")
@@ -142,6 +184,11 @@ def _rss(records: list[Record], *, title: str, self_url: str) -> bytes:
 
 
 def latest_json(records: list[Record]) -> str:
+    """`checksum` verifies `filename`; `torrent_checksum` verifies `torrent_url`.
+
+    Two files, two hashes, never merged -- a client checks the torrent it fetched
+    against one and the ISO that comes out against the other.
+    """
     payload = {
         "schema": SCHEMA_VERSION,
         "releases": {
@@ -155,6 +202,12 @@ def latest_json(records: list[Record]) -> str:
                 "checksum": r.release.checksum,
                 "checksum_algo": r.release.checksum_algo,
                 "signature_url": r.release.signature_url,
+                "torrent_url": r.release.torrent_url,
+                "torrent_size": r.release.torrent_size,
+                "torrent_checksum": r.release.torrent_checksum,
+                "torrent_checksum_algo": r.release.torrent_checksum_algo,
+                "info_hash": r.release.info_hash,
+                "magnet_uri": r.release.magnet_uri,
                 "content_type": r.release.content_type,
                 "verify": r.release.verify,
                 "published": _stamp(r).isoformat(),
@@ -173,12 +226,15 @@ def readme_md(records: list[Record]) -> str:
         "",
         f"Subscribe: [`feed.xml`]({FEED_SELF}) · `feed.rss` · `latest.json`",
         "",
-        "| Distro | Variant | Version | Verify |",
-        "|---|---|---|---|",
+        f"Torrents only: [`torrent.xml`]({TORRENT_SELF}) · `torrent.rss`",
+        "",
+        "| Distro | Variant | Version | Verify | Torrent |",
+        "|---|---|---|---|---|",
     ]
     for r in sorted(records, key=lambda x: x.release.state_key):
         rel = r.release
-        lines.append(f"| {rel.distro} | {rel.variant} | {rel.version} | {rel.verify} |")
+        torrent = "✓" if rel.torrent_url else "—"
+        lines.append(f"| {rel.distro} | {rel.variant} | {rel.version} | {rel.verify} | {torrent} |")
     return "\n".join(lines) + "\n"
 
 
@@ -192,6 +248,23 @@ def render(state: State, out_dir: Path) -> None:
     (out_dir / "feed.rss").write_bytes(_rss(records, title=FEED_TITLE, self_url=FEED_SELF))
     (out_dir / "latest.json").write_text(latest_json(records), encoding="utf-8")
     (out_dir / "README.md").write_text(readme_md(records), encoding="utf-8")
+
+    # A feed a torrent client can subscribe to: every enclosure here is a `.torrent`.
+    # Entries reuse `atom_id()`, so a reader following both feeds sees one logical
+    # entry rather than a duplicate.
+    torrents_ = [r for r in records if r.release.torrent_url]
+    (out_dir / "torrent.xml").write_bytes(
+        _atom(
+            torrents_,
+            title=TORRENT_TITLE,
+            self_url=TORRENT_SELF,
+            feed_id=f"{REPO_URL}/id/torrent",
+            torrent_only=True,
+        )
+    )
+    (out_dir / "torrent.rss").write_bytes(
+        _rss(torrents_, title=TORRENT_TITLE, self_url=TORRENT_SELF, torrent_only=True)
+    )
 
     by_distro = out_dir / "by-distro"
     by_distro.mkdir(exist_ok=True)

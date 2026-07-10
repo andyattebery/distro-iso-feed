@@ -1,11 +1,13 @@
 # Distro ISO Feed — Specification
 
 > **Historical — the document this project was built from, kept as written.** The
-> implementation deliberately diverged in two ways worth knowing before you read on:
-> there is no GitHub Pages deployment (the feed is served from the repo's raw URL),
-> and `discover:` is **mandatory** on every distro rather than optional metadata.
-> Where this document and [`architecture.md`](architecture.md) disagree, architecture
-> is authoritative.
+> implementation deliberately diverged in three ways worth knowing before you read on:
+> there is no GitHub Pages deployment (the feed is served from the repo's raw URL);
+> `discover:` is **mandatory** on every distro rather than optional metadata; and
+> §17's *"No torrents/magnet handling"* is **superseded** — the feed publishes
+> `.torrent` URLs, infohashes and magnets, and carries sources whose only artifact is
+> a torrent. Where this document and [`architecture.md`](architecture.md) disagree,
+> architecture is authoritative.
 
 A static-site generator that publishes a **unified RSS/Atom feed of the latest ISO releases**
 for a configurable set of Linux (and BSD) distributions. It runs daily as a GitHub Action,

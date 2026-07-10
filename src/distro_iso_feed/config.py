@@ -101,6 +101,23 @@ def _merge(*layers: dict | None) -> dict:
     return out
 
 
+def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
+    """A torrent-only variant selects the `.torrent`, because no ISO exists to select.
+
+    Its `match` runs against the listing, where the artifact is `x.iso.torrent`. Point
+    it at `x.iso` and resolution fetches an ISO and tries to bencode it -- gigabytes
+    down the wire to learn what a regex could have said at load time.
+    """
+    if not params.get("torrent_only"):
+        return
+    match = str(params.get("match") or "")
+    if not match.endswith(r"\.torrent$"):
+        raise ConfigError(
+            f"{distro}:{variant}: `torrent_only` needs a `match` ending in "
+            rf"`\.torrent$`; got {match!r}"
+        )
+
+
 def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
     raw = load_raw(path)
     if not raw or "distros" not in raw:
@@ -145,6 +162,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             mirror = bool(vraw.pop("mirror", block.get("mirror", False)))
             params = _merge(default_params, distro_params, vraw.pop("params", None), vraw)
             params.setdefault("arch", defaults["arch"])
+            _validate_torrent_only(distro, name, params)
             variants.append(
                 Variant(
                     distro=distro,

@@ -106,6 +106,35 @@ def test_nodes_for_derives_a_match_when_the_edition_was_inserted():
     assert not re.search(matches[0], "/stable/q4os-6.7-x64.r1.iso")  # not the sibling
 
 
+def test_nodes_for_marks_a_torrent_candidate_torrent_only():
+    """Kali's siblings all `match` an `\\.iso$`. Appending `.torrent` is an insertion,
+    so substitution declines -- and without this branch a new torrent-only edition is
+    reported "could not synthesize" every week until a human notices."""
+    node = {"params": {"match": r"^kali-linux-[0-9.]+-installer-amd64\.iso$"}}
+    cand = Candidate(name="kali-linux-2026.2-live-amd64.iso.torrent", url="https://x/t")
+
+    nodes = _nodes_for(node, "kali-linux-2026.2-installer-amd64.iso", cand)
+    assert len(nodes) == 1
+    params = nodes[0]["params"]
+    # Beside `match`, not at the top level: a torrent-only sibling already carries it
+    # in `params`, and writing both would commit a duplicated key.
+    assert params["torrent_only"] is True
+    assert "torrent_only" not in nodes[0]
+    assert re.search(params["match"], cand.name)
+    assert params["match"].endswith(r"\.torrent$")  # so config.py accepts it
+    assert not re.search(params["match"], "kali-linux-2026.2-installer-amd64.iso")
+
+
+def test_confirms_a_torrent_candidate_against_the_torrent_url():
+    """`release.filename` is the ISO and `candidate.name` is the `.torrent`. Compared
+    to each other they never match, and no torrent-only variant is ever proposed."""
+    cand = Candidate(name="x.iso.torrent", url="https://x/x.iso.torrent")
+    good = _release(filename="x.iso", download_url=None, torrent_url=cand.url, info_hash="a" * 40)
+    bad = _release(filename="x.iso", download_url=None, torrent_url="https://x/other.torrent")
+    assert _confirms(good, cand) is None
+    assert "not the one behind this key" in _confirms(bad, cand)
+
+
 # ------------------------------------------------------------------------- generalize
 
 
@@ -156,7 +185,7 @@ def test_confirms_accepts_the_exact_artifact():
 def test_confirms_requires_integrity():
     cand = Candidate(name=ISO, url="https://x/" + ISO)
     problem = _confirms(_release(checksum=None), cand)
-    assert problem and "no checksum or signature" in problem
+    assert problem and "no checksum, signature or infohash" in problem
 
 
 def test_confirms_compares_the_basename_of_a_sourceforge_path():

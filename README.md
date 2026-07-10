@@ -14,11 +14,20 @@ reader, Flexget, n8n, or a three-line fetch script, and do the fetching yourself
 | Atom | `https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml` |
 | RSS | `https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.rss` |
 | JSON | `https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/latest.json` |
+| Torrents (Atom) | `.../main/feed/torrent.xml` |
+| Torrents (RSS) | `.../main/feed/torrent.rss` |
 | Per distro | `.../main/feed/by-distro/<distro>.xml` |
 
 Every entry carries the **checksum, its algorithm, and the signature URL** where upstream
 publishes them, so a consumer can verify without a second fetch. Where upstream publishes
 nothing, the entry says so out loud rather than omitting it silently.
+
+**Torrents.** Some images ship only as a torrent — Kali's `live` editions are in its
+signed `SHA256SUMS` but 404 as direct downloads, and every AnduinOS asset is a `.torrent`.
+Those entries carry a `torrent_url`, an `info_hash` and a `magnet_uri`. The
+`torrent.rss` feed's enclosure **is** the `.torrent`, so a torrent client can subscribe
+to it directly. `checksum` verifies the ISO; `torrent_checksum` verifies the `.torrent`
+you download — they are two hashes of two different files and are never merged.
 
 `raw.githubusercontent.com` is CDN-fronted and serves `ETag`/`Last-Modified`, so
 conditional GET works. (It serves `Content-Type: text/plain`; readers sniff the body. If
@@ -67,7 +76,7 @@ token-scope bug. Nothing in this repository can set it.
 ```
 config/sources.yaml     the config; adding a distro is an edit here
 src/distro_iso_feed/    listers, select, tokens, checksums + six strategies
-feed/                   generated: feed.xml, feed.rss, latest.json, by-distro/
+feed/                   generated: feed.xml, feed.rss, latest.json, torrent.*, by-distro/
 state/state.json        generated: one current record per variant
 docs/catalog.md         generated: what the feed currently tracks
 docs/architecture.md    hand-written: the design, and what was left out and why
