@@ -36,6 +36,30 @@ distros:
       sericea: {label: "Fedora Sway Atomic", select: {subvariant: Sericea, link_contains: "ostree"}}
       onyx: {label: "Fedora Budgie Atomic", select: {subvariant: Onyx, link_contains: "ostree"}}
       cosmic-atomic: {label: "Fedora COSMIC Atomic", select: {subvariant: COSMIC-Atomic, link_contains: "ostree"}}
+      budgie:
+        match: TODO
+        version_pattern: TODO
+      cinnamon:
+        match: TODO
+        version_pattern: TODO
+      cosmic:
+        match: TODO
+        version_pattern: TODO
+      lxde:
+        match: TODO
+        version_pattern: TODO
+      lxqt:
+        match: TODO
+        version_pattern: TODO
+      miraclewm:
+        match: TODO
+        version_pattern: TODO
+      sway:
+        match: TODO
+        version_pattern: TODO
+      xfce:
+        match: TODO
+        version_pattern: TODO
     discover:
       # `match` drops non-ISO rows (releases.json also lists qcow2/vhd/tar.xz), and
       # `ignore` is written against the FILENAME, not the variant key it produces:
@@ -418,6 +442,12 @@ distros:
       i3: {label: "Garuda i3", params: {match: '/i3/\d+/garuda-i3-[a-z-]+-\d+\.iso$'}}
       sway: {label: "Garuda Sway", params: {match: '/sway/\d+/garuda-sway-[a-z-]+-\d+\.iso$'}}
       xfce: {label: "Garuda Xfce", params: {match: '/xfce/\d+/garuda-xfce-[a-z-]+-\d+\.iso$'}}
+      kde-lite:
+        match: TODO
+        version_pattern: TODO
+      mokka:
+        match: TODO
+        version_pattern: TODO
     discover:
       group: '^/garuda/([a-z0-9-]+)/'
 
@@ -452,6 +482,15 @@ distros:
       standard: {label: "MiniOS Standard", params: {match: '^minios-\w+-xfce-standard-amd64-[0-9.]+\.iso$'}}
       toolbox: {label: "MiniOS Toolbox", params: {match: '^minios-\w+-xfce-toolbox-amd64-[0-9.]+\.iso$'}}
       ultra: {label: "MiniOS Ultra", params: {match: '^minios-\w+-xfce-ultra-amd64-[0-9.]+\.iso$'}}
+      maximum:
+        match: TODO
+        version_pattern: TODO
+      minimal:
+        match: TODO
+        version_pattern: TODO
+      minimum:
+        match: TODO
+        version_pattern: TODO
     discover:
       group: '^minios-\w+-xfce-([a-z]+)-amd64-'
 
