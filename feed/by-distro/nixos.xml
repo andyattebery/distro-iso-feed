@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/nixos</id>
+  <title>Distro ISO Feed — nixos</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/nixos.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:26+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.4364.0ad6f47ea4fe</id>
+    <title>NixOS Minimal 26.05.4364.0ad6f47ea4fe (x86_64)</title>
+    <updated>2026-07-09T23:40:26+00:00</updated>
+    <published>2026-07-09T23:40:26+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.4364.0ad6f47ea4fe (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: caf20b2dfbf223b418193087c9b1931f4fd9943df24ef1eeb69f8a14be7f5011
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.4364.0ad6f47ea4fe</id>
+    <title>NixOS Graphical 26.05.4364.0ad6f47ea4fe (x86_64)</title>
+    <updated>2026-07-09T23:40:26+00:00</updated>
+    <published>2026-07-09T23:40:26+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.4364.0ad6f47ea4fe (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 920d0261b0bb735204e85d3323c0b27f60c6145602e7b76ca42e69e8be9ee900
+Verify: checksum</summary>
+  </entry>
+</feed>

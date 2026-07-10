@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/mint</id>
+  <title>Distro ISO Feed — mint</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/mint.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:13+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/mint/xfce/22.3</id>
+    <title>Linux Mint Xfce 22.3 (x86_64)</title>
+    <updated>2026-07-09T23:40:13+00:00</updated>
+    <published>2026-07-09T23:40:13+00:00</published>
+    <link href="https://linuxmint.com/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-xfce-64bit.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="mint" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">Linux Mint Xfce 22.3 (x86_64)
+Filename: linuxmint-22.3-xfce-64bit.iso
+sha256: 45a835b5dddaf40e84d776549e0b19b3fbd49673b6cc6434ebddbfcd217df776
+Signature: https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt.gpg
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/mint/mate/22.3</id>
+    <title>Linux Mint MATE 22.3 (x86_64)</title>
+    <updated>2026-07-09T23:40:12+00:00</updated>
+    <published>2026-07-09T23:40:12+00:00</published>
+    <link href="https://linuxmint.com/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-mate-64bit.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="mint" label="distro" />
+    <category term="mate" label="variant" />
+    <summary type="text">Linux Mint MATE 22.3 (x86_64)
+Filename: linuxmint-22.3-mate-64bit.iso
+sha256: 7609294da613b75eea89bb918292125e9f06418a368136fb190466e15bf8c373
+Signature: https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt.gpg
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/mint/cinnamon/22.3</id>
+    <title>Linux Mint Cinnamon 22.3 (x86_64)</title>
+    <updated>2026-07-09T23:40:12+00:00</updated>
+    <published>2026-07-09T23:40:12+00:00</published>
+    <link href="https://linuxmint.com/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-cinnamon-64bit.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="mint" label="distro" />
+    <category term="cinnamon" label="variant" />
+    <summary type="text">Linux Mint Cinnamon 22.3 (x86_64)
+Filename: linuxmint-22.3-cinnamon-64bit.iso
+sha256: a081ab202cfda17f6924128dbd2de8b63518ac0531bcfe3f1a1b88097c459bd4
+Signature: https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt.gpg
+Verify: gpg</summary>
+  </entry>
+</feed>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/arch</id>
+  <title>Distro ISO Feed — arch</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/arch.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:13+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/arch/iso/2026.07.01</id>
+    <title>Arch Linux 2026.07.01 (x86_64)</title>
+    <updated>2026-07-09T23:40:13+00:00</updated>
+    <published>2026-07-09T23:40:13+00:00</published>
+    <link href="https://archlinux.org/download/" rel="alternate" type="text/html" />
+    <link href="https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.07.01-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="arch" label="distro" />
+    <category term="iso" label="variant" />
+    <summary type="text">Arch Linux 2026.07.01 (x86_64)
+Filename: archlinux-2026.07.01-x86_64.iso
+sha256: e86295dc0bdf9b85a5a9256810c553239689d2ae8e80eeec81b4e2e910d8a6c0
+Signature: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.07.01-x86_64.iso.sig
+Verify: gpg</summary>
+  </entry>
+</feed>

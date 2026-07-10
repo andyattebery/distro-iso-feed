@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/antix</id>
+  <title>Distro ISO Feed — antix</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/antix.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-03-21T12:57:39+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/antix/full/26</id>
+    <title>antiX Full 26 (x86_64)</title>
+    <updated>2026-03-21T12:57:39+00:00</updated>
+    <published>2026-03-21T12:57:39+00:00</published>
+    <link href="https://antixlinux.com/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="antix" label="distro" />
+    <category term="full" label="variant" />
+    <summary type="text">antiX Full 26 (x86_64)
+Filename: antiX-26_x64-full.iso
+sha256: ea8926e517a2fd7fc6486981bc26c9dab474a226bbb28686f583cc36b49d6dae
+Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso.sig/download
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/antix/core/26</id>
+    <title>antiX Core 26 (x86_64)</title>
+    <updated>2026-03-20T23:37:19+00:00</updated>
+    <published>2026-03-20T23:37:19+00:00</published>
+    <link href="https://antixlinux.com/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="antix" label="distro" />
+    <category term="core" label="variant" />
+    <summary type="text">antiX Core 26 (x86_64)
+Filename: antiX-26_x64-core.iso
+sha256: de0dc55dea576c897eba345a0a0f1d8695fc1c4db5990b46efebe08bfbce9e22
+Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso.sig/download
+Verify: gpg</summary>
+  </entry>
+</feed>

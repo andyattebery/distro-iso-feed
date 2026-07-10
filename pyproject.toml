@@ -1,0 +1,47 @@
+[project]
+name = "distro-iso-feed"
+version = "1.0.0"
+description = "Unified Atom/RSS/JSON feed of the latest Linux and BSD ISO releases"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28",
+    "ruamel.yaml>=0.18",
+    "defusedxml>=0.7",
+    "packaging>=24.0",
+]
+
+[project.scripts]
+distro-iso-feed-refresh = "distro_iso_feed.run_refresh:main"
+distro-iso-feed-discover = "distro_iso_feed.run_discover:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-httpx>=0.35",
+    "feedparser>=6.0",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/distro_iso_feed"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# Fixtures are captured upstream URLs and checksum lines. Wrapping them makes them
+# harder to compare against the real thing, which is the entire point of a fixture.
+"tests/*" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]

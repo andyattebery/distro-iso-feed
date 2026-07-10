@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/kali</id>
+  <title>Distro ISO Feed — kali</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/kali.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:11+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer/2026.2</id>
+    <title>Kali Installer 2026.2 (x86_64)</title>
+    <updated>2026-07-09T23:40:11+00:00</updated>
+    <published>2026-07-09T23:40:11+00:00</published>
+    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kali" label="distro" />
+    <category term="installer" label="variant" />
+    <summary type="text">Kali Installer 2026.2 (x86_64)
+Filename: kali-linux-2026.2-installer-amd64.iso
+sha256: 6dbefacc95e3b556c19c48e8bae39b8b505e2d3a1aba0bfb7ab62b036c3d2ba3
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer-purple/2026.2</id>
+    <title>Kali Purple 2026.2 (x86_64)</title>
+    <updated>2026-07-09T23:40:11+00:00</updated>
+    <published>2026-07-09T23:40:11+00:00</published>
+    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-purple-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kali" label="distro" />
+    <category term="installer-purple" label="variant" />
+    <summary type="text">Kali Purple 2026.2 (x86_64)
+Filename: kali-linux-2026.2-installer-purple-amd64.iso
+sha256: bbde629937a9eabc110062989d49947fae7fd4c0fef19f590f990b1cb97a497c
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer-netinst/2026.2</id>
+    <title>Kali NetInstaller 2026.2 (x86_64)</title>
+    <updated>2026-07-09T23:40:11+00:00</updated>
+    <published>2026-07-09T23:40:11+00:00</published>
+    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kali" label="distro" />
+    <category term="installer-netinst" label="variant" />
+    <summary type="text">Kali NetInstaller 2026.2 (x86_64)
+Filename: kali-linux-2026.2-installer-netinst-amd64.iso
+sha256: d32f929dacc48134a31461a09f2160d13ad1d26b820cee920446813ca979b39b
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Verify: gpg</summary>
+  </entry>
+</feed>

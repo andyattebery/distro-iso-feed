@@ -1,0 +1,501 @@
+# The config IS the interface. Adding a distro is an edit here, not a code change.
+# Every endpoint below was verified by extracting the artifact a strategy would use --
+# a filename, a checksum line, a version token -- never by trusting an HTTP 200.
+#
+# `version_pattern` extracts the CHANGE-TOKEN, not the marketing version. If the bytes
+# move, the token must move, or `guid()` stays put and no subscriber ever sees it.
+# `ignore` lists decoys: artifacts co-located with the one we want. They belong here
+# and not only in `match`, because `match` guards the feed while `ignore` guards the
+# weekly discovery PR.
+
+defaults:
+  arch: x86_64
+  user_agent: "distro-iso-feed/1.0 (+https://github.com/andyattebery/distro-iso-feed)"
+
+distros:
+
+  # ---------------------------------------------------------------- json_api (2)
+
+  fedora:
+    strategy: json_api
+    page_url: "https://fedoraproject.org/"
+    params:
+      url: "https://fedoraproject.org/releases.json"
+      # releases.json lists v42/43/44 side by side; json_api takes the max version.
+      # The respin suffix (`-1.7`) lives only in the filename, and a respin ships a
+      # new sha256 -- so the token comes from the filename, not the `version` field.
+      # Two filename shapes: `...-44-1.7.x86_64.iso` (Live) and
+      # `...-ostree-x86_64-44-1.7.iso` (Atomic). One pattern must serve both.
+      version_pattern: '(\d+-\d+\.\d+)(?:\.[a-z0-9_]+)?\.iso$'
+    variants:
+      workstation: {label: "Fedora Workstation", select: {subvariant: Workstation, link_contains: "Workstation-Live"}}
+      server: {label: "Fedora Server", select: {subvariant: Server, link_contains: "Server-netinst"}}
+      kde: {label: "Fedora KDE Plasma", select: {subvariant: KDE, link_contains: "KDE-Desktop-Live"}}
+      silverblue: {label: "Fedora Silverblue", select: {subvariant: Silverblue, link_contains: "ostree"}}
+      kinoite: {label: "Fedora Kinoite", select: {subvariant: Kinoite, link_contains: "ostree"}}
+      sericea: {label: "Fedora Sway Atomic", select: {subvariant: Sericea, link_contains: "ostree"}}
+      onyx: {label: "Fedora Budgie Atomic", select: {subvariant: Onyx, link_contains: "ostree"}}
+      cosmic-atomic: {label: "Fedora COSMIC Atomic", select: {subvariant: COSMIC-Atomic, link_contains: "ostree"}}
+    discover:
+      # `match` drops non-ISO rows (releases.json also lists qcow2/vhd/tar.xz), and
+      # `ignore` is written against the FILENAME, not the variant key it produces:
+      # the artifact is `Fedora-Cloud-Base-...`, never `Cloud_Base`.
+      match: '\.iso$'
+      group: '^Fedora-([A-Za-z]+)-'
+      ignore: ["Cloud", "Container", "IoT", "Everything", "SoaS", "FEX", "WSL", "Python", "Scientific", "Astronomy", "Design", "Games", "Jam", "Robotics", "Security", "Mobile", "Minimal"]
+
+  pop-os:
+    strategy: json_api
+    page_url: "https://pop.system76.com/"
+    params:
+      # `build` is what moves between respins of the same 24.04; version alone would not.
+      version_fields: [version, build]
+    variants:
+      intel: {label: "Pop!_OS (Intel/AMD)", params: {url: "https://api.pop-os.org/builds/24.04/intel"}}
+      nvidia: {label: "Pop!_OS (NVIDIA)", params: {url: "https://api.pop-os.org/builds/24.04/nvidia"}}
+
+  # --------------------------------------------------------- directory_index (11)
+
+  debian:
+    strategy: directory_index
+    page_url: "https://www.debian.org/"
+    params:
+      sums: "SHA512SUMS"
+      sig: "SHA512SUMS.sign"
+      # `debian-edu-...-netinst.iso` sits in the same SHA512SUMS. Anchor, or ship Edu.
+      ignore: ["debian-edu-"]
+    variants:
+      netinst:
+        label: "Debian netinst"
+        params:
+          index: "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/"
+          match: '^debian-[0-9.]+-amd64-netinst\.iso$'
+          version_pattern: 'debian-([0-9.]+)-amd64'
+      live-gnome: {label: "Debian Live GNOME", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-gnome\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+      live-kde: {label: "Debian Live KDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-kde\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+      live-xfce: {label: "Debian Live Xfce", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-xfce\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+      live-cinnamon: {label: "Debian Live Cinnamon", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-cinnamon\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+      live-mate: {label: "Debian Live MATE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-mate\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+      live-lxqt: {label: "Debian Live LXQt", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxqt\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+      live-standard: {label: "Debian Live Standard", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-standard\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+
+  kali:
+    strategy: directory_index
+    page_url: "https://www.kali.org/get-kali/"
+    params:
+      # NOT `current/`: a partial mirror. Use the versioned dir, which self-updates.
+      #
+      # Kali's SHA256SUMS lists `live`, `live-everything` and `installer-everything`,
+      # but all three 404 as direct downloads -- they are distributed by torrent, and
+      # §17 puts torrents out of scope. A checksum file is not an index; only the
+      # three installer images below are actually fetchable.
+      version_dir: "https://cdimage.kali.org/"
+      version_dir_match: '^kali-\d{4}\.\d+$'
+      index: "{version}/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'kali-linux-([0-9.]+)-'
+      ignore: ["arm64", "i386"]   # co-listed in the same SHA256SUMS
+    variants:
+      installer: {label: "Kali Installer", params: {match: '^kali-linux-[0-9.]+-installer-amd64\.iso$'}}
+      installer-netinst: {label: "Kali NetInstaller", params: {match: '^kali-linux-[0-9.]+-installer-netinst-amd64\.iso$'}}
+      installer-purple: {label: "Kali Purple", params: {match: '^kali-linux-[0-9.]+-installer-purple-amd64\.iso$'}}
+
+  void:
+    strategy: directory_index
+    page_url: "https://voidlinux.org/"
+    params:
+      index: "https://repo-default.voidlinux.org/live/current/"
+      sums: "sha256sum.txt"
+      sig: "sha256sum.sig"
+      version_pattern: 'x86_64-(\d{8})-'
+      ignore: ["-musl-"]   # musl builds sit beside glibc in the same sha256sum.txt
+    variants:
+      base: {label: "Void Linux base", params: {match: '^void-live-x86_64-\d{8}-base\.iso$'}}
+      xfce: {label: "Void Linux Xfce", params: {match: '^void-live-x86_64-\d{8}-xfce\.iso$'}}
+    discover:
+      group: '^void-live-x86_64-\d{8}-([a-z0-9]+)\.iso$'
+      ignore: ["-musl-"]
+
+  mint:
+    strategy: directory_index
+    mirror: true    # Mint is mirror-distributed; kernel.org is the smallest index
+    page_url: "https://linuxmint.com/"
+    params:
+      version_dir: "https://mirrors.edge.kernel.org/linuxmint/stable/"
+      index: "{version}/"
+      sums: "sha256sum.txt"
+      sig: "sha256sum.txt.gpg"
+      version_pattern: 'linuxmint-([0-9.]+)-'
+    variants:
+      cinnamon: {label: "Linux Mint Cinnamon", params: {match: '^linuxmint-[0-9.]+-cinnamon-64bit\.iso$'}}
+      mate: {label: "Linux Mint MATE", params: {match: '^linuxmint-[0-9.]+-mate-64bit\.iso$'}}
+      xfce: {label: "Linux Mint Xfce", params: {match: '^linuxmint-[0-9.]+-xfce-64bit\.iso$'}}
+    discover:
+      group: '^linuxmint-[0-9.]+-([a-z]+)-64bit\.iso$'
+
+  arch:
+    strategy: directory_index
+    mirror: true
+    page_url: "https://archlinux.org/download/"
+    params:
+      index: "https://geo.mirror.pkgbuild.com/iso/latest/"
+      sums: "sha256sums.txt"
+      sig: "{filename}.sig"
+      # The dated name, not the `archlinux-x86_64.iso` symlink: the symlink offers
+      # nothing to version by, though both share one hash in sha256sums.txt.
+      match: '^archlinux-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'
+      version_pattern: 'archlinux-(\d{4}\.\d{2}\.\d{2})-'
+    variants:
+      iso: {label: "Arch Linux"}
+
+  ubuntu:
+    strategy: directory_index
+    page_url: "https://ubuntu.com/download"
+    params:
+      # releases.ubuntu.com lists 24.04.3, 24.04.4, 25.10 and 26.04 side by side.
+      # A plain max-version would silently flip `desktop` from LTS to interim the
+      # week 26.10 lands, so each channel is its own variant. Note `.04` alone does
+      # not mean LTS: 25.04 is interim. `channel:` handles the even-year rule.
+      version_dir: "https://releases.ubuntu.com/"
+      index: "{version}/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntu-([0-9.]+)-'
+    variants:
+      desktop-lts: {label: "Ubuntu Desktop LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      live-server-lts: {label: "Ubuntu Server LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-live-server-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu Desktop interim", params: {channel: interim, match: '^ubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      live-server-interim: {label: "Ubuntu Server interim", params: {channel: interim, match: '^ubuntu-[0-9.]+-live-server-amd64\.iso$'}}
+
+  freebsd:
+    strategy: directory_index
+    page_url: "https://www.freebsd.org/where/"
+    params:
+      version_dir: "https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/"
+      index: "{version}/"
+      # BSD-format checksum file, and its NAME embeds the version. A literal `sums`
+      # cannot express this; a GNU-only parser reads zero lines from it.
+      sums: "CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-amd64"
+      version_pattern: 'FreeBSD-([0-9.]+)-RELEASE'
+      ignore: ['\.iso\.xz$']
+    variants:
+      disc1: {label: "FreeBSD disc1", params: {match: '^FreeBSD-[0-9.]+-RELEASE-amd64-disc1\.iso$'}}
+      dvd1: {label: "FreeBSD dvd1", params: {match: '^FreeBSD-[0-9.]+-RELEASE-amd64-dvd1\.iso$'}}
+      bootonly: {label: "FreeBSD bootonly", params: {match: '^FreeBSD-[0-9.]+-RELEASE-amd64-bootonly\.iso$'}}
+
+  # openSUSE is ONE distro whose variants override `strategy:`. Leap lists a version
+  # directory; Tumbleweed is a fixed `*-Current.iso`. Splitting it into two fake
+  # distros would be an artifact of the config rule, not of reality.
+  opensuse:
+    strategy: directory_index
+    page_url: "https://get.opensuse.org/"
+    params:
+      # `leap/` also lists a legacy `42.3`, which outsorts `16.1` numerically.
+      version_dir: "https://download.opensuse.org/distribution/leap/"
+      version_dir_match: '^1[5-9]\.\d+$'
+      # Only 15.6 exposes an `iso/` subdir today; 16.x has none. The probe takes the
+      # highest dir that actually *contains* an artifact, so 16.x is picked up free
+      # whenever it appears.
+      index: "{version}/iso/"
+      # `-Current.iso` exists but is NOT linked in the index, so directory_index
+      # cannot see it. The listed `Build710.3-Media.iso` is the real artifact, and
+      # its build number is a genuine change-token.
+      sums: "{filename}.sha256"
+      version_pattern: 'Leap-([0-9.]+)-\w+-x86_64-Build([0-9.]+)-Media'
+      ignore: ["aarch64"]
+    variants:
+      leap-dvd: {label: "openSUSE Leap DVD", params: {match: '^openSUSE-Leap-[0-9.]+-DVD-x86_64-Build[0-9.]+-Media\.iso$'}}
+      leap-net: {label: "openSUSE Leap NET", params: {match: '^openSUSE-Leap-[0-9.]+-NET-x86_64-Build[0-9.]+-Media\.iso$'}}
+      tumbleweed-dvd:
+        label: "openSUSE Tumbleweed DVD"
+        strategy: stable_symlink
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+      tumbleweed-net:
+        label: "openSUSE Tumbleweed NET"
+        strategy: stable_symlink
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+
+  endeavouros:
+    strategy: directory_index
+    mirror: true    # EndeavourOS publishes no first-party download host at all
+    page_url: "https://endeavouros.com/"
+    params:
+      index: "https://ftp.belnet.be/mirror/endeavouros/iso/"
+      sums: "{filename}.sha512"
+      sig: "{filename}.sig"
+      # The index holds EVERY release ever: Gemini, Mercury, Ganymede, Titan...
+      # Codenames do not sort. Key max-version on the embedded date or ship Gemini
+      # forever.
+      match: '^EndeavourOS_[A-Za-z-]+-\d{4}\.\d{2}\.\d{2}\.iso$'
+      version_pattern: '(\d{4}\.\d{2}\.\d{2})'
+    variants:
+      default: {label: "EndeavourOS"}
+
+  tails:
+    strategy: directory_index
+    page_url: "https://tails.net/"
+    params:
+      version_dir: "https://download.tails.net/tails/stable/"
+      version_dir_match: '^tails-amd64-[0-9.]+$'
+      index: "{version}/"
+      # Tails publishes a detached signature and NO checksum file. `verify: gpg`
+      # with checksum None -- a signature does not imply a checksum.
+      sig: "{filename}.sig"
+      match: '^tails-amd64-[0-9.]+\.iso$'
+      version_pattern: 'tails-amd64-([0-9.]+)\.iso'
+    variants:
+      iso: {label: "Tails"}
+
+  batocera:
+    strategy: directory_index
+    mirror: true    # the official host serves no checksum; this mirror co-locates it
+    page_url: "https://batocera.org/"
+    params:
+      index: "https://mirrors.o2switch.fr/batocera/x86_64/stable/last/"
+      # A bare hash with no filename column -- a third checksum format. And the
+      # artifact is a gzipped disk image, not an ISO: the enclosure type is derived
+      # from the extension, never hardcoded.
+      sums: "{filename}.md5"
+      match: '^batocera-x86_64-[0-9.]+-\d{8}\.img\.gz$'
+      version_pattern: 'batocera-x86_64-([0-9.]+-\d{8})\.img\.gz'
+    variants:
+      x86_64: {label: "Batocera"}
+
+  # ------------------------------------------------------------ stable_symlink (4)
+  # Fixed, version-less download URL. The token comes from elsewhere -- either the
+  # sidecar's filename column, or a GitHub atom tag.
+
+  kde-neon:
+    strategy: stable_symlink
+    page_url: "https://neon.kde.org/"
+    params:
+      sums: "{stem}.sha256sum"    # drops the `.iso`: neon-desktop-current.sha256sum
+      sig: "{filename}.sig"
+      # The sidecar names `neon-desktop-20260707-0147.iso` while you download
+      # `neon-desktop-current.iso`. That mismatch IS the change-token mechanism.
+      token: {from: sidecar_filename, pattern: '(\d{8}-\d{4})'}
+    variants:
+      desktop: {label: "KDE neon User", params: {url: "https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso"}}
+      dev: {label: "KDE neon Testing", params: {url: "https://files.kde.org/neon/images/dev/current/neon-dev-current.iso"}}
+
+  nixos:
+    strategy: stable_symlink
+    page_url: "https://nixos.org/download"
+    params:
+      # channels.nixos.org serves NO index, so the highest channel cannot be listed
+      # -- only generated and probed. Distinct from directory_index's version_dir,
+      # which reads a real listing.
+      probe_versions:
+        template: "https://channels.nixos.org/nixos-{version}/latest-nixos-minimal-x86_64-linux.iso.sha256"
+      sums: "{filename}.sha256"
+      token: {from: sidecar_filename, pattern: '-([0-9.]+\.[0-9a-f]+)-x86_64'}
+    variants:
+      minimal: {label: "NixOS Minimal", params: {url: "https://channels.nixos.org/nixos-{version}/latest-nixos-minimal-x86_64-linux.iso"}}
+      graphical: {label: "NixOS Graphical", params: {url: "https://channels.nixos.org/nixos-{version}/latest-nixos-graphical-x86_64-linux.iso"}}
+
+  # The ublue projects: GitHub supplies ONLY the version string. The download URL is
+  # fixed on a different host and integrity is a sidecar beside it -- so this is
+  # stable_symlink, not github_releases. Each project picks a different arch token,
+  # which is why one shared filename convention would be wrong.
+  bazzite:
+    strategy: stable_symlink
+    page_url: "https://bazzite.gg/"
+    params:
+      sums: "{filename}-CHECKSUM"
+      token: {from: atom_tag, repo: "ublue-os/bazzite"}
+    variants:
+      desktop: {label: "Bazzite Desktop", params: {url: "https://download.bazzite.gg/bazzite-stable-amd64.iso"}}
+      deck: {label: "Bazzite Deck", params: {url: "https://download.bazzite.gg/bazzite-deck-stable-amd64.iso"}}
+      nvidia-open: {label: "Bazzite NVIDIA Open", params: {url: "https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso"}}
+
+  bluefin:
+    strategy: stable_symlink
+    page_url: "https://projectbluefin.io/"
+    params:
+      sums: "{filename}-CHECKSUM"
+      token: {from: atom_tag, repo: "ublue-os/bluefin"}
+    variants:
+      stable: {label: "Bluefin", params: {url: "https://download.projectbluefin.io/bluefin-stable-x86_64.iso"}}
+
+  aurora:
+    strategy: stable_symlink
+    page_url: "https://getaurora.dev/"
+    params:
+      sums: "{filename}-CHECKSUM"
+      token: {from: atom_tag, repo: "ublue-os/aurora"}
+    variants:
+      stable: {label: "Aurora", params: {url: "https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso"}}
+      nvidia-open: {label: "Aurora NVIDIA Open", params: {url: "https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso"}}
+
+  # --------------------------------------------------------------- sourceforge (6)
+  # Every RSS <item> appears TWICE, and <title> is a CDATA full path, not a filename.
+
+  mx:
+    strategy: sourceforge
+    page_url: "https://mxlinux.org/"
+    params:
+      project: "mx-linux"
+      path: "/Final"
+      sums: "{path}.sha256"
+      sig: "{path}.sig"
+      version_pattern: 'MX-([0-9.]+)_'
+      ignore: ['_beta\d*_']
+    variants:
+      xfce: {label: "MX Linux Xfce", params: {match: '/Xfce/MX-[0-9.]+_Xfce_x64\.iso$'}}
+      xfce-ahs: {label: "MX Linux Xfce AHS", params: {match: '/Xfce/MX-[0-9.]+_Xfce_ahs_x64\.iso$'}}
+      kde: {label: "MX Linux KDE", params: {match: '/KDE/MX-[0-9.]+_KDE_x64\.iso$'}}
+      fluxbox: {label: "MX Linux Fluxbox", params: {match: '/Fluxbox/MX-[0-9.]+_fluxbox_x64\.iso$'}}
+
+  antix:
+    strategy: sourceforge
+    page_url: "https://antixlinux.com/"
+    params:
+      project: "antix-linux"
+      path: "/Final"
+      sums: "{path}.sha256"
+      sig: "{path}.sig"
+      version_pattern: 'antiX-([0-9.]+)[-_]'
+      # 23.2 sits beside 26 in the same feed, along with a `runit-` subtree and
+      # 32-bit `_386` builds. antiX 26 ships only `core` and `full` for x64 --
+      # `base` and `net` exist for 23.2 only, so seeding them would pin us backwards.
+      ignore: ['_386-', 'runit-', '\.md5$']
+    variants:
+      full: {label: "antiX Full", params: {match: '/antiX-26/antiX-26_x64-full\.iso$'}}
+      core: {label: "antiX Core", params: {match: '/antiX-26/antiX-26_x64-core\.iso$'}}
+
+  q4os:
+    strategy: sourceforge
+    page_url: "https://q4os.org/"
+    params:
+      project: "q4os"
+      path: "/stable"
+      # No per-ISO sidecar: ONE aggregate md5sum.txt covering every release, i386
+      # and superseded versions included. The filename column is the only
+      # disambiguator -- "the first hash" would attach an i386 sum to an x64 ISO.
+      sums: "/stable/md5sum.txt"
+      version_pattern: 'q4os-([0-9.]+)-'
+      ignore: ['i386']
+    variants:
+      plasma: {label: "Q4OS Plasma", params: {match: '/q4os-[0-9.]+-x64\.r\d+\.iso$'}}
+      tde: {label: "Q4OS Trinity", params: {match: '/q4os-[0-9.]+-x64-tde\.r\d+\.iso$'}}
+
+  bluestar:
+    strategy: sourceforge
+    page_url: "https://bluestarlinux.sourceforge.net/"
+    params:
+      project: "bluestarlinux"
+      path: "/distro"
+      sums: "{stem}.md5"      # note: drops the `.iso` -- it is NOT `<name>.iso.md5`
+      match: '/bslx-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'
+      version_pattern: 'bslx-([0-9.-]+-\d{4}\.\d{2}\.\d{2})-x86_64'
+    variants:
+      default: {label: "Bluestar Linux"}
+
+  garuda:
+    strategy: sourceforge
+    page_url: "https://garudalinux.org/downloads"
+    params:
+      project: "garuda-linux"
+      path: "/garuda"
+      sums: "{path}.sha256"
+      version_pattern: '-(\d{6})\.iso$'
+      ignore: ['\.sha1$']     # a co-listed sha1 that must never win over sha256
+    variants:
+      dr460nized: {label: "Garuda Dr460nized", params: {match: '/dr460nized/\d+/garuda-dr460nized-[a-z-]+-\d+\.iso$'}}
+      dr460nized-gaming: {label: "Garuda Dr460nized Gaming", params: {match: '/dr460nized-gaming/\d+/garuda-dr460nized-gaming-[a-z-]+-\d+\.iso$'}}
+      gnome: {label: "Garuda GNOME", params: {match: '/gnome/\d+/garuda-gnome-[a-z-]+-\d+\.iso$'}}
+      cinnamon: {label: "Garuda Cinnamon", params: {match: '/cinnamon/\d+/garuda-cinnamon-[a-z-]+-\d+\.iso$'}}
+      hyprland: {label: "Garuda Hyprland", params: {match: '/hyprland/\d+/garuda-hyprland-[a-z-]+-\d+\.iso$'}}
+      i3: {label: "Garuda i3", params: {match: '/i3/\d+/garuda-i3-[a-z-]+-\d+\.iso$'}}
+      sway: {label: "Garuda Sway", params: {match: '/sway/\d+/garuda-sway-[a-z-]+-\d+\.iso$'}}
+      xfce: {label: "Garuda Xfce", params: {match: '/xfce/\d+/garuda-xfce-[a-z-]+-\d+\.iso$'}}
+    discover:
+      group: '^/garuda/([a-z0-9-]+)/'
+
+  cachyos:
+    strategy: sourceforge
+    page_url: "https://cachyos.org/"
+    params:
+      project: "cachyos-arch"
+      path: "/gui-installer"
+      sums: "{path}.sha256"
+      sig: "{path}.sig"
+      # The directory can disagree with the filename: /handheld/250626/ holds
+      # cachyos-handheld-linux-260426.iso. The token comes from the FILENAME.
+      version_pattern: '-(\d{6})\.iso$'
+    variants:
+      desktop: {label: "CachyOS Desktop", params: {match: '/desktop/\d+/cachyos-desktop-linux-\d+\.iso$'}}
+      handheld: {label: "CachyOS Handheld", params: {match: '/handheld/\d+/cachyos-handheld-linux-\d+\.iso$'}}
+    discover:
+      group: '^/gui-installer/([a-z0-9-]+)/'
+
+  # ----------------------------------------------------------- github_releases (1)
+  # GitHub *assets*. The ublue projects are NOT here; they only borrow a version tag.
+
+  minios:
+    strategy: github_releases
+    page_url: "https://minios.dev/"
+    params:
+      repo: "minios-linux/minios-live"
+      sums_suffix: ".sha256"
+      version_pattern: '-([0-9.]+)\.iso$'
+    variants:
+      standard: {label: "MiniOS Standard", params: {match: '^minios-\w+-xfce-standard-amd64-[0-9.]+\.iso$'}}
+      toolbox: {label: "MiniOS Toolbox", params: {match: '^minios-\w+-xfce-toolbox-amd64-[0-9.]+\.iso$'}}
+      ultra: {label: "MiniOS Ultra", params: {match: '^minios-\w+-xfce-ultra-amd64-[0-9.]+\.iso$'}}
+    discover:
+      group: '^minios-\w+-xfce-([a-z]+)-amd64-'
+
+  # ---------------------------------------------------------------- page_index (2)
+  # The last resort. Only the LISTING step is fragile; everything downstream is the
+  # same pipeline every other strategy uses.
+
+  nobara:
+    strategy: page_index
+    page_url: "https://nobaraproject.org/"
+    params:
+      url: "https://nobaraproject.org/download-nobara/"
+      attr: "data-url"        # stabler than href markup; the page exposes it directly
+      # `.sha256` 404s. The real suffix is `.sha256sum`, which only the page's own
+      # script.js reveals. Its filename column reads `./Nobara-...iso` -- the leading
+      # `./` is normalized away, or every lookup misses and the entry looks unsigned.
+      sums: "{filename}.sha256sum"
+      version_pattern: 'Nobara-(\d+)-[A-Za-z-]+-(\d{4}-\d{2}-\d{2})\.iso$'
+    variants:
+      gnome: {label: "Nobara GNOME", params: {match: '^Nobara-\d+-GNOME-\d{4}-\d{2}-\d{2}\.iso$'}}
+      gnome-nv: {label: "Nobara GNOME (NVIDIA)", params: {match: '^Nobara-\d+-GNOME-NV-\d{4}-\d{2}-\d{2}\.iso$'}}
+      kde: {label: "Nobara KDE", params: {match: '^Nobara-\d+-KDE-\d{4}-\d{2}-\d{2}\.iso$'}}
+      kde-nv: {label: "Nobara KDE (NVIDIA)", params: {match: '^Nobara-\d+-KDE-NV-\d{4}-\d{2}-\d{2}\.iso$'}}
+
+  manjaro:
+    strategy: page_index
+    page_url: "https://manjaro.org/"
+    params:
+      # /download/ is a 95-byte <meta refresh> stub; curl -L does not follow HTML
+      # refreshes, which makes it look like an empty JS page. This is the real page.
+      # Manjaro's SourceForge project is a trap: every ISO there is a `-pre` build.
+      url: "https://manjaro.org/products/download/x86"
+      sums: "{filename}.sha256"
+      sig: "{filename}.sig"
+      # Manjaro can co-publish kernel builds (linux612 / linux618 / linux70) of one
+      # release. The kernel belongs in the TOKEN -- a different kernel is different
+      # bytes, so it must be a different guid -- but it must not ORDER the
+      # candidates: as integers 618 > 70, while as kernels 7.0 > 6.18. So sort on
+      # release + build date and let the name tie-break, where linux70 > linux618.
+      version_pattern: '-([0-9.]+-\d{6}-linux\d+)\.iso$'
+      sort_pattern: '-([0-9.]+-\d{6})-linux\d+\.iso$'
+    variants:
+      kde: {label: "Manjaro KDE Plasma", params: {match: '^manjaro-kde-[0-9.]+-\d{6}-linux\d+\.iso$'}}
+      gnome: {label: "Manjaro GNOME", params: {match: '^manjaro-gnome-[0-9.]+-\d{6}-linux\d+\.iso$'}}
+      xfce: {label: "Manjaro Xfce", params: {match: '^manjaro-xfce-[0-9.]+-\d{6}-linux\d+\.iso$'}}
+      cinnamon: {label: "Manjaro Cinnamon", params: {match: '^manjaro-cinnamon-[0-9.]+-\d{6}-linux\d+\.iso$'}}
+      i3: {label: "Manjaro i3", params: {match: '^manjaro-i3-[0-9.]+-\d{6}-linux\d+\.iso$'}}

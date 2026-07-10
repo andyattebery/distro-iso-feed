@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/nobara</id>
+  <title>Distro ISO Feed — nobara</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/nobara.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:39+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nobara/kde/43-2026-04-19</id>
+    <title>Nobara KDE 43-2026-04-19 (x86_64)</title>
+    <updated>2026-07-09T23:40:39+00:00</updated>
+    <published>2026-07-09T23:40:39+00:00</published>
+    <link href="https://nobaraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://nobara-images.nobaraproject.org/Nobara-43-KDE-2026-04-19.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nobara" label="distro" />
+    <category term="kde" label="variant" />
+    <summary type="text">Nobara KDE 43-2026-04-19 (x86_64)
+Filename: Nobara-43-KDE-2026-04-19.iso
+sha256: b99cc71238b77d31f195b210752421fd5a01be72ab35c3a3e1c3c9f82a994fc0
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nobara/kde-nv/43-2026-04-25</id>
+    <title>Nobara KDE (NVIDIA) 43-2026-04-25 (x86_64)</title>
+    <updated>2026-07-09T23:40:39+00:00</updated>
+    <published>2026-07-09T23:40:39+00:00</published>
+    <link href="https://nobaraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://nobara-images.nobaraproject.org/Nobara-43-KDE-NV-2026-04-25.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nobara" label="distro" />
+    <category term="kde-nv" label="variant" />
+    <summary type="text">Nobara KDE (NVIDIA) 43-2026-04-25 (x86_64)
+Filename: Nobara-43-KDE-NV-2026-04-25.iso
+sha256: ea3fa3e8d889a7370a83cc3db56db7db8acb2f510faca8cb18a63aa5afb62a44
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nobara/gnome-nv/43-2026-04-25</id>
+    <title>Nobara GNOME (NVIDIA) 43-2026-04-25 (x86_64)</title>
+    <updated>2026-07-09T23:40:39+00:00</updated>
+    <published>2026-07-09T23:40:39+00:00</published>
+    <link href="https://nobaraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://nobara-images.nobaraproject.org/Nobara-43-GNOME-NV-2026-04-25.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nobara" label="distro" />
+    <category term="gnome-nv" label="variant" />
+    <summary type="text">Nobara GNOME (NVIDIA) 43-2026-04-25 (x86_64)
+Filename: Nobara-43-GNOME-NV-2026-04-25.iso
+sha256: e8bc051bb85194416cac4a096c9dc494edb47f42bf990549303ab2955fffef45
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nobara/gnome/43-2026-04-19</id>
+    <title>Nobara GNOME 43-2026-04-19 (x86_64)</title>
+    <updated>2026-07-09T23:40:38+00:00</updated>
+    <published>2026-07-09T23:40:38+00:00</published>
+    <link href="https://nobaraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://nobara-images.nobaraproject.org/Nobara-43-GNOME-2026-04-19.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nobara" label="distro" />
+    <category term="gnome" label="variant" />
+    <summary type="text">Nobara GNOME 43-2026-04-19 (x86_64)
+Filename: Nobara-43-GNOME-2026-04-19.iso
+sha256: c52a5ad11082973bb67efa8d7b18b6b50f7cee71580b2a9ce28f36dff8f2c543
+Verify: checksum</summary>
+  </entry>
+</feed>

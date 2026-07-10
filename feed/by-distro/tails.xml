@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/tails</id>
+  <title>Distro ISO Feed — tails</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/tails.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:24+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/tails/iso/7.9.1</id>
+    <title>Tails 7.9.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:24+00:00</updated>
+    <published>2026-07-09T23:40:24+00:00</published>
+    <link href="https://tails.net/" rel="alternate" type="text/html" />
+    <link href="https://download.tails.net/tails/stable/tails-amd64-7.9.1/tails-amd64-7.9.1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="tails" label="distro" />
+    <category term="iso" label="variant" />
+    <summary type="text">Tails 7.9.1 (x86_64)
+Filename: tails-amd64-7.9.1.iso
+Signature: https://download.tails.net/tails/stable/tails-amd64-7.9.1/tails-amd64-7.9.1.iso.sig
+Verify: gpg
+WARNING: no published checksum — integrity unverifiable</summary>
+  </entry>
+</feed>

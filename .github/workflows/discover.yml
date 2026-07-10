@@ -1,0 +1,54 @@
+# Weekly variant discovery. Opens a PR; never pushes to main.
+#
+# It proposes VARIANTS of already-configured distros, never new distros -- so a
+# distro deliberately left out of sources.yaml can never be re-added by automation.
+#
+# Requires: Settings -> Actions -> "Allow GitHub Actions to create and approve pull
+# requests." Without it this fails with a 403 that reads like a token-scope bug.
+name: discover
+
+on:
+  schedule:
+    - cron: "42 5 * * 1" # Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v8.3.2 # no floating `v8` tag; pin the patch
+        with:
+          enable-cache: true
+
+      - run: uv sync --frozen
+
+      - name: Enumerate upstream variants
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run distro-iso-feed-discover
+
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          branch: discover/new-variants
+          title: "discover: new upstream variants"
+          commit-message: "discover: propose new variants"
+          add-paths: config/sources.yaml
+          delete-branch: true
+          body: |
+            Automated proposal from `distro-iso-feed-discover`.
+
+            Each added variant needs its `match` and `version_pattern` filled in —
+            they are placeholders. Verify with:
+
+            ```
+            uv run distro-iso-feed-refresh --dry-run --only <distro>:<variant>
+            ```
+
+            A `--dry-run` prints the **resolved artifact**, not a status code. Merge
+            only once every added variant resolves to a real filename and checksum.

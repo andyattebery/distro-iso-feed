@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/q4os</id>
+  <title>Distro ISO Feed — q4os</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/q4os.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-05-18T12:13:55+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/q4os/plasma/6.7</id>
+    <title>Q4OS Plasma 6.7 (x86_64)</title>
+    <updated>2026-05-18T12:13:55+00:00</updated>
+    <published>2026-05-18T12:13:55+00:00</published>
+    <link href="https://q4os.org/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/q4os/files/stable/q4os-6.7-x64.r1.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="q4os" label="distro" />
+    <category term="plasma" label="variant" />
+    <summary type="text">Q4OS Plasma 6.7 (x86_64)
+Filename: q4os-6.7-x64.r1.iso
+md5: 5f5ab846c3c6efa72054875e5d726887
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/q4os/tde/6.7</id>
+    <title>Q4OS Trinity 6.7 (x86_64)</title>
+    <updated>2026-05-18T12:10:55+00:00</updated>
+    <published>2026-05-18T12:10:55+00:00</published>
+    <link href="https://q4os.org/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/q4os/files/stable/q4os-6.7-x64-tde.r1.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="q4os" label="distro" />
+    <category term="tde" label="variant" />
+    <summary type="text">Q4OS Trinity 6.7 (x86_64)
+Filename: q4os-6.7-x64-tde.r1.iso
+md5: 62e680387f84dc77360c092d574f0f50
+Verify: checksum</summary>
+  </entry>
+</feed>

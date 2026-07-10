@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/minios</id>
+  <title>Distro ISO Feed — minios</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/minios.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:38+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/minios/ultra/5.1.1</id>
+    <title>MiniOS Ultra 5.1.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:38+00:00</updated>
+    <published>2026-07-09T23:40:38+00:00</published>
+    <link href="https://minios.dev/" rel="alternate" type="text/html" />
+    <link href="https://github.com/minios-linux/minios-live/releases/download/v5.1.1/minios-trixie-xfce-ultra-amd64-5.1.1.iso" rel="enclosure" type="application/x-iso9660-image" length="1805299712" />
+    <category term="minios" label="distro" />
+    <category term="ultra" label="variant" />
+    <summary type="text">MiniOS Ultra 5.1.1 (x86_64)
+Filename: minios-trixie-xfce-ultra-amd64-5.1.1.iso
+Size: 1805299712
+sha256: 97e4dd0ea3fdc0c7dcfbd3d88e44f473dc025de36633457b0c263e40addb50cf
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/minios/toolbox/5.1.1</id>
+    <title>MiniOS Toolbox 5.1.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:38+00:00</updated>
+    <published>2026-07-09T23:40:38+00:00</published>
+    <link href="https://minios.dev/" rel="alternate" type="text/html" />
+    <link href="https://github.com/minios-linux/minios-live/releases/download/v5.1.1/minios-trixie-xfce-toolbox-amd64-5.1.1.iso" rel="enclosure" type="application/x-iso9660-image" length="1241952256" />
+    <category term="minios" label="distro" />
+    <category term="toolbox" label="variant" />
+    <summary type="text">MiniOS Toolbox 5.1.1 (x86_64)
+Filename: minios-trixie-xfce-toolbox-amd64-5.1.1.iso
+Size: 1241952256
+sha256: ca4f7d25c7d60b83e1fdac45c496a5e94e9ac8bbb87396123f7a1c85e7b29979
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/minios/standard/5.1.1</id>
+    <title>MiniOS Standard 5.1.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:38+00:00</updated>
+    <published>2026-07-09T23:40:38+00:00</published>
+    <link href="https://minios.dev/" rel="alternate" type="text/html" />
+    <link href="https://github.com/minios-linux/minios-live/releases/download/v5.1.1/minios-trixie-xfce-standard-amd64-5.1.1.iso" rel="enclosure" type="application/x-iso9660-image" length="851881984" />
+    <category term="minios" label="distro" />
+    <category term="standard" label="variant" />
+    <summary type="text">MiniOS Standard 5.1.1 (x86_64)
+Filename: minios-trixie-xfce-standard-amd64-5.1.1.iso
+Size: 851881984
+sha256: 6340aeba58f300fd170dd8f0466819b59f6b4a7aae90e732c27f98c040b37503
+Verify: checksum</summary>
+  </entry>
+</feed>

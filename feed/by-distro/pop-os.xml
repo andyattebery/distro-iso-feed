@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/pop-os</id>
+  <title>Distro ISO Feed — pop-os</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/pop-os.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:08+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/pop-os/nvidia/24.04-25</id>
+    <title>Pop!_OS (NVIDIA) 24.04-25 (x86_64)</title>
+    <updated>2026-07-09T23:40:08+00:00</updated>
+    <published>2026-07-09T23:40:08+00:00</published>
+    <link href="https://pop.system76.com/" rel="alternate" type="text/html" />
+    <link href="https://iso.pop-os.org/24.04/amd64/nvidia/25/pop-os_24.04_amd64_nvidia_25.iso" rel="enclosure" type="application/x-iso9660-image" length="3893821440" />
+    <category term="pop-os" label="distro" />
+    <category term="nvidia" label="variant" />
+    <summary type="text">Pop!_OS (NVIDIA) 24.04-25 (x86_64)
+Filename: pop-os_24.04_amd64_nvidia_25.iso
+Size: 3893821440
+sha256: 5625f4fa99521a94cabe64c6c3ec1d26d10b09b5af5969d272837f5e1c585a6d
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/pop-os/intel/24.04-20</id>
+    <title>Pop!_OS (Intel/AMD) 24.04-20 (x86_64)</title>
+    <updated>2026-07-09T23:40:08+00:00</updated>
+    <published>2026-07-09T23:40:08+00:00</published>
+    <link href="https://pop.system76.com/" rel="alternate" type="text/html" />
+    <link href="https://iso.pop-os.org/24.04/amd64/intel/20/pop-os_24.04_amd64_intel_20.iso" rel="enclosure" type="application/x-iso9660-image" length="2955067392" />
+    <category term="pop-os" label="distro" />
+    <category term="intel" label="variant" />
+    <summary type="text">Pop!_OS (Intel/AMD) 24.04-20 (x86_64)
+Filename: pop-os_24.04_amd64_intel_20.iso
+Size: 2955067392
+sha256: a0ef3842ab710db4f4407cf3499560b59dddbbcd59bee17beab7b0e99dc22b4c
+Verify: checksum</summary>
+  </entry>
+</feed>

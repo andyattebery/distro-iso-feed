@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/kde-neon</id>
+  <title>Distro ISO Feed — kde-neon</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/kde-neon.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:26+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kde-neon/dev/20260706-1142</id>
+    <title>KDE neon Testing 20260706-1142 (x86_64)</title>
+    <updated>2026-07-09T23:40:26+00:00</updated>
+    <published>2026-07-09T23:40:26+00:00</published>
+    <link href="https://neon.kde.org/" rel="alternate" type="text/html" />
+    <link href="https://files.kde.org/neon/images/dev/current/neon-dev-current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kde-neon" label="distro" />
+    <category term="dev" label="variant" />
+    <summary type="text">KDE neon Testing 20260706-1142 (x86_64)
+Filename: neon-dev-current.iso
+sha256: c4aaf661b2edced96aab863a093e1303e91649d7efcf1a5608b5dc48aa7f35f1
+Signature: https://files.kde.org/neon/images/dev/current/neon-dev-current.iso.sig
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kde-neon/desktop/20260707-0147</id>
+    <title>KDE neon User 20260707-0147 (x86_64)</title>
+    <updated>2026-07-09T23:40:25+00:00</updated>
+    <published>2026-07-09T23:40:25+00:00</published>
+    <link href="https://neon.kde.org/" rel="alternate" type="text/html" />
+    <link href="https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kde-neon" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">KDE neon User 20260707-0147 (x86_64)
+Filename: neon-desktop-current.iso
+sha256: ce5a614082c19bb084d411dbc98ead1ba33af88490568ec97dabaffc761ff205
+Signature: https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso.sig
+Verify: gpg</summary>
+  </entry>
+</feed>

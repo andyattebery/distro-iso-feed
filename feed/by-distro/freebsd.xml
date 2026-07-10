@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd</id>
+  <title>Distro ISO Feed — freebsd</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/freebsd.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:15+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/dvd1/15.1</id>
+    <title>FreeBSD dvd1 15.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:15+00:00</updated>
+    <published>2026-07-09T23:40:15+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-amd64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="dvd1" label="variant" />
+    <summary type="text">FreeBSD dvd1 15.1 (x86_64)
+Filename: FreeBSD-15.1-RELEASE-amd64-dvd1.iso
+sha256: 027504262c65e096d78bd345d74905a8a7216bbb3c6155d55634ae8328f76c5d
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/disc1/15.1</id>
+    <title>FreeBSD disc1 15.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:15+00:00</updated>
+    <published>2026-07-09T23:40:15+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-amd64-disc1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="disc1" label="variant" />
+    <summary type="text">FreeBSD disc1 15.1 (x86_64)
+Filename: FreeBSD-15.1-RELEASE-amd64-disc1.iso
+sha256: fa27646f05a1440fd26ffbb85e06a50bc86e128242a4e9cb7bb3ea76e1aa5fd9
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/bootonly/15.1</id>
+    <title>FreeBSD bootonly 15.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:15+00:00</updated>
+    <published>2026-07-09T23:40:15+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-amd64-bootonly.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="bootonly" label="variant" />
+    <summary type="text">FreeBSD bootonly 15.1 (x86_64)
+Filename: FreeBSD-15.1-RELEASE-amd64-bootonly.iso
+sha256: 3e74120a59512cefc35840443bdd05087c8a010a27cf8a6fbb4f7450824f092e
+Verify: checksum</summary>
+  </entry>
+</feed>

@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/debian</id>
+  <title>Distro ISO Feed — debian</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/debian.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:11+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-standard/13.5.0</id>
+    <title>Debian Live Standard 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:11+00:00</updated>
+    <published>2026-07-09T23:40:11+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-standard.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-standard" label="variant" />
+    <summary type="text">Debian Live Standard 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-standard.iso
+sha512: 65e86d60a6a70981e9730de5e26c7eab6ab47eb8a7ed1493fe83d58394021500c81b1f64f05ca59419687ee13e7028eb48f1f69150953d6240f1b0d745c56e1e
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-mate/13.5.0</id>
+    <title>Debian Live MATE 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:10+00:00</updated>
+    <published>2026-07-09T23:40:10+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-mate.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-mate" label="variant" />
+    <summary type="text">Debian Live MATE 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-mate.iso
+sha512: e1cc49f6c5383a96512987c765b588505742345f52bff4f5bfee2a543447990f85256695b992268cb6ea1ac6cd5a8a1712d2e1bd03874b2068e45e43375d7e86
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxqt/13.5.0</id>
+    <title>Debian Live LXQt 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:10+00:00</updated>
+    <published>2026-07-09T23:40:10+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-lxqt.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-lxqt" label="variant" />
+    <summary type="text">Debian Live LXQt 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-lxqt.iso
+sha512: d60f7513ce89093f20709b4c5a9bf645e2fb91867a01fb74b4ed74dc8f5829d54e96d951035d39ea39f3254e9840bcbccd1e40c3a9aa35d4aaf8a791e3e6c77b
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-cinnamon/13.5.0</id>
+    <title>Debian Live Cinnamon 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:10+00:00</updated>
+    <published>2026-07-09T23:40:10+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-cinnamon.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-cinnamon" label="variant" />
+    <summary type="text">Debian Live Cinnamon 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-cinnamon.iso
+sha512: 5062856e6d41a35555e064e22eaa3c78a17bb2e4386b638aae9e0e779d10783dae946d4930cd856fcc14fae659d792db6f3e4e9a0ebf9264d7b336dc9ab7f011
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-xfce/13.5.0</id>
+    <title>Debian Live Xfce 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:09+00:00</updated>
+    <published>2026-07-09T23:40:09+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-xfce" label="variant" />
+    <summary type="text">Debian Live Xfce 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-xfce.iso
+sha512: 69e055e57b3d6f29f516539ccee0e7887291e61090b7132b5f398231b65a6514e62096c522078f7c7378a10453ea8a45d0e91fa6570abb4829b79a64330a5e01
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-kde/13.5.0</id>
+    <title>Debian Live KDE 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:09+00:00</updated>
+    <published>2026-07-09T23:40:09+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-kde.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-kde" label="variant" />
+    <summary type="text">Debian Live KDE 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-kde.iso
+sha512: d6d2cf792b115b39c01f41399fcc98e863aaf783ce1bd361b7b51376edf1a7a92f63da2d47e2c660912f5af4327731f24cc4fd4c0186eab034c799f33a39c7da
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-gnome/13.5.0</id>
+    <title>Debian Live GNOME 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:09+00:00</updated>
+    <published>2026-07-09T23:40:09+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.5.0-amd64-gnome.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="live-gnome" label="variant" />
+    <summary type="text">Debian Live GNOME 13.5.0 (x86_64)
+Filename: debian-live-13.5.0-amd64-gnome.iso
+sha512: d6e7b572e034a65d4c40f52e4effc0db4830bbf62ef2fc0545ccf798cb0c07ff2d2b9f29f5e6bcf64d39709197dd50b92146f4a4b772b21feabcb561d1ba3373
+Signature: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst/13.5.0</id>
+    <title>Debian netinst 13.5.0 (x86_64)</title>
+    <updated>2026-07-09T23:40:08+00:00</updated>
+    <published>2026-07-09T23:40:08+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.5.0-amd64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.5.0 (x86_64)
+Filename: debian-13.5.0-amd64-netinst.iso
+sha512: b2be60c555e328b4fa5ebb2d0e5c7ee6bc3eb4250c4dcfd3f78b8d9aec596efdf9f14f10a898c280eb252d50bbac91ea0a2bba29736df0d4985d50d4c8d77519
+Signature: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign
+Verify: gpg</summary>
+  </entry>
+</feed>

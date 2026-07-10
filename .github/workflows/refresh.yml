@@ -1,0 +1,87 @@
+# Daily refresh. Publishing IS the commit: once feed/ lands on main, the raw URL
+# serves it. There is no deploy step, so there is nothing that can silently no-op.
+name: refresh
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, off the hour to dodge cron congestion
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Resolve everything and report, but write and commit nothing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # nothing else is needed
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # checkout defaults to a shallow clone (fetch-depth: 1), and the commit
+          # step below rebases onto origin/main to survive a push race. Rebasing a
+          # shallow history fails; a full clone is cheap for a repo of this size.
+          fetch-depth: 0
+
+      - uses: astral-sh/setup-uv@v8.3.2
+        # No floating `v8` tag exists for this action -- only exact `v8.x.y`.
+        # `@v8` fails to resolve. Pin the patch.
+        with:
+          enable-cache: true
+
+      - run: uv sync --frozen
+
+      - run: uv run pytest -q
+
+      # A manual `dry_run` resolves every source from a GitHub runner and writes
+      # nothing. That is the only way to observe what this job actually sees:
+      # geo-routed mirrors resolve from the runner's location, not from yours, so a
+      # URL that works on a laptop can 404 here.
+      - name: Resolve and render
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # lifts the 60/hr API limit
+          DRY_RUN: ${{ inputs.dry_run == true }}
+        run: |
+          set -euo pipefail
+          args=(--summary "$GITHUB_STEP_SUMMARY")
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          uv run distro-iso-feed-refresh "${args[@]}"
+        # The run record is the proof that this executed, so it carries the health
+        # of every source. Individual failures never fail the job (that is what
+        # failure isolation is for); all of them failing does.
+
+      - name: Commit if changed
+        if: ${{ !inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          git config user.name  "distro-iso-feed-bot"
+          git config user.email "distro-iso-feed-bot@users.noreply.github.com"
+
+          # docs/catalog.md is generated; docs/architecture.md and README.md are not.
+          git add feed state docs/catalog.md
+
+          # No empty commits. A run that changes nothing leaves no trace in the
+          # history -- the workflow run itself is the evidence that it happened.
+          if git diff --cached --quiet; then
+            echo "nothing moved upstream; no commit"
+            exit 0
+          fi
+
+          git commit -m "feed: $(date -u +%FT%TZ)"
+
+          # A merged discover PR or a hand commit can land between checkout and push.
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push race on attempt $attempt; retrying"
+            sleep $((attempt * 5))
+          done
+          exit 1

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/aurora</id>
+  <title>Distro ISO Feed — aurora</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/aurora.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:29+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/stable/stable-20260707.1</id>
+    <title>Aurora stable-20260707.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:29+00:00</updated>
+    <published>2026-07-09T23:40:29+00:00</published>
+    <link href="https://getaurora.dev/" rel="alternate" type="text/html" />
+    <link href="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="aurora" label="distro" />
+    <category term="stable" label="variant" />
+    <summary type="text">Aurora stable-20260707.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 1ef8a3c24fb0ce9dd4a26c5b60e31e56584a4a17db89fc1660a7b0e79c88a07d
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/nvidia-open/stable-20260707.1</id>
+    <title>Aurora NVIDIA Open stable-20260707.1 (x86_64)</title>
+    <updated>2026-07-09T23:40:29+00:00</updated>
+    <published>2026-07-09T23:40:29+00:00</published>
+    <link href="https://getaurora.dev/" rel="alternate" type="text/html" />
+    <link href="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="aurora" label="distro" />
+    <category term="nvidia-open" label="variant" />
+    <summary type="text">Aurora NVIDIA Open stable-20260707.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 22320b55c7314e32e0d1c0a7a39416fa506abacd1265a3d4a25db2e958387afe
+Verify: checksum</summary>
+  </entry>
+</feed>

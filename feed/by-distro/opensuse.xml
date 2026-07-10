@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse</id>
+  <title>Distro ISO Feed — opensuse</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/opensuse.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:18+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20260707</id>
+    <title>openSUSE Tumbleweed NET Snapshot20260707 (x86_64)</title>
+    <updated>2026-07-09T23:40:18+00:00</updated>
+    <published>2026-07-09T23:40:18+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20260707 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: 86d34d1619565d76bccb1661ce3add0780c2eaf256c6ea854e15c4f2065107b5
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20260707</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20260707 (x86_64)</title>
+    <updated>2026-07-09T23:40:17+00:00</updated>
+    <published>2026-07-09T23:40:17+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260707 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 9c079de7268a80cb615a1a13423a7ae5c3985847e3a74f2d13484b8730ba6a6c
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net/15.6-710.3</id>
+    <title>openSUSE Leap NET 15.6-710.3 (x86_64)</title>
+    <updated>2026-07-09T23:40:17+00:00</updated>
+    <published>2026-07-09T23:40:17+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap NET 15.6-710.3 (x86_64)
+Filename: openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso
+sha256: 0984b36d0f420487f2766733ff8f9d779ade81d432b08e40e852a675313750bb
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd/15.6-710.3</id>
+    <title>openSUSE Leap DVD 15.6-710.3 (x86_64)</title>
+    <updated>2026-07-09T23:40:16+00:00</updated>
+    <published>2026-07-09T23:40:16+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap DVD 15.6-710.3 (x86_64)
+Filename: openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso
+sha256: a74d4072e639c75ca127df3d869c1e57bcc44a093a969550f348a3ead561fe4f
+Verify: checksum</summary>
+  </entry>
+</feed>

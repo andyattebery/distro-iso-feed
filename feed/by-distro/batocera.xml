@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/batocera</id>
+  <title>Distro ISO Feed — batocera</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/batocera.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-09T23:40:25+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/batocera/x86_64/43.1-20260529</id>
+    <title>Batocera 43.1-20260529 (x86_64)</title>
+    <updated>2026-07-09T23:40:25+00:00</updated>
+    <published>2026-07-09T23:40:25+00:00</published>
+    <link href="https://batocera.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.o2switch.fr/batocera/x86_64/stable/last/batocera-x86_64-43.1-20260529.img.gz" rel="enclosure" type="application/gzip" />
+    <category term="batocera" label="distro" />
+    <category term="x86_64" label="variant" />
+    <summary type="text">Batocera 43.1-20260529 (x86_64)
+Filename: batocera-x86_64-43.1-20260529.img.gz
+md5: 0c365dc3c17b05a4b276c579168b01da
+Verify: checksum</summary>
+  </entry>
+</feed>
