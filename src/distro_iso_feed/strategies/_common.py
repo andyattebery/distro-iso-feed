@@ -6,11 +6,17 @@ import hashlib
 from dataclasses import dataclass, replace
 from urllib.parse import urljoin
 
-from .. import checksums, torrents
+from .. import checksums, gpgverify, torrents
 from ..client import Client
 from ..models import Release
 from ..tokens import from_filename
 from .base import title_for
+
+_SIG_EXTS = (".sign", ".gpg", ".asc")
+
+
+def _norm_fpr(value: str) -> str:
+    return "".join(value.split()).upper()
 
 
 def _expand(template: str, *, filename: str, version: str) -> str:
@@ -278,3 +284,88 @@ def attach_torrent(client: Client, release: Release, params: dict) -> Release:
         info_hash=ref.info_hash,
         magnet_uri=ref.magnet,
     )
+
+
+# The result of the build-time GPG gate, so the caller can log/act without re-deriving.
+VERIFIED = "verified"  # signature chains to the pinned key -> publish the pin
+BAD = "bad"  # a signature that fails its own key -> drop the gpg claim
+DEFERRED = "deferred"  # transient/gpg-absent -> keep as resolved, add no pin
+
+
+def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[Release, str]:
+    """Prove the GPG chain before the feed publishes the pinned key.
+
+    A hand-entered fingerprint is only as good as the data entry, so every build
+    re-checks it against the *actual signature* on the current artifact:
+
+      checksums -- the sig covers a small SHA*SUMS/.sha256 file, so `gpgv` the whole
+                   thing under only the pinned key, then confirm the checksum the feed
+                   ships is inside that verified file. Full authentication.
+      image     -- the sig covers the multi-GB ISO we do not download, so confirm the
+                   signature's issuer is the pinned key (primary or subkey). Proves
+                   the signature is *from* the pinned key; the consumer does the rest.
+
+    Returns `(release, outcome)`:
+      VERIFIED -> the pin is attached;
+      BAD      -> `signature_url` is cleared, so `verify` degrades to `checksum`
+                  (a signed checksum that fails its signature is not forwardable);
+      DEFERRED -> the entry is returned exactly as resolved (a network blip or a dev
+                  box without gpg must never flap the claim), no pin this run.
+    """
+    key_conf = params.get("signing_key")
+    if not key_conf or not release.signature_url:
+        return release, DEFERRED
+    if not gpgverify.gpg_available():
+        return release, DEFERRED  # keep the claim; the environment, not the sig, is at fault
+
+    key = client.get(key_conf["url"])
+    if not key or not key.content:
+        return release, DEFERRED  # transient: don't drop over a key-server blip
+    key_bytes = key.content
+
+    pinned = _norm_fpr(str(key_conf["fingerprint"]))
+    if gpgverify.primary_fingerprint(key_bytes) != pinned:
+        return _drop(release), BAD  # the URL is not serving the key we pinned
+
+    sig = client.get(release.signature_url)
+    if not sig or not sig.content:
+        return release, DEFERRED
+    sig_bytes = sig.content
+
+    covers = key_conf.get("covers")
+    if covers == "checksums":
+        signed_url = _strip_sig_ext(release.signature_url)
+        signed = client.get(signed_url)
+        if not signed or not signed.content:
+            return release, DEFERRED
+        text = signed.content.decode("utf-8", "replace")
+        good = gpgverify.verify_detached(key_bytes, sig_bytes, signed.content)
+        # The checksum the feed publishes must be the one the signature vouches for.
+        if not (good and release.checksum and release.checksum.lower() in text.lower()):
+            return _drop(release), BAD
+    elif covers == "image":
+        issuer = gpgverify.sig_issuer(sig_bytes)
+        if not issuer:
+            return release, DEFERRED  # couldn't parse the sig -> don't punish the entry
+        if not gpgverify.issuer_in_key(issuer, key_bytes):
+            return _drop(release), BAD
+    else:  # a config with signing_key but no/unknown `covers` verifies nothing
+        return release, DEFERRED
+
+    return replace(
+        release, signing_key_url=key_conf["url"], signing_key_fingerprint=pinned
+    ), VERIFIED
+
+
+def _drop(release: Release) -> Release:
+    """Strip the gpg claim so `verify` falls back to `checksum`."""
+    return replace(
+        release, signature_url=None, signing_key_url=None, signing_key_fingerprint=None
+    )
+
+
+def _strip_sig_ext(url: str) -> str:
+    for ext in _SIG_EXTS:
+        if url.endswith(ext):
+            return url[: -len(ext)]
+    return url

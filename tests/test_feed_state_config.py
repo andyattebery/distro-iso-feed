@@ -208,6 +208,24 @@ def test_latest_json_carries_a_schema_version(tmp_path):
     assert "fedora:workstation" in data["releases"]
 
 
+def test_signing_key_fields_flow_to_latest_json_and_summary(tmp_path):
+    fpr = "DF9B9C49EAA9298432589D76DA87E80D6294BE9B"
+    url = "https://keys.example/key"
+    s = state_with(make_release(signing_key_url=url, signing_key_fingerprint=fpr))
+    feed.render(s, tmp_path)
+    entry = json.loads((tmp_path / "latest.json").read_text())["releases"]["fedora:workstation"]
+    assert entry["signing_key_url"] == url
+    assert entry["signing_key_fingerprint"] == fpr
+
+    summary = feed.summary_for(make_release(signing_key_url=url, signing_key_fingerprint=fpr))
+    assert f"Key-fingerprint: {fpr}" in summary
+    assert f"Signing-key: {url}" in summary
+
+    # An entry without a pin carries neither field / line.
+    plain = feed.summary_for(make_release())
+    assert "Key-fingerprint:" not in plain
+
+
 # ----------------------------------------------------------------------------- config
 
 

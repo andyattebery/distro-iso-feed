@@ -16,10 +16,11 @@ from pathlib import Path
 from . import docs, feed, select
 from .client import Client
 from .config import load
+from .gpgverify import gpg_available
 from .models import Variant
 from .state import State
 from .strategies import REGISTRY
-from .strategies._common import attach_torrent
+from .strategies._common import BAD, attach_torrent, verify_signing_key
 from .tokens import from_filename
 
 log = logging.getLogger("distro-iso-feed")
@@ -164,6 +165,12 @@ def main(argv: list[str] | None = None) -> int:
     failures: list[tuple[str, str]] = []
     changed: list[str] = []
 
+    if not gpg_available():
+        log.warning(
+            "gpg/gpgv not on PATH -- signing-key verification skipped; "
+            "gpg entries keep their signature_url but publish no pinned key this run"
+        )
+
     with Client(defaults["user_agent"]) as client:
         for variant in variants:
             strategy = REGISTRY[variant.strategy]()
@@ -191,6 +198,20 @@ def main(argv: list[str] | None = None) -> int:
             # so the token is the ISO's hash and the torrent cannot move it.
             if params.get("torrent"):
                 release = attach_torrent(client, release, params)
+
+            # Prove the GPG chain before publishing the pinned key. A BAD signature
+            # drops the claim (verify degrades to checksum); a transient/gpg-absent
+            # run leaves the entry as resolved. Runs before the token, but cannot move
+            # it -- these sources all publish a checksum, so the token is that hash.
+            if params.get("signing_key"):
+                release, gpg_outcome = verify_signing_key(client, release, params)
+                if gpg_outcome == BAD:
+                    log.warning(
+                        "%s: signature failed to verify against the pinned key -- "
+                        "dropped the gpg claim (verify now %s)",
+                        variant.key,
+                        release.verify,
+                    )
 
             # `hash` = the published checksum when there is one, else the infohash,
             # else a digest of the resolved artifact identity. Catches a respin whose

@@ -99,6 +99,10 @@ distros:
       sig: "SHA512SUMS.sign"
       # `debian-edu-...-netinst.iso` sits in the same SHA512SUMS. Anchor, or ship Edu.
       ignore: ["debian-edu-"]
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+        fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+        covers: checksums
     variants:
       netinst:
         label: "Debian netinst"
@@ -150,6 +154,10 @@ distros:
       sig: "SHA256SUMS.gpg"
       version_pattern: 'kali-linux-([0-9.]+)-'
       ignore: ["arm64", "i386"]   # co-listed in the same SHA256SUMS
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+        fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+        covers: checksums
     variants:
       installer: {label: "Kali Installer", params: {match: '^kali-linux-[0-9.]+-installer-amd64\.iso$'}}
       installer-netinst: {label: "Kali NetInstaller", params: {match: '^kali-linux-[0-9.]+-installer-netinst-amd64\.iso$'}}
@@ -173,7 +181,6 @@ distros:
     params:
       index: "https://repo-default.voidlinux.org/live/current/"
       sums: "sha256sum.txt"
-      sig: "sha256sum.sig"
       version_pattern: 'x86_64-(\d{8})-'
       ignore: ["-musl-"]   # musl builds sit beside glibc in the same sha256sum.txt
     variants:
@@ -193,6 +200,10 @@ distros:
       sums: "sha256sum.txt"
       sig: "sha256sum.txt.gpg"
       version_pattern: 'linuxmint-([0-9.]+)-'
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x27DEB15644C6B3CF3BD7D291300F846BA25BAE09
+        fingerprint: 27DEB15644C6B3CF3BD7D291300F846BA25BAE09
+        covers: checksums
     variants:
       cinnamon: {label: "Linux Mint Cinnamon", params: {match: '^linuxmint-[0-9.]+-cinnamon-64bit\.iso$'}}
       mate: {label: "Linux Mint MATE", params: {match: '^linuxmint-[0-9.]+-mate-64bit\.iso$'}}
@@ -215,6 +226,10 @@ distros:
       # `{filename}.torrent` sits beside the ISO; no checksum is published for it, so
       # it is trust-on-first-use while the ISO stays GPG-signed.
       torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+        fingerprint: 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+        covers: image
     variants:
       iso: {label: "Arch Linux"}
     discover:
@@ -241,6 +256,10 @@ distros:
       # for it, so the torrent is trust-on-first-use -- but the ISO stays GPG-signed,
       # so `verify` is unchanged and the torrent is a bonus channel.
       torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
     variants:
       desktop-lts: {label: "Ubuntu Desktop LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-desktop-amd64\.iso$'}}
       live-server-lts: {label: "Ubuntu Server LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-live-server-amd64\.iso$'}}
@@ -290,6 +309,10 @@ distros:
       sums: "{filename}.sha256"
       version_pattern: 'Leap-([0-9.]+)-\w+-x86_64-Build([0-9.]+)-Media'
       ignore: ["aarch64", "ppc64le", "s390x"]   # Leap ships four CPU arches, not two
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+        fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+        covers: checksums
     variants:
       leap-dvd: {label: "openSUSE Leap DVD", params: {match: '^openSUSE-Leap-[0-9.]+-DVD-x86_64-Build[0-9.]+-Media\.iso$'}}
       leap-net: {label: "openSUSE Leap NET", params: {match: '^openSUSE-Leap-[0-9.]+-NET-x86_64-Build[0-9.]+-Media\.iso$'}}
@@ -335,6 +358,10 @@ distros:
       # forever.
       match: '^EndeavourOS_[A-Za-z-]+-\d{4}\.\d{2}\.\d{2}\.iso$'
       version_pattern: '(\d{4}\.\d{2}\.\d{2})'
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x8F43FC374CD4CEEA19CEE323E3D8752ACDF595A1
+        fingerprint: 8F43FC374CD4CEEA19CEE323E3D8752ACDF595A1
+        covers: image
     variants:
       default: {label: "EndeavourOS"}
     discover:
@@ -355,6 +382,10 @@ distros:
       sig: "{filename}.sig"
       match: '^tails-amd64-[0-9.]+\.iso$'
       version_pattern: 'tails-amd64-([0-9.]+)\.iso'
+      signing_key:
+        url: https://tails.net/tails-signing.key
+        fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
+        covers: image
     variants:
       iso: {label: "Tails"}
     discover:
@@ -392,6 +423,10 @@ distros:
       # The sidecar names `neon-desktop-20260707-0147.iso` while you download
       # `neon-desktop-current.iso`. That mismatch IS the change-token mechanism.
       token: {from: sidecar_filename, pattern: '(\d{8}-\d{4})'}
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB74EA2162376765BEAC3AE4345F4C354638D1F29
+        fingerprint: B74EA2162376765BEAC3AE4345F4C354638D1F29
+        covers: image
     variants:
       desktop: {label: "KDE neon User", params: {url: "https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso"}}
       dev: {label: "KDE neon Testing", params: {url: "https://files.kde.org/neon/images/dev/current/neon-dev-current.iso"}}
@@ -508,6 +543,10 @@ distros:
       # 32-bit `_386` builds. antiX 26 ships only `core` and `full` for x64 --
       # `base` and `net` exist for 23.2 only, so seeding them would pin us backwards.
       ignore: ['_386-', 'runit-', '\.md5$']
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x30AA418A0C723D937B50A986A80582E000067FDD
+        fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
+        covers: image
     variants:
       # The release number is NOT hardcoded: `version_pattern` extracts it and
       # `select.newest` picks 26 over the co-listed 23.2. A literal `antiX-26` would
@@ -590,6 +629,10 @@ distros:
       # The directory can disagree with the filename: /handheld/250626/ holds
       # cachyos-handheld-linux-260426.iso. The token comes from the FILENAME.
       version_pattern: '-(\d{6})\.iso$'
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
+        fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
+        covers: image
     variants:
       desktop: {label: "CachyOS Desktop", params: {match: '/desktop/\d+/cachyos-desktop-linux-\d+\.iso$'}}
       handheld: {label: "CachyOS Handheld", params: {match: '/handheld/\d+/cachyos-handheld-linux-\d+\.iso$'}}
@@ -686,6 +729,10 @@ distros:
       # release + build date and let the name tie-break, where linux70 > linux618.
       version_pattern: '-([0-9.]+-\d{6}-linux\d+)\.iso$'
       sort_pattern: '-([0-9.]+-\d{6})-linux\d+\.iso$'
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+        fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+        covers: image
     variants:
       kde: {label: "Manjaro KDE Plasma", params: {match: '^manjaro-kde-[0-9.]+-\d{6}-linux\d+\.iso$'}}
       gnome: {label: "Manjaro GNOME", params: {match: '^manjaro-gnome-[0-9.]+-\d{6}-linux\d+\.iso$'}}

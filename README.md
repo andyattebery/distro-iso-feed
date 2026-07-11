@@ -1,7 +1,7 @@
 # distro-iso-feed
 
-A unified **Atom / RSS / JSON feed of the latest ISO releases** for 27 Linux and BSD
-distributions (82 variants). A GitHub Action refreshes it daily and commits the result;
+A unified **Atom / RSS / JSON feed of the latest ISO releases** for 28 Linux and BSD
+distributions (104 variants). A GitHub Action refreshes it daily and commits the result;
 the committed file *is* the published feed.
 
 Downloading is deliberately out of scope. The feed is the product — subscribe with a
@@ -21,6 +21,15 @@ reader, Flexget, n8n, or a three-line fetch script, and do the fetching yourself
 Every entry carries the **checksum, its algorithm, and the signature URL** where upstream
 publishes them, so a consumer can verify without a second fetch. Where upstream publishes
 nothing, the entry says so out loud rather than omitting it silently.
+
+**GPG signing keys are pinned and verified at build.** A `verify: gpg` entry also carries
+`signing_key_url` + `signing_key_fingerprint`, so a consumer can pin the key and detect a
+swapped one. The feed does not merely forward those — every build proves the signature
+chains to the pinned key (`gpgv` the signed checksum file where it's small enough to fetch,
+or confirm the signature's issuer otherwise) and **refuses to publish a pin that doesn't
+verify**, degrading that entry to `checksum`. Two sources have no single pin: Void signs
+with signify (not GPG, so it's `checksum`), and MX signs each variant with a different
+developer key (kept as `gpg`, unpinned).
 
 **Three retrieval channels, chosen by field presence.** An entry offers any of a
 direct download (`download_url`), a torrent file (`torrent_url`), or a magnet
@@ -62,13 +71,14 @@ uv run pytest
 uv run ruff check src tests
 uv run distro-iso-feed-refresh --dry-run          # resolve everything, write nothing
 uv run distro-iso-feed-discover --dry-run         # propose new variants, write nothing
-uv run distro-iso-feed-audit --strict             # untracked editions, pinned releases
+uv run distro-iso-feed-audit --strict             # untracked editions, pins, signing keys
 ```
 
-`audit` answers two questions no other check can: what does an upstream publish that
-no variant tracks, and is any source frozen to a literal release? A pinned source is
-the dangerous one — it resolves cleanly and publishes a valid checksum while serving
-a stale release forever. `--strict` exits 1 on either finding.
+`audit` answers three questions no other check can: what does an upstream publish that
+no variant tracks; is any source frozen to a literal release; and does every pinned GPG
+key still verify the current artifact's signature? A pinned *release* is the dangerous
+one — it resolves cleanly and publishes a valid checksum while serving a stale release
+forever. `--strict` exits 1 on any of the three.
 
 ## Repo setting required
 

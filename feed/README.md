@@ -86,8 +86,8 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | kde | 25.2 | gpg | — |
 | mx | xfce | 25.2 | gpg | — |
 | mx | xfce-ahs | 25.2 | gpg | — |
-| nixos | graphical | 26.05.4494.74cc63f702f7 | checksum | — |
-| nixos | minimal | 26.05.4494.74cc63f702f7 | checksum | — |
+| nixos | graphical | 26.05.4659.8f0500b96605 | checksum | — |
+| nixos | minimal | 26.05.4659.8f0500b96605 | checksum | — |
 | nobara | gnome | 43-2026-04-19 | checksum | — |
 | nobara | gnome-nv | 43-2026-04-25 | checksum | — |
 | nobara | kde | 43-2026-04-19 | checksum | — |
@@ -99,8 +99,8 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | nobara | steam-htpc-nv | 43-2026-04-25 | checksum | — |
 | opensuse | leap-dvd | 15.6-710.3 | checksum | — |
 | opensuse | leap-net | 15.6-710.3 | checksum | — |
-| opensuse | tumbleweed-dvd | Snapshot20260708 | gpg | ✓ |
-| opensuse | tumbleweed-net | Snapshot20260708 | gpg | ✓ |
+| opensuse | tumbleweed-dvd | Snapshot20260709 | gpg | — |
+| opensuse | tumbleweed-net | Snapshot20260709 | gpg | — |
 | pop-os | intel | 24.04-20 | checksum | — |
 | pop-os | nvidia | 24.04-25 | checksum | — |
 | q4os | plasma | 6.7 | checksum | — |
@@ -110,5 +110,5 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | ubuntu | desktop-lts | 26.04 | gpg | ✓ |
 | ubuntu | live-server-interim | 25.10 | gpg | ✓ |
 | ubuntu | live-server-lts | 26.04 | gpg | ✓ |
-| void | base | 20250202 | gpg | — |
-| void | xfce | 20250202 | gpg | — |
+| void | base | 20250202 | checksum | — |
+| void | xfce | 20250202 | checksum | — |

@@ -101,6 +101,28 @@ def _merge(*layers: dict | None) -> dict:
     return out
 
 
+_FPR_RE = re.compile(r"^[0-9A-Fa-f]{40}$")
+
+
+def _validate_signing_key(distro: str, sk: Any) -> None:
+    """A `signing_key` pins the GPG key the build verifies against. A malformed pin
+    is worse than none -- it makes a consumer reject a valid key -- so it is a load
+    error, not a runtime surprise.
+    """
+    if sk is None:
+        return
+    if not isinstance(sk, dict):
+        raise ConfigError(f"{distro}: `signing_key` must be a mapping")
+    if unknown := set(sk) - {"url", "fingerprint", "covers"}:
+        raise ConfigError(f"{distro}: unknown signing_key key(s) {', '.join(sorted(unknown))}")
+    if not str(sk.get("url") or "").strip():
+        raise ConfigError(f"{distro}: signing_key needs a `url`")
+    if not _FPR_RE.match(str(sk.get("fingerprint") or "")):
+        raise ConfigError(f"{distro}: signing_key `fingerprint` must be 40 hex chars")
+    if sk.get("covers") not in ("checksums", "image"):
+        raise ConfigError(f"{distro}: signing_key `covers` must be `checksums` or `image`")
+
+
 def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
     """A torrent-only variant selects the `.torrent`, because no ISO exists to select.
 
@@ -134,6 +156,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             raise ConfigError(f"{distro}: block must be a mapping")
 
         _validate_discover(distro, block.get("discover"))
+        _validate_signing_key(distro, (block.get("params") or {}).get("signing_key"))
 
         distro_strategy = block.get("strategy")
         distro_params = dict(block.get("params") or {})

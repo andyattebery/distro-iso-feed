@@ -62,6 +62,8 @@ class Release:
     checksum: str | None = None
     checksum_algo: str | None = None
     signature_url: str | None = None
+    signing_key_url: str | None = None
+    signing_key_fingerprint: str | None = None
     torrent_url: str | None = None
     torrent_size: int | None = None
     torrent_checksum: str | None = None

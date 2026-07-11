@@ -21,8 +21,8 @@ artifact — filename, version token, checksum, algorithm — and never a status
 
 ## The five axes
 
-The spec proposed six strategies. Writing 27 of them revealed that the strategies
-are *presets*, and the real structure is a product of five orthogonal concerns:
+Six strategies were the starting point. Writing 28 distros' worth revealed that the
+strategies are *presets*, and the real structure is a product of five orthogonal concerns:
 
 | Axis | Module | Implementations |
 |---|---|---|
@@ -46,10 +46,10 @@ Two consequences that are not cosmetic:
   sidecar beside it. That is `stable_symlink` with `token: {from: atom_tag}`.
   `github_releases` is reserved for "the artifact *is* a release asset" — MiniOS.
 
-`discover_variants` is implemented once, in `strategies/base.py`. A lister already
+`discover_all` is implemented once, in `strategies/base.py`. A lister already
 returns every candidate, so grouping its output gives variant discovery for free
-wherever enumeration is possible. The feature the spec most wanted falls out of the
-seam.
+wherever enumeration is possible — the hardest thing to design up front falls out
+of the seam.
 
 ## Invariants worth not breaking
 
@@ -140,6 +140,33 @@ bytes and checks them, and returns `None` on mismatch. This is the only place in
 codebase that verifies a payload rather than republishing a checksum. Where no such
 hash exists (AnduinOS), `verify` is `torrent`: the infohash covers every piece, on
 trust-on-first-use, and the summary says so rather than claiming `checksum`.
+
+**The GPG pin is verified at build, or it is not published.** 12 of the 13 distros with
+`verify: gpg` carry `signing_key_url` + `signing_key_fingerprint` so a consumer can pin
+the key (MX is the exception — see below). A hand-entered fingerprint the feed merely forwards is only
+as good as the data entry, so `verify_signing_key` (`_common.py`) proves the chain
+every build before publishing the pin — two strengths, by what the signature covers:
+
+- **`checksums`** (debian, kali, ubuntu, mint, opensuse — the sig signs a small
+  `SHA*SUMS`/`.sha256`): `gpgv` the file under *only* the pinned key and confirm the
+  feed's published `checksum` is inside it. This authenticates the checksum the feed
+  ships — the one place the feed proves its own integrity data, not just forwards it.
+- **`image`** (arch, tails, manjaro, endeavouros, kde-neon, antix, cachyos — the sig
+  signs the multi-GB ISO the build never downloads): confirm the signature's *issuer*
+  is the pinned key (primary **or a subkey** — Tails signs with a subkey). Full
+  verification is the consumer's job once it has the ISO.
+
+A signature that fails its own pinned key **drops the gpg claim** (`signature_url`
+cleared, `verify` degrades to `checksum`) rather than publishing an unverifiable one;
+a network blip or a missing `gpg` binary defers (keeps the claim, adds no pin) so it
+never flaps. `distro-iso-feed-audit` re-runs the same gate; `--strict` fails on any
+bad pin.
+
+**Two data facts this surfaced, both real.** Void's `sha256sum.sig` is **signify /
+minisign, not OpenPGP** — its `verify: gpg` was wrong, corrected to `checksum`. And
+**MX signs different variants with different developer keys** — there is no single MX
+distro key to pin, so MX keeps `verify: gpg` with no pin (the honest "can't source one
+key" path) rather than a pin that would fail half its variants.
 
 **RSS 2.0 permits one `<enclosure>` per item.** Atom permits several. That asymmetry,
 not preference, is why torrents get their own `feed/torrent.rss` instead of riding
@@ -236,11 +263,11 @@ Recorded so nobody re-investigates them. Several look trivially addable.
 
 ## Mirrors
 
-§2 prefers a first-party endpoint. Four sources are marked `mirror: true` because
+The default is a first-party endpoint. Four sources are marked `mirror: true` because
 they cannot honour it:
 
 - **EndeavourOS** publishes no first-party download host at all.
 - **Batocera**'s official host serves **no checksum**; only the o2switch mirror
-  co-locates the `.md5`. This trades §2's host preference for §10's integrity
+  co-locates the `.md5`. This trades the host preference for the integrity
   requirement — a checksum from a mirror beats no checksum from the origin.
 - **Mint** and **Arch** are mirror-distributed by design.

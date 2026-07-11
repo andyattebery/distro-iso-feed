@@ -27,7 +27,7 @@ FEED_SELF = f"{RAW_BASE}/feed/feed.xml"
 TORRENT_SELF = f"{RAW_BASE}/feed/torrent.xml"
 FEED_TITLE = "Distro ISO Feed"
 TORRENT_TITLE = "Distro ISO Feed — torrents"
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 ATOM_NS = "http://www.w3.org/2005/Atom"
 
 WARNING_NO_CHECKSUM = "WARNING: no published checksum — integrity unverifiable"
@@ -63,6 +63,10 @@ def summary_for(release: Release) -> str:
         lines.append(f"{release.checksum_algo}: {release.checksum}")
     if release.signature_url:
         lines.append(f"Signature: {release.signature_url}")
+    if release.signing_key_url:
+        lines.append(f"Signing-key: {release.signing_key_url}")
+    if release.signing_key_fingerprint:
+        lines.append(f"Key-fingerprint: {release.signing_key_fingerprint}")
     if release.torrent_url:
         lines.append(f"Torrent: {release.torrent_url}")
     if release.torrent_checksum and release.torrent_checksum_algo:
@@ -209,6 +213,8 @@ def latest_json(records: list[Record]) -> str:
                 "checksum": r.release.checksum,
                 "checksum_algo": r.release.checksum_algo,
                 "signature_url": r.release.signature_url,
+                "signing_key_url": r.release.signing_key_url,
+                "signing_key_fingerprint": r.release.signing_key_fingerprint,
                 "torrent_url": r.release.torrent_url,
                 "torrent_size": r.release.torrent_size,
                 "torrent_checksum": r.release.torrent_checksum,
