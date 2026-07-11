@@ -143,7 +143,31 @@ trust-on-first-use, and the summary says so rather than claiming `checksum`.
 
 **RSS 2.0 permits one `<enclosure>` per item.** Atom permits several. That asymmetry,
 not preference, is why torrents get their own `feed/torrent.rss` instead of riding
-along in `feed.rss`.
+along in `feed.rss`. A co-located entry (Debian, Ubuntu, Arch, openSUSE) emits two
+`rel="enclosure"` links in `feed.xml` and its single ISO enclosure in `feed.rss`.
+
+**Three retrieval channels, picked by field presence — no consumer logic.** An entry
+carries any of: direct (`download_url` + `checksum`/`signature_url`), torrent file
+(`torrent_url` + `torrent_size`/`torrent_checksum`), swarm (`magnet_uri` +
+`info_hash`). The invariants: `torrent_url` present ⟹ `magnet_uri` present (a
+`.torrent` yields a magnet), but **not** the converse — a magnet-only source sets
+`magnet_uri` with no `torrent_url`, and `feed.rss` must still emit that item (a
+magnet is not an RSS enclosure) or the "consistent output" promise breaks. At least
+one channel is always present. `verify` is the strongest: `gpg` > `checksum` >
+`torrent` > `none` — attaching an unsigned torrent to a signed ISO never lowers it.
+
+**Co-located torrents attach by version, not filename.** `attach_torrent` enriches an
+already-resolved ISO. The check is `release.version in info.name`, not equality:
+openSUSE resolves the `-Current.iso` symlink while its torrent names the dated
+snapshot, so equality would reject a good torrent. It is a *right-release* test;
+integrity is the checksum's job. Any doubt returns the release **unchanged** — a bad
+torrent never costs an entry its direct download.
+
+**Enrichment adds a field without a re-notify.** `state.update()` keys on `version`
+and `hash`; attaching a torrent moves neither, so it would never persist.
+`state.enrich()` rewrites the record while preserving `seen` — so every feed
+`<updated>` holds still and no subscriber re-alerts. The migration that added
+torrents to sixteen existing entries moved not one timestamp.
 
 ## The checksum-format zoo
 

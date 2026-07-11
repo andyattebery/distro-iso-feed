@@ -101,6 +101,40 @@ def test_failed_resolve_leaves_state_byte_identical(tmp_path):
     assert p.read_bytes() == before
 
 
+def test_enrich_adds_metadata_without_moving_seen_or_version():
+    """The migration: a torrent attached to a known ISO must rewrite the record while
+    keeping `version`, `hash`, and `seen` -- so no feed timestamp moves and no reader
+    re-notifies."""
+    s = state_with(make_release())
+    before = s.records["fedora:workstation"]
+    seen_before, hash_before = before.seen, before.hash
+
+    enriched = make_release(torrent_url="https://x/w.iso.torrent", info_hash="d" * 40)
+    assert s.enrich(enriched) is True
+
+    rec = s.records["fedora:workstation"]
+    assert rec.seen == seen_before  # the re-notify guard
+    assert rec.hash == hash_before
+    assert rec.version == before.version
+    assert rec.release.torrent_url == "https://x/w.iso.torrent"  # the new data landed
+
+
+def test_enrich_is_a_noop_when_nothing_changed():
+    s = state_with(make_release())
+    assert s.enrich(make_release()) is False
+
+
+def test_enrich_declines_a_version_move():
+    """A real move is update()'s job, and carries a fresh `seen`. enrich must not
+    quietly swallow it under the old timestamp."""
+    s = state_with(make_release(version="44-1.7"))
+    assert s.enrich(make_release(version="44-1.8", torrent_url="https://x/t")) is False
+
+
+def test_enrich_declines_an_unknown_variant():
+    assert State().enrich(make_release()) is False
+
+
 # ------------------------------------------------------------------------------- feed
 
 

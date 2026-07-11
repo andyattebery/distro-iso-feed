@@ -34,8 +34,10 @@ from .strategies import REGISTRY
 
 # Params that name *what gets fetched*. A release literal here freezes the source.
 # `version_pattern` is excluded on purpose: EndeavourOS's `(\d{4}\.\d{2}\.\d{2})`
-# and Batocera's `([0-9.]+-\d{8})` are token *extractors*, not locations.
-LOCATION_PARAMS = ("url", "index", "path", "match")
+# and Batocera's `([0-9.]+-\d{8})` are token *extractors*, not locations. `torrent`
+# is a fetched artifact location like `url`; `torrent_sums` parallels `sums` (a
+# checksum file, not the artifact) and is not audited, same as `sums`.
+LOCATION_PARAMS = ("url", "index", "path", "match", "torrent")
 
 # A release-shaped literal: `24.04`, `13.5`, `antiX-26`.
 #

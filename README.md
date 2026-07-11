@@ -22,12 +22,17 @@ Every entry carries the **checksum, its algorithm, and the signature URL** where
 publishes them, so a consumer can verify without a second fetch. Where upstream publishes
 nothing, the entry says so out loud rather than omitting it silently.
 
-**Torrents.** Some images ship only as a torrent — Kali's `live` editions are in its
-signed `SHA256SUMS` but 404 as direct downloads, and every AnduinOS asset is a `.torrent`.
-Those entries carry a `torrent_url`, an `info_hash` and a `magnet_uri`. The
-`torrent.rss` feed's enclosure **is** the `.torrent`, so a torrent client can subscribe
-to it directly. `checksum` verifies the ISO; `torrent_checksum` verifies the `.torrent`
-you download — they are two hashes of two different files and are never merged.
+**Three retrieval channels, chosen by field presence.** An entry offers any of a
+direct download (`download_url`), a torrent file (`torrent_url`), or a magnet
+(`magnet_uri`) — a consumer picks whichever it wants with no branching logic. Debian,
+Ubuntu, Arch and openSUSE Tumbleweed carry **both** a direct download and a torrent;
+Kali's `live` editions and AnduinOS ship **only** a torrent (the ISO 404s, or no ISO
+exists). `torrent.rss`'s enclosure **is** the `.torrent`, so a torrent client
+subscribes to it directly. `checksum` verifies the ISO; `torrent_checksum` (where the
+project publishes one — Debian, Kali) verifies the `.torrent` you download; they are
+two hashes of two different files and are never merged. `info_hash` and `magnet_uri`
+accompany every torrent. Where upstream signs nothing (AnduinOS), the entry says so
+(`verify: torrent`, trust-on-first-use) rather than claiming more than it can.
 
 `raw.githubusercontent.com` is CDN-fronted and serves `ETag`/`Last-Modified`, so
 conditional GET works. (It serves `Content-Type: text/plain`; readers sniff the body. If

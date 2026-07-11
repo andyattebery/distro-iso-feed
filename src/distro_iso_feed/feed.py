@@ -162,21 +162,28 @@ def _rss(records: list[Record], *, title: str, self_url: str, torrent_only: bool
     for record in records:
         r = record.release
         enclosures = _enclosures(r, torrent_only=torrent_only)
-        if not enclosures:
+        # `torrent.rss` is `.torrent` files only. The main feed carries everything
+        # that has somewhere to point -- including a magnet-only entry, whose magnet
+        # cannot be an RSS enclosure (no length, no body) but rides in the link and
+        # description. Dropping it here is how the "consistent output" promise breaks.
+        link = r.torrent_url if torrent_only else r.primary_url
+        if torrent_only and not enclosures:
+            continue
+        if not link and not enclosures:
             continue
 
         item = _sub(channel, "item")
         _sub(item, "title", r.title)
-        # A torrent-only release has no HTTP artifact, so `link` follows the one
-        # enclosure it does have rather than emitting an empty element.
-        _sub(item, "link", r.torrent_url if torrent_only else r.primary_url)
+        _sub(item, "link", link)
         _sub(item, "guid", r.guid(), isPermaLink="false")
         _sub(item, "pubDate", format_datetime(_stamp(record)))
         _sub(item, "description", summary_for(r))
         # RSS 2.0 allows one enclosure per item. Take the first: HTTP where there is
-        # one, the torrent otherwise. `feed/torrent.rss` carries the torrents.
-        url, mime, length = enclosures[0]
-        _sub(item, "enclosure", url=url, type=mime, length=length or "0")
+        # one, the torrent otherwise. A magnet-only entry has none. `feed/torrent.rss`
+        # carries the .torrent files.
+        if enclosures:
+            url, mime, length = enclosures[0]
+            _sub(item, "enclosure", url=url, type=mime, length=length or "0")
         _sub(item, "category", r.distro)
 
     ET.indent(rss, space="  ")

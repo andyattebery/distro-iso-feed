@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import hashlib
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from urllib.parse import urljoin
 
 from .. import checksums, torrents
@@ -218,4 +218,63 @@ def resolve_torrent_only(
         info_hash=ref.info_hash,
         magnet_uri=ref.magnet,
         page_url=params.get("page_url"),
+    )
+
+
+def attach_torrent(client: Client, release: Release, params: dict) -> Release:
+    """Enrich a resolved ISO with a co-located `.torrent`, or leave it untouched.
+
+    The mirror image of `resolve_torrent_only`: there the torrent *is* the artifact;
+    here the ISO is, and the torrent is a second retrieval channel on the same entry
+    so a consumer can pick. Debian, Ubuntu, Arch and openSUSE Tumbleweed all publish
+    `{filename}.torrent` beside (or a sibling dir over from) the ISO.
+
+    Every path returns the release **unchanged** rather than failing. A bad torrent
+    must never break an entry whose direct download is fine -- integrity for that
+    consumer already came from the ISO's own signed checksum.
+
+    The one non-obvious check is `version in info.name`, not `info.name == filename`.
+    openSUSE resolves the `-Current.iso` symlink while its torrent names the dated
+    snapshot (`...-Snapshot20260708-Media.iso`), so an equality test would reject a
+    perfectly good torrent. The version substring ties the torrent to *this* release
+    -- a right-release test. Integrity is the checksum's job, not this line's.
+    """
+    if not release.download_url:  # a torrent-only release has nothing to hang this on
+        return release
+    torrent = params.get("torrent")
+    if not torrent:
+        return release
+
+    url = urljoin(
+        release.download_url,
+        _expand(torrent, filename=release.filename, version=release.version),
+    )
+    ref = fetch_torrent(client, url=url)
+    if not ref:  # not published, or not a torrent -- the direct download still works
+        return release
+    if not (release.version and release.version in ref.payload_name):
+        return release  # a stale or wrong-release torrent
+
+    torrent_algo = torrent_checksum = None
+    if tsums := params.get("torrent_sums"):
+        text = client.text(
+            urljoin(
+                release.download_url,
+                _expand(tsums, filename=release.filename, version=release.version),
+            )
+        )
+        if text and (found := checksums.lookup(text, url.rsplit("/", 1)[-1])):
+            torrent_algo, torrent_checksum = found
+            # Signed but tampered: omit the torrent, keep the direct download.
+            if not ref.verified_by(torrent_algo, torrent_checksum):
+                return release
+
+    return replace(
+        release,
+        torrent_url=ref.url,
+        torrent_size=ref.size,
+        torrent_checksum=torrent_checksum,
+        torrent_checksum_algo=torrent_algo,
+        info_hash=ref.info_hash,
+        magnet_uri=ref.magnet,
     )

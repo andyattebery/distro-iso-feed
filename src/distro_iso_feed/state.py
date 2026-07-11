@@ -79,6 +79,28 @@ class State:
         self.records[release.state_key] = Record(release.version, payload_hash, seen, release)
         return True
 
+    def enrich(self, release: Release) -> bool:
+        """Same artifact, richer metadata. Rewrite in place, preserving `seen`.
+
+        Adding a field to `Release` -- a torrent URL beside an existing ISO -- moves
+        neither `version` nor the change-hash, so `update()` sees no change and the
+        new data would never land. This writes it while keeping `version`, `hash`,
+        and `seen` exactly as they were.
+
+        Preserving `seen` is the whole point: it feeds every feed timestamp, so an
+        enriched entry gains its new enclosure without a single `<updated>` moving,
+        and no subscriber re-notifies. Returns True only when it actually rewrote.
+        """
+        current = self.records.get(release.state_key)
+        if current is None or current.version != release.version:
+            return False  # a genuinely new or moved release is `update()`'s job
+        if current.release.to_json() == release.to_json():
+            return False  # nothing new to record
+        self.records[release.state_key] = Record(
+            current.version, current.hash, current.seen, release
+        )
+        return True
+
     def entries(self) -> list[Record]:
         """Newest first, ties broken by guid so ordering is total and stable."""
         return sorted(

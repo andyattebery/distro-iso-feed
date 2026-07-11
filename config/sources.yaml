@@ -106,14 +106,19 @@ distros:
           index: "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/"
           match: '^debian-[0-9.]+-amd64-netinst\.iso$'
           version_pattern: 'debian-([0-9.]+)-amd64'
-      live-gnome: {label: "Debian Live GNOME", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-gnome\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-kde: {label: "Debian Live KDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-kde\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-xfce: {label: "Debian Live Xfce", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-xfce\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-cinnamon: {label: "Debian Live Cinnamon", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-cinnamon\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-mate: {label: "Debian Live MATE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-mate\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-lxqt: {label: "Debian Live LXQt", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxqt\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-lxde: {label: "Debian Live LXDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxde\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
-      live-standard: {label: "Debian Live Standard", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-standard\.iso$', version_pattern: 'live-([0-9.]+)-amd64'}}
+          # The torrent sits in a sibling dir, `bt-cd/`, with its own GPG-signed
+          # SHA512SUMS -- so the entry carries both a direct download and a fully
+          # verified torrent. `urljoin` resolves `../bt-cd/` against the ISO URL.
+          torrent: "../bt-cd/{filename}.torrent"
+          torrent_sums: "../bt-cd/SHA512SUMS"
+      live-gnome: {label: "Debian Live GNOME", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-gnome\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-kde: {label: "Debian Live KDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-kde\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-xfce: {label: "Debian Live Xfce", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-xfce\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-cinnamon: {label: "Debian Live Cinnamon", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-cinnamon\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-mate: {label: "Debian Live MATE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-mate\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-lxqt: {label: "Debian Live LXQt", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxqt\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-lxde: {label: "Debian Live LXDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxde\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-standard: {label: "Debian Live Standard", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-standard\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
     discover:
       # `debian-edu-` and `debian-mac-` never match: the regex needs digits where they
       # put a word, so both are skipped without needing an `ignore` entry.
@@ -207,6 +212,9 @@ distros:
       # nothing to version by, though both share one hash in sha256sums.txt.
       match: '^archlinux-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'
       version_pattern: 'archlinux-(\d{4}\.\d{2}\.\d{2})-'
+      # `{filename}.torrent` sits beside the ISO; no checksum is published for it, so
+      # it is trust-on-first-use while the ISO stays GPG-signed.
+      torrent: "{filename}.torrent"
     variants:
       iso: {label: "Arch Linux"}
     discover:
@@ -229,6 +237,10 @@ distros:
       sums: "SHA256SUMS"
       sig: "SHA256SUMS.gpg"
       version_pattern: 'ubuntu-([0-9.]+)-'
+      # `{filename}.torrent` sits beside the ISO. Ubuntu does not publish a checksum
+      # for it, so the torrent is trust-on-first-use -- but the ISO stays GPG-signed,
+      # so `verify` is unchanged and the torrent is a bonus channel.
+      torrent: "{filename}.torrent"
     variants:
       desktop-lts: {label: "Ubuntu Desktop LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-desktop-amd64\.iso$'}}
       live-server-lts: {label: "Ubuntu Server LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-live-server-amd64\.iso$'}}
@@ -289,6 +301,11 @@ distros:
           sums: "{filename}.sha256"
           sig: "{filename}.sha256.asc"
           token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+          # The `.torrent` sits beside the `-Current.iso` symlink but names the dated
+          # snapshot inside it. `attach_torrent` ties them by `version in info.name`
+          # (version is `Snapshot<date>`), not by filename equality. No checksum for
+          # the torrent; the ISO stays GPG-signed.
+          torrent: "{filename}.torrent"
       tumbleweed-net:
         label: "openSUSE Tumbleweed NET"
         strategy: stable_symlink
@@ -297,6 +314,7 @@ distros:
           sums: "{filename}.sha256"
           sig: "{filename}.sha256.asc"
           token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+          torrent: "{filename}.torrent"
     discover:
       # Enumerates the Leap index only; Tumbleweed's variants resolve a fixed URL.
       # Capturing `Leap` as the first group yields `leap-dvd`, the configured key.

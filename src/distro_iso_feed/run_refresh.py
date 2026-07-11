@@ -19,6 +19,7 @@ from .config import load
 from .models import Variant
 from .state import State
 from .strategies import REGISTRY
+from .strategies._common import attach_torrent
 from .tokens import from_filename
 
 log = logging.getLogger("distro-iso-feed")
@@ -184,6 +185,13 @@ def main(argv: list[str] | None = None) -> int:
                 failures.append((variant.key, reason))
                 continue
 
+            # A co-located `.torrent` is a second retrieval channel on the same entry,
+            # not a separate resolve. Attach it (or leave the ISO untouched) before
+            # the change token is computed -- these sources all carry an ISO checksum,
+            # so the token is the ISO's hash and the torrent cannot move it.
+            if params.get("torrent"):
+                release = attach_torrent(client, release, params)
+
             # `hash` = the published checksum when there is one, else the infohash,
             # else a digest of the resolved artifact identity. Catches a respin whose
             # version froze. The infohash outranks a URL digest because AnduinOS's
@@ -206,6 +214,12 @@ def main(argv: list[str] | None = None) -> int:
             if state.update(release, payload):
                 changed.append(f"{variant.key} → {release.version}")
                 log.info("%s: %s", variant.key, release.version)
+            elif state.enrich(release):
+                # Same release, new metadata (a torrent attached to a known ISO).
+                # `seen` is preserved, so no feed timestamp moves and no reader
+                # re-notifies; state.save/feed.render below always run.
+                changed.append(f"{variant.key} +torrent")
+                log.info("%s: enriched (metadata only)", variant.key)
 
     if args.dry_run:
         log.info("%d resolved, %d failed", len(variants) - len(failures), len(failures))
