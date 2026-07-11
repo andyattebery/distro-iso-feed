@@ -27,7 +27,11 @@ FEED_SELF = f"{RAW_BASE}/feed/feed.xml"
 TORRENT_SELF = f"{RAW_BASE}/feed/torrent.xml"
 FEED_TITLE = "Distro ISO Feed"
 TORRENT_TITLE = "Distro ISO Feed — torrents"
-SCHEMA_VERSION = 3
+# A compatibility generation, NOT a change counter. Adding an optional field does not
+# bump this -- `Release.from_json` drops unknown keys, so old consumers keep parsing.
+# Bump ONLY on a breaking change (a field removed/renamed, its meaning changed, or the
+# top level reshaped), and say what broke. See docs/architecture.md.
+SCHEMA_VERSION = 1
 ATOM_NS = "http://www.w3.org/2005/Atom"
 
 WARNING_NO_CHECKSUM = "WARNING: no published checksum — integrity unverifiable"

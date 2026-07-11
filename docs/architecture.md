@@ -81,6 +81,24 @@ timestamp feels natural on a docs page.
 **Failure isolation.** A resolver returns `None` rather than raising. The variant's
 record is left untouched, so the feed degrades to **stale, never empty**.
 
+**`schema` is a compatibility generation, not a change counter.** `latest.json`'s
+`schema` (a single integer, the `api/v1` convention) tells a consumer whether it can
+still parse the feed — nothing more. The rule for whoever changes the format:
+
+- **Adding an optional/nullable field → do not bump.** `Release.from_json` drops
+  unknown keys, so a consumer written for an older `schema` keeps parsing; additions
+  are the normal case and must stay invisible to it. (The torrent `1→2` and
+  signing-key `2→3` bumps predated this rule and were mistakes — the feed is back to
+  `schema 1`.)
+- **Bump only on a breaking change** — a field removed or renamed, a field's meaning
+  changed, or the top level reshaped — and say what broke in the same commit.
+
+Consumers therefore **equality-pin `schema` and ignore fields they don't recognise**.
+Full semver would be miscast here: `PATCH` is meaningless for a data shape and `MINOR`
+is redundant when `from_json` already tolerates additions. `SCHEMA_VERSION` lives in
+`feed.py`; it is render-only (never stored in `state.json`), so changing it moves no
+timestamps.
+
 **No source names its own release.** A missing variant is visible — nothing appears
 in the feed. A **pinned** one is not: it resolves cleanly, publishes a valid
 checksum, and serves a stale release forever while every check in this repo stays

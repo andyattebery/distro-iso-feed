@@ -253,7 +253,7 @@ def test_latest_json_carries_both_hashes_under_distinct_keys(tmp_path):
     feed.render(_state(), tmp_path)
     data = json.loads((tmp_path / "latest.json").read_text())
     entry = data["releases"]["kali:live"]
-    assert data["schema"] == 3
+    assert data["schema"] == feed.SCHEMA_VERSION
     assert entry["checksum"] == ISO_SHA
     assert entry["torrent_checksum"] == TORRENT_SHA
     assert entry["download_url"] is None

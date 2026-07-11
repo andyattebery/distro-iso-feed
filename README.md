@@ -43,6 +43,12 @@ two hashes of two different files and are never merged. `info_hash` and `magnet_
 accompany every torrent. Where upstream signs nothing (AnduinOS), the entry says so
 (`verify: torrent`, trust-on-first-use) rather than claiming more than it can.
 
+**Format version.** `latest.json` carries a `schema` integer. **Pin it and ignore fields
+you don't recognise** — new optional fields are added without bumping it, so a consumer
+written for one `schema` keeps working as the feed grows. It changes only on a *breaking*
+format change (a field removed or renamed, a meaning changed, the shape reshaped), which is
+your signal to update. Today it is `1`.
+
 `raw.githubusercontent.com` is CDN-fronted and serves `ETag`/`Last-Modified`, so
 conditional GET works. (It serves `Content-Type: text/plain`; readers sniff the body. If
 that ever matters, jsDelivr fronts the same file with a correct type.)
