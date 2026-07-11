@@ -64,6 +64,7 @@ class Release:
     signature_url: str | None = None
     signing_key_url: str | None = None
     signing_key_fingerprint: str | None = None
+    signature_target: str | None = None  # what signature_url signs: "checksums" | "image"
     torrent_url: str | None = None
     torrent_size: int | None = None
     torrent_checksum: str | None = None

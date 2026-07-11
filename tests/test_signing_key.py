@@ -102,6 +102,7 @@ def test_checksums_verified_publishes_the_pin(keys):
     assert outcome == VERIFIED
     assert r.signing_key_fingerprint == keys["fpr"]
     assert r.signing_key_url == KEY_URL
+    assert r.signature_target == "checksums"  # published, not left for the client to infer
     assert r.verify == "gpg"
 
 
@@ -111,6 +112,7 @@ def test_checksums_tampered_sums_drops_the_claim(keys):
     r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
     assert outcome == BAD
     assert r.signature_url is None and r.signing_key_fingerprint is None
+    assert r.signature_target is None  # no signature -> no target
     assert r.verify == "checksum"  # degraded, not gpg
 
 
@@ -136,6 +138,7 @@ def test_image_issuer_matches_pin(keys):
     r, outcome = verify_signing_key(client, _release(), _params(keys, "image"))
     assert outcome == VERIFIED
     assert r.signing_key_fingerprint == keys["fpr"]
+    assert r.signature_target == "image"
 
 
 def test_image_sig_from_a_different_key_drops(keys):
@@ -170,11 +173,16 @@ def test_gpg_absent_defers(keys, monkeypatch):
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["sums_sig"], SUMS_URL: SUMS})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
     assert outcome == DEFERRED and r.signature_url == SIG_URL
+    # signature_target is config, not a verification result -> emitted even without gpg,
+    # while the pin waits. The client gets the target regardless of the build's toolchain.
+    assert r.signature_target == "checksums" and r.signing_key_fingerprint is None
 
 
 def test_no_signing_key_or_no_sig_is_a_noop(keys):
     client = FakeClient({})
-    assert verify_signing_key(client, _release(), {})[1] == DEFERRED  # no signing_key
+    # No signing_key (the MX case): no target either -> the client infers from the URL.
+    r, outcome = verify_signing_key(client, _release(), {})
+    assert outcome == DEFERRED and r.signature_target is None
     r = _release(signature_url=None)
     assert verify_signing_key(client, r, _params(keys, "image"))[1] == DEFERRED  # no sig
 

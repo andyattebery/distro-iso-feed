@@ -315,12 +315,19 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
     key_conf = params.get("signing_key")
     if not key_conf or not release.signature_url:
         return release, DEFERRED
+
+    # `signature_target` is a static fact -- what the sig signs -- known from config
+    # regardless of whether gpg can verify the pin this run. Stage it now so it rides
+    # every non-BAD path (a dev box without gpg still emits it); `_drop` clears it.
+    covers = key_conf.get("covers")
+    staged = replace(release, signature_target=covers)
+
     if not gpgverify.gpg_available():
-        return release, DEFERRED  # keep the claim; the environment, not the sig, is at fault
+        return staged, DEFERRED  # keep the claim; the environment, not the sig, is at fault
 
     key = client.get(key_conf["url"])
     if not key or not key.content:
-        return release, DEFERRED  # transient: don't drop over a key-server blip
+        return staged, DEFERRED  # transient: don't drop over a key-server blip
     key_bytes = key.content
 
     pinned = _norm_fpr(str(key_conf["fingerprint"]))
@@ -329,15 +336,14 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
 
     sig = client.get(release.signature_url)
     if not sig or not sig.content:
-        return release, DEFERRED
+        return staged, DEFERRED
     sig_bytes = sig.content
 
-    covers = key_conf.get("covers")
     if covers == "checksums":
         signed_url = _strip_sig_ext(release.signature_url)
         signed = client.get(signed_url)
         if not signed or not signed.content:
-            return release, DEFERRED
+            return staged, DEFERRED
         text = signed.content.decode("utf-8", "replace")
         good = gpgverify.verify_detached(key_bytes, sig_bytes, signed.content)
         # The checksum the feed publishes must be the one the signature vouches for.
@@ -346,21 +352,25 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
     elif covers == "image":
         issuer = gpgverify.sig_issuer(sig_bytes)
         if not issuer:
-            return release, DEFERRED  # couldn't parse the sig -> don't punish the entry
+            return staged, DEFERRED  # couldn't parse the sig -> don't punish the entry
         if not gpgverify.issuer_in_key(issuer, key_bytes):
             return _drop(release), BAD
     else:  # a config with signing_key but no/unknown `covers` verifies nothing
-        return release, DEFERRED
+        return staged, DEFERRED
 
     return replace(
-        release, signing_key_url=key_conf["url"], signing_key_fingerprint=pinned
+        staged, signing_key_url=key_conf["url"], signing_key_fingerprint=pinned
     ), VERIFIED
 
 
 def _drop(release: Release) -> Release:
     """Strip the gpg claim so `verify` falls back to `checksum`."""
     return replace(
-        release, signature_url=None, signing_key_url=None, signing_key_fingerprint=None
+        release,
+        signature_url=None,
+        signing_key_url=None,
+        signing_key_fingerprint=None,
+        signature_target=None,
     )
 
 

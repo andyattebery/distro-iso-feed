@@ -1,7 +1,7 @@
 # distro-iso-feed
 
-A unified **Atom / RSS / JSON feed of the latest ISO releases** for 28 Linux and BSD
-distributions (104 variants). A GitHub Action refreshes it daily and commits the result;
+A unified **Atom / RSS / JSON feed of the latest ISO releases** for a curated set of
+Linux and BSD distributions. A GitHub Action refreshes it daily and commits the result;
 the committed file *is* the published feed.
 
 Downloading is deliberately out of scope. The feed is the product — subscribe with a
@@ -27,7 +27,7 @@ nothing, the entry says so out loud rather than omitting it silently.
 swapped one. The feed does not merely forward those — every build proves the signature
 chains to the pinned key (`gpgv` the signed checksum file where it's small enough to fetch,
 or confirm the signature's issuer otherwise) and **refuses to publish a pin that doesn't
-verify**, degrading that entry to `checksum`. Two sources have no single pin: Void signs
+verify**, degrading that entry to `checksum`. Some sources have no single pin: Void signs
 with signify (not GPG, so it's `checksum`), and MX signs each variant with a different
 developer key (kept as `gpg`, unpinned).
 

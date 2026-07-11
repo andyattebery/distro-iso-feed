@@ -219,6 +219,7 @@ def latest_json(records: list[Record]) -> str:
                 "signature_url": r.release.signature_url,
                 "signing_key_url": r.release.signing_key_url,
                 "signing_key_fingerprint": r.release.signing_key_fingerprint,
+                "signature_target": r.release.signature_target,
                 "torrent_url": r.release.torrent_url,
                 "torrent_size": r.release.torrent_size,
                 "torrent_checksum": r.release.torrent_checksum,

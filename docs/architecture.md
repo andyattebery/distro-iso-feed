@@ -21,7 +21,7 @@ artifact — filename, version token, checksum, algorithm — and never a status
 
 ## The five axes
 
-Six strategies were the starting point. Writing 28 distros' worth revealed that the
+Six strategies were the starting point. Writing the sources out revealed that the
 strategies are *presets*, and the real structure is a product of five orthogonal concerns:
 
 | Axis | Module | Implementations |
@@ -129,7 +129,7 @@ kept only if it resolves to *the artifact that produced the key* — a node reso
 to the sibling's ISO is a silent duplicate variant, and that is exactly what a
 plausible-but-wrong substitution yields. What cannot be synthesized is reported,
 never dropped. `match: TODO` made the PR a to-do list, and a to-do list is a thing
-you skim: eight Fedora spins and five Nobara editions stayed missing while that PR
+you skim: Fedora spins and Nobara editions stayed missing while that PR
 sat open, accurately saying something was there.
 
 **The discovery surface is not always the resolve surface.** Aurora resolves a fixed
@@ -159,9 +159,9 @@ codebase that verifies a payload rather than republishing a checksum. Where no s
 hash exists (AnduinOS), `verify` is `torrent`: the infohash covers every piece, on
 trust-on-first-use, and the summary says so rather than claiming `checksum`.
 
-**The GPG pin is verified at build, or it is not published.** 12 of the 13 distros with
-`verify: gpg` carry `signing_key_url` + `signing_key_fingerprint` so a consumer can pin
-the key (MX is the exception — see below). A hand-entered fingerprint the feed merely forwards is only
+**The GPG pin is verified at build, or it is not published.** Distros with `verify: gpg`
+carry `signing_key_url` + `signing_key_fingerprint` so a consumer can pin the key (MX is
+the exception — see below). A hand-entered fingerprint the feed merely forwards is only
 as good as the data entry, so `verify_signing_key` (`_common.py`) proves the chain
 every build before publishing the pin — two strengths, by what the signature covers:
 
