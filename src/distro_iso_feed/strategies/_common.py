@@ -334,7 +334,12 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
     key_bytes = key.content
 
     pinned = _norm_fpr(str(key_conf["fingerprint"]))
-    if gpgverify.primary_fingerprint(key_bytes) != pinned:
+    # A cheap sanity early-out: is the pinned key even in what the URL served? Set-based (not
+    # "is it the first key") so a key directory that returns several keys, or lists the pin
+    # second, is not a false BAD. It is no longer the security boundary -- each path below
+    # proves the pin actually *signed*, so an appended attacker key cannot ride this through.
+    primaries = {g[0] for g in gpgverify.key_fingerprint_groups(key_bytes) if g}
+    if pinned not in primaries:
         return _drop(release), BAD  # the URL is not serving the key we pinned
 
     sig = client.get(release.signature_url)
@@ -348,23 +353,30 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
         if not signed or not signed.content:
             return staged, DEFERRED
         text = signed.content.decode("utf-8", "replace")
-        good = gpgverify.verify_detached(key_bytes, sig_bytes, signed.content)
-        # The checksum the feed publishes must be the one the signature vouches for.
+        good = gpgverify.verify_detached(key_bytes, sig_bytes, signed.content, pinned_fpr=pinned)
+        # The checksum the feed publishes must be the one the signature vouches for. Reading it
+        # from the raw SUMS is safe *here* because a detached sig covers the whole file -- any
+        # appended line breaks `good`. (Clearsigned below cannot do this; see there.)
         if not (good and release.checksum and release.checksum.lower() in text.lower()):
             return _drop(release), BAD
     elif covers == "clearsigned":
         # AlmaLinux: `sig` IS the clearsigned CHECKSUM -- signature and body in one file, so
-        # there is no separate SUMS to fetch. Verify the inline signature under the pinned
-        # key, then confirm the feed's checksum sits inside the body just verified.
-        text = sig_bytes.decode("utf-8", "replace")
-        good = gpgverify.verify_clearsigned(key_bytes, sig_bytes)
-        if not (good and release.checksum and release.checksum.lower() in text.lower()):
+        # there is no separate SUMS to fetch. Check the feed's checksum against gpg's extracted
+        # payload (the signed region only), NOT the raw file: text appended after the signature
+        # block leaves the inner sig Good, so a raw `in` check would match injected lines.
+        payload = gpgverify.verify_clearsigned(key_bytes, sig_bytes, pinned_fpr=pinned)
+        if not (payload and release.checksum and release.checksum.lower() in payload.lower()):
             return _drop(release), BAD
     elif covers == "image":
-        issuer = gpgverify.sig_issuer(sig_bytes)
-        if not issuer:
+        # The sig covers the ISO we never download, so we can only check who it *names*. A
+        # dual-signed `.asc` names two issuers (Proxmox), so consider them all; and match only
+        # against the pinned key's OWN fingerprints (primary + subkeys, the Tails case), never
+        # every key in the blob -- an appended attacker key must not lend its issuer here.
+        issuers = gpgverify.sig_issuers(sig_bytes)
+        if not issuers:
             return staged, DEFERRED  # couldn't parse the sig -> don't punish the entry
-        if not gpgverify.issuer_in_key(issuer, key_bytes):
+        own = gpgverify.fingerprints_for_primary(key_bytes, pinned)
+        if not any(gpgverify.issuer_in_fingerprints(iss, own) for iss in issuers):
             return _drop(release), BAD
     else:  # a config with signing_key but no/unknown `covers` verifies nothing
         return staged, DEFERRED

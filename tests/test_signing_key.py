@@ -60,9 +60,32 @@ def _clearsign(home: str, fpr: str, data: bytes) -> bytes:
     ).stdout  # fmt: skip
 
 
+def _export_secret(home: str, fpr: str) -> bytes:
+    env = {**os.environ, "GNUPGHOME": home}
+    return subprocess.run(
+        ["gpg", "--batch", "--pinentry-mode", "loopback", "--passphrase", "",
+         "--export-secret-keys", fpr],
+        env=env, capture_output=True, check=True,
+    ).stdout  # fmt: skip
+
+
+def _dual_sign(home: str, fprs: list[str], data: bytes, *, clear: bool = False) -> bytes:
+    """One artifact signed by every key in `fprs` -- the Proxmox dual-signature shape. `home`
+    must hold every secret key. Detached by default; `clear` for an inline-clearsigned doc."""
+    env = {**os.environ, "GNUPGHOME": home}
+    users = [a for f in fprs for a in ("--local-user", f)]
+    mode = "--clearsign" if clear else "--detach-sign"
+    return subprocess.run(
+        ["gpg", "--batch", "--pinentry-mode", "loopback", "--passphrase", "", mode, *users, "-o", "-"],
+        env=env, input=data, capture_output=True, check=True,
+    ).stdout  # fmt: skip
+
+
 ISO = "distro-9.0-amd64.iso"
 CKSUM = "a" * 64
 SUMS = f"{CKSUM}  {ISO}\n".encode()
+DECOY_SUMS = f"{'d' * 64}  {ISO}\n".encode()  # a body that does NOT carry the feed's CKSUM
+IMAGE_BYTES = b"pretend ISO bytes"  # image mode never fetches the ISO, so any bytes stand in
 
 
 @pytest.fixture(scope="module")
@@ -79,12 +102,39 @@ def keys():
         os.chmod(other_home, 0o700)
         other_fpr = _gen(other_home, "Impostor <no@distro.example>")
         other_pub = _export(other_home, other_fpr)
-        other_iso_sig = _sign(other_home, other_fpr, b"pretend ISO bytes")
+        other_iso_sig = _sign(other_home, other_fpr, IMAGE_BYTES)
         other_sums_clear = _clearsign(other_home, other_fpr, SUMS)
+        other_sums_sig = _sign(other_home, other_fpr, SUMS)  # SUMS detached-signed by B alone
+
+        # A home holding BOTH secret keys, so one artifact can be signed by A *and* B -- the
+        # Proxmox dual-signature that a plain gpgv exit-code check hard-fails.
+        both_home = tempfile.mkdtemp()
+        os.chmod(both_home, 0o700)
+        for h, f in ((home, fpr), (other_home, other_fpr)):
+            subprocess.run(
+                ["gpg", "--batch", "--import"], env={**os.environ, "GNUPGHOME": both_home},
+                input=_export_secret(h, f), capture_output=True, check=True,
+            )  # fmt: skip
+        dual_sums_sig = _dual_sign(both_home, [fpr, other_fpr], SUMS)
+        dual_iso_sig = _dual_sign(both_home, [fpr, other_fpr], IMAGE_BYTES)
+        dual_sums_clear = _dual_sign(both_home, [fpr, other_fpr], SUMS, clear=True)
+
+        # The blob a compromised key URL might serve: the pinned key with an attacker key
+        # appended. `primary_fingerprint` (first key only) never sees the second.
+        two_key_blob = pub + other_pub
+
+        # The clearsigned injection: A signs a DECOY body (no CKSUM), then a line carrying the
+        # feed's CKSUM is appended AFTER the signature block. Inner sig stays Good; the raw file
+        # contains CKSUM but gpg's extracted payload does not.
+        clear_appended = _clearsign(home, fpr, DECOY_SUMS) + f"{CKSUM}  {ISO}\n".encode()
+
         yield {
             "fpr": fpr, "pub": pub, "sums_sig": sums_sig, "sums_clear": sums_clear,
             "iso_sig": iso_sig, "other_fpr": other_fpr, "other_pub": other_pub,
             "other_iso_sig": other_iso_sig, "other_sums_clear": other_sums_clear,
+            "other_sums_sig": other_sums_sig, "dual_sums_sig": dual_sums_sig,
+            "dual_iso_sig": dual_iso_sig, "dual_sums_clear": dual_sums_clear,
+            "two_key_blob": two_key_blob, "clear_appended": clear_appended,
         }  # fmt: skip
 
 
@@ -143,6 +193,35 @@ def test_checksums_good_sig_but_our_checksum_absent_drops(keys):
     assert sig is None
 
 
+# -------------------------------------------------- checksums mode, multiple signatures
+
+
+def test_checksums_dual_signed_verifies_when_the_pin_is_a_cosigner(keys):
+    """The Proxmox class: a SUMS signed by two keys. A plain gpgv exit-code check hard-fails
+    (it can't verify the co-signer), but the pinned key's signature is good -- so we accept."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["dual_sums_sig"], SUMS_URL: SUMS})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
+    assert outcome == VERIFIED and r.verify == "gpg"
+
+
+def test_checksums_signed_only_by_another_key_drops(keys):
+    """A good signature, but by a key we did not pin -- not evidence for our pin."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_sig"], SUMS_URL: SUMS})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
+    assert outcome == BAD
+
+
+def test_checksums_appended_attacker_key_in_the_blob_drops(keys):
+    """The key URL serves `[pinned] ++ [attacker]` and the SUMS is the attacker's. The old
+    first-key-only fpr guard passes, but the signature's primary fpr is not the pin, so the
+    VALIDSIG set-gate rejects it -- the appended key never lends its signature to the pin."""
+    client = FakeClient(
+        {KEY_URL: keys["two_key_blob"], SIG_URL: keys["other_sums_sig"], SUMS_URL: SUMS}
+    )
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
+    assert outcome == BAD
+
+
 # ---------------------------------------------------------------------- image mode
 
 
@@ -160,6 +239,24 @@ def test_image_sig_from_a_different_key_drops(keys):
     r, outcome = verify_signing_key(client, _release(), _params(keys, "image"))
     assert outcome == BAD
     assert r.signature_url is None and r.verify == "checksum"
+
+
+def test_image_dual_signed_verifies_for_either_pinned_cosigner(keys):
+    """A dual-signed ISO `.asc` names two issuers, and the pinned one is not always first.
+    Pinning A (listed first) or B (listed second) both verify -- order must not decide it."""
+    a = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["dual_iso_sig"]})
+    assert verify_signing_key(a, _release(), _params(keys, "image"))[1] == VERIFIED
+    b = FakeClient({KEY_URL: keys["other_pub"], SIG_URL: keys["dual_iso_sig"]})
+    assert verify_signing_key(b, _release(), _params(keys, "image", fpr=keys["other_fpr"]))[1] == VERIFIED
+
+
+def test_image_appended_attacker_key_in_the_blob_drops(keys):
+    """The bonus: the ISO sig is the attacker's and the key URL served `[pinned] ++ [attacker]`.
+    The issuer is checked only against the PINNED key's own fingerprints, so the co-packaged
+    attacker key cannot lend its issuer. (Checking every fpr in the blob would have accepted it.)"""
+    client = FakeClient({KEY_URL: keys["two_key_blob"], SIG_URL: keys["other_iso_sig"]})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "image"))
+    assert outcome == BAD and r.signature_url is None
 
 
 # ----------------------------------------------------------------- clearsigned mode
@@ -187,6 +284,27 @@ def test_clearsigned_tampered_body_drops(keys):
 def test_clearsigned_from_a_different_key_drops(keys):
     """Signed inline, but by a key we did not pin -- `gpg --verify` fails under the pin."""
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_clear"]})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
+    assert outcome == BAD
+
+
+def test_clearsigned_text_appended_after_the_signature_is_rejected(keys):
+    """The injection this whole path is hardened against: the pinned key signs a DECOY body
+    (no CKSUM), then a line carrying the feed's CKSUM is appended after `END PGP SIGNATURE`.
+    The inner signature is still Good and the raw file DOES contain CKSUM -- a raw `in` check
+    (the old behaviour) would pass. Checking against gpg's extracted payload rejects it."""
+    assert CKSUM.encode() in keys["clear_appended"]  # the attack would fool a raw-bytes check
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["clear_appended"]})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
+    assert outcome == BAD and r.verify == "checksum"
+
+
+def test_clearsigned_dual_signed_with_unknown_cosigner_fails_closed(keys):
+    """gpg withholds `--output` unless it can verify EVERY signature in a clearsigned doc, so a
+    dual-signed CHECKSUM with an unknown co-signer yields no payload -> BAD, never a false GOOD.
+    Harmless in practice (the sole clearsigned source, AlmaLinux, is single-signed); asserted
+    here so the fail-closed direction is a decision on record, not an accident."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["dual_sums_clear"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
     assert outcome == BAD
 
@@ -227,6 +345,37 @@ def test_no_signing_key_or_no_sig_is_a_noop(keys):
     assert outcome == DEFERRED and r.signature_target is None
     r = _release(signature_url=None)
     assert verify_signing_key(client, r, _params(keys, "image"))[1] == DEFERRED  # no sig
+
+
+# ----------------------------------------------------------- gpgverify unit surface
+
+
+def test_verify_detached_gates_on_the_pinned_signer(keys):
+    """Directly: a dual-signed file verifies for the pinned signer and not for an unrelated one."""
+    assert gpgverify.verify_detached(
+        keys["pub"], keys["dual_sums_sig"], SUMS, pinned_fpr=keys["fpr"]
+    )
+    # B signed it too, but B is not imported (only A's pub) and is not the pin here anyway.
+    assert not gpgverify.verify_detached(
+        keys["pub"], keys["other_sums_sig"], SUMS, pinned_fpr=keys["fpr"]
+    )
+
+
+def test_sig_issuers_returns_every_signer(keys):
+    """A dual-signed sig names both issuers; a single-signed one names just its own."""
+    issuers = gpgverify.sig_issuers(keys["dual_iso_sig"])
+    assert any(i.endswith(keys["fpr"][-16:]) for i in issuers)
+    assert any(i.endswith(keys["other_fpr"][-16:]) for i in issuers)
+    assert [keys["fpr"]] == [
+        i for i in gpgverify.sig_issuers(keys["iso_sig"]) if i.endswith(keys["fpr"][-16:])
+    ][:1]
+
+
+def test_fingerprints_for_primary_isolates_the_pinned_key(keys):
+    """From a two-key blob, only the pinned key's own fingerprints come back -- never the other's."""
+    own = gpgverify.fingerprints_for_primary(keys["two_key_blob"], keys["fpr"])
+    assert keys["fpr"] in own and keys["other_fpr"] not in own
+    assert gpgverify.fingerprints_for_primary(keys["two_key_blob"], "F" * 40) == set()
 
 
 # ----------------------------------------------------------------- config guard
