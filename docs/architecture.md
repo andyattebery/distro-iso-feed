@@ -169,8 +169,8 @@ every build before publishing the pin — two strengths, by what the signature c
   `SHA*SUMS`/`.sha256`): `gpgv` the file under *only* the pinned key and confirm the
   feed's published `checksum` is inside it. This authenticates the checksum the feed
   ships — the one place the feed proves its own integrity data, not just forwards it.
-- **`image`** (arch, tails, manjaro, endeavouros, kde-neon, antix, cachyos — the sig
-  signs the multi-GB ISO the build never downloads): confirm the signature's *issuer*
+- **`image`** (arch, tails, manjaro, endeavouros, kde-neon, antix, cachyos, proxmox — the
+  sig signs the multi-GB ISO the build never downloads): confirm the signature's *issuer*
   is the pinned key (primary **or a subkey** — Tails signs with a subkey). Full
   verification is the consumer's job once it has the ISO.
 
@@ -180,15 +180,22 @@ a network blip or a missing `gpg` binary defers (keeps the claim, adds no pin) s
 never flaps. `distro-iso-feed-audit` re-runs the same gate; `--strict` fails on any
 bad pin.
 
-**Two data facts this surfaced, both real.** Void's `sha256sum.sig` is **signify /
+**Three data facts this surfaced, all real.** Void's `sha256sum.sig` is **signify /
 minisign, not OpenPGP** — its `verify: gpg` was wrong, corrected to `checksum`. And
 **MX signs different variants with different developer keys** — there is no single MX
 distro key to pin, so MX keeps `verify: gpg` with no pin (the honest "can't source one
-key" path) rather than a pin that would fail half its variants.
+key" path) rather than a pin that would fail half its variants. And **Proxmox
+double-signs every signature** with its current (Trixie) and legacy (Bookworm) release
+keys at once; `gpgv` rejects a file the moment one of its signatures is from a key not in
+the keyring, so checksums-mode cannot verify `SHA256SUMS.asc` under a single pin. Proxmox
+is `image` instead — the per-ISO `.asc` is checked by *issuer* (Trixie is listed first),
+which never runs `gpgv` over the file. (`download.proxmox.com` is also the feed's one
+`http://` source: its TLS cert covers only the CDN hosts it redirects to, not the apex,
+which serves directly over http; the ISO is GPG-signed regardless.)
 
 **RSS 2.0 permits one `<enclosure>` per item.** Atom permits several. That asymmetry,
 not preference, is why torrents get their own `feed/torrent.rss` instead of riding
-along in `feed.rss`. A co-located entry (Debian, Ubuntu, Arch, openSUSE) emits two
+along in `feed.rss`. A co-located entry (Debian, Ubuntu, Arch, openSUSE, Proxmox) emits two
 `rel="enclosure"` links in `feed.xml` and its single ISO enclosure in `feed.rss`.
 
 **Three retrieval channels, picked by field presence — no consumer logic.** An entry

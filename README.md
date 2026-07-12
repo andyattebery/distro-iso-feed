@@ -36,7 +36,7 @@ developer key (kept as `gpg`, unpinned).
 **Three retrieval channels, chosen by field presence.** An entry offers any of a
 direct download (`download_url`), a torrent file (`torrent_url`), or a magnet
 (`magnet_uri`) — a consumer picks whichever it wants with no branching logic. Debian,
-Ubuntu, Arch and openSUSE Tumbleweed carry **both** a direct download and a torrent;
+Ubuntu, Arch, openSUSE Tumbleweed and Proxmox carry **both** a direct download and a torrent;
 Kali's `live` editions and AnduinOS ship **only** a torrent (the ISO 404s, or no ISO
 exists). `torrent.rss`'s enclosure **is** the `.torrent`, so a torrent client
 subscribes to it directly. `checksum` verifies the ISO; `torrent_checksum` (where the

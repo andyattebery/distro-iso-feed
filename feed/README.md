@@ -103,6 +103,8 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | opensuse | tumbleweed-net | Snapshot20260709 | gpg | — |
 | pop-os | intel | 24.04-20 | checksum | — |
 | pop-os | nvidia | 24.04-25 | checksum | — |
+| proxmox | backup-server | 4.2-1 | gpg | ✓ |
+| proxmox | ve | 9.2-1 | gpg | ✓ |
 | q4os | plasma | 6.7 | checksum | — |
 | q4os | tde | 6.7 | checksum | — |
 | tails | iso | 7.9.1 | gpg | — |

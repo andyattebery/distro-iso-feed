@@ -89,7 +89,7 @@ distros:
       enumerable: false
       reason: "variants are separate endpoints (builds/<rel>/intel vs /nvidia), never rows in one document"
 
-  # --------------------------------------------------------- directory_index (11)
+  # --------------------------------------------------------- directory_index (12)
 
   debian:
     strategy: directory_index
@@ -409,6 +409,51 @@ distros:
     discover:
       match: '\.img\.gz$'
       group: '^batocera-x86_64-([a-z]+)-[0-9.]+-\d{8}\.img\.gz$'
+
+  # Proxmox ships PVE, PBS, PMG and PDM ISOs in ONE flat /iso/ dir, every past version
+  # co-listed, each with a .iso.sha256, a detached .iso.asc, and a .iso.torrent. One
+  # source, gpg-verified off the per-ISO signature, with a trust-on-first-use co-located
+  # torrent (the Arch/Ubuntu pattern).
+  #
+  # `covers: image`, NOT checksums, even though a signed aggregate SHA256SUMS.asc exists:
+  # every Proxmox signature (the aggregate AND each .iso.asc) is made by BOTH the Trixie
+  # (current, PVE9/PBS4) and Bookworm (legacy) release keys. `gpgv` returns non-zero when
+  # any signature in a file is from a key not in the keyring, so checksums-mode -- which
+  # gpgv's the whole SHA256SUMS under the single pinned key -- fails on the Bookworm sig
+  # it cannot check. image-mode reads only the .iso.asc's issuer (Trixie is listed first),
+  # confirming the signature is from the pinned key without gpgv over the file.
+  #
+  # HTTP, not HTTPS, and deliberately: download.proxmox.com's TLS cert covers only the
+  # CDN hosts it redirects to, not the apex. Over http the apex serves files directly
+  # with no redirect, so it stays the canonical, geo-balanced, first-party host. The
+  # ISO is GPG-signed regardless. This is the one http:// source in the feed.
+  proxmox:
+    strategy: directory_index
+    page_url: "https://www.proxmox.com/en/downloads"
+    params:
+      index: "http://download.proxmox.com/iso/"
+      sums: "SHA256SUMS"            # aggregate; looked up by the resolved filename
+      sig: "{filename}.asc"         # detached sig over the ISO -> image-mode gate
+      torrent: "{filename}.torrent" # no torrent checksum upstream -> trust-on-first-use
+      version_pattern: '_([0-9.]+-[0-9]+)\.iso$'   # 9.2-1 ; the -1 build number stays in the token
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+        fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+        covers: image
+    variants:
+      # Keys are the upstream product segment (ve, backup-server), NOT pve/pbs: discover's
+      # group captures them verbatim, and a key the group cannot produce is reported
+      # UNEXPLAINED on every audit run. Labels carry the human names.
+      ve: {label: "Proxmox VE", params: {match: '^proxmox-ve_[0-9.]+-[0-9]+\.iso$'}}
+      backup-server: {label: "Proxmox Backup Server", params: {match: '^proxmox-backup-server_[0-9.]+-[0-9]+\.iso$'}}
+    discover:
+      # All four products share the dir; PMG and PDM are separate products not requested,
+      # so ignore them (not enumerable:false -- that would hide a fact behind a label).
+      # `mail-?gateway` catches both the old `mailgateway` and new `mail-gateway` names.
+      # Legacy hex-suffixed ve/pbs names collapse to the same key and lose on version.
+      match: '\.iso$'
+      group: '^proxmox-([a-z-]+)_'
+      ignore: ['mail-?gateway', 'datacenter-manager']
 
   # ------------------------------------------------------------ stable_symlink (4)
   # Fixed, version-less download URL. The token comes from elsewhere -- either the

@@ -4,8 +4,44 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Sun, 12 Jul 2026 08:32:52 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 15:40:52 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Proxmox Backup Server 4.2-1 (x86_64)</title>
+      <link>http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso</link>
+      <guid isPermaLink="false">proxmox:backup-server:4.2-1</guid>
+      <pubDate>Sun, 12 Jul 2026 15:40:52 +0000</pubDate>
+      <description>Proxmox Backup Server 4.2-1 (x86_64)
+Filename: proxmox-backup-server_4.2-1.iso
+sha256: 2fb299deac3929253712c9c3dfc9237edbe70af83c8848467616b771a1d5453e
+Signature: http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Torrent: http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso.torrent
+Infohash: 11b513dda4f78448362fddc33bec5ac1ee9d07da
+Magnet: magnet:?xt=urn:btih:11b513dda4f78448362fddc33bec5ac1ee9d07da&amp;dn=proxmox-backup-server_4.2-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso" type="application/x-iso9660-image" length="0" />
+      <category>proxmox</category>
+    </item>
+    <item>
+      <title>Proxmox VE 9.2-1 (x86_64)</title>
+      <link>http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso</link>
+      <guid isPermaLink="false">proxmox:ve:9.2-1</guid>
+      <pubDate>Sun, 12 Jul 2026 15:40:36 +0000</pubDate>
+      <description>Proxmox VE 9.2-1 (x86_64)
+Filename: proxmox-ve_9.2-1.iso
+sha256: 4e88fe416df9b527624a175f24c9aa07c714d3332afb1ee3dbf3879573ef2c6c
+Signature: http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Torrent: http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso.torrent
+Infohash: f253613924f079ec8da61180680768d9e8331e44
+Magnet: magnet:?xt=urn:btih:f253613924f079ec8da61180680768d9e8331e44&amp;dn=proxmox-ve_9.2-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso" type="application/x-iso9660-image" length="0" />
+      <category>proxmox</category>
+    </item>
     <item>
       <title>Debian Live Standard 13.6.0 (x86_64)</title>
       <link>https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-standard.iso</link>
