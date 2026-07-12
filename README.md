@@ -5,7 +5,9 @@ Linux and BSD distributions. A GitHub Action refreshes it daily and commits the 
 the committed file *is* the published feed.
 
 Downloading is deliberately out of scope. The feed is the product — subscribe with a
-reader, Flexget, n8n, or a three-line fetch script, and do the fetching yourself.
+reader, Flexget, n8n, or a three-line fetch script, and do the fetching yourself; see
+[Downloading](#downloading) for a one-liner and a companion tool that verifies and
+maintains an archive.
 
 ## Subscribe
 
@@ -55,6 +57,49 @@ that ever matters, jsDelivr fronts the same file with a correct type.)
 
 The current contents are listed in [`docs/catalog.md`](docs/catalog.md), which is generated
 — never hand-edited.
+
+## Downloading
+
+Fetching ISOs lives outside this repo — the feed is the product. Two ways to pull from it,
+in increasing order of how much they do for you.
+
+**Quick and dirty.** Lift one ISO's URL out of `latest.json` and fetch it. No verification,
+no torrent, no resume:
+
+```bash
+curl -s https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/latest.json \
+  | jq -r '.releases["debian:netinst"].download_url' \
+  | xargs curl -LO
+```
+
+Swap `debian:netinst` for any key in [`docs/catalog.md`](docs/catalog.md). Torrent-only
+entries (Kali `live`, AnduinOS) carry `"download_url": null` — those need a torrent client
+or the downloader below.
+
+**The companion downloader.**
+[`distro-iso-feed-downloader`](https://github.com/andyattebery/distro-iso-feed-downloader)
+reads the same feed and does what the one-liner can't:
+
+```bash
+uv tool install git+https://github.com/andyattebery/distro-iso-feed-downloader
+```
+
+- **One-off** — `distro-iso-feed-download kali:live` fetches a single key into the current
+  directory (`-o` to redirect). Over the one-liner it adds: checksum verification (and GPG
+  where the entry carries a signature), torrent-or-HTTP by which fields the entry offers,
+  a resumable aria2c-backed download, and atomic placement — nothing lands at the final
+  path until it verifies. Stateless: no state file, no pruning, so it never disturbs an
+  archive. No install needed — `uvx` runs it in one shot:
+
+  ```bash
+  uvx --from git+https://github.com/andyattebery/distro-iso-feed-downloader \
+    distro-iso-feed-download kali:live
+  ```
+- **Archive** — `distro-iso-feed-download` with no key reads a `downloader.yaml` (an
+  `output_dir` and a `select:` set of keys) and keeps that directory current: downloads
+  each selected variant, verifies it, and prunes versions the feed has superseded. Built
+  to run on a schedule — drop it in cron or a systemd timer, or `--interval 86400` to
+  self-loop inside a container.
 
 ## Adding a distro
 
