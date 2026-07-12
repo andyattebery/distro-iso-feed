@@ -4,8 +4,586 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Sun, 12 Jul 2026 21:47:39 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 23:21:43 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>NetBSD install 10.1 (aarch64)</title>
+      <link>https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso</link>
+      <guid isPermaLink="false">netbsd:install:aarch64:10.1</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:43 +0000</pubDate>
+      <description>NetBSD install 10.1 (aarch64)
+Filename: NetBSD-10.1-evbarm-aarch64.iso
+sha512: 155dba2cad71856c3ac1cd4c0f8f5ff70867ca3ff8625e6453fe1d692d70176c41a3974c6c867fd1d8758a5ee24e47c83faa0ab87b23a0185b1a602aa88ada07
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso.torrent
+Infohash: 03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5
+Magnet: magnet:?xt=urn:btih:03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5&amp;dn=NetBSD-10.1-evbarm-aarch64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso" type="application/x-iso9660-image" length="0" />
+      <category>netbsd</category>
+    </item>
+    <item>
+      <title>NetBSD install 10.1 (x86_64)</title>
+      <link>https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso</link>
+      <guid isPermaLink="false">netbsd:install:10.1</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:43 +0000</pubDate>
+      <description>NetBSD install 10.1 (x86_64)
+Filename: NetBSD-10.1-amd64.iso
+sha512: 7a5e5071307e1795885ffc6e1b8aac465082c21c8b79f4c9b4103ef44e4f2da45477299d213ae0093f6534dc99dc2bbf78f41e9dd556c72a02516068bf43fe49
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso.torrent
+Infohash: 03f45a388d292d154301cea4290660d22718de19
+Magnet: magnet:?xt=urn:btih:03f45a388d292d154301cea4290660d22718de19&amp;dn=NetBSD-10.1-amd64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>netbsd</category>
+    </item>
+    <item>
+      <title>OpenBSD install 7.9 (aarch64)</title>
+      <link>https://cdn.openbsd.org/pub/OpenBSD/7.9/arm64/install79.iso</link>
+      <guid isPermaLink="false">openbsd:install:aarch64:7.9</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:42 +0000</pubDate>
+      <description>OpenBSD install 7.9 (aarch64)
+Filename: install79.iso
+sha256: 49786ab82868b6e508a0117c0c1567694a2f6b46caf8972c726868617b8c22fb
+Verify: checksum</description>
+      <enclosure url="https://cdn.openbsd.org/pub/OpenBSD/7.9/arm64/install79.iso" type="application/x-iso9660-image" length="0" />
+      <category>openbsd</category>
+    </item>
+    <item>
+      <title>OpenBSD install 7.9 (x86_64)</title>
+      <link>https://cdn.openbsd.org/pub/OpenBSD/7.9/amd64/install79.iso</link>
+      <guid isPermaLink="false">openbsd:install:7.9</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:42 +0000</pubDate>
+      <description>OpenBSD install 7.9 (x86_64)
+Filename: install79.iso
+sha256: 7a4a92e953618035097c796a90b54424a0f3ae775552e1e7d102cf8a5130449f
+Verify: checksum</description>
+      <enclosure url="https://cdn.openbsd.org/pub/OpenBSD/7.9/amd64/install79.iso" type="application/x-iso9660-image" length="0" />
+      <category>openbsd</category>
+    </item>
+    <item>
+      <title>OpenBSD CD 7.9 (aarch64)</title>
+      <link>https://cdn.openbsd.org/pub/OpenBSD/7.9/arm64/cd79.iso</link>
+      <guid isPermaLink="false">openbsd:cd:aarch64:7.9</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:42 +0000</pubDate>
+      <description>OpenBSD CD 7.9 (aarch64)
+Filename: cd79.iso
+sha256: 33586d1c4030875767823aab785e2fae5ab1d93370368a1b223689798b808fa4
+Verify: checksum</description>
+      <enclosure url="https://cdn.openbsd.org/pub/OpenBSD/7.9/arm64/cd79.iso" type="application/x-iso9660-image" length="0" />
+      <category>openbsd</category>
+    </item>
+    <item>
+      <title>OpenBSD CD 7.9 (x86_64)</title>
+      <link>https://cdn.openbsd.org/pub/OpenBSD/7.9/amd64/cd79.iso</link>
+      <guid isPermaLink="false">openbsd:cd:7.9</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:42 +0000</pubDate>
+      <description>OpenBSD CD 7.9 (x86_64)
+Filename: cd79.iso
+sha256: da6eed49185e7d4e5199e4fb15252d53a377e4a7dad572838705bfebfb7ac0ab
+Verify: checksum</description>
+      <enclosure url="https://cdn.openbsd.org/pub/OpenBSD/7.9/amd64/cd79.iso" type="application/x-iso9660-image" length="0" />
+      <category>openbsd</category>
+    </item>
+    <item>
+      <title>Ubuntu Cinnamon interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntucinnamon/releases/25.10/release/ubuntucinnamon-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntucinnamon:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:41 +0000</pubDate>
+      <description>Ubuntu Cinnamon interim 25.10 (x86_64)
+Filename: ubuntucinnamon-25.10-desktop-amd64.iso
+sha256: c7cfabf83a07c45f03f12f618b5421b21d956c0a1465ffa968ddca644fcec566
+Signature: https://cdimage.ubuntu.com/ubuntucinnamon/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntucinnamon/releases/25.10/release/ubuntucinnamon-25.10-desktop-amd64.iso.torrent
+Infohash: f32fbfd0ed1943f0edce5208813b317d60da4879
+Magnet: magnet:?xt=urn:btih:f32fbfd0ed1943f0edce5208813b317d60da4879&amp;dn=ubuntucinnamon-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntucinnamon/releases/25.10/release/ubuntucinnamon-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntucinnamon</category>
+    </item>
+    <item>
+      <title>Ubuntu Cinnamon LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04/release/ubuntucinnamon-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntucinnamon:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:40 +0000</pubDate>
+      <description>Ubuntu Cinnamon LTS 26.04 (x86_64)
+Filename: ubuntucinnamon-26.04-desktop-amd64.iso
+sha256: 42276d3917da9b3ec8b97f924847d85b3faf07c5d12f182596455bb571431f6f
+Signature: https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04/release/ubuntucinnamon-26.04-desktop-amd64.iso.torrent
+Infohash: 8586fe65d6b589aca262dbbc164570c335bd7d37
+Magnet: magnet:?xt=urn:btih:8586fe65d6b589aca262dbbc164570c335bd7d37&amp;dn=ubuntucinnamon-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04/release/ubuntucinnamon-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntucinnamon</category>
+    </item>
+    <item>
+      <title>Ubuntu Unity LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntu-unity:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:39 +0000</pubDate>
+      <description>Ubuntu Unity LTS 26.04 (x86_64)
+Filename: ubuntu-unity-26.04-desktop-amd64.iso
+sha256: b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0
+Signature: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent
+Infohash: a5283cf4e0f3aa287ed45e4945e67d28eac07de8
+Magnet: magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&amp;dn=ubuntu-unity-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu-unity</category>
+    </item>
+    <item>
+      <title>Edubuntu interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/edubuntu-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">edubuntu:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:39 +0000</pubDate>
+      <description>Edubuntu interim 25.10 (x86_64)
+Filename: edubuntu-25.10-desktop-amd64.iso
+sha256: 33f5b9477cee28a204672213b6f5b7c45853bd3b9be184afab81e6325cb66378
+Signature: https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/edubuntu-25.10-desktop-amd64.iso.torrent
+Infohash: 0e1a0f2e30ef3d7491f481a27de76bf60d573957
+Magnet: magnet:?xt=urn:btih:0e1a0f2e30ef3d7491f481a27de76bf60d573957&amp;dn=edubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/edubuntu-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>edubuntu</category>
+    </item>
+    <item>
+      <title>Edubuntu LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">edubuntu:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:38 +0000</pubDate>
+      <description>Edubuntu LTS 26.04 (x86_64)
+Filename: edubuntu-26.04-desktop-amd64.iso
+sha256: e2255cca689450e368d504fbbc28a2b8086f3e871d5364ca14409391e6985ac3
+Signature: https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: 503b9f7e8d2b63c4ab3e2ecce5cfe4d3c44ad143
+Magnet: magnet:?xt=urn:btih:503b9f7e8d2b63c4ab3e2ecce5cfe4d3c44ad143&amp;dn=edubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>edubuntu</category>
+    </item>
+    <item>
+      <title>Ubuntu Kylin LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/ubuntukylin-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntukylin:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:37 +0000</pubDate>
+      <description>Ubuntu Kylin LTS 26.04 (x86_64)
+Filename: ubuntukylin-26.04-desktop-amd64.iso
+sha256: 76d2b4618afac3f764c65ba27419b9c6f061cb7cc6f42593e687a6af073630a8
+Signature: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/ubuntukylin-26.04-desktop-amd64.iso.torrent
+Infohash: 70af422a147d4a93392c5e74133fbcb834f6b266
+Magnet: magnet:?xt=urn:btih:70af422a147d4a93392c5e74133fbcb834f6b266&amp;dn=ubuntukylin-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/ubuntukylin-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntukylin</category>
+    </item>
+    <item>
+      <title>Ubuntu Kylin interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntukylin/releases/25.10/release/ubuntukylin-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntukylin:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:37 +0000</pubDate>
+      <description>Ubuntu Kylin interim 25.10 (x86_64)
+Filename: ubuntukylin-25.10-desktop-amd64.iso
+sha256: 2a3f3dd541c6604c00c61411c1033f3604d9984df05a2b74ceb3192aa580134b
+Signature: https://cdimage.ubuntu.com/ubuntukylin/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntukylin/releases/25.10/release/ubuntukylin-25.10-desktop-amd64.iso.torrent
+Infohash: 79af2867a04cf23b3a54e27f7a5a98612d517f85
+Magnet: magnet:?xt=urn:btih:79af2867a04cf23b3a54e27f7a5a98612d517f85&amp;dn=ubuntukylin-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntukylin/releases/25.10/release/ubuntukylin-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntukylin</category>
+    </item>
+    <item>
+      <title>Ubuntu Studio interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/ubuntustudio-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntustudio:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:36 +0000</pubDate>
+      <description>Ubuntu Studio interim 25.10 (x86_64)
+Filename: ubuntustudio-25.10-desktop-amd64.iso
+sha256: aa4104e14e06862ebdd7d5d41c3706b41a5d9e855a674d78da465554978c70ad
+Signature: https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/ubuntustudio-25.10-desktop-amd64.iso.torrent
+Infohash: d7170f4bc3b62002e43254a199ad764ff5ed361a
+Magnet: magnet:?xt=urn:btih:d7170f4bc3b62002e43254a199ad764ff5ed361a&amp;dn=ubuntustudio-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/ubuntustudio-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntustudio</category>
+    </item>
+    <item>
+      <title>Ubuntu Studio LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntustudio:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:35 +0000</pubDate>
+      <description>Ubuntu Studio LTS 26.04 (x86_64)
+Filename: ubuntustudio-26.04-desktop-amd64.iso
+sha256: 900e75b0c40875d4e7c223788a94fd6cb908058780a4484c64cea5807ce3d5e0
+Signature: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04-desktop-amd64.iso.torrent
+Infohash: 2635ba4c8db25fab96c28d9adb47b607e28e43b6
+Magnet: magnet:?xt=urn:btih:2635ba4c8db25fab96c28d9adb47b607e28e43b6&amp;dn=ubuntustudio-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntustudio</category>
+    </item>
+    <item>
+      <title>Ubuntu Budgie interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/ubuntu-budgie-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntu-budgie:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:34 +0000</pubDate>
+      <description>Ubuntu Budgie interim 25.10 (x86_64)
+Filename: ubuntu-budgie-25.10-desktop-amd64.iso
+sha256: 4163b6ee85d4fabdb0569686a4a4d079406d43335c14c8931523dfb9a7c89c93
+Signature: https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/ubuntu-budgie-25.10-desktop-amd64.iso.torrent
+Infohash: 6cf22be1065c8a5c09fc5ad30127f05e1b57d85a
+Magnet: magnet:?xt=urn:btih:6cf22be1065c8a5c09fc5ad30127f05e1b57d85a&amp;dn=ubuntu-budgie-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/ubuntu-budgie-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu-budgie</category>
+    </item>
+    <item>
+      <title>Ubuntu MATE interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntu-mate:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:33 +0000</pubDate>
+      <description>Ubuntu MATE interim 25.10 (x86_64)
+Filename: ubuntu-mate-25.10-desktop-amd64.iso
+sha256: f9e441110886e79a2dfce9f7596f4e0d6479f115dd8792670681743e5917694f
+Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso.torrent
+Infohash: b91d49b1313f5aa27f2b3a9dc48af8248f40908e
+Magnet: magnet:?xt=urn:btih:b91d49b1313f5aa27f2b3a9dc48af8248f40908e&amp;dn=ubuntu-mate-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu-mate</category>
+    </item>
+    <item>
+      <title>Ubuntu Budgie LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntu-budgie:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:33 +0000</pubDate>
+      <description>Ubuntu Budgie LTS 26.04 (x86_64)
+Filename: ubuntu-budgie-26.04-desktop-amd64.iso
+sha256: cbdebfa6517d6f64ecc07f6b91a672cf623e1f378b1b92c6e2d27bd7c8b6ca42
+Signature: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04-desktop-amd64.iso.torrent
+Infohash: f767f53c6c17aa80aaf8485683de4b765b62259b
+Magnet: magnet:?xt=urn:btih:f767f53c6c17aa80aaf8485683de4b765b62259b&amp;dn=ubuntu-budgie-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu-budgie</category>
+    </item>
+    <item>
+      <title>Ubuntu MATE LTS 24.04.4 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntu-mate:desktop-lts:24.04.4</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:32 +0000</pubDate>
+      <description>Ubuntu MATE LTS 24.04.4 (x86_64)
+Filename: ubuntu-mate-24.04.4-desktop-amd64.iso
+sha256: 8b7c08c056ba9312fe83e5bf13751216236e6382584861c3b64701ae039c4009
+Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso.torrent
+Infohash: c761c94242082f8f45e85d5f470e9aa7ef848a55
+Magnet: magnet:?xt=urn:btih:c761c94242082f8f45e85d5f470e9aa7ef848a55&amp;dn=ubuntu-mate-24.04.4-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu-mate</category>
+    </item>
+    <item>
+      <title>Lubuntu interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/lubuntu/releases/25.10/release/lubuntu-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">lubuntu:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:31 +0000</pubDate>
+      <description>Lubuntu interim 25.10 (x86_64)
+Filename: lubuntu-25.10-desktop-amd64.iso
+sha256: f7cd90d3b7f59cd2924602b3de0ba1c692682f2a575ea37b3d2f80b0e9ce09b6
+Signature: https://cdimage.ubuntu.com/lubuntu/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/lubuntu/releases/25.10/release/lubuntu-25.10-desktop-amd64.iso.torrent
+Infohash: 1235d8b8e4e0314c80ddd39c755d5582803c9609
+Magnet: magnet:?xt=urn:btih:1235d8b8e4e0314c80ddd39c755d5582803c9609&amp;dn=lubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/lubuntu/releases/25.10/release/lubuntu-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>lubuntu</category>
+    </item>
+    <item>
+      <title>Xubuntu interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/xubuntu-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">xubuntu:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:30 +0000</pubDate>
+      <description>Xubuntu interim 25.10 (x86_64)
+Filename: xubuntu-25.10-desktop-amd64.iso
+sha256: f6a82db0a34731fd64f4a0ed15b653ab531b058a988830d164b1a0d1c00ba0a6
+Signature: https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/xubuntu-25.10-desktop-amd64.iso.torrent
+Infohash: aa8a2f25763f0b165766690847bf732476490396
+Magnet: magnet:?xt=urn:btih:aa8a2f25763f0b165766690847bf732476490396&amp;dn=xubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/xubuntu-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>xubuntu</category>
+    </item>
+    <item>
+      <title>Lubuntu LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">lubuntu:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:30 +0000</pubDate>
+      <description>Lubuntu LTS 26.04 (x86_64)
+Filename: lubuntu-26.04-desktop-amd64.iso
+sha256: a9eef9e75c139caa428d11799f681e2d29e6ba7e22aa045d9a64599d45cd12ff
+Signature: https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: e3fbc63821098e11d5be6230b737765980ac354d
+Magnet: magnet:?xt=urn:btih:e3fbc63821098e11d5be6230b737765980ac354d&amp;dn=lubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>lubuntu</category>
+    </item>
+    <item>
+      <title>Xubuntu LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">xubuntu:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:29 +0000</pubDate>
+      <description>Xubuntu LTS 26.04 (x86_64)
+Filename: xubuntu-26.04-desktop-amd64.iso
+sha256: ae030dbd99426a4c7b2d1c96731e0f435ec9d18f6a28c9e76f077dd5f46364bc
+Signature: https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: 5030b3d1c3e802dd0f7b06833f7659c171a2449a
+Magnet: magnet:?xt=urn:btih:5030b3d1c3e802dd0f7b06833f7659c171a2449a&amp;dn=xubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>xubuntu</category>
+    </item>
+    <item>
+      <title>Kubuntu interim 25.10 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/kubuntu/releases/25.10/release/kubuntu-25.10-desktop-amd64.iso</link>
+      <guid isPermaLink="false">kubuntu:desktop-interim:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:28 +0000</pubDate>
+      <description>Kubuntu interim 25.10 (x86_64)
+Filename: kubuntu-25.10-desktop-amd64.iso
+sha256: 77cade4b5b6c85f0d7f163c7113b9207d58aec82e8247b7bfab7c37eafcf5963
+Signature: https://cdimage.ubuntu.com/kubuntu/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/kubuntu/releases/25.10/release/kubuntu-25.10-desktop-amd64.iso.torrent
+Infohash: 92b187cdfc4d926a13e7620d44bd18695f0150fb
+Magnet: magnet:?xt=urn:btih:92b187cdfc4d926a13e7620d44bd18695f0150fb&amp;dn=kubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/kubuntu/releases/25.10/release/kubuntu-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>kubuntu</category>
+    </item>
+    <item>
+      <title>Kubuntu LTS 26.04 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso</link>
+      <guid isPermaLink="false">kubuntu:desktop-lts:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:27 +0000</pubDate>
+      <description>Kubuntu LTS 26.04 (x86_64)
+Filename: kubuntu-26.04-desktop-amd64.iso
+sha256: 95ce9cf68f13015b9a88bd1ef86fcf7eda77c99979fda48c69e28aa0a84f88ac
+Signature: https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: 8c3e3376d945ec50487b2b49a690f4eb8af49cdf
+Magnet: magnet:?xt=urn:btih:8c3e3376d945ec50487b2b49a690f4eb8af49cdf&amp;dn=kubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>kubuntu</category>
+    </item>
+    <item>
+      <title>Parrot Enlightenment 7.3 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-enlightenment-7.3_amd64.iso</link>
+      <guid isPermaLink="false">parrot:spin-enlightenment:7.3</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:12 +0000</pubDate>
+      <description>Parrot Enlightenment 7.3 (x86_64)
+Filename: Parrot-spin-enlightenment-7.3_amd64.iso
+sha512: 9854383598bc29882d127bf7c434da7b873ce4e41ad8775c518a5bc6268d44104da0bd9a3aeb9bc8dbba8e6eae3ddd9c994804b18cfae7712b35103ac5ee2d77
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-enlightenment-7.3_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>Parrot MATE 7.3 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-mate-7.3_amd64.iso</link>
+      <guid isPermaLink="false">parrot:spin-mate:7.3</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:11 +0000</pubDate>
+      <description>Parrot MATE 7.3 (x86_64)
+Filename: Parrot-spin-mate-7.3_amd64.iso
+sha512: 553beef33214086e1b552bf2d67723bc776b924108cf42521117201535f87df2fdba1ea55f50e0b1f019d5a16f724607209093c1dbe8058f7b0913c7e3d0761f
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-mate-7.3_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>Parrot LXQt 7.3 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-lxqt-7.3_amd64.iso</link>
+      <guid isPermaLink="false">parrot:spin-lxqt:7.3</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:11 +0000</pubDate>
+      <description>Parrot LXQt 7.3 (x86_64)
+Filename: Parrot-spin-lxqt-7.3_amd64.iso
+sha512: 827fd2f27ed49ac84d313ec08bc0eee7a3494930c1217f7803830fa8eb1618484ade8f58bb71db34d3df6f7e42d795675c5d62a491d581265cc0fc0b18064e8b
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-lxqt-7.3_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>Parrot HTB 7.3 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-htb-7.3_amd64.iso</link>
+      <guid isPermaLink="false">parrot:spin-htb:7.3</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:11 +0000</pubDate>
+      <description>Parrot HTB 7.3 (x86_64)
+Filename: Parrot-spin-htb-7.3_amd64.iso
+sha512: 94e368573a3d205430406d43724b0b882f6809f7b1d8dcf2cb0b0e7680cd99576bd7f6c17dfdbec380d2bbf5c3484368502fa0710d86cb165ae00d6cdecb3852
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-htb-7.3_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>Parrot Security 7.3 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.3/Parrot-security-7.3_amd64.iso</link>
+      <guid isPermaLink="false">parrot:security:7.3</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:11 +0000</pubDate>
+      <description>Parrot Security 7.3 (x86_64)
+Filename: Parrot-security-7.3_amd64.iso
+sha512: 0b9d19656467c2956398d237af3d186c026540b340188a5dca0ab4c6c4bcaca125fa3fd8bc13b9c300b0e24bcc2fdaf989c2acaa75713d2d2d697e972af51c06
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.3/Parrot-security-7.3_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>Parrot Home 7.3 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.3/Parrot-home-7.3_amd64.iso</link>
+      <guid isPermaLink="false">parrot:home:7.3</guid>
+      <pubDate>Sun, 12 Jul 2026 23:21:10 +0000</pubDate>
+      <description>Parrot Home 7.3 (x86_64)
+Filename: Parrot-home-7.3_amd64.iso
+sha512: 962bc7169fcea571690d9fd47f4dd747b1d42f43e7733043749e3ab47d971df1079ef18132273f0f4f41c277967dcf34797deb36e471fe9930c4cba6394f3741
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.3/Parrot-home-7.3_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260709 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:aarch64:Snapshot20260709</guid>
+      <pubDate>Sun, 12 Jul 2026 23:17:17 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260709 (aarch64)
+Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
+sha256: c161dbc135f5b4c89837ac24005fb083a3fa2bbbe5e048ad530faba6017e56bc
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260710 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260710</guid>
+      <pubDate>Sun, 12 Jul 2026 23:17:16 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260710 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: ffe34cb1a392ed905a179184dce72e6e63d31c8606e4132e10acb7ac116ec16b
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>Proxmox Datacenter Manager 1.1-1 (x86_64)</title>
+      <link>http://download.proxmox.com/iso/proxmox-datacenter-manager_1.1-1.iso</link>
+      <guid isPermaLink="false">proxmox:datacenter-manager:1.1-1</guid>
+      <pubDate>Sun, 12 Jul 2026 23:17:02 +0000</pubDate>
+      <description>Proxmox Datacenter Manager 1.1-1 (x86_64)
+Filename: proxmox-datacenter-manager_1.1-1.iso
+sha256: 11a55a069ba564220bd986241b57920a83781d40be18d6f2bf7b9b12696ae2cc
+Signature: http://download.proxmox.com/iso/proxmox-datacenter-manager_1.1-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Torrent: http://download.proxmox.com/iso/proxmox-datacenter-manager_1.1-1.iso.torrent
+Infohash: 728a569a19359aef0dfc60cd695053e124cbc635
+Magnet: magnet:?xt=urn:btih:728a569a19359aef0dfc60cd695053e124cbc635&amp;dn=proxmox-datacenter-manager_1.1-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="http://download.proxmox.com/iso/proxmox-datacenter-manager_1.1-1.iso" type="application/x-iso9660-image" length="0" />
+      <category>proxmox</category>
+    </item>
+    <item>
+      <title>Proxmox Mail Gateway 9.1-1 (x86_64)</title>
+      <link>http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso</link>
+      <guid isPermaLink="false">proxmox:mail-gateway:9.1-1</guid>
+      <pubDate>Sun, 12 Jul 2026 23:16:46 +0000</pubDate>
+      <description>Proxmox Mail Gateway 9.1-1 (x86_64)
+Filename: proxmox-mail-gateway_9.1-1.iso
+sha256: 79402f6398c50a76fca66a32c3c0a50da3f71d35c1d7a1bea022e4b1c6c864d6
+Signature: http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Torrent: http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso.torrent
+Infohash: a085f80fa75ef2b9c4d2443dbb596e0af2e8c829
+Magnet: magnet:?xt=urn:btih:a085f80fa75ef2b9c4d2443dbb596e0af2e8c829&amp;dn=proxmox-mail-gateway_9.1-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso" type="application/x-iso9660-image" length="0" />
+      <category>proxmox</category>
+    </item>
     <item>
       <title>NixOS Graphical 26.05.4659.8f0500b96605 (aarch64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd</id>
+  <title>Distro ISO Feed — netbsd</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/netbsd.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:43+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install:aarch64/10.1</id>
+    <title>NetBSD install 10.1 (aarch64)</title>
+    <updated>2026-07-12T23:21:43+00:00</updated>
+    <published>2026-07-12T23:21:43+00:00</published>
+    <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="42069" />
+    <category term="netbsd" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">NetBSD install 10.1 (aarch64)
+Filename: NetBSD-10.1-evbarm-aarch64.iso
+sha512: 155dba2cad71856c3ac1cd4c0f8f5ff70867ca3ff8625e6453fe1d692d70176c41a3974c6c867fd1d8758a5ee24e47c83faa0ab87b23a0185b1a602aa88ada07
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso.torrent
+Infohash: 03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5
+Magnet: magnet:?xt=urn:btih:03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5&amp;dn=NetBSD-10.1-evbarm-aarch64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install/10.1</id>
+    <title>NetBSD install 10.1 (x86_64)</title>
+    <updated>2026-07-12T23:21:43+00:00</updated>
+    <published>2026-07-12T23:21:43+00:00</published>
+    <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="25200" />
+    <category term="netbsd" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">NetBSD install 10.1 (x86_64)
+Filename: NetBSD-10.1-amd64.iso
+sha512: 7a5e5071307e1795885ffc6e1b8aac465082c21c8b79f4c9b4103ef44e4f2da45477299d213ae0093f6534dc99dc2bbf78f41e9dd556c72a02516068bf43fe49
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso.torrent
+Infohash: 03f45a388d292d154301cea4290660d22718de19
+Magnet: magnet:?xt=urn:btih:03f45a388d292d154301cea4290660d22718de19&amp;dn=NetBSD-10.1-amd64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
+</feed>

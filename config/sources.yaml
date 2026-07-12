@@ -181,6 +181,35 @@ distros:
       group: '^kali-linux-[0-9.]+-(.+)-amd64\.iso(?:\.torrent)?$'
       ignore: [arm64, i386]
 
+  # Parrot OS -- a security distro like Kali. Integrity is a single CLEARSIGNED `signed-hashes.txt`
+  # (the AlmaLinux shape): it lists md5/sha256/sha512 for every ISO, and the checksum parser keeps
+  # the strongest (sha512). `sums` and `sig` are the same file; the clearsigned gate reads the
+  # published checksum out of the region it just verified. amd64 only.
+  parrot:
+    strategy: directory_index
+    page_url: "https://www.parrotsec.org/download/"
+    params:
+      version_dir: "https://deb.parrot.sh/parrot/iso/"
+      version_dir_match: '^[0-9.]+$'
+      index: "{version}/"
+      sums: "signed-hashes.txt"
+      sig: "signed-hashes.txt"
+      version_pattern: '-([0-9.]+)_amd64'
+      signing_key:
+        url: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+        fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+        covers: clearsigned
+    variants:
+      home: {label: "Parrot Home", params: {match: '^Parrot-home-[0-9.]+_amd64\.iso$'}}
+      security: {label: "Parrot Security", params: {match: '^Parrot-security-[0-9.]+_amd64\.iso$'}}
+      spin-htb: {label: "Parrot HTB", params: {match: '^Parrot-spin-htb-[0-9.]+_amd64\.iso$'}}
+      spin-mate: {label: "Parrot MATE", params: {match: '^Parrot-spin-mate-[0-9.]+_amd64\.iso$'}}
+      spin-lxqt: {label: "Parrot LXQt", params: {match: '^Parrot-spin-lxqt-[0-9.]+_amd64\.iso$'}}
+      spin-enlightenment: {label: "Parrot Enlightenment", params: {match: '^Parrot-spin-enlightenment-[0-9.]+_amd64\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: '^Parrot-(.+)-[0-9.]+_amd64\.iso$'
+
   void:
     strategy: directory_index
     page_url: "https://voidlinux.org/"
@@ -283,6 +312,223 @@ distros:
       enumerable: false
       reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
 
+  # Ubuntu flavors. Same shape as `ubuntu` but wholly on cdimage.ubuntu.com/<flavor>/releases/
+  # (the main archive only carries Ubuntu itself). Same GPG-signed SHA256SUMS under the Ubuntu
+  # CD Image key, same even-year LTS/interim channel split -- which is why each is `enumerable:
+  # false` (no filename encodes the channel). amd64 only; arm64 could be added per-flavor later.
+  # Every flavor uses `-desktop-amd64` EXCEPT ubuntustudio, which ships `-dvd-amd64`.
+  kubuntu:
+    strategy: directory_index
+    page_url: "https://kubuntu.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/kubuntu/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'kubuntu-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Kubuntu LTS", params: {channel: lts, match: '^kubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Kubuntu interim", params: {channel: interim, match: '^kubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  xubuntu:
+    strategy: directory_index
+    page_url: "https://xubuntu.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/xubuntu/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'xubuntu-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Xubuntu LTS", params: {channel: lts, match: '^xubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Xubuntu interim", params: {channel: interim, match: '^xubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  lubuntu:
+    strategy: directory_index
+    page_url: "https://lubuntu.me/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/lubuntu/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'lubuntu-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Lubuntu LTS", params: {channel: lts, match: '^lubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Lubuntu interim", params: {channel: interim, match: '^lubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  ubuntu-mate:
+    strategy: directory_index
+    page_url: "https://ubuntu-mate.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/ubuntu-mate/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntu-mate-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Ubuntu MATE LTS", params: {channel: lts, match: '^ubuntu-mate-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu MATE interim", params: {channel: interim, match: '^ubuntu-mate-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  ubuntu-budgie:
+    strategy: directory_index
+    page_url: "https://ubuntubudgie.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/ubuntu-budgie/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntu-budgie-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Ubuntu Budgie LTS", params: {channel: lts, match: '^ubuntu-budgie-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu Budgie interim", params: {channel: interim, match: '^ubuntu-budgie-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  ubuntustudio:
+    strategy: directory_index
+    page_url: "https://ubuntustudio.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/ubuntustudio/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntustudio-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      # Ubuntu Studio renamed its image mid-stream: 24.04 LTS is `-dvd-amd64`, 25.10 is
+      # `-desktop-amd64`. Accept either so both channels resolve across the transition.
+      desktop-lts: {label: "Ubuntu Studio LTS", params: {channel: lts, match: '^ubuntustudio-[0-9.]+-(?:dvd|desktop)-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu Studio interim", params: {channel: interim, match: '^ubuntustudio-[0-9.]+-(?:dvd|desktop)-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  ubuntukylin:
+    strategy: directory_index
+    page_url: "https://www.ubuntukylin.com/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/ubuntukylin/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntukylin-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Ubuntu Kylin LTS", params: {channel: lts, match: '^ubuntukylin-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu Kylin interim", params: {channel: interim, match: '^ubuntukylin-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  edubuntu:
+    strategy: directory_index
+    page_url: "https://www.edubuntu.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/edubuntu/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'edubuntu-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Edubuntu LTS", params: {channel: lts, match: '^edubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Edubuntu interim", params: {channel: interim, match: '^edubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  ubuntu-unity:
+    strategy: directory_index
+    page_url: "https://ubuntuunity.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/ubuntu-unity/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntu-unity-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Ubuntu Unity LTS", params: {channel: lts, match: '^ubuntu-unity-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu Unity interim", params: {channel: interim, match: '^ubuntu-unity-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
+  ubuntucinnamon:
+    strategy: directory_index
+    page_url: "https://ubuntucinnamon.org/"
+    params:
+      version_dir: "https://cdimage.ubuntu.com/ubuntucinnamon/releases/"
+      index: "{version}/release/"
+      sums: "SHA256SUMS"
+      sig: "SHA256SUMS.gpg"
+      version_pattern: 'ubuntucinnamon-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+        covers: checksums
+    variants:
+      desktop-lts: {label: "Ubuntu Cinnamon LTS", params: {channel: lts, match: '^ubuntucinnamon-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-interim: {label: "Ubuntu Cinnamon interim", params: {channel: interim, match: '^ubuntucinnamon-[0-9.]+-desktop-amd64\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+
   freebsd:
     strategy: directory_index
     page_url: "https://www.freebsd.org/where/"
@@ -306,6 +552,53 @@ distros:
       match: '\.iso$'
       group: '^FreeBSD-[0-9.]+-RELEASE-amd64-([a-z0-9]+)\.iso$'
       ignore: ['\.iso\.xz$']
+
+  # OpenBSD. Checksums-only: `SHA256.sig` is a signify signature, not GPG, so the feed's gpg
+  # gate cannot verify it -- the HTTPS-served BSD-format `SHA256` is the integrity anchor. The
+  # arch is a PATH segment (`7.9/amd64/`, `7.9/arm64/`), and the filename (`install79.iso`)
+  # carries no dotted version, so the version comes from the directory name (no version_pattern).
+  openbsd:
+    strategy: directory_index
+    page_url: "https://www.openbsd.org/faq/faq4.html"
+    params:
+      version_dir: "https://cdn.openbsd.org/pub/OpenBSD/"
+      version_dir_match: '^\d+\.\d+$'
+      index: "{version}/{token}/"
+      sums: "SHA256"
+    variants:
+      # `install` is the full image, `cd` the network-install CD. The filename is identical
+      # across arches (arch is the path), so `match` carries no {token}.
+      install: {label: "OpenBSD install", arches: {x86_64: amd64, aarch64: arm64}, params: {match: '^install\d+\.iso$'}}
+      cd: {label: "OpenBSD CD", arches: {x86_64: amd64, aarch64: arm64}, params: {match: '^cd\d+\.iso$'}}
+    discover:
+      # Editions are `install`/`cd`; the key MUST equal the group capture -- `cd`, not `cdrom`.
+      # The other CPU platforms are arches, not editions; arch_ignore keeps amd64+arm64 sticky.
+      match: '\.iso$'
+      group: '^([a-z]+)\d+\.iso$'
+      arch_ignore: [alpha, armv7, hppa, i386, landisk, loongson, luna88k, macppc, octeon, powerpc64, riscv64, sparc64]
+
+  # NetBSD. Checksums-only (BSD-format `SHA512`, no GPG). One install ISO per CPU port, all in
+  # the same `images/` dir, so the arch is a FILENAME token -- amd64, and aarch64 spelled
+  # `evbarm-aarch64` (the same double-spelling shape as FreeBSD). This is the widest arch fan-out
+  # in the catalog (~50 ports): amd64+aarch64 are seeded and every other port is arch_ignored so
+  # the weekly discovery stays quiet. (The `{token}` capture excludes hyphenated ports, so only
+  # the hyphenless ones can be proposed -- those are the ones listed below.)
+  netbsd:
+    strategy: directory_index
+    page_url: "https://www.netbsd.org/releases/formal.html"
+    params:
+      version_dir: "https://cdn.netbsd.org/pub/NetBSD/"
+      version_dir_match: '^NetBSD-[0-9.]+$'
+      index: "{version}/images/"
+      sums: "SHA512"
+      version_pattern: 'NetBSD-([0-9.]+)-'
+      torrent: "{filename}.torrent"
+    variants:
+      install: {label: "NetBSD install", arches: {x86_64: amd64, aarch64: evbarm-aarch64}, params: {match: '^NetBSD-[0-9.]+-{token}\.iso$'}}
+    discover:
+      enumerable: false
+      reason: "one install ISO per architecture; the ~50 CPU ports are arches, not editions"
+      arch_ignore: [acorn32, alpha, amiga, arc, atari, cats, cobalt, dreamcast, emips, evbppc, ews4800mips, hp300, hpcarm, hpcmips, hpcsh, hppa, i386, ia64, ibmnws, luna68k, mac68k, macppc, mipsco, mvme68k, mvmeppc, news68k, newsmips, next68k, ofppc, pmax, prep, sandpoint, sgimips, shark, sparc, sparc64, sun2, sun3, vax, x68k, zaurus]
 
   # openSUSE is ONE distro whose variants override `strategy:`. Leap lists a version
   # directory; Tumbleweed is a fixed `*-Current.iso`. Splitting it into two fake
@@ -361,6 +654,18 @@ distros:
           sig: "{filename}.sha256.asc"
           token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
           torrent: "{filename}.torrent"
+      microos-dvd:
+        # The immutable/atomic sibling of Tumbleweed -- same fixed `-Current.iso` shape and
+        # `Snapshot<date>` token. aarch64 lives under `/ports/` like the others. No `.torrent`
+        # is published beside the MicroOS image (verified 404), so it is omitted.
+        label: "openSUSE MicroOS DVD"
+        strategy: stable_symlink
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso"}}
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
     discover:
       # Enumerates the Leap index only; Tumbleweed's variants resolve a fixed URL.
       # Capturing `Leap` as the first group yields `leap-dvd`, the configured key.
@@ -469,14 +774,19 @@ distros:
       # UNEXPLAINED on every audit run. Labels carry the human names.
       ve: {label: "Proxmox VE", params: {match: '^proxmox-ve_[0-9.]+-[0-9]+\.iso$'}}
       backup-server: {label: "Proxmox Backup Server", params: {match: '^proxmox-backup-server_[0-9.]+-[0-9]+\.iso$'}}
+      # `mail-?gateway` matches both spellings; max-version picks the current hyphenated
+      # `proxmox-mail-gateway_9.x` over the legacy `proxmox-mailgateway_7.x`.
+      mail-gateway: {label: "Proxmox Mail Gateway", params: {match: '^proxmox-mail-?gateway_[0-9.]+-[0-9]+\.iso$'}}
+      datacenter-manager: {label: "Proxmox Datacenter Manager", params: {match: '^proxmox-datacenter-manager_[0-9.]+-[0-9]+\.iso$'}}
     discover:
-      # All four products share the dir; PMG and PDM are separate products not requested,
-      # so ignore them (not enumerable:false -- that would hide a fact behind a label).
-      # `mail-?gateway` catches both the old `mailgateway` and new `mail-gateway` names.
+      # All four products share the dir and are now configured. The group captures the product
+      # segment; the only unconfigured key it can still produce is the legacy hyphenless
+      # `mailgateway` (old PMG names), so that one stays ignored -- `mailgateway` is not a
+      # substring of `mail-gateway`, so the current product is untouched.
       # Legacy hex-suffixed ve/pbs names collapse to the same key and lose on version.
       match: '\.iso$'
       group: '^proxmox-([a-z-]+)_'
-      ignore: ['mail-?gateway', 'datacenter-manager']
+      ignore: ['mailgateway']
 
   # Rocky Linux -- a RHEL rebuild. One ISO dir per major; the bare `10/` is a symlink that
   # tracks the newest point release, so version_dir on bare majors auto-adopts it. CHECKSUM

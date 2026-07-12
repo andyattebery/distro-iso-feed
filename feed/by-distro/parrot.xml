@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/parrot</id>
+  <title>Distro ISO Feed — parrot</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/parrot.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:12+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/spin-enlightenment/7.3</id>
+    <title>Parrot Enlightenment 7.3 (x86_64)</title>
+    <updated>2026-07-12T23:21:12+00:00</updated>
+    <published>2026-07-12T23:21:12+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-enlightenment-7.3_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="spin-enlightenment" label="variant" />
+    <summary type="text">Parrot Enlightenment 7.3 (x86_64)
+Filename: Parrot-spin-enlightenment-7.3_amd64.iso
+sha512: 9854383598bc29882d127bf7c434da7b873ce4e41ad8775c518a5bc6268d44104da0bd9a3aeb9bc8dbba8e6eae3ddd9c994804b18cfae7712b35103ac5ee2d77
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/spin-mate/7.3</id>
+    <title>Parrot MATE 7.3 (x86_64)</title>
+    <updated>2026-07-12T23:21:11+00:00</updated>
+    <published>2026-07-12T23:21:11+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-mate-7.3_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="spin-mate" label="variant" />
+    <summary type="text">Parrot MATE 7.3 (x86_64)
+Filename: Parrot-spin-mate-7.3_amd64.iso
+sha512: 553beef33214086e1b552bf2d67723bc776b924108cf42521117201535f87df2fdba1ea55f50e0b1f019d5a16f724607209093c1dbe8058f7b0913c7e3d0761f
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/spin-lxqt/7.3</id>
+    <title>Parrot LXQt 7.3 (x86_64)</title>
+    <updated>2026-07-12T23:21:11+00:00</updated>
+    <published>2026-07-12T23:21:11+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-lxqt-7.3_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="spin-lxqt" label="variant" />
+    <summary type="text">Parrot LXQt 7.3 (x86_64)
+Filename: Parrot-spin-lxqt-7.3_amd64.iso
+sha512: 827fd2f27ed49ac84d313ec08bc0eee7a3494930c1217f7803830fa8eb1618484ade8f58bb71db34d3df6f7e42d795675c5d62a491d581265cc0fc0b18064e8b
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/spin-htb/7.3</id>
+    <title>Parrot HTB 7.3 (x86_64)</title>
+    <updated>2026-07-12T23:21:11+00:00</updated>
+    <published>2026-07-12T23:21:11+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-spin-htb-7.3_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="spin-htb" label="variant" />
+    <summary type="text">Parrot HTB 7.3 (x86_64)
+Filename: Parrot-spin-htb-7.3_amd64.iso
+sha512: 94e368573a3d205430406d43724b0b882f6809f7b1d8dcf2cb0b0e7680cd99576bd7f6c17dfdbec380d2bbf5c3484368502fa0710d86cb165ae00d6cdecb3852
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/security/7.3</id>
+    <title>Parrot Security 7.3 (x86_64)</title>
+    <updated>2026-07-12T23:21:11+00:00</updated>
+    <published>2026-07-12T23:21:11+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-security-7.3_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="security" label="variant" />
+    <summary type="text">Parrot Security 7.3 (x86_64)
+Filename: Parrot-security-7.3_amd64.iso
+sha512: 0b9d19656467c2956398d237af3d186c026540b340188a5dca0ab4c6c4bcaca125fa3fd8bc13b9c300b0e24bcc2fdaf989c2acaa75713d2d2d697e972af51c06
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/home/7.3</id>
+    <title>Parrot Home 7.3 (x86_64)</title>
+    <updated>2026-07-12T23:21:10+00:00</updated>
+    <published>2026-07-12T23:21:10+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-home-7.3_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="home" label="variant" />
+    <summary type="text">Parrot Home 7.3 (x86_64)
+Filename: Parrot-home-7.3_amd64.iso
+sha512: 962bc7169fcea571690d9fd47f4dd747b1d42f43e7733043749e3ab47d971df1079ef18132273f0f4f41c277967dcf34797deb36e471fe9930c4cba6394f3741
+Signature: https://deb.parrot.sh/parrot/iso/7.3/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+</feed>

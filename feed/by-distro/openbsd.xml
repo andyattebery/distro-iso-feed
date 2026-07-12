@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/openbsd</id>
+  <title>Distro ISO Feed — openbsd</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/openbsd.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:42+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/openbsd/install:aarch64/7.9</id>
+    <title>OpenBSD install 7.9 (aarch64)</title>
+    <updated>2026-07-12T23:21:42+00:00</updated>
+    <published>2026-07-12T23:21:42+00:00</published>
+    <link href="https://www.openbsd.org/faq/faq4.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.openbsd.org/pub/OpenBSD/7.9/arm64/install79.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="openbsd" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">OpenBSD install 7.9 (aarch64)
+Filename: install79.iso
+sha256: 49786ab82868b6e508a0117c0c1567694a2f6b46caf8972c726868617b8c22fb
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/openbsd/install/7.9</id>
+    <title>OpenBSD install 7.9 (x86_64)</title>
+    <updated>2026-07-12T23:21:42+00:00</updated>
+    <published>2026-07-12T23:21:42+00:00</published>
+    <link href="https://www.openbsd.org/faq/faq4.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.openbsd.org/pub/OpenBSD/7.9/amd64/install79.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="openbsd" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">OpenBSD install 7.9 (x86_64)
+Filename: install79.iso
+sha256: 7a4a92e953618035097c796a90b54424a0f3ae775552e1e7d102cf8a5130449f
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/openbsd/cd:aarch64/7.9</id>
+    <title>OpenBSD CD 7.9 (aarch64)</title>
+    <updated>2026-07-12T23:21:42+00:00</updated>
+    <published>2026-07-12T23:21:42+00:00</published>
+    <link href="https://www.openbsd.org/faq/faq4.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.openbsd.org/pub/OpenBSD/7.9/arm64/cd79.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="openbsd" label="distro" />
+    <category term="cd" label="variant" />
+    <summary type="text">OpenBSD CD 7.9 (aarch64)
+Filename: cd79.iso
+sha256: 33586d1c4030875767823aab785e2fae5ab1d93370368a1b223689798b808fa4
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/openbsd/cd/7.9</id>
+    <title>OpenBSD CD 7.9 (x86_64)</title>
+    <updated>2026-07-12T23:21:42+00:00</updated>
+    <published>2026-07-12T23:21:42+00:00</published>
+    <link href="https://www.openbsd.org/faq/faq4.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.openbsd.org/pub/OpenBSD/7.9/amd64/cd79.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="openbsd" label="distro" />
+    <category term="cd" label="variant" />
+    <summary type="text">OpenBSD CD 7.9 (x86_64)
+Filename: cd79.iso
+sha256: da6eed49185e7d4e5199e4fb15252d53a377e4a7dad572838705bfebfb7ac0ab
+Verify: checksum</summary>
+  </entry>
+</feed>

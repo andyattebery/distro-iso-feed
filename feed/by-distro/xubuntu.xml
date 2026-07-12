@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/xubuntu</id>
+  <title>Distro ISO Feed — xubuntu</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/xubuntu.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:30+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/xubuntu/desktop-interim/25.10</id>
+    <title>Xubuntu interim 25.10 (x86_64)</title>
+    <updated>2026-07-12T23:21:30+00:00</updated>
+    <published>2026-07-12T23:21:30+00:00</published>
+    <link href="https://xubuntu.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/xubuntu-25.10-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/xubuntu-25.10-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="360474" />
+    <category term="xubuntu" label="distro" />
+    <category term="desktop-interim" label="variant" />
+    <summary type="text">Xubuntu interim 25.10 (x86_64)
+Filename: xubuntu-25.10-desktop-amd64.iso
+sha256: f6a82db0a34731fd64f4a0ed15b653ab531b058a988830d164b1a0d1c00ba0a6
+Signature: https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/xubuntu/releases/25.10/release/xubuntu-25.10-desktop-amd64.iso.torrent
+Infohash: aa8a2f25763f0b165766690847bf732476490396
+Magnet: magnet:?xt=urn:btih:aa8a2f25763f0b165766690847bf732476490396&amp;dn=xubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/xubuntu/desktop-lts/26.04</id>
+    <title>Xubuntu LTS 26.04 (x86_64)</title>
+    <updated>2026-07-12T23:21:29+00:00</updated>
+    <published>2026-07-12T23:21:29+00:00</published>
+    <link href="https://xubuntu.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="395734" />
+    <category term="xubuntu" label="distro" />
+    <category term="desktop-lts" label="variant" />
+    <summary type="text">Xubuntu LTS 26.04 (x86_64)
+Filename: xubuntu-26.04-desktop-amd64.iso
+sha256: ae030dbd99426a4c7b2d1c96731e0f435ec9d18f6a28c9e76f077dd5f46364bc
+Signature: https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/xubuntu/releases/26.04/release/xubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: 5030b3d1c3e802dd0f7b06833f7659c171a2449a
+Magnet: magnet:?xt=urn:btih:5030b3d1c3e802dd0f7b06833f7659c171a2449a&amp;dn=xubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+</feed>

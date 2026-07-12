@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/edubuntu</id>
+  <title>Distro ISO Feed — edubuntu</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/edubuntu.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:39+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/edubuntu/desktop-interim/25.10</id>
+    <title>Edubuntu interim 25.10 (x86_64)</title>
+    <updated>2026-07-12T23:21:39+00:00</updated>
+    <published>2026-07-12T23:21:39+00:00</published>
+    <link href="https://www.edubuntu.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/edubuntu-25.10-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/edubuntu-25.10-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="516316" />
+    <category term="edubuntu" label="distro" />
+    <category term="desktop-interim" label="variant" />
+    <summary type="text">Edubuntu interim 25.10 (x86_64)
+Filename: edubuntu-25.10-desktop-amd64.iso
+sha256: 33f5b9477cee28a204672213b6f5b7c45853bd3b9be184afab81e6325cb66378
+Signature: https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/edubuntu/releases/25.10/release/edubuntu-25.10-desktop-amd64.iso.torrent
+Infohash: 0e1a0f2e30ef3d7491f481a27de76bf60d573957
+Magnet: magnet:?xt=urn:btih:0e1a0f2e30ef3d7491f481a27de76bf60d573957&amp;dn=edubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/edubuntu/desktop-lts/26.04</id>
+    <title>Edubuntu LTS 26.04 (x86_64)</title>
+    <updated>2026-07-12T23:21:38+00:00</updated>
+    <published>2026-07-12T23:21:38+00:00</published>
+    <link href="https://www.edubuntu.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="605976" />
+    <category term="edubuntu" label="distro" />
+    <category term="desktop-lts" label="variant" />
+    <summary type="text">Edubuntu LTS 26.04 (x86_64)
+Filename: edubuntu-26.04-desktop-amd64.iso
+sha256: e2255cca689450e368d504fbbc28a2b8086f3e871d5364ca14409391e6985ac3
+Signature: https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/edubuntu/releases/26.04/release/edubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: 503b9f7e8d2b63c4ab3e2ecce5cfe4d3c44ad143
+Magnet: magnet:?xt=urn:btih:503b9f7e8d2b63c4ab3e2ecce5cfe4d3c44ad143&amp;dn=edubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+</feed>

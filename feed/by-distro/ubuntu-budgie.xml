@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-budgie</id>
+  <title>Distro ISO Feed — ubuntu-budgie</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/ubuntu-budgie.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:34+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-budgie/desktop-interim/25.10</id>
+    <title>Ubuntu Budgie interim 25.10 (x86_64)</title>
+    <updated>2026-07-12T23:21:34+00:00</updated>
+    <published>2026-07-12T23:21:34+00:00</published>
+    <link href="https://ubuntubudgie.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/ubuntu-budgie-25.10-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/ubuntu-budgie-25.10-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="277446" />
+    <category term="ubuntu-budgie" label="distro" />
+    <category term="desktop-interim" label="variant" />
+    <summary type="text">Ubuntu Budgie interim 25.10 (x86_64)
+Filename: ubuntu-budgie-25.10-desktop-amd64.iso
+sha256: 4163b6ee85d4fabdb0569686a4a4d079406d43335c14c8931523dfb9a7c89c93
+Signature: https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-budgie/releases/25.10/release/ubuntu-budgie-25.10-desktop-amd64.iso.torrent
+Infohash: 6cf22be1065c8a5c09fc5ad30127f05e1b57d85a
+Magnet: magnet:?xt=urn:btih:6cf22be1065c8a5c09fc5ad30127f05e1b57d85a&amp;dn=ubuntu-budgie-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-budgie/desktop-lts/26.04</id>
+    <title>Ubuntu Budgie LTS 26.04 (x86_64)</title>
+    <updated>2026-07-12T23:21:33+00:00</updated>
+    <published>2026-07-12T23:21:33+00:00</published>
+    <link href="https://ubuntubudgie.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="314726" />
+    <category term="ubuntu-budgie" label="distro" />
+    <category term="desktop-lts" label="variant" />
+    <summary type="text">Ubuntu Budgie LTS 26.04 (x86_64)
+Filename: ubuntu-budgie-26.04-desktop-amd64.iso
+sha256: cbdebfa6517d6f64ecc07f6b91a672cf623e1f378b1b92c6e2d27bd7c8b6ca42
+Signature: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04/release/ubuntu-budgie-26.04-desktop-amd64.iso.torrent
+Infohash: f767f53c6c17aa80aaf8485683de4b765b62259b
+Magnet: magnet:?xt=urn:btih:f767f53c6c17aa80aaf8485683de4b765b62259b&amp;dn=ubuntu-budgie-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+</feed>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-unity</id>
+  <title>Distro ISO Feed — ubuntu-unity</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/ubuntu-unity.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:39+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-unity/desktop-lts/26.04</id>
+    <title>Ubuntu Unity LTS 26.04 (x86_64)</title>
+    <updated>2026-07-12T23:21:39+00:00</updated>
+    <published>2026-07-12T23:21:39+00:00</published>
+    <link href="https://ubuntuunity.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="319924" />
+    <category term="ubuntu-unity" label="distro" />
+    <category term="desktop-lts" label="variant" />
+    <summary type="text">Ubuntu Unity LTS 26.04 (x86_64)
+Filename: ubuntu-unity-26.04-desktop-amd64.iso
+sha256: b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0
+Signature: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent
+Infohash: a5283cf4e0f3aa287ed45e4945e67d28eac07de8
+Magnet: magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&amp;dn=ubuntu-unity-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+</feed>

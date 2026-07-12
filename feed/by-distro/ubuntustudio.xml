@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntustudio</id>
+  <title>Distro ISO Feed — ubuntustudio</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/ubuntustudio.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T23:21:36+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntustudio/desktop-interim/25.10</id>
+    <title>Ubuntu Studio interim 25.10 (x86_64)</title>
+    <updated>2026-07-12T23:21:36+00:00</updated>
+    <published>2026-07-12T23:21:36+00:00</published>
+    <link href="https://ubuntustudio.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/ubuntustudio-25.10-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/ubuntustudio-25.10-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="596525" />
+    <category term="ubuntustudio" label="distro" />
+    <category term="desktop-interim" label="variant" />
+    <summary type="text">Ubuntu Studio interim 25.10 (x86_64)
+Filename: ubuntustudio-25.10-desktop-amd64.iso
+sha256: aa4104e14e06862ebdd7d5d41c3706b41a5d9e855a674d78da465554978c70ad
+Signature: https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntustudio/releases/25.10/release/ubuntustudio-25.10-desktop-amd64.iso.torrent
+Infohash: d7170f4bc3b62002e43254a199ad764ff5ed361a
+Magnet: magnet:?xt=urn:btih:d7170f4bc3b62002e43254a199ad764ff5ed361a&amp;dn=ubuntustudio-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntustudio/desktop-lts/26.04</id>
+    <title>Ubuntu Studio LTS 26.04 (x86_64)</title>
+    <updated>2026-07-12T23:21:35+00:00</updated>
+    <published>2026-07-12T23:21:35+00:00</published>
+    <link href="https://ubuntustudio.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="545085" />
+    <category term="ubuntustudio" label="distro" />
+    <category term="desktop-lts" label="variant" />
+    <summary type="text">Ubuntu Studio LTS 26.04 (x86_64)
+Filename: ubuntustudio-26.04-desktop-amd64.iso
+sha256: 900e75b0c40875d4e7c223788a94fd6cb908058780a4484c64cea5807ce3d5e0
+Signature: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/ubuntustudio-26.04-desktop-amd64.iso.torrent
+Infohash: 2635ba4c8db25fab96c28d9adb47b607e28e43b6
+Magnet: magnet:?xt=urn:btih:2635ba4c8db25fab96c28d9adb47b607e28e43b6&amp;dn=ubuntustudio-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+</feed>

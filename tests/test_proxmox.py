@@ -1,10 +1,12 @@
-"""Proxmox: PVE + PBS from one flat /iso/ dir, over http, image-mode gpg.
+"""Proxmox: all four products (VE, PBS, Mail Gateway, Datacenter Manager) from one flat
+/iso/ dir, over http, image-mode gpg.
 
 The traps this locks: many co-listed versions (newest must win, the legacy hex-suffixed
-VE names must not), four products sharing one directory (each variant isolates its own;
-Mail Gateway and Datacenter Manager are ignored), a token that keeps the `-N` build
-suffix so a respin re-notifies, and a co-located trust-on-first-use torrent whose
-`info.name` carries the version.
+VE names must not), four products sharing one directory (each variant isolates its own),
+Mail Gateway's rename (`mailgateway` -> `mail-gateway`, where the hyphenated current name
+must win and the hyphenless legacy one stays out of discovery), a token that keeps the
+`-N` build suffix so a respin re-notifies, and a co-located trust-on-first-use torrent
+whose `info.name` carries the version.
 
 The signing-key gate itself (image-mode issuer check against the pinned Trixie key, on a
 signature that also carries the unpinned Bookworm key) is exercised generically in
@@ -56,6 +58,8 @@ PARAMS = {
 }
 VE_MATCH = r"^proxmox-ve_[0-9.]+-[0-9]+\.iso$"
 PBS_MATCH = r"^proxmox-backup-server_[0-9.]+-[0-9]+\.iso$"
+PMG_MATCH = r"^proxmox-mail-?gateway_[0-9.]+-[0-9]+\.iso$"
+PDM_MATCH = r"^proxmox-datacenter-manager_[0-9.]+-[0-9]+\.iso$"
 
 
 def _client() -> FakeClient:
@@ -85,6 +89,18 @@ def test_pbs_isolates_its_own_product():
     assert (r.checksum, r.checksum_algo) == (PBS_SHA, "sha256")
 
 
+def test_mail_gateway_prefers_the_hyphenated_current_name_over_legacy():
+    """PMG was renamed `mailgateway` -> `mail-gateway`. Both are in the dir; the match spans
+    both spellings and max-version must pick the current hyphenated 9.1-1, not the legacy 7.3."""
+    r = _resolve("mail-gateway", PMG_MATCH)
+    assert r.filename == "proxmox-mail-gateway_9.1-1.iso" and r.version == "9.1-1"
+
+
+def test_datacenter_manager_isolates_its_own_product():
+    r = _resolve("datacenter-manager", PDM_MATCH)
+    assert r.filename == "proxmox-datacenter-manager_1.1-1.iso" and r.version == "1.1-1"
+
+
 def test_legacy_hex_name_never_wins():
     """`proxmox-ve_4.4-eb2d6f1e-2.iso` is InvalidVersion; present in the dir, it must
     still lose to 9.2-1 rather than break max-version selection."""
@@ -104,11 +120,14 @@ def test_colocated_torrent_attaches_trust_on_first_use():
     assert r.verify == VERIFY_GPG  # an unsigned torrent never lowers the ISO's strength
 
 
-def test_discover_yields_the_two_products_and_ignores_pmg_pdm():
+def test_discover_yields_all_four_products_and_ignores_only_legacy_mailgateway():
+    """All four products are now configured; the group captures each. The only unconfigured key
+    it can still produce is the legacy hyphenless `mailgateway`, which stays ignored -- and that
+    ignore must NOT swallow the current `mail-gateway` (the hyphen breaks the substring)."""
     discover = {
         "match": r"\.iso$",
         "group": r"^proxmox-([a-z-]+)_",
-        "ignore": ["mail-?gateway", "datacenter-manager"],
+        "ignore": ["mailgateway"],
     }
     found = REGISTRY["directory_index"]().discover_all("proxmox", [PARAMS], discover, _client())
-    assert {v.variant for v in found} == {"ve", "backup-server"}
+    assert {v.variant for v in found} == {"ve", "backup-server", "mail-gateway", "datacenter-manager"}
