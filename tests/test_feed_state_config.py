@@ -16,7 +16,7 @@ import pytest
 from conftest import NOT_ENUMERABLE
 from distro_iso_feed import docs, feed
 from distro_iso_feed.config import ConfigError, load
-from distro_iso_feed.models import Release
+from distro_iso_feed.models import Release, Variant, arch_tag
 from distro_iso_feed.state import State
 from distro_iso_feed.strategies import REGISTRY
 
@@ -294,8 +294,65 @@ def test_catalog_is_generated_from_config_and_state(tmp_path):
     out = tmp_path / "catalog.md"
     docs.render(sources, s, out)
     body = out.read_text()
-    assert "| fedora | workstation | json_api | checksum | — | 44-1.7 |" in body
-    assert "| fedora | server | json_api | — | — | — |" in body  # configured, unresolved
+    assert "| fedora | workstation | x86_64 | json_api | checksum | — | 44-1.7 |" in body
+    assert "| fedora | server | x86_64 | json_api | — | — | — |" in body  # configured, unresolved
+
+
+def test_arch_is_implicit_in_keys_for_x86_64_only():
+    """The multi-arch keying rule: x86_64 stays implicit so existing ids never move (no
+    re-notify); other arches namespace under `:{arch}`. state_key/guid/atom_id/Variant.key
+    all share one rule -- docs.py joins Variant.key to state_key, so they must agree."""
+    assert arch_tag("x86_64") == "" and arch_tag("aarch64") == ":aarch64"
+    x = make_release(distro="debian", variant="netinst", version="13.6.0", arch="x86_64")
+    a = make_release(distro="debian", variant="netinst", version="13.6.0", arch="aarch64")
+    assert x.state_key == "debian:netinst" and x.guid() == "debian:netinst:13.6.0"
+    assert feed.atom_id(x).endswith("/id/debian/netinst/13.6.0")  # unchanged from pre-arch
+    assert a.state_key == "debian:netinst:aarch64" and a.guid() == "debian:netinst:aarch64:13.6.0"
+    assert feed.atom_id(a).endswith("/id/debian/netinst:aarch64/13.6.0")
+    assert Variant("debian", "netinst", "directory_index", {}).key == "debian:netinst"
+    assert (
+        Variant("debian", "netinst", "directory_index", {}, arch="aarch64").key
+        == "debian:netinst:aarch64"
+    )
+
+
+def test_arches_expands_to_one_variant_per_arch_with_token_substituted(tmp_path):
+    """`arches: {canonical: token}` becomes one Variant per arch: the canonical drives the key
+    and Release.arch, the token is substituted into `{token}` in index/match."""
+    p = write(
+        tmp_path,
+        "distros:\n  debian:\n    strategy: directory_index\n"
+        + NOT_ENUMERABLE
+        + "    variants:\n"
+        "      netinst:\n"
+        "        arches: {x86_64: amd64, aarch64: arm64}\n"
+        "        params: {index: \"https://x/current/{token}/iso-cd/\", "
+        "match: '^debian-[0-9.]+-{token}-netinst\\.iso$'}\n",
+    )
+    _, sources = load(p, set(REGISTRY))
+    by_key = {v.key: v for v in sources[0].variants}
+    assert set(by_key) == {"debian:netinst", "debian:netinst:aarch64"}  # x86_64 implicit
+
+    x = by_key["debian:netinst"]
+    assert x.arch == "x86_64" and x.params["arch"] == "x86_64"  # Variant.arch and params agree
+    assert "current/amd64/iso-cd/" in x.params["index"] and "amd64-netinst" in x.params["match"]
+
+    a = by_key["debian:netinst:aarch64"]
+    assert a.arch == "aarch64" and a.params["arch"] == "aarch64"
+    assert "current/arm64/iso-cd/" in a.params["index"] and "arm64-netinst" in a.params["match"]
+
+
+def test_arches_must_be_a_non_empty_map(tmp_path):
+    with pytest.raises(ConfigError, match="arches"):
+        load(
+            write(
+                tmp_path,
+                "distros:\n  d:\n    strategy: json_api\n"
+                + NOT_ENUMERABLE
+                + "    variants:\n      v: {arches: []}\n",
+            ),
+            set(REGISTRY),
+        )
 
 
 def test_catalog_has_no_build_timestamp(tmp_path):

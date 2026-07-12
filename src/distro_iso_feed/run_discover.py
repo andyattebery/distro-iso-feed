@@ -19,7 +19,9 @@ from pathlib import Path
 
 from .client import Client
 from .config import load, load_raw, yaml_rt
-from .propose import Proposal, Rejected, pr_body, propose_for
+from .propose_arches import propose_arches
+from .propose_common import ArchProposal, Proposal, Rejected, pr_body
+from .propose_variants import propose_for
 from .strategies import REGISTRY
 
 log = logging.getLogger("distro-iso-feed-discover")
@@ -47,10 +49,21 @@ def main(argv: list[str] | None = None) -> int:
 
     doc = load_raw(config)
     proposals: list[Proposal] = []
+    arch_proposals: list[ArchProposal] = []
     rejected: list[Rejected] = []
 
     with Client(defaults["user_agent"]) as client:
         for source in sources:
+            # Arch discovery is orthogonal to the variant-`enumerable` flag -- it enumerates the
+            # arches of an already-known variant -- so it runs regardless, gated only on the
+            # variant carrying an `arches` map.
+            try:
+                arch_proposals.extend(propose_arches(source, doc, client))
+            except Exception as exc:
+                log.warning(
+                    "%s: arch discovery raised %s: %s", source.name, type(exc).__name__, exc
+                )
+
             if source.discover.get("enumerable") is False:
                 continue
 
@@ -76,14 +89,17 @@ def main(argv: list[str] | None = None) -> int:
 
     for p in proposals:
         log.info("propose %s -> %s (from %s)", p.key, p.release.filename, p.sibling)
+    for a in arch_proposals:
+        log.info("propose arch %s:%s -> %s", a.key, a.arch, a.release.filename)
     for r in rejected:
         log.warning("cannot synthesize %s: %s", r.key, r.reason)
 
     if args.pr_body:
-        Path(args.pr_body).write_text(pr_body(proposals, rejected), encoding="utf-8")
+        body = pr_body(proposals, arch_proposals, rejected)
+        Path(args.pr_body).write_text(body, encoding="utf-8")
 
-    if not proposals:
-        log.info("no new variants (%d could not be synthesized)", len(rejected))
+    if not proposals and not arch_proposals:
+        log.info("no new variants or arches (%d could not be synthesized)", len(rejected))
         return 0
 
     if args.dry_run:
@@ -91,9 +107,14 @@ def main(argv: list[str] | None = None) -> int:
 
     for p in proposals:
         doc["distros"][p.distro]["variants"].setdefault(p.variant, p.node)
+    for a in arch_proposals:
+        # The `arches` map already exists (discovery only runs on variants that carry one).
+        doc["distros"][a.distro]["variants"][a.variant]["arches"][a.arch] = a.token
     with config.open("w", encoding="utf-8") as fh:
         yaml_rt().dump(doc, fh)  # round-trip: comments survive
-    log.info("wrote %d verified variants into %s", len(proposals), config)
+    log.info(
+        "wrote %d variants and %d arches into %s", len(proposals), len(arch_proposals), config
+    )
     return 0
 
 

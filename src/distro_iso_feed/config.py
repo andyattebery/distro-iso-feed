@@ -142,6 +142,43 @@ def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
         )
 
 
+def substitute_token(params: dict, token: str) -> dict:
+    """Replace the `{token}` arch placeholder with an upstream token in every string leaf.
+
+    Recursive rather than a fixed field list so it reaches wherever an author put the arch --
+    a path segment (`index`), a filename regex (`match`), or a checksum-file name (`sums`) --
+    without this needing to know which. `{token}` appears only where it was written, so walking
+    everything changes only those. Shared by config-load expansion and arch-discovery verify, so
+    both substitute identically.
+    """
+
+    def walk(value):
+        if isinstance(value, str):
+            return value.replace("{token}", token)
+        if isinstance(value, dict):
+            return {k: walk(v) for k, v in value.items()}
+        if isinstance(value, list):
+            return [walk(v) for v in value]
+        return value
+
+    return walk(dict(params))
+
+
+def _validate_arches(distro: str, variant: str, arches: Any) -> None:
+    """`arches` is a `{canonical: upstream-token}` map -- e.g. `{x86_64: amd64, aarch64: arm64}`.
+
+    The canonical name is the identity/display (x86_64 stays implicit in the key); the token is
+    what gets substituted into `{token}` in the URL/filename fields.
+    """
+    if not isinstance(arches, dict) or not arches:
+        raise ConfigError(
+            f"{distro}:{variant}: `arches` must be a non-empty {{canonical: token}} map"
+        )
+    for canonical, token in arches.items():
+        if not str(canonical).strip() or not str(token).strip():
+            raise ConfigError(f"{distro}:{variant}: `arches` entries must be non-empty arch:token")
+
+
 def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
     raw = load_raw(path)
     if not raw or "distros" not in raw:
@@ -185,19 +222,27 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
 
             label = vraw.pop("label", None)
             mirror = bool(vraw.pop("mirror", block.get("mirror", False)))
+            arches = vraw.pop("arches", None)
             params = _merge(default_params, distro_params, vraw.pop("params", None), vraw)
-            params.setdefault("arch", defaults["arch"])
             _validate_torrent_only(distro, name, params)
-            variants.append(
-                Variant(
-                    distro=distro,
-                    name=name,
-                    strategy=strategy,
-                    params=params,
-                    label=label,
-                    mirror=mirror,
+
+            if arches is not None:
+                # One Variant per architecture. The map is {canonical: upstream-token}: the
+                # canonical name (x86_64/aarch64/...) drives the key/display, the token
+                # (amd64/arm64/...) is substituted into the URL/filename fields. x86_64 keeps
+                # the bare key (see models.arch_tag), so adding arches never moves an existing id.
+                _validate_arches(distro, name, arches)
+                for canonical, token in arches.items():
+                    per = substitute_token(params, str(token))
+                    per["arch"] = canonical
+                    variants.append(
+                        Variant(distro, name, strategy, per, label, mirror, arch=canonical)
+                    )
+            else:
+                params.setdefault("arch", defaults["arch"])
+                variants.append(
+                    Variant(distro, name, strategy, params, label, mirror, arch=params["arch"])
                 )
-            )
 
         sources.append(
             Source(

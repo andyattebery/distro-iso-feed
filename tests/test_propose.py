@@ -13,12 +13,11 @@ import re
 from conftest import FakeClient
 from distro_iso_feed.listers import Candidate
 from distro_iso_feed.models import Release, Source, Variant, VariantSpec
-from distro_iso_feed.propose import (
-    _confirms,
+from distro_iso_feed.propose_common import _confirms, pr_body
+from distro_iso_feed.propose_variants import (
     _nodes_for,
     diff_tokens,
     generalize,
-    pr_body,
     propose_for,
     substitute,
 )
@@ -244,7 +243,7 @@ DOC = {"distros": {"d": {"variants": {"alpha": {"params": {"match": "pkg-alpha.i
 
 
 def test_propose_writes_a_node_that_resolves_to_the_discovered_artifact(monkeypatch):
-    import distro_iso_feed.propose as mod
+    import distro_iso_feed.propose_variants as mod
 
     monkeypatch.setitem(mod.REGISTRY, "fake", FakeStrategy)
     spec = VariantSpec(distro="d", variant="beta", params={"sample": "pkg-beta.iso", "row": {}})
@@ -260,7 +259,7 @@ def test_propose_writes_a_node_that_resolves_to_the_discovered_artifact(monkeypa
 def test_propose_drops_a_node_that_resolves_to_the_siblings_artifact(monkeypatch):
     """A key whose artifact name cannot be diffed from the sibling's yields no node,
     and a node that would resolve elsewhere is never written."""
-    import distro_iso_feed.propose as mod
+    import distro_iso_feed.propose_variants as mod
 
     class Sticky(FakeStrategy):
         def resolve(self, distro, variant, params, client):  # always the sibling's ISO
@@ -276,7 +275,7 @@ def test_propose_drops_a_node_that_resolves_to_the_siblings_artifact(monkeypatch
 
 
 def test_propose_reports_when_there_is_no_sibling_to_copy(monkeypatch):
-    import distro_iso_feed.propose as mod
+    import distro_iso_feed.propose_variants as mod
 
     monkeypatch.setitem(mod.REGISTRY, "fake", FakeStrategy)
     spec = VariantSpec(distro="d", variant="beta", params={"sample": "pkg-beta.iso", "row": {}})
@@ -289,9 +288,9 @@ def test_propose_reports_when_there_is_no_sibling_to_copy(monkeypatch):
 
 
 def test_pr_body_lists_rejections_so_they_are_not_silently_dropped():
-    from distro_iso_feed.propose import Rejected
+    from distro_iso_feed.propose_common import Rejected
 
-    text = pr_body([], [Rejected("kde-neon", "mobile", "mobile", "resolved to nothing")])
+    text = pr_body([], [], [Rejected("kde-neon", "mobile", "mobile", "resolved to nothing")])
     assert "## Could not synthesize" in text
     assert "`kde-neon:mobile`" in text
     assert "resolved to nothing" in text

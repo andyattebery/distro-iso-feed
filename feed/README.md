@@ -6,124 +6,129 @@ Subscribe: [`feed.xml`](https://raw.githubusercontent.com/andyattebery/distro-is
 
 Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml) · `torrent.rss`
 
-| Distro | Variant | Version | Verify | Torrent |
-|---|---|---|---|---|
-| almalinux | boot | 10.2 | gpg | — |
-| almalinux | dvd | 10.2 | gpg | — |
-| almalinux | minimal | 10.2 | gpg | — |
-| anduinos | en-us | 1.4.2 | torrent | ✓ |
-| antix | core | 26 | gpg | — |
-| antix | full | 26 | gpg | — |
-| arch | iso | 2026.07.01 | gpg | ✓ |
-| aurora | nvidia-open | stable-20260707.1 | checksum | — |
-| aurora | stable | stable-20260707.1 | checksum | — |
-| batocera | x86_64 | 43.1-20260529 | checksum | — |
-| bazzite | deck | 44.20260629 | checksum | — |
-| bazzite | desktop | 44.20260629 | checksum | — |
-| bazzite | nvidia-open | 44.20260629 | checksum | — |
-| bluefin | stable | stable-20260708 | checksum | — |
-| bluestar | default | 7.1.3-6-2026.07.11 | checksum | — |
-| cachyos | desktop | 260628 | gpg | — |
-| cachyos | handheld | 260628 | gpg | — |
-| centos | boot | 20260707.1 | checksum | — |
-| centos | dvd | 20260707.1 | checksum | — |
-| clonezilla | default | 3.3.2-31 | gpg | — |
-| debian | live-cinnamon | 13.6.0 | gpg | ✓ |
-| debian | live-gnome | 13.6.0 | gpg | ✓ |
-| debian | live-kde | 13.6.0 | gpg | ✓ |
-| debian | live-lxde | 13.6.0 | gpg | ✓ |
-| debian | live-lxqt | 13.6.0 | gpg | ✓ |
-| debian | live-mate | 13.6.0 | gpg | ✓ |
-| debian | live-standard | 13.6.0 | gpg | ✓ |
-| debian | live-xfce | 13.6.0 | gpg | ✓ |
-| debian | netinst | 13.6.0 | gpg | ✓ |
-| endeavouros | default | 2026.04.27 | gpg | — |
-| fedora | budgie | 44-1.7 | checksum | — |
-| fedora | cinnamon | 44-1.7 | checksum | — |
-| fedora | cosmic | 44-1.7 | checksum | — |
-| fedora | cosmic-atomic | 44-1.7 | checksum | — |
-| fedora | i3 | 44-1.7 | checksum | — |
-| fedora | kde | 44-1.7 | checksum | — |
-| fedora | kinoite | 44-1.7 | checksum | — |
-| fedora | lxde | 44-1.7 | checksum | — |
-| fedora | lxqt | 44-1.7 | checksum | — |
-| fedora | mate | 44-1.7 | checksum | — |
-| fedora | miraclewm | 44-1.7 | checksum | — |
-| fedora | onyx | 44-1.7 | checksum | — |
-| fedora | sericea | 44-1.7 | checksum | — |
-| fedora | server | 44-1.7 | checksum | — |
-| fedora | silverblue | 44-1.7 | checksum | — |
-| fedora | sway | 44-1.7 | checksum | — |
-| fedora | workstation | 44-1.7 | checksum | — |
-| fedora | xfce | 44-1.7 | checksum | — |
-| freebsd | bootonly | 15.1 | checksum | — |
-| freebsd | disc1 | 15.1 | checksum | — |
-| freebsd | dvd1 | 15.1 | checksum | — |
-| garuda | cinnamon | 260309 | checksum | — |
-| garuda | dr460nized | 260309 | checksum | — |
-| garuda | dr460nized-gaming | 260309 | checksum | — |
-| garuda | gnome | 260309 | checksum | — |
-| garuda | hyprland | 260309 | checksum | — |
-| garuda | i3 | 260309 | checksum | — |
-| garuda | kde-lite | 260309 | checksum | — |
-| garuda | mokka | 260309 | checksum | — |
-| garuda | sway | 260309 | checksum | — |
-| garuda | xfce | 260309 | checksum | — |
-| kali | installer | 2026.2 | gpg | — |
-| kali | installer-everything | 2026.2 | gpg | ✓ |
-| kali | installer-netinst | 2026.2 | gpg | — |
-| kali | installer-purple | 2026.2 | gpg | — |
-| kali | live | 2026.2 | gpg | ✓ |
-| kali | live-everything | 2026.2 | gpg | ✓ |
-| kde-neon | desktop | 20260707-0147 | gpg | — |
-| kde-neon | dev | 20260706-1142 | gpg | — |
-| manjaro | cinnamon | 25.0.3-250609-linux612 | gpg | — |
-| manjaro | gnome | 26.0.4-260327-linux618 | gpg | — |
-| manjaro | i3 | 25.0.3-250609-linux612 | gpg | — |
-| manjaro | kde | 26.0.4-260327-linux618 | gpg | — |
-| manjaro | xfce | 26.0.4-260327-linux618 | gpg | — |
-| memtest | iso | 8.10 | checksum | — |
-| minios | standard | 5.1.1 | checksum | — |
-| minios | toolbox | 5.1.1 | checksum | — |
-| minios | ultra | 5.1.1 | checksum | — |
-| mint | cinnamon | 22.3 | gpg | — |
-| mint | mate | 22.3 | gpg | — |
-| mint | xfce | 22.3 | gpg | — |
-| mx | fluxbox | 25.2 | gpg | — |
-| mx | kde | 25.2 | gpg | — |
-| mx | xfce | 25.2 | gpg | — |
-| mx | xfce-ahs | 25.2 | gpg | — |
-| nixos | graphical | 26.05.4659.8f0500b96605 | checksum | — |
-| nixos | minimal | 26.05.4659.8f0500b96605 | checksum | — |
-| nobara | gnome | 43-2026-04-19 | checksum | — |
-| nobara | gnome-nv | 43-2026-04-25 | checksum | — |
-| nobara | kde | 43-2026-04-19 | checksum | — |
-| nobara | kde-nv | 43-2026-04-25 | checksum | — |
-| nobara | official | 43-2026-04-19 | checksum | — |
-| nobara | official-nv | 43-2026-04-24 | checksum | — |
-| nobara | steam-handheld | 43-2026-04-19 | checksum | — |
-| nobara | steam-htpc | 43-2026-04-19 | checksum | — |
-| nobara | steam-htpc-nv | 43-2026-04-25 | checksum | — |
-| openmediavault | default | 8.3.1 | gpg | — |
-| opensuse | leap-dvd | 15.6-710.3 | checksum | — |
-| opensuse | leap-net | 15.6-710.3 | checksum | — |
-| opensuse | tumbleweed-dvd | Snapshot20260709 | gpg | — |
-| opensuse | tumbleweed-net | Snapshot20260709 | gpg | — |
-| opnsense | dvd | 26.1.6 | checksum | — |
-| pop-os | intel | 24.04-20 | checksum | — |
-| pop-os | nvidia | 24.04-25 | checksum | — |
-| proxmox | backup-server | 4.2-1 | gpg | ✓ |
-| proxmox | ve | 9.2-1 | gpg | ✓ |
-| q4os | plasma | 6.7 | checksum | — |
-| q4os | tde | 6.7 | checksum | — |
-| rocky | boot | 10.2 | gpg | — |
-| rocky | dvd | 10.2 | gpg | — |
-| rocky | minimal | 10.2 | gpg | — |
-| tails | iso | 7.9.1 | gpg | — |
-| truenas | scale | 25.10.4 | gpg | — |
-| ubuntu | desktop-interim | 25.10 | gpg | ✓ |
-| ubuntu | desktop-lts | 26.04 | gpg | ✓ |
-| ubuntu | live-server-interim | 25.10 | gpg | ✓ |
-| ubuntu | live-server-lts | 26.04 | gpg | ✓ |
-| void | base | 20250202 | checksum | — |
-| void | xfce | 20250202 | checksum | — |
+| Distro | Variant | Arch | Version | Verify | Torrent |
+|---|---|---|---|---|---|
+| almalinux | boot | x86_64 | 10.2 | gpg | — |
+| almalinux | dvd | x86_64 | 10.2 | gpg | — |
+| almalinux | minimal | x86_64 | 10.2 | gpg | — |
+| anduinos | en-us | x86_64 | 1.4.2 | torrent | ✓ |
+| antix | core | x86_64 | 26 | gpg | — |
+| antix | full | x86_64 | 26 | gpg | — |
+| arch | iso | x86_64 | 2026.07.01 | gpg | ✓ |
+| aurora | nvidia-open | x86_64 | stable-20260707.1 | checksum | — |
+| aurora | stable | x86_64 | stable-20260707.1 | checksum | — |
+| batocera | x86_64 | x86_64 | 43.1-20260529 | checksum | — |
+| bazzite | deck | x86_64 | 44.20260629 | checksum | — |
+| bazzite | desktop | x86_64 | 44.20260629 | checksum | — |
+| bazzite | nvidia-open | x86_64 | 44.20260629 | checksum | — |
+| bluefin | stable | x86_64 | stable-20260708 | checksum | — |
+| bluestar | default | x86_64 | 7.1.3-6-2026.07.11 | checksum | — |
+| cachyos | desktop | x86_64 | 260628 | gpg | — |
+| cachyos | handheld | x86_64 | 260628 | gpg | — |
+| centos | boot | x86_64 | 20260707.1 | checksum | — |
+| centos | dvd | x86_64 | 20260707.1 | checksum | — |
+| clonezilla | default | x86_64 | 3.3.2-31 | gpg | — |
+| debian | live-cinnamon | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-gnome | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-kde | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-lxde | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-lxqt | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-mate | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-standard | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | live-xfce | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | netinst | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | netinst | aarch64 | 13.6.0 | gpg | ✓ |
+| debian | netinst | armhf | 13.6.0 | gpg | ✓ |
+| debian | netinst | ppc64le | 13.6.0 | gpg | ✓ |
+| debian | netinst | riscv64 | 13.6.0 | gpg | ✓ |
+| debian | netinst | s390x | 13.6.0 | gpg | ✓ |
+| endeavouros | default | x86_64 | 2026.04.27 | gpg | — |
+| fedora | budgie | x86_64 | 44-1.7 | checksum | — |
+| fedora | cinnamon | x86_64 | 44-1.7 | checksum | — |
+| fedora | cosmic | x86_64 | 44-1.7 | checksum | — |
+| fedora | cosmic-atomic | x86_64 | 44-1.7 | checksum | — |
+| fedora | i3 | x86_64 | 44-1.7 | checksum | — |
+| fedora | kde | x86_64 | 44-1.7 | checksum | — |
+| fedora | kinoite | x86_64 | 44-1.7 | checksum | — |
+| fedora | lxde | x86_64 | 44-1.7 | checksum | — |
+| fedora | lxqt | x86_64 | 44-1.7 | checksum | — |
+| fedora | mate | x86_64 | 44-1.7 | checksum | — |
+| fedora | miraclewm | x86_64 | 44-1.7 | checksum | — |
+| fedora | onyx | x86_64 | 44-1.7 | checksum | — |
+| fedora | sericea | x86_64 | 44-1.7 | checksum | — |
+| fedora | server | x86_64 | 44-1.7 | checksum | — |
+| fedora | silverblue | x86_64 | 44-1.7 | checksum | — |
+| fedora | sway | x86_64 | 44-1.7 | checksum | — |
+| fedora | workstation | x86_64 | 44-1.7 | checksum | — |
+| fedora | xfce | x86_64 | 44-1.7 | checksum | — |
+| freebsd | bootonly | x86_64 | 15.1 | checksum | — |
+| freebsd | disc1 | x86_64 | 15.1 | checksum | — |
+| freebsd | dvd1 | x86_64 | 15.1 | checksum | — |
+| garuda | cinnamon | x86_64 | 260309 | checksum | — |
+| garuda | dr460nized | x86_64 | 260309 | checksum | — |
+| garuda | dr460nized-gaming | x86_64 | 260309 | checksum | — |
+| garuda | gnome | x86_64 | 260309 | checksum | — |
+| garuda | hyprland | x86_64 | 260309 | checksum | — |
+| garuda | i3 | x86_64 | 260309 | checksum | — |
+| garuda | kde-lite | x86_64 | 260309 | checksum | — |
+| garuda | mokka | x86_64 | 260309 | checksum | — |
+| garuda | sway | x86_64 | 260309 | checksum | — |
+| garuda | xfce | x86_64 | 260309 | checksum | — |
+| kali | installer | x86_64 | 2026.2 | gpg | — |
+| kali | installer-everything | x86_64 | 2026.2 | gpg | ✓ |
+| kali | installer-netinst | x86_64 | 2026.2 | gpg | — |
+| kali | installer-purple | x86_64 | 2026.2 | gpg | — |
+| kali | live | x86_64 | 2026.2 | gpg | ✓ |
+| kali | live-everything | x86_64 | 2026.2 | gpg | ✓ |
+| kde-neon | desktop | x86_64 | 20260707-0147 | gpg | — |
+| kde-neon | dev | x86_64 | 20260706-1142 | gpg | — |
+| manjaro | cinnamon | x86_64 | 25.0.3-250609-linux612 | gpg | — |
+| manjaro | gnome | x86_64 | 26.0.4-260327-linux618 | gpg | — |
+| manjaro | i3 | x86_64 | 25.0.3-250609-linux612 | gpg | — |
+| manjaro | kde | x86_64 | 26.0.4-260327-linux618 | gpg | — |
+| manjaro | xfce | x86_64 | 26.0.4-260327-linux618 | gpg | — |
+| memtest | iso | x86_64 | 8.10 | checksum | — |
+| minios | standard | x86_64 | 5.1.1 | checksum | — |
+| minios | toolbox | x86_64 | 5.1.1 | checksum | — |
+| minios | ultra | x86_64 | 5.1.1 | checksum | — |
+| mint | cinnamon | x86_64 | 22.3 | gpg | — |
+| mint | mate | x86_64 | 22.3 | gpg | — |
+| mint | xfce | x86_64 | 22.3 | gpg | — |
+| mx | fluxbox | x86_64 | 25.2 | gpg | — |
+| mx | kde | x86_64 | 25.2 | gpg | — |
+| mx | xfce | x86_64 | 25.2 | gpg | — |
+| mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
+| nixos | graphical | x86_64 | 26.05.4659.8f0500b96605 | checksum | — |
+| nixos | minimal | x86_64 | 26.05.4659.8f0500b96605 | checksum | — |
+| nobara | gnome | x86_64 | 43-2026-04-19 | checksum | — |
+| nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
+| nobara | kde | x86_64 | 43-2026-04-19 | checksum | — |
+| nobara | kde-nv | x86_64 | 43-2026-04-25 | checksum | — |
+| nobara | official | x86_64 | 43-2026-04-19 | checksum | — |
+| nobara | official-nv | x86_64 | 43-2026-04-24 | checksum | — |
+| nobara | steam-handheld | x86_64 | 43-2026-04-19 | checksum | — |
+| nobara | steam-htpc | x86_64 | 43-2026-04-19 | checksum | — |
+| nobara | steam-htpc-nv | x86_64 | 43-2026-04-25 | checksum | — |
+| openmediavault | default | x86_64 | 8.3.1 | gpg | — |
+| opensuse | leap-dvd | x86_64 | 15.6-710.3 | checksum | — |
+| opensuse | leap-net | x86_64 | 15.6-710.3 | checksum | — |
+| opensuse | tumbleweed-dvd | x86_64 | Snapshot20260709 | gpg | — |
+| opensuse | tumbleweed-net | x86_64 | Snapshot20260709 | gpg | — |
+| opnsense | dvd | x86_64 | 26.1.6 | checksum | — |
+| pop-os | intel | x86_64 | 24.04-20 | checksum | — |
+| pop-os | nvidia | x86_64 | 24.04-25 | checksum | — |
+| proxmox | backup-server | x86_64 | 4.2-1 | gpg | ✓ |
+| proxmox | ve | x86_64 | 9.2-1 | gpg | ✓ |
+| q4os | plasma | x86_64 | 6.7 | checksum | — |
+| q4os | tde | x86_64 | 6.7 | checksum | — |
+| rocky | boot | x86_64 | 10.2 | gpg | — |
+| rocky | dvd | x86_64 | 10.2 | gpg | — |
+| rocky | minimal | x86_64 | 10.2 | gpg | — |
+| tails | iso | x86_64 | 7.9.1 | gpg | — |
+| truenas | scale | x86_64 | 25.10.4 | gpg | — |
+| ubuntu | desktop-interim | x86_64 | 25.10 | gpg | ✓ |
+| ubuntu | desktop-lts | x86_64 | 26.04 | gpg | ✓ |
+| ubuntu | live-server-interim | x86_64 | 25.10 | gpg | ✓ |
+| ubuntu | live-server-lts | x86_64 | 26.04 | gpg | ✓ |
+| void | base | x86_64 | 20250202 | checksum | — |
+| void | xfce | x86_64 | 20250202 | checksum | — |

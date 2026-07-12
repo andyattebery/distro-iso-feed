@@ -51,6 +51,17 @@ def content_type_for(filename: str) -> str:
     return CONTENT_TYPES.get(best, "application/octet-stream")
 
 
+def arch_tag(arch: str) -> str:
+    """The arch suffix for identity keys -- **empty for x86_64**, `:{arch}` otherwise.
+
+    x86_64 stays implicit so every existing key/guid/atom_id is unchanged when arches are
+    added: no re-notify storm. This single rule MUST be shared by `Release.state_key`,
+    `Release.guid`, `Variant.key`, and `feed.atom_id` -- `docs.py` joins `Variant.key` to
+    `state_key`, so any divergence silently blanks the catalog for multi-arch rows.
+    """
+    return "" if arch == "x86_64" else f":{arch}"
+
+
 @dataclass(frozen=True, slots=True)
 class Release:
     distro: str
@@ -79,12 +90,12 @@ class Release:
 
     def guid(self) -> str:
         """Identifies an *artifact*. Moves whenever the bytes move."""
-        return f"{self.distro}:{self.variant}:{self.version}"
+        return f"{self.distro}:{self.variant}{arch_tag(self.arch)}:{self.version}"
 
     @property
     def state_key(self) -> str:
-        """Identifies a *variant*. The `state.json` key; one current record each."""
-        return f"{self.distro}:{self.variant}"
+        """Identifies a *variant* (+arch). The `state.json` key; one current record each."""
+        return f"{self.distro}:{self.variant}{arch_tag(self.arch)}"
 
     @property
     def primary_url(self) -> str:
@@ -136,10 +147,12 @@ class Variant:
     params: dict
     label: str | None = None
     mirror: bool = False
+    arch: str = "x86_64"
 
     @property
     def key(self) -> str:
-        return f"{self.distro}:{self.name}"
+        # Same rule as Release.state_key -- docs.py joins the two, so they must agree.
+        return f"{self.distro}:{self.name}{arch_tag(self.arch)}"
 
 
 @dataclass(frozen=True, slots=True)

@@ -56,6 +56,16 @@ class DirectoryIndex(Strategy):
         index, _ = self._index_url(params, client)
         return autoindex(client, index) if index else []
 
+    def arch_tokens(self, params: dict, client: Client) -> list[str]:
+        """Path-segment arches: `index` templates `{token}` as a directory (Debian
+        `current/{token}/iso-cd/`). List the parent of `{token}` and return the subdir names;
+        non-arch dirs (`source/`, `trace/`) survive here but fail arch-verify's resolve."""
+        index = params.get("index", "")
+        if "{token}" not in index:
+            return []
+        prefix = index.split("{token}", 1)[0]
+        return version_dir(client, prefix, r"^[a-z0-9_]+$")
+
     def resolve(self, distro: str, variant: str, params: dict, client: Client) -> Release | None:
         index, version_dirname = self._index_url(params, client)
         if not index:

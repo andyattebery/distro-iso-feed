@@ -106,10 +106,14 @@ distros:
     variants:
       netinst:
         label: "Debian netinst"
+        # Multi-arch: netinst ships for several arches (Debian Live, below, is amd64-only).
+        # `arches` is {canonical: upstream-token}; `{token}` is substituted into the URL/match,
+        # and the canonical name keys the entry (x86_64 stays implicit, so amd64 is unchanged).
+        arches: {x86_64: amd64, aarch64: arm64, armhf: armhf, ppc64le: ppc64el, riscv64: riscv64, s390x: s390x}
         params:
-          index: "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/"
-          match: '^debian-[0-9.]+-amd64-netinst\.iso$'
-          version_pattern: 'debian-([0-9.]+)-amd64'
+          index: "https://cdimage.debian.org/debian-cd/current/{token}/iso-cd/"
+          match: '^debian-[0-9.]+-{token}-netinst\.iso$'
+          version_pattern: 'debian-([0-9.]+)-{token}'
           # The torrent sits in a sibling dir, `bt-cd/`, with its own GPG-signed
           # SHA512SUMS -- so the entry carries both a direct download and a fully
           # verified torrent. `urljoin` resolves `../bt-cd/` against the ISO URL.

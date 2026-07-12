@@ -192,6 +192,32 @@ def test_directory_index_skips_rc_only_dir_opnsense():
     assert rel.version == "26.1.6" and rel.checksum == SHA256
 
 
+def test_directory_index_resolves_distinct_arch_dirs_debian():
+    """Multi-arch: config-load has already substituted the token per arch, so resolve runs once
+    per (variant, arch) against that arch's own index dir + SHA512SUMS, and the resulting
+    state_key namespaces by arch (x86_64 implicit)."""
+    base = "https://cdimage.example/debian-cd/current/"
+    for token, canon in [("amd64", "x86_64"), ("arm64", "aarch64")]:
+        d = f"{base}{token}/iso-cd/"
+        iso = f"debian-13.6.0-{token}-netinst.iso"
+        client = FakeClient({d: autoindex_html([iso]), d + "SHA512SUMS": f"{'b' * 128}  {iso}"})
+        rel = REGISTRY["directory_index"]().resolve(
+            "debian",
+            "netinst",
+            {
+                "index": d,
+                "match": rf"^debian-[0-9.]+-{token}-netinst\.iso$",
+                "version_pattern": rf"debian-([0-9.]+)-{token}",
+                "sums": "SHA512SUMS",
+                "arch": canon,
+            },
+            client,
+        )
+        assert rel.filename == iso and rel.arch == canon and rel.checksum_algo == "sha512"
+        expect = "debian:netinst" if canon == "x86_64" else f"debian:netinst:{canon}"
+        assert rel.state_key == expect
+
+
 def test_tails_signature_without_checksum():
     """A signature does not imply a checksum. Tails publishes only `.iso.sig`."""
     idx = "https://download.tails.example/stable/tails-amd64-7.9.1/"

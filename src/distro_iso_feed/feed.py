@@ -18,7 +18,7 @@ from email.utils import format_datetime
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-from .models import TORRENT_TYPE, Release
+from .models import TORRENT_TYPE, Release, arch_tag
 from .state import Record, State
 
 REPO_URL = "https://github.com/andyattebery/distro-iso-feed"
@@ -46,7 +46,8 @@ def atom_id(release: Release) -> str:
     would re-notify on the whole feed. Ids are identity; links are location.
     This URL intentionally 404s.
     """
-    return f"{REPO_URL}/id/{release.distro}/{release.variant}/{release.version}"
+    tag = arch_tag(release.arch)
+    return f"{REPO_URL}/id/{release.distro}/{release.variant}{tag}/{release.version}"
 
 
 def summary_for(release: Release) -> str:
@@ -246,13 +247,16 @@ def readme_md(records: list[Record]) -> str:
         "",
         f"Torrents only: [`torrent.xml`]({TORRENT_SELF}) · `torrent.rss`",
         "",
-        "| Distro | Variant | Version | Verify | Torrent |",
-        "|---|---|---|---|---|",
+        "| Distro | Variant | Arch | Version | Verify | Torrent |",
+        "|---|---|---|---|---|---|",
     ]
     for r in sorted(records, key=lambda x: x.release.state_key):
         rel = r.release
         torrent = "✓" if rel.torrent_url else "—"
-        lines.append(f"| {rel.distro} | {rel.variant} | {rel.version} | {rel.verify} | {torrent} |")
+        lines.append(
+            f"| {rel.distro} | {rel.variant} | {rel.arch} | {rel.version} "
+            f"| {rel.verify} | {torrent} |"
+        )
     return "\n".join(lines) + "\n"
 
 

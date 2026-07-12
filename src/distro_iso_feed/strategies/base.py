@@ -78,6 +78,14 @@ class Strategy(ABC):
         pattern = params.get("match")
         return bool(pattern) and bool(re.search(pattern, candidate.name))
 
+    def arch_tokens(self, params: dict, client: Client) -> list[str]:
+        """Upstream arch tokens this variant could resolve -- the enumeration step of arch
+        discovery. Default: none. `directory_index` reads a `{token}` path segment; the JSON
+        row field (`json_api`) and filename capture (`sourceforge`) implement their own later.
+        Operates on the RAW params (`{token}` unexpanded), since discovery precedes expansion.
+        """
+        return []
+
     # ---------------------------------------------------------------- enumeration
 
     def enumerate_all(
