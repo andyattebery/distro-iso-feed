@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/rocky</id>
+  <title>Distro ISO Feed — rocky</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/rocky.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T17:03:26+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/minimal/10.2</id>
+    <title>Rocky Linux minimal 10.2 (x86_64)</title>
+    <updated>2026-07-12T17:03:26+00:00</updated>
+    <published>2026-07-12T17:03:26+00:00</published>
+    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="rocky" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Rocky Linux minimal 10.2 (x86_64)
+Filename: Rocky-10.2-x86_64-minimal.iso
+sha256: aac6ac3ce781b91a91ce78463405f66c611a5dca4b3840c79e5e01d97302f6c8
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/dvd/10.2</id>
+    <title>Rocky Linux DVD 10.2 (x86_64)</title>
+    <updated>2026-07-12T17:03:26+00:00</updated>
+    <published>2026-07-12T17:03:26+00:00</published>
+    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="rocky" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">Rocky Linux DVD 10.2 (x86_64)
+Filename: Rocky-10.2-x86_64-dvd1.iso
+sha256: 16ca9c96cdb221ba6e1f68579f21bd69fd8da81c6a921d9068949796f91c8feb
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/boot/10.2</id>
+    <title>Rocky Linux boot 10.2 (x86_64)</title>
+    <updated>2026-07-12T17:03:25+00:00</updated>
+    <published>2026-07-12T17:03:25+00:00</published>
+    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="rocky" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">Rocky Linux boot 10.2 (x86_64)
+Filename: Rocky-10.2-x86_64-boot.iso
+sha256: bf3a75907948563d0c11f3d1b8546ee9216e18a3ea2dc0a67eb4c45452e210f9
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</summary>
+  </entry>
+</feed>

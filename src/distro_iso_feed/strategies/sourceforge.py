@@ -30,6 +30,15 @@ def _download_url(project: str, path: str) -> str:
     return f"https://sourceforge.net/projects/{project}/files{path}/download"
 
 
+def _sidecar_url(project: str, template: str, fmt: dict) -> str:
+    """A checksum/signature URL. Usually a SourceForge file derived from the artifact's
+    path, but Clonezilla keeps its signed `CHECKSUMS.TXT` off-site, so an absolute URL in
+    the config is used verbatim rather than wrapped in the SourceForge download template.
+    """
+    value = template.format(**fmt)
+    return value if value.startswith(("http://", "https://")) else _download_url(project, value)
+
+
 class SourceForge(Strategy):
     name = "sourceforge"
 
@@ -65,7 +74,7 @@ class SourceForge(Strategy):
 
         sums_url = None
         if sums := params.get("sums"):
-            sums_url = _download_url(project, sums.format(**fmt))
+            sums_url = _sidecar_url(project, sums, fmt)
 
         checksum, algo, _ = fetch_integrity(
             client,
@@ -79,7 +88,7 @@ class SourceForge(Strategy):
 
         signature_url = None
         if sig := params.get("sig"):
-            signature_url = _download_url(project, sig.format(**fmt))
+            signature_url = _sidecar_url(project, sig, fmt)
 
         arch = params.get("arch", "x86_64")
         return Release(

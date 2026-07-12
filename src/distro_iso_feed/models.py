@@ -26,6 +26,9 @@ CONTENT_TYPES: dict[str, str] = {
     ".img.gz": "application/gzip",
     ".img.xz": "application/x-xz",
     ".raw.xz": "application/x-xz",
+    ".iso.bz2": "application/x-bzip2",  # OPNsense ships bzip2-compressed images
+    ".img.bz2": "application/x-bzip2",
+    ".iso.zip": "application/zip",  # Memtest86+ wraps its ISO in a zip
 }
 
 TORRENT_TYPE = "application/x-bittorrent"

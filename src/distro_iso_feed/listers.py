@@ -264,7 +264,11 @@ def page_index(client: Client, url: str, attr: str | None = None) -> list[Candid
 
     out = []
     for u in urls:
-        out.append(Candidate(name=u.rsplit("/", 1)[-1], url=u))
+        # Resolve against the page URL: TrueNAS and Memtest link relatively, and the
+        # strategy derives the sidecar directory from this URL, so it must be absolute.
+        # `urljoin` is idempotent on the absolute URLs Nobara/Manjaro already yield.
+        resolved = urljoin(url, u)
+        out.append(Candidate(name=resolved.rsplit("/", 1)[-1], url=resolved))
     return out
 
 

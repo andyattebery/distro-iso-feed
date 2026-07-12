@@ -50,6 +50,16 @@ def _sign(home: str, fpr: str, data: bytes) -> bytes:
     ).stdout  # fmt: skip
 
 
+def _clearsign(home: str, fpr: str, data: bytes) -> bytes:
+    """An inline-clearsigned document (the AlmaLinux CHECKSUM shape)."""
+    env = {**os.environ, "GNUPGHOME": home}
+    return subprocess.run(
+        ["gpg", "--batch", "--pinentry-mode", "loopback", "--passphrase", "",
+         "--clearsign", "--local-user", fpr, "-o", "-"],
+        env=env, input=data, capture_output=True, check=True,
+    ).stdout  # fmt: skip
+
+
 ISO = "distro-9.0-amd64.iso"
 CKSUM = "a" * 64
 SUMS = f"{CKSUM}  {ISO}\n".encode()
@@ -63,15 +73,18 @@ def keys():
         fpr = _gen(home, "Distro Signing <sign@distro.example>")
         pub = _export(home, fpr)
         sums_sig = _sign(home, fpr, SUMS)
+        sums_clear = _clearsign(home, fpr, SUMS)  # AlmaLinux: inline-signed CHECKSUM
         iso_sig = _sign(home, fpr, b"pretend ISO bytes")  # image mode never fetches the ISO
         other_home = tempfile.mkdtemp()
         os.chmod(other_home, 0o700)
         other_fpr = _gen(other_home, "Impostor <no@distro.example>")
         other_pub = _export(other_home, other_fpr)
         other_iso_sig = _sign(other_home, other_fpr, b"pretend ISO bytes")
+        other_sums_clear = _clearsign(other_home, other_fpr, SUMS)
         yield {
-            "fpr": fpr, "pub": pub, "sums_sig": sums_sig, "iso_sig": iso_sig,
-            "other_fpr": other_fpr, "other_pub": other_pub, "other_iso_sig": other_iso_sig,
+            "fpr": fpr, "pub": pub, "sums_sig": sums_sig, "sums_clear": sums_clear,
+            "iso_sig": iso_sig, "other_fpr": other_fpr, "other_pub": other_pub,
+            "other_iso_sig": other_iso_sig, "other_sums_clear": other_sums_clear,
         }  # fmt: skip
 
 
@@ -147,6 +160,35 @@ def test_image_sig_from_a_different_key_drops(keys):
     r, outcome = verify_signing_key(client, _release(), _params(keys, "image"))
     assert outcome == BAD
     assert r.signature_url is None and r.verify == "checksum"
+
+
+# ----------------------------------------------------------------- clearsigned mode
+
+
+def test_clearsigned_verified_publishes_the_pin(keys):
+    """AlmaLinux: the CHECKSUM is its own inline signature. `sig` points at that file, so
+    verify it under only the pin and confirm the checksum sits inside the verified body."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["sums_clear"]})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
+    assert outcome == VERIFIED
+    assert r.signing_key_fingerprint == keys["fpr"]
+    assert r.signature_target == "checksums"  # clearsigned maps to checksums for the client
+    assert r.verify == "gpg"
+
+
+def test_clearsigned_tampered_body_drops(keys):
+    tampered = keys["sums_clear"].replace(b"a" * 64, b"b" * 64)  # breaks both sig and checksum
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: tampered})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
+    assert outcome == BAD
+    assert r.signature_url is None and r.signature_target is None and r.verify == "checksum"
+
+
+def test_clearsigned_from_a_different_key_drops(keys):
+    """Signed inline, but by a key we did not pin -- `gpg --verify` fails under the pin."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_clear"]})
+    r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
+    assert outcome == BAD
 
 
 # ------------------------------------------------------------- guards & degrade

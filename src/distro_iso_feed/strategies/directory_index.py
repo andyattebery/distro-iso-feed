@@ -84,11 +84,16 @@ class DirectoryIndex(Strategy):
         if not version:
             return None
 
+        # `sums` templating usually wants the version-DIR name (FreeBSD's
+        # `CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-amd64`). OPNsense inverts this: the
+        # `26.7/` dir holds `OPNsense-26.7.r1-…`, so its checksums file is named from the
+        # FILENAME token, not the dir. `sums_from_filename` opts into that.
+        sums_version = version if params.get("sums_from_filename") else (version_dirname or version)
         checksum, algo, signature_url = fetch_integrity(
             client,
             base=index,
             filename=filename,
-            version=version_dirname or version,
+            version=sums_version,
             sums=params.get("sums"),
             sig=params.get("sig"),
         )

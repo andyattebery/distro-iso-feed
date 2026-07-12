@@ -123,6 +123,39 @@ def test_batocera_bare_md5_and_non_iso_content_type():
     assert rel.content_type == "application/gzip"
 
 
+def test_directory_index_sums_from_filename_token_opnsense():
+    """OPNsense's `26.7/` dir holds `OPNsense-26.7.r1-…`, and its checksums file is named from
+    the FILENAME token. `sums_from_filename` must template `{version}` with `26.7.r1` (the
+    file token), not `26.7` (the dir) -- without it the sums URL 404s."""
+    parent = "https://mirror.example/opnsense/releases/"
+    d = parent + "26.7/"
+    iso = "OPNsense-26.7.r1-dvd-amd64.iso.bz2"
+    client = FakeClient(
+        {
+            parent: autoindex_html(["25.7/", "26.7/"]),
+            d: autoindex_html([iso, "OPNsense-26.7.r1-checksums-amd64.sha256"]),
+            d + "OPNsense-26.7.r1-checksums-amd64.sha256": f"SHA256 ({iso}) = {SHA256}",
+        }
+    )
+    params = {
+        "version_dir": parent,
+        "index": "{version}/",
+        "sums": "OPNsense-{version}-checksums-amd64.sha256",
+        "match": r"^OPNsense-[0-9.]+(?:\.r[0-9]+)?-dvd-amd64\.iso\.bz2$",
+        "version_pattern": r"OPNsense-([0-9.]+(?:\.r[0-9]+)?)-dvd-amd64",
+    }
+    rel = REGISTRY["directory_index"]().resolve(
+        "opnsense", "dvd", {**params, "sums_from_filename": True}, client
+    )
+    assert rel.filename == iso and rel.version == "26.7.r1"
+    assert rel.checksum == SHA256  # sums URL built from 26.7.r1, not the dir 26.7
+    assert rel.content_type == "application/x-bzip2"
+
+    # Without the opt-in, {version} is the dir name `26.7` -> the sums URL 404s -> no checksum.
+    miss = REGISTRY["directory_index"]().resolve("opnsense", "dvd", params, client)
+    assert miss.filename == iso and miss.checksum is None
+
+
 def test_tails_signature_without_checksum():
     """A signature does not imply a checksum. Tails publishes only `.iso.sig`."""
     idx = "https://download.tails.example/stable/tails-amd64-7.9.1/"
@@ -282,6 +315,38 @@ def test_sourceforge_dedupes_doubled_items_and_rejects_zsync():
     assert rel.checksum == SHA256
 
 
+def test_sourceforge_absolute_foreign_sums_and_sig_url_clonezilla():
+    """Clonezilla keeps its signed CHECKSUMS.TXT off SourceForge; an absolute `sums`/`sig`
+    URL must be used verbatim, not wrapped in the SourceForge download template. The
+    multi-section file resolves to its strongest hash."""
+    iso_path = "/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso"
+    feed = "https://sourceforge.net/projects/clonezilla/rss?path=/clonezilla_live_stable"
+    foreign = "https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT"
+    client = FakeClient(
+        {
+            feed: sf_rss([iso_path]),
+            foreign: f"### MD5SUMS:\n{MD5}  clonezilla-live-3.3.2-31-amd64.iso\n"
+            f"### SHA256SUMS:\n{SHA256}  clonezilla-live-3.3.2-31-amd64.iso\n",
+        }
+    )
+    rel = REGISTRY["sourceforge"]().resolve(
+        "clonezilla",
+        "default",
+        {
+            "project": "clonezilla",
+            "path": "/clonezilla_live_stable",
+            "match": r"/clonezilla-live-[0-9.-]+-amd64\.iso$",
+            "version_pattern": r"clonezilla-live-([0-9.-]+)-amd64\.iso$",
+            "sums": foreign,
+            "sig": foreign + ".gpg",
+        },
+        client,
+    )
+    assert rel.version == "3.3.2-31"
+    assert rel.checksum == SHA256  # off-host file fetched verbatim; sha256 beats the co-listed md5
+    assert rel.signature_url == foreign + ".gpg"  # absolute, not SourceForge-wrapped
+
+
 def test_sourceforge_token_from_filename_not_directory_cachyos():
     """dir says 250626, file says 260426. The filename is authoritative."""
     paths = ["/gui-installer/handheld/250626/cachyos-handheld-linux-260426.iso"]
@@ -349,6 +414,37 @@ def test_page_index_reads_data_attribute_and_sha256sum_suffix():
     )
     assert rel.version == "43-2026-04-19"  # release number AND date
     assert rel.checksum == SHA256  # `./` prefix normalized away
+
+
+def test_page_index_resolves_relative_hrefs_against_the_page_url():
+    """TrueNAS/Memtest link relatively, and the strategy derives the sidecar directory from
+    the resolved URL -- so a relative href must become absolute or the deep-path sums 404s."""
+    page = "https://dl.example/"
+    iso_abs = "https://dl.example/Goldeye/25.10.4/TrueNAS-SCALE-25.10.4.iso"
+    client = FakeClient(
+        {
+            page: (
+                '<a href="Goldeye/25.10.4/TrueNAS-SCALE-25.10.4.iso">iso</a>'
+                '<a href="Goldeye/25.10.4/TrueNAS-SCALE-25.10.4.iso.sha256">sum</a>'
+            ),
+            iso_abs + ".sha256": SHA256,  # bare hash, in the deep per-release directory
+        }
+    )
+    rel = REGISTRY["page_index"]().resolve(
+        "truenas",
+        "scale",
+        {
+            "url": page,
+            "attr": "href",
+            "match": r"^TrueNAS-(?:SCALE-)?[0-9.]+\.iso$",
+            "version_pattern": r"TrueNAS-(?:SCALE-)?([0-9.]+)\.iso$",
+            "sums": "{filename}.sha256",
+        },
+        client,
+    )
+    assert rel.download_url == iso_abs  # relative href resolved to absolute
+    assert rel.version == "25.10.4"
+    assert rel.checksum == SHA256  # bare-hash sidecar found next to the ISO, not at the root
 
 
 # -------------------------------------------------------------------- failure isolation

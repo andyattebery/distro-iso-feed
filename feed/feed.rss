@@ -4,8 +4,161 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Sun, 12 Jul 2026 15:40:52 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 17:03:34 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>OPNsense DVD 26.7.r1 (x86_64)</title>
+      <link>https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.7/OPNsense-26.7.r1-dvd-amd64.iso.bz2</link>
+      <guid isPermaLink="false">opnsense:dvd:26.7.r1</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:34 +0000</pubDate>
+      <description>OPNsense DVD 26.7.r1 (x86_64)
+Filename: OPNsense-26.7.r1-dvd-amd64.iso.bz2
+sha256: 6b8430921316bd1d912a7bf71d02f2e354cd82b644c3fbf2646ab55382b9a758
+Verify: checksum</description>
+      <enclosure url="https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.7/OPNsense-26.7.r1-dvd-amd64.iso.bz2" type="application/x-bzip2" length="0" />
+      <category>opnsense</category>
+    </item>
+    <item>
+      <title>Memtest86+ 8.10 (x86_64)</title>
+      <link>https://www.memtest.org/download/v8.10/mt86plus_8.10_x86_64.iso.zip</link>
+      <guid isPermaLink="false">memtest:iso:8.10</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:33 +0000</pubDate>
+      <description>Memtest86+ 8.10 (x86_64)
+Filename: mt86plus_8.10_x86_64.iso.zip
+sha256: 93530005d6ac6a85aa2a49c68604a43c25794ecccf796c4f8849a73a8001be9a
+Verify: checksum</description>
+      <enclosure url="https://www.memtest.org/download/v8.10/mt86plus_8.10_x86_64.iso.zip" type="application/zip" length="0" />
+      <category>memtest</category>
+    </item>
+    <item>
+      <title>TrueNAS SCALE 25.10.4 (x86_64)</title>
+      <link>https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.4/TrueNAS-SCALE-25.10.4.iso</link>
+      <guid isPermaLink="false">truenas:scale:25.10.4</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:32 +0000</pubDate>
+      <description>TrueNAS SCALE 25.10.4 (x86_64)
+Filename: TrueNAS-SCALE-25.10.4.iso
+sha256: efb57cc9a23835c2ffd74326c61251bdb3d627f57bcd2a806a152aee0bb98d66
+Signature: https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.4/TrueNAS-SCALE-25.10.4.iso.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
+Key-fingerprint: C8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
+Verify: gpg</description>
+      <enclosure url="https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.4/TrueNAS-SCALE-25.10.4.iso" type="application/x-iso9660-image" length="0" />
+      <category>truenas</category>
+    </item>
+    <item>
+      <title>AlmaLinux minimal 10.2 (x86_64)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-minimal.iso</link>
+      <guid isPermaLink="false">almalinux:minimal:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:30 +0000</pubDate>
+      <description>AlmaLinux minimal 10.2 (x86_64)
+Filename: AlmaLinux-10.2-x86_64-minimal.iso
+sha256: 1b532f534231da0d1cd0ccae622bea6cd588d8a0d7b259f1f131501a6eed41a4
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux DVD 10.2 (x86_64)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-dvd.iso</link>
+      <guid isPermaLink="false">almalinux:dvd:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:30 +0000</pubDate>
+      <description>AlmaLinux DVD 10.2 (x86_64)
+Filename: AlmaLinux-10.2-x86_64-dvd.iso
+sha256: 90244ac532f67c978831a381b420da8bda363729e1f4cf8fb8991daca70ee287
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-dvd.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux boot 10.2 (x86_64)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-boot.iso</link>
+      <guid isPermaLink="false">almalinux:boot:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:30 +0000</pubDate>
+      <description>AlmaLinux boot 10.2 (x86_64)
+Filename: AlmaLinux-10.2-x86_64-boot.iso
+sha256: b3f865468075bcada8f208d830289302c67529789d668041d24e8d6fc697ba6a
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260707.1 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260707.1-x86_64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:29 +0000</pubDate>
+      <description>CentOS Stream DVD 20260707.1 (x86_64)
+Filename: CentOS-Stream-10-20260707.1-x86_64-dvd1.iso
+sha256: f4df7fef23ffae63335f915b7d4615bf5ca5e5f9ceff1208dcfb3d33fed348da
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260707.1-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260707.1 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260707.1-x86_64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:28 +0000</pubDate>
+      <description>CentOS Stream boot 20260707.1 (x86_64)
+Filename: CentOS-Stream-10-20260707.1-x86_64-boot.iso
+sha256: 42ed76824358355314023ce8e3476c2473a8996aa5b36aba2eaa6ffacffde249
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260707.1-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.2 (x86_64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:26 +0000</pubDate>
+      <description>Rocky Linux minimal 10.2 (x86_64)
+Filename: Rocky-10.2-x86_64-minimal.iso
+sha256: aac6ac3ce781b91a91ce78463405f66c611a5dca4b3840c79e5e01d97302f6c8
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.2 (x86_64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:26 +0000</pubDate>
+      <description>Rocky Linux DVD 10.2 (x86_64)
+Filename: Rocky-10.2-x86_64-dvd1.iso
+sha256: 16ca9c96cdb221ba6e1f68579f21bd69fd8da81c6a921d9068949796f91c8feb
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.2 (x86_64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 17:03:25 +0000</pubDate>
+      <description>Rocky Linux boot 10.2 (x86_64)
+Filename: Rocky-10.2-x86_64-boot.iso
+sha256: bf3a75907948563d0c11f3d1b8546ee9216e18a3ea2dc0a67eb4c45452e210f9
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
     <item>
       <title>Proxmox Backup Server 4.2-1 (x86_64)</title>
       <link>http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso</link>
@@ -1274,6 +1427,36 @@ Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso/download" type="application/x-iso9660-image" length="0" />
       <category>cachyos</category>
+    </item>
+    <item>
+      <title>OpenMediaVault 8.3.1 (x86_64)</title>
+      <link>https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download</link>
+      <guid isPermaLink="false">openmediavault:default:8.3.1</guid>
+      <pubDate>Sat, 06 Jun 2026 09:34:27 +0000</pubDate>
+      <description>OpenMediaVault 8.3.1 (x86_64)
+Filename: openmediavault_8.3.1-amd64.iso
+sha256: 5ada7dea09dbb10365b6f245515e71c79c5398d8f8f1acda675ee6d8b572d2e5
+Signature: https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso.asc/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xD67506C878E08A94FD7E009424863F0C716B980B
+Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
+Verify: gpg</description>
+      <enclosure url="https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>openmediavault</category>
+    </item>
+    <item>
+      <title>Clonezilla Live 3.3.2-31 (x86_64)</title>
+      <link>https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso/download</link>
+      <guid isPermaLink="false">clonezilla:default:3.3.2-31</guid>
+      <pubDate>Mon, 25 May 2026 13:07:00 +0000</pubDate>
+      <description>Clonezilla Live 3.3.2-31 (x86_64)
+Filename: clonezilla-live-3.3.2-31-amd64.iso
+sha512: e1f7c6ef43f03ac74c1001cd89f2bb1429d098dc1320a1dd471fcd84e73390d5032add60946a4d920f36d729daf6279fa0fbb5c8f294b568d0339f5cd481d431
+Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
+Verify: gpg</description>
+      <enclosure url="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>clonezilla</category>
     </item>
     <item>
       <title>MX Linux Xfce 25.2 (x86_64)</title>

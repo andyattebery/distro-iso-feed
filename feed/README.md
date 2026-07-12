@@ -8,6 +8,9 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 
 | Distro | Variant | Version | Verify | Torrent |
 |---|---|---|---|---|
+| almalinux | boot | 10.2 | gpg | — |
+| almalinux | dvd | 10.2 | gpg | — |
+| almalinux | minimal | 10.2 | gpg | — |
 | anduinos | en-us | 1.4.2 | torrent | ✓ |
 | antix | core | 26 | gpg | — |
 | antix | full | 26 | gpg | — |
@@ -22,6 +25,9 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | bluestar | default | 7.1.3-6-2026.07.11 | checksum | — |
 | cachyos | desktop | 260628 | gpg | — |
 | cachyos | handheld | 260628 | gpg | — |
+| centos | boot | 20260707.1 | checksum | — |
+| centos | dvd | 20260707.1 | checksum | — |
+| clonezilla | default | 3.3.2-31 | gpg | — |
 | debian | live-cinnamon | 13.6.0 | gpg | ✓ |
 | debian | live-gnome | 13.6.0 | gpg | ✓ |
 | debian | live-kde | 13.6.0 | gpg | ✓ |
@@ -76,6 +82,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | manjaro | i3 | 25.0.3-250609-linux612 | gpg | — |
 | manjaro | kde | 26.0.4-260327-linux618 | gpg | — |
 | manjaro | xfce | 26.0.4-260327-linux618 | gpg | — |
+| memtest | iso | 8.10 | checksum | — |
 | minios | standard | 5.1.1 | checksum | — |
 | minios | toolbox | 5.1.1 | checksum | — |
 | minios | ultra | 5.1.1 | checksum | — |
@@ -97,17 +104,23 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | nobara | steam-handheld | 43-2026-04-19 | checksum | — |
 | nobara | steam-htpc | 43-2026-04-19 | checksum | — |
 | nobara | steam-htpc-nv | 43-2026-04-25 | checksum | — |
+| openmediavault | default | 8.3.1 | gpg | — |
 | opensuse | leap-dvd | 15.6-710.3 | checksum | — |
 | opensuse | leap-net | 15.6-710.3 | checksum | — |
 | opensuse | tumbleweed-dvd | Snapshot20260709 | gpg | — |
 | opensuse | tumbleweed-net | Snapshot20260709 | gpg | — |
+| opnsense | dvd | 26.7.r1 | checksum | — |
 | pop-os | intel | 24.04-20 | checksum | — |
 | pop-os | nvidia | 24.04-25 | checksum | — |
 | proxmox | backup-server | 4.2-1 | gpg | ✓ |
 | proxmox | ve | 9.2-1 | gpg | ✓ |
 | q4os | plasma | 6.7 | checksum | — |
 | q4os | tde | 6.7 | checksum | — |
+| rocky | boot | 10.2 | gpg | — |
+| rocky | dvd | 10.2 | gpg | — |
+| rocky | minimal | 10.2 | gpg | — |
 | tails | iso | 7.9.1 | gpg | — |
+| truenas | scale | 25.10.4 | gpg | — |
 | ubuntu | desktop-interim | 25.10 | gpg | ✓ |
 | ubuntu | desktop-lts | 26.04 | gpg | ✓ |
 | ubuntu | live-server-interim | 25.10 | gpg | ✓ |

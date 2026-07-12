@@ -89,7 +89,7 @@ distros:
       enumerable: false
       reason: "variants are separate endpoints (builds/<rel>/intel vs /nvidia), never rows in one document"
 
-  # --------------------------------------------------------- directory_index (12)
+  # --------------------------------------------------------- directory_index (16)
 
   debian:
     strategy: directory_index
@@ -455,7 +455,112 @@ distros:
       group: '^proxmox-([a-z-]+)_'
       ignore: ['mail-?gateway', 'datacenter-manager']
 
-  # ------------------------------------------------------------ stable_symlink (4)
+  # Rocky Linux -- a RHEL rebuild. One ISO dir per major; the bare `10/` is a symlink that
+  # tracks the newest point release, so version_dir on bare majors auto-adopts it. CHECKSUM
+  # is plain BSD-format with a detached CHECKSUM.asc beside it -- the Debian/Kali gpg pattern.
+  # Rocky signs per-MAJOR (RPM-GPG-KEY-Rocky-10); the pin is for 10. When 11 ships signed by a
+  # new key the gate can't verify it -> that entry degrades to `checksum` and audit --strict
+  # flags it (no silent wrong pin). The `-latest-` symlinks carry the same hashes and no
+  # point-release token; the anchored match (digits where they put `latest`) excludes them.
+  rocky:
+    strategy: directory_index
+    page_url: "https://rockylinux.org/download"
+    params:
+      version_dir: "https://download.rockylinux.org/pub/rocky/"
+      version_dir_match: '^\d+$'
+      index: "{version}/isos/x86_64/"
+      sums: "CHECKSUM"
+      sig: "CHECKSUM.asc"
+      version_pattern: 'Rocky-([0-9.]+)-x86_64'
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+        fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+        covers: checksums
+    variants:
+      # Rocky 10 names the DVD `dvd1`, Rocky 9 names it `dvd` -- `dvd1?` covers both.
+      boot: {label: "Rocky Linux boot", params: {match: '^Rocky-[0-9.]+-x86_64-boot\.iso$'}}
+      minimal: {label: "Rocky Linux minimal", params: {match: '^Rocky-[0-9.]+-x86_64-minimal\.iso$'}}
+      dvd: {label: "Rocky Linux DVD", params: {match: '^Rocky-[0-9.]+-x86_64-dvd1?\.iso$'}}
+    discover:
+      # `([a-z]+)1?` absorbs the `1` in `dvd1` so the key is `dvd`, not an UNEXPLAINED `dvd1`.
+      match: '\.iso$'
+      group: '^Rocky-[0-9.]+-x86_64-([a-z]+)1?\.iso$'
+
+  # CentOS Stream -- the rolling RHEL upstream. Version dirs are `9-stream`/`10-stream`. The
+  # iso dir carries dated composes AND `-latest-` symlinks; the DATED name is the change-token
+  # (rolling -- re-notifies each compose, like Tumbleweed), and the anchored match excludes the
+  # tokenless `-latest-` decoys. Per-ISO `.SHA256SUM` sidecar (BSD format); no signature is
+  # published for the ISOs, so verify: checksum.
+  centos:
+    strategy: directory_index
+    page_url: "https://www.centos.org/download/"
+    params:
+      version_dir: "https://mirror.stream.centos.org/"
+      version_dir_match: '^\d+-stream$'
+      index: "{version}/BaseOS/x86_64/iso/"
+      sums: "{filename}.SHA256SUM"
+      version_pattern: 'CentOS-Stream-\d+-(\d{8}\.\d+)-x86_64'
+    variants:
+      boot: {label: "CentOS Stream boot", params: {match: '^CentOS-Stream-\d+-\d{8}\.\d+-x86_64-boot\.iso$'}}
+      dvd: {label: "CentOS Stream DVD", params: {match: '^CentOS-Stream-\d+-\d{8}\.\d+-x86_64-dvd1?\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: '^CentOS-Stream-\d+-\d{8}\.\d+-x86_64-([a-z]+)1?\.iso$'
+
+  # AlmaLinux -- a RHEL rebuild, same shape as Rocky (versioned ISO dir per major; bare `10/`
+  # tracks the newest point release). The difference: AlmaLinux CLEARSIGNS its CHECKSUM inline
+  # -- there is no detached `.asc` (it 404s) -- so `covers: clearsigned` (gpg --verify the whole
+  # file under the pinned key, then read the checksum from the verified body). Per-MAJOR key
+  # (RPM-GPG-KEY-AlmaLinux-10); same self-healing degrade-and-flag as Rocky on a new major.
+  # AlmaLinux names the DVD `dvd` (no `1`), unlike Rocky. `-latest-` decoys excluded by the anchor.
+  almalinux:
+    strategy: directory_index
+    page_url: "https://almalinux.org/get-almalinux/"
+    params:
+      version_dir: "https://repo.almalinux.org/almalinux/"
+      version_dir_match: '^\d+$'
+      index: "{version}/isos/x86_64/"
+      sums: "CHECKSUM"
+      sig: "CHECKSUM"     # the clearsigned CHECKSUM is its own signature
+      version_pattern: 'AlmaLinux-([0-9.]+)-x86_64'
+      signing_key:
+        url: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+        fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+        covers: clearsigned
+    variants:
+      boot: {label: "AlmaLinux boot", params: {match: '^AlmaLinux-[0-9.]+-x86_64-boot\.iso$'}}
+      minimal: {label: "AlmaLinux minimal", params: {match: '^AlmaLinux-[0-9.]+-x86_64-minimal\.iso$'}}
+      dvd: {label: "AlmaLinux DVD", params: {match: '^AlmaLinux-[0-9.]+-x86_64-dvd\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: '^AlmaLinux-[0-9.]+-x86_64-([a-z]+)\.iso$'
+
+  # OPNsense -- a FreeBSD firewall. Images are bzip2-compressed (the DVD is `.iso.bz2`, the
+  # USB images `.img.bz2`); no first-party autoindex, so a mirror. The `26.7/` dir holds files
+  # named `OPNsense-26.7.r1-…` -- the `.r1` respin lives in the FILENAME, not the dir name, so
+  # `sums_from_filename` builds the checksums URL from the file token (`OPNsense-26.7.r1-…`).
+  # The sha256 checksums file lists the `.iso.bz2` by name (BSD format). OPNsense signs with an
+  # OpenSSL RSA key, not OpenPGP, which the gpg gate can't consume -> verify: checksum.
+  opnsense:
+    strategy: directory_index
+    mirror: true    # no first-party download autoindex; the release mirrors carry one
+    page_url: "https://opnsense.org/download/"
+    params:
+      version_dir: "https://mirror.ams1.nl.leaseweb.net/opnsense/releases/"
+      index: "{version}/"
+      sums: "OPNsense-{version}-checksums-amd64.sha256"
+      sums_from_filename: true   # {version} = the FILENAME token (26.7.r1), not the dir (26.7)
+      match: '^OPNsense-[0-9.]+(?:\.r[0-9]+)?-dvd-amd64\.iso\.bz2$'
+      version_pattern: 'OPNsense-([0-9.]+(?:\.r[0-9]+)?)-dvd-amd64'
+    variants:
+      dvd: {label: "OPNsense DVD"}
+    discover:
+      # Only the DVD `.iso.bz2` is tracked; the `-nano-/-serial-/-vga-` `.img.bz2` USB images
+      # are excluded by the discover match, so the group yields only `dvd`.
+      match: '\.iso\.bz2$'
+      group: '^OPNsense-[0-9.]+(?:\.r[0-9]+)?-([a-z]+)-amd64\.iso\.bz2$'
+
+  # ------------------------------------------------------------ stable_symlink (5)
   # Fixed, version-less download URL. The token comes from elsewhere -- either the
   # sidecar's filename column, or a GitHub atom tag.
 
@@ -553,7 +658,7 @@ distros:
       match: '\.iso$'
       group: '^aurora-(?:(.+)-)?stable-webui-x86_64\.iso$'
 
-  # --------------------------------------------------------------- sourceforge (6)
+  # --------------------------------------------------------------- sourceforge (8)
   # Every RSS <item> appears TWICE, and <title> is a CDATA full path, not a filename.
 
   mx:
@@ -684,6 +789,57 @@ distros:
     discover:
       group: '^/gui-installer/([a-z0-9-]+)/'
 
+  # OpenMediaVault -- Debian-based NAS. SourceForge, ISO channel under `/iso` (the project's
+  # root RSS defaults to the `.deb` packages pool, so `path` must pin `/iso`). Per-ISO
+  # `{path}.sha256` and a detached `{path}.asc` that signs the ISO itself -> covers: image
+  # (the antiX/Tails pattern). `version_pattern` tolerates both dotted (8.3.1) and dash (8.0-12)
+  # release shapes; one amd64 ISO, no editions, so the group catches a hypothetical future one.
+  openmediavault:
+    strategy: sourceforge
+    page_url: "https://www.openmediavault.org/"
+    params:
+      project: "openmediavault"
+      path: "/iso"
+      sums: "{path}.sha256"
+      sig: "{path}.asc"
+      version_pattern: 'openmediavault_(.+?)-amd64\.iso$'
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xD67506C878E08A94FD7E009424863F0C716B980B
+        fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
+        covers: image
+    variants:
+      default: {label: "OpenMediaVault", params: {match: '/openmediavault_[0-9.]+(?:-[0-9]+)?-amd64\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: 'openmediavault_[0-9.-]+-amd64-([a-z]+)\.iso$'
+
+  # Clonezilla Live -- disk imaging. SourceForge project `clonezilla`, stable channel. The
+  # `alternative` channel uses date+codename names (20260525-resolute) that out-sort the
+  # dotted stable versions, so `path` pins stable and `match` requires the dotted shape.
+  # Checksums are NOT on SourceForge -- they live off-host at a fixed clonezilla.org path, so
+  # `sums`/`sig` are absolute URLs used verbatim. CHECKSUMS.TXT is multi-section (MD5/SHA256/
+  # SHA512); `checksums.parse` keeps the strongest per name. Detached CHECKSUMS.TXT.gpg (the
+  # DRBL project key) -> covers: checksums. One amd64 edition, so the group catches a future one.
+  clonezilla:
+    strategy: sourceforge
+    page_url: "https://clonezilla.org/downloads.php"
+    params:
+      project: "clonezilla"
+      path: "/clonezilla_live_stable"
+      sums: "https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT"
+      sig: "https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg"
+      version_pattern: 'clonezilla-live-([0-9.-]+)-amd64\.iso$'
+      ignore: ['\.zip$', 'i686', 'i386']
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+        fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
+        covers: checksums
+    variants:
+      default: {label: "Clonezilla Live", params: {match: '/clonezilla-live-[0-9.-]+-amd64\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: 'clonezilla-live-[0-9.-]+-amd64-([a-z]+)\.iso$'
+
   # ----------------------------------------------------------- github_releases (2)
   # GitHub *assets*. The ublue projects are NOT here; they only borrow a version tag.
 
@@ -725,7 +881,7 @@ distros:
     discover:
       group: '^minios-\w+-xfce-([a-z]+)-amd64-'
 
-  # ---------------------------------------------------------------- page_index (2)
+  # ---------------------------------------------------------------- page_index (4)
   # The last resort. Only the LISTING step is fragile; everything downstream is the
   # same pipeline every other strategy uses.
 
@@ -787,3 +943,55 @@ distros:
     discover:
       match: '\.iso$'
       group: '^manjaro-([a-z0-9]+)-'
+
+  # TrueNAS SCALE -- the download root is ONE flat, server-rendered HTML page listing every
+  # release across every codename as RELATIVE hrefs (the per-version subdirs are a client-
+  # rendered Storj SPA with no file links). page_index scrapes the root and resolves each
+  # sidecar next to the chosen ISO, so the codename in the path never has to be known. The
+  # match is branding-agnostic -- TrueNAS 26 drops the `SCALE-` infix, and `-BETA`/`-MASTER`
+  # pre-releases are rejected by their letters. `.iso.gpg` is a detached PGP sig over the ISO
+  # -> covers: image (IX SecTeam key; image-mode checks only the issuer, so the key's 2023
+  # expiry is irrelevant -- a checksums gate WOULD fail on it, which is a second reason for image).
+  truenas:
+    strategy: page_index
+    page_url: "https://www.truenas.com/download/"
+    params:
+      url: "https://download.sys.truenas.net/"
+      attr: href
+      match: '^TrueNAS-(?:SCALE-)?[0-9.]+\.iso$'
+      version_pattern: 'TrueNAS-(?:SCALE-)?([0-9.]+)\.iso$'
+      sums: "{filename}.sha256"
+      sig: "{filename}.gpg"
+      signing_key:
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
+        fingerprint: C8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
+        covers: image
+    variants:
+      scale: {label: "TrueNAS SCALE"}
+    discover:
+      # One ISO per release, no edition segment: the group yields nothing today (Arch/Tails
+      # pattern) but would surface a future `TrueNAS-...-<edition>.iso`.
+      match: '\.iso$'
+      group: '^TrueNAS-(?:SCALE-)?[0-9.]+-([a-z]+)\.iso$'
+
+  # Memtest86+ -- the bootable image lives only on memtest.org (its GitHub release has zero
+  # assets), linked as RELATIVE hrefs, and the artifact is a ZIP-WRAPPED ISO (.iso.zip). The
+  # checksum is a fixed sibling `sha256sum.txt` (GNU, with a `v<ver>/` path prefix the parser
+  # normalizes away); no signature is published -> verify: checksum. The group is anchored to
+  # x86_64 and captures an edition (the `grub` build, which is ignored) so the plain ISO
+  # proposes nothing and the arch never becomes the variant key.
+  memtest:
+    strategy: page_index
+    page_url: "https://www.memtest.org/"
+    params:
+      url: "https://www.memtest.org/"
+      attr: href
+      match: '^mt86plus_[0-9.]+_x86_64\.iso\.zip$'
+      version_pattern: 'mt86plus_([0-9.]+)_x86_64'
+      sums: "sha256sum.txt"
+    variants:
+      iso: {label: "Memtest86+"}
+    discover:
+      match: '\.iso\.zip$'
+      group: '^mt86plus_[0-9.]+_x86_64(?:\.([a-z]+))?\.iso\.zip$'
+      ignore: ['grub']

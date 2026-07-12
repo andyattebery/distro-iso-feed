@@ -163,22 +163,31 @@ trust-on-first-use, and the summary says so rather than claiming `checksum`.
 carry `signing_key_url` + `signing_key_fingerprint` so a consumer can pin the key (MX is
 the exception — see below). A hand-entered fingerprint the feed merely forwards is only
 as good as the data entry, so `verify_signing_key` (`_common.py`) proves the chain
-every build before publishing the pin — two strengths, by what the signature covers:
+every build before publishing the pin — three shapes, by what and how the signature covers:
 
-- **`checksums`** (debian, kali, ubuntu, mint, opensuse — the sig signs a small
-  `SHA*SUMS`/`.sha256`): `gpgv` the file under *only* the pinned key and confirm the
-  feed's published `checksum` is inside it. This authenticates the checksum the feed
+- **`checksums`** (debian, kali, ubuntu, mint, opensuse, rocky, clonezilla — a detached sig
+  over a small `SHA*SUMS`/`CHECKSUM`): `gpgv` the file under *only* the pinned key and confirm
+  the feed's published `checksum` is inside it. This authenticates the checksum the feed
   ships — the one place the feed proves its own integrity data, not just forwards it.
-- **`image`** (arch, tails, manjaro, endeavouros, kde-neon, antix, cachyos, proxmox — the
-  sig signs the multi-GB ISO the build never downloads): confirm the signature's *issuer*
-  is the pinned key (primary **or a subkey** — Tails signs with a subkey). Full
-  verification is the consumer's job once it has the ISO.
+  (Clonezilla keeps its signed `CHECKSUMS.TXT` off-host on `clonezilla.org`, not SourceForge —
+  hence the absolute-URL `sums`/`sig` support in the sourceforge strategy.)
+- **`image`** (arch, tails, manjaro, endeavouros, kde-neon, antix, cachyos, proxmox,
+  openmediavault, truenas — the sig signs the multi-GB ISO the build never downloads): confirm
+  the signature's *issuer* is the pinned key (primary **or a subkey** — Tails signs with a
+  subkey). Full verification is the consumer's job once it has the ISO. (TrueNAS's key expired
+  in 2023, which image-mode tolerates — it reads the issuer fingerprint, never `gpgv`s data.)
+- **`clearsigned`** (almalinux — the signature and the `CHECKSUM` body are one inline-signed
+  file, with no detached sig): `gpg --verify` the whole document under *only* the pinned key,
+  then confirm the published `checksum` is in the verified body. Same guarantee as `checksums`
+  delivered inline, so it publishes `signature_target: checksums`.
 
 A signature that fails its own pinned key **drops the gpg claim** (`signature_url`
 cleared, `verify` degrades to `checksum`) rather than publishing an unverifiable one;
 a network blip or a missing `gpg` binary defers (keeps the claim, adds no pin) so it
 never flaps. `distro-iso-feed-audit` re-runs the same gate; `--strict` fails on any
-bad pin.
+bad pin. The RHEL rebuilds (Rocky, AlmaLinux) sign per **major** and track the newest one, so
+the day a new major ships signed by a new key the gate can't verify it and self-heals: that
+entry degrades to `checksum` and `--strict` flags it, rather than forwarding a stale pin.
 
 **Three data facts this surfaced, all real.** Void's `sha256sum.sig` is **signify /
 minisign, not OpenPGP** — its `verify: gpg` was wrong, corrected to `checksum`. And

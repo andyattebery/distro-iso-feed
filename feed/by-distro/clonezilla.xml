@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/clonezilla</id>
+  <title>Distro ISO Feed — clonezilla</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/clonezilla.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-05-25T13:07:00+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/clonezilla/default/3.3.2-31</id>
+    <title>Clonezilla Live 3.3.2-31 (x86_64)</title>
+    <updated>2026-05-25T13:07:00+00:00</updated>
+    <published>2026-05-25T13:07:00+00:00</published>
+    <link href="https://clonezilla.org/downloads.php" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="clonezilla" label="distro" />
+    <category term="default" label="variant" />
+    <summary type="text">Clonezilla Live 3.3.2-31 (x86_64)
+Filename: clonezilla-live-3.3.2-31-amd64.iso
+sha512: e1f7c6ef43f03ac74c1001cd89f2bb1429d098dc1320a1dd471fcd84e73390d5032add60946a4d920f36d729daf6279fa0fbb5c8f294b568d0339f5cd481d431
+Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
+Verify: gpg</summary>
+  </entry>
+</feed>

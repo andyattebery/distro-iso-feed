@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/openmediavault</id>
+  <title>Distro ISO Feed — openmediavault</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/openmediavault.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-06-06T09:34:27+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/openmediavault/default/8.3.1</id>
+    <title>OpenMediaVault 8.3.1 (x86_64)</title>
+    <updated>2026-06-06T09:34:27+00:00</updated>
+    <published>2026-06-06T09:34:27+00:00</published>
+    <link href="https://www.openmediavault.org/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="openmediavault" label="distro" />
+    <category term="default" label="variant" />
+    <summary type="text">OpenMediaVault 8.3.1 (x86_64)
+Filename: openmediavault_8.3.1-amd64.iso
+sha256: 5ada7dea09dbb10365b6f245515e71c79c5398d8f8f1acda675ee6d8b572d2e5
+Signature: https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso.asc/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xD67506C878E08A94FD7E009424863F0C716B980B
+Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
+Verify: gpg</summary>
+  </entry>
+</feed>

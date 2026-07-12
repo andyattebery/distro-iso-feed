@@ -320,7 +320,10 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
     # regardless of whether gpg can verify the pin this run. Stage it now so it rides
     # every non-BAD path (a dev box without gpg still emits it); `_drop` clears it.
     covers = key_conf.get("covers")
-    staged = replace(release, signature_target=covers)
+    # `signature_target` names what the sig signs (checksums|image) for the client; a
+    # clearsigned CHECKSUM is a checksums signature carried inline, so it maps to checksums.
+    target = "checksums" if covers == "clearsigned" else covers
+    staged = replace(release, signature_target=target)
 
     if not gpgverify.gpg_available():
         return staged, DEFERRED  # keep the claim; the environment, not the sig, is at fault
@@ -347,6 +350,14 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
         text = signed.content.decode("utf-8", "replace")
         good = gpgverify.verify_detached(key_bytes, sig_bytes, signed.content)
         # The checksum the feed publishes must be the one the signature vouches for.
+        if not (good and release.checksum and release.checksum.lower() in text.lower()):
+            return _drop(release), BAD
+    elif covers == "clearsigned":
+        # AlmaLinux: `sig` IS the clearsigned CHECKSUM -- signature and body in one file, so
+        # there is no separate SUMS to fetch. Verify the inline signature under the pinned
+        # key, then confirm the feed's checksum sits inside the body just verified.
+        text = sig_bytes.decode("utf-8", "replace")
+        good = gpgverify.verify_clearsigned(key_bytes, sig_bytes)
         if not (good and release.checksum and release.checksum.lower() in text.lower()):
             return _drop(release), BAD
     elif covers == "image":

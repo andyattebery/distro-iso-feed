@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/centos</id>
+  <title>Distro ISO Feed — centos</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/centos.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-12T17:03:29+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd/20260707.1</id>
+    <title>CentOS Stream DVD 20260707.1 (x86_64)</title>
+    <updated>2026-07-12T17:03:29+00:00</updated>
+    <published>2026-07-12T17:03:29+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260707.1-x86_64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">CentOS Stream DVD 20260707.1 (x86_64)
+Filename: CentOS-Stream-10-20260707.1-x86_64-dvd1.iso
+sha256: f4df7fef23ffae63335f915b7d4615bf5ca5e5f9ceff1208dcfb3d33fed348da
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot/20260707.1</id>
+    <title>CentOS Stream boot 20260707.1 (x86_64)</title>
+    <updated>2026-07-12T17:03:28+00:00</updated>
+    <published>2026-07-12T17:03:28+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260707.1-x86_64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">CentOS Stream boot 20260707.1 (x86_64)
+Filename: CentOS-Stream-10-20260707.1-x86_64-boot.iso
+sha256: 42ed76824358355314023ce8e3476c2473a8996aa5b36aba2eaa6ffacffde249
+Verify: checksum</summary>
+  </entry>
+</feed>

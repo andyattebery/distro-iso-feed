@@ -90,6 +90,34 @@ def verify_detached(key_bytes: bytes, sig_bytes: bytes, data_bytes: bytes) -> bo
     return bool(r and r.returncode == 0)
 
 
+def verify_clearsigned(key_bytes: bytes, signed_bytes: bytes) -> bool:
+    """Does this inline-clearsigned document verify under *only* this key? (`gpg --verify`.)
+
+    AlmaLinux clearsigns its `CHECKSUM`: the signature and the checksum body are one file,
+    so there is no detached sig to `gpgv`. Import just the pinned key and `gpg --verify` the
+    whole document -- exit 0 means a good signature by a key in the (single-key) keyring; a
+    signature from any other key returns non-zero. The caller then reads the checksum out of
+    the same body it just verified.
+    """
+    with tempfile.TemporaryDirectory() as home:
+        Path(home).chmod(0o700)
+        keyring = str(Path(home) / "pinned.gpg")
+        imp = _run(
+            ["gpg", *_BASE, "--no-default-keyring", "--keyring", keyring, "--import"],
+            home=home,
+            stdin=key_bytes,
+        )
+        if not imp or imp.returncode != 0:
+            return False
+        doc = Path(home) / "clearsigned.asc"
+        doc.write_bytes(signed_bytes)
+        r = _run(
+            ["gpg", *_BASE, "--no-default-keyring", "--keyring", keyring, "--verify", str(doc)],
+            home=home,
+        )
+    return bool(r and r.returncode == 0)
+
+
 def sig_issuer(sig_bytes: bytes) -> str | None:
     """The (sub)key a detached signature was issued by: full fpr if present, else a
     16-hex long key id. Needs no signed data, so it works for over-the-ISO sigs."""

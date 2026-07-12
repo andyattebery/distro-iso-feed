@@ -119,8 +119,10 @@ def _validate_signing_key(distro: str, sk: Any) -> None:
         raise ConfigError(f"{distro}: signing_key needs a `url`")
     if not _FPR_RE.match(str(sk.get("fingerprint") or "")):
         raise ConfigError(f"{distro}: signing_key `fingerprint` must be 40 hex chars")
-    if sk.get("covers") not in ("checksums", "image"):
-        raise ConfigError(f"{distro}: signing_key `covers` must be `checksums` or `image`")
+    if sk.get("covers") not in ("checksums", "image", "clearsigned"):
+        raise ConfigError(
+            f"{distro}: signing_key `covers` must be `checksums`, `image`, or `clearsigned`"
+        )
 
 
 def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
