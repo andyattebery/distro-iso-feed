@@ -124,36 +124,72 @@ def test_batocera_bare_md5_and_non_iso_content_type():
 
 
 def test_directory_index_sums_from_filename_token_opnsense():
-    """OPNsense's `26.7/` dir holds `OPNsense-26.7.r1-…`, and its checksums file is named from
-    the FILENAME token. `sums_from_filename` must template `{version}` with `26.7.r1` (the
-    file token), not `26.7` (the dir) -- without it the sums URL 404s."""
+    """OPNsense point releases live in a series dir whose name differs from the file token:
+    `26.1/` holds `OPNsense-26.1.6-…`. `sums_from_filename` must template `{version}` with the
+    file token `26.1.6`, not the dir `26.1`, or the checksums URL 404s."""
     parent = "https://mirror.example/opnsense/releases/"
-    d = parent + "26.7/"
-    iso = "OPNsense-26.7.r1-dvd-amd64.iso.bz2"
+    d = parent + "26.1/"
+    iso = "OPNsense-26.1.6-dvd-amd64.iso.bz2"
     client = FakeClient(
         {
-            parent: autoindex_html(["25.7/", "26.7/"]),
-            d: autoindex_html([iso, "OPNsense-26.7.r1-checksums-amd64.sha256"]),
-            d + "OPNsense-26.7.r1-checksums-amd64.sha256": f"SHA256 ({iso}) = {SHA256}",
+            parent: autoindex_html(["25.7/", "26.1/"]),
+            d: autoindex_html([iso, "OPNsense-26.1.6-checksums-amd64.sha256"]),
+            d + "OPNsense-26.1.6-checksums-amd64.sha256": f"SHA256 ({iso}) = {SHA256}",
         }
     )
     params = {
         "version_dir": parent,
         "index": "{version}/",
         "sums": "OPNsense-{version}-checksums-amd64.sha256",
-        "match": r"^OPNsense-[0-9.]+(?:\.r[0-9]+)?-dvd-amd64\.iso\.bz2$",
-        "version_pattern": r"OPNsense-([0-9.]+(?:\.r[0-9]+)?)-dvd-amd64",
+        "match": r"^OPNsense-[0-9.]+-dvd-amd64\.iso\.bz2$",
+        "version_pattern": r"OPNsense-([0-9.]+)-dvd-amd64",
     }
     rel = REGISTRY["directory_index"]().resolve(
         "opnsense", "dvd", {**params, "sums_from_filename": True}, client
     )
-    assert rel.filename == iso and rel.version == "26.7.r1"
-    assert rel.checksum == SHA256  # sums URL built from 26.7.r1, not the dir 26.7
+    assert rel.filename == iso and rel.version == "26.1.6"
+    assert rel.checksum == SHA256  # sums URL built from 26.1.6, not the dir 26.1
     assert rel.content_type == "application/x-bzip2"
 
-    # Without the opt-in, {version} is the dir name `26.7` -> the sums URL 404s -> no checksum.
+    # Without the opt-in, {version} is the dir name `26.1` -> the sums URL 404s -> no checksum.
     miss = REGISTRY["directory_index"]().resolve("opnsense", "dvd", params, client)
     assert miss.filename == iso and miss.checksum is None
+
+
+def test_directory_index_skips_rc_only_dir_opnsense():
+    """OPNsense's newest dir `26.7/` holds only a release candidate (`-26.7.r1-`); with the
+    stable-only match, `_index_url` must skip a dir with no matching artifact and fall to the
+    newest dir that has a stable one (`26.1.6/`), not resolve the RC."""
+    parent = "https://mirror.example/opnsense/releases/"
+    client = FakeClient(
+        {
+            parent: autoindex_html(["26.1.6/", "26.7/"]),
+            parent + "26.7/": autoindex_html(
+                ["OPNsense-26.7.r1-dvd-amd64.iso.bz2", "OPNsense-26.7.r1-checksums-amd64.sha256"]
+            ),
+            parent + "26.1.6/": autoindex_html(
+                ["OPNsense-26.1.6-dvd-amd64.iso.bz2", "OPNsense-26.1.6-checksums-amd64.sha256"]
+            ),
+            parent + "26.1.6/OPNsense-26.1.6-checksums-amd64.sha256": (
+                f"SHA256 (OPNsense-26.1.6-dvd-amd64.iso.bz2) = {SHA256}"
+            ),
+        }
+    )
+    rel = REGISTRY["directory_index"]().resolve(
+        "opnsense",
+        "dvd",
+        {
+            "version_dir": parent,
+            "index": "{version}/",
+            "sums": "OPNsense-{version}-checksums-amd64.sha256",
+            "sums_from_filename": True,
+            "match": r"^OPNsense-[0-9.]+-dvd-amd64\.iso\.bz2$",
+            "version_pattern": r"OPNsense-([0-9.]+)-dvd-amd64",
+        },
+        client,
+    )
+    assert rel.filename == "OPNsense-26.1.6-dvd-amd64.iso.bz2"  # the RC 26.7.r1 was skipped
+    assert rel.version == "26.1.6" and rel.checksum == SHA256
 
 
 def test_tails_signature_without_checksum():

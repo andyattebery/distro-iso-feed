@@ -15,7 +15,7 @@ from urllib.parse import urljoin
 from ..client import Client
 from ..listers import Candidate, autoindex, version_dir
 from ..models import Release
-from ..select import by_channel, choose, version_key
+from ..select import by_channel, choose, matching, version_key
 from ..tokens import from_filename
 from ._common import fetch_integrity, resolve_torrent_only
 from .base import Strategy, title_for
@@ -36,12 +36,20 @@ class DirectoryIndex(Strategy):
         if not versions:
             return "", ""
 
-        # Highest dir that actually *contains* an artifact, not merely the highest number.
+        # Highest dir that actually contains a *matching* artifact, not merely the highest
+        # number. A dir with content but nothing matching `match` is a release-candidate-only
+        # dir -- OPNsense ships `26.7/` holding only `-26.7.r1-` files while 26.7 is in RC;
+        # skipping it falls through to the newest stable dir (26.1.6).
         template = params.get("index", "{version}/")
+        match = params.get("match")
         for version in sorted(versions, key=version_key, reverse=True):
             url = urljoin(parent, template.format(version=version))
-            if autoindex(client, url):
-                return url, version
+            names = [c.name for c in autoindex(client, url)]
+            if not names:
+                continue
+            if match and not matching(names, match):
+                continue
+            return url, version
         return "", ""
 
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:

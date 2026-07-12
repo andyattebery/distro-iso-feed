@@ -536,11 +536,14 @@ distros:
       group: '^AlmaLinux-[0-9.]+-x86_64-([a-z]+)\.iso$'
 
   # OPNsense -- a FreeBSD firewall. Images are bzip2-compressed (the DVD is `.iso.bz2`, the
-  # USB images `.img.bz2`); no first-party autoindex, so a mirror. The `26.7/` dir holds files
-  # named `OPNsense-26.7.r1-…` -- the `.r1` respin lives in the FILENAME, not the dir name, so
-  # `sums_from_filename` builds the checksums URL from the file token (`OPNsense-26.7.r1-…`).
-  # The sha256 checksums file lists the `.iso.bz2` by name (BSD format). OPNsense signs with an
-  # OpenSSL RSA key, not OpenPGP, which the gpg gate can't consume -> verify: checksum.
+  # USB images `.img.bz2`); no first-party autoindex, so a mirror. The `.r` suffix marks a
+  # RELEASE CANDIDATE (`OPNsense-26.7.r1-…` while 26.7 is in RC) -- stable files have no `.r`
+  # (`OPNsense-26.1.6-…`) -- so the match rejects `.r`. The newest version dir can be RC-only
+  # (`26.7/` during the RC window); directory_index skips a dir with no stable-matching artifact
+  # and falls to the newest stable (26.1.6). Point releases live in a series dir whose name
+  # differs from the file token (`26.1/` holds `OPNsense-26.1.6-…`), so `sums_from_filename`
+  # builds the checksums URL from the file token, not the dir. OPNsense signs with an OpenSSL
+  # RSA key, not OpenPGP, which the gpg gate can't consume -> verify: checksum.
   opnsense:
     strategy: directory_index
     mirror: true    # no first-party download autoindex; the release mirrors carry one
@@ -549,16 +552,16 @@ distros:
       version_dir: "https://mirror.ams1.nl.leaseweb.net/opnsense/releases/"
       index: "{version}/"
       sums: "OPNsense-{version}-checksums-amd64.sha256"
-      sums_from_filename: true   # {version} = the FILENAME token (26.7.r1), not the dir (26.7)
-      match: '^OPNsense-[0-9.]+(?:\.r[0-9]+)?-dvd-amd64\.iso\.bz2$'
-      version_pattern: 'OPNsense-([0-9.]+(?:\.r[0-9]+)?)-dvd-amd64'
+      sums_from_filename: true   # {version} = the FILENAME token (26.1.6), not the dir (26.1)
+      match: '^OPNsense-[0-9.]+-dvd-amd64\.iso\.bz2$'
+      version_pattern: 'OPNsense-([0-9.]+)-dvd-amd64'
     variants:
       dvd: {label: "OPNsense DVD"}
     discover:
       # Only the DVD `.iso.bz2` is tracked; the `-nano-/-serial-/-vga-` `.img.bz2` USB images
       # are excluded by the discover match, so the group yields only `dvd`.
       match: '\.iso\.bz2$'
-      group: '^OPNsense-[0-9.]+(?:\.r[0-9]+)?-([a-z]+)-amd64\.iso\.bz2$'
+      group: '^OPNsense-[0-9.]+-([a-z]+)-amd64\.iso\.bz2$'
 
   # ------------------------------------------------------------ stable_symlink (5)
   # Fixed, version-less download URL. The token comes from elsewhere -- either the

@@ -109,7 +109,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | opensuse | leap-net | 15.6-710.3 | checksum | — |
 | opensuse | tumbleweed-dvd | Snapshot20260709 | gpg | — |
 | opensuse | tumbleweed-net | Snapshot20260709 | gpg | — |
-| opnsense | dvd | 26.7.r1 | checksum | — |
+| opnsense | dvd | 26.1.6 | checksum | — |
 | pop-os | intel | 24.04-20 | checksum | — |
 | pop-os | nvidia | 24.04-25 | checksum | — |
 | proxmox | backup-server | 4.2-1 | gpg | ✓ |

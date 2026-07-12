@@ -294,6 +294,7 @@ Recorded so nobody re-investigates them. Several look trivially addable.
 | **BigLinux** | No SourceForge project under `biglinux`, `biglinux-iso` or `big-linux`. |
 | **Manjaro via SourceForge** | `manjarolinux` exists with 32 ISOs, and every one is a `-pre` prerelease. Skipping betas leaves nothing, so Manjaro stays a `page_index` source. |
 | **openSUSE Leap `-Current.iso`** | Exists, but is not linked from the index, so `directory_index` cannot see it. The listed `Build710.3-Media.iso` carries a better change-token anyway. |
+| **pfSense CE** | The current CE (2.8.1) is gated behind Netgate's store/installer with no direct public link, and the sole public autoindex (`atxfiles.netgate.com`) is frozen at 2.7.2 — seeding it would serve a stale release. No community mirror checked carries the current ISO. OPNsense covers the firewall niche. |
 
 ## Mirrors
 
