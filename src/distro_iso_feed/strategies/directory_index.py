@@ -10,6 +10,7 @@ Three capabilities §7 never mentions, all forced by real upstreams:
 
 from __future__ import annotations
 
+import re
 from urllib.parse import urljoin
 
 from ..client import Client
@@ -57,14 +58,45 @@ class DirectoryIndex(Strategy):
         return autoindex(client, index) if index else []
 
     def arch_tokens(self, params: dict, client: Client) -> list[str]:
-        """Path-segment arches: `index` templates `{token}` as a directory (Debian
-        `current/{token}/iso-cd/`). List the parent of `{token}` and return the subdir names;
-        non-arch dirs (`source/`, `trace/`) survive here but fail arch-verify's resolve."""
+        """Enumerate a variant's arch tokens for discovery. Two shapes:
+
+        * `{token}` in `index` (a **path segment**, Debian `current/{token}/iso-cd/`, RHEL
+          `{version}/isos/{token}/`): resolve `{version}` first if a `version_dir` is set, then list
+          the dir that holds the arch subdirs. Non-arch dirs (`source/`) survive here but fail the
+          resolve in arch-verify.
+        * `{token}` in `match` only (a **filename token**, Void/Leap/Kali in one flat dir): resolve
+          the index and capture the arch from each filename. The match-aware `_index_url` needs a
+          real regex, so `{token}` becomes a capture group before resolving, not left literal.
+        """
         index = params.get("index", "")
-        if "{token}" not in index:
-            return []
-        prefix = index.split("{token}", 1)[0]
-        return version_dir(client, prefix, r"^[a-z0-9_]+$")
+        if "{token}" in index:
+            resolved = index
+            parent = params.get("version_dir")
+            if parent and "{version}" in index:
+                vmatch = params.get("version_dir_match", r"^\d+(\.\d+)*$")
+                versions = version_dir(client, parent, vmatch)
+                if not versions:
+                    return []
+                newest = max(versions, key=version_key)
+                resolved = urljoin(parent, index.replace("{version}", newest))
+            return version_dir(client, resolved.split("{token}", 1)[0], r"^[a-z0-9_]+$")
+
+        match = params.get("match", "")
+        if "{token}" in match:
+            capture = match.replace("{token}", "([a-z0-9_]+)")
+            idx, _ = self._index_url({**params, "match": capture}, client)
+            if not idx:
+                return []
+            rx = re.compile(capture)
+            ignore = [re.compile(p) for p in params.get("ignore", ())]
+            toks = {
+                m.group(1)
+                for c in autoindex(client, idx)
+                if not any(r.search(c.name) for r in ignore) and (m := rx.search(c.name))
+            }
+            return sorted(toks)
+
+        return []
 
     def resolve(self, distro: str, variant: str, params: dict, client: Client) -> Release | None:
         index, version_dirname = self._index_url(params, client)

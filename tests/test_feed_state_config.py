@@ -342,6 +342,39 @@ def test_arches_expands_to_one_variant_per_arch_with_token_substituted(tmp_path)
     assert "current/arm64/iso-cd/" in a.params["index"] and "arm64-netinst" in a.params["match"]
 
 
+def test_arches_override_dict_applies_param_overrides_and_still_substitutes_token(tmp_path):
+    """An arch whose value is a dict overrides params for that arch only (a different host/tree),
+    while `{token}` still substitutes -- this is what Ubuntu/FreeBSD's cross-host aarch64 needs.
+    The `token` defaults to the canonical key and is dropped from the merged params."""
+    p = write(
+        tmp_path,
+        "distros:\n  freebsd:\n    strategy: directory_index\n"
+        + NOT_ENUMERABLE
+        + "    params: {version_dir: \"https://amd/\", sums: \"SUM-{token}\"}\n"
+        "    variants:\n"
+        "      disc1:\n"
+        "        arches:\n"
+        "          x86_64: amd64\n"
+        "          aarch64: {token: arm64-aarch64, version_dir: \"https://arm/\"}\n"
+        "        params: {match: '^FreeBSD-[0-9.]+-RELEASE-{token}-disc1\\.iso$'}\n",
+    )
+    _, sources = load(p, set(REGISTRY))
+    by_key = {v.key: v for v in sources[0].variants}
+    assert set(by_key) == {"freebsd:disc1", "freebsd:disc1:aarch64"}  # x86_64 implicit
+
+    x = by_key["freebsd:disc1"]
+    assert x.params["version_dir"] == "https://amd/"  # base host, not overridden
+    assert x.params["sums"] == "SUM-amd64" and "amd64-disc1" in x.params["match"]
+
+    a = by_key["freebsd:disc1:aarch64"]
+    assert a.arch == "aarch64" and a.params["arch"] == "aarch64"
+    assert a.params["version_dir"] == "https://arm/"  # override host wins
+    assert "token" not in a.params  # `token` is consumed, not leaked into params
+    # `{token}` becomes the override token in BOTH the base-param sums and the variant match
+    assert a.params["sums"] == "SUM-arm64-aarch64"
+    assert "arm64-aarch64-disc1" in a.params["match"]
+
+
 def test_arches_must_be_a_non_empty_map(tmp_path):
     with pytest.raises(ConfigError, match="arches"):
         load(
@@ -353,6 +386,34 @@ def test_arches_must_be_a_non_empty_map(tmp_path):
             ),
             set(REGISTRY),
         )
+
+
+def test_arch_ignore_must_be_a_list_of_non_empty_names(tmp_path):
+    with pytest.raises(ConfigError, match="arch_ignore"):
+        load(
+            write(
+                tmp_path,
+                "distros:\n  d:\n    strategy: json_api\n"
+                "    discover: {enumerable: false, reason: x, arch_ignore: [ppc64le, '']}\n"
+                "    variants:\n      v: {}\n",
+            ),
+            set(REGISTRY),
+        )
+
+
+def test_arch_ignore_is_accepted_alongside_enumerable_false(tmp_path):
+    """Ubuntu discovers arches (off its `arches` maps) while variant enumeration is disabled, so
+    `arch_ignore` must be legal under `enumerable: false`, not rejected as a contradiction."""
+    _, sources = load(
+        write(
+            tmp_path,
+            "distros:\n  d:\n    strategy: json_api\n"
+            "    discover: {enumerable: false, reason: x, arch_ignore: [ppc64le, s390x]}\n"
+            "    variants:\n      v: {}\n",
+        ),
+        set(REGISTRY),
+    )
+    assert sources[0].discover["arch_ignore"] == ["ppc64le", "s390x"]
 
 
 def test_catalog_has_no_build_timestamp(tmp_path):

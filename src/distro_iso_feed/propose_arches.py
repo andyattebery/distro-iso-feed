@@ -28,6 +28,9 @@ def propose_arches(source: Source, doc: dict, client: Client) -> list[ArchPropos
     distro_node = (doc.get("distros") or {}).get(source.name) or {}
     raw_variants = distro_node.get("variants") or {}
     raw_distro_params = distro_node.get("params") or {}
+    # `arch_ignore` (distro-level, in `discover:`) makes a declined arch stay declined -- matched
+    # against the upstream token AND its canonical, so `arm64` or `aarch64` both silence Kali's.
+    arch_ignore = {str(a) for a in (source.discover.get("arch_ignore") or [])}
 
     # Any one expanded variant per name carries the fully-merged, distro-level params.
     base_by_name: dict[str, object] = {}
@@ -50,9 +53,16 @@ def propose_arches(source: Source, doc: dict, client: Client) -> list[ArchPropos
         # so any `{token}`-bearing field -- variant or distro level -- comes back unexpanded).
         template = {**base.params, **raw_distro_params, **(vnode.get("params") or {})}
 
-        known = {str(t) for t in arches.values()}
+        # The token already seeded for each arch -- a bare string, or an override dict's `token`
+        # (defaulting to the canonical key), exactly as config.py expands it. Matching on the raw
+        # dict repr would miss a hand-seeded override arch and re-propose it.
+        known = {
+            str(v.get("token", c) if isinstance(v, dict) else v) for c, v in arches.items()
+        }
         for token in strategy.arch_tokens(template, client):
             if token in known:
+                continue
+            if token in arch_ignore or canonical(token) in arch_ignore:
                 continue
             params = substitute_token(template, token)
             params["arch"] = canonical(token)

@@ -4,7 +4,49 @@
   <title>Distro ISO Feed — freebsd</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/freebsd.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-09T23:40:15+00:00</updated>
+  <updated>2026-07-12T21:34:50+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/dvd1:aarch64/15.1</id>
+    <title>FreeBSD dvd1 15.1 (aarch64)</title>
+    <updated>2026-07-12T21:34:50+00:00</updated>
+    <published>2026-07-12T21:34:50+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="dvd1" label="variant" />
+    <summary type="text">FreeBSD dvd1 15.1 (aarch64)
+Filename: FreeBSD-15.1-RELEASE-arm64-aarch64-dvd1.iso
+sha256: 6542055b12b873685abdc66e990b301c863cb4efa68e00a08f50f7b7874e7417
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/disc1:aarch64/15.1</id>
+    <title>FreeBSD disc1 15.1 (aarch64)</title>
+    <updated>2026-07-12T21:34:50+00:00</updated>
+    <published>2026-07-12T21:34:50+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-disc1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="disc1" label="variant" />
+    <summary type="text">FreeBSD disc1 15.1 (aarch64)
+Filename: FreeBSD-15.1-RELEASE-arm64-aarch64-disc1.iso
+sha256: e17805c6e5a1323d4a31919053b7b2b25876344f2fada3762a4d8009770f1d7f
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/bootonly:aarch64/15.1</id>
+    <title>FreeBSD bootonly 15.1 (aarch64)</title>
+    <updated>2026-07-12T21:34:50+00:00</updated>
+    <published>2026-07-12T21:34:50+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="bootonly" label="variant" />
+    <summary type="text">FreeBSD bootonly 15.1 (aarch64)
+Filename: FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso
+sha256: 359136c2af73e03da6f15ad59f0c67bc561ca8b69631d78bfb8f2225e2c9a5ef
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/dvd1/15.1</id>
     <title>FreeBSD dvd1 15.1 (x86_64)</title>

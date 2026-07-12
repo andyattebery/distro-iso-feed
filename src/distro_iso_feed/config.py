@@ -19,7 +19,16 @@ from .models import Source, Variant
 
 DEFAULT_UA = "distro-iso-feed/1.0 (+https://github.com/andyattebery/distro-iso-feed)"
 
-_DISCOVER_KEYS = {"group", "group_field", "index", "match", "ignore", "enumerable", "reason"}
+_DISCOVER_KEYS = {
+    "group",
+    "group_field",
+    "index",
+    "match",
+    "ignore",
+    "arch_ignore",
+    "enumerable",
+    "reason",
+}
 _DISCOVER_REGEX_KEYS = ("group", "match")
 
 
@@ -52,6 +61,18 @@ def _validate_discover(distro: str, discover: Any) -> None:
             f"{distro}: unknown discover key(s) {', '.join(sorted(unknown))}; "
             f"known: {', '.join(sorted(_DISCOVER_KEYS))}"
         )
+
+    # `arch_ignore` is the arch analog of `ignore`, but exact arch names -- a token
+    # (`i686`, `x86_64_v2`) or a canonical (`ppc64le`) -- not filename regexes, because the
+    # arch space is a small closed set. It makes declining a proposed arch STICKY: without it,
+    # every arch left out of a variant's `arches` map is re-proposed on every discovery run.
+    # Validated even under `enumerable: false`, since arch discovery runs off the `arches` map
+    # independently of variant enumeration (Ubuntu discovers arches while `enumerable: false`).
+    arch_ignore = discover.get("arch_ignore")
+    if arch_ignore is not None and (
+        not isinstance(arch_ignore, list) or not all(str(a).strip() for a in arch_ignore)
+    ):
+        raise ConfigError(f"{distro}: discover.arch_ignore must be a list of non-empty arch names")
 
     if discover.get("enumerable") is False:
         if not str(discover.get("reason") or "").strip():
@@ -165,18 +186,24 @@ def substitute_token(params: dict, token: str) -> dict:
 
 
 def _validate_arches(distro: str, variant: str, arches: Any) -> None:
-    """`arches` is a `{canonical: upstream-token}` map -- e.g. `{x86_64: amd64, aarch64: arm64}`.
+    """`arches` is a `{canonical: value}` map -- e.g. `{x86_64: amd64, aarch64: arm64}`.
 
-    The canonical name is the identity/display (x86_64 stays implicit in the key); the token is
-    what gets substituted into `{token}` in the URL/filename fields.
+    The canonical name is the identity/display (x86_64 stays implicit in the key). The value is
+    either a **token** string substituted into `{token}` across the params, or an **override dict**
+    `{token: <tok>, <param>: <override>, ...}` for an arch that lives on a different host/tree
+    (Ubuntu's cdimage, Tumbleweed's `/ports/`, FreeBSD's spellings) -- the token defaults to the
+    canonical name and the rest are params merged in for that arch.
     """
     if not isinstance(arches, dict) or not arches:
-        raise ConfigError(
-            f"{distro}:{variant}: `arches` must be a non-empty {{canonical: token}} map"
-        )
-    for canonical, token in arches.items():
-        if not str(canonical).strip() or not str(token).strip():
-            raise ConfigError(f"{distro}:{variant}: `arches` entries must be non-empty arch:token")
+        raise ConfigError(f"{distro}:{variant}: `arches` must be a non-empty map")
+    for canonical, value in arches.items():
+        if not str(canonical).strip():
+            raise ConfigError(f"{distro}:{variant}: `arches` has an empty arch name")
+        if isinstance(value, dict):
+            if not str(value.get("token", canonical)).strip():
+                raise ConfigError(f"{distro}:{variant}:{canonical}: override `token` is empty")
+        elif not str(value).strip():
+            raise ConfigError(f"{distro}:{variant}:{canonical}: `arches` token is empty")
 
 
 def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
@@ -232,8 +259,13 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
                 # (amd64/arm64/...) is substituted into the URL/filename fields. x86_64 keeps
                 # the bare key (see models.arch_tag), so adding arches never moves an existing id.
                 _validate_arches(distro, name, arches)
-                for canonical, token in arches.items():
-                    per = substitute_token(params, str(token))
+                for canonical, value in arches.items():
+                    if isinstance(value, dict):
+                        token = str(value.get("token", canonical))
+                        overrides = {k: v for k, v in value.items() if k != "token"}
+                        per = substitute_token({**params, **overrides}, token)
+                    else:
+                        per = substitute_token(params, str(value))
                     per["arch"] = canonical
                     variants.append(
                         Variant(distro, name, strategy, per, label, mirror, arch=canonical)

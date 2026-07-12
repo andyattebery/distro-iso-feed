@@ -4,7 +4,63 @@
   <title>Distro ISO Feed — kali</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/kali.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-10T15:06:07+00:00</updated>
+  <updated>2026-07-12T21:46:35+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/live:aarch64/2026.2</id>
+    <title>Kali Live 2026.2 (aarch64)</title>
+    <updated>2026-07-12T21:46:35+00:00</updated>
+    <published>2026-07-12T21:46:35+00:00</published>
+    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="313980" />
+    <category term="kali" label="distro" />
+    <category term="live" label="variant" />
+    <summary type="text">Kali Live 2026.2 (aarch64)
+Filename: kali-linux-2026.2-live-arm64.iso
+Size: 4109303808
+sha256: e9b41bfa21eea4e1a4ea941f0170aad5d1bdbbec6425254c5fc6304927245493
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent
+torrent-sha256: 83017ce9cf7499d1a3d43499fe6809cf1d5dec753e7f304b12b2348dba39b66e
+Infohash: 4bcb5d5346f20cc05134a9e6b0439c93af55cf72
+Magnet: magnet:?xt=urn:btih:4bcb5d5346f20cc05134a9e6b0439c93af55cf72&amp;dn=kali-linux-2026.2-live-arm64.iso&amp;tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&amp;tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&amp;tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer-netinst:aarch64/2026.2</id>
+    <title>Kali NetInstaller 2026.2 (aarch64)</title>
+    <updated>2026-07-12T21:46:33+00:00</updated>
+    <published>2026-07-12T21:46:33+00:00</published>
+    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-arm64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kali" label="distro" />
+    <category term="installer-netinst" label="variant" />
+    <summary type="text">Kali NetInstaller 2026.2 (aarch64)
+Filename: kali-linux-2026.2-installer-netinst-arm64.iso
+sha256: 8ca1bdd6a85f37e380eca84c780256b6e634fc768426396f51967ec3be006ed1
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kali/installer:aarch64/2026.2</id>
+    <title>Kali Installer 2026.2 (aarch64)</title>
+    <updated>2026-07-12T21:46:32+00:00</updated>
+    <published>2026-07-12T21:46:32+00:00</published>
+    <link href="https://www.kali.org/get-kali/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-arm64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="kali" label="distro" />
+    <category term="installer" label="variant" />
+    <summary type="text">Kali Installer 2026.2 (aarch64)
+Filename: kali-linux-2026.2-installer-arm64.iso
+sha256: b9a08050ee522fbee7cac703b1bc48178f79eb974c962d4ed9dc1ccfdfa77fb6
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/kali/live/2026.2</id>
     <title>Kali Live 2026.2 (x86_64)</title>

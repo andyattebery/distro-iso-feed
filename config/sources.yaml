@@ -28,26 +28,26 @@ distros:
       # `...-ostree-x86_64-44-1.7.iso` (Atomic). One pattern must serve both.
       version_pattern: '(\d+-\d+\.\d+)(?:\.[a-z0-9_]+)?\.iso$'
     variants:
-      workstation: {label: "Fedora Workstation", select: {subvariant: Workstation, link_contains: "Workstation-Live"}}
-      server: {label: "Fedora Server", select: {subvariant: Server, link_contains: "Server-netinst"}}
-      kde: {label: "Fedora KDE Plasma", select: {subvariant: KDE, link_contains: "KDE-Desktop-Live"}}
-      silverblue: {label: "Fedora Silverblue", select: {subvariant: Silverblue, link_contains: "ostree"}}
-      kinoite: {label: "Fedora Kinoite", select: {subvariant: Kinoite, link_contains: "ostree"}}
-      sericea: {label: "Fedora Sway Atomic", select: {subvariant: Sericea, link_contains: "ostree"}}
-      onyx: {label: "Fedora Budgie Atomic", select: {subvariant: Onyx, link_contains: "ostree"}}
-      cosmic-atomic: {label: "Fedora COSMIC Atomic", select: {subvariant: COSMIC-Atomic, link_contains: "ostree"}}
+      workstation: {label: "Fedora Workstation", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le}, select: {subvariant: Workstation, link_contains: "Workstation-Live"}}
+      server: {label: "Fedora Server", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, select: {subvariant: Server, link_contains: "Server-netinst"}}
+      kde: {label: "Fedora KDE Plasma", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le}, select: {subvariant: KDE, link_contains: "KDE-Desktop-Live"}}
+      silverblue: {label: "Fedora Silverblue", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Silverblue, link_contains: "ostree"}}
+      kinoite: {label: "Fedora Kinoite", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Kinoite, link_contains: "ostree"}}
+      sericea: {label: "Fedora Sway Atomic", arches: {x86_64: x86_64}, select: {subvariant: Sericea, link_contains: "ostree"}}
+      onyx: {label: "Fedora Budgie Atomic", arches: {x86_64: x86_64}, select: {subvariant: Onyx, link_contains: "ostree"}}
+      cosmic-atomic: {label: "Fedora COSMIC Atomic", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: COSMIC-Atomic, link_contains: "ostree"}}
       # Desktop spins. `Mate` is the one whose subvariant never appears in its own
       # filename -- the artifact is `Fedora-MATE_Compiz-Live-...`.
-      budgie: {label: "Fedora Budgie", select: {subvariant: Budgie, link_contains: "Budgie-Live"}}
-      cinnamon: {label: "Fedora Cinnamon", select: {subvariant: Cinnamon, link_contains: "Cinnamon-Live"}}
-      cosmic: {label: "Fedora COSMIC", select: {subvariant: COSMIC, link_contains: "COSMIC-Live"}}
-      i3: {label: "Fedora i3", select: {subvariant: i3, link_contains: "i3-Live"}}
-      lxde: {label: "Fedora LXDE", select: {subvariant: LXDE, link_contains: "LXDE-Live"}}
-      lxqt: {label: "Fedora LXQt", select: {subvariant: LXQt, link_contains: "LXQt-Live"}}
-      mate: {label: "Fedora MATE", select: {subvariant: Mate, link_contains: "MATE_Compiz-Live"}}
-      miraclewm: {label: "Fedora MiracleWM", select: {subvariant: MiracleWM, link_contains: "MiracleWM-Live"}}
-      sway: {label: "Fedora Sway", select: {subvariant: Sway, link_contains: "Sway-Live"}}
-      xfce: {label: "Fedora Xfce", select: {subvariant: Xfce, link_contains: "Xfce-Live"}}
+      budgie: {label: "Fedora Budgie", arches: {x86_64: x86_64}, select: {subvariant: Budgie, link_contains: "Budgie-Live"}}
+      cinnamon: {label: "Fedora Cinnamon", arches: {x86_64: x86_64}, select: {subvariant: Cinnamon, link_contains: "Cinnamon-Live"}}
+      cosmic: {label: "Fedora COSMIC", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: COSMIC, link_contains: "COSMIC-Live"}}
+      i3: {label: "Fedora i3", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: i3, link_contains: "i3-Live"}}
+      lxde: {label: "Fedora LXDE", arches: {x86_64: x86_64}, select: {subvariant: LXDE, link_contains: "LXDE-Live"}}
+      lxqt: {label: "Fedora LXQt", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: LXQt, link_contains: "LXQt-Live"}}
+      mate: {label: "Fedora MATE", arches: {x86_64: x86_64}, select: {subvariant: Mate, link_contains: "MATE_Compiz-Live"}}
+      miraclewm: {label: "Fedora MiracleWM", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: MiracleWM, link_contains: "MiracleWM-Live"}}
+      sway: {label: "Fedora Sway", arches: {x86_64: x86_64}, select: {subvariant: Sway, link_contains: "Sway-Live"}}
+      xfce: {label: "Fedora Xfce", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Xfce, link_contains: "Xfce-Live"}}
     discover:
       # `match` drops non-ISO rows (releases.json also lists qcow2/vhd/tar.xz), and
       # `ignore` is written against the FILENAME, not the variant key it produces:
@@ -157,18 +157,20 @@ distros:
       sums: "SHA256SUMS"
       sig: "SHA256SUMS.gpg"
       version_pattern: 'kali-linux-([0-9.]+)-'
-      ignore: ["arm64", "i386"]   # co-listed in the same SHA256SUMS
       signing_key:
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
         fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
         covers: checksums
     variants:
-      installer: {label: "Kali Installer", params: {match: '^kali-linux-[0-9.]+-installer-amd64\.iso$'}}
-      installer-netinst: {label: "Kali NetInstaller", params: {match: '^kali-linux-[0-9.]+-installer-netinst-amd64\.iso$'}}
-      installer-purple: {label: "Kali Purple", params: {match: '^kali-linux-[0-9.]+-installer-purple-amd64\.iso$'}}
-      live: {label: "Kali Live", params: {torrent_only: true, match: '^kali-linux-[0-9.]+-live-amd64\.iso\.torrent$'}}
-      live-everything: {label: "Kali Live (everything)", params: {torrent_only: true, match: '^kali-linux-[0-9.]+-live-everything-amd64\.iso\.torrent$'}}
-      installer-everything: {label: "Kali Installer (everything)", params: {torrent_only: true, match: '^kali-linux-[0-9.]+-installer-everything-amd64\.iso\.torrent$'}}
+      # Multi-arch: filename token, Kali's x86_64 token is `amd64` (so `arches` keys x86_64 to it).
+      # Discovery fills aarch64 (`arm64`), and only for the variants Kali ships it (installer,
+      # installer-netinst, live) -- purple/everything stay amd64-only. Kali no longer ships i386.
+      installer: {label: "Kali Installer", arches: {x86_64: amd64, aarch64: arm64}, params: {match: '^kali-linux-[0-9.]+-installer-{token}\.iso$'}}
+      installer-netinst: {label: "Kali NetInstaller", arches: {x86_64: amd64, aarch64: arm64}, params: {match: '^kali-linux-[0-9.]+-installer-netinst-{token}\.iso$'}}
+      installer-purple: {label: "Kali Purple", arches: {x86_64: amd64}, params: {match: '^kali-linux-[0-9.]+-installer-purple-{token}\.iso$'}}
+      live: {label: "Kali Live", arches: {x86_64: amd64, aarch64: arm64}, params: {torrent_only: true, match: '^kali-linux-[0-9.]+-live-{token}\.iso\.torrent$'}}
+      live-everything: {label: "Kali Live (everything)", arches: {x86_64: amd64}, params: {torrent_only: true, match: '^kali-linux-[0-9.]+-live-everything-{token}\.iso\.torrent$'}}
+      installer-everything: {label: "Kali Installer (everything)", arches: {x86_64: amd64}, params: {torrent_only: true, match: '^kali-linux-[0-9.]+-installer-everything-{token}\.iso\.torrent$'}}
     discover:
       # `.iso.torrent` rows must reach `group`, or the three torrent-only variants
       # above are reported UNEXPLAINED on every run. The suffix is NON-CAPTURING:
@@ -185,11 +187,15 @@ distros:
     params:
       index: "https://repo-default.voidlinux.org/live/current/"
       sums: "sha256sum.txt"
-      version_pattern: 'x86_64-(\d{8})-'
-      ignore: ["-musl-"]   # musl builds sit beside glibc in the same sha256sum.txt
+      version_pattern: '{token}-(\d{8})-'
+      # musl builds sit beside glibc in the same sha256sum.txt; the ignore also keeps
+      # `aarch64-musl` out of arch discovery (we track the glibc `aarch64`, not the musl one).
+      ignore: ["-musl-"]
     variants:
-      base: {label: "Void Linux base", params: {match: '^void-live-x86_64-\d{8}-base\.iso$'}}
-      xfce: {label: "Void Linux Xfce", params: {match: '^void-live-x86_64-\d{8}-xfce\.iso$'}}
+      # Multi-arch: filename token (`void-live-{arch}-…`), all arches in one dir. `arches` seeds
+      # x86_64; discovery fills aarch64 (32-bit `i686` and `asahi` are proposed too -- trim in review).
+      base: {label: "Void Linux base", arches: {x86_64: x86_64, aarch64: aarch64, asahi: asahi, i686: i686}, params: {match: '^void-live-{token}-\d{8}-base\.iso$'}}
+      xfce: {label: "Void Linux Xfce", arches: {x86_64: x86_64, aarch64: aarch64, asahi: asahi, i686: i686}, params: {match: '^void-live-{token}-\d{8}-xfce\.iso$'}}
     discover:
       group: '^void-live-x86_64-\d{8}-([a-z0-9]+)\.iso$'
       ignore: ["-musl-"]
@@ -265,10 +271,14 @@ distros:
         fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
         covers: checksums
     variants:
-      desktop-lts: {label: "Ubuntu Desktop LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-desktop-amd64\.iso$'}}
-      live-server-lts: {label: "Ubuntu Server LTS", params: {channel: lts, match: '^ubuntu-[0-9.]+-live-server-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu Desktop interim", params: {channel: interim, match: '^ubuntu-[0-9.]+-desktop-amd64\.iso$'}}
-      live-server-interim: {label: "Ubuntu Server interim", params: {channel: interim, match: '^ubuntu-[0-9.]+-live-server-amd64\.iso$'}}
+      # Multi-arch, but the arm64 ISOs live on a DIFFERENT host (cdimage.ubuntu.com, under
+      # `{version}/release/`), so aarch64 is a hand-seeded override -- arch discovery only sees
+      # the amd64 host (releases.ubuntu.com) and proposes nothing. The match `$`-anchor keeps the
+      # `live-server-arm64+largemem.iso` decoy out. cdimage carries its own SHA256SUMS/.gpg/.torrent.
+      desktop-lts: {label: "Ubuntu Desktop LTS", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: lts, match: '^ubuntu-[0-9.]+-desktop-{token}\.iso$'}}
+      live-server-lts: {label: "Ubuntu Server LTS", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: lts, match: '^ubuntu-[0-9.]+-live-server-{token}\.iso$'}}
+      desktop-interim: {label: "Ubuntu Desktop interim", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: interim, match: '^ubuntu-[0-9.]+-desktop-{token}\.iso$'}}
+      live-server-interim: {label: "Ubuntu Server interim", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: interim, match: '^ubuntu-[0-9.]+-live-server-{token}\.iso$'}}
     discover:
       enumerable: false
       reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
@@ -281,13 +291,17 @@ distros:
       index: "{version}/"
       # BSD-format checksum file, and its NAME embeds the version. A literal `sums`
       # cannot express this; a GNU-only parser reads zero lines from it.
-      sums: "CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-amd64"
+      sums: "CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-{token}"
       version_pattern: 'FreeBSD-([0-9.]+)-RELEASE'
       ignore: ['\.iso\.xz$']
     variants:
-      disc1: {label: "FreeBSD disc1", params: {match: '^FreeBSD-[0-9.]+-RELEASE-amd64-disc1\.iso$'}}
-      dvd1: {label: "FreeBSD dvd1", params: {match: '^FreeBSD-[0-9.]+-RELEASE-amd64-dvd1\.iso$'}}
-      bootonly: {label: "FreeBSD bootonly", params: {match: '^FreeBSD-[0-9.]+-RELEASE-amd64-bootonly\.iso$'}}
+      # Multi-arch: arm64 ISOs live on a different tree (`.../arm64/aarch64/ISO-IMAGES/`) and both
+      # their filename and their checksum file spell the arch `arm64-aarch64`, so a single `{token}`
+      # covers `match` and `sums` and only `version_dir` is overridden. Hand-seeded because arch
+      # discovery only sees the amd64 tree; it proposes nothing here.
+      disc1: {label: "FreeBSD disc1", arches: {x86_64: amd64, aarch64: {token: arm64-aarch64, version_dir: "https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/"}}, params: {match: '^FreeBSD-[0-9.]+-RELEASE-{token}-disc1\.iso$'}}
+      dvd1: {label: "FreeBSD dvd1", arches: {x86_64: amd64, aarch64: {token: arm64-aarch64, version_dir: "https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/"}}, params: {match: '^FreeBSD-[0-9.]+-RELEASE-{token}-dvd1\.iso$'}}
+      bootonly: {label: "FreeBSD bootonly", arches: {x86_64: amd64, aarch64: {token: arm64-aarch64, version_dir: "https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/"}}, params: {match: '^FreeBSD-[0-9.]+-RELEASE-{token}-bootonly\.iso$'}}
     discover:
       match: '\.iso$'
       group: '^FreeBSD-[0-9.]+-RELEASE-amd64-([a-z0-9]+)\.iso$'
@@ -311,18 +325,22 @@ distros:
       # cannot see it. The listed `Build710.3-Media.iso` is the real artifact, and
       # its build number is a genuine change-token.
       sums: "{filename}.sha256"
-      version_pattern: 'Leap-([0-9.]+)-\w+-x86_64-Build([0-9.]+)-Media'
-      ignore: ["aarch64", "ppc64le", "s390x"]   # Leap ships four CPU arches, not two
+      version_pattern: 'Leap-([0-9.]+)-\w+-{token}-Build([0-9.]+)-Media'
       signing_key:
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4
         fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
         covers: checksums
     variants:
-      leap-dvd: {label: "openSUSE Leap DVD", params: {match: '^openSUSE-Leap-[0-9.]+-DVD-x86_64-Build[0-9.]+-Media\.iso$'}}
-      leap-net: {label: "openSUSE Leap NET", params: {match: '^openSUSE-Leap-[0-9.]+-NET-x86_64-Build[0-9.]+-Media\.iso$'}}
+      # Multi-arch: filename token (Leap ships x86_64/aarch64/ppc64le/s390x in one `iso/` dir).
+      # `arches` seeds x86_64; discovery fills the rest -- trim ppc64le/s390x in review if unwanted.
+      leap-dvd: {label: "openSUSE Leap DVD", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^openSUSE-Leap-[0-9.]+-DVD-{token}-Build[0-9.]+-Media\.iso$'}}
+      leap-net: {label: "openSUSE Leap NET", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^openSUSE-Leap-[0-9.]+-NET-{token}-Build[0-9.]+-Media\.iso$'}}
       tumbleweed-dvd:
         label: "openSUSE Tumbleweed DVD"
         strategy: stable_symlink
+        # aarch64 lives under a separate `/ports/` tree, so its full URL is overridden by hand
+        # (no `{token}` -- the x86_64 URL keeps its literal spelling and discovery can't reach ports).
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso"}}
         params:
           url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso"
           sums: "{filename}.sha256"
@@ -336,6 +354,7 @@ distros:
       tumbleweed-net:
         label: "openSUSE Tumbleweed NET"
         strategy: stable_symlink
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso"}}
         params:
           url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso"
           sums: "{filename}.sha256"
@@ -472,21 +491,24 @@ distros:
     params:
       version_dir: "https://download.rockylinux.org/pub/rocky/"
       version_dir_match: '^\d+$'
-      index: "{version}/isos/x86_64/"
+      index: "{version}/isos/{token}/"
       sums: "CHECKSUM"
       sig: "CHECKSUM.asc"
-      version_pattern: 'Rocky-([0-9.]+)-x86_64'
+      version_pattern: 'Rocky-([0-9.]+)-{token}'
       signing_key:
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
         fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
         covers: checksums
     variants:
-      # Rocky 10 names the DVD `dvd1`, Rocky 9 names it `dvd` -- `dvd1?` covers both.
-      boot: {label: "Rocky Linux boot", params: {match: '^Rocky-[0-9.]+-x86_64-boot\.iso$'}}
-      minimal: {label: "Rocky Linux minimal", params: {match: '^Rocky-[0-9.]+-x86_64-minimal\.iso$'}}
-      dvd: {label: "Rocky Linux DVD", params: {match: '^Rocky-[0-9.]+-x86_64-dvd1?\.iso$'}}
+      # Multi-arch: each arch has its own `isos/{arch}/` dir with its own CHECKSUM (same per-major
+      # key). `arches` seeds x86_64; discovery fills aarch64 (+ppc64le/s390x). Rocky 10 names the
+      # DVD `dvd1`, Rocky 9 `dvd` -- `dvd1?` covers both.
+      boot: {label: "Rocky Linux boot", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, riscv64: riscv64, s390x: s390x}, params: {match: '^Rocky-[0-9.]+-{token}-boot\.iso$'}}
+      minimal: {label: "Rocky Linux minimal", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, riscv64: riscv64, s390x: s390x}, params: {match: '^Rocky-[0-9.]+-{token}-minimal\.iso$'}}
+      dvd: {label: "Rocky Linux DVD", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, riscv64: riscv64, s390x: s390x}, params: {match: '^Rocky-[0-9.]+-{token}-dvd1?\.iso$'}}
     discover:
-      # `([a-z]+)1?` absorbs the `1` in `dvd1` so the key is `dvd`, not an UNEXPLAINED `dvd1`.
+      # Variant discovery stays x86_64-anchored (it finds editions, not arches -- arch_tokens does
+      # arches). `([a-z]+)1?` absorbs the `1` in `dvd1` so the key is `dvd`, not UNEXPLAINED `dvd1`.
       match: '\.iso$'
       group: '^Rocky-[0-9.]+-x86_64-([a-z]+)1?\.iso$'
 
@@ -501,12 +523,13 @@ distros:
     params:
       version_dir: "https://mirror.stream.centos.org/"
       version_dir_match: '^\d+-stream$'
-      index: "{version}/BaseOS/x86_64/iso/"
+      index: "{version}/BaseOS/{token}/iso/"
       sums: "{filename}.SHA256SUM"
-      version_pattern: 'CentOS-Stream-\d+-(\d{8}\.\d+)-x86_64'
+      version_pattern: 'CentOS-Stream-\d+-(\d{8}\.\d+)-{token}'
     variants:
-      boot: {label: "CentOS Stream boot", params: {match: '^CentOS-Stream-\d+-\d{8}\.\d+-x86_64-boot\.iso$'}}
-      dvd: {label: "CentOS Stream DVD", params: {match: '^CentOS-Stream-\d+-\d{8}\.\d+-x86_64-dvd1?\.iso$'}}
+      # Multi-arch: each `BaseOS/{arch}/iso/` holds its own dated compose + per-ISO .SHA256SUM.
+      boot: {label: "CentOS Stream boot", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^CentOS-Stream-\d+-\d{8}\.\d+-{token}-boot\.iso$'}}
+      dvd: {label: "CentOS Stream DVD", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^CentOS-Stream-\d+-\d{8}\.\d+-{token}-dvd1?\.iso$'}}
     discover:
       match: '\.iso$'
       group: '^CentOS-Stream-\d+-\d{8}\.\d+-x86_64-([a-z]+)1?\.iso$'
@@ -523,18 +546,20 @@ distros:
     params:
       version_dir: "https://repo.almalinux.org/almalinux/"
       version_dir_match: '^\d+$'
-      index: "{version}/isos/x86_64/"
+      index: "{version}/isos/{token}/"
       sums: "CHECKSUM"
       sig: "CHECKSUM"     # the clearsigned CHECKSUM is its own signature
-      version_pattern: 'AlmaLinux-([0-9.]+)-x86_64'
+      version_pattern: 'AlmaLinux-([0-9.]+)-{token}'
       signing_key:
         url: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
         fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
         covers: clearsigned
     variants:
-      boot: {label: "AlmaLinux boot", params: {match: '^AlmaLinux-[0-9.]+-x86_64-boot\.iso$'}}
-      minimal: {label: "AlmaLinux minimal", params: {match: '^AlmaLinux-[0-9.]+-x86_64-minimal\.iso$'}}
-      dvd: {label: "AlmaLinux DVD", params: {match: '^AlmaLinux-[0-9.]+-x86_64-dvd\.iso$'}}
+      # Multi-arch: each `isos/{arch}/` dir carries its own clearsigned CHECKSUM (same per-major
+      # key). `arches` seeds x86_64; discovery fills aarch64/ppc64le/s390x.
+      boot: {label: "AlmaLinux boot", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x, x86_64_v2: x86_64_v2}, params: {match: '^AlmaLinux-[0-9.]+-{token}-boot\.iso$'}}
+      minimal: {label: "AlmaLinux minimal", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x, x86_64_v2: x86_64_v2}, params: {match: '^AlmaLinux-[0-9.]+-{token}-minimal\.iso$'}}
+      dvd: {label: "AlmaLinux DVD", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x, x86_64_v2: x86_64_v2}, params: {match: '^AlmaLinux-[0-9.]+-{token}-dvd\.iso$'}}
     discover:
       match: '\.iso$'
       group: '^AlmaLinux-[0-9.]+-x86_64-([a-z]+)\.iso$'
@@ -610,12 +635,14 @@ distros:
       # -- only generated and probed. Distinct from directory_index's version_dir,
       # which reads a real listing.
       probe_versions:
-        template: "https://channels.nixos.org/nixos-{version}/latest-nixos-minimal-x86_64-linux.iso.sha256"
+        template: "https://channels.nixos.org/nixos-{version}/latest-nixos-minimal-{token}-linux.iso.sha256"
       sums: "{filename}.sha256"
-      token: {from: sidecar_filename, pattern: '-([0-9.]+\.[0-9a-f]+)-x86_64'}
+      token: {from: sidecar_filename, pattern: '-([0-9.]+\.[0-9a-f]+)-{token}'}
     variants:
-      minimal: {label: "NixOS Minimal", params: {url: "https://channels.nixos.org/nixos-{version}/latest-nixos-minimal-x86_64-linux.iso"}}
-      graphical: {label: "NixOS Graphical", params: {url: "https://channels.nixos.org/nixos-{version}/latest-nixos-graphical-x86_64-linux.iso"}}
+      # Multi-arch: filename token in a fixed (probed) URL. No listing to enumerate, so
+      # stable_symlink offers [x86_64, aarch64] and resolve-verify keeps what exists.
+      minimal: {label: "NixOS Minimal", arches: {x86_64: x86_64, aarch64: aarch64}, params: {url: "https://channels.nixos.org/nixos-{version}/latest-nixos-minimal-{token}-linux.iso"}}
+      graphical: {label: "NixOS Graphical", arches: {x86_64: x86_64, aarch64: aarch64}, params: {url: "https://channels.nixos.org/nixos-{version}/latest-nixos-graphical-{token}-linux.iso"}}
     discover:
       enumerable: false
       reason: "channels.nixos.org renders its listing client-side; there is no server-side index"

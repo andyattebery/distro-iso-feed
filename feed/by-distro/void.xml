@@ -4,7 +4,91 @@
   <title>Distro ISO Feed — void</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/void.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-09T23:40:12+00:00</updated>
+  <updated>2026-07-12T21:46:39+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/void/xfce:i686/20250202</id>
+    <title>Void Linux Xfce 20250202 (i686)</title>
+    <updated>2026-07-12T21:46:39+00:00</updated>
+    <published>2026-07-12T21:46:39+00:00</published>
+    <link href="https://voidlinux.org/" rel="alternate" type="text/html" />
+    <link href="https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="void" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">Void Linux Xfce 20250202 (i686)
+Filename: void-live-i686-20250202-xfce.iso
+sha256: 81d1fc7f5c5f4a05db7e4ad613a5986a2b47c04d81f25bfcd35566d5fc5ee156
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/void/xfce:asahi/20250202</id>
+    <title>Void Linux Xfce 20250202 (asahi)</title>
+    <updated>2026-07-12T21:46:38+00:00</updated>
+    <published>2026-07-12T21:46:38+00:00</published>
+    <link href="https://voidlinux.org/" rel="alternate" type="text/html" />
+    <link href="https://repo-default.voidlinux.org/live/current/void-live-asahi-20250202-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="void" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">Void Linux Xfce 20250202 (asahi)
+Filename: void-live-asahi-20250202-xfce.iso
+sha256: 6c25a3850008548023472159156d2ecd34c40062b6cb15a9da559aea96871761
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/void/xfce:aarch64/20250202</id>
+    <title>Void Linux Xfce 20250202 (aarch64)</title>
+    <updated>2026-07-12T21:46:38+00:00</updated>
+    <published>2026-07-12T21:46:38+00:00</published>
+    <link href="https://voidlinux.org/" rel="alternate" type="text/html" />
+    <link href="https://repo-default.voidlinux.org/live/current/void-live-aarch64-20250202-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="void" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">Void Linux Xfce 20250202 (aarch64)
+Filename: void-live-aarch64-20250202-xfce.iso
+sha256: b301790f4f2ad1a21c79683ab5f63313df899576b2b40f0e6e229e104c4254fa
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/void/base:i686/20250202</id>
+    <title>Void Linux base 20250202 (i686)</title>
+    <updated>2026-07-12T21:46:37+00:00</updated>
+    <published>2026-07-12T21:46:37+00:00</published>
+    <link href="https://voidlinux.org/" rel="alternate" type="text/html" />
+    <link href="https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-base.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="void" label="distro" />
+    <category term="base" label="variant" />
+    <summary type="text">Void Linux base 20250202 (i686)
+Filename: void-live-i686-20250202-base.iso
+sha256: 84ad6814c2eeae9f1ce9fe1b9ce26e54c61415594a5a04837c57c21db5017987
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/void/base:asahi/20250202</id>
+    <title>Void Linux base 20250202 (asahi)</title>
+    <updated>2026-07-12T21:46:37+00:00</updated>
+    <published>2026-07-12T21:46:37+00:00</published>
+    <link href="https://voidlinux.org/" rel="alternate" type="text/html" />
+    <link href="https://repo-default.voidlinux.org/live/current/void-live-asahi-20250202-base.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="void" label="distro" />
+    <category term="base" label="variant" />
+    <summary type="text">Void Linux base 20250202 (asahi)
+Filename: void-live-asahi-20250202-base.iso
+sha256: 6e8163cda1fc1284dd00b4a865f585d792bb5a6a6595851b6d05440791daeb18
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/void/base:aarch64/20250202</id>
+    <title>Void Linux base 20250202 (aarch64)</title>
+    <updated>2026-07-12T21:46:37+00:00</updated>
+    <published>2026-07-12T21:46:37+00:00</published>
+    <link href="https://voidlinux.org/" rel="alternate" type="text/html" />
+    <link href="https://repo-default.voidlinux.org/live/current/void-live-aarch64-20250202-base.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="void" label="distro" />
+    <category term="base" label="variant" />
+    <summary type="text">Void Linux base 20250202 (aarch64)
+Filename: void-live-aarch64-20250202-base.iso
+sha256: 29516e4c7085a49c2e288aafe143d402a6bcda7271f711f1559ad0c1b9cc1a79
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/void/xfce/20250202</id>
     <title>Void Linux Xfce 20250202 (x86_64)</title>

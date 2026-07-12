@@ -29,6 +29,11 @@ from .base import Strategy, title_for
 class StableSymlink(Strategy):
     name = "stable_symlink"
 
+    def arch_tokens(self, params: dict, client: Client) -> list[str]:
+        """A fixed URL has nothing to list, so offer the plausible arches and let arch-verify keep
+        only the ones that actually resolve (NixOS publishes `...-{arch}-linux.iso` + `.sha256`)."""
+        return ["x86_64", "aarch64"] if "{token}" in str(params.get("url", "")) else []
+
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:
         if repo := (params.get("token") or {}).get("repo"):
             return atom(client, repo)

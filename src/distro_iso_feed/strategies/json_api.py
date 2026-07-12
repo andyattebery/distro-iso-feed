@@ -59,6 +59,22 @@ class JsonApi(Strategy):
         arch = params.get("arch")
         return not (arch and row.get("arch") and row["arch"] != arch)
 
+    def arch_tokens(self, params: dict, client: Client) -> list[str]:
+        """Fedora: the arch is a JSON `arch` field. Return the distinct arches over the rows this
+        variant selects with the arch filter dropped (`claims` with `arch=None`), so a variant only
+        offers arches it actually publishes -- Fedora's sparse matrix (s390x Server but no s390x
+        Workstation) falls out per-variant."""
+        url = self._url(params, client)
+        if not url:
+            return []
+        no_arch = {**params, "arch": None}
+        arches = {
+            str((c.row or {}).get("arch"))
+            for c in json_doc(client, url)
+            if (c.row or {}).get("arch") and self.claims(c, no_arch)
+        }
+        return sorted(arches)
+
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:
         url = self._url(params, client)
         return json_doc(client, url) if url else []

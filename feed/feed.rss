@@ -4,8 +4,1021 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Sun, 12 Jul 2026 18:37:09 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 21:47:39 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>NixOS Graphical 26.05.4659.8f0500b96605 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.4659.8f0500b96605</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:39 +0000</pubDate>
+      <description>NixOS Graphical 26.05.4659.8f0500b96605 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: fc3fa87ccbb947062f225ec2eaa0321559c50dd1a16bed22fccd7d8c95c7f75a
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.4659.8f0500b96605 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.4659.8f0500b96605</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:38 +0000</pubDate>
+      <description>NixOS Minimal 26.05.4659.8f0500b96605 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 102e5bdabb7e7f765e829005b3f75c49240be4944c6a33e99213b9e5564e6ac9
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>AlmaLinux DVD 10.2 (x86_64_v2)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-dvd.iso</link>
+      <guid isPermaLink="false">almalinux:dvd:x86_64_v2:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:34 +0000</pubDate>
+      <description>AlmaLinux DVD 10.2 (x86_64_v2)
+Filename: AlmaLinux-10.2-x86_64_v2-dvd.iso
+sha256: 320a10d3195ece72d99a10ae8316f78124ae6228a5f542b6f5870126d5708b91
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-dvd.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux DVD 10.2 (s390x)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-dvd.iso</link>
+      <guid isPermaLink="false">almalinux:dvd:s390x:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:34 +0000</pubDate>
+      <description>AlmaLinux DVD 10.2 (s390x)
+Filename: AlmaLinux-10.2-s390x-dvd.iso
+sha256: fba6a4088db5b835572c5a978b8e7e7dd795d9a782b6907d64b32a12e3864258
+Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-dvd.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux minimal 10.2 (x86_64_v2)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-minimal.iso</link>
+      <guid isPermaLink="false">almalinux:minimal:x86_64_v2:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux minimal 10.2 (x86_64_v2)
+Filename: AlmaLinux-10.2-x86_64_v2-minimal.iso
+sha256: c75ee2e209dcb4ec6fde01e421074edddf5d19bb7388fa12a102edb40fc47eb0
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux minimal 10.2 (s390x)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-minimal.iso</link>
+      <guid isPermaLink="false">almalinux:minimal:s390x:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux minimal 10.2 (s390x)
+Filename: AlmaLinux-10.2-s390x-minimal.iso
+sha256: bc4ab16b8501222da9af41f543b7b702b0dd5759aeeeabb5d20e90d63082fea6
+Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux minimal 10.2 (ppc64le)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-minimal.iso</link>
+      <guid isPermaLink="false">almalinux:minimal:ppc64le:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux minimal 10.2 (ppc64le)
+Filename: AlmaLinux-10.2-ppc64le-minimal.iso
+sha256: ce8618654c90af07725026b40adbfde761149ab0bd1df58e5fd1a1a495b3b291
+Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux minimal 10.2 (aarch64)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-minimal.iso</link>
+      <guid isPermaLink="false">almalinux:minimal:aarch64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux minimal 10.2 (aarch64)
+Filename: AlmaLinux-10.2-aarch64-minimal.iso
+sha256: ca5dd9b7e1193de5881df850a93b611c6ba0ba8c5860f54ee822c53585b3014d
+Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux DVD 10.2 (ppc64le)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-dvd.iso</link>
+      <guid isPermaLink="false">almalinux:dvd:ppc64le:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux DVD 10.2 (ppc64le)
+Filename: AlmaLinux-10.2-ppc64le-dvd.iso
+sha256: 6a9de2f07d4cfc171c6f5bc6609662b993d04554f5591e203c6d8167d079d3b0
+Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-dvd.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux DVD 10.2 (aarch64)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-dvd.iso</link>
+      <guid isPermaLink="false">almalinux:dvd:aarch64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux DVD 10.2 (aarch64)
+Filename: AlmaLinux-10.2-aarch64-dvd.iso
+sha256: bc3790b1200254790e03f1d941162a9f9082d46dcdff841b83f348501625b29e
+Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-dvd.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux boot 10.2 (x86_64_v2)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-boot.iso</link>
+      <guid isPermaLink="false">almalinux:boot:x86_64_v2:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux boot 10.2 (x86_64_v2)
+Filename: AlmaLinux-10.2-x86_64_v2-boot.iso
+sha256: 97b38e392dfe51b62a61c7dc400ce730228135e827c214fbaf32efc3a766607f
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux boot 10.2 (s390x)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-boot.iso</link>
+      <guid isPermaLink="false">almalinux:boot:s390x:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux boot 10.2 (s390x)
+Filename: AlmaLinux-10.2-s390x-boot.iso
+sha256: 31902701a6b50ac227f16992b01e09039c9e86826b3e95ac6f1345d86879e07a
+Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux boot 10.2 (ppc64le)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">almalinux:boot:ppc64le:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux boot 10.2 (ppc64le)
+Filename: AlmaLinux-10.2-ppc64le-boot.iso
+sha256: a81a74356e90e0f6ad056f64435b2bc892a8d80d4cfcdb8e6753612607d56315
+Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>AlmaLinux boot 10.2 (aarch64)</title>
+      <link>https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-boot.iso</link>
+      <guid isPermaLink="false">almalinux:boot:aarch64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:33 +0000</pubDate>
+      <description>AlmaLinux boot 10.2 (aarch64)
+Filename: AlmaLinux-10.2-aarch64-boot.iso
+sha256: 20807d65338627a0afa3d5fbd3bee222115d66ce34ac1e4647b0af8fc6c4aa23
+Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</description>
+      <enclosure url="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>almalinux</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.2 (s390x)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:s390x:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>Rocky Linux DVD 10.2 (s390x)
+Filename: Rocky-10.2-s390x-dvd1.iso
+sha256: 52e5cab95904d0cc15b4f4c7762d1e31251351d41d96fbb217cb3bb59da424ce
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.2 (riscv64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:riscv64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>Rocky Linux DVD 10.2 (riscv64)
+Filename: Rocky-10.2-riscv64-dvd1.iso
+sha256: 8b4710a427d1c8d17a787d9d59d0f19c384b92140a3d151d26ea030a6158ec50
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260707.1 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260707.1-s390x-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:s390x:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>CentOS Stream DVD 20260707.1 (s390x)
+Filename: CentOS-Stream-10-20260707.1-s390x-dvd1.iso
+sha256: 8e0eca90bcd12f355ac65a6e4d110375d3c751e15dd32cc97a0bef50c6d2bfdc
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260707.1-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260707.1 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260707.1-ppc64le-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:ppc64le:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>CentOS Stream DVD 20260707.1 (ppc64le)
+Filename: CentOS-Stream-10-20260707.1-ppc64le-dvd1.iso
+sha256: 8418a80474ba4219246b4ad67e8c109549346ef4116fe2a4b4ba71df03504998
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260707.1-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260707.1 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260707.1-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:aarch64:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>CentOS Stream DVD 20260707.1 (aarch64)
+Filename: CentOS-Stream-10-20260707.1-aarch64-dvd1.iso
+sha256: 8f76facbbf37cbdae66059921709f7911e772c97abe4de52b2d854c1ccb858db
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260707.1-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260707.1 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260707.1-s390x-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:s390x:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>CentOS Stream boot 20260707.1 (s390x)
+Filename: CentOS-Stream-10-20260707.1-s390x-boot.iso
+sha256: 71b936ad7f1cec9a37c8e0d9dddbce11f67b226bade3c6bb3f5132dcbf799dec
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260707.1-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260707.1 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260707.1-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:ppc64le:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>CentOS Stream boot 20260707.1 (ppc64le)
+Filename: CentOS-Stream-10-20260707.1-ppc64le-boot.iso
+sha256: be0453021924cae422233d56ff81404a479f3c8ec48fa6f973e45ec1fa519d6b
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260707.1-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260707.1 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260707.1-aarch64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:aarch64:20260707.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
+      <description>CentOS Stream boot 20260707.1 (aarch64)
+Filename: CentOS-Stream-10-20260707.1-aarch64-boot.iso
+sha256: 1a702cd515fa65b3068f61585895c7b4668cb9bf2b735673068986a71d02d17b
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260707.1-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.2 (ppc64le)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:ppc64le:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:31 +0000</pubDate>
+      <description>Rocky Linux DVD 10.2 (ppc64le)
+Filename: Rocky-10.2-ppc64le-dvd1.iso
+sha256: fe587686b74a3639402d909b4ff3da410d5f45839606b384860c030cdd97db2f
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.2 (aarch64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:aarch64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:31 +0000</pubDate>
+      <description>Rocky Linux DVD 10.2 (aarch64)
+Filename: Rocky-10.2-aarch64-dvd1.iso
+sha256: 3b8253987604df1bc5e1c33c838ff3ee9ce4a8f02ed9e27e300ecff58c0c9588
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.2 (s390x)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:s390x:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:30 +0000</pubDate>
+      <description>Rocky Linux minimal 10.2 (s390x)
+Filename: Rocky-10.2-s390x-minimal.iso
+sha256: 23db96776c6662a146ebc6af26e8c9ace4ff1ec3b173cf16288b5142bcb290f5
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.2 (riscv64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:riscv64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:30 +0000</pubDate>
+      <description>Rocky Linux minimal 10.2 (riscv64)
+Filename: Rocky-10.2-riscv64-minimal.iso
+sha256: 95d6d9eb18734a34cc2bad046a3f8f64e6aa76837fd186f2a1ca948a79ed6bd1
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.2 (ppc64le)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:ppc64le:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:29 +0000</pubDate>
+      <description>Rocky Linux minimal 10.2 (ppc64le)
+Filename: Rocky-10.2-ppc64le-minimal.iso
+sha256: 4fa402c32141d4f11f937932669eabeba0ee2d00c40ea91949f4abf959ef28a3
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.2 (aarch64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:aarch64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:29 +0000</pubDate>
+      <description>Rocky Linux minimal 10.2 (aarch64)
+Filename: Rocky-10.2-aarch64-minimal.iso
+sha256: 1d1c21199df32f6d17eedb4f713ee0d089b49294401a364b640fcf4ffab45f35
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.2 (s390x)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:s390x:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:28 +0000</pubDate>
+      <description>Rocky Linux boot 10.2 (s390x)
+Filename: Rocky-10.2-s390x-boot.iso
+sha256: 40cfb90d9a33c5ebe32987f09d2f0f1b6558a80ab7a60f042914839ff3cb55f2
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.2 (riscv64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:riscv64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:28 +0000</pubDate>
+      <description>Rocky Linux boot 10.2 (riscv64)
+Filename: Rocky-10.2-riscv64-boot.iso
+sha256: 5b0bed04197961440be649ccd9f87795c398dad8f36046444353fb8afb811ac4
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.2 (ppc64le)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:ppc64le:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:27 +0000</pubDate>
+      <description>Rocky Linux boot 10.2 (ppc64le)
+Filename: Rocky-10.2-ppc64le-boot.iso
+sha256: 2d30723555598a5f60d55d831c7b69065a1c5b310ecce38df4c13fb4f35db045
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.2 (aarch64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:aarch64:10.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:47:27 +0000</pubDate>
+      <description>Rocky Linux boot 10.2 (aarch64)
+Filename: Rocky-10.2-aarch64-boot.iso
+sha256: 33c2d3dfd5f947b3201478180b549bb2995bd9573c2776b384e5ec1dd47326c0
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>openSUSE Leap NET 15.6-710.3 (s390x)</title>
+      <link>https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso</link>
+      <guid isPermaLink="false">opensuse:leap-net:s390x:15.6-710.3</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:58 +0000</pubDate>
+      <description>openSUSE Leap NET 15.6-710.3 (s390x)
+Filename: openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso
+sha256: 9649be14ffde9aeb5cc5915e703237a417e33d9c3800fc4f71a3d6bb48addf0a
+Verify: checksum</description>
+      <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Leap NET 15.6-710.3 (ppc64le)</title>
+      <link>https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso</link>
+      <guid isPermaLink="false">opensuse:leap-net:ppc64le:15.6-710.3</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:57 +0000</pubDate>
+      <description>openSUSE Leap NET 15.6-710.3 (ppc64le)
+Filename: openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso
+sha256: 032ba016087b725bb26bc0d2cce76e5b7eb67152c984ce4c10e803f1644c4b03
+Verify: checksum</description>
+      <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Leap NET 15.6-710.3 (aarch64)</title>
+      <link>https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso</link>
+      <guid isPermaLink="false">opensuse:leap-net:aarch64:15.6-710.3</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:56 +0000</pubDate>
+      <description>openSUSE Leap NET 15.6-710.3 (aarch64)
+Filename: openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso
+sha256: 1ae50c465460e3cf7131567d37ea02952b5a31339b8c06521a51080be6f491f7
+Verify: checksum</description>
+      <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Leap DVD 15.6-710.3 (s390x)</title>
+      <link>https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso</link>
+      <guid isPermaLink="false">opensuse:leap-dvd:s390x:15.6-710.3</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:54 +0000</pubDate>
+      <description>openSUSE Leap DVD 15.6-710.3 (s390x)
+Filename: openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso
+sha256: 5dd1bec7c2bf386f9eb80b0d73740949f8ea2cfb4336d02697410ebc4e737e45
+Verify: checksum</description>
+      <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Leap DVD 15.6-710.3 (ppc64le)</title>
+      <link>https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso</link>
+      <guid isPermaLink="false">opensuse:leap-dvd:ppc64le:15.6-710.3</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:53 +0000</pubDate>
+      <description>openSUSE Leap DVD 15.6-710.3 (ppc64le)
+Filename: openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso
+sha256: 6f9504a6710d59ce20f3c16294fe3738be6b08c1b51e1dfd8d6f4a2f6eb8af5e
+Verify: checksum</description>
+      <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Leap DVD 15.6-710.3 (aarch64)</title>
+      <link>https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso</link>
+      <guid isPermaLink="false">opensuse:leap-dvd:aarch64:15.6-710.3</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:53 +0000</pubDate>
+      <description>openSUSE Leap DVD 15.6-710.3 (aarch64)
+Filename: openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso
+sha256: 6ecade658ef3e4dd7175176781f80fcd070250fe7e922f6240224ff810755ac6
+Verify: checksum</description>
+      <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>Void Linux Xfce 20250202 (i686)</title>
+      <link>https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-xfce.iso</link>
+      <guid isPermaLink="false">void:xfce:i686:20250202</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:39 +0000</pubDate>
+      <description>Void Linux Xfce 20250202 (i686)
+Filename: void-live-i686-20250202-xfce.iso
+sha256: 81d1fc7f5c5f4a05db7e4ad613a5986a2b47c04d81f25bfcd35566d5fc5ee156
+Verify: checksum</description>
+      <enclosure url="https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-xfce.iso" type="application/x-iso9660-image" length="0" />
+      <category>void</category>
+    </item>
+    <item>
+      <title>Void Linux Xfce 20250202 (asahi)</title>
+      <link>https://repo-default.voidlinux.org/live/current/void-live-asahi-20250202-xfce.iso</link>
+      <guid isPermaLink="false">void:xfce:asahi:20250202</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:38 +0000</pubDate>
+      <description>Void Linux Xfce 20250202 (asahi)
+Filename: void-live-asahi-20250202-xfce.iso
+sha256: 6c25a3850008548023472159156d2ecd34c40062b6cb15a9da559aea96871761
+Verify: checksum</description>
+      <enclosure url="https://repo-default.voidlinux.org/live/current/void-live-asahi-20250202-xfce.iso" type="application/x-iso9660-image" length="0" />
+      <category>void</category>
+    </item>
+    <item>
+      <title>Void Linux Xfce 20250202 (aarch64)</title>
+      <link>https://repo-default.voidlinux.org/live/current/void-live-aarch64-20250202-xfce.iso</link>
+      <guid isPermaLink="false">void:xfce:aarch64:20250202</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:38 +0000</pubDate>
+      <description>Void Linux Xfce 20250202 (aarch64)
+Filename: void-live-aarch64-20250202-xfce.iso
+sha256: b301790f4f2ad1a21c79683ab5f63313df899576b2b40f0e6e229e104c4254fa
+Verify: checksum</description>
+      <enclosure url="https://repo-default.voidlinux.org/live/current/void-live-aarch64-20250202-xfce.iso" type="application/x-iso9660-image" length="0" />
+      <category>void</category>
+    </item>
+    <item>
+      <title>Void Linux base 20250202 (i686)</title>
+      <link>https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-base.iso</link>
+      <guid isPermaLink="false">void:base:i686:20250202</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:37 +0000</pubDate>
+      <description>Void Linux base 20250202 (i686)
+Filename: void-live-i686-20250202-base.iso
+sha256: 84ad6814c2eeae9f1ce9fe1b9ce26e54c61415594a5a04837c57c21db5017987
+Verify: checksum</description>
+      <enclosure url="https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-base.iso" type="application/x-iso9660-image" length="0" />
+      <category>void</category>
+    </item>
+    <item>
+      <title>Void Linux base 20250202 (asahi)</title>
+      <link>https://repo-default.voidlinux.org/live/current/void-live-asahi-20250202-base.iso</link>
+      <guid isPermaLink="false">void:base:asahi:20250202</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:37 +0000</pubDate>
+      <description>Void Linux base 20250202 (asahi)
+Filename: void-live-asahi-20250202-base.iso
+sha256: 6e8163cda1fc1284dd00b4a865f585d792bb5a6a6595851b6d05440791daeb18
+Verify: checksum</description>
+      <enclosure url="https://repo-default.voidlinux.org/live/current/void-live-asahi-20250202-base.iso" type="application/x-iso9660-image" length="0" />
+      <category>void</category>
+    </item>
+    <item>
+      <title>Void Linux base 20250202 (aarch64)</title>
+      <link>https://repo-default.voidlinux.org/live/current/void-live-aarch64-20250202-base.iso</link>
+      <guid isPermaLink="false">void:base:aarch64:20250202</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:37 +0000</pubDate>
+      <description>Void Linux base 20250202 (aarch64)
+Filename: void-live-aarch64-20250202-base.iso
+sha256: 29516e4c7085a49c2e288aafe143d402a6bcda7271f711f1559ad0c1b9cc1a79
+Verify: checksum</description>
+      <enclosure url="https://repo-default.voidlinux.org/live/current/void-live-aarch64-20250202-base.iso" type="application/x-iso9660-image" length="0" />
+      <category>void</category>
+    </item>
+    <item>
+      <title>Kali Live 2026.2 (aarch64)</title>
+      <link>https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent</link>
+      <guid isPermaLink="false">kali:live:aarch64:2026.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:35 +0000</pubDate>
+      <description>Kali Live 2026.2 (aarch64)
+Filename: kali-linux-2026.2-live-arm64.iso
+Size: 4109303808
+sha256: e9b41bfa21eea4e1a4ea941f0170aad5d1bdbbec6425254c5fc6304927245493
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent
+torrent-sha256: 83017ce9cf7499d1a3d43499fe6809cf1d5dec753e7f304b12b2348dba39b66e
+Infohash: 4bcb5d5346f20cc05134a9e6b0439c93af55cf72
+Magnet: magnet:?xt=urn:btih:4bcb5d5346f20cc05134a9e6b0439c93af55cf72&amp;dn=kali-linux-2026.2-live-arm64.iso&amp;tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&amp;tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&amp;tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969
+Verify: gpg</description>
+      <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent" type="application/x-bittorrent" length="313980" />
+      <category>kali</category>
+    </item>
+    <item>
+      <title>Kali NetInstaller 2026.2 (aarch64)</title>
+      <link>https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-arm64.iso</link>
+      <guid isPermaLink="false">kali:installer-netinst:aarch64:2026.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:33 +0000</pubDate>
+      <description>Kali NetInstaller 2026.2 (aarch64)
+Filename: kali-linux-2026.2-installer-netinst-arm64.iso
+sha256: 8ca1bdd6a85f37e380eca84c780256b6e634fc768426396f51967ec3be006ed1
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Verify: gpg</description>
+      <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>kali</category>
+    </item>
+    <item>
+      <title>Kali Installer 2026.2 (aarch64)</title>
+      <link>https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-arm64.iso</link>
+      <guid isPermaLink="false">kali:installer:aarch64:2026.2</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:32 +0000</pubDate>
+      <description>Kali Installer 2026.2 (aarch64)
+Filename: kali-linux-2026.2-installer-arm64.iso
+sha256: b9a08050ee522fbee7cac703b1bc48178f79eb974c962d4ed9dc1ccfdfa77fb6
+Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Verify: gpg</description>
+      <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>kali</category>
+    </item>
+    <item>
+      <title>Fedora Xfce 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-Xfce-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:xfce:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:11 +0000</pubDate>
+      <description>Fedora Xfce 44-1.7 (aarch64)
+Filename: Fedora-Xfce-Live-44-1.7.aarch64.iso
+Size: 2666934272
+sha256: c707af264df01b70fdf7abfd4fea44ee2942a6080d4353f4e61b23fe951c049e
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-Xfce-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="2666934272" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Silverblue 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Silverblue/aarch64/iso/Fedora-Silverblue-ostree-aarch64-44-1.7.iso</link>
+      <guid isPermaLink="false">fedora:silverblue:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora Silverblue 44-1.7 (aarch64)
+Filename: Fedora-Silverblue-ostree-aarch64-44-1.7.iso
+Size: 3163932672
+sha256: 0793b987858dba46cb9e0727ad5fa8e819caff055d6d8ca703dff355fb4383cc
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Silverblue/aarch64/iso/Fedora-Silverblue-ostree-aarch64-44-1.7.iso" type="application/x-iso9660-image" length="3163932672" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora MiracleWM 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-MiracleWM-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:miraclewm:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora MiracleWM 44-1.7 (aarch64)
+Filename: Fedora-MiracleWM-Live-44-1.7.aarch64.iso
+Size: 2282393600
+sha256: 4672e29693e975151e34bd99907cd92dfedbbefc919d0c826d9df912ae9125c1
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-MiracleWM-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="2282393600" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora LXQt 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-LXQt-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:lxqt:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora LXQt 44-1.7 (aarch64)
+Filename: Fedora-LXQt-Live-44-1.7.aarch64.iso
+Size: 2206396416
+sha256: 1325c70ce55ab699686084b30cb910f54080766dc1d10a2704045ab6979ad247
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-LXQt-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="2206396416" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Kinoite 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Kinoite/aarch64/iso/Fedora-Kinoite-ostree-aarch64-44-1.7.iso</link>
+      <guid isPermaLink="false">fedora:kinoite:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora Kinoite 44-1.7 (aarch64)
+Filename: Fedora-Kinoite-ostree-aarch64-44-1.7.iso
+Size: 3884711936
+sha256: 37a8476c947ec3c0a0ce5cde65a8462c71488715b09ab5196714dddf42708c4a
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Kinoite/aarch64/iso/Fedora-Kinoite-ostree-aarch64-44-1.7.iso" type="application/x-iso9660-image" length="3884711936" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora i3 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-i3-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:i3:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora i3 44-1.7 (aarch64)
+Filename: Fedora-i3-Live-44-1.7.aarch64.iso
+Size: 2208172032
+sha256: 8e69c5a688260f8e0e782dd414973f6c090dbb4fdbe31cf7b87434ccb80b89f1
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-i3-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="2208172032" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora COSMIC 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-COSMIC-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:cosmic:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora COSMIC 44-1.7 (aarch64)
+Filename: Fedora-COSMIC-Live-44-1.7.aarch64.iso
+Size: 2899554304
+sha256: 2ac66a7231d05acc5c52a4a83f2f9b8a37240fa68f4bc4e614d4e64c50daa912
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-COSMIC-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="2899554304" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora COSMIC Atomic 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/COSMIC-Atomic/aarch64/iso/Fedora-COSMIC-Atomic-ostree-aarch64-44-1.7.iso</link>
+      <guid isPermaLink="false">fedora:cosmic-atomic:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:10 +0000</pubDate>
+      <description>Fedora COSMIC Atomic 44-1.7 (aarch64)
+Filename: Fedora-COSMIC-Atomic-ostree-aarch64-44-1.7.iso
+Size: 2588993536
+sha256: 703a7ad970441931874cb16dc01a07f6f463a10d339c8127f0c959699d6129ff
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/COSMIC-Atomic/aarch64/iso/Fedora-COSMIC-Atomic-ostree-aarch64-44-1.7.iso" type="application/x-iso9660-image" length="2588993536" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Workstation 44-1.7 (ppc64le)</title>
+      <link>https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Workstation/ppc64le/iso/Fedora-Workstation-Live-44-1.7.ppc64le.iso</link>
+      <guid isPermaLink="false">fedora:workstation:ppc64le:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora Workstation 44-1.7 (ppc64le)
+Filename: Fedora-Workstation-Live-44-1.7.ppc64le.iso
+Size: 2488926208
+sha256: 461587a61e75f6012118d3e62f0f2439022e8b9c09071a73a7e57b580ec16e36
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Workstation/ppc64le/iso/Fedora-Workstation-Live-44-1.7.ppc64le.iso" type="application/x-iso9660-image" length="2488926208" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Workstation 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/aarch64/iso/Fedora-Workstation-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:workstation:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora Workstation 44-1.7 (aarch64)
+Filename: Fedora-Workstation-Live-44-1.7.aarch64.iso
+Size: 2689781760
+sha256: 162ba3c552a2d241c7c63ec26777af0255ee1b5a135adc0be986ceed999933ef
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/aarch64/iso/Fedora-Workstation-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="2689781760" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Server 44-1.7 (s390x)</title>
+      <link>https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Server/s390x/iso/Fedora-Server-netinst-s390x-44-1.7.iso</link>
+      <guid isPermaLink="false">fedora:server:s390x:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora Server 44-1.7 (s390x)
+Filename: Fedora-Server-netinst-s390x-44-1.7.iso
+Size: 588064768
+sha256: 313ea37cdd9fbacb4ff501a0233adebb3b55c623651e98ad784a60a49126b4c9
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Server/s390x/iso/Fedora-Server-netinst-s390x-44-1.7.iso" type="application/x-iso9660-image" length="588064768" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Server 44-1.7 (ppc64le)</title>
+      <link>https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Server/ppc64le/iso/Fedora-Server-netinst-ppc64le-44-1.7.iso</link>
+      <guid isPermaLink="false">fedora:server:ppc64le:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora Server 44-1.7 (ppc64le)
+Filename: Fedora-Server-netinst-ppc64le-44-1.7.iso
+Size: 1160095744
+sha256: db84e9e9e2ca979f322c877a96584633226d0c4d8052b97ec5cdcdfcc4c7c17f
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Server/ppc64le/iso/Fedora-Server-netinst-ppc64le-44-1.7.iso" type="application/x-iso9660-image" length="1160095744" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora Server 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/aarch64/iso/Fedora-Server-netinst-aarch64-44-1.7.iso</link>
+      <guid isPermaLink="false">fedora:server:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora Server 44-1.7 (aarch64)
+Filename: Fedora-Server-netinst-aarch64-44-1.7.iso
+Size: 1257783296
+sha256: a93ebd0322cda5a439039710b727ac1899a06e1c11876cfdf7f27c25b8262cc3
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/aarch64/iso/Fedora-Server-netinst-aarch64-44-1.7.iso" type="application/x-iso9660-image" length="1257783296" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora KDE Plasma 44-1.7 (ppc64le)</title>
+      <link>https://download.fedoraproject.org/pub/fedora-secondary/releases/44/KDE/ppc64le/iso/Fedora-KDE-Desktop-Live-44-1.7.ppc64le.iso</link>
+      <guid isPermaLink="false">fedora:kde:ppc64le:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora KDE Plasma 44-1.7 (ppc64le)
+Filename: Fedora-KDE-Desktop-Live-44-1.7.ppc64le.iso
+Size: 3033858048
+sha256: 22468ad32c329db7c95a3b90e681043ffac0e3ae472418a39493ecac4b566e16
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/KDE/ppc64le/iso/Fedora-KDE-Desktop-Live-44-1.7.ppc64le.iso" type="application/x-iso9660-image" length="3033858048" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>Fedora KDE Plasma 44-1.7 (aarch64)</title>
+      <link>https://download.fedoraproject.org/pub/fedora/linux/releases/44/KDE/aarch64/iso/Fedora-KDE-Desktop-Live-44-1.7.aarch64.iso</link>
+      <guid isPermaLink="false">fedora:kde:aarch64:44-1.7</guid>
+      <pubDate>Sun, 12 Jul 2026 21:46:09 +0000</pubDate>
+      <description>Fedora KDE Plasma 44-1.7 (aarch64)
+Filename: Fedora-KDE-Desktop-Live-44-1.7.aarch64.iso
+Size: 3119904768
+sha256: 61b39df9bb19aff38b7b7c81d7b2a647aa43948b6683c8467091e0edce833a94
+Verify: checksum</description>
+      <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/KDE/aarch64/iso/Fedora-KDE-Desktop-Live-44-1.7.aarch64.iso" type="application/x-iso9660-image" length="3119904768" />
+      <category>fedora</category>
+    </item>
+    <item>
+      <title>FreeBSD dvd1 15.1 (aarch64)</title>
+      <link>https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">freebsd:dvd1:aarch64:15.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:34:50 +0000</pubDate>
+      <description>FreeBSD dvd1 15.1 (aarch64)
+Filename: FreeBSD-15.1-RELEASE-arm64-aarch64-dvd1.iso
+sha256: 6542055b12b873685abdc66e990b301c863cb4efa68e00a08f50f7b7874e7417
+Verify: checksum</description>
+      <enclosure url="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>freebsd</category>
+    </item>
+    <item>
+      <title>FreeBSD disc1 15.1 (aarch64)</title>
+      <link>https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-disc1.iso</link>
+      <guid isPermaLink="false">freebsd:disc1:aarch64:15.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:34:50 +0000</pubDate>
+      <description>FreeBSD disc1 15.1 (aarch64)
+Filename: FreeBSD-15.1-RELEASE-arm64-aarch64-disc1.iso
+sha256: e17805c6e5a1323d4a31919053b7b2b25876344f2fada3762a4d8009770f1d7f
+Verify: checksum</description>
+      <enclosure url="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-disc1.iso" type="application/x-iso9660-image" length="0" />
+      <category>freebsd</category>
+    </item>
+    <item>
+      <title>FreeBSD bootonly 15.1 (aarch64)</title>
+      <link>https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso</link>
+      <guid isPermaLink="false">freebsd:bootonly:aarch64:15.1</guid>
+      <pubDate>Sun, 12 Jul 2026 21:34:50 +0000</pubDate>
+      <description>FreeBSD bootonly 15.1 (aarch64)
+Filename: FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso
+sha256: 359136c2af73e03da6f15ad59f0c67bc561ca8b69631d78bfb8f2225e2c9a5ef
+Verify: checksum</description>
+      <enclosure url="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso" type="application/x-iso9660-image" length="0" />
+      <category>freebsd</category>
+    </item>
+    <item>
+      <title>Ubuntu Server interim 25.10 (aarch64)</title>
+      <link>https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-live-server-arm64.iso</link>
+      <guid isPermaLink="false">ubuntu:live-server-interim:aarch64:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:55 +0000</pubDate>
+      <description>Ubuntu Server interim 25.10 (aarch64)
+Filename: ubuntu-25.10-live-server-arm64.iso
+sha256: ecf579664c0be9e4a68ae7b617399ce943c2dee49eb1fcc6702a5671a4f88320
+Signature: https://cdimage.ubuntu.com/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-live-server-arm64.iso.torrent
+Infohash: 1ba097f02f267415787fdcd8c08f2f1c08f6a593
+Magnet: magnet:?xt=urn:btih:1ba097f02f267415787fdcd8c08f2f1c08f6a593&amp;dn=ubuntu-25.10-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-live-server-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu</category>
+    </item>
+    <item>
+      <title>Ubuntu Desktop interim 25.10 (aarch64)</title>
+      <link>https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-desktop-arm64.iso</link>
+      <guid isPermaLink="false">ubuntu:desktop-interim:aarch64:25.10</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:53 +0000</pubDate>
+      <description>Ubuntu Desktop interim 25.10 (aarch64)
+Filename: ubuntu-25.10-desktop-arm64.iso
+sha256: 9d383dd57220dec520fdec3be05da258d27d435c02fe6e296c5d0a505741a787
+Signature: https://cdimage.ubuntu.com/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-desktop-arm64.iso.torrent
+Infohash: ed34741769e57d195029495f3e35c152ddcc1c4f
+Magnet: magnet:?xt=urn:btih:ed34741769e57d195029495f3e35c152ddcc1c4f&amp;dn=ubuntu-25.10-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-desktop-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu</category>
+    </item>
+    <item>
+      <title>Ubuntu Server LTS 26.04 (aarch64)</title>
+      <link>https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-live-server-arm64.iso</link>
+      <guid isPermaLink="false">ubuntu:live-server-lts:aarch64:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:50 +0000</pubDate>
+      <description>Ubuntu Server LTS 26.04 (aarch64)
+Filename: ubuntu-26.04-live-server-arm64.iso
+sha256: c9aa567e6560b2eddae3af03fc686002e35b6fee96f97fd5df3271e846439fdd
+Signature: https://cdimage.ubuntu.com/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-live-server-arm64.iso.torrent
+Infohash: ca81e60bdaf11e2e22419513cbf9b366afdf6d46
+Magnet: magnet:?xt=urn:btih:ca81e60bdaf11e2e22419513cbf9b366afdf6d46&amp;dn=ubuntu-26.04-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-live-server-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu</category>
+    </item>
+    <item>
+      <title>Ubuntu Desktop LTS 26.04 (aarch64)</title>
+      <link>https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-desktop-arm64.iso</link>
+      <guid isPermaLink="false">ubuntu:desktop-lts:aarch64:26.04</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:47 +0000</pubDate>
+      <description>Ubuntu Desktop LTS 26.04 (aarch64)
+Filename: ubuntu-26.04-desktop-arm64.iso
+sha256: c2afd538d66fdd77377d03f1ed2ac76a34f1c116baecc9a8170d68f833121f57
+Signature: https://cdimage.ubuntu.com/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-desktop-arm64.iso.torrent
+Infohash: 59ec6454b48d0cb232cc3ad67f66c4327c1a1092
+Magnet: magnet:?xt=urn:btih:59ec6454b48d0cb232cc3ad67f66c4327c1a1092&amp;dn=ubuntu-26.04-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-desktop-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260709 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20260709</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:37 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260709 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: 16b7316de999706b1799768efa58e43eb3046df96ae38976e7fab84094e56ddc
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260710 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260710</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:35 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260710 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: 2afd4cffef0bedef34c4e113d93f9fd85c44ba2684e80a3787459a4d33328e3d
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260709 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20260709</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:34 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260709 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
+sha256: 543e04728739841a95b88e4976351724407f041a928974ae905eae69a4b096d6
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260710 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260710</guid>
+      <pubDate>Sun, 12 Jul 2026 21:31:32 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260710 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 1f032e2ec2e41429032882eb14db855e3bd0ec3fd25adc16727a75910c4ef19e
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
     <item>
       <title>Debian netinst 13.6.0 (s390x)</title>
       <link>https://cdimage.debian.org/debian-cd/current/s390x/iso-cd/debian-13.6.0-s390x-netinst.iso</link>
@@ -496,36 +1509,6 @@ sha256: 3e80e86eef0f1764e8ca24042d7bac5ad8d399ae8f944978be7185e6d39ee881
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260709 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260709</guid>
-      <pubDate>Sat, 11 Jul 2026 15:09:46 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260709 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 4306be9a6f6cda09dcf3d9a3cbc26c6905b56c34e014120e866b2ebbb7c82dc5
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260709 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260709</guid>
-      <pubDate>Sat, 11 Jul 2026 15:09:45 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260709 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 3e16fa0100e85bdd18d878c255c6b00ae79e27286f83ddb8b4e9d534cb978945
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
     </item>
     <item>
       <title>AnduinOS 1.4.2 (x86_64)</title>

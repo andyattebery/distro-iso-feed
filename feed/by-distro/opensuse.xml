@@ -4,36 +4,154 @@
   <title>Distro ISO Feed — opensuse</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/opensuse.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-11T15:09:46+00:00</updated>
+  <updated>2026-07-12T21:46:58+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20260709</id>
-    <title>openSUSE Tumbleweed NET Snapshot20260709 (x86_64)</title>
-    <updated>2026-07-11T15:09:46+00:00</updated>
-    <published>2026-07-11T15:09:46+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:s390x/15.6-710.3</id>
+    <title>openSUSE Leap NET 15.6-710.3 (s390x)</title>
+    <updated>2026-07-12T21:46:58+00:00</updated>
+    <published>2026-07-12T21:46:58+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap NET 15.6-710.3 (s390x)
+Filename: openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso
+sha256: 9649be14ffde9aeb5cc5915e703237a417e33d9c3800fc4f71a3d6bb48addf0a
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:ppc64le/15.6-710.3</id>
+    <title>openSUSE Leap NET 15.6-710.3 (ppc64le)</title>
+    <updated>2026-07-12T21:46:57+00:00</updated>
+    <published>2026-07-12T21:46:57+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap NET 15.6-710.3 (ppc64le)
+Filename: openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso
+sha256: 032ba016087b725bb26bc0d2cce76e5b7eb67152c984ce4c10e803f1644c4b03
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:aarch64/15.6-710.3</id>
+    <title>openSUSE Leap NET 15.6-710.3 (aarch64)</title>
+    <updated>2026-07-12T21:46:56+00:00</updated>
+    <published>2026-07-12T21:46:56+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap NET 15.6-710.3 (aarch64)
+Filename: openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso
+sha256: 1ae50c465460e3cf7131567d37ea02952b5a31339b8c06521a51080be6f491f7
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:s390x/15.6-710.3</id>
+    <title>openSUSE Leap DVD 15.6-710.3 (s390x)</title>
+    <updated>2026-07-12T21:46:54+00:00</updated>
+    <published>2026-07-12T21:46:54+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap DVD 15.6-710.3 (s390x)
+Filename: openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso
+sha256: 5dd1bec7c2bf386f9eb80b0d73740949f8ea2cfb4336d02697410ebc4e737e45
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:ppc64le/15.6-710.3</id>
+    <title>openSUSE Leap DVD 15.6-710.3 (ppc64le)</title>
+    <updated>2026-07-12T21:46:53+00:00</updated>
+    <published>2026-07-12T21:46:53+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap DVD 15.6-710.3 (ppc64le)
+Filename: openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso
+sha256: 6f9504a6710d59ce20f3c16294fe3738be6b08c1b51e1dfd8d6f4a2f6eb8af5e
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:aarch64/15.6-710.3</id>
+    <title>openSUSE Leap DVD 15.6-710.3 (aarch64)</title>
+    <updated>2026-07-12T21:46:53+00:00</updated>
+    <published>2026-07-12T21:46:53+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap DVD 15.6-710.3 (aarch64)
+Filename: openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso
+sha256: 6ecade658ef3e4dd7175176781f80fcd070250fe7e922f6240224ff810755ac6
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20260709</id>
+    <title>openSUSE Tumbleweed NET Snapshot20260709 (aarch64)</title>
+    <updated>2026-07-12T21:31:37+00:00</updated>
+    <published>2026-07-12T21:31:37+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20260709 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: 16b7316de999706b1799768efa58e43eb3046df96ae38976e7fab84094e56ddc
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20260710</id>
+    <title>openSUSE Tumbleweed NET Snapshot20260710 (x86_64)</title>
+    <updated>2026-07-12T21:31:35+00:00</updated>
+    <published>2026-07-12T21:31:35+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20260709 (x86_64)
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20260710 (x86_64)
 Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 4306be9a6f6cda09dcf3d9a3cbc26c6905b56c34e014120e866b2ebbb7c82dc5
+sha256: 2afd4cffef0bedef34c4e113d93f9fd85c44ba2684e80a3787459a4d33328e3d
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20260709</id>
-    <title>openSUSE Tumbleweed DVD Snapshot20260709 (x86_64)</title>
-    <updated>2026-07-11T15:09:45+00:00</updated>
-    <published>2026-07-11T15:09:45+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd:aarch64/Snapshot20260709</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20260709 (aarch64)</title>
+    <updated>2026-07-12T21:31:34+00:00</updated>
+    <published>2026-07-12T21:31:34+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260709 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
+sha256: 543e04728739841a95b88e4976351724407f041a928974ae905eae69a4b096d6
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20260710</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20260710 (x86_64)</title>
+    <updated>2026-07-12T21:31:32+00:00</updated>
+    <published>2026-07-12T21:31:32+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260709 (x86_64)
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260710 (x86_64)
 Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 3e16fa0100e85bdd18d878c255c6b00ae79e27286f83ddb8b4e9d534cb978945
+sha256: 1f032e2ec2e41429032882eb14db855e3bd0ec3fd25adc16727a75910c4ef19e
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
