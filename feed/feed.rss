@@ -4,8 +4,243 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Mon, 13 Jul 2026 02:02:29 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 13:17:33 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>ChimeraOS 2025.02.13 (x86_64)</title>
+      <link>https://github.com/ChimeraOS/install-media/releases/download/2025-02-13_7e927cf/chimeraos-2025.02.13-x86_64.iso</link>
+      <guid isPermaLink="false">chimeraos:iso:2025.02.13</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:33 +0000</pubDate>
+      <description>ChimeraOS 2025.02.13 (x86_64)
+Filename: chimeraos-2025.02.13-x86_64.iso
+Size: 915693568
+sha256: e9914e59f6cd817548742d5934c85fc85f53822261e3d478d2c690e10ce2689a
+Verify: checksum</description>
+      <enclosure url="https://github.com/ChimeraOS/install-media/releases/download/2025-02-13_7e927cf/chimeraos-2025.02.13-x86_64.iso" type="application/x-iso9660-image" length="915693568" />
+      <category>chimeraos</category>
+    </item>
+    <item>
+      <title>Gentoo Minimal Install CD 20260712T234606Z (aarch64)</title>
+      <link>https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso</link>
+      <guid isPermaLink="false">gentoo:minimal:aarch64:20260712T234606Z</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:32 +0000</pubDate>
+      <description>Gentoo Minimal Install CD 20260712T234606Z (aarch64)
+Filename: install-arm64-minimal-20260712T234606Z.iso
+sha256: f60c3d6eb1de8ca737c1c33bf6f6fdf1b02e51898bccc7e0ab6d886fce41641f
+Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</description>
+      <enclosure url="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso" type="application/x-iso9660-image" length="0" />
+      <category>gentoo</category>
+    </item>
+    <item>
+      <title>Gentoo LiveGUI 20260712T170110Z (x86_64)</title>
+      <link>https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260712T170110Z.iso</link>
+      <guid isPermaLink="false">gentoo:livegui:20260712T170110Z</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:32 +0000</pubDate>
+      <description>Gentoo LiveGUI 20260712T170110Z (x86_64)
+Filename: livegui-amd64-20260712T170110Z.iso
+sha256: 2c713152e2c51bfc793e29898544194aa5cf53ea9fb7f2eb38dd8a27fce6070a
+Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260712T170110Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</description>
+      <enclosure url="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260712T170110Z.iso" type="application/x-iso9660-image" length="0" />
+      <category>gentoo</category>
+    </item>
+    <item>
+      <title>Gentoo Minimal Install CD 20260712T170110Z (x86_64)</title>
+      <link>https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260712T170110Z.iso</link>
+      <guid isPermaLink="false">gentoo:minimal:20260712T170110Z</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:31 +0000</pubDate>
+      <description>Gentoo Minimal Install CD 20260712T170110Z (x86_64)
+Filename: install-amd64-minimal-20260712T170110Z.iso
+sha256: d5b517272901d6ce6bc02619667b00a009e75fec633ac2dab9235970fc6a72bb
+Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260712T170110Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</description>
+      <enclosure url="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260712T170110Z.iso" type="application/x-iso9660-image" length="0" />
+      <category>gentoo</category>
+    </item>
+    <item>
+      <title>Qubes OS 4.3.1 (x86_64)</title>
+      <link>https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso</link>
+      <guid isPermaLink="false">qubes:iso:4.3.1</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:30 +0000</pubDate>
+      <description>Qubes OS 4.3.1 (x86_64)
+Filename: Qubes-R4.3.1-x86_64.iso
+sha512: 453699a42b85a9dcf33434b9da419e43001ce30b6014befc26f4fbb1cbf70fd30bc9b479b4499d64de29daae9edaf73b4b78b92e32379e11287d017293b95893
+Signature: https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso.DIGESTS.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Key-fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Verify: gpg</description>
+      <enclosure url="https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>qubes</category>
+    </item>
+    <item>
+      <title>XCP-ng netinstall 8.3.0-20250606 (x86_64)</title>
+      <link>https://mirrors.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-20250606-netinstall.iso</link>
+      <guid isPermaLink="false">xcp-ng:netinstall:8.3.0-20250606</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:28 +0000</pubDate>
+      <description>XCP-ng netinstall 8.3.0-20250606 (x86_64)
+Filename: xcp-ng-8.3.0-20250606-netinstall.iso
+sha256: 9a5dcc8d98949ee207d28307b8b94320d1ffd24841e34ca74e1c0f0422e5ecab
+Signature: https://mirrors.xcp-ng.org/isos/8.3/SHA256SUMS.asc
+Signing-key: https://raw.githubusercontent.com/xcp-ng/xcp-ng-release/master/src/common/etc/pki/rpm-gpg/RPM-GPG-KEY-xcpng
+Key-fingerprint: 34AC2EB68248FED6D076838ACD75783A3FD3AC9E
+Verify: gpg</description>
+      <enclosure url="https://mirrors.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-20250606-netinstall.iso" type="application/x-iso9660-image" length="0" />
+      <category>xcp-ng</category>
+    </item>
+    <item>
+      <title>XCP-ng 8.3.0-20250606.2 (x86_64)</title>
+      <link>https://mirrors.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-20250606.2.iso</link>
+      <guid isPermaLink="false">xcp-ng:install:8.3.0-20250606.2</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:26 +0000</pubDate>
+      <description>XCP-ng 8.3.0-20250606.2 (x86_64)
+Filename: xcp-ng-8.3.0-20250606.2.iso
+sha256: 6f0717b0414df1a9184839473b9b7ef46a06f428bd3f1440c56b955ffbb3e649
+Signature: https://mirrors.xcp-ng.org/isos/8.3/SHA256SUMS.asc
+Signing-key: https://raw.githubusercontent.com/xcp-ng/xcp-ng-release/master/src/common/etc/pki/rpm-gpg/RPM-GPG-KEY-xcpng
+Key-fingerprint: 34AC2EB68248FED6D076838ACD75783A3FD3AC9E
+Verify: gpg</description>
+      <enclosure url="https://mirrors.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-20250606.2.iso" type="application/x-iso9660-image" length="0" />
+      <category>xcp-ng</category>
+    </item>
+    <item>
+      <title>GhostBSD XFCE 26.1-R15.0p2 (x86_64)</title>
+      <link>https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-XFCE.iso</link>
+      <guid isPermaLink="false">ghostbsd:xfce:26.1-R15.0p2</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:23 +0000</pubDate>
+      <description>GhostBSD XFCE 26.1-R15.0p2 (x86_64)
+Filename: GhostBSD-26.1-R15.0p2-XFCE.iso
+sha256: adbcd94f43b88e68beaf9ad70ee16345c2114aaaed368585e0bf2dfc41f339f5
+Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-XFCE.iso.torrent
+Infohash: f9ce65a63db7f32c1165d2ba6f19c8e21485ce34
+Magnet: magnet:?xt=urn:btih:f9ce65a63db7f32c1165d2ba6f19c8e21485ce34&amp;dn=GhostBSD-26.1-R15.0p2-XFCE.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-XFCE.iso" type="application/x-iso9660-image" length="0" />
+      <category>ghostbsd</category>
+    </item>
+    <item>
+      <title>GhostBSD MATE 26.1-R15.0p2 (x86_64)</title>
+      <link>https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2.iso</link>
+      <guid isPermaLink="false">ghostbsd:mate:26.1-R15.0p2</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:23 +0000</pubDate>
+      <description>GhostBSD MATE 26.1-R15.0p2 (x86_64)
+Filename: GhostBSD-26.1-R15.0p2.iso
+sha256: ff6c4df357df412d3b0c87e054204682b7c13e0cb90bcf61dcda58528a4f948e
+Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2.iso.torrent
+Infohash: 023d86d09b8878b496113124b32e4e11fd10c2c6
+Magnet: magnet:?xt=urn:btih:023d86d09b8878b496113124b32e4e11fd10c2c6&amp;dn=GhostBSD-26.1-R15.0p2.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2.iso" type="application/x-iso9660-image" length="0" />
+      <category>ghostbsd</category>
+    </item>
+    <item>
+      <title>GhostBSD Gershwin 26.1-R15.0p2 (x86_64)</title>
+      <link>https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-GERSHWIN.iso</link>
+      <guid isPermaLink="false">ghostbsd:gershwin:26.1-R15.0p2</guid>
+      <pubDate>Mon, 13 Jul 2026 13:17:23 +0000</pubDate>
+      <description>GhostBSD Gershwin 26.1-R15.0p2 (x86_64)
+Filename: GhostBSD-26.1-R15.0p2-GERSHWIN.iso
+sha256: bfbb15cc30e68ed425785a336e0084d623f74aaa35094a5beeb758ed0f48632a
+Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-GERSHWIN.iso.torrent
+Infohash: 70d7077235e02c11bc662b1bdc0bd6f764f18beb
+Magnet: magnet:?xt=urn:btih:70d7077235e02c11bc662b1bdc0bd6f764f18beb&amp;dn=GhostBSD-26.1-R15.0p2-GERSHWIN.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-GERSHWIN.iso" type="application/x-iso9660-image" length="0" />
+      <category>ghostbsd</category>
+    </item>
+    <item>
+      <title>Bazzite NVIDIA Open 44.20260713 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:nvidia-open:44.20260713</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:48 +0000</pubDate>
+      <description>Bazzite NVIDIA Open 44.20260713 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Desktop 44.20260713 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:desktop:44.20260713</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:47 +0000</pubDate>
+      <description>Bazzite Desktop 44.20260713 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Deck 44.20260713 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:deck:44.20260713</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:47 +0000</pubDate>
+      <description>Bazzite Deck 44.20260713 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.4808.569d57850992 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.4808.569d57850992</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:46 +0000</pubDate>
+      <description>NixOS Graphical 26.05.4808.569d57850992 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 4a5229222544fdc0ecd5ae94dc9c9e74dba9db63300f99282ef53878a73e5e84
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.4808.569d57850992 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.4808.569d57850992</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:46 +0000</pubDate>
+      <description>NixOS Graphical 26.05.4808.569d57850992 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: ad9bbf4498aac44c9f935249d9dc5111fe3b86c61013b44e4c80d1a081cc8ef9
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.4808.569d57850992 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.4808.569d57850992</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:45 +0000</pubDate>
+      <description>NixOS Minimal 26.05.4808.569d57850992 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 47bc97ac8b5e28e14683ee74dd2334ed89374413f8c106e56df1085fae193f5b
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.4808.569d57850992 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.4808.569d57850992</guid>
+      <pubDate>Mon, 13 Jul 2026 13:16:45 +0000</pubDate>
+      <description>NixOS Minimal 26.05.4808.569d57850992 (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: db8fafcdc0b0091c47f8c35e7980e811ef8687c8dd4710ba84497018fd316837
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260709 (aarch64)</title>
       <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso</link>
@@ -703,30 +938,6 @@ Magnet: magnet:?xt=urn:btih:a085f80fa75ef2b9c4d2443dbb596e0af2e8c829&amp;dn=prox
 Verify: gpg</description>
       <enclosure url="http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso" type="application/x-iso9660-image" length="0" />
       <category>proxmox</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.4659.8f0500b96605 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.4659.8f0500b96605</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:39 +0000</pubDate>
-      <description>NixOS Graphical 26.05.4659.8f0500b96605 (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: fc3fa87ccbb947062f225ec2eaa0321559c50dd1a16bed22fccd7d8c95c7f75a
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.4659.8f0500b96605 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.4659.8f0500b96605</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:38 +0000</pubDate>
-      <description>NixOS Minimal 26.05.4659.8f0500b96605 (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 102e5bdabb7e7f765e829005b3f75c49240be4944c6a33e99213b9e5564e6ac9
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>AlmaLinux DVD 10.2 (x86_64_v2)</title>
@@ -2185,30 +2396,6 @@ Verify: checksum</description>
       <category>bluestar</category>
     </item>
     <item>
-      <title>NixOS Graphical 26.05.4659.8f0500b96605 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.4659.8f0500b96605</guid>
-      <pubDate>Sat, 11 Jul 2026 15:09:58 +0000</pubDate>
-      <description>NixOS Graphical 26.05.4659.8f0500b96605 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: ca5e83c6dc05e48d571aadc2eb66c4a368694660da31a2d6eb06fec7cbd3b8b8
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.4659.8f0500b96605 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.4659.8f0500b96605</guid>
-      <pubDate>Sat, 11 Jul 2026 15:09:57 +0000</pubDate>
-      <description>NixOS Minimal 26.05.4659.8f0500b96605 (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 3e80e86eef0f1764e8ca24042d7bac5ad8d399ae8f944978be7185e6d39ee881
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
       <title>AnduinOS 1.4.2 (x86_64)</title>
       <link>https://github.com/Anduin2017/AnduinOS/releases/download/1.4.2/AnduinOS-1.4.2-en_US.torrent</link>
       <guid isPermaLink="false">anduinos:en-us:1.4.2</guid>
@@ -2671,42 +2858,6 @@ sha256: 60dc656a64518d3900a051d31cbd7c009c8c425d19f327670d0246487ceaaad2
 Verify: checksum</description>
       <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
       <category>bluefin</category>
-    </item>
-    <item>
-      <title>Bazzite NVIDIA Open 44.20260629 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:44.20260629</guid>
-      <pubDate>Thu, 09 Jul 2026 23:40:28 +0000</pubDate>
-      <description>Bazzite NVIDIA Open 44.20260629 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Desktop 44.20260629 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:44.20260629</guid>
-      <pubDate>Thu, 09 Jul 2026 23:40:27 +0000</pubDate>
-      <description>Bazzite Desktop 44.20260629 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Deck 44.20260629 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:44.20260629</guid>
-      <pubDate>Thu, 09 Jul 2026 23:40:27 +0000</pubDate>
-      <description>Bazzite Deck 44.20260629 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
     </item>
     <item>
       <title>KDE neon Testing 20260706-1142 (x86_64)</title>

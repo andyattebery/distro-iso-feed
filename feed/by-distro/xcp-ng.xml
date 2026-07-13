@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/xcp-ng</id>
+  <title>Distro ISO Feed — xcp-ng</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/xcp-ng.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-13T13:17:28+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/xcp-ng/netinstall/8.3.0-20250606</id>
+    <title>XCP-ng netinstall 8.3.0-20250606 (x86_64)</title>
+    <updated>2026-07-13T13:17:28+00:00</updated>
+    <published>2026-07-13T13:17:28+00:00</published>
+    <link href="https://docs.xcp-ng.org/installation/install-xcp-ng/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-20250606-netinstall.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="xcp-ng" label="distro" />
+    <category term="netinstall" label="variant" />
+    <summary type="text">XCP-ng netinstall 8.3.0-20250606 (x86_64)
+Filename: xcp-ng-8.3.0-20250606-netinstall.iso
+sha256: 9a5dcc8d98949ee207d28307b8b94320d1ffd24841e34ca74e1c0f0422e5ecab
+Signature: https://mirrors.xcp-ng.org/isos/8.3/SHA256SUMS.asc
+Signing-key: https://raw.githubusercontent.com/xcp-ng/xcp-ng-release/master/src/common/etc/pki/rpm-gpg/RPM-GPG-KEY-xcpng
+Key-fingerprint: 34AC2EB68248FED6D076838ACD75783A3FD3AC9E
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/xcp-ng/install/8.3.0-20250606.2</id>
+    <title>XCP-ng 8.3.0-20250606.2 (x86_64)</title>
+    <updated>2026-07-13T13:17:26+00:00</updated>
+    <published>2026-07-13T13:17:26+00:00</published>
+    <link href="https://docs.xcp-ng.org/installation/install-xcp-ng/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-20250606.2.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="xcp-ng" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">XCP-ng 8.3.0-20250606.2 (x86_64)
+Filename: xcp-ng-8.3.0-20250606.2.iso
+sha256: 6f0717b0414df1a9184839473b9b7ef46a06f428bd3f1440c56b955ffbb3e649
+Signature: https://mirrors.xcp-ng.org/isos/8.3/SHA256SUMS.asc
+Signing-key: https://raw.githubusercontent.com/xcp-ng/xcp-ng-release/master/src/common/etc/pki/rpm-gpg/RPM-GPG-KEY-xcpng
+Key-fingerprint: 34AC2EB68248FED6D076838ACD75783A3FD3AC9E
+Verify: gpg</summary>
+  </entry>
+</feed>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo</id>
+  <title>Distro ISO Feed — gentoo</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/gentoo.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-13T13:17:32+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260712T234606Z</id>
+    <title>Gentoo Minimal Install CD 20260712T234606Z (aarch64)</title>
+    <updated>2026-07-13T13:17:32+00:00</updated>
+    <published>2026-07-13T13:17:32+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260712T234606Z (aarch64)
+Filename: install-arm64-minimal-20260712T234606Z.iso
+sha256: f60c3d6eb1de8ca737c1c33bf6f6fdf1b02e51898bccc7e0ab6d886fce41641f
+Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/livegui/20260712T170110Z</id>
+    <title>Gentoo LiveGUI 20260712T170110Z (x86_64)</title>
+    <updated>2026-07-13T13:17:32+00:00</updated>
+    <published>2026-07-13T13:17:32+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260712T170110Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="livegui" label="variant" />
+    <summary type="text">Gentoo LiveGUI 20260712T170110Z (x86_64)
+Filename: livegui-amd64-20260712T170110Z.iso
+sha256: 2c713152e2c51bfc793e29898544194aa5cf53ea9fb7f2eb38dd8a27fce6070a
+Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260712T170110Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal/20260712T170110Z</id>
+    <title>Gentoo Minimal Install CD 20260712T170110Z (x86_64)</title>
+    <updated>2026-07-13T13:17:31+00:00</updated>
+    <published>2026-07-13T13:17:31+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260712T170110Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260712T170110Z (x86_64)
+Filename: install-amd64-minimal-20260712T170110Z.iso
+sha256: d5b517272901d6ce6bc02619667b00a009e75fec633ac2dab9235970fc6a72bb
+Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260712T170110Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+</feed>

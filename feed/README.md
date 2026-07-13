@@ -30,9 +30,9 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | aurora | nvidia-open | x86_64 | stable-20260707.1 | checksum | — |
 | aurora | stable | x86_64 | stable-20260707.1 | checksum | — |
 | batocera | x86_64 | x86_64 | 43.1-20260529 | checksum | — |
-| bazzite | deck | x86_64 | 44.20260629 | checksum | — |
-| bazzite | desktop | x86_64 | 44.20260629 | checksum | — |
-| bazzite | nvidia-open | x86_64 | 44.20260629 | checksum | — |
+| bazzite | deck | x86_64 | 44.20260713 | checksum | — |
+| bazzite | desktop | x86_64 | 44.20260713 | checksum | — |
+| bazzite | nvidia-open | x86_64 | 44.20260713 | checksum | — |
 | bluefin | stable | x86_64 | stable-20260708 | checksum | — |
 | bluestar | default | x86_64 | 7.1.3-6-2026.07.11 | checksum | — |
 | cachyos | desktop | x86_64 | 260628 | gpg | — |
@@ -45,6 +45,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | centos | dvd | aarch64 | 20260707.1 | checksum | — |
 | centos | dvd | ppc64le | 20260707.1 | checksum | — |
 | centos | dvd | s390x | 20260707.1 | checksum | — |
+| chimeraos | iso | x86_64 | 2025.02.13 | checksum | — |
 | clonezilla | default | x86_64 | 3.3.2-31 | gpg | — |
 | debian | live-cinnamon | x86_64 | 13.6.0 | gpg | ✓ |
 | debian | live-gnome | x86_64 | 13.6.0 | gpg | ✓ |
@@ -112,6 +113,12 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | garuda | mokka | x86_64 | 260309 | checksum | — |
 | garuda | sway | x86_64 | 260309 | checksum | — |
 | garuda | xfce | x86_64 | 260309 | checksum | — |
+| gentoo | livegui | x86_64 | 20260712T170110Z | gpg | — |
+| gentoo | minimal | x86_64 | 20260712T170110Z | gpg | — |
+| gentoo | minimal | aarch64 | 20260712T234606Z | gpg | — |
+| ghostbsd | gershwin | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
+| ghostbsd | mate | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
+| ghostbsd | xfce | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
 | kali | installer | x86_64 | 2026.2 | gpg | — |
 | kali | installer-everything | x86_64 | 2026.2 | gpg | ✓ |
 | kali | installer-netinst | x86_64 | 2026.2 | gpg | — |
@@ -145,10 +152,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
 | netbsd | install | x86_64 | 10.1 | checksum | ✓ |
 | netbsd | install | aarch64 | 10.1 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.4659.8f0500b96605 | checksum | — |
-| nixos | graphical | aarch64 | 26.05.4659.8f0500b96605 | checksum | — |
-| nixos | minimal | x86_64 | 26.05.4659.8f0500b96605 | checksum | — |
-| nixos | minimal | aarch64 | 26.05.4659.8f0500b96605 | checksum | — |
+| nixos | graphical | x86_64 | 26.05.4808.569d57850992 | checksum | — |
+| nixos | graphical | aarch64 | 26.05.4808.569d57850992 | checksum | — |
+| nixos | minimal | x86_64 | 26.05.4808.569d57850992 | checksum | — |
+| nixos | minimal | aarch64 | 26.05.4808.569d57850992 | checksum | — |
 | nobara | gnome | x86_64 | 43-2026-04-19 | checksum | — |
 | nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | kde | x86_64 | 43-2026-04-19 | checksum | — |
@@ -200,6 +207,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | proxmox | ve | x86_64 | 9.2-1 | gpg | ✓ |
 | q4os | plasma | x86_64 | 6.7 | checksum | — |
 | q4os | tde | x86_64 | 6.7 | checksum | — |
+| qubes | iso | x86_64 | 4.3.1 | gpg | — |
 | rocky | boot | x86_64 | 10.2 | gpg | — |
 | rocky | boot | aarch64 | 10.2 | gpg | — |
 | rocky | boot | ppc64le | 10.2 | gpg | — |
@@ -244,5 +252,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | void | xfce | aarch64 | 20250202 | checksum | — |
 | void | xfce | asahi | 20250202 | checksum | — |
 | void | xfce | i686 | 20250202 | checksum | — |
+| xcp-ng | install | x86_64 | 8.3.0-20250606.2 | gpg | — |
+| xcp-ng | netinstall | x86_64 | 8.3.0-20250606 | gpg | — |
 | xubuntu | desktop-interim | x86_64 | 25.10 | gpg | ✓ |
 | xubuntu | desktop-lts | x86_64 | 26.04 | gpg | ✓ |

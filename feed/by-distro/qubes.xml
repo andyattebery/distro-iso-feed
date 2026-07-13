@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/qubes</id>
+  <title>Distro ISO Feed — qubes</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/qubes.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-13T13:17:30+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/qubes/iso/4.3.1</id>
+    <title>Qubes OS 4.3.1 (x86_64)</title>
+    <updated>2026-07-13T13:17:30+00:00</updated>
+    <published>2026-07-13T13:17:30+00:00</published>
+    <link href="https://www.qubes-os.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="qubes" label="distro" />
+    <category term="iso" label="variant" />
+    <summary type="text">Qubes OS 4.3.1 (x86_64)
+Filename: Qubes-R4.3.1-x86_64.iso
+sha512: 453699a42b85a9dcf33434b9da419e43001ce30b6014befc26f4fbb1cbf70fd30bc9b479b4499d64de29daae9edaf73b4b78b92e32379e11287d017293b95893
+Signature: https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso.DIGESTS.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Key-fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Verify: gpg</summary>
+  </entry>
+</feed>

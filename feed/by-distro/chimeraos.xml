@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://github.com/andyattebery/distro-iso-feed/id/chimeraos</id>
+  <title>Distro ISO Feed — chimeraos</title>
+  <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/chimeraos.xml" rel="self" type="application/atom+xml" />
+  <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
+  <updated>2026-07-13T13:17:33+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/chimeraos/iso/2025.02.13</id>
+    <title>ChimeraOS 2025.02.13 (x86_64)</title>
+    <updated>2026-07-13T13:17:33+00:00</updated>
+    <published>2026-07-13T13:17:33+00:00</published>
+    <link href="https://chimeraos.org/" rel="alternate" type="text/html" />
+    <link href="https://github.com/ChimeraOS/install-media/releases/download/2025-02-13_7e927cf/chimeraos-2025.02.13-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="915693568" />
+    <category term="chimeraos" label="distro" />
+    <category term="iso" label="variant" />
+    <summary type="text">ChimeraOS 2025.02.13 (x86_64)
+Filename: chimeraos-2025.02.13-x86_64.iso
+Size: 915693568
+sha256: e9914e59f6cd817548742d5934c85fc85f53822261e3d478d2c690e10ce2689a
+Verify: checksum</summary>
+  </entry>
+</feed>
