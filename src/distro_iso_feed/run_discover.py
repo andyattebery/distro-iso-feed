@@ -105,13 +105,13 @@ def main(argv: list[str] | None = None) -> int:
                 log.warning("family discovery raised %s: %s", type(exc).__name__, exc)
 
     for p in proposals:
-        log.info("propose %s -> %s (from %s)", p.key, p.release.filename, p.sibling)
+        log.info("propose %s -> %s (from %s)", p.pr_id, p.release.filename, p.sibling)
     for a in arch_proposals:
-        log.info("propose arch %s:%s -> %s", a.key, a.arch, a.release.filename)
+        log.info("propose arch %s:%s -> %s", a.pr_id, a.arch, a.release.filename)
     for f in family_proposals:
         log.info("propose flavor %s (family %s) -> %s", f.distro, f.family, f.release.filename)
     for r in rejected:
-        log.warning("cannot synthesize %s: %s", r.key, r.reason)
+        log.warning("cannot synthesize %s: %s", r.pr_id, r.reason)
 
     if args.pr_body:
         body = pr_body(proposals, arch_proposals, family_proposals, rejected)

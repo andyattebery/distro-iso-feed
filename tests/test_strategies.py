@@ -7,8 +7,13 @@ one. Read the bytes the strategy would read.
 
 from __future__ import annotations
 
+import pytest
+
 from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
-from distro_iso_feed.strategies import REGISTRY
+from distro_iso_feed.config import ConfigError, _validate_token
+from distro_iso_feed.strategies import REGISTRY, Strategy
+from distro_iso_feed.strategies.stable_symlink import StableSymlink
+from distro_iso_feed.tokens import TOKEN_SOURCES
 
 SHA256 = "1620295f6a00c27c3208f0c00b8ece4eab1ec69b9002152d97488bf26a426ddf"
 MD5 = "0c365dc3c17b05a4b276c579168b01da"
@@ -518,3 +523,89 @@ def test_resolver_returns_none_when_upstream_is_empty():
         "x", "y", {"index": "https://gone.example/", "match": r"\.iso$"}, client
     )
     assert rel is None
+
+
+# ------------------------------------------------ candidates(): the discovery entry point
+#
+# `resolve()` for sourceforge/github/page_index calls its lister directly, so `candidates()`
+# -- what `enumerate_all` uses for discovery and audit -- was never exercised. A strategy
+# whose `candidates()` is silently broken proposes nothing and reads as "nothing to find",
+# so it is covered explicitly here.
+
+
+def test_candidates_is_abstract_so_a_new_strategy_cannot_forget_it():
+    """Enumeration is mandatory: a strategy that cannot list upstream would make its distros
+    silently undiscoverable. `candidates` is abstract, so omitting it fails at instantiation
+    rather than at the next weekly discovery run."""
+
+    class Incomplete(Strategy):
+        name = "incomplete"
+
+        def resolve(self, distro, variant, params, client):
+            return None
+
+    with pytest.raises(TypeError):
+        Incomplete()
+
+
+def test_sourceforge_candidates_lists_the_feed_by_full_path():
+    feed = "https://sourceforge.net/projects/mx-linux/rss?path=/Final"
+    path = "/Final/Xfce/MX-25.2_Xfce_x64.iso"
+    client = FakeClient({feed: sf_rss([path])})
+    cands = REGISTRY["sourceforge"]().candidates("mx", {"project": "mx-linux", "path": "/Final"}, client)
+    assert path in [c.name for c in cands]  # SourceForge names candidates by full path
+
+
+def test_page_index_candidates_lists_the_page():
+    page = "https://nobaraproject.org/download-nobara/"
+    iso = "https://images.example/Nobara-43-GNOME-2026-04-19.iso"
+    client = FakeClient({page: f'<a data-url="{iso}">x</a>'})
+    cands = REGISTRY["page_index"]().candidates("nobara", {"url": page, "attr": "data-url"}, client)
+    assert [c.name for c in cands] == ["Nobara-43-GNOME-2026-04-19.iso"]
+
+
+def test_github_releases_candidates_lists_current_release_assets():
+    releases = (
+        '[{"tag_name": "v1.0", "assets": '
+        '[{"name": "minios-1.0.iso", "browser_download_url": "https://x/minios-1.0.iso", "size": 5}]}]'
+    )
+    client = FakeClient({"https://api.github.com/repos/o/r/releases": releases})
+    cands = REGISTRY["github_releases"]().candidates("minios", {"repo": "o/r"}, client)
+    assert [c.name for c in cands] == ["minios-1.0.iso"]
+
+
+# ------------------------------------------------ stable_symlink token-source registry (E1)
+#
+# `token.from` selects where the change-token is read. It is a registry, not an if/elif with a
+# silent default: an unknown `from` is a load error, and the handlers are pinned to the declared
+# source set so adding one to only one place fails CI.
+
+
+def test_token_handlers_cover_exactly_the_declared_sources():
+    """The drift guard: `stable_symlink`'s handler keys == `tokens.TOKEN_SOURCES`. Add a source
+    to one without the other and this fails, so `config.py`'s validation can never accept a
+    `from` that has no handler."""
+    assert set(StableSymlink._TOKEN_HANDLERS) == TOKEN_SOURCES
+
+
+def test_unknown_token_from_is_a_load_error_not_a_silent_sidecar_fallthrough():
+    _validate_token("d", "v", {"token": {"from": "atom_tag", "repo": "o/r"}})  # known: ok
+    _validate_token("d", "v", {"token": {"pattern": "x"}})  # no `from` -> defaults to sidecar: ok
+    _validate_token("d", "v", {})  # no token block: ok
+    with pytest.raises(ConfigError):
+        _validate_token("d", "v", {"token": {"from": "atomtag", "pattern": "x"}})  # typo
+
+
+def test_stable_symlink_dispatches_atom_tag_through_the_registry():
+    """Behaviour-preserving: the ublue shape (fixed URL, version from the atom tag) still resolves
+    through the registry dispatch, and prereleases are still rejected on the tag."""
+    url = "https://dl.example/bazzite-stable-amd64.iso"
+    feed = atom_feed(["stable-20260708: Stable (F44)", "testing-20260709: Testing"])
+    client = FakeClient({"https://github.com/ublue-os/bazzite/releases.atom": feed})
+    rel = REGISTRY["stable_symlink"]().resolve(
+        "bazzite",
+        "stable",
+        {"url": url, "token": {"from": "atom_tag", "repo": "ublue-os/bazzite"}},
+        client,
+    )
+    assert rel.version == "stable-20260708"  # newest non-prerelease tag; testing rejected

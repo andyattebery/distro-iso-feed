@@ -13,8 +13,15 @@ from pathlib import Path
 import pytest
 
 from distro_iso_feed.audit import Reason, pins, report
-from distro_iso_feed.config import ConfigError, _validate_discover, load
+from distro_iso_feed.config import (
+    ConfigError,
+    _validate_discover,
+    _validate_discovery_surface,
+    _validate_signing_key,
+    load,
+)
 from distro_iso_feed.models import Source, Variant
+from distro_iso_feed.signing import COVERS
 from distro_iso_feed.strategies import REGISTRY
 
 CONFIG = Path(__file__).resolve().parents[1] / "config" / "sources.yaml"
@@ -113,6 +120,53 @@ def test_every_real_distro_answers_the_enumeration_question():
             assert len(source.discover["reason"]) > 20, source.name
         else:
             assert source.discover["group"], source.name
+
+
+# ------------------------------------------------------- fixed-URL discovery surface (E3)
+#
+# A pure stable_symlink distro lists one fixed URL, so a `group` with no `index`/`extra_index`
+# would discover nothing forever -- a silent no-op that reads as "nothing to find". The shipped
+# config is guarded by `load(CONFIG)` above; here the rule and its exemptions are pinned directly.
+
+_FIXED = {"strategy": "stable_symlink", "variants": {"v": {"params": {"url": "https://x/a.iso"}}}}
+
+
+def test_fixed_url_distro_with_a_group_needs_an_enumeration_surface():
+    with pytest.raises(ConfigError, match="cannot enumerate new members"):
+        _validate_discovery_surface("d", {**_FIXED, "discover": {"group": "(x)"}})
+
+
+def test_fixed_url_distro_is_satisfied_by_index_extra_index_or_opt_out():
+    for discover in (
+        {"group": "(x)", "index": "https://x/"},
+        {"group": "(x)", "extra_index": "https://x/"},
+        {"enumerable": False, "reason": "r"},
+    ):
+        _validate_discovery_surface("d", {**_FIXED, "discover": discover})  # no raise
+
+
+def test_mixed_strategy_distro_is_exempt_a_listing_variant_enumerates():
+    """openSUSE: a directory_index Leap variant reads a listing, so the block has a real surface
+    even though its Tumbleweed variants are fixed-URL."""
+    block = {
+        "strategy": "directory_index",
+        "discover": {"group": "(x)"},
+        "variants": {"leap": {}, "tw": {"strategy": "stable_symlink"}},
+    }
+    _validate_discovery_surface("d", block)  # no raise
+
+
+# ------------------------------------------------------ signing `covers` set of truth (E2)
+
+
+def test_covers_validation_is_driven_by_the_dispatch_set():
+    """config validates `signing_key.covers` against `signing.COVERS` -- the very set the GPG
+    dispatch reads -- so the validator and the policy can never name different modes across the two
+    files. Every dispatched mode validates; anything outside the set is a load error."""
+    for mode in COVERS:
+        _validate_signing_key("d", {"url": "u", "fingerprint": "a" * 40, "covers": mode})
+    with pytest.raises(ConfigError, match="covers"):
+        _validate_signing_key("d", {"url": "u", "fingerprint": "a" * 40, "covers": "detached"})
 
 
 # -------------------------------------------------------------------------- report

@@ -18,6 +18,8 @@ from ruamel.yaml import YAML
 
 from .arch import DEFAULT_ARCH
 from .models import Source, Variant
+from .signing import COVERS
+from .tokens import TOKEN_SOURCES
 
 DEFAULT_UA = "distro-iso-feed/1.0 (+https://github.com/andyattebery/distro-iso-feed)"
 
@@ -105,6 +107,31 @@ def _validate_discover(distro: str, discover: Any) -> None:
             raise ConfigError(f"{distro}: discover.ignore {pattern!r}: {exc}") from exc
 
 
+def _validate_discovery_surface(distro: str, block: dict) -> None:
+    """A pure fixed-URL (`stable_symlink`) distro cannot enumerate new members from its own
+    variants: `candidates` returns one fixed URL, not a listing (and `token.repo`/atom lists a
+    repo's *versions*, not sibling editions). So if it declares a `group` -- i.e. wants variant
+    discovery -- it must also point discovery at a directory via `discover.index` or `extra_index`,
+    or discovery silently finds nothing forever, indistinguishable from "nothing to find".
+
+    Exempt: `enumerable: false` (opted out), and mixed-strategy distros (openSUSE -- its
+    `directory_index` Leap variants enumerate a listing, so the block already has a real surface).
+    """
+    discover = block.get("discover") or {}
+    if discover.get("enumerable") is False or not discover.get("group"):
+        return
+    variants = block.get("variants") or {}
+    strategies = {(v or {}).get("strategy") or block.get("strategy") for v in variants.values()}
+    if strategies == {"stable_symlink"} and not (
+        discover.get("index") or discover.get("extra_index")
+    ):
+        raise ConfigError(
+            f"{distro}: a fixed-URL (stable_symlink) distro with a `group` cannot enumerate new "
+            f"members from its variants; give `discover.index` or `discover.extra_index` a listing "
+            f"URL, or set `enumerable: false` with a reason."
+        )
+
+
 def yaml_rt() -> YAML:
     y = YAML()
     y.preserve_quotes = True
@@ -143,9 +170,9 @@ def _validate_signing_key(distro: str, sk: Any) -> None:
         raise ConfigError(f"{distro}: signing_key needs a `url`")
     if not _FPR_RE.match(str(sk.get("fingerprint") or "")):
         raise ConfigError(f"{distro}: signing_key `fingerprint` must be 40 hex chars")
-    if sk.get("covers") not in ("checksums", "image", "clearsigned"):
+    if sk.get("covers") not in COVERS:
         raise ConfigError(
-            f"{distro}: signing_key `covers` must be `checksums`, `image`, or `clearsigned`"
+            f"{distro}: signing_key `covers` must be one of {', '.join(sorted(COVERS))}"
         )
 
 
@@ -163,6 +190,24 @@ def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
         raise ConfigError(
             f"{distro}:{variant}: `torrent_only` needs a `match` ending in "
             rf"`\.torrent$`; got {match!r}"
+        )
+
+
+def _validate_token(distro: str, variant: str, params: dict) -> None:
+    """A `token:` block names where a `stable_symlink` variant reads its change-token.
+
+    A typo'd `from` used to fall through silently to the sidecar branch and resolve the wrong
+    token (or none). Validating it against `tokens.TOKEN_SOURCES` at load makes an unknown source
+    a loud error instead. Absent `from` defaults to `sidecar_filename`, which is valid.
+    """
+    token = params.get("token")
+    if not isinstance(token, dict):
+        return
+    source = token.get("from", "sidecar_filename")
+    if source not in TOKEN_SOURCES:
+        raise ConfigError(
+            f"{distro}:{variant}: unknown token `from: {source}`; "
+            f"known: {', '.join(sorted(TOKEN_SOURCES))}"
         )
 
 
@@ -271,6 +316,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             raise ConfigError(f"{distro}: block must be a mapping")
 
         _validate_discover(distro, block.get("discover"))
+        _validate_discovery_surface(distro, block)
         _validate_signing_key(distro, (block.get("params") or {}).get("signing_key"))
 
         distro_strategy = block.get("strategy")
@@ -301,6 +347,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             arches = vraw.pop("arches", None)
             params = _merge(default_params, distro_params, vraw.pop("params", None), vraw)
             _validate_torrent_only(distro, name, params)
+            _validate_token(distro, name, params)
 
             if arches is not None:
                 # One Variant per architecture. The map is {canonical: upstream-token}: the

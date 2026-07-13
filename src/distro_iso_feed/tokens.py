@@ -12,6 +12,13 @@ import re
 
 from . import checksums
 
+# The valid `token.from` values -- where a `stable_symlink` variant reads its change-token.
+# This is the one contract two places share: `config.py` validates `token.from` against it (an
+# unknown source is a load error, never a silent fall-through to the sidecar branch), and
+# `strategies/stable_symlink.py` dispatches on it. To add a source: add its name here, its pure
+# extractor below, and a handler in `StableSymlink._TOKEN_HANDLERS` (a test pins the two to agree).
+TOKEN_SOURCES = frozenset({"sidecar_filename", "atom_tag"})
+
 
 def from_filename(filename: str, pattern: str) -> str | None:
     """e.g. ``Fedora-Workstation-Live-44-1.7.x86_64.iso`` -> ``44-1.7``.

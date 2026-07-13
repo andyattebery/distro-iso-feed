@@ -21,6 +21,13 @@ VERIFIED = "verified"  # signature chains to the pinned key -> publish the pin
 BAD = "bad"  # a signature that fails its own key -> drop the gpg claim
 DEFERRED = "deferred"  # transient/gpg-absent -> keep as resolved, add no pin
 
+# The `covers` modes `verify_signing_key` dispatches on (see its if/elif). This is the single
+# source of truth: `config.py` imports it to validate `signing_key.covers`, so the validator and
+# the dispatch can no longer name different sets in two files coupled by a bare string. Adding a
+# mode is now a single-file edit here -- add the name AND its dispatch branch below together (a
+# name here with no branch would silently degrade to DEFERRED; a test pins config to this set).
+COVERS = frozenset({"checksums", "clearsigned", "image"})
+
 
 def _norm_fpr(value: str) -> str:
     return "".join(value.split()).upper()

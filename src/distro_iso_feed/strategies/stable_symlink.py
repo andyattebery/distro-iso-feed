@@ -54,23 +54,40 @@ class StableSymlink(Strategy):
             return False
         return url.endswith(f"/{name}") or f"/{name}/" in url
 
-    def _version(self, params: dict, client: Client, sidecar_text: str | None) -> str | None:
-        token = params.get("token") or {}
-        source = token.get("from", "sidecar_filename")
+    def _token_from_atom_tag(
+        self, token: dict, client: Client, sidecar_text: str | None
+    ) -> str | None:
+        # Strip the title's trailing prose BEFORE the prerelease check: the entry
+        # reads `stable-20260708: Stable (F44...)`, and elementary's `8.1.0-rc3: RC`
+        # must be rejected on the tag, never on GitHub's `prerelease` flag.
+        tags = [e.name.split(":", 1)[0].strip() for e in atom(client, token["repo"])]
+        tags = [t for t in tags if t and not is_prerelease(t)]
+        if not tags:
+            return None  # a 200 with zero entries is not a release (Nobara)
+        return from_atom_tag(tags[0], token.get("pattern"))
 
-        if source == "atom_tag":
-            # Strip the title's trailing prose BEFORE the prerelease check: the entry
-            # reads `stable-20260708: Stable (F44...)`, and elementary's `8.1.0-rc3: RC`
-            # must be rejected on the tag, never on GitHub's `prerelease` flag.
-            tags = [e.name.split(":", 1)[0].strip() for e in atom(client, token["repo"])]
-            tags = [t for t in tags if t and not is_prerelease(t)]
-            if not tags:
-                return None  # a 200 with zero entries is not a release (Nobara)
-            return from_atom_tag(tags[0], token.get("pattern"))
-
+    def _token_from_sidecar_filename(
+        self, token: dict, client: Client, sidecar_text: str | None
+    ) -> str | None:
         if sidecar_text:
             return from_sidecar_filename(sidecar_text, token["pattern"])
         return None
+
+    # `token.from` -> handler. Keys are `tokens.TOKEN_SOURCES` (a test pins them equal), and
+    # config validates `from` against that set, so an unknown source is a load error, never a
+    # silent fall-through. Add a source: a name in TOKEN_SOURCES + a handler here.
+    _TOKEN_HANDLERS = {
+        "atom_tag": _token_from_atom_tag,
+        "sidecar_filename": _token_from_sidecar_filename,
+    }
+
+    def _version(self, params: dict, client: Client, sidecar_text: str | None) -> str | None:
+        token = params.get("token") or {}
+        source = token.get("from", "sidecar_filename")
+        handler = self._TOKEN_HANDLERS.get(source)
+        if handler is None:
+            return None  # validated at load; defensive against a hand-built params dict
+        return handler(self, token, client, sidecar_text)
 
     def resolve(self, distro: str, variant: str, params: dict, client: Client) -> Release | None:
         url = params["url"]

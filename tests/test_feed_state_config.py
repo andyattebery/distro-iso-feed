@@ -16,7 +16,7 @@ import pytest
 from conftest import NOT_ENUMERABLE
 from distro_iso_feed import docs, feed
 from distro_iso_feed.config import ConfigError, load
-from distro_iso_feed.models import Release, Variant, arch_tag
+from distro_iso_feed.models import Release, Source, Variant, arch_tag
 from distro_iso_feed.state import State
 from distro_iso_feed.strategies import REGISTRY
 
@@ -314,6 +314,28 @@ def test_arch_is_implicit_in_keys_for_x86_64_only():
         Variant("debian", "netinst", "directory_index", {}, arch="aarch64").key
         == "debian:netinst:aarch64"
     )
+
+
+def test_arch_tag_canary_holds_across_every_output_surface(tmp_path):
+    """The arch_tag invariant, guarded on ALL rendered surfaces at once -- not just the id
+    properties above. A future key-builder that forgets `models.arch_tag` blanks multi-arch rows
+    silently; this fails if any of latest.json's key, the atom id, or the catalog join (docs.py
+    joins Variant.key to state_key) stops carrying `:aarch64`."""
+    a = make_release(distro="debian", variant="netinst", version="13.6.0", arch="aarch64")
+    s = state_with(a)
+
+    feed.render(s, tmp_path)
+    payload = json.loads((tmp_path / "latest.json").read_text())
+    assert "debian:netinst:aarch64" in payload["releases"]  # latest.json key carries the tag
+    assert payload["releases"]["debian:netinst:aarch64"]["arch"] == "aarch64"
+    assert "/id/debian/netinst:aarch64/13.6.0" in (tmp_path / "feed.xml").read_text()
+
+    # docs.render joins Variant.key -> state.records[state_key]; if the two used different arch
+    # rules the row would show `—` (no match) instead of the version.
+    variant = Variant("debian", "netinst", "directory_index", {}, arch="aarch64")
+    out = tmp_path / "catalog.md"
+    docs.render([Source("debian", (variant,))], s, out)
+    assert "| debian | netinst | aarch64 | directory_index | checksum | — | 13.6.0 |" in out.read_text()
 
 
 def test_arches_expands_to_one_variant_per_arch_with_token_substituted(tmp_path):

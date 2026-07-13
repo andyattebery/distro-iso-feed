@@ -29,7 +29,11 @@ class Proposal:
     sibling: str
 
     @property
-    def key(self) -> str:
+    def pr_id(self) -> str:
+        # A label for the proposal in logs and the PR table -- NOT a feed key. It looks like a
+        # `distro:variant` state_key but deliberately skips `models.arch_tag`: a feed key must route
+        # through arch_tag (x86_64 implicit, `:{arch}` otherwise), a proposal id need not. Named
+        # `pr_id`, not `key`, so this string is never copied into a feed/state context by mistake.
         return f"{self.distro}:{self.variant}"
 
 
@@ -44,7 +48,7 @@ class ArchProposal:
     release: Release
 
     @property
-    def key(self) -> str:
+    def pr_id(self) -> str:
         return f"{self.distro}:{self.variant}"
 
 
@@ -58,7 +62,7 @@ class FamilyProposal:
     release: Release  # the model variant, resolved for the member, that proved it real
 
     @property
-    def key(self) -> str:
+    def pr_id(self) -> str:
         return self.distro
 
 
@@ -70,7 +74,7 @@ class Rejected:
     reason: str
 
     @property
-    def key(self) -> str:
+    def pr_id(self) -> str:
         return f"{self.distro}:{self.variant}"
 
 
@@ -150,13 +154,13 @@ def pr_body(
             "| Variant | Copied from | Artifact | Version | Verify | Source |",
             "|---|---|---|---|---|---|",
         ]
-        for p in sorted(proposals, key=lambda p: p.key):
+        for p in sorted(proposals, key=lambda p: p.pr_id):
             algo = f" ({p.release.checksum_algo})" if p.release.checksum_algo else ""
             # A torrent-only variant has no HTTP artifact. Say which one it is, or a reviewer
             # cannot tell why the node carries `torrent_only: true`.
             source = f"[torrent]({p.release.torrent_url})" if not p.release.download_url else "http"
             lines.append(
-                f"| `{p.key}` | `{p.sibling}` | `{p.release.filename}` | "
+                f"| `{p.pr_id}` | `{p.sibling}` | `{p.release.filename}` | "
                 f"`{p.release.version}` | {p.release.verify}{algo} | {source} |"
             )
         lines.append("")
@@ -173,10 +177,10 @@ def pr_body(
             "| Variant | Arch | Token | Artifact | Version | Verify |",
             "|---|---|---|---|---|---|",
         ]
-        for a in sorted(arch_proposals, key=lambda a: (a.key, a.arch)):
+        for a in sorted(arch_proposals, key=lambda a: (a.pr_id, a.arch)):
             algo = f" ({a.release.checksum_algo})" if a.release.checksum_algo else ""
             lines.append(
-                f"| `{a.key}` | `{a.arch}` | `{a.token}` | `{a.release.filename}` | "
+                f"| `{a.pr_id}` | `{a.arch}` | `{a.token}` | `{a.release.filename}` | "
                 f"`{a.release.version}` | {a.release.verify}{algo} |"
             )
         lines.append("")
@@ -192,7 +196,7 @@ def pr_body(
             "| Distro | Family | Artifact | Version | Verify |",
             "|---|---|---|---|---|",
         ]
-        for f in sorted(family_proposals, key=lambda f: f.key):
+        for f in sorted(family_proposals, key=lambda f: f.pr_id):
             algo = f" ({f.release.checksum_algo})" if f.release.checksum_algo else ""
             lines.append(
                 f"| `{f.distro}` | `{f.family}` | `{f.release.filename}` | "
@@ -210,8 +214,8 @@ def pr_body(
             "| Variant | Artifact | Why |",
             "|---|---|---|",
         ]
-        for r in sorted(rejected, key=lambda r: r.key):
-            lines.append(f"| `{r.key}` | `{r.sample or '-'}` | {r.reason} |")
+        for r in sorted(rejected, key=lambda r: r.pr_id):
+            lines.append(f"| `{r.pr_id}` | `{r.sample or '-'}` | {r.reason} |")
         lines.append("")
 
     return "\n".join(lines)

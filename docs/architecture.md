@@ -49,7 +49,11 @@ Two consequences that are not cosmetic:
 `discover_all` is implemented once, in `strategies/base.py`. A lister already
 returns every candidate, so grouping its output gives variant discovery for free
 wherever enumeration is possible — the hardest thing to design up front falls out
-of the seam.
+of the seam. That "for free" rests on one mandatory primitive: `Strategy.candidates`
+is **abstract**, so a new strategy cannot ship without enumeration — a strategy that
+listed nothing would make its distros silently undiscoverable, and "nothing proposed"
+reads as "nothing to find", not as a bug. (`arch_tokens` keeps a `[]` default instead:
+single-arch is a safe opt-out, listing nothing is not.)
 
 ## Invariants worth not breaking
 
@@ -153,7 +157,11 @@ listing carries forty links of KDE site navigation beside its six image director
 `discover.extra_index` unions in a *second* static listing where a distro has two
 enumeration surfaces at once: openSUSE reads Leap editions from its version-dir
 variant listings and Tumbleweed/MicroOS editions from `/tumbleweed/iso/`, which the
-fixed-URL variants never list.
+fixed-URL variants never list. This need is **load-enforced**: a distro whose variants
+are *all* `stable_symlink` (each lists one fixed URL, not a directory) and that declares
+a `group` must carry `discover.index` or `extra_index`, or `load()` rejects it. Without a
+listing surface it could only ever rediscover its configured members — silently finding
+nothing new forever, indistinguishable from a distro that genuinely has nothing new.
 
 **Discovery proposes new distros too — but only within a declared family.** The
 default is still "propose new variants, never new distros," because re-adding a distro
@@ -310,6 +318,11 @@ unverifiable entry. Do not delete it as dead code.
 5. `uv run distro-iso-feed-audit --only <distro>` — it must report nothing. A
    finding here means the `group` regex produces a key you did not configure.
 6. Add a fixture-backed test if the source has an unusual shape.
+
+`load()` is deliberately loud, and rejects at parse time — not silently on discovery
+day — a missing `discover:` block, a `covers:` outside `{checksums, image, clearsigned}`,
+an unknown `token: {from:}` (a typo used to fall through to the sidecar reader and resolve
+the wrong token), and the fixed-URL enumeration case above.
 
 A genuinely new upstream *shape* needs a new **lister**, not a new strategy. A new
 strategy is only warranted when the URL-building rule itself is new.

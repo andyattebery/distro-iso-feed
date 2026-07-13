@@ -62,9 +62,18 @@ class Strategy(ABC):
     def resolve(self, distro: str, variant: str, params: dict, client: Client) -> Release | None:
         """The single latest Release for this variant, with a final download URL."""
 
+    @abstractmethod
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:
-        """Everything the upstream currently publishes. Default: nothing."""
-        return []
+        """Everything the upstream currently publishes.
+
+        Mandatory, unlike `arch_tokens` below. A strategy that cannot list what upstream
+        offers can be neither discovered nor audited: `enumerate_all` is built on this, so a
+        strategy that returned nothing would make every distro on it silently propose nothing
+        and read as "nothing to find". The old default `return []` was dead (every strategy
+        overrode it) and was exactly the trap a new strategy would fall into. `arch_tokens`
+        keeps its `[]` default because opting out means "single-arch", which is safe; opting
+        out of `candidates` means "no discovery at all", which is not.
+        """
 
     def claims(self, candidate: Candidate, params: dict) -> bool:
         """Does this variant cover this artifact?
