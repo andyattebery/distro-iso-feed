@@ -176,10 +176,13 @@ def verify_clearsigned(key_bytes: bytes, signed_bytes: bytes, *, pinned_fpr: str
     -- never the raw input. That closes an append-after-`END PGP SIGNATURE` injection: text a
     caller would otherwise `in`-match sits outside the signed region and never reaches `--output`.
 
-    One constraint, fail-closed: gpg withholds `--output` unless it can verify *every* signature
-    in the document, so a (hypothetical) dual-signed clearsigned with an unknown co-signer returns
-    None even though the pin's own signature is good. No clearsigned source dual-signs today; if
-    one ever does, this drops the gpg claim to `checksum` rather than ever accepting bad text.
+    The append guarantee is version-independent (the payload is always gpg's extracted region).
+    Its `--output` policy for a *partially* verifiable doc is NOT: for a (hypothetical) dual-signed
+    clearsigned with an unknown co-signer, some gpg builds withhold the payload (-> None, caller
+    drops the gpg claim to `checksum`) while others extract the pin-signed body (-> the real,
+    pin-signed checksum verifies). Both are safe -- neither accepts text the pin did not sign. No
+    clearsigned source dual-signs today (AlmaLinux/Parrot/Gentoo are single-signed); the test pins
+    the safety invariant, not one gpg version's `--output` behaviour.
     """
     with tempfile.TemporaryDirectory() as home:
         Path(home).chmod(0o700)
