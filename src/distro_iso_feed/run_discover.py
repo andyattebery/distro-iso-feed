@@ -63,7 +63,9 @@ def main(argv: list[str] | None = None) -> int:
             # arches of an already-known variant -- so it runs regardless, gated only on the
             # variant carrying an `arches` map.
             try:
-                arch_proposals.extend(propose_arches(source, doc, client))
+                new_arches, bad_arches = propose_arches(source, doc, client)
+                arch_proposals.extend(new_arches)
+                rejected.extend(bad_arches)
             except Exception as exc:
                 log.warning(
                     "%s: arch discovery raised %s: %s", source.name, type(exc).__name__, exc
@@ -96,7 +98,9 @@ def main(argv: list[str] | None = None) -> int:
         # what already exists, and it is a whole-catalog scan, so it is skipped under `--only`.
         if not args.only:
             try:
-                family_proposals.extend(propose_families(all_sources, doc, client))
+                new_fam, bad_fam = propose_families(all_sources, doc, client)
+                family_proposals.extend(new_fam)
+                rejected.extend(bad_fam)
             except Exception as exc:
                 log.warning("family discovery raised %s: %s", type(exc).__name__, exc)
 
@@ -110,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
         log.warning("cannot synthesize %s: %s", r.key, r.reason)
 
     if args.pr_body:
-        body = pr_body(proposals, arch_proposals, rejected, family_proposals)
+        body = pr_body(proposals, arch_proposals, family_proposals, rejected)
         Path(args.pr_body).write_text(body, encoding="utf-8")
 
     if not proposals and not arch_proposals and not family_proposals:

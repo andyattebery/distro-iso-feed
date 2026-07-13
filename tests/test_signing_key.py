@@ -19,7 +19,7 @@ from conftest import FakeClient
 from distro_iso_feed import gpgverify
 from distro_iso_feed.config import ConfigError, _validate_signing_key
 from distro_iso_feed.models import Release
-from distro_iso_feed.strategies._common import BAD, DEFERRED, VERIFIED, verify_signing_key
+from distro_iso_feed.signing import BAD, DEFERRED, VERIFIED, verify_signing_key
 
 pytestmark = pytest.mark.skipif(not gpgverify.gpg_available(), reason="needs gpg + gpgv")
 

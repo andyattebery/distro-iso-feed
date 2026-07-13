@@ -80,9 +80,11 @@ class Strategy(ABC):
 
     def arch_tokens(self, params: dict, client: Client) -> list[str]:
         """Upstream arch tokens this variant could resolve -- the enumeration step of arch
-        discovery. Default: none. `directory_index` reads a `{token}` path segment; the JSON
-        row field (`json_api`) and filename capture (`sourceforge`) implement their own later.
-        Operates on the RAW params (`{token}` unexpanded), since discovery precedes expansion.
+        discovery. Default: none, and most strategies keep it (they are single-arch). The three
+        that override are `directory_index` (a `{token}` path segment or filename capture),
+        `json_api` (the JSON `arch` row field), and `stable_symlink` (a fixed candidate set that
+        resolve-verify prunes). Operates on the RAW params (`{token}` unexpanded), since discovery
+        precedes config expansion.
         """
         return []
 
@@ -200,7 +202,3 @@ class Strategy(ABC):
         ]
 
 
-def title_for(distro: str, variant: str, version: str, arch: str, label: str | None) -> str:
-    """Human text comes from `label`; the variant key is a permanent identifier."""
-    name = label or f"{distro.replace('-', ' ').title()} {variant.replace('-', ' ').title()}"
-    return f"{name} {version} ({arch})"

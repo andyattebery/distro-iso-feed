@@ -134,13 +134,35 @@ def test_propose_arches_proposes_the_new_arch_skips_known_and_drops_non_arch(tmp
     p = tmp_path / "s.yaml"
     p.write_text(_DEBIAN)
     _, sources = load(p, set(REGISTRY))
-    props = propose_arches(sources[0], load_raw(p), _client())
-    # amd64 is already in the map (skipped); `source/` doesn't resolve (dropped); only arm64 lands,
-    # canonicalised to aarch64 and resolved live.
+    props, rejected = propose_arches(sources[0], load_raw(p), _client())
+    # amd64 is already in the map (skipped); `source/` doesn't resolve (dropped silently, not a
+    # Rejected); only arm64 lands, canonicalised to aarch64 and resolved live.
+    assert rejected == []
     assert [(a.variant, a.arch, a.token, a.release.filename) for a in props] == [
         ("netinst", "aarch64", "arm64", "debian-13.6.0-arm64-netinst.iso")
     ]
     assert props[0].release.checksum == SHA512  # verified against arm64's own SHA512SUMS
+
+
+def test_propose_arches_reports_resolved_but_unverifiable_and_stays_silent_on_non_arch(tmp_path):
+    """The honest `Rejected` line: an arm64 dir that resolves an ISO but serves no SHA512SUMS is a
+    real 'found it, cannot verify it' gap and is reported; the unmapped `source/` dir resolves to
+    nothing (a non-arch directory) and is dropped silently -- reporting it would be noise."""
+    p = tmp_path / "s.yaml"
+    p.write_text(_DEBIAN)
+    _, sources = load(p, set(REGISTRY))
+    parent = "https://cd.example/current/"
+    arm = parent + "arm64/iso-cd/"
+    client = FakeClient(
+        {
+            parent: autoindex_html(["amd64/", "arm64/", "source/"]),
+            arm: autoindex_html(["debian-13.6.0-arm64-netinst.iso"]),  # no SHA512SUMS served
+        }
+    )
+    props, rejected = propose_arches(sources[0], load_raw(p), client)
+    assert props == []  # arm64 resolved but had no integrity; source/ resolved to nothing
+    assert [(r.distro, r.variant) for r in rejected] == [("debian", "netinst:aarch64")]
+    assert "checksum" in rejected[0].reason or "integrity" in rejected[0].reason
 
 
 def test_arch_ignore_silences_a_proposal_by_token_or_canonical(tmp_path):
@@ -154,7 +176,7 @@ def test_arch_ignore_silences_a_proposal_by_token_or_canonical(tmp_path):
         p = tmp_path / f"s-{entry}.yaml"
         p.write_text(base % entry)
         _, sources = load(p, set(REGISTRY))
-        assert propose_arches(sources[0], load_raw(p), _client()) == []
+        assert propose_arches(sources[0], load_raw(p), _client()) == ([], [])
 
 
 def test_writeback_adds_the_arch_preserving_comments_and_siblings(tmp_path):
@@ -188,7 +210,7 @@ def test_pr_body_renders_the_architectures_section():
         checksum="a" * 128,
         checksum_algo="sha512",
     )
-    body = pr_body([], [ArchProposal("debian", "netinst", "aarch64", "arm64", rel)], [])
+    body = pr_body([], [ArchProposal("debian", "netinst", "aarch64", "arm64", rel)], [], [])
     assert "## Proposed architectures" in body
     assert "`debian:netinst`" in body and "`aarch64`" in body and "`arm64`" in body
     assert "debian-13.6.0-arm64-netinst.iso" in body

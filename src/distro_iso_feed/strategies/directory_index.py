@@ -16,10 +16,12 @@ from urllib.parse import urljoin
 from ..client import Client
 from ..listers import Candidate, autoindex, version_dir
 from ..models import Release
-from ..select import by_channel, choose, matching, version_key
+from ..select import by_channel, matching, version_key
 from ..tokens import from_filename
-from ._common import fetch_integrity, resolve_torrent_only
-from .base import Strategy, title_for
+from .base import Strategy
+from .build import build_release, choose_artifact
+from .integrity import fetch_integrity
+from .torrent import resolve_torrent_only
 
 
 class DirectoryIndex(Strategy):
@@ -104,13 +106,7 @@ class DirectoryIndex(Strategy):
             return None
 
         names = [c.name for c in autoindex(client, index)]
-        filename = choose(
-            names,
-            match=params["match"],
-            ignore=params.get("ignore", ()),
-            version_pattern=params.get("version_pattern"),
-            sort_pattern=params.get("sort_pattern"),
-        )
+        filename = choose_artifact(names, params)
         if not filename:
             return None
 
@@ -148,17 +144,14 @@ class DirectoryIndex(Strategy):
             sig=params.get("sig"),
         )
 
-        arch = params.get("arch", "x86_64")
-        return Release(
-            distro=distro,
-            variant=variant,
-            version=version,
-            title=title_for(distro, variant, version, arch, params.get("label")),
-            download_url=urljoin(index, filename),
+        return build_release(
+            distro,
+            variant,
+            version,
             filename=filename,
-            arch=arch,
+            download_url=urljoin(index, filename),
+            params=params,
             checksum=checksum,
             checksum_algo=algo,
             signature_url=signature_url,
-            page_url=params.get("page_url"),
         )

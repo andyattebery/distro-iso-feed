@@ -19,7 +19,7 @@ from __future__ import annotations
 from conftest import FakeClient, autoindex_html
 from distro_iso_feed.models import VERIFY_GPG
 from distro_iso_feed.strategies import REGISTRY
-from distro_iso_feed.strategies._common import attach_torrent
+from distro_iso_feed.strategies.torrent import attach_torrent
 from test_torrents import benc
 
 INDEX = "http://download.proxmox.com/iso/"

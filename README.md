@@ -121,7 +121,7 @@ uv sync
 uv run pytest
 uv run ruff check src tests
 uv run distro-iso-feed-refresh --dry-run          # resolve everything, write nothing
-uv run distro-iso-feed-discover --dry-run         # propose new variants, write nothing
+uv run distro-iso-feed-discover --dry-run         # propose new variants, arches, flavors; write nothing
 uv run distro-iso-feed-audit --strict             # untracked editions, pins, signing keys
 ```
 

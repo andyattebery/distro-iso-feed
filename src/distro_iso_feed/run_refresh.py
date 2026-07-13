@@ -18,9 +18,10 @@ from .client import Client
 from .config import load
 from .gpgverify import gpg_available
 from .models import Variant
+from .signing import BAD, verify_signing_key
 from .state import State
 from .strategies import REGISTRY
-from .strategies._common import BAD, attach_torrent, verify_signing_key
+from .strategies.torrent import attach_torrent
 from .tokens import from_filename
 
 log = logging.getLogger("distro-iso-feed")

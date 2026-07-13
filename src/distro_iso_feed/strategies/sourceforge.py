@@ -15,10 +15,10 @@ from __future__ import annotations
 from ..client import Client
 from ..listers import Candidate, rss
 from ..models import Release
-from ..select import choose
 from ..tokens import from_filename
-from ._common import fetch_integrity
-from .base import Strategy, title_for
+from .base import Strategy
+from .build import build_release, choose_artifact
+from .integrity import fetch_integrity
 
 
 def _feed_url(params: dict) -> str:
@@ -51,13 +51,7 @@ class SourceForge(Strategy):
             return None
 
         by_path = {c.name: c for c in items}  # dedupes the doubled items
-        path = choose(
-            by_path.keys(),
-            match=params["match"],
-            ignore=params.get("ignore", ()),
-            version_pattern=params.get("version_pattern"),
-            sort_pattern=params.get("sort_pattern"),
-        )
+        path = choose_artifact(by_path.keys(), params)
         if not path:
             return None
 
@@ -72,36 +66,28 @@ class SourceForge(Strategy):
         stem = path.rsplit(".", 1)[0]
         fmt = {"path": path, "stem": stem, "filename": filename, "version": version}
 
-        sums_url = None
-        if sums := params.get("sums"):
-            sums_url = _sidecar_url(project, sums, fmt)
-
-        checksum, algo, _ = fetch_integrity(
+        # SF's sidecars are per-file `.../download` URLs, not `urljoin`-relative, so both the
+        # checksum and the signature go through `fetch_integrity` as absolute overrides.
+        sums_url = _sidecar_url(project, params["sums"], fmt) if params.get("sums") else None
+        sig_url = _sidecar_url(project, params["sig"], fmt) if params.get("sig") else None
+        checksum, algo, signature_url = fetch_integrity(
             client,
             base="",
             filename=filename,
             version=version,
-            sums=None,
-            sig=None,
             sums_url=sums_url,
+            sig_url=sig_url,
         )
 
-        signature_url = None
-        if sig := params.get("sig"):
-            signature_url = _sidecar_url(project, sig, fmt)
-
-        arch = params.get("arch", "x86_64")
-        return Release(
-            distro=distro,
-            variant=variant,
-            version=version,
-            title=title_for(distro, variant, version, arch, params.get("label")),
-            download_url=best.url or _download_url(project, path),
+        return build_release(
+            distro,
+            variant,
+            version,
             filename=filename,
-            arch=arch,
+            download_url=best.url or _download_url(project, path),
+            params=params,
             published=best.published,
             checksum=checksum,
             checksum_algo=algo,
             signature_url=signature_url,
-            page_url=params.get("page_url"),
         )

@@ -19,7 +19,8 @@ from ..models import Release
 from ..releases import candidates_for
 from ..select import version_key
 from ..tokens import from_filename, from_json_field
-from .base import Strategy, title_for
+from .base import Strategy
+from .build import build_release
 
 
 class JsonApi(Strategy):
@@ -102,17 +103,14 @@ class JsonApi(Strategy):
         if not version:
             return None
 
-        arch = params.get("arch", "x86_64")
-        return Release(
-            distro=distro,
-            variant=variant,
-            version=version,
-            title=title_for(distro, variant, version, arch, params.get("label")),
-            download_url=best.url or "",
+        return build_release(
+            distro,
+            variant,
+            version,
             filename=best.name,
-            arch=arch,
+            download_url=best.url or "",
+            params=params,
             size=best.size,
             checksum=best.checksum,
             checksum_algo="sha256" if best.checksum else None,
-            page_url=params.get("page_url"),
         )

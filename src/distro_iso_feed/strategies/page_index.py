@@ -17,10 +17,10 @@ from __future__ import annotations
 from ..client import Client
 from ..listers import Candidate, page_index
 from ..models import Release
-from ..select import choose
 from ..tokens import from_filename
-from ._common import fetch_integrity
-from .base import Strategy, title_for
+from .base import Strategy
+from .build import build_release, choose_artifact
+from .integrity import fetch_integrity
 
 
 class PageIndex(Strategy):
@@ -35,13 +35,7 @@ class PageIndex(Strategy):
             return None
 
         by_name = {c.name: c for c in links}
-        filename = choose(
-            by_name.keys(),
-            match=params["match"],
-            ignore=params.get("ignore", ()),
-            version_pattern=params.get("version_pattern"),
-            sort_pattern=params.get("sort_pattern"),
-        )
+        filename = choose_artifact(by_name.keys(), params)
         if not filename:
             return None
 
@@ -60,17 +54,14 @@ class PageIndex(Strategy):
             sig=params.get("sig"),
         )
 
-        arch = params.get("arch", "x86_64")
-        return Release(
-            distro=distro,
-            variant=variant,
-            version=version,
-            title=title_for(distro, variant, version, arch, params.get("label")),
-            download_url=best.url,
+        return build_release(
+            distro,
+            variant,
+            version,
             filename=filename,
-            arch=arch,
+            download_url=best.url,
+            params=params,
             checksum=checksum,
             checksum_algo=algo,
             signature_url=signature_url,
-            page_url=params.get("page_url"),
         )

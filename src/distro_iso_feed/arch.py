@@ -10,6 +10,10 @@ so a discovered arch never moves an existing entry's id.
 
 from __future__ import annotations
 
+# The implicit default arch: it keys the feed with a bare id (no `:arch` suffix, see
+# `models.arch_tag`), so every "which arch is this when none is given" fallback resolves here.
+DEFAULT_ARCH = "x86_64"
+
 _ALIASES = {
     "amd64": "x86_64",
     "x64": "x86_64",

@@ -14,7 +14,7 @@ from conftest import FakeClient
 from distro_iso_feed import feed
 from distro_iso_feed.models import VERIFY_GPG, Release
 from distro_iso_feed.state import State
-from distro_iso_feed.strategies._common import attach_torrent
+from distro_iso_feed.strategies.torrent import attach_torrent
 from test_torrents import benc
 
 # --- a debian-shaped source: ISO in iso-cd/, torrent + signed sums in bt-cd/ -------

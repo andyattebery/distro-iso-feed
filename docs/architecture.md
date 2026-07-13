@@ -29,7 +29,7 @@ strategies are *presets*, and the real structure is a product of five orthogonal
 | **Lister** — where candidates come from | `listers.py` | autoindex, version-dir, candidate-probe, RSS, atom, JSON, product page, GH assets, fixed URL |
 | **Selector** — pick the right one | `select.py` | anchored match, decoy `ignore`, prerelease reject, max-version, dedupe |
 | **Token** — where `version` comes from | `tokens.py` | filename, sidecar filename column, JSON field, atom tag |
-| **Integrity** — checksum + signature | `checksums.py` | GNU / BSD / bare-hash; algo-by-length; aggregate vs sidecar |
+| **Integrity** — checksum + signature | `checksums.py` (parse), `strategies/integrity.py` (fetch), `signing.py` (GPG policy) | GNU / BSD / bare-hash; algo-by-length; aggregate vs sidecar; the `covers` dispatch |
 | **URL** — how to build `download_url` | strategies | from listing, template, `/download` redirector, fixed, JSON field |
 
 Every seeded source is a point in that space. `strategy:` in `sources.yaml` names a
@@ -71,6 +71,19 @@ forever — the exact bug `N=1` avoids. And the Atom id deliberately is **not** 
 `raw.githubusercontent.com` URL: that embeds the host and the branch name, so
 renaming `main` would change every id at once and every reader would re-notify on
 the entire feed. Ids are identity; links are location. The id URL intentionally 404s.
+
+**x86_64 is implicit in every id, so adding architectures never re-notifies.** A variant
+carries an `arch`, and one rule — `models.arch_tag` — governs how it enters the keys:
+**empty for x86_64, `:{arch}` otherwise**. So `fedora:workstation` stays exactly that, while
+its aarch64 sibling is `fedora:workstation:aarch64`; the day a distro gains an `arches` map,
+every existing x86_64 key/guid/atom-id holds still and no subscriber re-alerts. `arch_tag`
+MUST be shared by `Release.state_key`, `Release.guid`, `Variant.key`, and `feed.atom_id` — it
+is one function precisely because four call sites diverging would silently blank the catalog for
+multi-arch rows. In config an `arches: {canonical: token}` map expands at load into one `Variant`
+per arch (the canonical name keys/displays it, the upstream `token` substitutes into `{token}`
+in the URL/filename fields); `"x86_64"` itself has one home, `arch.DEFAULT_ARCH`. Arch discovery
+(`propose_arches.py`) then maintains the map the same way variant discovery maintains editions —
+resolve-to-verify, `discover.arch_ignore` the sticky-decline for arches you don't want.
 
 **Determinism.** No generated file contains a clock. Entry timestamps freeze at
 first sight; the feed's `<updated>` is the newest entry's timestamp. A daily commit
@@ -180,24 +193,27 @@ trust-on-first-use, and the summary says so rather than claiming `checksum`.
 **The GPG pin is verified at build, or it is not published.** Distros with `verify: gpg`
 carry `signing_key_url` + `signing_key_fingerprint` so a consumer can pin the key (MX is
 the exception — see below). A hand-entered fingerprint the feed merely forwards is only
-as good as the data entry, so `verify_signing_key` (`_common.py`) proves the chain
-every build before publishing the pin — three shapes, by what and how the signature covers:
+as good as the data entry, so `verify_signing_key` (`signing.py` — the GPG *policy* layer over the `gpgverify.py` wrappers)
+proves the chain every build before publishing the pin — three shapes, by what and how the
+signature covers:
 
-- **`checksums`** (debian, kali, ubuntu, mint, opensuse, rocky, clonezilla — a detached sig
+- **`checksums`** (debian, kali, ubuntu and its ten flavors, mint, opensuse, rocky, clonezilla — a detached sig
   over a small `SHA*SUMS`/`CHECKSUM`): `gpgv` the file under *only* the pinned key and confirm
   the feed's published `checksum` is inside it. This authenticates the checksum the feed
   ships — the one place the feed proves its own integrity data, not just forwards it.
   (Clonezilla keeps its signed `CHECKSUMS.TXT` off-host on `clonezilla.org`, not SourceForge —
-  hence the absolute-URL `sums`/`sig` support in the sourceforge strategy.)
+  hence the absolute-URL `sums_url`/`sig_url` overrides on `fetch_integrity`, used by the
+  SourceForge and GitHub-asset strategies whose sidecars are not `urljoin`-relative.)
 - **`image`** (arch, tails, manjaro, endeavouros, kde-neon, antix, cachyos, proxmox,
   openmediavault, truenas — the sig signs the multi-GB ISO the build never downloads): confirm
   the signature's *issuer* is the pinned key (primary **or a subkey** — Tails signs with a
   subkey). Full verification is the consumer's job once it has the ISO. (TrueNAS's key expired
   in 2023, which image-mode tolerates — it reads the issuer fingerprint, never `gpgv`s data.)
-- **`clearsigned`** (almalinux — the signature and the `CHECKSUM` body are one inline-signed
-  file, with no detached sig): `gpg --verify` the whole document under *only* the pinned key,
-  then confirm the published `checksum` is in the verified body. Same guarantee as `checksums`
-  delivered inline, so it publishes `signature_target: checksums`.
+- **`clearsigned`** (almalinux, parrot — the signature and the `CHECKSUM`/`signed-hashes.txt`
+  body are one inline-signed file, with no detached sig): read the checksum from **gpg's extracted
+  payload** (the signed region only), never the raw file — text appended after the signature block
+  leaves the inner signature Good, so a raw match would accept injected lines. Same guarantee as
+  `checksums` delivered inline, so it publishes `signature_target: checksums`.
 
 A signature that fails its own pinned key **drops the gpg claim** (`signature_url`
 cleared, `verify` degrades to `checksum`) rather than publishing an unverifiable one;
@@ -313,14 +329,16 @@ Recorded so nobody re-investigates them. Several look trivially addable.
 | **Manjaro via SourceForge** | `manjarolinux` exists with 32 ISOs, and every one is a `-pre` prerelease. Skipping betas leaves nothing, so Manjaro stays a `page_index` source. |
 | **openSUSE Leap `-Current.iso`** | Exists, but is not linked from the index, so `directory_index` cannot see it. The listed `Build710.3-Media.iso` carries a better change-token anyway. |
 | **pfSense CE** | The current CE (2.8.1) is gated behind Netgate's store/installer with no direct public link, and the sole public autoindex (`atxfiles.netgate.com`) is frozen at 2.7.2 — seeding it would serve a stale release. No community mirror checked carries the current ISO. OPNsense covers the firewall niche. |
+| **openSUSE Aeon / Kalpa** | MicroOS is seeded (fixed `-Current.iso`, `stable_symlink`). Aeon is still Release Candidate and self-distributes via `aeondesktop.github.io` — its openSUSE OBS `iso/` dir is empty; Kalpa is Alpha and its OBS `iso/` path 404s. Neither exposes a stable first-party ISO to resolve. Revisit when either ships stably. |
 
 ## Mirrors
 
-The default is a first-party endpoint. Four sources are marked `mirror: true` because
+The default is a first-party endpoint. Five sources are marked `mirror: true` because
 they cannot honour it:
 
 - **EndeavourOS** publishes no first-party download host at all.
 - **Batocera**'s official host serves **no checksum**; only the o2switch mirror
   co-locates the `.md5`. This trades the host preference for the integrity
   requirement — a checksum from a mirror beats no checksum from the origin.
+- **OPNsense** has no first-party download autoindex; the release mirrors carry one.
 - **Mint** and **Arch** are mirror-distributed by design.

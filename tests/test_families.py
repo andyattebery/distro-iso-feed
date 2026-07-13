@@ -60,9 +60,11 @@ def test_family_discovery_clones_the_model_resolves_and_filters(tmp_path):
     p = tmp_path / "s.yaml"
     p.write_text(FAMILY_CONFIG)
     _, sources = load(p, set(REGISTRY))
-    props = propose_families(sources, load_raw(p), _family_client())
+    props, rejected = propose_families(sources, load_raw(p), _family_client())
 
-    # Only xubuntu: kubuntu is configured, streams is ignored, empty resolves to nothing.
+    # Only xubuntu: kubuntu is configured, streams is ignored, empty resolves to nothing (silently
+    # -- a non-flavor that resolves to nothing is not a Rejected).
+    assert rejected == []
     assert [f.distro for f in props] == ["xubuntu"]
     f = props[0]
     assert f.family == "flavors"
@@ -78,7 +80,7 @@ def test_family_discovery_skips_a_member_added_to_ignore(tmp_path):
     p = tmp_path / "s.yaml"
     p.write_text(FAMILY_CONFIG.replace("ignore: [streams]", "ignore: [streams, xubuntu]"))
     _, sources = load(p, set(REGISTRY))
-    assert propose_families(sources, load_raw(p), _family_client()) == []
+    assert propose_families(sources, load_raw(p), _family_client()) == ([], [])
 
 
 # ------------------------------------------------------------------ families validation

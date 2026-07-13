@@ -22,8 +22,9 @@ from ..models import Release
 from ..releases import candidates_for
 from ..select import is_prerelease
 from ..tokens import from_atom_tag, from_sidecar_filename
-from ._common import _expand, fetch_integrity
-from .base import Strategy, title_for
+from .base import Strategy
+from .build import build_release
+from .integrity import _expand, fetch_integrity
 
 
 class StableSymlink(Strategy):
@@ -102,17 +103,14 @@ class StableSymlink(Strategy):
             sole_entry=True,
         )
 
-        arch = params.get("arch", "x86_64")
-        return Release(
-            distro=distro,
-            variant=variant,
-            version=version,
-            title=title_for(distro, variant, version, arch, params.get("label")),
-            download_url=url,
+        return build_release(
+            distro,
+            variant,
+            version,
             filename=filename,
-            arch=arch,
+            download_url=url,
+            params=params,
             checksum=checksum,
             checksum_algo=algo,
             signature_url=signature_url,
-            page_url=params.get("page_url"),
         )

@@ -16,10 +16,11 @@ import os
 from ..client import Client
 from ..listers import Candidate, gh_assets
 from ..models import Release
-from ..select import choose
 from ..tokens import from_filename
-from ._common import resolve_torrent_only
-from .base import Strategy, title_for
+from .base import Strategy
+from .build import build_release, choose_artifact
+from .integrity import fetch_integrity
+from .torrent import resolve_torrent_only
 
 
 class GithubReleases(Strategy):
@@ -34,13 +35,7 @@ class GithubReleases(Strategy):
             return None
 
         by_name = {a.name: a for a in assets}
-        filename = choose(
-            by_name.keys(),
-            match=params["match"],
-            ignore=params.get("ignore", ()),
-            version_pattern=params.get("version_pattern"),
-            sort_pattern=params.get("sort_pattern"),
-        )
+        filename = choose_artifact(by_name.keys(), params)
         if not filename:
             return None
 
@@ -58,26 +53,24 @@ class GithubReleases(Strategy):
         if not version:
             return None
 
+        # The checksum sidecar is a sibling ASSET (its own URL), not a `urljoin`-relative
+        # path, so `fetch_integrity` fetches+parses it via the absolute `sums_url` override.
         checksum = algo = None
         if suffix := params.get("sums_suffix"):
             sidecar = by_name.get(filename + suffix)
-            if sidecar and sidecar.url and (text := client.text(sidecar.url)):
-                from .. import checksums
+            if sidecar and sidecar.url:
+                checksum, algo, _ = fetch_integrity(
+                    client, base="", filename=filename, version=version, sums_url=sidecar.url
+                )
 
-                if found := checksums.lookup(text, filename):
-                    algo, checksum = found
-
-        arch = params.get("arch", "x86_64")
-        return Release(
-            distro=distro,
-            variant=variant,
-            version=version,
-            title=title_for(distro, variant, version, arch, params.get("label")),
-            download_url=best.url or "",
+        return build_release(
+            distro,
+            variant,
+            version,
             filename=filename,
-            arch=arch,
+            download_url=best.url or "",
+            params=params,
             size=best.size,
             checksum=checksum,
             checksum_algo=algo,
-            page_url=params.get("page_url"),
         )

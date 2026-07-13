@@ -37,6 +37,7 @@ import re
 from difflib import SequenceMatcher
 
 from .client import Client
+from .config import substitute
 from .listers import Candidate
 from .models import Source, VariantSpec
 from .propose_common import Proposal, Rejected, _basename, _confirms, _suffix
@@ -83,23 +84,6 @@ def diff_tokens(old: str, new: str) -> list[tuple[str, str]]:
             continue
         out.append((a, b))
     return out
-
-
-def substitute(node: dict, tokens: list[tuple[str, str]]) -> dict:
-    """Rewrite every string leaf of a YAML node with the token substitutions."""
-
-    def walk(value):
-        if isinstance(value, str):
-            for old, new in tokens:
-                value = value.replace(old, new)
-            return value
-        if isinstance(value, dict):
-            return {k: walk(v) for k, v in value.items()}
-        if isinstance(value, list):
-            return [walk(v) for v in value]
-        return value
-
-    return walk(copy.deepcopy(node))
 
 
 def _claimed(strategy: Strategy, params: dict, candidates: list[Candidate]) -> Candidate | None:

@@ -290,7 +290,7 @@ def test_propose_reports_when_there_is_no_sibling_to_copy(monkeypatch):
 def test_pr_body_lists_rejections_so_they_are_not_silently_dropped():
     from distro_iso_feed.propose_common import Rejected
 
-    text = pr_body([], [], [Rejected("kde-neon", "mobile", "mobile", "resolved to nothing")])
+    text = pr_body([], [], [], [Rejected("kde-neon", "mobile", "mobile", "resolved to nothing")])
     assert "## Could not synthesize" in text
     assert "`kde-neon:mobile`" in text
     assert "resolved to nothing" in text

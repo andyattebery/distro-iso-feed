@@ -18,8 +18,8 @@ from pathlib import Path
 from .audit import Reason, audit_source, report
 from .client import Client
 from .config import load
+from .signing import BAD, verify_signing_key
 from .strategies import REGISTRY
-from .strategies._common import BAD, verify_signing_key
 
 log = logging.getLogger("distro-iso-feed-audit")
 

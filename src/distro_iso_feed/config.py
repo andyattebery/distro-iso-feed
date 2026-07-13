@@ -9,12 +9,14 @@ feed; a missing entry is indistinguishable from an upstream outage otherwise.
 
 from __future__ import annotations
 
+import copy
 import re
 from pathlib import Path
 from typing import Any
 
 from ruamel.yaml import YAML
 
+from .arch import DEFAULT_ARCH
 from .models import Source, Variant
 
 DEFAULT_UA = "distro-iso-feed/1.0 (+https://github.com/andyattebery/distro-iso-feed)"
@@ -164,26 +166,34 @@ def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
         )
 
 
-def substitute_token(params: dict, token: str) -> dict:
-    """Replace the `{token}` arch placeholder with an upstream token in every string leaf.
+def substitute(node: dict, tokens: list[tuple[str, str]]) -> dict:
+    """Rewrite every string leaf of `node`, applying each `(old, new)` replacement in order.
 
-    Recursive rather than a fixed field list so it reaches wherever an author put the arch --
-    a path segment (`index`), a filename regex (`match`), or a checksum-file name (`sums`) --
-    without this needing to know which. `{token}` appears only where it was written, so walking
-    everything changes only those. Shared by config-load expansion and arch-discovery verify, so
-    both substitute identically.
+    Recursive rather than a fixed field list so it reaches wherever an author put a token -- a
+    path segment (`index`), a filename regex (`match`), a checksum-file name (`sums`), a label.
+    Deep-copies, so the source is untouched. This is the one substitution primitive: config-load
+    arch expansion, arch discovery, variant discovery (token-diff synthesis), and family discovery
+    (clone-a-model) all go through it, so they substitute identically.
     """
 
     def walk(value):
         if isinstance(value, str):
-            return value.replace("{token}", token)
+            for old, new in tokens:
+                value = value.replace(old, new)
+            return value
         if isinstance(value, dict):
             return {k: walk(v) for k, v in value.items()}
         if isinstance(value, list):
             return [walk(v) for v in value]
         return value
 
-    return walk(dict(params))
+    return walk(copy.deepcopy(node))
+
+
+def substitute_token(params: dict, token: str) -> dict:
+    """The single-token `{token}` -> upstream-token specialization used by config-load expansion
+    and arch discovery (`{token}` appears only where the author wrote it)."""
+    return substitute(params, [("{token}", token)])
 
 
 def _validate_arches(distro: str, variant: str, arches: Any) -> None:
@@ -252,7 +262,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
 
     defaults = dict(raw.get("defaults") or {})
     defaults.setdefault("user_agent", DEFAULT_UA)
-    defaults.setdefault("arch", "x86_64")
+    defaults.setdefault("arch", DEFAULT_ARCH)
     default_params = dict(defaults.get("params") or {})
 
     sources: list[Source] = []

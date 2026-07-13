@@ -19,6 +19,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 
+from .arch import DEFAULT_ARCH
+
 # Extension -> enclosure MIME type. Batocera is the reason this is not a constant.
 CONTENT_TYPES: dict[str, str] = {
     ".iso": "application/x-iso9660-image",
@@ -59,7 +61,7 @@ def arch_tag(arch: str) -> str:
     `Release.guid`, `Variant.key`, and `feed.atom_id` -- `docs.py` joins `Variant.key` to
     `state_key`, so any divergence silently blanks the catalog for multi-arch rows.
     """
-    return "" if arch == "x86_64" else f":{arch}"
+    return "" if arch == DEFAULT_ARCH else f":{arch}"
 
 
 @dataclass(frozen=True, slots=True)
@@ -70,7 +72,7 @@ class Release:
     title: str
     filename: str
     download_url: str | None = None
-    arch: str = "x86_64"
+    arch: str = DEFAULT_ARCH
     published: datetime | None = None
     size: int | None = None
     checksum: str | None = None
@@ -147,7 +149,7 @@ class Variant:
     params: dict
     label: str | None = None
     mirror: bool = False
-    arch: str = "x86_64"
+    arch: str = DEFAULT_ARCH
 
     @property
     def key(self) -> str:

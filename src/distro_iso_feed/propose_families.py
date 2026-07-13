@@ -14,10 +14,10 @@ filter and the sticky-decline for members deliberately excluded.
 from __future__ import annotations
 
 from .client import Client
-from .listers import Candidate, version_dir
-from .models import Source
-from .propose_common import FamilyProposal, _confirms
-from .propose_variants import substitute
+from .config import substitute
+from .listers import version_dir
+from .models import Release, Source
+from .propose_common import FamilyProposal, Rejected, carries_integrity
 from .strategies import REGISTRY
 
 
@@ -32,10 +32,17 @@ def _tokens(model_name: str, member: str) -> list[tuple[str, str]]:
     return [(model_name, member), (model_name.capitalize(), display)]
 
 
-def _resolves_for(model: Source, tokens: list[tuple[str, str]], member: str, client: Client):
-    """Resolve the member against the model's variants (each under its own strategy); return the
-    first release that resolves and confirms, else None. This is the filter: a directory with no
-    matching desktop ISO (infra dirs, `ubuntu-server`) resolves to nothing and is dropped."""
+def _resolves_for(
+    model: Source, tokens: list[tuple[str, str]], member: str, client: Client
+) -> tuple[Release | None, str | None]:
+    """Resolve the member against the model's variants (each under its own strategy).
+
+    Returns `(release, None)` on the first variant that resolves and carries integrity;
+    `(release, problem)` when one resolved but is unverifiable (a real gap to report); and
+    `(None, None)` when nothing resolved -- a directory with no matching desktop ISO (infra dirs,
+    `ubuntu-server`), the common non-flavor case, dropped silently to keep the report signal.
+    """
+    unverifiable: tuple[Release, str] | None = None
     for mv in model.variants:
         strategy = REGISTRY[mv.strategy]()
         params = substitute(dict(mv.params), tokens)
@@ -43,19 +50,29 @@ def _resolves_for(model: Source, tokens: list[tuple[str, str]], member: str, cli
             release = strategy.resolve(member, mv.name, params, client)
         except Exception:  # a synthesized config must never abort discovery
             release = None
-        if release and not _confirms(
-            release, Candidate(name=release.filename, url=release.download_url)
-        ):
-            return release
-    return None
+        if release is None:
+            continue
+        if problem := carries_integrity(release):
+            unverifiable = (release, problem)
+            continue
+        return release, None
+    return unverifiable if unverifiable else (None, None)
 
 
-def propose_families(sources: list[Source], doc: dict, client: Client) -> list[FamilyProposal]:
-    """One `FamilyProposal` per newly-discovered, resolvable member of each declared family."""
+def propose_families(
+    sources: list[Source], doc: dict, client: Client
+) -> tuple[list[FamilyProposal], list[Rejected]]:
+    """One `FamilyProposal` per newly-discovered, resolvable member of each declared family.
+
+    Also returns `Rejected`s -- but, like arch discovery, only for a member that *resolved a real
+    ISO yet published no integrity*; a member that resolves to nothing is a non-flavor directory,
+    filtered silently rather than reported as noise.
+    """
     families = doc.get("families") or {}
     by_name = {s.name: s for s in sources}
 
     out: list[FamilyProposal] = []
+    rejected: list[Rejected] = []
     for fam_name, fam in families.items():
         model = by_name.get(fam.get("model"))
         model_node = (doc.get("distros") or {}).get(fam.get("model"))
@@ -68,7 +85,10 @@ def propose_families(sources: list[Source], doc: dict, client: Client) -> list[F
             if member in by_name or member in ignore:  # already tracked, or declined
                 continue
             tokens = _tokens(model.name, member)
-            release = _resolves_for(model, tokens, member, client)
+            release, problem = _resolves_for(model, tokens, member, client)
+            if problem:
+                rejected.append(Rejected(member, "-", release.filename, problem))
+                continue
             if release is None:
                 continue
             # Clone the model block. `substitute` rewrites every string leaf: the lowercase name
@@ -76,4 +96,4 @@ def propose_families(sources: list[Source], doc: dict, client: Client) -> list[F
             node = substitute(model_node, tokens)
             out.append(FamilyProposal(fam_name, member, node, release))
 
-    return out
+    return out, rejected
