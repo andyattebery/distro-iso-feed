@@ -45,6 +45,20 @@ class ArchProposal:
 
 
 @dataclass(frozen=True, slots=True)
+class FamilyProposal:
+    """A discovered family member: a whole new distro block, cloned from a model and resolved."""
+
+    family: str
+    distro: str
+    node: dict  # the synthesized distro block
+    release: Release  # the model variant, resolved for the member, that proved it real
+
+    @property
+    def key(self) -> str:
+        return self.distro
+
+
+@dataclass(frozen=True, slots=True)
 class Rejected:
     distro: str
     variant: str
@@ -105,9 +119,31 @@ def pr_body(
     proposals: list[Proposal],
     arch_proposals: list[ArchProposal],
     rejected: list[Rejected],
+    family_proposals: list[FamilyProposal] = (),
 ) -> str:
     """The evidence, so review is reading a table rather than trusting a name."""
-    lines = ["## Proposed variants", ""]
+    lines: list[str] = []
+
+    if family_proposals:
+        lines += [
+            "## Proposed flavors",
+            "",
+            "A new member of a family root, cloned from the model distro and **resolved live** "
+            "before proposal. The `version_dir`/`version_pattern`/`match` are executed and "
+            "correct; the **label and page_url are best-effort from the member name -- review**.",
+            "",
+            "| Distro | Family | Artifact | Version | Verify |",
+            "|---|---|---|---|---|",
+        ]
+        for f in sorted(family_proposals, key=lambda f: f.key):
+            algo = f" ({f.release.checksum_algo})" if f.release.checksum_algo else ""
+            lines.append(
+                f"| `{f.distro}` | `{f.family}` | `{f.release.filename}` | "
+                f"`{f.release.version}` | {f.release.verify}{algo} |"
+            )
+        lines.append("")
+
+    lines += ["## Proposed variants", ""]
 
     if proposals:
         lines += [

@@ -227,17 +227,20 @@ def propose_for(
     client: Client,
 ) -> tuple[list[Proposal], list[Rejected]]:
     """Synthesize and verify a config node for each discovered key."""
-    strategy = REGISTRY[source.variants[0].strategy]()
     group_field = (source.discover or {}).get("group_field")
 
-    # Every configured variant, paired with the artifact it selects today and the
-    # raw YAML node it is written as. A sibling with neither is no use as a model.
+    # Every configured variant, paired with its OWN strategy, the artifact it selects today, and
+    # the raw YAML node it is written as. A sibling with neither is no use as a model. The strategy
+    # is per-variant, not per-distro: openSUSE mixes directory_index (Leap) and stable_symlink
+    # (Tumbleweed) in one block, so `claims`/`resolve` must run under the sibling's own strategy or
+    # a Tumbleweed spin gets synthesized -- and resolved -- as if it were a Leap directory listing.
     siblings = []
     for variant in source.variants:
+        strat = REGISTRY[variant.strategy]()
         node = _raw_node(doc, source.name, variant.name)
-        claimed = _claimed(strategy, variant.params, candidates)
+        claimed = _claimed(strat, variant.params, candidates)
         if node and claimed:
-            siblings.append((variant, claimed, node))
+            siblings.append((variant, strat, claimed, node))
 
     proposals: list[Proposal] = []
     rejected: list[Rejected] = []
@@ -255,13 +258,13 @@ def propose_for(
         # whose regex needs the smallest, most reviewable change.
         ranked = sorted(
             siblings,
-            key=lambda s: SequenceMatcher(None, s[1].name, sample, autojunk=False).ratio(),
+            key=lambda s: SequenceMatcher(None, s[2].name, sample, autojunk=False).ratio(),
             reverse=True,
         )
 
         why = "no sibling produced a node that resolves to this artifact"
         found = None
-        for variant, claimed, node in ranked:
+        for variant, strat, claimed, node in ranked:
             candidate = Candidate(name=sample, url=spec.params.get("url"), row=row)
             for new_node in _nodes_for(node, claimed.name, candidate):
                 new_node["label"] = _pretty(source.name, spec.variant)
@@ -273,12 +276,14 @@ def propose_for(
                 if group_field and isinstance(select, dict) and group_field in row:
                     select[group_field] = row[group_field]
 
-                params = {**source.variants[0].params, **(new_node.get("params") or {})}
+                # Base on the SIBLING's own params, not variants[0]'s: in a mixed-strategy block a
+                # stable_symlink Tumbleweed spin must not inherit the Leap directory-listing params.
+                params = {**variant.params, **(new_node.get("params") or {})}
                 params.update({k: v for k, v in new_node.items() if k not in ("label", "params")})
                 params["label"] = new_node["label"]
 
                 try:
-                    release = strategy.resolve(source.name, spec.variant, params, client)
+                    release = strat.resolve(source.name, spec.variant, params, client)
                 except Exception as exc:  # a synthesized regex must never abort discovery
                     why = f"resolve raised {type(exc).__name__}: {exc}"
                     continue

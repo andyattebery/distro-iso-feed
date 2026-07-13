@@ -137,6 +137,24 @@ URL while `dl.getaurora.dev/` is a plain index; neon resolves
 `images/<edition>/current/` while `images/` lists the editions. `discover.index`
 points enumeration at the right URL, and only rows *under* that URL survive — neon's
 listing carries forty links of KDE site navigation beside its six image directories.
+`discover.extra_index` unions in a *second* static listing where a distro has two
+enumeration surfaces at once: openSUSE reads Leap editions from its version-dir
+variant listings and Tumbleweed/MicroOS editions from `/tumbleweed/iso/`, which the
+fixed-URL variants never list.
+
+**Discovery proposes new distros too — but only within a declared family.** The
+default is still "propose new variants, never new distros," because re-adding a distro
+someone deleted is a silent reversal of a decision. A `families:` entry is the bounded
+exception: a listable `root` (`cdimage.ubuntu.com/`) whose subdirectories are members,
+and a `model` distro to clone. A member config does not yet track is proposed as a
+whole new block — the model's node with the member name substituted throughout — and,
+like every proposal, only after it `resolve()`s live. That resolve is the filter
+(`ubuntu-server` has no `-desktop-` ISO, infra dirs have none at all); the family's
+`ignore` list covers the rest and is the sticky-decline, so a deleted flavor and an EOL
+one like `ubuntu-gnome` (which still resolves a 2016 ISO) stay out. The label and
+`page_url` are best-effort from the member name and flagged for review; the resolved
+`version_dir`/`match` are correct. `propose_families.py` is the block-level analog of
+`propose_arches.py`.
 
 **A torrent names its own payload, and that is the only trustworthy name for it.**
 For a `torrent_only` variant, `filename` is `info.name` read out of the `.torrent`.

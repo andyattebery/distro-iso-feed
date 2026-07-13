@@ -12,6 +12,20 @@ defaults:
   arch: x86_64
   user_agent: "distro-iso-feed/1.0 (+https://github.com/andyattebery/distro-iso-feed)"
 
+# Families let discovery propose a whole NEW distro block (not just a new variant): a listable
+# `root` whose subdirectories are members, a `model` distro to clone, and an `ignore` list that is
+# both the non-member filter and the sticky-decline for members left out on purpose. A candidate is
+# proposed only after its cloned block RESOLVES live (that filters infra dirs and non-desktop
+# products on its own); `ignore` covers the rest (the main `ubuntu`, server/core products, and EOL
+# flavors like `ubuntu-gnome` that still resolve an ancient ISO). The ublue projects can't use this
+# -- their download hosts publish no listing -- so they stay hand-maintained.
+families:
+  ubuntu-flavors:
+    root: "https://cdimage.ubuntu.com/"
+    member_match: '^[a-z][a-z0-9-]+$'
+    model: kubuntu
+    ignore: [ubuntu, ubuntu-base, ubuntu-core, ubuntu-core-desktop, ubuntu-core-installer, ubuntu-server, ubuntu-legacy-server, ubuntu-mini-iso, ubuntu-wsl, ubuntu-gnome, mythbuntu, netboot, nvidia-tegra, releases, streams, include]
+
 distros:
 
   # ---------------------------------------------------------------- json_api (2)
@@ -666,11 +680,54 @@ distros:
           sums: "{filename}.sha256"
           sig: "{filename}.sha256.asc"
           token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+      # Tumbleweed live spins -- same fixed `-Current.iso` shape as tumbleweed-dvd, aarch64 on
+      # `/ports/`, no torrent. `discover` (below) enumerates `/tumbleweed/iso/` via `extra_index`,
+      # so a future spin surfaces automatically.
+      tumbleweed-gnome-live:
+        label: "openSUSE Tumbleweed GNOME Live"
+        strategy: stable_symlink
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso"}}
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+      tumbleweed-kde-live:
+        label: "openSUSE Tumbleweed KDE Live"
+        strategy: stable_symlink
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso"}}
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+      tumbleweed-xfce-live:
+        label: "openSUSE Tumbleweed XFCE Live"
+        strategy: stable_symlink
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso"}}
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
+      tumbleweed-rescue-cd:
+        label: "openSUSE Tumbleweed Rescue CD"
+        strategy: stable_symlink
+        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso"}}
+        params:
+          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso"
+          sums: "{filename}.sha256"
+          sig: "{filename}.sha256.asc"
+          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
     discover:
-      # Enumerates the Leap index only; Tumbleweed's variants resolve a fixed URL.
-      # Capturing `Leap` as the first group yields `leap-dvd`, the configured key.
+      # Two enumeration surfaces: the Leap version-dir listing (via the leap variants) AND the
+      # static Tumbleweed/MicroOS `/tumbleweed/iso/` index (via `extra_index`, since the fixed-URL
+      # stable_symlink variants list nothing). The group captures family + edition across both --
+      # `Leap`+`DVD` -> leap-dvd, `Tumbleweed`+`GNOME-Live` -> tumbleweed-gnome-live -- so a new
+      # spin in either surface is proposed. The `Snapshot`-dated and non-x86_64 files never match.
+      extra_index: "https://download.opensuse.org/tumbleweed/iso/"
       match: '\.iso$'
-      group: '^openSUSE-(Leap)-[0-9.]+-([A-Z]+)-x86_64-Build[0-9.]+-Media\.iso$'
+      group: '^openSUSE-(Leap|Tumbleweed|MicroOS)-(?:[0-9.]+-)?(.+?)-x86_64-(?:Build[0-9.]+-Media|Current)\.iso$'
       ignore: [aarch64, ppc64le, s390x]
 
   endeavouros:

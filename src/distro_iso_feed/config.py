@@ -23,6 +23,7 @@ _DISCOVER_KEYS = {
     "group",
     "group_field",
     "index",
+    "extra_index",
     "match",
     "ignore",
     "arch_ignore",
@@ -206,6 +207,44 @@ def _validate_arches(distro: str, variant: str, arches: Any) -> None:
             raise ConfigError(f"{distro}:{variant}:{canonical}: `arches` token is empty")
 
 
+_FAMILY_KEYS = {"root", "member_match", "model", "ignore"}
+
+
+def _validate_families(families: Any, distro_names: set[str]) -> None:
+    """A `families:` entry lets discovery propose a whole new distro block for a new member of a
+    listable root, cloned from a `model` sibling. Validated loudly at load time (a typo must not
+    silently disable family discovery), but NOT returned -- only `run_discover` consumes it, off the
+    raw doc, so `load()`'s signature is unchanged and refresh/audit are untouched.
+    """
+    if families is None:
+        return
+    if not isinstance(families, dict):
+        raise ConfigError("`families:` must be a mapping")
+    for name, fam in families.items():
+        if not isinstance(fam, dict):
+            raise ConfigError(f"family {name}: must be a mapping")
+        if unknown := set(fam) - _FAMILY_KEYS:
+            raise ConfigError(
+                f"family {name}: unknown key(s) {', '.join(sorted(unknown))}; "
+                f"known: {', '.join(sorted(_FAMILY_KEYS))}"
+            )
+        if not str(fam.get("root") or "").strip():
+            raise ConfigError(f"family {name}: needs a `root:` URL")
+        pattern = str(fam.get("member_match") or "")
+        if not pattern.strip():
+            raise ConfigError(f"family {name}: needs a `member_match:` regex")
+        try:
+            re.compile(pattern)
+        except re.error as exc:
+            raise ConfigError(f"family {name}: member_match is not a valid regex: {exc}") from exc
+        if fam.get("model") not in distro_names:
+            raise ConfigError(
+                f"family {name}: `model` {fam.get('model')!r} is not a configured distro"
+            )
+        if not isinstance(fam.get("ignore") or [], list):
+            raise ConfigError(f"family {name}: `ignore` must be a list")
+
+
 def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
     raw = load_raw(path)
     if not raw or "distros" not in raw:
@@ -285,4 +324,5 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             )
         )
 
+    _validate_families(raw.get("families"), {s.name for s in sources})
     return defaults, sources

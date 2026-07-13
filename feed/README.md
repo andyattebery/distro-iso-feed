@@ -175,8 +175,16 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | opensuse | microos-dvd | aarch64 | Snapshot20260709 | gpg | — |
 | opensuse | tumbleweed-dvd | x86_64 | Snapshot20260710 | gpg | — |
 | opensuse | tumbleweed-dvd | aarch64 | Snapshot20260709 | gpg | — |
+| opensuse | tumbleweed-gnome-live | x86_64 | Snapshot20260710 | gpg | — |
+| opensuse | tumbleweed-gnome-live | aarch64 | Snapshot20260709 | gpg | — |
+| opensuse | tumbleweed-kde-live | x86_64 | Snapshot20260710 | gpg | — |
+| opensuse | tumbleweed-kde-live | aarch64 | Snapshot20260709 | gpg | — |
 | opensuse | tumbleweed-net | x86_64 | Snapshot20260710 | gpg | — |
 | opensuse | tumbleweed-net | aarch64 | Snapshot20260709 | gpg | — |
+| opensuse | tumbleweed-rescue-cd | x86_64 | Snapshot20260710 | gpg | — |
+| opensuse | tumbleweed-rescue-cd | aarch64 | Snapshot20260709 | gpg | — |
+| opensuse | tumbleweed-xfce-live | x86_64 | Snapshot20260710 | gpg | — |
+| opensuse | tumbleweed-xfce-live | aarch64 | Snapshot20260709 | gpg | — |
 | opnsense | dvd | x86_64 | 26.1.6 | checksum | — |
 | parrot | home | x86_64 | 7.3 | gpg | — |
 | parrot | security | x86_64 | 7.3 | gpg | — |

@@ -103,18 +103,32 @@ class Strategy(ABC):
             # structural -- an `ignore` list would need editing whenever KDE adds a
             # footer link, and would silently swallow a real new edition the day one
             # collided with a nav word.
-            return [c for c in autoindex(client, index) if (c.url or "").startswith(index)]
+            cands = [c for c in autoindex(client, index) if (c.url or "").startswith(index)]
+        else:
+            seen_listings: set[tuple] = set()
+            by_name: dict[str, Candidate] = {}
+            for params in variant_params:
+                key = listing_key(params)
+                if key in seen_listings:
+                    continue
+                seen_listings.add(key)
+                for cand in self.candidates(distro, params, client):
+                    by_name.setdefault(cand.name, cand)
+            cands = list(by_name.values())
 
-        seen_listings: set[tuple] = set()
-        by_name: dict[str, Candidate] = {}
-        for params in variant_params:
-            key = listing_key(params)
-            if key in seen_listings:
-                continue
-            seen_listings.add(key)
-            for cand in self.candidates(distro, params, client):
-                by_name.setdefault(cand.name, cand)
-        return list(by_name.values())
+        # `extra_index` (opt-in) unions an ADDITIONAL static listing, deduped by name. openSUSE is
+        # the case: Leap editions come from the version-dir variant listings above, but the
+        # Tumbleweed/MicroOS `-Current.iso` editions live only in `/tumbleweed/iso/`, which the
+        # fixed-URL stable_symlink variants never enumerate. Index-only distros (neon, aurora) set
+        # none, so their result is unchanged.
+        if extra := discover.get("extra_index"):
+            merged = {c.name: c for c in cands}
+            for cand in autoindex(client, extra):
+                if (cand.url or "").startswith(extra):
+                    merged.setdefault(cand.name, cand)
+            cands = list(merged.values())
+
+        return cands
 
     def discover_all(
         self,
