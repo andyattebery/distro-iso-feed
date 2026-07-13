@@ -26,11 +26,20 @@ from .torrent import resolve_torrent_only
 class GithubReleases(Strategy):
     name = "github_releases"
 
+    def _assets(self, params: dict, client: Client) -> list[Candidate]:
+        # resolve and discovery must select the SAME release, so both go through here.
+        return gh_assets(
+            client,
+            params["repo"],
+            os.environ.get("GITHUB_TOKEN"),
+            honor_prerelease_flag=bool(params.get("honor_prerelease_flag")),
+        )
+
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:
-        return gh_assets(client, params["repo"], os.environ.get("GITHUB_TOKEN"))
+        return self._assets(params, client)
 
     def resolve(self, distro: str, variant: str, params: dict, client: Client) -> Release | None:
-        assets = gh_assets(client, params["repo"], os.environ.get("GITHUB_TOKEN"))
+        assets = self._assets(params, client)
         if not assets:
             return None
 
@@ -55,13 +64,19 @@ class GithubReleases(Strategy):
 
         # The checksum sidecar is a sibling ASSET (its own URL), not a `urljoin`-relative
         # path, so `fetch_integrity` fetches+parses it via the absolute `sums_url` override.
+        # Two shapes: `sums_suffix` names a PER-FILE sidecar (`<iso>.sha256`, MiniOS); `sums_asset`
+        # names ONE AGGREGATE checksum asset listing every ISO (`sha256sum.txt`, ChimeraOS), which
+        # `fetch_integrity` then looks `filename` up inside.
         checksum = algo = None
+        sidecar = None
         if suffix := params.get("sums_suffix"):
             sidecar = by_name.get(filename + suffix)
-            if sidecar and sidecar.url:
-                checksum, algo, _ = fetch_integrity(
-                    client, base="", filename=filename, version=version, sums_url=sidecar.url
-                )
+        elif asset := params.get("sums_asset"):
+            sidecar = by_name.get(asset)
+        if sidecar and sidecar.url:
+            checksum, algo, _ = fetch_integrity(
+                client, base="", filename=filename, version=version, sums_url=sidecar.url
+            )
 
         return build_release(
             distro,

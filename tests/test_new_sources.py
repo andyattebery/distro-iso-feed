@@ -1,5 +1,6 @@
-"""The three novel source shapes added for the BSDs and Parrot, plus a shipped-config check.
+"""Novel source shapes and their shipped-config checks.
 
+The BSDs and Parrot:
 - OpenBSD: arch is a PATH segment (`7.9/{arch}/`) and the version is the DIRECTORY name (the
   filename `install79.iso` has no dotted version), so resolution leans on `version_dir` with no
   `version_pattern`.
@@ -7,6 +8,15 @@
   (`NetBSD-10.1`), which `version_key` must still sort numerically.
 - Parrot: one clearsigned `signed-hashes.txt` lists md5+sha256+sha512 for each ISO; the parser
   must publish the strongest (sha512).
+
+GhostBSD/XCP-ng/Qubes/Gentoo/ChimeraOS (resolve the shipped config's own expanded params):
+- XCP-ng: a two-group `version_pattern` so a re-hash refresh `…20250606.2` outsorts `…20250606`
+  (a single group makes the older ISO parse as a higher `Version` tier and wrongly win).
+- Qubes: a `<hash> *<name>` DIGESTS with both sha256 and sha512; the parser keeps sha512.
+- Gentoo: the clearsigned `.sha256` (single 64-hex), NOT `.DIGESTS` whose SHA512/BLAKE2B both
+  read as 128 hex; the datestamp is the change-token; arm64 via arches.
+- ChimeraOS: `github_releases` with `honor_prerelease_flag` (bare-date tags carry no signal) and
+  an aggregate `sums_asset` (see test_client_and_discover for the resolve).
 """
 
 from __future__ import annotations
@@ -146,3 +156,108 @@ def test_parrot_publishes_the_strongest_hash_from_the_multi_algo_file():
     r = DI().resolve("parrot", "home", params, client)
     assert r.filename == "Parrot-home-7.3_amd64.iso" and r.version == "7.3"
     assert (r.checksum, r.checksum_algo) == ("c" * 128, "sha512")  # md5/sha256 present but sha512 wins
+
+
+# ------------------------------------------------- GhostBSD / XCP-ng / Qubes / Gentoo / ChimeraOS
+#
+# Resolve tests drive the SHIPPED config's own expanded params against fixture bytes at the real
+# URLs, so a regression in the block itself (not just a hand-built dict) fails here.
+
+
+def test_ghostbsd_config_and_resolve_bare_iso_bsd_sidecar_no_signature():
+    v = _variants("ghostbsd")
+    assert set(v) == {"ghostbsd:mate", "ghostbsd:xfce", "ghostbsd:gershwin"}
+    idx = "https://download.ghostbsd.org/releases/amd64/latest/"
+    iso = "GhostBSD-26.1-R15.0p2.iso"
+    client = FakeClient(
+        {
+            idx: autoindex_html([iso, "GhostBSD-26.1-R15.0p2-XFCE.iso", iso + ".sha256", iso + ".torrent"]),
+            idx + iso + ".sha256": f"SHA256 ({iso}) = {'f' * 64}",
+        }
+    )
+    r = DI().resolve("ghostbsd", "mate", dict(v["ghostbsd:mate"].params), client)
+    assert r.filename == iso  # the bare (MATE) ISO, not -XFCE
+    assert r.version == "26.1-R15.0p2"
+    assert (r.checksum, r.checksum_algo) == ("f" * 64, "sha256")  # BSD-format sidecar
+    assert r.verify == "checksum"  # no GPG signature published
+
+
+def test_xcp_ng_resolves_the_dot2_refresh_not_the_older_decoy():
+    """The review bug: with a single-group version_pattern the clean `…20250606` parses as a higher
+    Version tier than `…20250606.2` and the STALE ISO wins. The shipped two-group pattern picks .2."""
+    v = _variants("xcp-ng")
+    assert set(v) == {"xcp-ng:install", "xcp-ng:netinstall"}
+    base = "https://mirrors.xcp-ng.org/isos/"
+    d = base + "8.3/"
+    client = FakeClient(
+        {
+            base: autoindex_html(["8.2/", "8.3/", "drivers/"]),
+            d: autoindex_html(
+                ["xcp-ng-8.3.0-20250606.2.iso", "xcp-ng-8.3.0-20250606.iso",
+                 "xcp-ng-8.3.0-20250606-netinstall.iso", "SHA256SUMS", "SHA256SUMS.asc"]
+            ),
+            d + "SHA256SUMS": f"{'a' * 64}  xcp-ng-8.3.0-20250606.2.iso\n{'b' * 64}  xcp-ng-8.3.0-20250606.iso\n",
+        }
+    )
+    r = DI().resolve("xcp-ng", "install", dict(v["xcp-ng:install"].params), client)
+    assert r.filename == "xcp-ng-8.3.0-20250606.2.iso"  # the refresh, NOT the older decoy
+    assert r.version == "8.3.0-20250606.2"
+    assert (r.checksum, r.checksum_algo) == ("a" * 64, "sha256")
+    assert r.signature_url.endswith("SHA256SUMS.asc") and r.verify == "gpg"
+
+
+def test_qubes_resolves_stable_over_rc_and_keeps_sha512_from_digests():
+    v = _variants("qubes")
+    assert set(v) == {"qubes:iso"}
+    idx = "https://ftp.qubes-os.org/iso/"
+    digests = f"{'a' * 64} *Qubes-R4.3.1-x86_64.iso\n{'b' * 128} *Qubes-R4.3.1-x86_64.iso\n"
+    client = FakeClient(
+        {
+            idx: autoindex_html(
+                ["Qubes-R4.3.1-x86_64.iso", "Qubes-R4.3.1-rc1-x86_64.iso",
+                 "Qubes-R4.3.1-x86_64.iso.DIGESTS", "Qubes-R4.3.1-x86_64.iso.DIGESTS.asc"]
+            ),
+            idx + "Qubes-R4.3.1-x86_64.iso.DIGESTS": digests,
+        }
+    )
+    r = DI().resolve("qubes", "iso", dict(v["qubes:iso"].params), client)
+    assert r.filename == "Qubes-R4.3.1-x86_64.iso"  # not the co-located -rc1
+    assert r.version == "4.3.1"
+    assert (r.checksum, r.checksum_algo) == ("b" * 128, "sha512")  # sha512 beats the co-listed sha256; `*` marker parsed
+    assert r.signature_url.endswith(".DIGESTS.asc") and r.verify == "gpg"
+
+
+def test_gentoo_config_expands_two_arches_plus_livegui_and_resolves_datestamp():
+    v = _variants("gentoo")
+    assert set(v) == {"gentoo:minimal", "gentoo:minimal:aarch64", "gentoo:livegui"}
+    assert "/amd64/" in v["gentoo:minimal"].params["index"]
+    assert "/arm64/" in v["gentoo:minimal:aarch64"].params["index"]      # {token} -> arm64 in the path
+    assert "current-livegui-amd64" in v["gentoo:livegui"].params["index"]  # override, no leftover {token}
+    assert "{token}" not in v["gentoo:livegui"].params["index"]
+
+    idx = "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/"
+    iso = "install-amd64-minimal-20260712T170110Z.iso"
+    clearsigned = (
+        "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA256\n\n# SHA256 HASH\n"
+        f"{'d' * 64}  {iso}\n-----BEGIN PGP SIGNATURE-----\niQIz\n-----END PGP SIGNATURE-----\n"
+    )
+    client = FakeClient(
+        {
+            idx: autoindex_html([iso, iso + ".sha256", iso + ".DIGESTS", iso + ".asc"]),
+            idx + iso + ".sha256": clearsigned,
+        }
+    )
+    r = DI().resolve("gentoo", "minimal", dict(v["gentoo:minimal"].params), client)
+    assert r.filename == iso
+    assert r.version == "20260712T170110Z"  # the datestamp is the change-token
+    assert (r.checksum, r.checksum_algo) == ("d" * 64, "sha256")  # clearsigned .sha256, NOT the ambiguous .DIGESTS
+    assert r.signature_url.endswith(".sha256") and r.verify == "gpg"
+
+
+def test_chimeraos_config_uses_github_releases_with_the_new_knobs():
+    _, sources = load(CONFIG, set(REGISTRY))
+    c = next(s for s in sources if s.name == "chimeraos")
+    p = c.variants[0].params
+    assert c.variants[0].strategy == "github_releases"
+    assert p["repo"] == "ChimeraOS/install-media"
+    assert p["honor_prerelease_flag"] is True and p["sums_asset"] == "sha256sum.txt"

@@ -20,6 +20,60 @@ RELEASES = (
     '[{"tag_name": "v1.0", "assets": [{"name": "a.iso", "browser_download_url": "u", "size": 1}]}]'
 )
 
+# ChimeraOS shape: newest release is GitHub-flagged prerelease:true, but its date-only tag carries no
+# textual signal, and it ships one AGGREGATE `sha256sum.txt` asset (not a per-file sidecar).
+CHIMERA_RELEASES = json.dumps(
+    [
+        {
+            "tag_name": "2025-04-21_8a4f21f", "prerelease": True, "draft": False,
+            "assets": [{"name": "chimeraos-2025.04.21-x86_64.iso",
+                        "browser_download_url": "https://x/new.iso", "size": 9}],
+        },
+        {
+            "tag_name": "2025-02-13_7e927cf", "prerelease": False, "draft": False,
+            "assets": [
+                {"name": "chimeraos-2025.02.13-x86_64.iso",
+                 "browser_download_url": "https://x/stable.iso", "size": 8},
+                {"name": "sha256sum.txt", "browser_download_url": "https://x/sums", "size": 1},
+            ],
+        },
+    ]
+)
+
+
+def test_honor_prerelease_flag_skips_a_github_flagged_prerelease():
+    """ChimeraOS's newest release is flagged prerelease:true, but its bare-date tag has no rc/beta
+    text, so name-based is_prerelease can't see it. The opt-in flag makes gh_assets trust GitHub's
+    boolean and fall through to the stable release; without it, the prerelease would win."""
+    client = FakeClient({"https://api.github.com/repos/o/r/releases": CHIMERA_RELEASES})
+    assert listers.gh_assets(client, "o/r")[0].name == "chimeraos-2025.04.21-x86_64.iso"  # prerelease
+    stable = listers.gh_assets(client, "o/r", honor_prerelease_flag=True)
+    assert [a.name for a in stable] == ["chimeraos-2025.02.13-x86_64.iso", "sha256sum.txt"]
+
+
+def test_github_releases_sums_asset_reads_the_aggregate_checksum():
+    """`sums_asset` names one aggregate checksum asset (vs `sums_suffix`'s per-file sidecar); the
+    ISO is looked up inside it. Combined with the flag, resolve lands the stable ISO + its sha256."""
+    sha = "a" * 64
+    client = FakeClient(
+        {
+            "https://api.github.com/repos/o/r/releases": CHIMERA_RELEASES,
+            "https://x/sums": f"{sha}  chimeraos-2025.02.13-x86_64.iso",
+        }
+    )
+    rel = REGISTRY["github_releases"]().resolve(
+        "chimeraos",
+        "iso",
+        {
+            "repo": "o/r", "honor_prerelease_flag": True, "sums_asset": "sha256sum.txt",
+            "match": r"^chimeraos-[0-9.]+-x86_64\.iso$",
+            "version_pattern": r"chimeraos-([0-9.]+)-x86_64\.iso$",
+        },
+        client,
+    )
+    assert rel.version == "2025.02.13"
+    assert rel.checksum == sha and rel.checksum_algo == "sha256"
+
 
 # ------------------------------------------------------------------------ gh token
 
@@ -43,7 +97,7 @@ def test_github_releases_strategy_forwards_the_token(monkeypatch):
     monkeypatch.setenv("GITHUB_TOKEN", "from-env")
     seen: dict = {}
 
-    def spy(client, repo, token=None):
+    def spy(client, repo, token=None, **kw):
         seen["token"] = token
         return []
 

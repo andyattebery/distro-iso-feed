@@ -1396,3 +1396,123 @@ distros:
       match: '\.iso\.zip$'
       group: '^mt86plus_[0-9.]+_x86_64(?:\.([a-z]+))?\.iso\.zip$'
       ignore: ['grub']
+
+  ghostbsd:
+    strategy: directory_index
+    page_url: "https://www.ghostbsd.org/download"
+    params:
+      # `latest/` is a self-updating symlink dir (Arch shape) -- avoids sorting the mixed
+      # 24.07.3 vs 26.1-R15.0p2 version schemes. amd64 only (no arm64 tree exists).
+      index: "https://download.ghostbsd.org/releases/amd64/latest/"
+      sums: "{filename}.sha256"        # per-ISO BSD-format sidecar: "SHA256 (name) = hash"
+      torrent: "{filename}.torrent"    # no torrent checksum -> trust-on-first-use; ISO stays verified
+      version_pattern: 'GhostBSD-([0-9.]+-R[0-9.]+(?:p[0-9]+)?)'
+    variants:
+      # The bare .iso is the MATE (default) flavor; its name carries no DE token.
+      mate: {label: "GhostBSD MATE", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?\.iso$'}}
+      xfce: {label: "GhostBSD XFCE", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-XFCE\.iso$'}}
+      gershwin: {label: "GhostBSD Gershwin", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-GERSHWIN\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-([A-Za-z]+)\.iso$'
+
+  xcp-ng:
+    strategy: directory_index
+    page_url: "https://docs.xcp-ng.org/installation/install-xcp-ng/"
+    params:
+      version_dir: "https://mirrors.xcp-ng.org/isos/"
+      version_dir_match: '^\d+\.\d+$'          # excludes the drivers/ dir
+      index: "{version}/"
+      sums: "SHA256SUMS"                        # aggregate GNU "<hash>  <name>"
+      sig: "SHA256SUMS.asc"                     # detached PGP over SHA256SUMS
+      # TWO capture groups on purpose: from_filename joins them to the display token
+      # `8.3.0-20250606.2`, but version_key sorts on the LAST group (the date.refresh). A single
+      # group `8.3.0-20250606.2` fails packaging.Version -> tier-1, while the older `8.3.0-20250606`
+      # parses clean as tier-2 and would wrongly win, resolving the stale ISO.
+      version_pattern: 'xcp-ng-([0-9.]+)-([0-9]+(?:\.[0-9]+)?)(?:-netinstall)?\.iso$'
+      signing_key:
+        # Not on public keyservers -- only in the xcp-ng-release repo (like the RHEL-rebuild repo keys).
+        url: https://raw.githubusercontent.com/xcp-ng/xcp-ng-release/master/src/common/etc/pki/rpm-gpg/RPM-GPG-KEY-xcpng
+        fingerprint: 34AC2EB68248FED6D076838ACD75783A3FD3AC9E
+        covers: checksums
+    variants:
+      # Two install .iso decoys (…20250606.2.iso and …20250606.iso); max-version picks .2 (a re-hash refresh).
+      install: {label: "XCP-ng", params: {match: '^xcp-ng-[0-9.]+-[0-9]+(?:\.[0-9]+)?\.iso$'}}
+      netinstall: {label: "XCP-ng netinstall", params: {match: '^xcp-ng-[0-9.]+-[0-9]+-netinstall\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: '^xcp-ng-[0-9.]+-[0-9]+(?:\.[0-9]+)?(?:-([a-z]+))?\.iso$'
+
+  qubes:
+    strategy: directory_index
+    page_url: "https://www.qubes-os.org/downloads/"
+    params:
+      index: "https://ftp.qubes-os.org/iso/"
+      # R4.3.1 (Jun 2026) switched to a plain DIGESTS + detached .DIGESTS.asc. DIGESTS lists
+      # sha256+sha512 (GNU "<hash> *<name>"); the parser keeps sha512.
+      sums: "{filename}.DIGESTS"
+      sig: "{filename}.DIGESTS.asc"
+      match: '^Qubes-R[0-9.]+-x86_64\.iso$'     # `[0-9.]+` can't span `4.3.1-rc1`, so RCs are excluded
+      version_pattern: 'Qubes-R([0-9.]+)-x86_64'
+      ignore: ['-rc']                           # belt; the anchor already drops the co-located -rcN images
+      torrent: "{filename}.torrent"             # no torrent checksum -> trust-on-first-use
+      signing_key:
+        # "Qubes OS Release 4.3 Signing Key" -- a NEW per-minor key signs R4.4/R5.0, so the gate
+        # will degrade that entry to `checksum` and --strict flag it (like the RHEL-rebuild majors).
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+        fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+        covers: checksums
+    variants:
+      iso: {label: "Qubes OS"}
+    discover:
+      match: '\.iso$'
+      group: '^Qubes-R[0-9.]+-([a-z]+)-x86_64\.iso$'
+
+  gentoo:
+    strategy: directory_index
+    page_url: "https://www.gentoo.org/downloads/"
+    params:
+      # Fixed `current-*` pointer dir (Arch shape): always holds the newest weekly autobuild.
+      # {token} is the arch, spelled the same in the path and the filename.
+      index: "https://distfiles.gentoo.org/releases/{token}/autobuilds/current-install-{token}-minimal/"
+      # Use the clearsigned single-SHA256 sidecar, NOT .DIGESTS: .DIGESTS carries SHA512 *and*
+      # BLAKE2B, both 128 hex, and length-based algo detection would mislabel BLAKE2B as sha512.
+      sums: "{filename}.sha256"
+      sig: "{filename}.sha256"                  # the clearsigned .sha256 is its own signature
+      version_pattern: '-(\d{8}T\d{6}Z)\.iso$'  # datestamp = change-token; re-notifies each weekly build
+      signing_key:
+        # Pin the primary; it signs via subkey 2C44695DB9F6043D (primary-or-subkey, the Tails case).
+        url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+        fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+        covers: clearsigned
+    variants:
+      minimal:
+        label: "Gentoo Minimal Install CD"
+        arches: {x86_64: amd64, aarch64: arm64}
+        params: {match: '^install-{token}-minimal-\d{8}T\d{6}Z\.iso$'}
+      livegui:
+        # Overrides the {token} distro index with a concrete amd64 URL (no arches -> no {token} left).
+        label: "Gentoo LiveGUI"
+        params:
+          index: "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/"
+          match: '^livegui-amd64-\d{8}T\d{6}Z\.iso$'
+    discover:
+      enumerable: false
+      reason: "ISO products live in separate current-* pointer dirs (install-*-minimal, livegui-*); the shared autobuilds root also lists stage3/stage4 tarballs and di-* disk images that are not ISOs. arm64 minimal is seeded via arches."
+
+  chimeraos:
+    strategy: github_releases
+    page_url: "https://chimeraos.org/"
+    params:
+      # The installer ISO repo -- NOT ChimeraOS/chimeraos, which ships frzr OS payloads (.img.tar.xz).
+      repo: "ChimeraOS/install-media"
+      # install-media tags are bare dates with no rc/beta text, so name-based is_prerelease can't see
+      # a build; honor GitHub's prerelease flag to skip it for the stable release the download page uses.
+      honor_prerelease_flag: true
+      sums_asset: "sha256sum.txt"               # one aggregate asset "<sha256>  chimeraos-<date>-x86_64.iso"
+      version_pattern: 'chimeraos-([0-9.]+)-x86_64\.iso$'   # dotted date = change-token
+    variants:
+      iso: {label: "ChimeraOS", params: {match: '^chimeraos-[0-9.]+-x86_64\.iso$'}}
+    discover:
+      match: '\.iso$'
+      group: '^chimeraos-[0-9.]+-([a-z]+)-x86_64\.iso$'

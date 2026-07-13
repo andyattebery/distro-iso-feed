@@ -171,8 +171,14 @@ def atom(client: Client, repo: str) -> list[Candidate]:
     return out
 
 
-def gh_assets(client: Client, repo: str, token: str | None = None) -> list[Candidate]:
-    """GitHub release *assets*. Only MiniOS uses this.
+def gh_assets(
+    client: Client,
+    repo: str,
+    token: str | None = None,
+    *,
+    honor_prerelease_flag: bool = False,
+) -> list[Candidate]:
+    """GitHub release *assets*. MiniOS and ChimeraOS.
 
     This is the one lister that hits the REST API, which is rate-limited to 60/hr
     unauthenticated -- and that limit is shared across every job on the runner, so
@@ -180,6 +186,13 @@ def gh_assets(client: Client, repo: str, token: str | None = None) -> list[Candi
 
     elementary and AnduinOS are excluded precisely because theirs are empty or
     torrent-only, which the caller sees as a list with no matching artifact.
+
+    `honor_prerelease_flag` is an opt-in for repos whose tags carry NO textual
+    prerelease signal (ChimeraOS tags are bare dates), where the name-based
+    `is_prerelease` cannot tell a build from a release. When set, the current-release
+    pick also trusts GitHub's `prerelease`/`draft` booleans. It is off by default and
+    must stay so: elementary marks RCs `prerelease:false`, so trusting the flag there
+    would publish an RC -- exactly the case the name-based check exists to catch.
     """
     url = f"https://api.github.com/repos/{repo}/releases"
     headers = {"Accept": "application/vnd.github+json"}
@@ -199,10 +212,12 @@ def gh_assets(client: Client, repo: str, token: str | None = None) -> list[Candi
     # years ago: MiniOS still hosts `minios-bookworm-flux-minimum-...iso` from 2023,
     # and discovery cheerfully proposed `minimum`/`maximum` as new variants.
     # The API returns releases newest-first; take the first non-prerelease.
-    current = next(
-        (r for r in releases if not is_prerelease(r.get("tag_name") or "")),
-        None,
-    )
+    def _is_stable(r: dict) -> bool:
+        if is_prerelease(r.get("tag_name") or ""):
+            return False
+        return not (honor_prerelease_flag and (r.get("prerelease") or r.get("draft")))
+
+    current = next((r for r in releases if _is_stable(r)), None)
     if current is None:
         return []
 
