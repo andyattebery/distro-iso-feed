@@ -1,0 +1,22 @@
+# Keep the pinned actions and Python deps current -- monthly and grouped, so this adds at most one
+# PR per ecosystem per month (the goal is less monitoring, not a PR firehose). `ci.yml` gates each,
+# so a passing Dependabot PR is safe to merge on sight.
+version: 2
+updates:
+  # Note: `setup-uv`'s major tracks uv's minor (v8 <-> uv 0.8), so an action bump here is a
+  # uv-toolchain change -- review it, and prefer merging it with the `uv` update below.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: uv
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      python:
+        patterns: ["*"]

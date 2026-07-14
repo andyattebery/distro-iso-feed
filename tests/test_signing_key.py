@@ -19,7 +19,7 @@ from conftest import FakeClient
 from distro_iso_feed import gpgverify
 from distro_iso_feed.config import ConfigError, _validate_signing_key
 from distro_iso_feed.models import Release
-from distro_iso_feed.signing import BAD, DEFERRED, VERIFIED, verify_signing_key
+from distro_iso_feed.signing import DEFERRED, REJECTED, VERIFIED, verify_signing_key
 
 pytestmark = pytest.mark.skipif(not gpgverify.gpg_available(), reason="needs gpg + gpgv")
 
@@ -173,7 +173,7 @@ def test_checksums_tampered_sums_drops_the_claim(keys):
     tampered = SUMS.replace(b"a" * 64, b"b" * 64)  # sig no longer matches the bytes
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["sums_sig"], SUMS_URL: tampered})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
-    assert outcome == BAD
+    assert outcome == REJECTED
     assert r.signature_url is None and r.signing_key_fingerprint is None
     assert r.signature_target is None  # no signature -> no target
     assert r.verify == "checksum"  # degraded, not gpg
@@ -189,7 +189,7 @@ def test_checksums_good_sig_but_our_checksum_absent_drops(keys):
         fpr = _gen(home, "X <x@e>")
         client = FakeClient({KEY_URL: _export(home, fpr), SIG_URL: _sign(home, fpr, other), SUMS_URL: other})
         r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums", fpr=fpr))
-    assert outcome == BAD  # checksum "aaaa..." is not in the verified `other`
+    assert outcome == REJECTED  # checksum "aaaa..." is not in the verified `other`
     assert sig is None
 
 
@@ -208,7 +208,17 @@ def test_checksums_signed_only_by_another_key_drops(keys):
     """A good signature, but by a key we did not pin -- not evidence for our pin."""
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_sig"], SUMS_URL: SUMS})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
-    assert outcome == BAD
+    assert outcome == REJECTED
+
+
+def test_rejected_names_the_actual_signer_for_the_rotation_lead(keys):
+    """The escalation lead: SUMS signed by another key (a rotation), pinned to ours. REJECTED, and
+    `signer` names the signing key from the packet via `sig_issuers` -- which works precisely because
+    the pin failed (gpg can't verify the new key, but the packet still says who signed)."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_sig"], SUMS_URL: SUMS})
+    out = verify_signing_key(client, _release(), _params(keys, "checksums"))
+    assert out.verdict == REJECTED
+    assert out.signer and "does not chain to the pinned key" in out.reason
 
 
 def test_checksums_appended_attacker_key_in_the_blob_drops(keys):
@@ -219,7 +229,7 @@ def test_checksums_appended_attacker_key_in_the_blob_drops(keys):
         {KEY_URL: keys["two_key_blob"], SIG_URL: keys["other_sums_sig"], SUMS_URL: SUMS}
     )
     r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
-    assert outcome == BAD
+    assert outcome == REJECTED
 
 
 # ---------------------------------------------------------------------- image mode
@@ -237,7 +247,7 @@ def test_image_sig_from_a_different_key_drops(keys):
     """The MX case: the artifact is signed, but by a key we did not pin."""
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_iso_sig"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "image"))
-    assert outcome == BAD
+    assert outcome == REJECTED
     assert r.signature_url is None and r.verify == "checksum"
 
 
@@ -245,9 +255,9 @@ def test_image_dual_signed_verifies_for_either_pinned_cosigner(keys):
     """A dual-signed ISO `.asc` names two issuers, and the pinned one is not always first.
     Pinning A (listed first) or B (listed second) both verify -- order must not decide it."""
     a = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["dual_iso_sig"]})
-    assert verify_signing_key(a, _release(), _params(keys, "image"))[1] == VERIFIED
+    assert verify_signing_key(a, _release(), _params(keys, "image")).verdict == VERIFIED
     b = FakeClient({KEY_URL: keys["other_pub"], SIG_URL: keys["dual_iso_sig"]})
-    assert verify_signing_key(b, _release(), _params(keys, "image", fpr=keys["other_fpr"]))[1] == VERIFIED
+    assert verify_signing_key(b, _release(), _params(keys, "image", fpr=keys["other_fpr"])).verdict == VERIFIED
 
 
 def test_image_appended_attacker_key_in_the_blob_drops(keys):
@@ -256,7 +266,7 @@ def test_image_appended_attacker_key_in_the_blob_drops(keys):
     attacker key cannot lend its issuer. (Checking every fpr in the blob would have accepted it.)"""
     client = FakeClient({KEY_URL: keys["two_key_blob"], SIG_URL: keys["other_iso_sig"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "image"))
-    assert outcome == BAD and r.signature_url is None
+    assert outcome == REJECTED and r.signature_url is None
 
 
 # ----------------------------------------------------------------- clearsigned mode
@@ -277,7 +287,7 @@ def test_clearsigned_tampered_body_drops(keys):
     tampered = keys["sums_clear"].replace(b"a" * 64, b"b" * 64)  # breaks both sig and checksum
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: tampered})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
-    assert outcome == BAD
+    assert outcome == REJECTED
     assert r.signature_url is None and r.signature_target is None and r.verify == "checksum"
 
 
@@ -285,7 +295,7 @@ def test_clearsigned_from_a_different_key_drops(keys):
     """Signed inline, but by a key we did not pin -- `gpg --verify` fails under the pin."""
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_clear"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
-    assert outcome == BAD
+    assert outcome == REJECTED
 
 
 def test_clearsigned_text_appended_after_the_signature_is_rejected(keys):
@@ -296,24 +306,24 @@ def test_clearsigned_text_appended_after_the_signature_is_rejected(keys):
     assert CKSUM.encode() in keys["clear_appended"]  # the attack would fool a raw-bytes check
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["clear_appended"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
-    assert outcome == BAD and r.verify == "checksum"
+    assert outcome == REJECTED and r.verify == "checksum"
 
 
 def test_clearsigned_dual_signed_with_unknown_cosigner_is_handled_safely(keys):
     """A clearsigned CHECKSUM co-signed by the pinned key AND an unknown key. gpg's `--output`
     policy for a *partially* verifiable doc is version-dependent: some builds withhold the payload
-    (-> fail-closed BAD, drop to `checksum`), others extract the body the pinned key DID sign
+    (-> fail-closed REJECTED, drop to `checksum`), others extract the body the pinned key DID sign
     (-> VERIFIED against the real, pin-signed CHECKSUM). Both are safe -- the pin is attached only
     when gpg confirms the pinned key signed the extracted body, and injected-after-signature text is
     rejected on every gpg by `test_clearsigned_text_appended_after_the_signature_is_rejected`. What
     must never happen is a false GOOD, and neither branch produces one.
 
-    This case once red-lit the daily refresh when a CI runner's gpg changed its `--output` policy,
+    This case once failed the daily refresh when a CI runner's gpg changed its `--output` policy,
     so the assertion no longer pins a single gpg version's behaviour. (No clearsigned source
     dual-signs today; AlmaLinux/Parrot/Gentoo are single-signed.)"""
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["dual_sums_clear"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
-    assert outcome in (BAD, VERIFIED)
+    assert outcome in (REJECTED, VERIFIED)
     if outcome == VERIFIED:
         # rode through only because gpg extracted the body the pinned key signed, which carries the
         # real CKSUM -- so the published checksum is genuinely pin-signed, not injected.
@@ -329,7 +339,7 @@ def test_url_serving_the_wrong_key_drops(keys):
     """The primary-fpr guard: the URL serves a key whose primary is not the pin."""
     client = FakeClient({KEY_URL: keys["other_pub"], SIG_URL: keys["sums_sig"], SUMS_URL: SUMS})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "checksums"))
-    assert outcome == BAD
+    assert outcome == REJECTED
 
 
 def test_key_fetch_failure_defers_without_flapping(keys):
@@ -357,7 +367,7 @@ def test_no_signing_key_or_no_sig_is_a_noop(keys):
     r, outcome = verify_signing_key(client, _release(), {})
     assert outcome == DEFERRED and r.signature_target is None
     r = _release(signature_url=None)
-    assert verify_signing_key(client, r, _params(keys, "image"))[1] == DEFERRED  # no sig
+    assert verify_signing_key(client, r, _params(keys, "image")).verdict == DEFERRED  # no sig
 
 
 # ----------------------------------------------------------- gpgverify unit surface

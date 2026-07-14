@@ -2,10 +2,10 @@
 
 The GPG policy itself is tested in test_signing_key.py; here `verify_signing_key` is monkeypatched
 to a controlled outcome so the test pins the loop shape: only distros that pin a key are checked,
-one representative variant per distro (the `break`), a BAD outcome lands in the failure list, and
+one representative variant per distro (the `break`), a REJECTED outcome lands in the failure list, and
 `--strict` turns a failure into exit 1. It also guards the `verify_signing_key` import — when that
 symbol moves to `signing.py`, a mis-updated import breaks `run_audit.verify_signing_key` and this
-test goes red.
+test fails.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ import pytest
 
 from conftest import FakeClient, autoindex_html
 from distro_iso_feed import run_audit
-from distro_iso_feed.signing import BAD, VERIFIED
+from distro_iso_feed.signing import REJECTED, VERIFIED, SigningOutcome
 
 FPR = "A" * 40
 CKSUM = "d" * 64
@@ -79,9 +79,11 @@ def audit_env(tmp_path, monkeypatch):
 
     monkeypatch.setattr(run_audit, "Client", lambda *a, **k: OneShot())
 
-    # BAD only for the `bad` distro; the gate itself is exercised in test_signing_key.
+    # REJECTED only for the `bad` distro; the gate itself is exercised in test_signing_key.
     def fake_verify(_client, release, _params):
-        return release, (BAD if release.distro == "bad" else VERIFIED)
+        if release.distro == "bad":
+            return SigningOutcome(release, REJECTED, reason="signed by a different key")
+        return SigningOutcome(release, VERIFIED)
 
     monkeypatch.setattr(run_audit, "verify_signing_key", fake_verify)
     return cfg
@@ -91,7 +93,7 @@ def test_audit_reports_the_bad_distro_and_strict_exits_one(audit_env, capsys):
     rc = run_audit.main(["--config", str(audit_env), "--strict"])
     assert rc == 1  # a signing-key failure under --strict
     out = capsys.readouterr().out
-    assert "SIGNING-KEY FAIL: bad:a" in out  # the BAD distro, first (representative) variant
+    assert "SIGNING-KEY FAIL: bad:a" in out  # the rejected distro, first (representative) variant
     assert "SIGNING-KEY FAIL: signed" not in out  # the signed distro verified, did not fail
 
 
@@ -105,7 +107,8 @@ def test_audit_checks_one_representative_variant_per_distro(audit_env, monkeypat
 
     def recording_verify(_client, release, _params):
         seen.append(f"{release.distro}:{release.variant}")
-        return release, (BAD if release.distro == "bad" else VERIFIED)
+        verdict = REJECTED if release.distro == "bad" else VERIFIED
+        return SigningOutcome(release, verdict)
 
     monkeypatch.setattr(run_audit, "verify_signing_key", recording_verify)
     run_audit.main(["--config", str(audit_env)])

@@ -9,16 +9,20 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import logging
 import sys
 from pathlib import Path
 
-from . import docs, feed, select
+import httpx
+
+from . import audit, docs, escalate, feed, select
 from .client import Client
 from .config import load
+from .escalate import Failure, Pin, Report, SigningFailure
 from .gpgverify import gpg_available
 from .models import Variant
-from .signing import BAD, verify_signing_key
+from .signing import REJECTED, verify_signing_key
 from .state import State
 from .strategies import REGISTRY
 from .strategies.torrent import attach_torrent
@@ -53,23 +57,47 @@ def endpoint_of(params: dict) -> str:
     return "?"
 
 
-def diagnose(strategy, variant: Variant, params: dict, client: Client) -> str:
-    """Say *why* a variant failed, because the two causes have opposite fixes.
+def _exc_class(exc: Exception) -> str:
+    """A resolver that raised a network error is transient; a parse/attribute/key error is
+    structural. (`resolve()` catches network errors internally, so this mostly sees the latter.)"""
+    return escalate.TRANSIENT if isinstance(exc, httpx.HTTPError) else escalate.STRUCTURAL
 
-    An unreachable endpoint is an upstream problem; a listing full of candidates
-    that none of them match is a regex problem in `sources.yaml`. Reporting only
-    "unresolved" leaves the reader to re-derive that distinction by hand.
+
+def diagnose(strategy, variant: Variant, params: dict, client: Client) -> Failure:
+    """Say *why* a variant failed AND classify it, because the two causes have opposite fixes and
+    only one should escalate. Reads the `Client` trace for the *real* outcome of its own listing
+    fetch -- a 404/200-empty is structural (the page moved or changed), a timeout/5xx transient. The
+    candidates the endpoint lists *now* are carried so a fix can see what upstream renamed. Costs
+    one extra listing, only for a variant that already failed.
     """
+    key, endpoint = variant.key, endpoint_of(params)
+    repro = f"uv run distro-iso-feed-refresh --dry-run --only {key} -v"
+
+    def mk(reason, cause, cls, status=None, cands=None):
+        return Failure(
+            key=key, reason=reason, failure_class=cls, cause=cause, endpoint=endpoint,
+            status=status, observed_candidates=cands or [], repro=repro,
+        )  # fmt: skip
+
+    mark = len(client.trace)  # only the outcomes of THIS diagnose's fetch, not the whole run
     try:
         candidates = strategy.candidates(variant.distro, params, client)
     except Exception as exc:
-        return f"lister raised {type(exc).__name__}: {exc}"
+        return mk(f"lister raised {type(exc).__name__}: {exc}", "lister-raised", _exc_class(exc))
 
-    endpoint = endpoint_of(params)
-    if not candidates:
-        return f"listing empty or unreachable: {endpoint}"
-
+    outcomes = [o for _, o in client.trace[mark:]]
+    fclass = escalate.classify_outcomes(outcomes)
+    status = outcomes[-1] if outcomes else None
     names = [c.name for c in candidates]
+
+    if not candidates:
+        if fclass == escalate.TRANSIENT:
+            return mk(f"listing unreachable ({status}): {endpoint}", "unreachable", fclass, status)
+        return mk(
+            f"listing empty, endpoint reachable ({status}): {endpoint}",
+            "reachable-empty", escalate.STRUCTURAL, status, names,
+        )  # fmt: skip
+
     match = params.get("match")
     if match:
         chosen = select.choose(
@@ -81,29 +109,49 @@ def diagnose(strategy, variant: Variant, params: dict, client: Client) -> str:
         )
         if not chosen:
             sample = ", ".join(names[:3])
-            return f"listed {len(names)} candidates, none matched `{match}` (e.g. {sample})"
+            return mk(
+                f"listed {len(names)} candidates, none matched `{match}` (e.g. {sample})",
+                "none-matched", escalate.STRUCTURAL, status, names,
+            )  # fmt: skip
 
         pattern = params.get("version_pattern")
         if pattern and not from_filename(chosen.rsplit("/", 1)[-1], pattern):
-            return f"matched `{chosen}` but `version_pattern` extracted no token"
+            return mk(
+                f"matched `{chosen}` but `version_pattern` extracted no token",
+                "no-token", escalate.STRUCTURAL, status, names,
+            )  # fmt: skip
 
-    return f"resolver returned None; {len(names)} candidates at {endpoint}"
+    return mk(
+        f"resolver returned None; {len(names)} candidates at {endpoint}",
+        "resolver-none", escalate.STRUCTURAL, status, names,
+    )  # fmt: skip
+
+
+def _enrich(f: Failure, variant: Variant, state: State) -> Failure:
+    """Add the 'was it resolving before' facts from state -- the regression flag + how stale."""
+    rec = state.records.get(variant.key)
+    f.regression = rec is not None
+    if rec:
+        f.last_good_version = rec.version
+        f.last_resolved = rec.seen
+    return f
 
 
 def write_summary(
     path: Path,
     *,
     changed: list[str],
-    failed: list[tuple[str, str]],
+    failed: list[Failure],
     total: int,
     dry_run: bool = False,
 ) -> None:
     """A run that commits nothing must still leave evidence of what it saw.
 
     Without this, a day on which forty sources broke looks exactly like a day on
-    which nothing was released: green, silent, no commit. The run record is the
+    which nothing was released: passing, silent, no commit. The run record is the
     receipt, so it carries the health of every source and, for each failure, enough
-    to act on without re-running anything locally first.
+    to act on without re-running anything locally first. The `Class`/`Was resolving`
+    columns say which failures are just stale-and-retrying vs which opened an issue.
     """
     lines = [
         "## distro-iso-feed-refresh" + (" (dry run)" if dry_run else ""),
@@ -122,14 +170,17 @@ def write_summary(
         lines += [
             "### Unresolved",
             "",
-            "Entries are left untouched, so the feed is stale for these, not empty.",
+            "Entries are left untouched, so the feed is stale for these, not empty. A structural "
+            "failure that was resolving opens an issue; a transient one just retries.",
             "",
-            "| Variant | Why | Reproduce |",
-            "|---|---|---|",
+            "| Variant | Class | Was resolving | Why | Reproduce |",
+            "|---|---|---|---|---|",
         ]
-        for key, reason in sorted(failed):
-            repro = f"`uv run distro-iso-feed-refresh --dry-run --only {key} -v`"
-            lines.append(f"| `{key}` | {reason} | {repro} |")
+        for f in sorted(failed, key=lambda f: f.key):
+            lines.append(
+                f"| `{f.key}` | {f.failure_class} | {'yes' if f.regression else 'no'} "
+                f"| {f.reason} | `{f.repro}` |"
+            )
         lines += [""]
 
     if dry_run:
@@ -141,11 +192,45 @@ def write_summary(
         fh.write("\n".join(lines))
 
 
+def _write_report(
+    path: Path,
+    sources: list,
+    selected_distros: set[str],
+    failures: list[Failure],
+    signing_failures: list[SigningFailure],
+    total: int,
+) -> None:
+    """The machine-readable failure inventory the workflow's escalation gate consumes. Pins come
+    from `audit.pins` (a pure offline config scan) over the selected distros -- a standing config
+    smell surfaced alongside the run's resolve/signing failures. Never committed (temp path)."""
+    pins = [
+        Pin(
+            key=f"{finding.distro}:{finding.subject}",
+            detail=finding.detail,
+            page_url=source.page_url,
+        )
+        for source in sources
+        if source.name in selected_distros
+        for finding in audit.pins(source)
+    ]
+    report = Report(
+        total=total,
+        resolved=total - len(failures),
+        failures=failures,
+        pins=pins,
+        signing_key_failures=signing_failures,
+    )
+    path.write_text(
+        json.dumps(report.to_json(), indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="distro-iso-feed-refresh")
     parser.add_argument("--dry-run", action="store_true", help="resolve and print; write nothing")
     parser.add_argument("--only", metavar="DISTRO[:VARIANT]", help="restrict to one distro/variant")
     parser.add_argument("--summary", metavar="FILE", help="append a markdown run summary")
+    parser.add_argument("--report", metavar="FILE", help="write the machine-readable report")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args(argv)
 
@@ -163,7 +248,8 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     state = State.load(STATE)
-    failures: list[tuple[str, str]] = []
+    failures: list[Failure] = []
+    signing_failures: list[SigningFailure] = []
     changed: list[str] = []
 
     if not gpg_available():
@@ -181,16 +267,23 @@ def main(argv: list[str] | None = None) -> int:
             try:
                 release = strategy.resolve(variant.distro, variant.name, params, client)
             except Exception as exc:  # a strategy must not take the run down with it
-                reason = f"resolver raised {type(exc).__name__}: {exc}"
-                log.warning("%s: %s", variant.key, reason)
-                failures.append((variant.key, reason))
+                f = Failure(
+                    key=variant.key,
+                    reason=f"resolver raised {type(exc).__name__}: {exc}",
+                    failure_class=_exc_class(exc),
+                    cause="resolver-raised",
+                    endpoint=endpoint_of(params),
+                    repro=f"uv run distro-iso-feed-refresh --dry-run --only {variant.key} -v",
+                )
+                log.warning("%s: %s", variant.key, f.reason)
+                failures.append(_enrich(f, variant, state))
                 continue
 
             if release is None:
                 # Costs one extra listing, and only for variants that already failed.
-                reason = diagnose(strategy, variant, params, client)
-                log.warning("%s: %s (entry left untouched)", variant.key, reason)
-                failures.append((variant.key, reason))
+                f = _enrich(diagnose(strategy, variant, params, client), variant, state)
+                log.warning("%s: %s (entry left untouched)", variant.key, f.reason)
+                failures.append(f)
                 continue
 
             # A co-located `.torrent` is a second retrieval channel on the same entry,
@@ -200,18 +293,31 @@ def main(argv: list[str] | None = None) -> int:
             if params.get("torrent"):
                 release = attach_torrent(client, release, params)
 
-            # Prove the GPG chain before publishing the pinned key. A BAD signature
+            # Prove the GPG chain before publishing the pinned key. A REJECTED signature
             # drops the claim (verify degrades to checksum); a transient/gpg-absent
             # run leaves the entry as resolved. Runs before the token, but cannot move
             # it -- these sources all publish a checksum, so the token is that hash.
             if params.get("signing_key"):
-                release, gpg_outcome = verify_signing_key(client, release, params)
-                if gpg_outcome == BAD:
+                signing = verify_signing_key(client, release, params)
+                release = signing.release
+                if signing.verdict == REJECTED:
                     log.warning(
-                        "%s: signature failed to verify against the pinned key -- "
-                        "dropped the gpg claim (verify now %s)",
+                        "%s: %s -- dropped the gpg claim (verify now %s)",
                         variant.key,
+                        signing.reason,
                         release.verify,
+                    )
+                    sk = params["signing_key"]
+                    signing_failures.append(
+                        SigningFailure(
+                            key=variant.key,
+                            reason=signing.reason or "pin no longer verifies",
+                            pinned_fpr=str(sk.get("fingerprint")),
+                            actual_signer_fpr=signing.signer,
+                            key_url=sk.get("url"),
+                            covers=sk.get("covers"),
+                            page_url=params.get("page_url"),
+                        )
                     )
 
             # `hash` = the published checksum when there is one, else the infohash,
@@ -242,6 +348,17 @@ def main(argv: list[str] | None = None) -> int:
                 # re-notifies; state.save/feed.render below always run.
                 changed.append(f"{variant.key} +torrent")
                 log.info("%s: enriched (metadata only)", variant.key)
+
+    # Write the report before any return -- the gate needs it even on the all-failed path.
+    if args.report:
+        _write_report(
+            Path(args.report),
+            sources,
+            {v.distro for v in variants},
+            failures,
+            signing_failures,
+            len(variants),
+        )
 
     if args.dry_run:
         log.info("%d resolved, %d failed", len(variants) - len(failures), len(failures))

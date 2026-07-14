@@ -27,21 +27,36 @@ class FakeResponse:
 
 
 class FakeClient:
-    """Serves a url->body map. Anything unmapped 404s, like the real world."""
+    """Serves a url->body map. Anything unmapped 404s, like the real world.
+
+    `fail` injects a *failed* fetch outcome for a url -- an int status (e.g. 503) or an exception
+    name (e.g. "ConnectTimeout") -- so a test can exercise the transient-vs-structural classification
+    that reads `Client.trace`.
+    """
 
     def __init__(
-        self, pages: dict[str, str | bytes] | None = None, existing: set[str] | None = None
+        self,
+        pages: dict[str, str | bytes] | None = None,
+        existing: set[str] | None = None,
+        fail: dict[str, int | str] | None = None,
     ):
         self.pages = pages or {}
         self.existing = existing or set()
+        self.fail = fail or {}
         self.requested: list[str] = []
         self.headers_seen: list[dict[str, str] | None] = []
+        self.trace: list[tuple[str, int | str]] = []
 
     def get(self, url: str, headers: dict[str, str] | None = None):
         self.requested.append(url)
         self.headers_seen.append(headers)
+        if url in self.fail:
+            self.trace.append((url, self.fail[url]))  # simulated network error / retry status
+            return None
         if url in self.pages:
+            self.trace.append((url, 200))
             return FakeResponse(url, self.pages[url])
+        self.trace.append((url, 404))  # unmapped -> 404, like the real world
         return None
 
     def text(self, url: str, headers: dict[str, str] | None = None) -> str | None:
@@ -51,6 +66,12 @@ class FakeClient:
     def exists(self, url: str) -> bool:
         self.requested.append(url)
         return url in self.existing or url in self.pages
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return None
 
 
 @pytest.fixture

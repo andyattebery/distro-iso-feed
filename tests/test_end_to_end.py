@@ -289,7 +289,7 @@ def test_one_dead_source_never_removes_an_entry_or_fails_the_run(project):
     entries_before = len(read_feed(tmp_path).entries)
 
     del pages["https://cdimage.example/"]  # Debian's index goes dark
-    assert run_refresh.main([]) == 0  # still green
+    assert run_refresh.main([]) == 0  # still passes
 
     assert len(read_feed(tmp_path).entries) == entries_before  # stale, not empty
     assert (tmp_path / "feed" / "feed.xml").read_bytes() == good_feed

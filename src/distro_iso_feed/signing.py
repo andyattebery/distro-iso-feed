@@ -1,5 +1,5 @@
 """The GPG **policy** layer: which `covers` mode dispatches to which `gpgverify` check, and the
-build-time VERIFIED/BAD/DEFERRED verdict the runners act on.
+build-time VERIFIED/REJECTED/DEFERRED verdict the runners act on.
 
 Distinct from `gpgverify.py`, which holds the stateless gpg-subprocess *wrappers*. This module is
 the policy that composes them against a resolved `Release` and its pinned-key config -- so "the GPG
@@ -8,7 +8,7 @@ gate" finally has a home of its own rather than squatting beside torrent plumbin
 
 from __future__ import annotations
 
-from dataclasses import replace
+from dataclasses import dataclass, replace
 
 from . import gpgverify
 from .client import Client
@@ -16,10 +16,37 @@ from .models import Release
 
 _SIG_EXTS = (".sign", ".gpg", ".asc")
 
-# The result of the build-time GPG gate, so the caller can log/act without re-deriving.
+# The build-time GPG verdict -- proven / disproven / couldn't-check.
 VERIFIED = "verified"  # signature chains to the pinned key -> publish the pin
-BAD = "bad"  # a signature that fails its own key -> drop the gpg claim
-DEFERRED = "deferred"  # transient/gpg-absent -> keep as resolved, add no pin
+REJECTED = "rejected"  # a signature that does NOT chain to the pin -> drop the gpg claim
+DEFERRED = "deferred"  # couldn't verify (gpg-absent / transient fetch) -> keep as resolved, no pin
+
+# The `covers` modes `verify_signing_key` dispatches on (see its if/elif). This is the single
+# source of truth: `config.py` imports it to validate `signing_key.covers`, so the validator and
+# the dispatch can no longer name different sets in two files coupled by a bare string. Adding a
+# mode is now a single-file edit here -- add the name AND its dispatch branch below together (a
+# name here with no branch would silently degrade to DEFERRED; a test pins config to this set).
+COVERS = frozenset({"checksums", "clearsigned", "image"})
+
+
+@dataclass(frozen=True, slots=True)
+class SigningOutcome:
+    """The GPG verdict plus the *why*, so a caller can log, report, or escalate without re-deriving.
+
+    `reason` is the human cause for REJECTED/DEFERRED (None on VERIFIED). `signer` is the actual
+    signing fingerprint when the pin was REJECTED -- read from the signature packet itself, so it
+    names the key even though it isn't the pin: the rotation lead an escalation ticket needs.
+    """
+
+    release: Release
+    verdict: str
+    reason: str | None = None
+    signer: str | None = None
+
+    def __iter__(self):
+        # A SigningOutcome is fundamentally the `(release, verdict)` this used to return; `reason`
+        # and `signer` are added context. Unpacking as that pair stays supported for terse callers.
+        return iter((self.release, self.verdict))
 
 # The `covers` modes `verify_signing_key` dispatches on (see its if/elif). This is the single
 # source of truth: `config.py` imports it to validate `signing_key.covers`, so the validator and
@@ -33,7 +60,14 @@ def _norm_fpr(value: str) -> str:
     return "".join(value.split()).upper()
 
 
-def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[Release, str]:
+def _first_issuer(sig_bytes: bytes) -> str | None:
+    """The signature's own issuer fingerprint, read from the packet -- so it names the signer even
+    when it isn't the pin (a rotated key gpg can't verify). None if the sig won't parse."""
+    issuers = gpgverify.sig_issuers(sig_bytes)
+    return issuers[0] if issuers else None
+
+
+def verify_signing_key(client: Client, release: Release, params: dict) -> SigningOutcome:
     """Prove the GPG chain before the feed publishes the pinned key.
 
     A hand-entered fingerprint is only as good as the data entry, so every build
@@ -46,20 +80,21 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
                    signature's issuer is the pinned key (primary or subkey). Proves
                    the signature is *from* the pinned key; the consumer does the rest.
 
-    Returns `(release, outcome)`:
+    Returns a `SigningOutcome` whose `verdict` is:
       VERIFIED -> the pin is attached;
-      BAD      -> `signature_url` is cleared, so `verify` degrades to `checksum`
-                  (a signed checksum that fails its signature is not forwardable);
-      DEFERRED -> the entry is returned exactly as resolved (a network blip or a dev
-                  box without gpg must never flap the claim), no pin this run.
+      REJECTED -> `signature_url` is cleared, so `verify` degrades to `checksum` (a signed
+                  checksum that fails its signature is not forwardable); `reason`/`signer` say why
+                  and who signed instead -- the escalation lead;
+      DEFERRED -> the entry is returned exactly as resolved (a network blip or a dev box without
+                  gpg must never flap the claim), no pin this run; `reason` says what was missing.
     """
     key_conf = params.get("signing_key")
     if not key_conf or not release.signature_url:
-        return release, DEFERRED
+        return SigningOutcome(release, DEFERRED)  # nothing to verify
 
     # `signature_target` is a static fact -- what the sig signs -- known from config
     # regardless of whether gpg can verify the pin this run. Stage it now so it rides
-    # every non-BAD path (a dev box without gpg still emits it); `_drop` clears it.
+    # every non-REJECTED path (a dev box without gpg still emits it); `_drop` clears it.
     covers = key_conf.get("covers")
     # `signature_target` names what the sig signs (checksums|image) for the client; a
     # clearsigned CHECKSUM is a checksums signature carried inline, so it maps to checksums.
@@ -67,47 +102,74 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
     staged = replace(release, signature_target=target)
 
     if not gpgverify.gpg_available():
-        return staged, DEFERRED  # keep the claim; the environment, not the sig, is at fault
+        return SigningOutcome(staged, DEFERRED, "gpg unavailable on this runner")
 
     key = client.get(key_conf["url"])
     if not key or not key.content:
-        return staged, DEFERRED  # transient: don't drop over a key-server blip
+        return SigningOutcome(staged, DEFERRED, "key server unreachable")
     key_bytes = key.content
 
     pinned = _norm_fpr(str(key_conf["fingerprint"]))
     # A cheap sanity early-out: is the pinned key even in what the URL served? Set-based (not
     # "is it the first key") so a key directory that returns several keys, or lists the pin
-    # second, is not a false BAD. It is no longer the security boundary -- each path below
+    # second, is not a false reject. It is no longer the security boundary -- each path below
     # proves the pin actually *signed*, so an appended attacker key cannot ride this through.
     primaries = {g[0] for g in gpgverify.key_fingerprint_groups(key_bytes) if g}
     if pinned not in primaries:
-        return _drop(release), BAD  # the URL is not serving the key we pinned
+        served = sorted(primaries)
+        return SigningOutcome(
+            _drop(release),
+            REJECTED,
+            f"the key URL no longer serves the pinned {pinned} "
+            f"(it serves {', '.join(served) or 'no key'})",
+            signer=served[0] if served else None,
+        )
 
     sig = client.get(release.signature_url)
     if not sig or not sig.content:
-        return staged, DEFERRED
+        return SigningOutcome(staged, DEFERRED, "signature file unreachable")
     sig_bytes = sig.content
 
     if covers == "checksums":
         signed_url = _strip_sig_ext(release.signature_url)
         signed = client.get(signed_url)
         if not signed or not signed.content:
-            return staged, DEFERRED
+            return SigningOutcome(staged, DEFERRED, "checksum file unreachable")
         text = signed.content.decode("utf-8", "replace")
         good = gpgverify.verify_detached(key_bytes, sig_bytes, signed.content, pinned_fpr=pinned)
+        if not good:
+            return SigningOutcome(
+                _drop(release), REJECTED,
+                f"the SHA*SUMS signature does not chain to the pinned key {pinned}",
+                signer=_first_issuer(sig_bytes),
+            )  # fmt: skip
         # The checksum the feed publishes must be the one the signature vouches for. Reading it
         # from the raw SUMS is safe *here* because a detached sig covers the whole file -- any
         # appended line breaks `good`. (Clearsigned below cannot do this; see there.)
-        if not (good and release.checksum and release.checksum.lower() in text.lower()):
-            return _drop(release), BAD
+        if not (release.checksum and release.checksum.lower() in text.lower()):
+            return SigningOutcome(
+                _drop(release), REJECTED,
+                "the signature is valid but the feed's checksum is absent from the signed file",
+                signer=pinned,
+            )  # fmt: skip
     elif covers == "clearsigned":
         # AlmaLinux: `sig` IS the clearsigned CHECKSUM -- signature and body in one file, so
         # there is no separate SUMS to fetch. Check the feed's checksum against gpg's extracted
         # payload (the signed region only), NOT the raw file: text appended after the signature
         # block leaves the inner sig Good, so a raw `in` check would match injected lines.
         payload = gpgverify.verify_clearsigned(key_bytes, sig_bytes, pinned_fpr=pinned)
-        if not (payload and release.checksum and release.checksum.lower() in payload.lower()):
-            return _drop(release), BAD
+        if not payload:
+            return SigningOutcome(
+                _drop(release), REJECTED,
+                f"the clearsigned CHECKSUM does not chain to the pinned key {pinned}",
+                signer=_first_issuer(sig_bytes),
+            )  # fmt: skip
+        if not (release.checksum and release.checksum.lower() in payload.lower()):
+            return SigningOutcome(
+                _drop(release), REJECTED,
+                "the signature is valid but the feed's checksum is absent from the signed payload",
+                signer=pinned,
+            )  # fmt: skip
     elif covers == "image":
         # The sig covers the ISO we never download, so we can only check who it *names*. A
         # dual-signed `.asc` names two issuers (Proxmox), so consider them all; and match only
@@ -115,16 +177,20 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> tuple[
         # every key in the blob -- an appended attacker key must not lend its issuer here.
         issuers = gpgverify.sig_issuers(sig_bytes)
         if not issuers:
-            return staged, DEFERRED  # couldn't parse the sig -> don't punish the entry
+            return SigningOutcome(staged, DEFERRED, "could not parse the signature")
         own = gpgverify.fingerprints_for_primary(key_bytes, pinned)
         if not any(gpgverify.issuer_in_fingerprints(iss, own) for iss in issuers):
-            return _drop(release), BAD
+            return SigningOutcome(
+                _drop(release), REJECTED,
+                f"the image signature is from {issuers[0]}, not the pinned key or its subkeys",
+                signer=issuers[0],
+            )  # fmt: skip
     else:  # a config with signing_key but no/unknown `covers` verifies nothing
-        return staged, DEFERRED
+        return SigningOutcome(staged, DEFERRED, "no or unknown covers mode")
 
-    return replace(
-        staged, signing_key_url=key_conf["url"], signing_key_fingerprint=pinned
-    ), VERIFIED
+    return SigningOutcome(
+        replace(staged, signing_key_url=key_conf["url"], signing_key_fingerprint=pinned), VERIFIED
+    )
 
 
 def _drop(release: Release) -> Release:

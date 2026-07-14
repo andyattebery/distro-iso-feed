@@ -52,6 +52,11 @@ class Client:
         self.retries = retries
         self.backoff = backoff
         self._sleep = sleep
+        # Per-request outcome log: `(url, status_code | exception_name)`. The listers collapse a
+        # 404, a 200-empty page, and a timeout all to `[]`, so this is where the *actual* outcome
+        # survives -- `run_refresh.diagnose` reads it to tell a structural break (reachable, wrong
+        # content) from a transient one (unreachable). In-memory only; never persisted.
+        self.trace: list[tuple[str, int | str]] = []
         self._http = httpx.Client(
             headers={"User-Agent": user_agent},
             timeout=timeout,
@@ -74,9 +79,11 @@ class Client:
                 r = self._http.get(url, headers=headers)
             except httpx.HTTPError as exc:
                 log.warning("GET %s failed: %s", url, exc)
+                self.trace.append((url, type(exc).__name__))  # network error -> transient
                 self._wait(attempt, None)
                 continue
 
+            self.trace.append((url, r.status_code))
             if r.status_code in RETRY_STATUS:
                 log.warning("GET %s -> %s", url, r.status_code)
                 self._wait(attempt, r.headers.get("Retry-After"))

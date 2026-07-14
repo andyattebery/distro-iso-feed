@@ -13,7 +13,8 @@ on:
         default: false
 
 permissions:
-  contents: write # nothing else is needed
+  contents: write # commit the feed
+  issues: write # the health gate opens/closes refresh-failure issues
 
 concurrency:
   group: refresh
@@ -38,7 +39,10 @@ jobs:
 
       - run: uv sync --frozen
 
-      - run: uv run pytest -q
+      # No `pytest` gate here: the suite runs in `ci.yml` on push/PR, where a code
+      # or runner-environment problem belongs. Gating the daily render on it once let
+      # a gpg version bump on the runner block the whole feed. The render step below
+      # loads the config first, so a broken config still fails this job loudly.
 
       # A manual `dry_run` resolves every source from a GitHub runner and writes
       # nothing. That is the only way to observe what this job actually sees:
@@ -50,7 +54,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run == true }}
         run: |
           set -euo pipefail
-          args=(--summary "$GITHUB_STEP_SUMMARY")
+          args=(--summary "$GITHUB_STEP_SUMMARY" --report "$RUNNER_TEMP/report.json")
           if [ "$DRY_RUN" = "true" ]; then
             args+=(--dry-run)
           fi
@@ -59,8 +63,10 @@ jobs:
         # of every source. Individual failures never fail the job (that is what
         # failure isolation is for); all of them failing does.
 
+      # `always()` so the (valid) feed still commits even when a source regressed and the health
+      # gate below is about to fail the job. The empty-commit guard keeps determinism.
       - name: Commit if changed
-        if: ${{ !inputs.dry_run }}
+        if: ${{ always() && !inputs.dry_run }}
         run: |
           set -euo pipefail
           git config user.name  "distro-iso-feed-bot"
@@ -85,3 +91,47 @@ jobs:
             sleep $((attempt * 5))
           done
           exit 1
+
+      # Turn the failure report into issues and the job's pass/fail. `always()` so it runs after a
+      # commit that returned 0-with-regressions AND so recovery-close runs on fully-passing days. The
+      # gate's exit is authoritative and independent of the `gh` calls succeeding -- a GitHub API
+      # hiccup can neither mask a real regression (still exits non-zero) nor invent one.
+      - name: Health gate & issues
+        if: ${{ always() && !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          report="$RUNNER_TEMP/report.json"
+          if [ ! -f "$report" ]; then
+            echo "no report (the render step failed before writing one); job already red"
+            exit 0
+          fi
+
+          gh issue list --state open --json number,title,labels --limit 500 \
+            > "$RUNNER_TEMP/open.json"
+          uv run distro-iso-feed-refresh-gate \
+            --report "$report" --open-issues "$RUNNER_TEMP/open.json" > "$RUNNER_TEMP/plan.json"
+
+          # Ensure our labels exist before opening issues against them.
+          for lbl in refresh-failure refresh-signing-key refresh-pin refresh-mass-outage; do
+            gh label create "$lbl" --force >/dev/null 2>&1 || true
+          done
+
+          # Open new issues; close recovered ones. Both best-effort -- a `gh` failure warns but must
+          # not change the gate exit computed below.
+          jq -c '.to_open[]' "$RUNNER_TEMP/plan.json" | while read -r item; do
+            title=$(jq -r '.title' <<<"$item")
+            label=$(jq -r '.label' <<<"$item")
+            jq -r '.body'  <<<"$item" > "$RUNNER_TEMP/body.md"
+            gh issue create --title "$title" --label "$label" --body-file "$RUNNER_TEMP/body.md" \
+              || echo "::warning::could not open issue: $title"
+          done
+          jq -c '.to_close[]' "$RUNNER_TEMP/plan.json" | while read -r item; do
+            num=$(jq -r '.number' <<<"$item")
+            gh issue close "$num" --comment "Resolved as of this run: $RUN_URL" \
+              || echo "::warning::could not close issue #$num"
+          done
+
+          exit "$(jq -r '.exit_code' "$RUNNER_TEMP/plan.json")"

@@ -455,8 +455,9 @@ def test_catalog_has_no_build_timestamp(tmp_path):
 # ------------------------------------------------------------------------ run summary
 
 
-def test_diagnose_distinguishes_dead_endpoint_from_bad_regex():
-    """The two causes have opposite fixes, so "unresolved" alone is not enough."""
+def test_diagnose_classifies_and_shows_what_upstream_lists_now():
+    """diagnose both classifies (transient network failure vs structural wrong-content -- the
+    escalation gate) and carries the candidates upstream lists NOW, so a fix can see the rename."""
     from conftest import FakeClient, autoindex_html
     from distro_iso_feed.models import Variant
     from distro_iso_feed.run_refresh import diagnose
@@ -465,19 +466,25 @@ def test_diagnose_distinguishes_dead_endpoint_from_bad_regex():
     v = Variant(distro="x", name="y", strategy="directory_index", params={})
     idx = "https://live.example/"
 
-    dead = diagnose(s, v, {"index": idx, "match": r"\.iso$"}, FakeClient({}))
-    assert "unreachable" in dead and idx in dead
+    # A network failure at the endpoint -> TRANSIENT (retries next run, no issue).
+    dead = diagnose(s, v, {"index": idx, "match": r"\.iso$"}, FakeClient(fail={idx: "ConnectTimeout"}))
+    assert dead.failure_class == "transient" and "unreachable" in dead.reason
 
+    # A 404 is the server saying "gone" -> STRUCTURAL (moved/removed), never transient.
+    moved = diagnose(s, v, {"index": idx, "match": r"\.iso$"}, FakeClient({}))
+    assert moved.failure_class == "structural"
+
+    # Reachable (200) but the regex matches nothing -> structural, with the real candidates carried.
     listing = FakeClient({idx: autoindex_html(["debian-13.5.0-amd64-netinst.iso"])})
     bad_match = diagnose(s, v, {"index": idx, "match": r"^ubuntu-.*\.iso$"}, listing)
-    assert "none matched" in bad_match
-    assert "debian-13.5.0-amd64-netinst.iso" in bad_match  # shows what WAS there
+    assert bad_match.failure_class == "structural" and "none matched" in bad_match.reason
+    assert "debian-13.5.0-amd64-netinst.iso" in bad_match.observed_candidates  # what a fix needs
 
     listing = FakeClient({idx: autoindex_html(["debian-13.5.0-amd64-netinst.iso"])})
     bad_token = diagnose(
         s, v, {"index": idx, "match": r"\.iso$", "version_pattern": r"ubuntu-(\d+)"}, listing
     )
-    assert "extracted no token" in bad_token
+    assert bad_token.failure_class == "structural" and "extracted no token" in bad_token.reason
 
 
 def test_summary_reports_no_commit_when_nothing_moved(tmp_path):
@@ -491,15 +498,22 @@ def test_summary_reports_no_commit_when_nothing_moved(tmp_path):
 
 
 def test_summary_makes_failures_actionable(tmp_path):
+    from distro_iso_feed.escalate import Failure
     from distro_iso_feed.run_refresh import write_summary
 
     p = tmp_path / "s.md"
-    write_summary(
-        p, changed=[], failed=[("tails:iso", "listing empty or unreachable: https://x/")], total=82
+    f = Failure(
+        key="tails:iso",
+        reason="listing unreachable (ConnectTimeout): https://x/",
+        failure_class="transient",
+        cause="unreachable",
+        regression=True,
+        repro="uv run distro-iso-feed-refresh --dry-run --only tails:iso -v",
     )
+    write_summary(p, changed=[], failed=[f], total=82)
     body = p.read_text()
     assert "tails:iso" in body
-    assert "unreachable" in body
+    assert "unreachable" in body and "transient" in body  # the class column
     assert "--dry-run --only tails:iso -v" in body  # copy-pasteable repro
 
 

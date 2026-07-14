@@ -18,7 +18,7 @@ from pathlib import Path
 from .audit import Reason, audit_source, report
 from .client import Client
 from .config import load
-from .signing import BAD, verify_signing_key
+from .signing import REJECTED, verify_signing_key
 from .strategies import REGISTRY
 
 log = logging.getLogger("distro-iso-feed-audit")
@@ -27,14 +27,15 @@ ROOT = Path(__file__).resolve().parents[2]
 CONFIG = ROOT / "config" / "sources.yaml"
 
 
-def verify_signing_keys(sources, client) -> list[str]:
+def verify_signing_keys(sources, client) -> list[tuple[str, str | None]]:
     """Run the build-time gate over one gpg variant per distro that pins a key.
 
     The pin is per-distro, so a single representative variant proves the pinned key
-    still verifies the current artifact. Returns the keys ("distro:variant") whose
-    signature no longer chains to the pin -- a rotated key or a config typo.
+    still verifies the current artifact. Returns `(key, reason)` for each variant whose
+    signature no longer chains to the pin -- a rotated key or a config typo; the reason
+    (e.g. "signed by <fpr> now") is the lead for the fix.
     """
-    failures: list[str] = []
+    failures: list[tuple[str, str | None]] = []
     for source in sources:
         if not source.variants[0].params.get("signing_key"):
             continue
@@ -50,9 +51,9 @@ def verify_signing_keys(sources, client) -> list[str]:
                 release = None
             if release is None or not release.signature_url:
                 continue
-            _, outcome = verify_signing_key(client, release, params)
-            if outcome == BAD:
-                failures.append(variant.key)
+            outcome = verify_signing_key(client, release, params)
+            if outcome.verdict == REJECTED:
+                failures.append((variant.key, outcome.reason))
             break  # one representative per distro is enough; the key is per-distro
     return failures
 
@@ -84,9 +85,10 @@ def main(argv: list[str] | None = None) -> int:
     print(text)
     if key_failures:
         text += "\n## Signing-key verification FAILED\n\n" + "".join(
-            f"- `{k}`: signature no longer chains to the pinned key\n" for k in key_failures
+            f"- `{k}`: {reason or 'signature no longer chains to the pinned key'}\n"
+            for k, reason in key_failures
         )
-        print("\n".join(f"SIGNING-KEY FAIL: {k}" for k in key_failures))
+        print("\n".join(f"SIGNING-KEY FAIL: {k}" for k, _ in key_failures))
     if args.summary:
         with Path(args.summary).open("a", encoding="utf-8") as fh:
             fh.write(text)

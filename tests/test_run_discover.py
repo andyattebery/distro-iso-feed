@@ -2,7 +2,7 @@
 proposal, driven end-to-end through `main()` so the three writeback shapes and the `pr_body`
 assembly are integration-tested (the proposers themselves are unit-tested elsewhere). This guards
 the Tier-2 proposer-contract change: if `main`'s collection, a writeback branch, or the `pr_body`
-signature drifts, one of these assertions goes red.
+signature drifts, one of these assertions fails.
 """
 
 from __future__ import annotations

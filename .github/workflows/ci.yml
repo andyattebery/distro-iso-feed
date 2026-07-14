@@ -1,0 +1,28 @@
+# Code gate. Runs on every push and PR, so a bad commit -- or a runner-environment
+# change like a gpg version bump -- fails a check HERE, where the change is, instead
+# of inside the daily refresh where it would block the whole feed from rendering.
+# The refresh job deliberately does NOT run the suite; this is its home.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v8.3.2 # no floating `v8` tag; pin the patch
+        with:
+          enable-cache: true
+
+      - run: uv sync --frozen
+
+      - run: uv run pytest -q
+
+      - run: uv run ruff check src tests

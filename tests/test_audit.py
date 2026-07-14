@@ -2,7 +2,7 @@
 
 `PINNED` is the one no other check in this repo can see. A missing variant is
 visible -- nothing appears in the feed. A pinned source resolves cleanly, publishes
-a valid checksum, and serves a stale release forever while every check stays green.
+a valid checksum, and serves a stale release forever while every check keeps passing.
 Two of them shipped. So the pin check runs offline, over the real config, as a test.
 """
 

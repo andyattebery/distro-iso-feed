@@ -96,7 +96,10 @@ something". `docs/catalog.md` is the easiest place to break this, because a buil
 timestamp feels natural on a docs page.
 
 **Failure isolation.** A resolver returns `None` rather than raising. The variant's
-record is left untouched, so the feed degrades to **stale, never empty**.
+record is left untouched, so the feed degrades to **stale, never empty**. Turning a
+*structural* regression (was resolving, now isn't) into a red job and a GitHub issue is
+a separate operational layer that never touches this isolation — see
+[`operations.md`](operations.md).
 
 **`schema` is a compatibility generation, not a change counter.** `latest.json`'s
 `schema` (a single integer, the `api/v1` convention) tells a consumer whether it can
@@ -118,8 +121,8 @@ timestamps.
 
 **No source names its own release.** A missing variant is visible — nothing appears
 in the feed. A **pinned** one is not: it resolves cleanly, publishes a valid
-checksum, and serves a stale release forever while every check in this repo stays
-green. Two shipped that way, `builds/24.04/intel` and `antiX-26`, and nothing here
+checksum, and serves a stale release forever while every check in this repo keeps
+passing. Two shipped that way, `builds/24.04/intel` and `antiX-26`, and nothing here
 could see either. So a release-shaped literal in `url`, `index`, `path` or `match`
 is a finding: `audit.pins()` flags it, and a test asserts the real config is clean.
 A variant that finds its release another way — `version_dir`, `probe_versions` — is
