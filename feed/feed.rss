@@ -4,8 +4,81 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Tue, 14 Jul 2026 05:16:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 08:44:24 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>NixOS Graphical 26.05.4937.8eeec934ae0d (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.4937.8eeec934ae0d</guid>
+      <pubDate>Wed, 15 Jul 2026 08:44:24 +0000</pubDate>
+      <description>NixOS Graphical 26.05.4937.8eeec934ae0d (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 0346668ee532e425dff2775583c29f366d428c1bab3c2473d1b2db5d29d55161
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.4937.8eeec934ae0d (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.4937.8eeec934ae0d</guid>
+      <pubDate>Wed, 15 Jul 2026 08:44:23 +0000</pubDate>
+      <description>NixOS Minimal 26.05.4937.8eeec934ae0d (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 5e5ceffc3ae5434ba3ababd5da4f07a9a2a6796be3f250ac4c2bbebc9bf6d35c
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.4937.8eeec934ae0d (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.4937.8eeec934ae0d</guid>
+      <pubDate>Wed, 15 Jul 2026 08:44:23 +0000</pubDate>
+      <description>NixOS Minimal 26.05.4937.8eeec934ae0d (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: f31d0c4377fa5385f99d70586ce2e4cb53c433da8899d631c5867ab52b2d28b3
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.4937.8eeec934ae0d (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.4937.8eeec934ae0d</guid>
+      <pubDate>Wed, 15 Jul 2026 08:44:23 +0000</pubDate>
+      <description>NixOS Graphical 26.05.4937.8eeec934ae0d (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 5b5a3b22eab7f955a9b547a66d6512e6561d086c848eb1efbbcc2202880ee65c
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>OPNsense DVD 26.7 (x86_64)</title>
+      <link>https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.7/OPNsense-26.7-dvd-amd64.iso.bz2</link>
+      <guid isPermaLink="false">opnsense:dvd:26.7</guid>
+      <pubDate>Wed, 15 Jul 2026 08:44:21 +0000</pubDate>
+      <description>OPNsense DVD 26.7 (x86_64)
+Filename: OPNsense-26.7-dvd-amd64.iso.bz2
+sha256: 95cafedda6d5b22ce832e249dc2309110fbee19f813ad78cf28bb3d387186bfb
+Verify: checksum</description>
+      <enclosure url="https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.7/OPNsense-26.7-dvd-amd64.iso.bz2" type="application/x-bzip2" length="0" />
+      <category>opnsense</category>
+    </item>
+    <item>
+      <title>Pop!_OS (NVIDIA) 24.04-26 (x86_64)</title>
+      <link>https://iso.pop-os.org/24.04/amd64/nvidia/26/pop-os_24.04_amd64_nvidia_26.iso</link>
+      <guid isPermaLink="false">pop-os:nvidia:24.04-26</guid>
+      <pubDate>Wed, 15 Jul 2026 08:37:32 +0000</pubDate>
+      <description>Pop!_OS (NVIDIA) 24.04-26 (x86_64)
+Filename: pop-os_24.04_amd64_nvidia_26.iso
+Size: 3925868544
+sha256: 6ba3e68cc2f96d133b2dab8ec04d852d8089888dfcb6d9e68fb6a70aab0d3776
+Verify: checksum</description>
+      <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/26/pop-os_24.04_amd64_nvidia_26.iso" type="application/x-iso9660-image" length="3925868544" />
+      <category>pop-os</category>
+    </item>
     <item>
       <title>Aurora NVIDIA Open stable-20260714.1 (x86_64)</title>
       <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
@@ -429,54 +502,6 @@ sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
 Verify: checksum</description>
       <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>bazzite</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.4808.569d57850992 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.4808.569d57850992</guid>
-      <pubDate>Mon, 13 Jul 2026 13:16:46 +0000</pubDate>
-      <description>NixOS Graphical 26.05.4808.569d57850992 (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 4a5229222544fdc0ecd5ae94dc9c9e74dba9db63300f99282ef53878a73e5e84
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.4808.569d57850992 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.4808.569d57850992</guid>
-      <pubDate>Mon, 13 Jul 2026 13:16:46 +0000</pubDate>
-      <description>NixOS Graphical 26.05.4808.569d57850992 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: ad9bbf4498aac44c9f935249d9dc5111fe3b86c61013b44e4c80d1a081cc8ef9
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.4808.569d57850992 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.4808.569d57850992</guid>
-      <pubDate>Mon, 13 Jul 2026 13:16:45 +0000</pubDate>
-      <description>NixOS Minimal 26.05.4808.569d57850992 (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 47bc97ac8b5e28e14683ee74dd2334ed89374413f8c106e56df1085fae193f5b
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.4808.569d57850992 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.4808.569d57850992</guid>
-      <pubDate>Mon, 13 Jul 2026 13:16:45 +0000</pubDate>
-      <description>NixOS Minimal 26.05.4808.569d57850992 (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: db8fafcdc0b0091c47f8c35e7980e811ef8687c8dd4710ba84497018fd316837
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260709 (aarch64)</title>
@@ -2084,18 +2109,6 @@ Verify: gpg</description>
       <category>debian</category>
     </item>
     <item>
-      <title>OPNsense DVD 26.1.6 (x86_64)</title>
-      <link>https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.1.6/OPNsense-26.1.6-dvd-amd64.iso.bz2</link>
-      <guid isPermaLink="false">opnsense:dvd:26.1.6</guid>
-      <pubDate>Sun, 12 Jul 2026 17:47:08 +0000</pubDate>
-      <description>OPNsense DVD 26.1.6 (x86_64)
-Filename: OPNsense-26.1.6-dvd-amd64.iso.bz2
-sha256: 6ba3633d9c0f96d82c792015a45f4b8aac45ea8fa2bdba3c5e534d0c90a4f08c
-Verify: checksum</description>
-      <enclosure url="https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.1.6/OPNsense-26.1.6-dvd-amd64.iso.bz2" type="application/x-bzip2" length="0" />
-      <category>opnsense</category>
-    </item>
-    <item>
       <title>Memtest86+ 8.10 (x86_64)</title>
       <link>https://www.memtest.org/download/v8.10/mt86plus_8.10_x86_64.iso.zip</link>
       <guid isPermaLink="false">memtest:iso:8.10</guid>
@@ -3196,19 +3209,6 @@ Verify: gpg</description>
       <category>kali</category>
     </item>
     <item>
-      <title>Pop!_OS (NVIDIA) 24.04-25 (x86_64)</title>
-      <link>https://iso.pop-os.org/24.04/amd64/nvidia/25/pop-os_24.04_amd64_nvidia_25.iso</link>
-      <guid isPermaLink="false">pop-os:nvidia:24.04-25</guid>
-      <pubDate>Thu, 09 Jul 2026 23:40:08 +0000</pubDate>
-      <description>Pop!_OS (NVIDIA) 24.04-25 (x86_64)
-Filename: pop-os_24.04_amd64_nvidia_25.iso
-Size: 3893821440
-sha256: 5625f4fa99521a94cabe64c6c3ec1d26d10b09b5af5969d272837f5e1c585a6d
-Verify: checksum</description>
-      <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/25/pop-os_24.04_amd64_nvidia_25.iso" type="application/x-iso9660-image" length="3893821440" />
-      <category>pop-os</category>
-    </item>
-    <item>
       <title>Pop!_OS (Intel/AMD) 24.04-20 (x86_64)</title>
       <link>https://iso.pop-os.org/24.04/amd64/intel/20/pop-os_24.04_amd64_intel_20.iso</link>
       <guid isPermaLink="false">pop-os:intel:24.04-20</guid>
@@ -3326,6 +3326,21 @@ Verify: checksum</description>
       <category>fedora</category>
     </item>
     <item>
+      <title>Clonezilla Live 3.3.3-15 (x86_64)</title>
+      <link>https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.3-15/clonezilla-live-3.3.3-15-amd64.iso/download</link>
+      <guid isPermaLink="false">clonezilla:default:3.3.3-15</guid>
+      <pubDate>Sun, 05 Jul 2026 03:11:25 +0000</pubDate>
+      <description>Clonezilla Live 3.3.3-15 (x86_64)
+Filename: clonezilla-live-3.3.3-15-amd64.iso
+sha512: 8769d90907c47afa85e0b15a8a34c295d1f30a6de7bfc3ebdd5c1123d1d54484b1a468ac15a1971d28b2c72e6a0f3a4aac97701b98417c946a3d15cb5cd1a656
+Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
+Verify: gpg</description>
+      <enclosure url="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.3-15/clonezilla-live-3.3.3-15-amd64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>clonezilla</category>
+    </item>
+    <item>
       <title>CachyOS Handheld 260628 (x86_64)</title>
       <link>https://sourceforge.net/projects/cachyos-arch/files/gui-installer/handheld/260628/cachyos-handheld-linux-260628.iso/download</link>
       <guid isPermaLink="false">cachyos:handheld:260628</guid>
@@ -3369,21 +3384,6 @@ Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>openmediavault</category>
-    </item>
-    <item>
-      <title>Clonezilla Live 3.3.2-31 (x86_64)</title>
-      <link>https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso/download</link>
-      <guid isPermaLink="false">clonezilla:default:3.3.2-31</guid>
-      <pubDate>Mon, 25 May 2026 13:07:00 +0000</pubDate>
-      <description>Clonezilla Live 3.3.2-31 (x86_64)
-Filename: clonezilla-live-3.3.2-31-amd64.iso
-sha512: e1f7c6ef43f03ac74c1001cd89f2bb1429d098dc1320a1dd471fcd84e73390d5032add60946a4d920f36d729daf6279fa0fbb5c8f294b568d0339f5cd481d431
-Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
-Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
-Verify: gpg</description>
-      <enclosure url="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>clonezilla</category>
     </item>
     <item>
       <title>MX Linux Xfce 25.2 (x86_64)</title>

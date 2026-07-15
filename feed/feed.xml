@@ -4,7 +4,92 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-14T05:16:03+00:00</updated>
+  <updated>2026-07-15T08:44:24+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.4937.8eeec934ae0d</id>
+    <title>NixOS Graphical 26.05.4937.8eeec934ae0d (aarch64)</title>
+    <updated>2026-07-15T08:44:24+00:00</updated>
+    <published>2026-07-15T08:44:24+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.4937.8eeec934ae0d (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 0346668ee532e425dff2775583c29f366d428c1bab3c2473d1b2db5d29d55161
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.4937.8eeec934ae0d</id>
+    <title>NixOS Minimal 26.05.4937.8eeec934ae0d (aarch64)</title>
+    <updated>2026-07-15T08:44:23+00:00</updated>
+    <published>2026-07-15T08:44:23+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.4937.8eeec934ae0d (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 5e5ceffc3ae5434ba3ababd5da4f07a9a2a6796be3f250ac4c2bbebc9bf6d35c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.4937.8eeec934ae0d</id>
+    <title>NixOS Minimal 26.05.4937.8eeec934ae0d (x86_64)</title>
+    <updated>2026-07-15T08:44:23+00:00</updated>
+    <published>2026-07-15T08:44:23+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.4937.8eeec934ae0d (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: f31d0c4377fa5385f99d70586ce2e4cb53c433da8899d631c5867ab52b2d28b3
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.4937.8eeec934ae0d</id>
+    <title>NixOS Graphical 26.05.4937.8eeec934ae0d (x86_64)</title>
+    <updated>2026-07-15T08:44:23+00:00</updated>
+    <published>2026-07-15T08:44:23+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.4937.8eeec934ae0d (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 5b5a3b22eab7f955a9b547a66d6512e6561d086c848eb1efbbcc2202880ee65c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opnsense/dvd/26.7</id>
+    <title>OPNsense DVD 26.7 (x86_64)</title>
+    <updated>2026-07-15T08:44:21+00:00</updated>
+    <published>2026-07-15T08:44:21+00:00</published>
+    <link href="https://opnsense.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.7/OPNsense-26.7-dvd-amd64.iso.bz2" rel="enclosure" type="application/x-bzip2" />
+    <category term="opnsense" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">OPNsense DVD 26.7 (x86_64)
+Filename: OPNsense-26.7-dvd-amd64.iso.bz2
+sha256: 95cafedda6d5b22ce832e249dc2309110fbee19f813ad78cf28bb3d387186bfb
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/pop-os/nvidia/24.04-26</id>
+    <title>Pop!_OS (NVIDIA) 24.04-26 (x86_64)</title>
+    <updated>2026-07-15T08:37:32+00:00</updated>
+    <published>2026-07-15T08:37:32+00:00</published>
+    <link href="https://pop.system76.com/" rel="alternate" type="text/html" />
+    <link href="https://iso.pop-os.org/24.04/amd64/nvidia/26/pop-os_24.04_amd64_nvidia_26.iso" rel="enclosure" type="application/x-iso9660-image" length="3925868544" />
+    <category term="pop-os" label="distro" />
+    <category term="nvidia" label="variant" />
+    <summary type="text">Pop!_OS (NVIDIA) 24.04-26 (x86_64)
+Filename: pop-os_24.04_amd64_nvidia_26.iso
+Size: 3925868544
+sha256: 6ba3e68cc2f96d133b2dab8ec04d852d8089888dfcb6d9e68fb6a70aab0d3776
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/nvidia-open/stable-20260714.1</id>
     <title>Aurora NVIDIA Open stable-20260714.1 (x86_64)</title>
@@ -492,62 +577,6 @@ Verify: checksum</summary>
     <summary type="text">Bazzite Deck 44.20260713 (x86_64)
 Filename: bazzite-deck-stable-amd64.iso
 sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.4808.569d57850992</id>
-    <title>NixOS Graphical 26.05.4808.569d57850992 (aarch64)</title>
-    <updated>2026-07-13T13:16:46+00:00</updated>
-    <published>2026-07-13T13:16:46+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.4808.569d57850992 (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 4a5229222544fdc0ecd5ae94dc9c9e74dba9db63300f99282ef53878a73e5e84
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.4808.569d57850992</id>
-    <title>NixOS Graphical 26.05.4808.569d57850992 (x86_64)</title>
-    <updated>2026-07-13T13:16:46+00:00</updated>
-    <published>2026-07-13T13:16:46+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.4808.569d57850992 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: ad9bbf4498aac44c9f935249d9dc5111fe3b86c61013b44e4c80d1a081cc8ef9
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.4808.569d57850992</id>
-    <title>NixOS Minimal 26.05.4808.569d57850992 (aarch64)</title>
-    <updated>2026-07-13T13:16:45+00:00</updated>
-    <published>2026-07-13T13:16:45+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.4808.569d57850992 (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 47bc97ac8b5e28e14683ee74dd2334ed89374413f8c106e56df1085fae193f5b
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.4808.569d57850992</id>
-    <title>NixOS Minimal 26.05.4808.569d57850992 (x86_64)</title>
-    <updated>2026-07-13T13:16:45+00:00</updated>
-    <published>2026-07-13T13:16:45+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.4808.569d57850992 (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: db8fafcdc0b0091c47f8c35e7980e811ef8687c8dd4710ba84497018fd316837
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -2400,20 +2429,6 @@ Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debi
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opnsense/dvd/26.1.6</id>
-    <title>OPNsense DVD 26.1.6 (x86_64)</title>
-    <updated>2026-07-12T17:47:08+00:00</updated>
-    <published>2026-07-12T17:47:08+00:00</published>
-    <link href="https://opnsense.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.ams1.nl.leaseweb.net/opnsense/releases/26.1.6/OPNsense-26.1.6-dvd-amd64.iso.bz2" rel="enclosure" type="application/x-bzip2" />
-    <category term="opnsense" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">OPNsense DVD 26.1.6 (x86_64)
-Filename: OPNsense-26.1.6-dvd-amd64.iso.bz2
-sha256: 6ba3633d9c0f96d82c792015a45f4b8aac45ea8fa2bdba3c5e534d0c90a4f08c
-Verify: checksum</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/memtest/iso/8.10</id>
     <title>Memtest86+ 8.10 (x86_64)</title>
     <updated>2026-07-12T17:03:33+00:00</updated>
@@ -3678,21 +3693,6 @@ Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/pop-os/nvidia/24.04-25</id>
-    <title>Pop!_OS (NVIDIA) 24.04-25 (x86_64)</title>
-    <updated>2026-07-09T23:40:08+00:00</updated>
-    <published>2026-07-09T23:40:08+00:00</published>
-    <link href="https://pop.system76.com/" rel="alternate" type="text/html" />
-    <link href="https://iso.pop-os.org/24.04/amd64/nvidia/25/pop-os_24.04_amd64_nvidia_25.iso" rel="enclosure" type="application/x-iso9660-image" length="3893821440" />
-    <category term="pop-os" label="distro" />
-    <category term="nvidia" label="variant" />
-    <summary type="text">Pop!_OS (NVIDIA) 24.04-25 (x86_64)
-Filename: pop-os_24.04_amd64_nvidia_25.iso
-Size: 3893821440
-sha256: 5625f4fa99521a94cabe64c6c3ec1d26d10b09b5af5969d272837f5e1c585a6d
-Verify: checksum</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/pop-os/intel/24.04-20</id>
     <title>Pop!_OS (Intel/AMD) 24.04-20 (x86_64)</title>
     <updated>2026-07-09T23:40:08+00:00</updated>
@@ -3828,6 +3828,23 @@ sha256: c8295961d4c41adbf785a31a17c21a971d3b7415fda72dcad0c11c49577bf03a
 Verify: checksum</summary>
   </entry>
   <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/clonezilla/default/3.3.3-15</id>
+    <title>Clonezilla Live 3.3.3-15 (x86_64)</title>
+    <updated>2026-07-05T03:11:25+00:00</updated>
+    <published>2026-07-05T03:11:25+00:00</published>
+    <link href="https://clonezilla.org/downloads.php" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.3-15/clonezilla-live-3.3.3-15-amd64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="clonezilla" label="distro" />
+    <category term="default" label="variant" />
+    <summary type="text">Clonezilla Live 3.3.3-15 (x86_64)
+Filename: clonezilla-live-3.3.3-15-amd64.iso
+sha512: 8769d90907c47afa85e0b15a8a34c295d1f30a6de7bfc3ebdd5c1123d1d54484b1a468ac15a1971d28b2c72e6a0f3a4aac97701b98417c946a3d15cb5cd1a656
+Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
+Verify: gpg</summary>
+  </entry>
+  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/handheld/260628</id>
     <title>CachyOS Handheld 260628 (x86_64)</title>
     <updated>2026-06-28T14:25:13+00:00</updated>
@@ -3876,23 +3893,6 @@ sha256: 5ada7dea09dbb10365b6f245515e71c79c5398d8f8f1acda675ee6d8b572d2e5
 Signature: https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso.asc/download
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xD67506C878E08A94FD7E009424863F0C716B980B
 Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/clonezilla/default/3.3.2-31</id>
-    <title>Clonezilla Live 3.3.2-31 (x86_64)</title>
-    <updated>2026-05-25T13:07:00+00:00</updated>
-    <published>2026-05-25T13:07:00+00:00</published>
-    <link href="https://clonezilla.org/downloads.php" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.2-31/clonezilla-live-3.3.2-31-amd64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="clonezilla" label="distro" />
-    <category term="default" label="variant" />
-    <summary type="text">Clonezilla Live 3.3.2-31 (x86_64)
-Filename: clonezilla-live-3.3.2-31-amd64.iso
-sha512: e1f7c6ef43f03ac74c1001cd89f2bb1429d098dc1320a1dd471fcd84e73390d5032add60946a4d920f36d729daf6279fa0fbb5c8f294b568d0339f5cd481d431
-Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
-Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
 Verify: gpg</summary>
   </entry>
   <entry>

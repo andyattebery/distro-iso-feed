@@ -46,7 +46,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | centos | dvd | ppc64le | 20260713.0 | checksum | — |
 | centos | dvd | s390x | 20260713.0 | checksum | — |
 | chimeraos | iso | x86_64 | 2025.02.13 | checksum | — |
-| clonezilla | default | x86_64 | 3.3.2-31 | gpg | — |
+| clonezilla | default | x86_64 | 3.3.3-15 | gpg | — |
 | debian | live-cinnamon | x86_64 | 13.6.0 | gpg | ✓ |
 | debian | live-gnome | x86_64 | 13.6.0 | gpg | ✓ |
 | debian | live-kde | x86_64 | 13.6.0 | gpg | ✓ |
@@ -152,10 +152,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
 | netbsd | install | x86_64 | 10.1 | checksum | ✓ |
 | netbsd | install | aarch64 | 10.1 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.4808.569d57850992 | checksum | — |
-| nixos | graphical | aarch64 | 26.05.4808.569d57850992 | checksum | — |
-| nixos | minimal | x86_64 | 26.05.4808.569d57850992 | checksum | — |
-| nixos | minimal | aarch64 | 26.05.4808.569d57850992 | checksum | — |
+| nixos | graphical | x86_64 | 26.05.4937.8eeec934ae0d | checksum | — |
+| nixos | graphical | aarch64 | 26.05.4937.8eeec934ae0d | checksum | — |
+| nixos | minimal | x86_64 | 26.05.4937.8eeec934ae0d | checksum | — |
+| nixos | minimal | aarch64 | 26.05.4937.8eeec934ae0d | checksum | — |
 | nobara | gnome | x86_64 | 43-2026-04-19 | checksum | — |
 | nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | kde | x86_64 | 43-2026-04-19 | checksum | — |
@@ -192,7 +192,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | opensuse | tumbleweed-rescue-cd | aarch64 | Snapshot20260709 | gpg | — |
 | opensuse | tumbleweed-xfce-live | x86_64 | Snapshot20260712 | gpg | — |
 | opensuse | tumbleweed-xfce-live | aarch64 | Snapshot20260709 | gpg | — |
-| opnsense | dvd | x86_64 | 26.1.6 | checksum | — |
+| opnsense | dvd | x86_64 | 26.7 | checksum | — |
 | parrot | home | x86_64 | 7.3 | gpg | — |
 | parrot | security | x86_64 | 7.3 | gpg | — |
 | parrot | spin-enlightenment | x86_64 | 7.3 | gpg | — |
@@ -200,7 +200,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | parrot | spin-lxqt | x86_64 | 7.3 | gpg | — |
 | parrot | spin-mate | x86_64 | 7.3 | gpg | — |
 | pop-os | intel | x86_64 | 24.04-20 | checksum | — |
-| pop-os | nvidia | x86_64 | 24.04-25 | checksum | — |
+| pop-os | nvidia | x86_64 | 24.04-26 | checksum | — |
 | proxmox | backup-server | x86_64 | 4.2-1 | gpg | ✓ |
 | proxmox | datacenter-manager | x86_64 | 1.1-1 | gpg | ✓ |
 | proxmox | mail-gateway | x86_64 | 9.1-1 | gpg | ✓ |
