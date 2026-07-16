@@ -4,8 +4,221 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Wed, 15 Jul 2026 08:44:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 08:58:48 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Aurora stable-20260714.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20260714.1</guid>
+      <pubDate>Thu, 16 Jul 2026 08:58:48 +0000</pubDate>
+      <description>Aurora stable-20260714.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 4a77e85e62101187b5eea8b8b05d9c4cc70dbf27f3dbcbeaa46b7800643c6469
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora NVIDIA Open stable-20260714.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20260714.1</guid>
+      <pubDate>Thu, 16 Jul 2026 08:58:48 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20260714.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 93d4521fd12a11cd14482716198ff8c9c2e9337014ab41395b463c2227322589
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:26 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20260714 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: a418f8480311a9a5f608fc5b4c6594457c7f45cb71bc917da10f0acdcfb02077
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:23 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20260714 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: 796cae1dfff7a26c86d35c0d56d2a0612b7d10203c93d11cd1666a03a5162f1c
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:21 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20260714 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: c9d3526d192212e08fb7a57ee38d4a19c126e584f0249852fa3db55841cd2dba
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:18 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20260714 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: 1232e3e2c32954a4414ff38d90fc6fceb2af71835bb6514704827005f7cc1c83
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:15 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260714 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: 97d5b8bccbcaea5554952f97d075b99cebf6c4d856ae16adffb016067178c7fc
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:12 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260714 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: be2a9c8ecd7c8dc11ae4d47835d6a10c86211cf3be8e337fe55707ebcb1cba39
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260714 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260714</guid>
+      <pubDate>Thu, 16 Jul 2026 08:57:09 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260714 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: fee373d6f7cbe6ac0a0279b36803071bcafc7d4b5fe00b207182f8c2cd2ec89a
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>Debian netinst 13.6.0 (riscv64)</title>
+      <link>https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso</link>
+      <guid isPermaLink="false">debian:netinst:riscv64:13.6.0</guid>
+      <pubDate>Thu, 16 Jul 2026 08:54:17 +0000</pubDate>
+      <description>Debian netinst 13.6.0 (riscv64)
+Filename: debian-13.6.0-riscv64-netinst.iso
+Torrent: https://cdimage.debian.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent
+Infohash: 1831a699a718331f6e41c6bbc55c761c36377a8b
+Magnet: magnet:?xt=urn:btih:1831a699a718331f6e41c6bbc55c761c36377a8b&amp;dn=debian-13.6.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: torrent
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso" type="application/x-iso9660-image" length="0" />
+      <category>debian</category>
+    </item>
+    <item>
+      <title>Debian netinst 13.6.0 (ppc64le)</title>
+      <link>https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso</link>
+      <guid isPermaLink="false">debian:netinst:ppc64le:13.6.0</guid>
+      <pubDate>Thu, 16 Jul 2026 08:51:03 +0000</pubDate>
+      <description>Debian netinst 13.6.0 (ppc64le)
+Filename: debian-13.6.0-ppc64el-netinst.iso
+Signature: https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
+Torrent: https://cdimage.debian.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent
+Infohash: dae669270774ba8bbac8272656e22477e01b5d89
+Magnet: magnet:?xt=urn:btih:dae669270774ba8bbac8272656e22477e01b5d89&amp;dn=debian-13.6.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso" type="application/x-iso9660-image" length="0" />
+      <category>debian</category>
+    </item>
+    <item>
+      <title>Debian netinst 13.6.0 (armhf)</title>
+      <link>https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso</link>
+      <guid isPermaLink="false">debian:netinst:armhf:13.6.0</guid>
+      <pubDate>Thu, 16 Jul 2026 08:46:13 +0000</pubDate>
+      <description>Debian netinst 13.6.0 (armhf)
+Filename: debian-13.6.0-armhf-netinst.iso
+Signature: https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
+Torrent: https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent
+Infohash: 45c0b6d858f5cc7b31c1b90cae532fa40295278f
+Magnet: magnet:?xt=urn:btih:45c0b6d858f5cc7b31c1b90cae532fa40295278f&amp;dn=debian-13.6.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso" type="application/x-iso9660-image" length="0" />
+      <category>debian</category>
+    </item>
+    <item>
+      <title>Debian netinst 13.6.0 (aarch64)</title>
+      <link>https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso</link>
+      <guid isPermaLink="false">debian:netinst:aarch64:13.6.0</guid>
+      <pubDate>Thu, 16 Jul 2026 08:41:25 +0000</pubDate>
+      <description>Debian netinst 13.6.0 (aarch64)
+Filename: debian-13.6.0-arm64-netinst.iso
+Torrent: https://cdimage.debian.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent
+Infohash: 94088d5e57c3a12e7f58ea3a34a232a7ec138cc9
+Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debian-13.6.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: torrent
+NOTE: infohash is unsigned — trust on first use</description>
+      <enclosure url="https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso" type="application/x-iso9660-image" length="0" />
+      <category>debian</category>
+    </item>
+    <item>
+      <title>Q4OS Trinity 6.8 (x86_64)</title>
+      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64-tde.r1.iso/download</link>
+      <guid isPermaLink="false">q4os:tde:6.8</guid>
+      <pubDate>Wed, 15 Jul 2026 10:11:24 +0000</pubDate>
+      <description>Q4OS Trinity 6.8 (x86_64)
+Filename: q4os-6.8-x64-tde.r1.iso
+md5: ffabeef8fa31f39b276e24cf60019e19
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64-tde.r1.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>q4os</category>
+    </item>
+    <item>
+      <title>Q4OS Plasma 6.8 (x86_64)</title>
+      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64.r1.iso/download</link>
+      <guid isPermaLink="false">q4os:plasma:6.8</guid>
+      <pubDate>Wed, 15 Jul 2026 10:05:44 +0000</pubDate>
+      <description>Q4OS Plasma 6.8 (x86_64)
+Filename: q4os-6.8-x64.r1.iso
+md5: 06f1e0de3e8aa5f80e05c3cf19625e1a
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64.r1.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>q4os</category>
+    </item>
     <item>
       <title>NixOS Graphical 26.05.4937.8eeec934ae0d (aarch64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
@@ -80,18 +293,6 @@ Verify: checksum</description>
       <category>pop-os</category>
     </item>
     <item>
-      <title>Aurora NVIDIA Open stable-20260714.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20260714.1</guid>
-      <pubDate>Tue, 14 Jul 2026 05:16:03 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20260714.1 (x86_64)
-Filename: aurora-nvidia-open-stable-webui-x86_64.iso
-sha256: 22320b55c7314e32e0d1c0a7a39416fa506abacd1265a3d4a25db2e958387afe
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
       <title>Bluefin stable-20260714 (x86_64)</title>
       <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
       <guid isPermaLink="false">bluefin:stable:stable-20260714</guid>
@@ -102,18 +303,6 @@ sha256: 60dc656a64518d3900a051d31cbd7c009c8c425d19f327670d0246487ceaaad2
 Verify: checksum</description>
       <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
       <category>bluefin</category>
-    </item>
-    <item>
-      <title>Aurora stable-20260714.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20260714.1</guid>
-      <pubDate>Tue, 14 Jul 2026 05:16:02 +0000</pubDate>
-      <description>Aurora stable-20260714.1 (x86_64)
-Filename: aurora-stable-webui-x86_64.iso
-sha256: 1ef8a3c24fb0ce9dd4a26c5b60e31e56584a4a17db89fc1660a7b0e79c88a07d
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
     </item>
     <item>
       <title>CentOS Stream DVD 20260713.0 (s390x)</title>
@@ -210,111 +399,6 @@ sha256: 3763ffc178cea73e8270b1f1677585e6fc81e9e72f8a85517aa82136dd519d51
 Verify: checksum</description>
       <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260713.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>centos</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:45 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20260712 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: 6472768e51ac87d033532b19c4f42b4a723ec8d7d1dabcf8309b70d2037f7cfd
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:42 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20260712 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 701891328124aaa81b05df1e8049cdcc7400a1b567b4f44c56187d743f9c85c4
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:39 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20260712 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: a4b207b0c6c3e013737f0d74f7b33febfdf651e246207695518f070980ba4ddd
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:36 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20260712 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: f9642717e410b1413e072320a9162c454e6184da37da945f32b4e773d4185052
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:33 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20260712 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: 639ba59a149d46d5fba46a1a9c211bc40e095bf916f7da5a409db69412de3d60
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:30 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260712 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: c9294cfb9fd20445a19bce2e7c722381730894dff38a60c6a99981ae4dadf7e2
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260712 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260712</guid>
-      <pubDate>Tue, 14 Jul 2026 05:14:26 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260712 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 09e758e9201be876912217c56088df5a4f3a150f70a24c2ebf9e86d1f1793edc
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
     </item>
     <item>
       <title>ChimeraOS 2025.02.13 (x86_64)</title>
@@ -2033,82 +2117,6 @@ Verify: gpg</description>
       <category>debian</category>
     </item>
     <item>
-      <title>Debian netinst 13.6.0 (ppc64le)</title>
-      <link>https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso</link>
-      <guid isPermaLink="false">debian:netinst:ppc64le:13.6.0</guid>
-      <pubDate>Sun, 12 Jul 2026 18:37:06 +0000</pubDate>
-      <description>Debian netinst 13.6.0 (ppc64le)
-Filename: debian-13.6.0-ppc64el-netinst.iso
-sha512: ebde611a1014b044e912ef1e2c0e4be8c2a488d03df0e15f48bef32daafb1441327321fd4d880a4e4b56f680a05c1047abf6dc93f65da095bbe1ea5b76b9d02b
-Signature: https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent
-torrent-sha512: ac14b26d6173ee913fccf98b8de39edf1409efe46a879dfe194f0cb3286f27fd885bdcc1285503faf0729ce079ad00db9beaef3c8a1a21f6293d393eedc6c6ae
-Infohash: dae669270774ba8bbac8272656e22477e01b5d89
-Magnet: magnet:?xt=urn:btih:dae669270774ba8bbac8272656e22477e01b5d89&amp;dn=debian-13.6.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso" type="application/x-iso9660-image" length="0" />
-      <category>debian</category>
-    </item>
-    <item>
-      <title>Debian netinst 13.6.0 (armhf)</title>
-      <link>https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso</link>
-      <guid isPermaLink="false">debian:netinst:armhf:13.6.0</guid>
-      <pubDate>Sun, 12 Jul 2026 18:37:05 +0000</pubDate>
-      <description>Debian netinst 13.6.0 (armhf)
-Filename: debian-13.6.0-armhf-netinst.iso
-sha512: 9a8f507f353c20b2a409097a6190711eb08f4df4f39819c6dfabb4e8f087a51ccb208aff70b6763f535ad4ead89503f604e93a8db715c6ee623059898f3926bd
-Signature: https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent
-torrent-sha512: c4173881b9efa235b1a6fbdf41479c7ed9fa2dadb02d2ac4e0ecbcd8cbec8e4411e288cb1854ff115b4a6fe280d62d32f2886c37e604c1ae595fa973ce8a2e40
-Infohash: 45c0b6d858f5cc7b31c1b90cae532fa40295278f
-Magnet: magnet:?xt=urn:btih:45c0b6d858f5cc7b31c1b90cae532fa40295278f&amp;dn=debian-13.6.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso" type="application/x-iso9660-image" length="0" />
-      <category>debian</category>
-    </item>
-    <item>
-      <title>Debian netinst 13.6.0 (riscv64)</title>
-      <link>https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso</link>
-      <guid isPermaLink="false">debian:netinst:riscv64:13.6.0</guid>
-      <pubDate>Sun, 12 Jul 2026 18:33:22 +0000</pubDate>
-      <description>Debian netinst 13.6.0 (riscv64)
-Filename: debian-13.6.0-riscv64-netinst.iso
-sha512: e989a50de60107703c6383b8a45d05b970a117e7f33cacd195a80b5629367fa46188a28869a096d23bee83563a1d1eb4c9c8f7e89c3db01fda50e988c087a05a
-Signature: https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent
-torrent-sha512: f6e5a99959b142bbff3636584d6b49554256ef6840488a1fb6245bfed6220088bb54e5f84e86fab47c6841e5005f41b2880a9b2c1c971dedf7f38921e0388db9
-Infohash: 1831a699a718331f6e41c6bbc55c761c36377a8b
-Magnet: magnet:?xt=urn:btih:1831a699a718331f6e41c6bbc55c761c36377a8b&amp;dn=debian-13.6.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso" type="application/x-iso9660-image" length="0" />
-      <category>debian</category>
-    </item>
-    <item>
-      <title>Debian netinst 13.6.0 (aarch64)</title>
-      <link>https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso</link>
-      <guid isPermaLink="false">debian:netinst:aarch64:13.6.0</guid>
-      <pubDate>Sun, 12 Jul 2026 18:33:21 +0000</pubDate>
-      <description>Debian netinst 13.6.0 (aarch64)
-Filename: debian-13.6.0-arm64-netinst.iso
-sha512: 43eef37fe589c8995f713c2d731604494f4353dfcc9c6f7dc4abdedab1e8f313a68bd1eb1ae299f4fb8995cbc1306c7348dc20d3dbd95ad1b613131611506bb8
-Signature: https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent
-torrent-sha512: ec8e45003b30c2eec4a9e33d310933ee7d6b1d4fdf0170154964512e1731ff731e5c7885ea4ccd81cc22e3f3ebc151a2a19e947eae5153b9d7acbccf0d278e18
-Infohash: 94088d5e57c3a12e7f58ea3a34a232a7ec138cc9
-Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debian-13.6.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso" type="application/x-iso9660-image" length="0" />
-      <category>debian</category>
-    </item>
-    <item>
       <title>Memtest86+ 8.10 (x86_64)</title>
       <link>https://www.memtest.org/download/v8.10/mt86plus_8.10_x86_64.iso.zip</link>
       <guid isPermaLink="false">memtest:iso:8.10</guid>
@@ -3436,30 +3444,6 @@ Signature: https://sourceforge.net/projects/mx-linux/files/Final/KDE/MX-25.2_KDE
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/mx-linux/files/Final/KDE/MX-25.2_KDE_x64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>mx</category>
-    </item>
-    <item>
-      <title>Q4OS Plasma 6.7 (x86_64)</title>
-      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.7-x64.r1.iso/download</link>
-      <guid isPermaLink="false">q4os:plasma:6.7</guid>
-      <pubDate>Mon, 18 May 2026 12:13:55 +0000</pubDate>
-      <description>Q4OS Plasma 6.7 (x86_64)
-Filename: q4os-6.7-x64.r1.iso
-md5: 5f5ab846c3c6efa72054875e5d726887
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.7-x64.r1.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>q4os</category>
-    </item>
-    <item>
-      <title>Q4OS Trinity 6.7 (x86_64)</title>
-      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.7-x64-tde.r1.iso/download</link>
-      <guid isPermaLink="false">q4os:tde:6.7</guid>
-      <pubDate>Mon, 18 May 2026 12:10:55 +0000</pubDate>
-      <description>Q4OS Trinity 6.7 (x86_64)
-Filename: q4os-6.7-x64-tde.r1.iso
-md5: 62e680387f84dc77360c092d574f0f50
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.7-x64-tde.r1.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>q4os</category>
     </item>
     <item>
       <title>antiX Full 26 (x86_64)</title>

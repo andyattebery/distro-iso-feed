@@ -4,7 +4,79 @@
   <title>Distro ISO Feed — debian</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/debian.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T18:37:09+00:00</updated>
+  <updated>2026-07-16T08:54:17+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:riscv64/13.6.0</id>
+    <title>Debian netinst 13.6.0 (riscv64)</title>
+    <updated>2026-07-16T08:54:17+00:00</updated>
+    <published>2026-07-16T08:54:17+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.debian.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="47318" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.6.0 (riscv64)
+Filename: debian-13.6.0-riscv64-netinst.iso
+Torrent: https://cdimage.debian.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent
+Infohash: 1831a699a718331f6e41c6bbc55c761c36377a8b
+Magnet: magnet:?xt=urn:btih:1831a699a718331f6e41c6bbc55c761c36377a8b&amp;dn=debian-13.6.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: torrent
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:ppc64le/13.6.0</id>
+    <title>Debian netinst 13.6.0 (ppc64le)</title>
+    <updated>2026-07-16T08:51:03+00:00</updated>
+    <published>2026-07-16T08:51:03+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.debian.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="50178" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.6.0 (ppc64le)
+Filename: debian-13.6.0-ppc64el-netinst.iso
+Signature: https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
+Torrent: https://cdimage.debian.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent
+Infohash: dae669270774ba8bbac8272656e22477e01b5d89
+Magnet: magnet:?xt=urn:btih:dae669270774ba8bbac8272656e22477e01b5d89&amp;dn=debian-13.6.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:armhf/13.6.0</id>
+    <title>Debian netinst 13.6.0 (armhf)</title>
+    <updated>2026-07-16T08:46:13+00:00</updated>
+    <published>2026-07-16T08:46:13+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="72188" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.6.0 (armhf)
+Filename: debian-13.6.0-armhf-netinst.iso
+Signature: https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
+Torrent: https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent
+Infohash: 45c0b6d858f5cc7b31c1b90cae532fa40295278f
+Magnet: magnet:?xt=urn:btih:45c0b6d858f5cc7b31c1b90cae532fa40295278f&amp;dn=debian-13.6.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:aarch64/13.6.0</id>
+    <title>Debian netinst 13.6.0 (aarch64)</title>
+    <updated>2026-07-16T08:41:25+00:00</updated>
+    <published>2026-07-16T08:41:25+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.debian.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="56588" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.6.0 (aarch64)
+Filename: debian-13.6.0-arm64-netinst.iso
+Torrent: https://cdimage.debian.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent
+Infohash: 94088d5e57c3a12e7f58ea3a34a232a7ec138cc9
+Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debian-13.6.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: torrent
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:s390x/13.6.0</id>
     <title>Debian netinst 13.6.0 (s390x)</title>
@@ -25,94 +97,6 @@ Torrent: https://cdimage.debian.org/debian-cd/current/s390x/bt-cd/debian-13.6.0-
 torrent-sha512: 46d7882b229895bf35e9e861412b57615177158b54fb3084c9b407060d714cb414f961a1c9eaf5188599877dc07f83f9edfd1883624c4dc68f31dc28ff1bb095
 Infohash: f6719dc304136f6dfbe537d3736b1dae2e1b1fba
 Magnet: magnet:?xt=urn:btih:f6719dc304136f6dfbe537d3736b1dae2e1b1fba&amp;dn=debian-13.6.0-s390x-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:ppc64le/13.6.0</id>
-    <title>Debian netinst 13.6.0 (ppc64le)</title>
-    <updated>2026-07-12T18:37:06+00:00</updated>
-    <published>2026-07-12T18:37:06+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.debian.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="50178" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (ppc64le)
-Filename: debian-13.6.0-ppc64el-netinst.iso
-sha512: ebde611a1014b044e912ef1e2c0e4be8c2a488d03df0e15f48bef32daafb1441327321fd4d880a4e4b56f680a05c1047abf6dc93f65da095bbe1ea5b76b9d02b
-Signature: https://cdimage.debian.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent
-torrent-sha512: ac14b26d6173ee913fccf98b8de39edf1409efe46a879dfe194f0cb3286f27fd885bdcc1285503faf0729ce079ad00db9beaef3c8a1a21f6293d393eedc6c6ae
-Infohash: dae669270774ba8bbac8272656e22477e01b5d89
-Magnet: magnet:?xt=urn:btih:dae669270774ba8bbac8272656e22477e01b5d89&amp;dn=debian-13.6.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:armhf/13.6.0</id>
-    <title>Debian netinst 13.6.0 (armhf)</title>
-    <updated>2026-07-12T18:37:05+00:00</updated>
-    <published>2026-07-12T18:37:05+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="72188" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (armhf)
-Filename: debian-13.6.0-armhf-netinst.iso
-sha512: 9a8f507f353c20b2a409097a6190711eb08f4df4f39819c6dfabb4e8f087a51ccb208aff70b6763f535ad4ead89503f604e93a8db715c6ee623059898f3926bd
-Signature: https://cdimage.debian.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent
-torrent-sha512: c4173881b9efa235b1a6fbdf41479c7ed9fa2dadb02d2ac4e0ecbcd8cbec8e4411e288cb1854ff115b4a6fe280d62d32f2886c37e604c1ae595fa973ce8a2e40
-Infohash: 45c0b6d858f5cc7b31c1b90cae532fa40295278f
-Magnet: magnet:?xt=urn:btih:45c0b6d858f5cc7b31c1b90cae532fa40295278f&amp;dn=debian-13.6.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:riscv64/13.6.0</id>
-    <title>Debian netinst 13.6.0 (riscv64)</title>
-    <updated>2026-07-12T18:33:22+00:00</updated>
-    <published>2026-07-12T18:33:22+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.debian.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="47318" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (riscv64)
-Filename: debian-13.6.0-riscv64-netinst.iso
-sha512: e989a50de60107703c6383b8a45d05b970a117e7f33cacd195a80b5629367fa46188a28869a096d23bee83563a1d1eb4c9c8f7e89c3db01fda50e988c087a05a
-Signature: https://cdimage.debian.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent
-torrent-sha512: f6e5a99959b142bbff3636584d6b49554256ef6840488a1fb6245bfed6220088bb54e5f84e86fab47c6841e5005f41b2880a9b2c1c971dedf7f38921e0388db9
-Infohash: 1831a699a718331f6e41c6bbc55c761c36377a8b
-Magnet: magnet:?xt=urn:btih:1831a699a718331f6e41c6bbc55c761c36377a8b&amp;dn=debian-13.6.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:aarch64/13.6.0</id>
-    <title>Debian netinst 13.6.0 (aarch64)</title>
-    <updated>2026-07-12T18:33:21+00:00</updated>
-    <published>2026-07-12T18:33:21+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.debian.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="56588" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (aarch64)
-Filename: debian-13.6.0-arm64-netinst.iso
-sha512: 43eef37fe589c8995f713c2d731604494f4353dfcc9c6f7dc4abdedab1e8f313a68bd1eb1ae299f4fb8995cbc1306c7348dc20d3dbd95ad1b613131611506bb8
-Signature: https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent
-torrent-sha512: ec8e45003b30c2eec4a9e33d310933ee7d6b1d4fdf0170154964512e1731ff731e5c7885ea4ccd81cc22e3f3ebc151a2a19e947eae5153b9d7acbccf0d278e18
-Infohash: 94088d5e57c3a12e7f58ea3a34a232a7ec138cc9
-Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debian-13.6.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
