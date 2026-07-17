@@ -349,8 +349,8 @@ Recorded so nobody re-investigates them. Several look trivially addable.
 
 ## Mirrors
 
-The default is a first-party endpoint. Five sources are marked `mirror: true` because
-they cannot honour it:
+The default is a first-party endpoint. Six sources are marked `mirror: true`. Five cannot
+honour a first-party endpoint at all:
 
 - **EndeavourOS** publishes no first-party download host at all.
 - **Batocera**'s official host serves **no checksum**; only the o2switch mirror
@@ -358,3 +358,11 @@ they cannot honour it:
   requirement — a checksum from a mirror beats no checksum from the origin.
 - **OPNsense** has no first-party download autoindex; the release mirrors carry one.
 - **Mint** and **Arch** are mirror-distributed by design.
+
+The sixth, **Debian**, is the one that *has* a first-party endpoint but where it is not the
+reliable choice. `cdimage.debian.org` is a CNAME to a single three-host cluster (accum.se, Umeå
+University) that read-times-out on *any* file in bursts — 35 such timeouts failed the 2026-07-16
+refresh. Its ISO index points at `mirrors.edge.kernel.org` instead, the Linux Foundation's
+geo-routed edge and a full `debian-cd` mirror. It carries `mirror: true` like the other five,
+but for availability rather than necessity. Trust is unchanged: `SHA512SUMS.sign` is Debian's
+detached GPG signature, verified whichever mirror serves the bytes.

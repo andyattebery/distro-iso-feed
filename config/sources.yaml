@@ -107,7 +107,18 @@ distros:
 
   debian:
     strategy: directory_index
+    # `mirror: true` (catalog ᴹ): resolved via a mirror, not a first-party host. Debian is the
+    # exception among the ᴹ sources -- it HAS a working first-party endpoint (cdimage.debian.org);
+    # that host is just not the reliable one, per the comment below.
+    mirror: true
     page_url: "https://www.debian.org/"
+    # ISO index host is mirrors.edge.kernel.org, NOT the canonical cdimage.debian.org. That
+    # redirector is a plain CNAME to a single 3-host cluster (accum.se, Umea University) that
+    # intermittently read-times-out on *any* file in bursts -- 35 such timeouts failed the
+    # 2026-07-16 refresh, with iso-cd hit harder than bt-cd, so it is the host, not a file.
+    # kernel.org's edge is geo-routed across Linux Foundation nodes, carries the full debian-cd
+    # tree, and serves a byte-identical SHA512SUMS -- and since the detached SHA512SUMS.sign is
+    # Debian's GPG signature, the mirror is never trusted, only the signature is verified.
     params:
       sums: "SHA512SUMS"
       sig: "SHA512SUMS.sign"
@@ -125,7 +136,7 @@ distros:
         # and the canonical name keys the entry (x86_64 stays implicit, so amd64 is unchanged).
         arches: {x86_64: amd64, aarch64: arm64, armhf: armhf, ppc64le: ppc64el, riscv64: riscv64, s390x: s390x}
         params:
-          index: "https://cdimage.debian.org/debian-cd/current/{token}/iso-cd/"
+          index: "https://mirrors.edge.kernel.org/debian-cd/current/{token}/iso-cd/"
           match: '^debian-[0-9.]+-{token}-netinst\.iso$'
           version_pattern: 'debian-([0-9.]+)-{token}'
           # The torrent sits in a sibling dir, `bt-cd/`, with its own GPG-signed
@@ -133,14 +144,14 @@ distros:
           # verified torrent. `urljoin` resolves `../bt-cd/` against the ISO URL.
           torrent: "../bt-cd/{filename}.torrent"
           torrent_sums: "../bt-cd/SHA512SUMS"
-      live-gnome: {label: "Debian Live GNOME", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-gnome\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-kde: {label: "Debian Live KDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-kde\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-xfce: {label: "Debian Live Xfce", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-xfce\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-cinnamon: {label: "Debian Live Cinnamon", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-cinnamon\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-mate: {label: "Debian Live MATE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-mate\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-lxqt: {label: "Debian Live LXQt", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxqt\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-lxde: {label: "Debian Live LXDE", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxde\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
-      live-standard: {label: "Debian Live Standard", params: {index: "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-standard\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-gnome: {label: "Debian Live GNOME", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-gnome\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-kde: {label: "Debian Live KDE", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-kde\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-xfce: {label: "Debian Live Xfce", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-xfce\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-cinnamon: {label: "Debian Live Cinnamon", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-cinnamon\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-mate: {label: "Debian Live MATE", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-mate\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-lxqt: {label: "Debian Live LXQt", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxqt\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-lxde: {label: "Debian Live LXDE", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-lxde\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
+      live-standard: {label: "Debian Live Standard", params: {index: "https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/", match: '^debian-live-[0-9.]+-amd64-standard\.iso$', version_pattern: 'live-([0-9.]+)-amd64', torrent: "../bt-hybrid/{filename}.torrent", torrent_sums: "../bt-hybrid/SHA512SUMS"}}
     discover:
       # `debian-edu-` and `debian-mac-` never match: the regex needs digits where they
       # put a word, so both are skipped without needing an `ignore` entry.
