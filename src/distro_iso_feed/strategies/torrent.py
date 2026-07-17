@@ -191,11 +191,17 @@ def attach_torrent(client: Client, release: Release, params: dict) -> Release:
 
     torrent_algo = torrent_checksum = None
     if tsums := params.get("torrent_sums"):
-        text = client.text(
-            urljoin(
-                release.download_url,
-                _expand(tsums, filename=release.filename, version=release.version),
-            )
+        # `fetch_sums`, not a bare `client.text`: a transient miss here raises `SumsUnavailable`
+        # (caught by the caller, which keeps the release un-torrented) rather than silently
+        # leaving `torrent_checksum` None and publishing the infohash anyway. The whole reason
+        # `torrent_sums` is configured is that the signed SUMS vouches for the torrent's bytes
+        # before its infohash ships -- a torrent's own piece hashes only prove self-consistency.
+        text = fetch_sums(
+            client,
+            base=release.download_url,
+            filename=release.filename,
+            version=release.version,
+            sums=tsums,
         )
         if text and (found := checksums.lookup(text, url.rsplit("/", 1)[-1])):
             torrent_algo, torrent_checksum = found

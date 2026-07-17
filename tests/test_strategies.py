@@ -12,6 +12,7 @@ import pytest
 from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
 from distro_iso_feed.config import ConfigError, _validate_token
 from distro_iso_feed.strategies import REGISTRY, Strategy
+from distro_iso_feed.strategies.integrity import SumsUnavailable
 from distro_iso_feed.strategies.stable_symlink import StableSymlink
 from distro_iso_feed.tokens import TOKEN_SOURCES
 
@@ -48,6 +49,60 @@ def test_directory_index_rejects_decoy_and_reads_gnu_sums():
     assert rel.version == "13.5.0"
     assert rel.checksum_algo == "sha512"
     assert rel.verify == "checksum"
+
+
+# ------------------------------------------- a configured sums file that did not arrive
+#
+# `fetch_sums` used to return None for three different worlds -- not configured, fetch failed,
+# filename not listed -- and `fetch_integrity` published `checksum=None` for all three without a
+# word. That is how debian:netinst:* shipped `verify: gpg` with `checksum: null`.
+
+
+_DI_PARAMS = {
+    "index": "https://mirror.example/current/",
+    "match": r"^debian-[0-9.]+-amd64-netinst\.iso$",
+    "version_pattern": r"debian-([0-9.]+)-amd64",
+    "sums": "SHA512SUMS",
+}
+_DI_INDEX = {"https://mirror.example/current/": autoindex_html(["debian-13.5.0-amd64-netinst.iso"])}
+
+
+def test_a_transient_sums_failure_fails_the_resolve_instead_of_publishing_no_checksum():
+    client = FakeClient(
+        _DI_INDEX, fail={"https://mirror.example/current/SHA512SUMS": "ConnectTimeout"}
+    )
+    with pytest.raises(SumsUnavailable) as exc:
+        REGISTRY["directory_index"]().resolve("debian", "netinst", dict(_DI_PARAMS), client)
+    assert exc.value.failure_class == "transient"
+
+
+def test_a_404_sums_still_resolves_without_a_checksum():
+    """Deliberate asymmetry: a structurally-absent sidecar keeps the old behaviour. Failing the
+    resolve on a 404 would freeze every source with an optional per-file sidecar -- trading
+    silent degradation for a silent stall."""
+    client = FakeClient(_DI_INDEX)  # SHA512SUMS unmapped -> 404
+    rel = REGISTRY["directory_index"]().resolve("debian", "netinst", dict(_DI_PARAMS), client)
+    assert rel is not None
+    assert rel.checksum is None
+
+
+def test_no_sums_configured_resolves_cleanly_and_never_fetches():
+    """The legitimate `None`: tails et al. ship no sidecar at all. This must stay a no-op."""
+    client = FakeClient(_DI_INDEX)
+    params = {k: v for k, v in _DI_PARAMS.items() if k != "sums"}
+    rel = REGISTRY["directory_index"]().resolve("debian", "netinst", params, client)
+    assert rel is not None
+    assert rel.checksum is None
+    assert not any(u.endswith("SHA512SUMS") for u in client.requested)
+
+
+def test_the_sums_file_is_fetched_once_even_though_signing_reads_it_too():
+    """Closes the TOCTOU: two GETs of one file can disagree, and only the first is published."""
+    sums_url = "https://mirror.example/current/SHA512SUMS"
+    client = FakeClient({**_DI_INDEX, sums_url: f"{'b' * 128}  debian-13.5.0-amd64-netinst.iso"})
+    REGISTRY["directory_index"]().resolve("debian", "netinst", dict(_DI_PARAMS), client)
+    client.get_cached(sums_url)  # what `signing.verify_signing_key` does
+    assert client.requested.count(sums_url) == 1
 
 
 def test_version_dir_picks_highest_that_contains_an_iso():

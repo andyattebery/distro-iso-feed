@@ -50,6 +50,54 @@ Implementation: have `diagnose()` (and the top-level except path) return a struc
 `(reason: str, failure_class: Literal["structural","transient"])` rather than a bare string. The
 existing human-readable `reason` is preserved verbatim for the issue body and summary.
 
+### 1a. Signing failures classify themselves
+
+This spec's two axes govern **resolve** failures. Signing has its own classifier and deliberately
+does not carry a `failure_class`: `verify_signing_key` returns REJECTED **only** when every
+required fetch (key, signature, and for `covers: checksums` the signed body) returned 2xx *and*
+gpg produced contrary evidence. Couldn't-check — gpg absent, a key/sig/sums fetch that failed,
+or no checksum to check against — is DEFERRED and never reaches the report. **The verdict IS the
+classification: DEFERRED is transient, REJECTED is structural.**
+
+A `failure_class` field on `SigningFailure` would therefore be the constant `"structural"`
+forever, and a filter on it could only ever be a no-op whose one failure mode is silently
+swallowing a real key rotation. Do not add one. Classifying signing from the `Client` trace is
+worse: the trace is global to the run, and even a correctly-scoped slice would flip a genuine
+rotation to TRANSIENT the moment one retried-then-succeeded timeout landed in it — suppressing
+exactly the tamper case that must never be suppressed.
+
+The invariant that keeps this honest: **an environmental hiccup must never strip a valid pin or
+flap an entry's `verify` level.** A `checksum=None` (the sums fetch did not land) is the case that
+once broke it — it fell into "the checksum is absent from the signed file" and was reported as a
+key rotation, on a key that had not rotated.
+
+### 1b. A configured sidecar that did not arrive is TRANSIENT, not a checksum-less entry
+
+Resolving one variant is a multi-fetch operation (index, sums, torrent, torrent-sums, key, sig).
+Against a flaky host each fetch independently succeeds or fails, and without care the published
+`Release` is an arbitrary combination of survivors. `fetch_sums` returning `None` must mean
+**no sums configured** (tails ships none — a design choice). A *configured* sidecar that failed
+transiently raises `SumsUnavailable`, which routes through the existing resolver `except` as
+TRANSIENT: entry untouched, retried next run, no issue.
+
+Deliberate asymmetry: a **404** sidecar keeps resolving with `checksum=None`. Failing the resolve
+on a structurally-absent sidecar would freeze every source with an optional per-file sidecar,
+trading silent degradation for a silent stall.
+
+### 1c. Per-host failure budget
+
+A host that fails `client.DEFAULT_HOST_BUDGET` fetches *transiently* in one run has the rest of
+its URLs skipped, recording a `BUDGET_EXHAUSTED` trace entry (a `str`, so it classifies TRANSIENT
+— skipping must never read as a content regression). Counting rules that matter:
+
+- **Only transient failures count.** A 4xx means the host answered and the file is gone; charging
+  those would skip a healthy mirror serving optional sidecars that legitimately 404.
+- **Cumulative, never consecutive.** In the incident that motivated this, successes were
+  interleaved among the failures, so a consecutive counter — what every off-the-shelf circuit
+  breaker implements — would have reset constantly and never tripped.
+- **No half-open recovery.** For a nightly batch, "this host is having a bad night; leave its
+  entries alone and retry tomorrow" is the correct semantics.
+
 ---
 
 ## 2. The escalation trigger

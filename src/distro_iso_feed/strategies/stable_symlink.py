@@ -103,7 +103,13 @@ class StableSymlink(Strategy):
 
         sidecar_text = None
         if sums := params.get("sums"):
-            sidecar_text = client.text(urljoin(base, _expand(sums, filename=filename, version="")))
+            # `get_cached`, because this same sidecar is read up to three times per variant: here
+            # for the change token, again in `fetch_integrity` below, and a third time by
+            # `signing` after stripping `.asc`. openSUSE's Tumbleweed/MicroOS variants collapse
+            # 3 GETs to 1. (Deliberately still a soft `None` on failure -- `_version` has its own
+            # fallbacks, so a missing sidecar is not automatically a dead resolve here.)
+            r = client.get_cached(urljoin(base, _expand(sums, filename=filename, version="")))
+            sidecar_text = r.text if r else None
 
         version = self._version(params, client, sidecar_text)
         if not version:

@@ -193,6 +193,24 @@ def test_checksums_good_sig_but_our_checksum_absent_drops(keys):
     assert sig is None
 
 
+def test_checksums_no_checksum_at_all_defers_without_stripping_the_pin(keys):
+    """No checksum resolved => nothing to check the signature against. We can neither prove nor
+    disprove the pin, so DEFERRED -- never REJECTED.
+
+    This is the incident: a timed-out SUMS fetch left `checksum=None`, the signing re-fetch of
+    the same file *succeeded*, and the None fell into the "absent from the signed file" branch.
+    That reported a healthy, unrotated key as a rotation, stripped a valid pin, and failed the
+    job. The signature here is genuinely good -- the only thing missing is our own checksum.
+    """
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["sums_sig"], SUMS_URL: SUMS})
+    r, outcome = verify_signing_key(client, _release(checksum=None), _params(keys, "checksums"))
+    assert outcome == DEFERRED
+    assert r.signature_url == SIG_URL, "a transient miss must never strip the claim"
+    assert r.signature_target == "checksums"
+    assert r.signing_key_fingerprint is None  # no pin published this run; retried next run
+    assert r.verify == "gpg"  # the level does not flap
+
+
 # -------------------------------------------------- checksums mode, multiple signatures
 
 
@@ -296,6 +314,17 @@ def test_clearsigned_from_a_different_key_drops(keys):
     client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["other_sums_clear"]})
     r, outcome = verify_signing_key(client, _release(), _params(keys, "clearsigned"))
     assert outcome == REJECTED
+
+
+def test_clearsigned_no_checksum_at_all_defers_without_stripping_the_pin(keys):
+    """The clearsigned twin of the checksums None-guard -- the same bug lived in both branches."""
+    client = FakeClient({KEY_URL: keys["pub"], SIG_URL: keys["sums_clear"]})
+    r, outcome = verify_signing_key(client, _release(checksum=None), _params(keys, "clearsigned"))
+    assert outcome == DEFERRED
+    assert r.signature_url == SIG_URL
+    assert r.signature_target == "checksums"
+    assert r.signing_key_fingerprint is None
+    assert r.verify == "gpg"
 
 
 def test_clearsigned_text_appended_after_the_signature_is_rejected(keys):

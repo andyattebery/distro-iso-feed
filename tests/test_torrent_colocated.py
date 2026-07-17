@@ -10,10 +10,13 @@ from __future__ import annotations
 
 import hashlib
 
+import pytest
+
 from conftest import FakeClient
 from distro_iso_feed import feed
 from distro_iso_feed.models import VERIFY_GPG, Release
 from distro_iso_feed.state import State
+from distro_iso_feed.strategies.integrity import SumsUnavailable
 from distro_iso_feed.strategies.torrent import attach_torrent
 from test_torrents import benc
 
@@ -124,6 +127,28 @@ def test_a_tampered_signed_torrent_is_not_attached_but_the_direct_download_survi
     r = attach_torrent(_client(**{BT_DIR + TORRENT: tampered}), _release(), DEBIAN_PARAMS)
     assert r.torrent_url is None  # signed-but-tampered -> omitted
     assert r.download_url == ISO_DIR + ISO and r.verify == VERIFY_GPG
+
+
+def test_a_transient_torrent_sums_failure_raises_rather_than_shipping_an_unverified_infohash():
+    """`torrent_sums` exists precisely so the signed SUMS vouches for the torrent's bytes before
+    its infohash ships -- a torrent's own piece hashes only prove self-consistency. When that
+    sidecar times out we cannot make that check, so refuse rather than publish it anyway.
+
+    `attach_torrent` is called OUTSIDE `run_refresh`'s resolver try/except, so the caller catches
+    this; the test that it does not take the run down lives in test_run_refresh.
+    """
+    client = _client()
+    client.fail = {BT_DIR + "SHA512SUMS": "ReadTimeout"}
+    with pytest.raises(SumsUnavailable):
+        attach_torrent(client, _release(), DEBIAN_PARAMS)
+
+
+def test_a_404_torrent_sums_keeps_the_torrent_unverified_as_before():
+    """The same deliberate asymmetry as the ISO path: structural-absent is not a mirror blip."""
+    client = FakeClient({BT_DIR + TORRENT: TORRENT_BYTES})  # SHA512SUMS unmapped -> 404
+    r = attach_torrent(client, _release(), DEBIAN_PARAMS)
+    assert r.torrent_url == BT_DIR + TORRENT
+    assert r.torrent_checksum is None
 
 
 def test_a_torrent_only_release_is_left_alone():

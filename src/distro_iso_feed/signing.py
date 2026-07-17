@@ -28,6 +28,12 @@ DEFERRED = "deferred"  # couldn't verify (gpg-absent / transient fetch) -> keep 
 # name here with no branch would silently degrade to DEFERRED; a test pins config to this set).
 COVERS = frozenset({"checksums", "clearsigned", "image"})
 
+# No checksum resolved => nothing to check the signature against, so we cannot prove OR disprove
+# the pin: DEFERRED, never REJECTED. This distinction is the whole bug behind the bogus
+# "rotated signing key" tickets -- a timed-out sums fetch left `checksum=None`, which fell into
+# the "absent from the signed file" branch and got reported as a key rotation.
+_NO_CHECKSUM = "the feed has no checksum to check against (the sums fetch did not land)"
+
 
 @dataclass(frozen=True, slots=True)
 class SigningOutcome:
@@ -47,13 +53,6 @@ class SigningOutcome:
         # A SigningOutcome is fundamentally the `(release, verdict)` this used to return; `reason`
         # and `signer` are added context. Unpacking as that pair stays supported for terse callers.
         return iter((self.release, self.verdict))
-
-# The `covers` modes `verify_signing_key` dispatches on (see its if/elif). This is the single
-# source of truth: `config.py` imports it to validate `signing_key.covers`, so the validator and
-# the dispatch can no longer name different sets in two files coupled by a bare string. Adding a
-# mode is now a single-file edit here -- add the name AND its dispatch branch below together (a
-# name here with no branch would silently degrade to DEFERRED; a test pins config to this set).
-COVERS = frozenset({"checksums", "clearsigned", "image"})
 
 
 def _norm_fpr(value: str) -> str:
@@ -104,7 +103,9 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> Signin
     if not gpgverify.gpg_available():
         return SigningOutcome(staged, DEFERRED, "gpg unavailable on this runner")
 
-    key = client.get(key_conf["url"])
+    # `get_cached`: one keyserver URL backs many variants (28 share the Ubuntu key), so this
+    # collapses to a single fetch per key per run.
+    key = client.get_cached(key_conf["url"])
     if not key or not key.content:
         return SigningOutcome(staged, DEFERRED, "key server unreachable")
     key_bytes = key.content
@@ -125,14 +126,17 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> Signin
             signer=served[0] if served else None,
         )
 
-    sig = client.get(release.signature_url)
+    sig = client.get_cached(release.signature_url)
     if not sig or not sig.content:
         return SigningOutcome(staged, DEFERRED, "signature file unreachable")
     sig_bytes = sig.content
 
     if covers == "checksums":
         signed_url = _strip_sig_ext(release.signature_url)
-        signed = client.get(signed_url)
+        # `get_cached`: the strategy already fetched this same SHA*SUMS to read the hash out of
+        # it. One fetch for both closes a TOCTOU -- a second fetch can disagree with the first,
+        # and only the first is published.
+        signed = client.get_cached(signed_url)
         if not signed or not signed.content:
             return SigningOutcome(staged, DEFERRED, "checksum file unreachable")
         text = signed.content.decode("utf-8", "replace")
@@ -143,10 +147,12 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> Signin
                 f"the SHA*SUMS signature does not chain to the pinned key {pinned}",
                 signer=_first_issuer(sig_bytes),
             )  # fmt: skip
+        if not release.checksum:
+            return SigningOutcome(staged, DEFERRED, _NO_CHECKSUM)
         # The checksum the feed publishes must be the one the signature vouches for. Reading it
         # from the raw SUMS is safe *here* because a detached sig covers the whole file -- any
         # appended line breaks `good`. (Clearsigned below cannot do this; see there.)
-        if not (release.checksum and release.checksum.lower() in text.lower()):
+        if release.checksum.lower() not in text.lower():
             return SigningOutcome(
                 _drop(release), REJECTED,
                 "the signature is valid but the feed's checksum is absent from the signed file",
@@ -164,7 +170,9 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> Signin
                 f"the clearsigned CHECKSUM does not chain to the pinned key {pinned}",
                 signer=_first_issuer(sig_bytes),
             )  # fmt: skip
-        if not (release.checksum and release.checksum.lower() in payload.lower()):
+        if not release.checksum:
+            return SigningOutcome(staged, DEFERRED, _NO_CHECKSUM)
+        if release.checksum.lower() not in payload.lower():
             return SigningOutcome(
                 _drop(release), REJECTED,
                 "the signature is valid but the feed's checksum is absent from the signed payload",

@@ -25,6 +25,7 @@ from .models import Variant
 from .signing import REJECTED, verify_signing_key
 from .state import State
 from .strategies import REGISTRY
+from .strategies.integrity import SumsUnavailable
 from .strategies.torrent import attach_torrent
 from .tokens import from_filename
 
@@ -59,7 +60,12 @@ def endpoint_of(params: dict) -> str:
 
 def _exc_class(exc: Exception) -> str:
     """A resolver that raised a network error is transient; a parse/attribute/key error is
-    structural. (`resolve()` catches network errors internally, so this mostly sees the latter.)"""
+    structural. (`resolve()` catches network errors internally, so this mostly sees the latter.)
+
+    `SumsUnavailable` carries its own verdict: it is only raised for a configured sidecar that
+    failed *transiently*, and says so, rather than being re-derived from the exception type."""
+    if isinstance(exc, SumsUnavailable):
+        return exc.failure_class
     return escalate.TRANSIENT if isinstance(exc, httpx.HTTPError) else escalate.STRUCTURAL
 
 
@@ -291,7 +297,15 @@ def main(argv: list[str] | None = None) -> int:
             # the change token is computed -- these sources all carry an ISO checksum,
             # so the token is the ISO's hash and the torrent cannot move it.
             if params.get("torrent"):
-                release = attach_torrent(client, release, params)
+                try:
+                    release = attach_torrent(client, release, params)
+                except SumsUnavailable as exc:
+                    # This call sits OUTSIDE the resolver try/except above, so an escaping
+                    # exception would take the whole run down. The torrent's own sums file is
+                    # a second sidecar and can time out independently of the ISO's -- a missing
+                    # torrent hash is metadata loss, not correctness loss, so keep the release
+                    # exactly as resolved rather than failing the variant.
+                    log.warning("%s: torrent not attached: %s", variant.key, exc)
 
             # Prove the GPG chain before publishing the pinned key. A REJECTED signature
             # drops the claim (verify degrades to checksum); a transient/gpg-absent

@@ -39,7 +39,7 @@ the raw report JSON. Point Claude Code (or yourself) at one and it has what a fi
 | Issue (label) | Trigger | Fails job? | The resolving PR | Key fields the issue carries |
 |---|---|---|---|---|
 | **resolve regression** (`refresh-failure`) | A *tracked* source stopped resolving structurally: 404/moved, 200-but-empty (redesigned), candidates present but none match, or matched-but-no-version-token | Yes | Edit `config/sources.yaml` for the key — bring `match`/`version_pattern`/`index`/`url` back in line with what upstream lists now; `--dry-run --only <key>` confirms | `cause`, `endpoint`+`status`, `observed_candidates` (what it lists now), current `params`, `last_good` (+`last_resolved`), `page_url`, `repro` |
-| **rotated signing key** (`refresh-signing-key`) | The pinned GPG key no longer verifies — the current signature is from a *different* fingerprint (verdict `REJECTED`); the entry dropped to `checksum` | Yes | **Verify the rotation is the project's announced key first** (official channel / chained to trust anchor), *then* update `signing_key.fingerprint`; `--dry-run` proves it re-verifies | `pinned_fpr`, `actual_signer_fpr` (who signs now), `key_url`, `covers` |
+| **rotated signing key** (`refresh-signing-key`) | The pinned GPG key no longer verifies — every required fetch landed (2xx) and gpg produced *contrary evidence* (verdict `REJECTED`); the entry dropped to `checksum`. > 5 at once collapse into one rotation issue | Yes | **Verify the rotation is the project's announced key first** (official channel / chained to trust anchor), *then* update `signing_key.fingerprint`; `--dry-run` proves it re-verifies | `pinned_fpr`, `actual_signer_fpr` (who signs now), `key_url`, `covers` |
 | **pinned release** (`refresh-pin`) | A source frozen to a literal release (`audit.pins`) — resolves cleanly, serves stale forever, every check keeps passing | No (ticket only) | Replace the literal with `version_dir`/`probe_versions` if upstream lists; else add `pinned_ok: true` with a reason | `detail` (the literal + where), `page_url` |
 
 **Security note on rotated keys:** never bump the fingerprint to whatever signed the artifact — that
@@ -47,13 +47,22 @@ voids the pin's entire purpose. Confirm the new key's provenance first; the tick
 
 ### What deliberately does *not* open an issue
 
-- **Transient** resolve failures — self-heal, shown in the run summary only.
-- **`DEFERRED`** signing — gpg absent on the runner, a key-server blip, or no signature to check. Kept
-  as-is (no pin published, entry not dropped), retried next run; summary only. The one worth a glance
-  is "gpg unavailable on this runner" — a setup problem, not a network one.
+- **Transient** resolve failures — self-heal, shown in the run summary only. This includes a
+  **configured checksum sidecar that timed out**: the entry is left exactly as it was rather than
+  republished without a checksum, and it retries next run.
+- **A host over its failure budget** — after 3 transient failures to one host in a run, its
+  remaining URLs are skipped and its entries left untouched. Expect a `skipping its remaining
+  URLs` warning in the log and a cluster of transient rows in the summary. That is a sick mirror,
+  not a break; it resolves itself by tomorrow.
+- **`DEFERRED`** signing — gpg absent on the runner, a key-server blip, no signature to check, or no
+  checksum to check it against. Kept as-is (no pin published, entry not dropped), retried next run;
+  summary only. The one worth a glance is "gpg unavailable on this runner" — a setup problem, not a
+  network one.
 - **All sources failed** — the run already fails (a broken runner/network/deploy); no per-source
   issue. A partial mass-regression (> 5 sources at once) opens a single `refresh-mass-outage` issue
-  instead of flooding the tracker.
+  instead of flooding the tracker. Signing failures collapse the same way, into one
+  `refresh-signing-key` issue — one key backs many variants (28 share Ubuntu's, 14 Debian's), so a
+  rotation is one event, not N breaks.
 - A failing **`ci.yml`** — a code bug; fix it with a normal code PR, not through this system.
 
 ## The signing verdict, for reference

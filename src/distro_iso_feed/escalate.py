@@ -7,7 +7,8 @@ writes it as JSON. The workflow feeds that report plus the currently-open refres
 to open/close. The workflow only runs the `gh` calls. No GitHub logic lives here, and no state is
 persisted: the open `refresh-*` issues ARE the record of what is currently broken.
 
-Two axes, per `docs/failure-escalation-spec.md`:
+Two axes, per `docs/failure-escalation-spec.md`. **They govern resolve failures only** -- signing
+has its own classifier; see `plan_escalation`:
 - STRUCTURAL vs TRANSIENT -- did the request succeed (wrong/absent content) or fail (network)? Only
   structural escalates. This classification is the whole false-alarm gate; no N-day counter.
 - regression -- was this key resolving before (a record in state)? Only "was working, now isn't"
@@ -138,6 +139,35 @@ def _signing_body(s: dict) -> str:
     )
 
 
+def _signing_mass_body(signing: list[dict]) -> str:
+    """One rotation, not N breaks. A single key backs many variants -- 28 share Ubuntu's, 14
+    Debian's -- so a rotation trips every one of them in the same run. The distinct signer set is
+    the tell: one shared new signer reads as a rotation; N different ones read as something else.
+    """
+    keys = "\n".join(f"- `{s['key']}`" for s in sorted(signing, key=lambda s: s["key"]))
+    signers = sorted({fpr for s in signing if (fpr := s.get("actual_signer_fpr"))})
+    if len(signers) == 1:
+        verdict = f"All {len(signing)} are now signed by **one** key, `{signers[0]}` — consistent"
+        verdict += " with a single key rotation."
+    elif signers:
+        listed = ", ".join(f"`{s}`" for s in signers)
+        verdict = f"They are signed by **{len(signers)} different** keys ({listed}) — that is not"
+        verdict += " a simple rotation. Investigate before trusting any of them."
+    else:
+        verdict = "No signer fingerprint was recovered from the signatures."
+    return (
+        f"{len(signing)} pinned GPG keys stopped verifying in one run — likely a single upstream "
+        f"rotation, not {len(signing)} separate breaks. Investigate together.\n\n"
+        f"{verdict}\n\n"
+        f"## To resolve\n"
+        f"**Verify the new key's provenance first** (official channel, or chained to the project's "
+        f"trust anchor). Never bump a fingerprint to whatever signed the artifact — that voids the "
+        f"pin's entire purpose. Then update `signing_key.fingerprint` in `config/sources.yaml` and "
+        f"dry-run to prove it re-verifies.\n\n"
+        f"**Affected:**\n{keys}\n"
+    )
+
+
 def _pin_body(p: dict) -> str:
     return (
         f"`{p['key']}` is frozen to a literal release — it resolves cleanly but serves a stale"
@@ -159,7 +189,17 @@ def plan_escalation(report: dict, open_issues: list[dict]) -> dict:
     - `exit_code`: 1 iff there is an *acute* regression this run (a structural resolve regression or
       a signing-key failure). Pins open a ticket but never fail the job. The exit is authoritative
       and independent of whether the issue API calls succeed.
-    - `mass_outage`: structural regressions exceeded the threshold → one issue instead of N.
+    - `mass_outage`: structural regressions **or** signing failures exceeded the threshold → one
+      issue instead of N. The two collapse into *separate* buckets (their bodies say different
+      things and a merged ticket is unreadable); this flag is true if either tripped.
+
+    `signing` is deliberately NOT filtered by failure_class the way `regressions` is, and carries
+    no such field. `verify_signing_key` already IS the classifier: it only returns REJECTED when
+    every *required* fetch arrived (2xx) -- the key and signature always, plus the signed body for
+    `covers: checksums`; `clearsigned` and `image` have no separate body -- *and* gpg produced
+    contrary evidence. Couldn't-check is DEFERRED and never reaches this report at all. A
+    `failure_class` here could only ever be the constant "structural", and a filter on it could
+    only ever be a no-op whose one failure mode is silently swallowing a real key rotation.
     """
     regressions = [
         f
@@ -168,11 +208,15 @@ def plan_escalation(report: dict, open_issues: list[dict]) -> dict:
     ]
     signing = report.get("signing_key_failures", [])
     pins = report.get("pins", [])
-    mass_outage = len(regressions) > MASS_OUTAGE_THRESHOLD
+    regressions_mass = len(regressions) > MASS_OUTAGE_THRESHOLD
+    # One key backs many variants (28 share Ubuntu's, 14 Debian's), so one rotation trips them
+    # all at once. Without this it would file an issue per variant.
+    signing_mass = len(signing) > MASS_OUTAGE_THRESHOLD
+    mass_outage = regressions_mass or signing_mass
 
     # Desired open set: title -> (label, body).
     desired: dict[str, tuple[str, str]] = {}
-    if mass_outage:
+    if regressions_mass:
         keys = ", ".join(sorted(f["key"] for f in regressions))
         desired[f"refresh: {len(regressions)} sources regressed"] = (
             LABEL_MASS,
@@ -182,8 +226,14 @@ def plan_escalation(report: dict, open_issues: list[dict]) -> dict:
     else:
         for f in regressions:
             desired[f"refresh failure: {f['key']}"] = (LABEL_RESOLVE, _resolve_body(f))
-    for s in signing:
-        desired[f"refresh signing-key: {s['key']}"] = (LABEL_SIGNING, _signing_body(s))
+    if signing_mass:
+        desired[f"refresh signing-key: {len(signing)} pins stopped verifying"] = (
+            LABEL_SIGNING,
+            _signing_mass_body(signing),
+        )
+    else:
+        for s in signing:
+            desired[f"refresh signing-key: {s['key']}"] = (LABEL_SIGNING, _signing_body(s))
     for p in pins:
         desired[f"refresh pin: {p['key']}"] = (LABEL_PIN, _pin_body(p))
 

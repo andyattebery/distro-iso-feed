@@ -11,8 +11,8 @@ import httpx
 import pytest
 
 from conftest import FakeClient
-from distro_iso_feed import listers
-from distro_iso_feed.client import Client
+from distro_iso_feed import escalate, listers
+from distro_iso_feed.client import BUDGET_EXHAUSTED, Client
 from distro_iso_feed.config import load_raw, yaml_rt
 from distro_iso_feed.strategies import REGISTRY
 
@@ -151,6 +151,149 @@ def test_network_error_is_swallowed():
         raise httpx.ConnectError("dns")
 
     assert _client_with(handler, retries=2).get("https://x/") is None
+
+
+# ------------------------------------------------------- per-host failure budget
+#
+# A mirror read-timed out for 18 minutes and the run re-asked it 35 times, ~100% blocked on one
+# sick host. The budget stops asking. What counts is the whole game: only a *transient* failure,
+# and cumulatively -- not consecutively.
+
+
+def _timeout_handler(calls: list) -> object:
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        raise httpx.ReadTimeout("slow")
+
+    return handler
+
+
+def test_budget_stops_asking_a_host_that_keeps_failing_transiently():
+    calls: list = []
+    c = _client_with(_timeout_handler(calls), retries=1, host_budget=3)
+    for _ in range(3):
+        assert c.get("https://sick/f") is None
+    assert len(calls) == 3  # budget spent, one wire call each
+
+    assert c.get("https://sick/anything-else") is None
+    assert len(calls) == 3, "the 4th fetch must not touch the wire"
+
+
+def test_budget_short_circuit_records_a_transient_outcome_not_an_empty_trace():
+    """`classify_outcomes([])` is STRUCTURAL by design, so a skipped fetch that recorded nothing
+    would read as a content regression and file a bogus issue per skipped variant."""
+    calls: list = []
+    c = _client_with(_timeout_handler(calls), retries=1, host_budget=1)
+    c.get("https://sick/f")
+
+    mark = len(c.trace)
+    assert c.get("https://sick/g") is None
+    outcomes = [o for _, o in c.trace[mark:]]
+    assert outcomes == [BUDGET_EXHAUSTED]
+    assert escalate.classify_outcomes(outcomes) == escalate.TRANSIENT
+
+
+def test_budget_is_per_host_so_a_healthy_mirror_is_untouched():
+    calls: list = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(request.url.host)
+        if request.url.host == "sick":
+            raise httpx.ReadTimeout("slow")
+        return httpx.Response(200, content=b"fine")
+
+    c = _client_with(handler, retries=1, host_budget=2)
+    for _ in range(2):
+        c.get("https://sick/f")
+    c.get("https://sick/g")  # short-circuited
+
+    assert c.get("https://healthy/f") is not None
+    assert c.get("https://healthy/f").text == "fine"
+
+
+def test_404s_never_consume_the_budget():
+    """A 404 means the host is fine and the file is gone. Several sources carry optional per-file
+    sidecars that legitimately 404 -- charging those would skip a perfectly healthy mirror."""
+    calls: list = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        return httpx.Response(404)
+
+    c = _client_with(handler, host_budget=2)
+    for _ in range(6):
+        assert c.get("https://healthy/missing") is None
+    assert len(calls) == 6, "every 404 must still reach the wire; the budget must never open"
+
+
+def test_non_consecutive_failures_still_exhaust_the_budget():
+    """The shape that actually occurred: successes interleaved among the failures (an index here,
+    a torrent there). A *consecutive* counter -- what every off-the-shelf circuit breaker uses --
+    resets on those and never trips."""
+    calls: list = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        if request.url.path == "/ok":
+            return httpx.Response(200, content=b"ok")
+        raise httpx.ReadTimeout("slow")
+
+    c = _client_with(handler, retries=1, host_budget=3)
+    # fail, ok, fail, ok -- two failures, never two in a row.
+    for _ in range(2):
+        assert c.get("https://sick/fail") is None
+        assert c.get("https://sick/ok") is not None  # would reset a consecutive counter
+
+    assert c.get("https://sick/fail") is None  # the 3rd, still never adjacent to another
+    before = len(calls)
+    assert c.get("https://sick/ok") is None, "budget is cumulative, so even /ok is now skipped"
+    assert len(calls) == before
+
+
+# ------------------------------------------------------------------- get_cached
+
+
+def test_get_cached_fetches_once_and_returns_the_same_bytes():
+    calls: list = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        return httpx.Response(200, content=b"sha  file.iso")
+
+    c = _client_with(handler)
+    first = c.get_cached("https://x/SUMS")
+    second = c.get_cached("https://x/SUMS")
+    assert len(calls) == 1
+    assert first is second, "the same Response, so signing gpg-verifies the exact published bytes"
+    assert second.content == b"sha  file.iso"
+
+
+def test_get_cached_does_not_cache_a_failure():
+    calls: list = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        return httpx.Response(503)
+
+    c = _client_with(handler, retries=2, host_budget=99)
+    assert c.get_cached("https://x/SUMS") is None
+    assert c.get_cached("https://x/SUMS") is None
+    assert len(calls) == 4, "a failure stays retryable rather than being memoized as None"
+
+
+def test_get_bypasses_the_cache_so_diagnose_still_sees_the_wire():
+    """`diagnose` re-fetches on purpose to observe the *current* outcome; a cache hit would append
+    nothing to `trace`, and an empty slice classifies STRUCTURAL."""
+    calls: list = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(str(request.url))
+        return httpx.Response(200, content=b"ok")
+
+    c = _client_with(handler)
+    c.get_cached("https://x/SUMS")
+    c.get("https://x/SUMS")
+    assert len(calls) == 2
 
 
 # ---------------------------------------------------------------- discovery write-back
