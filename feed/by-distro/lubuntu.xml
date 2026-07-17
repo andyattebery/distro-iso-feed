@@ -4,7 +4,28 @@
   <title>Distro ISO Feed — lubuntu</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/lubuntu.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T23:21:30+00:00</updated>
+  <updated>2026-07-17T04:10:37+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/lubuntu/desktop-latest/26.04</id>
+    <title>Lubuntu latest 26.04 (x86_64)</title>
+    <updated>2026-07-17T04:10:37+00:00</updated>
+    <published>2026-07-17T04:10:37+00:00</published>
+    <link href="https://lubuntu.me/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="299214" />
+    <category term="lubuntu" label="distro" />
+    <category term="desktop-latest" label="variant" />
+    <summary type="text">Lubuntu latest 26.04 (x86_64)
+Filename: lubuntu-26.04-desktop-amd64.iso
+sha256: a9eef9e75c139caa428d11799f681e2d29e6ba7e22aa045d9a64599d45cd12ff
+Signature: https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/lubuntu/releases/26.04/release/lubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: e3fbc63821098e11d5be6230b737765980ac354d
+Magnet: magnet:?xt=urn:btih:e3fbc63821098e11d5be6230b737765980ac354d&amp;dn=lubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/lubuntu/desktop-lts/26.04</id>
     <title>Lubuntu LTS 26.04 (x86_64)</title>

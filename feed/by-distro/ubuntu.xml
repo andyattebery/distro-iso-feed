@@ -4,7 +4,91 @@
   <title>Distro ISO Feed — ubuntu</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/ubuntu.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T21:31:50+00:00</updated>
+  <updated>2026-07-17T04:10:33+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-latest:aarch64/26.04</id>
+    <title>Ubuntu Server latest 26.04 (aarch64)</title>
+    <updated>2026-07-17T04:10:33+00:00</updated>
+    <published>2026-07-17T04:10:33+00:00</published>
+    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-live-server-arm64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-live-server-arm64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="234376" />
+    <category term="ubuntu" label="distro" />
+    <category term="live-server-latest" label="variant" />
+    <summary type="text">Ubuntu Server latest 26.04 (aarch64)
+Filename: ubuntu-26.04-live-server-arm64.iso
+sha256: c9aa567e6560b2eddae3af03fc686002e35b6fee96f97fd5df3271e846439fdd
+Signature: https://cdimage.ubuntu.com/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-live-server-arm64.iso.torrent
+Infohash: ca81e60bdaf11e2e22419513cbf9b366afdf6d46
+Magnet: magnet:?xt=urn:btih:ca81e60bdaf11e2e22419513cbf9b366afdf6d46&amp;dn=ubuntu-26.04-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-latest/26.04</id>
+    <title>Ubuntu Server latest 26.04 (x86_64)</title>
+    <updated>2026-07-17T04:10:32+00:00</updated>
+    <published>2026-07-17T04:10:32+00:00</published>
+    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
+    <link href="https://releases.ubuntu.com/26.04/ubuntu-26.04-live-server-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://releases.ubuntu.com/26.04/ubuntu-26.04-live-server-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="223040" />
+    <category term="ubuntu" label="distro" />
+    <category term="live-server-latest" label="variant" />
+    <summary type="text">Ubuntu Server latest 26.04 (x86_64)
+Filename: ubuntu-26.04-live-server-amd64.iso
+sha256: dec49008a71f6098d0bcfc822021f4d042d5f2db279e4d75bdd981304f1ca5d9
+Signature: https://releases.ubuntu.com/26.04/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://releases.ubuntu.com/26.04/ubuntu-26.04-live-server-amd64.iso.torrent
+Infohash: e1fc140a6391357fa1cf08ddb70274f9c05eb88b
+Magnet: magnet:?xt=urn:btih:e1fc140a6391357fa1cf08ddb70274f9c05eb88b&amp;dn=ubuntu-26.04-live-server-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/desktop-latest:aarch64/26.04</id>
+    <title>Ubuntu Desktop latest 26.04 (aarch64)</title>
+    <updated>2026-07-17T04:10:32+00:00</updated>
+    <published>2026-07-17T04:10:32+00:00</published>
+    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-desktop-arm64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-desktop-arm64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="317732" />
+    <category term="ubuntu" label="distro" />
+    <category term="desktop-latest" label="variant" />
+    <summary type="text">Ubuntu Desktop latest 26.04 (aarch64)
+Filename: ubuntu-26.04-desktop-arm64.iso
+sha256: c2afd538d66fdd77377d03f1ed2ac76a34f1c116baecc9a8170d68f833121f57
+Signature: https://cdimage.ubuntu.com/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/26.04/release/ubuntu-26.04-desktop-arm64.iso.torrent
+Infohash: 59ec6454b48d0cb232cc3ad67f66c4327c1a1092
+Magnet: magnet:?xt=urn:btih:59ec6454b48d0cb232cc3ad67f66c4327c1a1092&amp;dn=ubuntu-26.04-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/desktop-latest/26.04</id>
+    <title>Ubuntu Desktop latest 26.04 (x86_64)</title>
+    <updated>2026-07-17T04:10:31+00:00</updated>
+    <published>2026-07-17T04:10:31+00:00</published>
+    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
+    <link href="https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="497716" />
+    <category term="ubuntu" label="distro" />
+    <category term="desktop-latest" label="variant" />
+    <summary type="text">Ubuntu Desktop latest 26.04 (x86_64)
+Filename: ubuntu-26.04-desktop-amd64.iso
+sha256: 487f87faaf547ea30e0aba4d5b53346292571256b25333a978db1692bcee9dd2
+Signature: https://releases.ubuntu.com/26.04/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: dafc8c076ca2f3ed376eeae7c76a0d6be2415c45
+Magnet: magnet:?xt=urn:btih:dafc8c076ca2f3ed376eeae7c76a0d6be2415c45&amp;dn=ubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-lts:aarch64/26.04</id>
     <title>Ubuntu Server LTS 26.04 (aarch64)</title>

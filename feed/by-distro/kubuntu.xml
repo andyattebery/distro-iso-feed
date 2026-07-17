@@ -4,7 +4,28 @@
   <title>Distro ISO Feed — kubuntu</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/kubuntu.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T23:21:27+00:00</updated>
+  <updated>2026-07-17T04:10:35+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/kubuntu/desktop-latest/26.04</id>
+    <title>Kubuntu latest 26.04 (x86_64)</title>
+    <updated>2026-07-17T04:10:35+00:00</updated>
+    <published>2026-07-17T04:10:35+00:00</published>
+    <link href="https://kubuntu.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="386994" />
+    <category term="kubuntu" label="distro" />
+    <category term="desktop-latest" label="variant" />
+    <summary type="text">Kubuntu latest 26.04 (x86_64)
+Filename: kubuntu-26.04-desktop-amd64.iso
+sha256: 95ce9cf68f13015b9a88bd1ef86fcf7eda77c99979fda48c69e28aa0a84f88ac
+Signature: https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso.torrent
+Infohash: 8c3e3376d945ec50487b2b49a690f4eb8af49cdf
+Magnet: magnet:?xt=urn:btih:8c3e3376d945ec50487b2b49a690f4eb8af49cdf&amp;dn=kubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/kubuntu/desktop-lts/26.04</id>
     <title>Kubuntu LTS 26.04 (x86_64)</title>

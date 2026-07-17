@@ -4,7 +4,28 @@
   <title>Distro ISO Feed — ubuntukylin</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/ubuntukylin.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T23:21:37+00:00</updated>
+  <updated>2026-07-17T04:10:44+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntukylin/desktop-latest/26.04</id>
+    <title>Ubuntu Kylin latest 26.04 (x86_64)</title>
+    <updated>2026-07-17T04:10:44+00:00</updated>
+    <published>2026-07-17T04:10:44+00:00</published>
+    <link href="https://www.ubuntukylin.com/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/ubuntukylin-26.04-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/ubuntukylin-26.04-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="433883" />
+    <category term="ubuntukylin" label="distro" />
+    <category term="desktop-latest" label="variant" />
+    <summary type="text">Ubuntu Kylin latest 26.04 (x86_64)
+Filename: ubuntukylin-26.04-desktop-amd64.iso
+sha256: 76d2b4618afac3f764c65ba27419b9c6f061cb7cc6f42593e687a6af073630a8
+Signature: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04/release/ubuntukylin-26.04-desktop-amd64.iso.torrent
+Infohash: 70af422a147d4a93392c5e74133fbcb834f6b266
+Magnet: magnet:?xt=urn:btih:70af422a147d4a93392c5e74133fbcb834f6b266&amp;dn=ubuntukylin-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntukylin/desktop-lts/26.04</id>
     <title>Ubuntu Kylin LTS 26.04 (x86_64)</title>
