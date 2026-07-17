@@ -8,7 +8,8 @@ from __future__ import annotations
 
 import pytest
 
-from distro_iso_feed import select
+from distro_iso_feed import config, select
+from distro_iso_feed.config import ConfigError
 
 
 @pytest.mark.parametrize(
@@ -19,8 +20,18 @@ from distro_iso_feed import select
         ("aurora-beta-webui-x86_64.iso", True),
         ("8.1.0-rc3", True),
         ("Zorin-OS-16-Core-Beta-64-bit.iso", True),
+        # Ubuntu's milestone images. A bare `snapshot` failed the trailing boundary on the `2`
+        # and let these through -- `beta\d*`/`rc\d*` took an ordinal but `snapshot` did not.
+        ("ubuntu-26.10-snapshot2-desktop-amd64.iso", True),
+        ("ubuntu-26.10-snapshot-desktop-amd64.iso", True),
+        ("kubuntu-26.10-alpha2-desktop-amd64.iso", True),
         ("MX-25.2_KDE_x64.iso", False),
         ("debian-13.5.0-amd64-netinst.iso", False),
+        # openSUSE's `Snapshot20260714` is a *version* read from a sidecar, never a name this
+        # filter sees -- but the real artifact name must stay acceptable regardless.
+        ("openSUSE-Tumbleweed-DVD-x86_64-Current.iso", False),
+        # `aarch64` contains the substring `rc`; the non-alphanumeric boundary is what saves it.
+        ("AlmaLinux-10.2-aarch64-boot.iso", False),
     ],
 )
 def test_prerelease_detection(name, expected):
@@ -97,9 +108,29 @@ def test_ubuntu_lts_is_even_year_dot_04():
 
 
 def test_ubuntu_channels_split():
+    """`lts` pins the support line; `latest` takes everything and lets the caller pick the
+    newest that actually has an artifact. There is no `interim`: wanting a non-LTS means
+    wanting the newest, and an interim-only channel names a line some flavours never ship."""
     versions = ["24.04.3", "24.04.4", "25.10", "26.04"]
     assert select.by_channel(versions, "lts") == ["24.04.3", "24.04.4", "26.04"]
-    assert select.by_channel(versions, "interim") == ["25.10"]
+    assert select.by_channel(versions, "latest") == versions  # every version, no filter
+
+
+def test_channels_is_the_set_config_validates_against():
+    """`select.CHANNELS` is the single source of truth: `config._validate_channel` imports it, so
+    the validator and `by_channel`'s dispatch cannot name different sets."""
+    assert set(select.CHANNELS) == {"lts", "latest"}
+    for channel in select.CHANNELS:
+        config._validate_channel("d", "v", {"channel": channel})  # every valid value passes
+
+
+def test_an_unknown_channel_is_a_load_error_not_a_silent_no_filter():
+    """`by_channel` returns every version for anything that is not `lts`, so before this check a
+    typo'd `channel: lastest` behaved exactly like `latest` and said nothing."""
+    for bogus in ("lastest", "interim", "LTS", ""):
+        with pytest.raises(ConfigError, match="channel"):
+            config._validate_channel("d", "v", {"channel": bogus})
+    config._validate_channel("d", "v", {})  # absent is fine -- most variants have no channel
 
 
 def test_ubuntu_picks_newest_within_channel():

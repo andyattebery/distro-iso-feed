@@ -296,10 +296,19 @@ distros:
     strategy: directory_index
     page_url: "https://ubuntu.com/download"
     params:
-      # releases.ubuntu.com lists 24.04.3, 24.04.4, 25.10 and 26.04 side by side.
-      # A plain max-version would silently flip `desktop` from LTS to interim the
-      # week 26.10 lands, so each channel is its own variant. Note `.04` alone does
-      # not mean LTS: 25.04 is interim. `channel:` handles the even-year rule.
+      # releases.ubuntu.com lists 24.04.3, 24.04.4, 25.10 and 26.04 side by side, so a
+      # single `desktop` variant would silently flip its support line the week 26.10
+      # lands. Each channel is therefore its own variant: `-lts` stays pinned to the
+      # long-term line, `-latest` takes the newest release whether or not it is an LTS,
+      # and flipping is what `-latest` advertises rather than a surprise.
+      #
+      # The split is latest-vs-LTS, NOT interim-vs-LTS: nobody on 25.10 wants to *stay*
+      # on 25.10 -- wanting a non-LTS means wanting the newest thing. An `interim` channel
+      # also names a line some flavours never publish (Ubuntu Unity ships LTS only), which
+      # left `ubuntu-unity:desktop-interim` unresolved from the day it was added.
+      #
+      # `.04` alone does not mean LTS -- 25.04 is not one. `select.is_lts` has the even-year
+      # rule; `select.CHANNELS` is the validated set of values `channel:` may take.
       version_dir: "https://releases.ubuntu.com/"
       index: "{version}/"
       sums: "SHA256SUMS"
@@ -320,15 +329,15 @@ distros:
       # `live-server-arm64+largemem.iso` decoy out. cdimage carries its own SHA256SUMS/.gpg/.torrent.
       desktop-lts: {label: "Ubuntu Desktop LTS", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: lts, match: '^ubuntu-[0-9.]+-desktop-{token}\.iso$'}}
       live-server-lts: {label: "Ubuntu Server LTS", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: lts, match: '^ubuntu-[0-9.]+-live-server-{token}\.iso$'}}
-      desktop-interim: {label: "Ubuntu Desktop interim", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: interim, match: '^ubuntu-[0-9.]+-desktop-{token}\.iso$'}}
-      live-server-interim: {label: "Ubuntu Server interim", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: interim, match: '^ubuntu-[0-9.]+-live-server-{token}\.iso$'}}
+      desktop-latest: {label: "Ubuntu Desktop latest", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: latest, match: '^ubuntu-[0-9.]+-desktop-{token}\.iso$'}}
+      live-server-latest: {label: "Ubuntu Server latest", arches: {x86_64: amd64, aarch64: {token: arm64, version_dir: "https://cdimage.ubuntu.com/releases/", index: "{version}/release/"}}, params: {channel: latest, match: '^ubuntu-[0-9.]+-live-server-{token}\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   # Ubuntu flavors. Same shape as `ubuntu` but wholly on cdimage.ubuntu.com/<flavor>/releases/
   # (the main archive only carries Ubuntu itself). Same GPG-signed SHA256SUMS under the Ubuntu
-  # CD Image key, same even-year LTS/interim channel split -- which is why each is `enumerable:
+  # CD Image key, same even-year LTS/latest channel split -- which is why each is `enumerable:
   # false` (no filename encodes the channel). amd64 only; arm64 could be added per-flavor later.
   # Every flavor uses `-desktop-amd64` EXCEPT ubuntustudio, which ships `-dvd-amd64`.
   kubuntu:
@@ -347,10 +356,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Kubuntu LTS", params: {channel: lts, match: '^kubuntu-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Kubuntu interim", params: {channel: interim, match: '^kubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Kubuntu latest", params: {channel: latest, match: '^kubuntu-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   xubuntu:
     strategy: directory_index
@@ -368,10 +377,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Xubuntu LTS", params: {channel: lts, match: '^xubuntu-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Xubuntu interim", params: {channel: interim, match: '^xubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Xubuntu latest", params: {channel: latest, match: '^xubuntu-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   lubuntu:
     strategy: directory_index
@@ -389,10 +398,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Lubuntu LTS", params: {channel: lts, match: '^lubuntu-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Lubuntu interim", params: {channel: interim, match: '^lubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Lubuntu latest", params: {channel: latest, match: '^lubuntu-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   ubuntu-mate:
     strategy: directory_index
@@ -410,10 +419,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Ubuntu MATE LTS", params: {channel: lts, match: '^ubuntu-mate-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu MATE interim", params: {channel: interim, match: '^ubuntu-mate-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Ubuntu MATE latest", params: {channel: latest, match: '^ubuntu-mate-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   ubuntu-budgie:
     strategy: directory_index
@@ -431,10 +440,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Ubuntu Budgie LTS", params: {channel: lts, match: '^ubuntu-budgie-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu Budgie interim", params: {channel: interim, match: '^ubuntu-budgie-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Ubuntu Budgie latest", params: {channel: latest, match: '^ubuntu-budgie-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   ubuntustudio:
     strategy: directory_index
@@ -454,10 +463,10 @@ distros:
       # Ubuntu Studio renamed its image mid-stream: 24.04 LTS is `-dvd-amd64`, 25.10 is
       # `-desktop-amd64`. Accept either so both channels resolve across the transition.
       desktop-lts: {label: "Ubuntu Studio LTS", params: {channel: lts, match: '^ubuntustudio-[0-9.]+-(?:dvd|desktop)-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu Studio interim", params: {channel: interim, match: '^ubuntustudio-[0-9.]+-(?:dvd|desktop)-amd64\.iso$'}}
+      desktop-latest: {label: "Ubuntu Studio latest", params: {channel: latest, match: '^ubuntustudio-[0-9.]+-(?:dvd|desktop)-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   ubuntukylin:
     strategy: directory_index
@@ -475,10 +484,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Ubuntu Kylin LTS", params: {channel: lts, match: '^ubuntukylin-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu Kylin interim", params: {channel: interim, match: '^ubuntukylin-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Ubuntu Kylin latest", params: {channel: latest, match: '^ubuntukylin-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   edubuntu:
     strategy: directory_index
@@ -496,10 +505,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Edubuntu LTS", params: {channel: lts, match: '^edubuntu-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Edubuntu interim", params: {channel: interim, match: '^edubuntu-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Edubuntu latest", params: {channel: latest, match: '^edubuntu-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   ubuntu-unity:
     strategy: directory_index
@@ -517,10 +526,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Ubuntu Unity LTS", params: {channel: lts, match: '^ubuntu-unity-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu Unity interim", params: {channel: interim, match: '^ubuntu-unity-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Ubuntu Unity latest", params: {channel: latest, match: '^ubuntu-unity-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   ubuntucinnamon:
     strategy: directory_index
@@ -538,10 +547,10 @@ distros:
         covers: checksums
     variants:
       desktop-lts: {label: "Ubuntu Cinnamon LTS", params: {channel: lts, match: '^ubuntucinnamon-[0-9.]+-desktop-amd64\.iso$'}}
-      desktop-interim: {label: "Ubuntu Cinnamon interim", params: {channel: interim, match: '^ubuntucinnamon-[0-9.]+-desktop-amd64\.iso$'}}
+      desktop-latest: {label: "Ubuntu Cinnamon latest", params: {channel: latest, match: '^ubuntucinnamon-[0-9.]+-desktop-amd64\.iso$'}}
     discover:
       enumerable: false
-      reason: "variant keys carry an LTS/interim channel that no artifact filename encodes"
+      reason: "variant keys carry an LTS/latest channel that no artifact filename encodes"
 
   freebsd:
     strategy: directory_index
@@ -632,6 +641,11 @@ distros:
       # cannot see it. The listed `Build710.3-Media.iso` is the real artifact, and
       # its build number is a genuine change-token.
       sums: "{filename}.sha256"
+      # Every openSUSE artifact ships `.sha256` + `.sha256.asc` side by side, so the signature
+      # belongs here beside `sums` rather than per-variant. Leap had the `signing_key` but no
+      # `sig`, which made the pin inert -- `verify_signing_key` bails without a signature_url,
+      # so all 8 leap variants served `verify: checksum` while the config implied `gpg`.
+      sig: "{filename}.sha256.asc"
       version_pattern: 'Leap-([0-9.]+)-\w+-{token}-Build([0-9.]+)-Media'
       signing_key:
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4

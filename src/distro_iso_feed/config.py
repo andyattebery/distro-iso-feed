@@ -18,6 +18,7 @@ from ruamel.yaml import YAML
 
 from .arch import DEFAULT_ARCH
 from .models import Source, Variant
+from .select import CHANNELS
 from .signing import COVERS
 from .tokens import TOKEN_SOURCES
 
@@ -193,6 +194,44 @@ def _validate_torrent_only(distro: str, variant: str, params: dict) -> None:
         )
 
 
+def _validate_channel(distro: str, variant: str, params: dict) -> None:
+    """`channel` narrows a version list to `lts` or `latest` (see `select.by_channel`).
+
+    Validated here, on the *merged* variant params, because `channel` is set per variant while
+    `signing_key` sits on the distro -- `_validate_signing_key` runs per source and cannot see it.
+    An unknown value used to fall through `by_channel` to "no filter", so `channel: lastest`
+    behaved exactly like `latest` and said nothing.
+    """
+    channel = params.get("channel")
+    if channel is None:
+        return
+    if channel not in CHANNELS:
+        raise ConfigError(
+            f"{distro}:{variant}: `channel` must be one of {', '.join(sorted(CHANNELS))}; "
+            f"got {channel!r}"
+        )
+
+
+def _validate_signing_surface(distro: str, variant: str, params: dict) -> None:
+    """A `signing_key` with nothing to verify is a lie the feed tells about itself.
+
+    `verify_signing_key` bails the moment `release.signature_url` is None -- for *every* `covers`
+    mode -- so a pin without a `sig`/`sig_url` can never publish. The 8 `opensuse:leap-*` variants
+    did exactly this: `covers: checksums` and a real fingerprint, no `sig`, silently serving
+    `verify: checksum` while the config implied `gpg`.
+
+    Merged params again: openSUSE puts `signing_key` on the distro and `sig` on the variant, so
+    only here are both visible at once.
+    """
+    if not params.get("signing_key"):
+        return
+    if not (params.get("sig") or params.get("sig_url")):
+        raise ConfigError(
+            f"{distro}:{variant}: `signing_key` needs a `sig` or `sig_url` -- without a signature "
+            f"to check, the pin can never verify and the entry silently degrades to `checksum`"
+        )
+
+
 def _validate_token(distro: str, variant: str, params: dict) -> None:
     """A `token:` block names where a `stable_symlink` variant reads its change-token.
 
@@ -348,6 +387,8 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             params = _merge(default_params, distro_params, vraw.pop("params", None), vraw)
             _validate_torrent_only(distro, name, params)
             _validate_token(distro, name, params)
+            _validate_channel(distro, name, params)
+            _validate_signing_surface(distro, name, params)
 
             if arches is not None:
                 # One Variant per architecture. The map is {canonical: upstream-token}: the

@@ -19,6 +19,8 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 
+import httpx
+
 STRUCTURAL = "structural"
 TRANSIENT = "transient"
 
@@ -34,6 +36,37 @@ LABEL_RESOLVE = "refresh-failure"
 LABEL_SIGNING = "refresh-signing-key"
 LABEL_PIN = "refresh-pin"
 LABEL_MASS = "refresh-mass-outage"
+
+
+def exc_class(exc: Exception) -> str:
+    """Classify an exception that escaped a resolver.
+
+    A network error is transient; a parse/attribute/key error is structural. (`resolve()` catches
+    network errors internally, so this mostly sees the latter.)
+
+    `SumsUnavailable` carries its own verdict in `failure_class` -- read by attribute rather than
+    `isinstance`, because it lives in `strategies.integrity`, which imports *this* module. Both
+    `run_refresh` and `audit` classify through here so the two cannot drift apart.
+    """
+    declared = getattr(exc, "failure_class", None)
+    if declared in (STRUCTURAL, TRANSIENT):
+        return declared
+    return TRANSIENT if isinstance(exc, httpx.HTTPError) else STRUCTURAL
+
+
+def endpoint_of(params: dict) -> str:
+    """The URL a human should open first when a source breaks.
+
+    `version_dir` comes before `index`, because for those sources `index` is a
+    template like ``{version}/`` -- printing it tells the reader nothing.
+
+    Lives here rather than in `run_refresh` because it fills `Failure.endpoint`, and because
+    `audit` needs it too -- and `run_refresh` imports `audit`, so the other direction would cycle.
+    """
+    for key in ("version_dir", "index", "url", "repo", "project"):
+        if value := params.get(key):
+            return str(value)
+    return "?"
 
 
 def classify_outcomes(outcomes: list[int | str]) -> str:

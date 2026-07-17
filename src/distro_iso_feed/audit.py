@@ -28,7 +28,9 @@ import re
 from dataclasses import dataclass
 from enum import StrEnum
 
+from . import escalate
 from .client import Client
+from .escalate import endpoint_of
 from .models import Source
 from .strategies import REGISTRY
 
@@ -56,12 +58,13 @@ _DYNAMIC = ("version_dir", "probe_versions")
 class Reason(StrEnum):
     UNEXPLAINED = "UNEXPLAINED"
     PINNED = "PINNED"
+    UNRESOLVABLE = "UNRESOLVABLE"
     NOT_ENUMERABLE = "NOT_ENUMERABLE"
     LISTER_FAILED = "LISTER_FAILED"
 
     @property
     def is_signal(self) -> bool:
-        return self in (Reason.UNEXPLAINED, Reason.PINNED)
+        return self in (Reason.UNEXPLAINED, Reason.PINNED, Reason.UNRESOLVABLE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -92,14 +95,67 @@ def pins(source: Source) -> list[Finding]:
     return out
 
 
+def unresolvable(source: Source, client: Client) -> list[Finding]:
+    """Configured variants that produce no artifact at all.
+
+    The config->upstream direction, and the one the rest of this module does not cover: everything
+    else here asks which keys upstream yields that the config lacks. Nothing asked the reverse --
+    does this key we wrote down actually name something real? The docs handed that job to the audit
+    ("a never-resolved config problem is `distro-iso-feed-audit`'s job at add time") and the check
+    was never built, so `ubuntu-unity:desktop-interim` sat dead from the day it was added: it asked
+    for a non-LTS Ubuntu Unity, and Ubuntu Unity ships LTS only.
+
+    Discovery already proves this for anything it proposes (`propose_variants` drops a candidate
+    that "resolved to nothing"). This gives hand-written config the same proof.
+
+    **Structural only.** A variant that fails to resolve because a mirror timed out is stale, not
+    wrong -- reporting it would turn a bad night at cdimage into a wall of false findings. The
+    `trace` slice is marked per variant, exactly as `run_refresh.diagnose` does it.
+    """
+    out: list[Finding] = []
+    for variant in source.variants:
+        params = dict(variant.params)
+        params.setdefault("label", variant.label)
+        params.setdefault("page_url", source.page_url)
+        mark = len(client.trace)
+        strategy = REGISTRY[variant.strategy]()
+        try:
+            release = strategy.resolve(source.name, variant.name, params, client)
+        except Exception as exc:
+            # Same classifier the refresh uses: a network error (or a `SumsUnavailable` that
+            # declares itself transient) is a sick mirror; a parse/key/type error is a real
+            # config or code problem worth naming.
+            if escalate.exc_class(exc) == escalate.TRANSIENT:
+                continue
+            out.append(
+                Finding(source.name, Reason.UNRESOLVABLE, variant.name, f"resolve raised {exc}")
+            )
+            continue
+        if release is not None:
+            continue
+        outcomes = [o for _, o in client.trace[mark:]]
+        if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
+            continue  # a sick mirror, not a dead variant -- it will be back tomorrow
+        out.append(
+            Finding(
+                source.name,
+                Reason.UNRESOLVABLE,
+                variant.name,
+                f"resolves to nothing at {endpoint_of(params)}",
+            )
+        )
+    return out
+
+
 def audit_source(source: Source, client: Client) -> list[Finding]:
-    """Pins, plus every edition upstream publishes that no variant tracks."""
-    findings = pins(source)
+    """Pins, unresolvable variants, plus every edition upstream publishes that no variant tracks."""
+    findings = pins(source) + unresolvable(source, client)
     discover = source.discover or {}
 
     # A source that cannot be enumerated has nothing to diff. Its variants are still
-    # checked for pins above -- the two axes are independent, and Pop's pin hid for a
-    # week behind exactly this label.
+    # checked for pins and resolvability above -- the axes are independent, and Pop's pin hid
+    # for a week behind exactly this label (as did unity's dead variant, whose declared reason
+    # was the very channel mechanic that broke it).
     if discover.get("enumerable") is False:
         findings.append(
             Finding(source.name, Reason.NOT_ENUMERABLE, "-", discover.get("reason", ""))

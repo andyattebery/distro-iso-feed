@@ -18,8 +18,15 @@ from packaging.version import InvalidVersion, Version
 # Boundaries are "not alphanumeric" rather than a fixed `[-_.]` set, because atom
 # titles carry trailing punctuation: elementary's is `8.1.0-rc3: RC`, and a `[-_.]`
 # boundary would let the `rc3` through. `prune` and `precise` still do not match.
+#
+# The markers that can carry an ordinal all take `\d*` -- Ubuntu's milestone images are
+# `ubuntu-26.10-snapshot2-desktop-amd64.iso`, and a bare `snapshot` failed the trailing
+# boundary on the `2` and let them through. openSUSE is unaffected: its `Snapshot20260714`
+# is a *version* read from a sidecar, never a name this filter sees.
 PRERELEASE = re.compile(
-    r"(?<![A-Za-z0-9])(?:pre|alpha|beta\d*|rc\d*|nightly|daily|testing|snapshot)(?![A-Za-z0-9])",
+    r"(?<![A-Za-z0-9])"
+    r"(?:pre|alpha\d*|beta\d*|rc\d*|nightly|daily|testing|snapshot\d*)"
+    r"(?![A-Za-z0-9])",
     re.IGNORECASE,
 )
 
@@ -108,11 +115,27 @@ def is_lts(version: str) -> bool:
     return bool(m) and int(m.group(1)) % 2 == 0
 
 
+# The `channel` values `by_channel` dispatches on. This is the single source of truth:
+# `config.py` imports it to validate `channel`, so the validator and the dispatch cannot name
+# different sets. Without it an unknown value fell through to "no filter" -- `channel: lastest`
+# silently behaved as `latest`.
+CHANNELS = frozenset({"lts", "latest"})
+
+
 def by_channel(versions: Iterable[str], channel: str) -> list[str]:
+    """Narrow a version list to a channel.
+
+    `lts` pins to the long-term-support line. `latest` is every version -- the caller takes the
+    newest that actually *has* a matching artifact, so an in-development dir (26.10, holding only
+    milestone subdirs) is skipped rather than picked.
+
+    There is deliberately no `interim`. Wanting a non-LTS release is really wanting the newest
+    thing, LTS or not; nobody on 25.10 wants to stay on 25.10. The useful axis is latest-vs-LTS,
+    and an `interim` channel could also name a release line a flavour does not publish at all --
+    which is how `ubuntu-unity:desktop-interim` sat unresolved from the day it was added.
+    """
     if channel == "lts":
         return [v for v in versions if is_lts(v)]
-    if channel == "interim":
-        return [v for v in versions if not is_lts(v)]
     return list(versions)
 
 

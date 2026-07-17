@@ -1,0 +1,48 @@
+# Resolve-check `config/sources.yaml` whenever it changes.
+#
+# Discovery already proves every variant it proposes: `propose_variants` resolves the synthesized
+# config against the live upstream and drops anything that "resolved to nothing", so a PR it opens
+# is mergeable as-is. Hand-written config had no such proof, and `ubuntu-unity:desktop-interim`
+# rode that gap for weeks -- it asked for a non-LTS Ubuntu Unity, which does not exist, and never
+# resolved once. Nothing noticed: the refresh only escalates a key that USED to resolve, and the
+# audit only asked the opposite question (which upstream keys is the config missing).
+#
+# This is the same proof, for the other path. It cannot block a push -- this repo commits straight
+# to main, so there is no PR to gate -- but it turns the check red at the moment the mistake lands
+# rather than leaving it silent forever.
+#
+# `paths:` keeps it off every other push: this resolves every configured variant against live
+# mirrors, which is a full refresh's worth of network. Config commits are rare; that is the trade.
+name: config-audit
+
+on:
+  push:
+    paths:
+      - "config/sources.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v8.3.2 # no floating `v8` tag; pin the patch
+        with:
+          enable-cache: true
+
+      - run: uv sync --frozen
+
+      # `--strict` here, unlike the weekly run in discover.yml: there the job must survive an
+      # upstream adding a spin so it can still open its PR, but a config commit that names a
+      # variant no artifact answers to is exactly what this exists to catch.
+      #
+      # Only STRUCTURAL findings escalate -- a mirror that times out is stale, not wrong, so a
+      # bad night at cdimage cannot fail an unrelated config commit.
+      - name: Audit the config against live upstreams
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # lifts the 60/hr GitHub API limit
+        run: uv run distro-iso-feed-audit --strict --summary "$GITHUB_STEP_SUMMARY"

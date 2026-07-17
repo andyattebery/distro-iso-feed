@@ -14,8 +14,6 @@ import logging
 import sys
 from pathlib import Path
 
-import httpx
-
 from . import audit, docs, escalate, feed, select
 from .client import Client
 from .config import load
@@ -46,27 +44,15 @@ def _selected(variants: list[Variant], only: str | None) -> list[Variant]:
     return [v for v in variants if v.distro == only]
 
 
-def endpoint_of(params: dict) -> str:
-    """The URL a human should open first when a source breaks.
-
-    `version_dir` comes before `index`, because for those sources `index` is a
-    template like ``{version}/`` -- printing it tells the reader nothing.
-    """
-    for key in ("version_dir", "index", "url", "repo", "project"):
-        if value := params.get(key):
-            return str(value)
-    return "?"
+# Moved to `escalate` (it fills `Failure.endpoint`, and `audit` needs it too -- importing it from
+# here would cycle, since this module imports `audit`). Re-exported so callers and tests that
+# reach for `run_refresh.endpoint_of` keep working.
+endpoint_of = escalate.endpoint_of
 
 
-def _exc_class(exc: Exception) -> str:
-    """A resolver that raised a network error is transient; a parse/attribute/key error is
-    structural. (`resolve()` catches network errors internally, so this mostly sees the latter.)
-
-    `SumsUnavailable` carries its own verdict: it is only raised for a configured sidecar that
-    failed *transiently*, and says so, rather than being re-derived from the exception type."""
-    if isinstance(exc, SumsUnavailable):
-        return exc.failure_class
-    return escalate.TRANSIENT if isinstance(exc, httpx.HTTPError) else escalate.STRUCTURAL
+# Moved to `escalate` so `audit`'s resolve check classifies identically -- two classifiers for
+# "did this exception mean the mirror or the config?" is exactly how they drift.
+_exc_class = escalate.exc_class
 
 
 def diagnose(strategy, variant: Variant, params: dict, client: Client) -> Failure:

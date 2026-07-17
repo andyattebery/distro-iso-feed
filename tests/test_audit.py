@@ -12,12 +12,14 @@ from pathlib import Path
 
 import pytest
 
-from distro_iso_feed.audit import Reason, pins, report
+from conftest import FakeClient, autoindex_html
+from distro_iso_feed.audit import Reason, audit_source, pins, report, unresolvable
 from distro_iso_feed.config import (
     ConfigError,
     _validate_discover,
     _validate_discovery_surface,
     _validate_signing_key,
+    _validate_signing_surface,
     load,
 )
 from distro_iso_feed.models import Source, Variant
@@ -31,6 +33,79 @@ def _source(name: str, **params) -> Source:
     return Source(
         name=name, variants=(Variant(distro=name, name="v", strategy="s", params=params),)
     )
+
+
+# ------------------------------------------------------------------- unresolvable
+#
+# The check the docs promised and nobody built: does a key we wrote down name something real?
+# `ubuntu-unity:desktop-interim` asked for a non-LTS Ubuntu Unity, Unity ships LTS only, and it
+# sat dead from the day it was added -- past every other check in this repo.
+
+_DI = "directory_index"
+_IDX = "https://mirror.example/current/"
+
+
+def _di_source(name: str = "d", **over) -> Source:
+    params = {
+        "index": _IDX,
+        "match": r"^thing-[0-9.]+-amd64\.iso$",
+        "version_pattern": r"thing-([0-9.]+)-",
+        **over,
+    }
+    return Source(
+        name=name, variants=(Variant(distro=name, name="v", strategy=_DI, params=params),)
+    )
+
+
+def test_a_variant_that_names_nothing_real_is_unresolvable():
+    """200 from the endpoint, but nothing it lists matches -- the config is wrong, not the mirror."""
+    client = FakeClient({_IDX: autoindex_html(["other-9.9-amd64.iso"])})
+    found = unresolvable(_di_source(), client)
+    assert [f.reason for f in found] == [Reason.UNRESOLVABLE]
+    assert _IDX in found[0].detail
+
+
+def test_a_resolving_variant_is_not_reported():
+    client = FakeClient({_IDX: autoindex_html(["thing-1.2-amd64.iso"])})
+    assert unresolvable(_di_source(), client) == []
+
+
+def test_a_timed_out_mirror_is_not_reported_as_unresolvable():
+    """The guard that keeps a bad night at cdimage from becoming a wall of false findings.
+    A transient failure means stale, not wrong -- it will be back tomorrow."""
+    client = FakeClient(fail={_IDX: "ReadTimeout"})
+    assert unresolvable(_di_source(), client) == []
+
+
+def test_a_host_over_its_failure_budget_is_not_reported_either():
+    """The budget short-circuits with a synthetic transient trace entry; it must read as transient
+    here too, or a sick host would file a finding per variant it skipped."""
+    client = FakeClient(fail={_IDX: "ReadTimeout"}, host_budget=1)
+    client.get(_IDX)  # burn the budget
+    assert unresolvable(_di_source(), client) == []
+
+
+def test_unresolvable_still_runs_for_a_source_that_cannot_be_enumerated():
+    """`enumerable: false` short-circuits `audit_source` before the upstream diff -- which is
+    exactly where unity hid, and its declared reason was the channel mechanic that broke it.
+    Pins already run before that gate; resolvability must too."""
+    src = Source(
+        name="d",
+        variants=(Variant(distro="d", name="v", strategy=_DI, params={
+            "index": _IDX, "match": r"^thing-[0-9.]+-amd64\.iso$",
+            "version_pattern": r"thing-([0-9.]+)-",
+        }),),
+        discover={"enumerable": False, "reason": "fixture"},
+    )  # fmt: skip
+    client = FakeClient({_IDX: autoindex_html(["other-9.9-amd64.iso"])})
+    reasons = [f.reason for f in audit_source(src, client)]
+    assert Reason.UNRESOLVABLE in reasons
+    assert Reason.NOT_ENUMERABLE in reasons  # the existing bookkeeping still happens
+
+
+def test_unresolvable_is_signal_so_it_escapes_the_collapsed_fold():
+    assert Reason.UNRESOLVABLE.is_signal
+    assert not Reason.NOT_ENUMERABLE.is_signal
 
 
 # --------------------------------------------------------------------------- pins
@@ -167,6 +242,36 @@ def test_covers_validation_is_driven_by_the_dispatch_set():
         _validate_signing_key("d", {"url": "u", "fingerprint": "a" * 40, "covers": mode})
     with pytest.raises(ConfigError, match="covers"):
         _validate_signing_key("d", {"url": "u", "fingerprint": "a" * 40, "covers": "detached"})
+
+
+def test_a_signing_key_with_nothing_to_verify_is_a_load_error():
+    """`verify_signing_key` bails the moment `signature_url` is None -- for EVERY covers mode --
+    so a pin without a `sig` can never publish and the entry silently serves `checksum` while the
+    config implies `gpg`. The 8 `opensuse:leap-*` variants did exactly that until this check.
+
+    Checked against every mode, because the rule is universal rather than a checksums quirk.
+    """
+    key = {"url": "u", "fingerprint": "a" * 40, "covers": "checksums"}
+    for mode in COVERS:
+        with pytest.raises(ConfigError, match="sig"):
+            _validate_signing_surface("d", "v", {"signing_key": {**key, "covers": mode}})
+    # either spelling satisfies it
+    _validate_signing_surface("d", "v", {"signing_key": key, "sig": "{filename}.sha256.asc"})
+    _validate_signing_surface("d", "v", {"signing_key": key, "sig_url": "https://x/SUMS.gpg"})
+    # no signing_key at all -> nothing to check
+    _validate_signing_surface("d", "v", {"sums": "SHA256SUMS"})
+
+
+def test_the_real_config_has_no_inert_signing_key():
+    """The regression test for the leap bug: every configured pin must have something to verify."""
+    _, sources = load(CONFIG, set(REGISTRY))
+    inert = [
+        v.key
+        for s in sources
+        for v in s.variants
+        if v.params.get("signing_key") and not (v.params.get("sig") or v.params.get("sig_url"))
+    ]
+    assert inert == []
 
 
 # -------------------------------------------------------------------------- report

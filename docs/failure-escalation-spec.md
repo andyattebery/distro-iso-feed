@@ -50,6 +50,29 @@ Implementation: have `diagnose()` (and the top-level except path) return a struc
 `(reason: str, failure_class: Literal["structural","transient"])` rather than a bare string. The
 existing human-readable `reason` is preserved verbatim for the issue body and summary.
 
+### 1z. Never-resolved keys belong to the audit — and now it has the check
+
+Escalation requires structural **AND** regression, so a key that never resolved is filtered out by
+design and handed to `distro-iso-feed-audit`. For a long time that handoff had no receiving end: the
+audit only asked which keys *upstream* yields that the config lacks, never whether a configured key
+names anything real. `ubuntu-unity:desktop-interim` lived in that gap from the day it was added.
+
+`audit.unresolvable` closes it, and three properties are load-bearing:
+
+- It runs **before** the `enumerable: false` short-circuit, beside `pins()`. That exemption is
+  precisely where the dead variant hid, and its declared reason was the channel mechanic that broke
+  it.
+- It reports **STRUCTURAL only** (mark/slice `client.trace`, then `classify_outcomes`). A dead
+  mirror must never turn into a wall of "unresolvable" findings; `SumsUnavailable` and a
+  budget-exhausted host both read as TRANSIENT and are skipped.
+- It is `--strict` in `config-audit` (on push, when `config/sources.yaml` changes) and non-strict in
+  the weekly `discover` run. There are no PRs in this repo, so the config commit is the only moment
+  a gate can exist.
+
+Discovery already had this proof — `propose_variants` resolves a synthesized variant and drops it if
+it "resolved to nothing". The asymmetry was that automation verified itself and hand-written config
+was verified by nothing.
+
 ### 1a. Signing failures classify themselves
 
 This spec's two axes govern **resolve** failures. Signing has its own classifier and deliberately

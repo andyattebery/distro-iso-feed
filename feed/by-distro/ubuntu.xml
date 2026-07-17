@@ -4,49 +4,7 @@
   <title>Distro ISO Feed — ubuntu</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/ubuntu.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T21:31:55+00:00</updated>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-interim:aarch64/25.10</id>
-    <title>Ubuntu Server interim 25.10 (aarch64)</title>
-    <updated>2026-07-12T21:31:55+00:00</updated>
-    <published>2026-07-12T21:31:55+00:00</published>
-    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
-    <link href="https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-live-server-arm64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-live-server-arm64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="182976" />
-    <category term="ubuntu" label="distro" />
-    <category term="live-server-interim" label="variant" />
-    <summary type="text">Ubuntu Server interim 25.10 (aarch64)
-Filename: ubuntu-25.10-live-server-arm64.iso
-sha256: ecf579664c0be9e4a68ae7b617399ce943c2dee49eb1fcc6702a5671a4f88320
-Signature: https://cdimage.ubuntu.com/releases/25.10/release/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-live-server-arm64.iso.torrent
-Infohash: 1ba097f02f267415787fdcd8c08f2f1c08f6a593
-Magnet: magnet:?xt=urn:btih:1ba097f02f267415787fdcd8c08f2f1c08f6a593&amp;dn=ubuntu-25.10-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/desktop-interim:aarch64/25.10</id>
-    <title>Ubuntu Desktop interim 25.10 (aarch64)</title>
-    <updated>2026-07-12T21:31:53+00:00</updated>
-    <published>2026-07-12T21:31:53+00:00</published>
-    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
-    <link href="https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-desktop-arm64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-desktop-arm64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="380332" />
-    <category term="ubuntu" label="distro" />
-    <category term="desktop-interim" label="variant" />
-    <summary type="text">Ubuntu Desktop interim 25.10 (aarch64)
-Filename: ubuntu-25.10-desktop-arm64.iso
-sha256: 9d383dd57220dec520fdec3be05da258d27d435c02fe6e296c5d0a505741a787
-Signature: https://cdimage.ubuntu.com/releases/25.10/release/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://cdimage.ubuntu.com/releases/25.10/release/ubuntu-25.10-desktop-arm64.iso.torrent
-Infohash: ed34741769e57d195029495f3e35c152ddcc1c4f
-Magnet: magnet:?xt=urn:btih:ed34741769e57d195029495f3e35c152ddcc1c4f&amp;dn=ubuntu-25.10-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</summary>
-  </entry>
+  <updated>2026-07-12T21:31:50+00:00</updated>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-lts:aarch64/26.04</id>
     <title>Ubuntu Server LTS 26.04 (aarch64)</title>
@@ -90,27 +48,6 @@ Magnet: magnet:?xt=urn:btih:59ec6454b48d0cb232cc3ad67f66c4327c1a1092&amp;dn=ubun
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-interim/25.10</id>
-    <title>Ubuntu Server interim 25.10 (x86_64)</title>
-    <updated>2026-07-09T23:40:15+00:00</updated>
-    <published>2026-07-09T23:40:15+00:00</published>
-    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
-    <link href="https://releases.ubuntu.com/25.10/ubuntu-25.10-live-server-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://releases.ubuntu.com/25.10/ubuntu-25.10-live-server-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="174580" />
-    <category term="ubuntu" label="distro" />
-    <category term="live-server-interim" label="variant" />
-    <summary type="text">Ubuntu Server interim 25.10 (x86_64)
-Filename: ubuntu-25.10-live-server-amd64.iso
-sha256: dc54870e5261c0abad19f74b8146659d10e625971792bd42d7ecde820b60a1d0
-Signature: https://releases.ubuntu.com/25.10/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://releases.ubuntu.com/25.10/ubuntu-25.10-live-server-amd64.iso.torrent
-Infohash: ccbd47a30a5a13a5260295e4bd65c038244e9df0
-Magnet: magnet:?xt=urn:btih:ccbd47a30a5a13a5260295e4bd65c038244e9df0&amp;dn=ubuntu-25.10-live-server-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/live-server-lts/26.04</id>
     <title>Ubuntu Server LTS 26.04 (x86_64)</title>
     <updated>2026-07-09T23:40:14+00:00</updated>
@@ -150,27 +87,6 @@ Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso.torrent
 Infohash: dafc8c076ca2f3ed376eeae7c76a0d6be2415c45
 Magnet: magnet:?xt=urn:btih:dafc8c076ca2f3ed376eeae7c76a0d6be2415c45&amp;dn=ubuntu-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu/desktop-interim/25.10</id>
-    <title>Ubuntu Desktop interim 25.10 (x86_64)</title>
-    <updated>2026-07-09T23:40:14+00:00</updated>
-    <published>2026-07-09T23:40:14+00:00</published>
-    <link href="https://ubuntu.com/download" rel="alternate" type="text/html" />
-    <link href="https://releases.ubuntu.com/25.10/ubuntu-25.10-desktop-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://releases.ubuntu.com/25.10/ubuntu-25.10-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="435436" />
-    <category term="ubuntu" label="distro" />
-    <category term="desktop-interim" label="variant" />
-    <summary type="text">Ubuntu Desktop interim 25.10 (x86_64)
-Filename: ubuntu-25.10-desktop-amd64.iso
-sha256: 32e30d72ae4798c633323a2684d94a11582bb03a6ab38d2b0d5ae5eabc5e577b
-Signature: https://releases.ubuntu.com/25.10/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://releases.ubuntu.com/25.10/ubuntu-25.10-desktop-amd64.iso.torrent
-Infohash: c8295ce630f2064f08440db1534e4992cfe4862a
-Magnet: magnet:?xt=urn:btih:c8295ce630f2064f08440db1534e4992cfe4862a&amp;dn=ubuntu-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
 Verify: gpg</summary>
   </entry>
 </feed>

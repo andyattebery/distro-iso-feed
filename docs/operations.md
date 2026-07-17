@@ -7,7 +7,11 @@ day, one actionable ticket on a bad one.** The design intent and rationale live 
 ## The two jobs
 
 - **`refresh`** (daily) — resolve every source, render `feed/`, commit. Publishing *is* the commit.
-- **`discover`** (weekly) — open a PR proposing new variants; never pushes to `main`.
+- **`discover`** (weekly) — open a PR proposing new variants; never pushes to `main`. Also runs the
+  audit (non-strict).
+- **`config-audit`** (on push, only when `config/sources.yaml` changes) — resolves every configured
+  variant against live upstreams, `--strict`. Discovery proves its own proposals resolve before
+  writing them; this gives hand-written config the same proof. See *never-resolved keys* below.
 - **`ci`** (every push/PR) — `pytest` + `ruff`. This is the *only* place tests gate anything. The
   daily refresh deliberately does **not** run the suite: a code or runner-environment problem (a gpg
   version bump on the runner, once) belongs on a PR check, not blocking the whole feed from rendering.
@@ -25,7 +29,12 @@ issues + the job's pass/fail. The classification is the whole false-alarm filter
   tomorrow → **no issue, no failure**; it just shows as stale in the run summary.
 
 A failure escalates only if it is **structural AND a regression** (the key has a record in
-`state.json` — it *was* resolving). A never-resolved key is a config/PR-time problem, `audit`'s job.
+`state.json` — it *was* resolving). A never-resolved key is a config problem, not a 3am page — the
+refresh leaves it to the audit's `UNRESOLVABLE` check, which runs on every commit that touches
+`config/sources.yaml` (`config-audit`) and again weekly. That handoff used to name a check that did
+not exist, which is how `ubuntu-unity:desktop-interim` sat dead from the day it was added: it asked
+for a non-LTS Ubuntu Unity, and Unity ships LTS only. `UNRESOLVABLE` reports **structural** failures
+only — a mirror that timed out is stale, not wrong.
 
 **Issues are the state.** There is no committed health file. An open `refresh-*` issue *is* the record
 that something is broken; the gate auto-closes it when the source recovers. The report lives in
