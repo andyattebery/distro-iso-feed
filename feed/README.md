@@ -55,7 +55,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | debian | live-mate | x86_64 | 13.6.0 | gpg | ✓ |
 | debian | live-standard | x86_64 | 13.6.0 | gpg | ✓ |
 | debian | live-xfce | x86_64 | 13.6.0 | gpg | ✓ |
-| debian | netinst | x86_64 | 13.6.0 | gpg | ✓ |
+| debian | netinst | x86_64 | 13.6.0 | gpg | — |
 | debian | netinst | aarch64 | 13.6.0 | gpg | — |
 | debian | netinst | armhf | 13.6.0 | gpg | ✓ |
 | debian | netinst | ppc64le | 13.6.0 | gpg | ✓ |

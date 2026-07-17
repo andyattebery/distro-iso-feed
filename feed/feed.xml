@@ -4,7 +4,24 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-17T04:11:10+00:00</updated>
+  <updated>2026-07-17T08:38:55+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/xfce/26.0.4-260327-linux618</id>
+    <title>Manjaro Xfce 26.0.4-260327-linux618 (x86_64)</title>
+    <updated>2026-07-17T08:38:55+00:00</updated>
+    <published>2026-07-17T08:38:55+00:00</published>
+    <link href="https://manjaro.org/" rel="alternate" type="text/html" />
+    <link href="https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-linux618.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="manjaro" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">Manjaro Xfce 26.0.4-260327-linux618 (x86_64)
+Filename: manjaro-xfce-26.0.4-260327-linux618.iso
+Signature: https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-linux618.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Verify: gpg
+WARNING: no published checksum — integrity unverifiable</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260715</id>
     <title>openSUSE Tumbleweed Rescue CD Snapshot20260715 (x86_64)</title>
@@ -97,7 +114,7 @@ Verify: gpg</summary>
     <published>2026-07-17T04:11:04+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2554" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2548" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
     <summary type="text">openSUSE Tumbleweed NET Snapshot20260715 (x86_64)
@@ -118,7 +135,7 @@ Verify: gpg</summary>
     <published>2026-07-17T04:11:03+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="21916" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="21910" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20260715 (x86_64)
@@ -2908,7 +2925,6 @@ Verify: gpg</summary>
     <published>2026-07-12T08:32:42+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
     <link href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.6.0-amd64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdimage.debian.org/debian-cd/current/amd64/bt-cd/debian-13.6.0-amd64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="60868" />
     <category term="debian" label="distro" />
     <category term="netinst" label="variant" />
     <summary type="text">Debian netinst 13.6.0 (x86_64)
@@ -2917,10 +2933,6 @@ sha512: ce0eeee7b51fdcdbed1e5116668c1fee27e528767bdf488e5f115a67b225e5dfd0afca1d
 Signature: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://cdimage.debian.org/debian-cd/current/amd64/bt-cd/debian-13.6.0-amd64-netinst.iso.torrent
-torrent-sha512: 216241bfee1585d9a0e88760d880e9a7f5502932c529c829e3c9ece5c3633b4986650a1260cb5f5995f661bdf7559a2d8e3a8d4169828949fbbdf48720cd759c
-Infohash: 481b6e3617be4c88f96cb25e47c9d8272130071e
-Magnet: magnet:?xt=urn:btih:481b6e3617be4c88f96cb25e47c9d8272130071e&amp;dn=debian-13.6.0-amd64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -3257,23 +3269,6 @@ Verify: gpg</summary>
 Filename: manjaro-cinnamon-25.0.3-250609-linux612.iso
 sha256: 30460130c36e339fb97c39afe4c7f9587ecbc36b3dd7584bc898d3697d1d42ec
 Signature: https://download.manjaro.org/cinnamon/25.0.3/manjaro-cinnamon-25.0.3-250609-linux612.iso.sig
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/xfce/26.0.4-260327-linux618</id>
-    <title>Manjaro Xfce 26.0.4-260327-linux618 (x86_64)</title>
-    <updated>2026-07-09T23:40:40+00:00</updated>
-    <published>2026-07-09T23:40:40+00:00</published>
-    <link href="https://manjaro.org/" rel="alternate" type="text/html" />
-    <link href="https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-linux618.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="manjaro" label="distro" />
-    <category term="xfce" label="variant" />
-    <summary type="text">Manjaro Xfce 26.0.4-260327-linux618 (x86_64)
-Filename: manjaro-xfce-26.0.4-260327-linux618.iso
-sha256: 91024d93794a46c2605afdd0d102b7737b987d345770d106d9d0a1bb9af2563e
-Signature: https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-linux618.iso.sig
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</summary>
