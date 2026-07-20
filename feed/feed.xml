@@ -4,7 +4,94 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-19T08:40:53+00:00</updated>
+  <updated>2026-07-20T09:38:46+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260719T224605Z</id>
+    <title>Gentoo Minimal Install CD 20260719T224605Z (aarch64)</title>
+    <updated>2026-07-20T09:38:46+00:00</updated>
+    <published>2026-07-20T09:38:46+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260719T224605Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260719T224605Z (aarch64)
+Filename: install-arm64-minimal-20260719T224605Z.iso
+sha256: ede8dd6d9d3d90174756d85a75a29423572edd392e97f8142b2f6d76e415e29b
+Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260719T224605Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.5591.fd1462031fde</id>
+    <title>NixOS Graphical 26.05.5591.fd1462031fde (aarch64)</title>
+    <updated>2026-07-20T09:38:05+00:00</updated>
+    <published>2026-07-20T09:38:05+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.5591.fd1462031fde (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 891ccd92dbe529bba5022be0b0a0614f76dbffa4fd77b728e5a1fe865153167b
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.5591.fd1462031fde</id>
+    <title>NixOS Graphical 26.05.5591.fd1462031fde (x86_64)</title>
+    <updated>2026-07-20T09:38:05+00:00</updated>
+    <published>2026-07-20T09:38:05+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.5591.fd1462031fde (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: d2d712f074ad24efa3dbb8e22d9bc9752ff4158f57a4a1947f19ba2e9f783f58
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.5591.fd1462031fde</id>
+    <title>NixOS Minimal 26.05.5591.fd1462031fde (aarch64)</title>
+    <updated>2026-07-20T09:38:04+00:00</updated>
+    <published>2026-07-20T09:38:04+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.5591.fd1462031fde (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 71dab09fa8ab118ba1e0a13dacfd232a9c18fce3f3ab8535546900a691e3a836
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.5591.fd1462031fde</id>
+    <title>NixOS Minimal 26.05.5591.fd1462031fde (x86_64)</title>
+    <updated>2026-07-20T09:38:04+00:00</updated>
+    <published>2026-07-20T09:38:04+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.5591.fd1462031fde (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 9b64aabb0919126204f6da9193ac3bab2b3da46fa33ae9818cad567c65d75e61
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bluestar/default/7.1.4-1-2026.07.19</id>
+    <title>Bluestar Linux 7.1.4-1-2026.07.19 (x86_64)</title>
+    <updated>2026-07-20T04:11:18+00:00</updated>
+    <published>2026-07-20T04:11:18+00:00</published>
+    <link href="https://bluestarlinux.sourceforge.net/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.4-1-2026.07.19-x86_64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bluestar" label="distro" />
+    <category term="default" label="variant" />
+    <summary type="text">Bluestar Linux 7.1.4-1-2026.07.19 (x86_64)
+Filename: bslx-7.1.4-1-2026.07.19-x86_64.iso
+md5: 81d538cb78320ce3da405898b3b18e34
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260717</id>
     <title>openSUSE Tumbleweed Rescue CD Snapshot20260717 (x86_64)</title>
@@ -97,7 +184,7 @@ Verify: gpg</summary>
     <published>2026-07-19T08:40:47+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2549" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2548" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
     <summary type="text">openSUSE Tumbleweed NET Snapshot20260717 (x86_64)
@@ -118,7 +205,7 @@ Verify: gpg</summary>
     <published>2026-07-19T08:40:45+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="21911" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="21910" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20260717 (x86_64)
@@ -148,62 +235,6 @@ Signature: https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-l
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.5449.293d6abedf04</id>
-    <title>NixOS Graphical 26.05.5449.293d6abedf04 (aarch64)</title>
-    <updated>2026-07-18T08:14:16+00:00</updated>
-    <published>2026-07-18T08:14:16+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.5449.293d6abedf04 (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 4f52af3e1861b33f33aef48ce7303f3e51947824b0bdc4a167f1ef5e1cabcdca
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.5449.293d6abedf04</id>
-    <title>NixOS Graphical 26.05.5449.293d6abedf04 (x86_64)</title>
-    <updated>2026-07-18T08:14:16+00:00</updated>
-    <published>2026-07-18T08:14:16+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.5449.293d6abedf04 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 8e2fae6f4a23737bb3b4f0a7d3448a8eb2463b33c5c23016973134109cbd0f74
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.5449.293d6abedf04</id>
-    <title>NixOS Minimal 26.05.5449.293d6abedf04 (aarch64)</title>
-    <updated>2026-07-18T08:14:15+00:00</updated>
-    <published>2026-07-18T08:14:15+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.5449.293d6abedf04 (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 51c8ca007e32cb89d8b7883f487582c8a21e1d58abaa93d20d2ee8b07b8c7ff9
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.5449.293d6abedf04</id>
-    <title>NixOS Minimal 26.05.5449.293d6abedf04 (x86_64)</title>
-    <updated>2026-07-18T08:14:15+00:00</updated>
-    <published>2026-07-18T08:14:15+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.5449.293d6abedf04 (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 17089be6e78d2c085506b65154ddc4372263c6fce23688811b0f7bb01b9908af
-Verify: checksum</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntucinnamon/desktop-latest/26.04</id>
@@ -574,7 +605,7 @@ Verify: gpg</summary>
     <published>2026-07-17T02:01:53+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2771" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2775" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
     <summary type="text">openSUSE Tumbleweed NET Snapshot20260714 (aarch64)
@@ -612,7 +643,7 @@ Verify: gpg</summary>
     <published>2026-07-17T02:01:51+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20193" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20197" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20260714 (aarch64)
@@ -713,20 +744,6 @@ torrent-sha512: ec8e45003b30c2eec4a9e33d310933ee7d6b1d4fdf0170154964512e1731ff73
 Infohash: 94088d5e57c3a12e7f58ea3a34a232a7ec138cc9
 Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debian-13.6.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bluestar/default/7.1.3-7-2026.07.16</id>
-    <title>Bluestar Linux 7.1.3-7-2026.07.16 (x86_64)</title>
-    <updated>2026-07-17T00:45:13+00:00</updated>
-    <published>2026-07-17T00:45:13+00:00</published>
-    <link href="https://bluestarlinux.sourceforge.net/" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.3-7-2026.07.16-x86_64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bluestar" label="distro" />
-    <category term="default" label="variant" />
-    <summary type="text">Bluestar Linux 7.1.3-7-2026.07.16 (x86_64)
-Filename: bslx-7.1.3-7-2026.07.16-x86_64.iso
-md5: 62b0b18356e9f199f84c620a91f82d60
-Verify: checksum</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/stable/stable-20260714.1</id>
@@ -953,23 +970,6 @@ Filename: chimeraos-2025.02.13-x86_64.iso
 Size: 915693568
 sha256: e9914e59f6cd817548742d5934c85fc85f53822261e3d478d2c690e10ce2689a
 Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260712T234606Z</id>
-    <title>Gentoo Minimal Install CD 20260712T234606Z (aarch64)</title>
-    <updated>2026-07-13T13:17:32+00:00</updated>
-    <published>2026-07-13T13:17:32+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Gentoo Minimal Install CD 20260712T234606Z (aarch64)
-Filename: install-arm64-minimal-20260712T234606Z.iso
-sha256: f60c3d6eb1de8ca737c1c33bf6f6fdf1b02e51898bccc7e0ab6d886fce41641f
-Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260712T234606Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Verify: gpg</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/livegui/20260712T170110Z</id>

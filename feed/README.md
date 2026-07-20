@@ -34,7 +34,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | bazzite | desktop | x86_64 | 44.20260713 | checksum | — |
 | bazzite | nvidia-open | x86_64 | 44.20260713 | checksum | — |
 | bluefin | stable | x86_64 | stable-20260714 | checksum | — |
-| bluestar | default | x86_64 | 7.1.3-7-2026.07.16 | checksum | — |
+| bluestar | default | x86_64 | 7.1.4-1-2026.07.19 | checksum | — |
 | cachyos | desktop | x86_64 | 260628 | gpg | — |
 | cachyos | handheld | x86_64 | 260628 | gpg | — |
 | centos | boot | x86_64 | 20260713.0 | checksum | — |
@@ -115,7 +115,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | garuda | xfce | x86_64 | 260309 | checksum | — |
 | gentoo | livegui | x86_64 | 20260712T170110Z | gpg | — |
 | gentoo | minimal | x86_64 | 20260712T170110Z | gpg | — |
-| gentoo | minimal | aarch64 | 20260712T234606Z | gpg | — |
+| gentoo | minimal | aarch64 | 20260719T224605Z | gpg | — |
 | ghostbsd | gershwin | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
 | ghostbsd | mate | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
 | ghostbsd | xfce | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
@@ -152,10 +152,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
 | netbsd | install | x86_64 | 10.1 | checksum | ✓ |
 | netbsd | install | aarch64 | 10.1 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.5449.293d6abedf04 | checksum | — |
-| nixos | graphical | aarch64 | 26.05.5449.293d6abedf04 | checksum | — |
-| nixos | minimal | x86_64 | 26.05.5449.293d6abedf04 | checksum | — |
-| nixos | minimal | aarch64 | 26.05.5449.293d6abedf04 | checksum | — |
+| nixos | graphical | x86_64 | 26.05.5591.fd1462031fde | checksum | — |
+| nixos | graphical | aarch64 | 26.05.5591.fd1462031fde | checksum | — |
+| nixos | minimal | x86_64 | 26.05.5591.fd1462031fde | checksum | — |
+| nixos | minimal | aarch64 | 26.05.5591.fd1462031fde | checksum | — |
 | nobara | gnome | x86_64 | 43-2026-04-19 | checksum | — |
 | nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | kde | x86_64 | 43-2026-04-19 | checksum | — |
