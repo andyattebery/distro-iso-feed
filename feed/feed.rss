@@ -4,8 +4,227 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Mon, 20 Jul 2026 09:38:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 08:50:08 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Bluefin stable-20260721 (x86_64)</title>
+      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
+      <guid isPermaLink="false">bluefin:stable:stable-20260721</guid>
+      <pubDate>Tue, 21 Jul 2026 08:50:08 +0000</pubDate>
+      <description>Bluefin stable-20260721 (x86_64)
+Filename: bluefin-stable-x86_64.iso
+sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
+Verify: checksum</description>
+      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bluefin</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260720.0 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260720.0-s390x-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:s390x:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:59 +0000</pubDate>
+      <description>CentOS Stream DVD 20260720.0 (s390x)
+Filename: CentOS-Stream-10-20260720.0-s390x-dvd1.iso
+sha256: 0b3a36056e916ff702347dc109a6abd467fcdf10dd6287f413fb9a1cdf268ae2
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260720.0-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260720.0 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260720.0-ppc64le-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:ppc64le:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream DVD 20260720.0 (ppc64le)
+Filename: CentOS-Stream-10-20260720.0-ppc64le-dvd1.iso
+sha256: d07cb9f3fde46d25b83baa6b80dc9f10fe2f2ee7a13f6fb51017ba17505da89a
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260720.0-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260720.0 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260720.0-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:aarch64:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream DVD 20260720.0 (aarch64)
+Filename: CentOS-Stream-10-20260720.0-aarch64-dvd1.iso
+sha256: 472419a2f420c3bbef23006db059f0367402006ef3e25519350b6f06021ccad0
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260720.0-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260720.0 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260720.0-x86_64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream DVD 20260720.0 (x86_64)
+Filename: CentOS-Stream-10-20260720.0-x86_64-dvd1.iso
+sha256: d452bfd6b0fef46592a4aacf3d12c09a2a973ee741ad357e4539183ac0735739
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260720.0-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260720.0 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260720.0-s390x-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:s390x:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream boot 20260720.0 (s390x)
+Filename: CentOS-Stream-10-20260720.0-s390x-boot.iso
+sha256: d4842dea0287f46d59cf703950d2c6c0d7107ab9dfc2dcf003b7e105fc8a6509
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260720.0-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260720.0 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260720.0-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:ppc64le:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream boot 20260720.0 (ppc64le)
+Filename: CentOS-Stream-10-20260720.0-ppc64le-boot.iso
+sha256: fa299d4d69c3925ffd3ac1809491192c763bb8230208b05e9492baa0c5d2c6a6
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260720.0-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260720.0 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260720.0-aarch64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:aarch64:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream boot 20260720.0 (aarch64)
+Filename: CentOS-Stream-10-20260720.0-aarch64-boot.iso
+sha256: fa6274019f7276223683f5c1fb6a12889cff4b4527b3d7b506e3fb8ac2c09944
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260720.0-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260720.0 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260720.0-x86_64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:20260720.0</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:58 +0000</pubDate>
+      <description>CentOS Stream boot 20260720.0 (x86_64)
+Filename: CentOS-Stream-10-20260720.0-x86_64-boot.iso
+sha256: 2acc4b648d1648ece38d33e40493b8489e285b7df11801f532031ebed18bde11
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260720.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:07 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20260718 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: 1d4b4d6360db4c9b3cae1e6731bc9a7c50ea10e8b7cd80da12ac9cda4c4f009c
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:06 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20260718 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: 528a1e1ef55d7414b757269be2cd3b353df165051ecee11ee60574834eefae04
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:04 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20260718 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: 01b1dbbc82b1fda304044bbc56cac42b4cc92de3fd2a8d5f76f33bd96d41e6e9
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:03 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20260718 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: 5d025986f9aee49c9123039e0c3b3d67893d2aebe17f5e8067d9d083c4bf33d1
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:02 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260718 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: cb9c6e2f7c9029d897ce9c04352817cad8b01f2c90a2bb4197e504a0e8df31c4
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:49:00 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260718 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: aa78d8f53318156f32c73b7e663c5134cdd29e358f1c20f6c60b3246f1e5fd34
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: 58e073d9ec503e880d451cef83d0d3d2ba0345ff
+Magnet: magnet:?xt=urn:btih:58e073d9ec503e880d451cef83d0d3d2ba0345ff&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260718-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260718 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260718</guid>
+      <pubDate>Tue, 21 Jul 2026 08:48:58 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260718 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 7ce2963af09adf0d0a05391c69f38fcfabdd780b068d3981b40f02ed268117dc
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
+Infohash: a097d0a726b787ebac2ddb33831f39c6fb4acf8f
+Magnet: magnet:?xt=urn:btih:a097d0a726b787ebac2ddb33831f39c6fb4acf8f&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260718-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
     <item>
       <title>Gentoo Minimal Install CD 20260719T224605Z (aarch64)</title>
       <link>https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260719T224605Z.iso</link>
@@ -80,117 +299,6 @@ md5: 81d538cb78320ce3da405898b3b18e34
 Verify: checksum</description>
       <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.4-1-2026.07.19-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>bluestar</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:53 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20260717 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: e2a35c9cffcbfc80b6b99f5349d07521a44372ecf0bcdae01321ed6bcb433ec4
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:52 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20260717 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: fc7510932595a8cef6f572e055df8aa219de6da61160a6c5439f04018c06345c
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:51 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20260717 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 13a5afcf2e8682b098194ecceeb5d77f5c3d686abf741f5c422fa0088bda9035
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:50 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20260717 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: 874e7223bd40734db99a24a2690675964732483de80087ae168cf1666fd4c174
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:49 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20260717 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: a54e3d370c1c95011a38d0f52b3e177bd51f25e60c3a56a4bf80ed8a5a12aeff
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:47 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260717 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: a5e03c79be35ccc116aba6de251c5394c01bc715081c6495b02dabf38f632342
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 6fb77321f68c4441d8f2ad9f41af1736fe26d38c
-Magnet: magnet:?xt=urn:btih:6fb77321f68c4441d8f2ad9f41af1736fe26d38c&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260717-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260717 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260717</guid>
-      <pubDate>Sun, 19 Jul 2026 08:40:45 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260717 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: d2a1d75d2c4eade621ba0f0b99a356e8a70b6db9aa305c6d133e10e869b1d4a7
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: 068ae65e286deeca9fd2be5223046f2d882739b2
-Magnet: magnet:?xt=urn:btih:068ae65e286deeca9fd2be5223046f2d882739b2&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260717-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
     </item>
     <item>
       <title>Manjaro Xfce 26.0.4-260327-linux618 (x86_64)</title>
@@ -718,114 +826,6 @@ sha256: 6ba3e68cc2f96d133b2dab8ec04d852d8089888dfcb6d9e68fb6a70aab0d3776
 Verify: checksum</description>
       <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/26/pop-os_24.04_amd64_nvidia_26.iso" type="application/x-iso9660-image" length="3925868544" />
       <category>pop-os</category>
-    </item>
-    <item>
-      <title>Bluefin stable-20260714 (x86_64)</title>
-      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
-      <guid isPermaLink="false">bluefin:stable:stable-20260714</guid>
-      <pubDate>Tue, 14 Jul 2026 05:16:02 +0000</pubDate>
-      <description>Bluefin stable-20260714 (x86_64)
-Filename: bluefin-stable-x86_64.iso
-sha256: 60dc656a64518d3900a051d31cbd7c009c8c425d19f327670d0246487ceaaad2
-Verify: checksum</description>
-      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bluefin</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260713.0 (s390x)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260713.0-s390x-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:s390x:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:51 +0000</pubDate>
-      <description>CentOS Stream DVD 20260713.0 (s390x)
-Filename: CentOS-Stream-10-20260713.0-s390x-dvd1.iso
-sha256: e117efe80aad129600afa7bf701d5797f79c0bde1c3e4e7d0fc3e3138d8a216a
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260713.0-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260713.0 (ppc64le)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260713.0-ppc64le-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:ppc64le:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:51 +0000</pubDate>
-      <description>CentOS Stream DVD 20260713.0 (ppc64le)
-Filename: CentOS-Stream-10-20260713.0-ppc64le-dvd1.iso
-sha256: 85b60ef45ede8ffb8efc5907d6839898e9739af0c291e7e88f8b31c56a0d951c
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260713.0-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260713.0 (aarch64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260713.0-aarch64-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:aarch64:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:51 +0000</pubDate>
-      <description>CentOS Stream DVD 20260713.0 (aarch64)
-Filename: CentOS-Stream-10-20260713.0-aarch64-dvd1.iso
-sha256: 43d68960f05cbc572eda4030c02af94c3b8257e5bfb7b2db6572303d46d05844
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260713.0-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260713.0 (x86_64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260713.0-x86_64-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:50 +0000</pubDate>
-      <description>CentOS Stream DVD 20260713.0 (x86_64)
-Filename: CentOS-Stream-10-20260713.0-x86_64-dvd1.iso
-sha256: 17e7d11bc528e3a7348ed6eddb4633a8ca53e1d9879cd9fbe22c2e955c4f9f0e
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260713.0-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260713.0 (s390x)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260713.0-s390x-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:s390x:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:50 +0000</pubDate>
-      <description>CentOS Stream boot 20260713.0 (s390x)
-Filename: CentOS-Stream-10-20260713.0-s390x-boot.iso
-sha256: 14e93ae8eabbf0f654815629b6f938d0a184e39bc61bfd25843cc9f6eb15c208
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260713.0-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260713.0 (ppc64le)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260713.0-ppc64le-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:ppc64le:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:50 +0000</pubDate>
-      <description>CentOS Stream boot 20260713.0 (ppc64le)
-Filename: CentOS-Stream-10-20260713.0-ppc64le-boot.iso
-sha256: c2b268b209d01cb54d5401774378d1845eddcd8a5e5b13955ca767fb43a8aeba
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260713.0-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260713.0 (aarch64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260713.0-aarch64-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:aarch64:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:50 +0000</pubDate>
-      <description>CentOS Stream boot 20260713.0 (aarch64)
-Filename: CentOS-Stream-10-20260713.0-aarch64-boot.iso
-sha256: b1a4c30160eadb91c1bce9663bfe5fe002c2725ec6ba9d679ced15fdda0549b2
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260713.0-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260713.0 (x86_64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260713.0-x86_64-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:20260713.0</guid>
-      <pubDate>Tue, 14 Jul 2026 05:15:50 +0000</pubDate>
-      <description>CentOS Stream boot 20260713.0 (x86_64)
-Filename: CentOS-Stream-10-20260713.0-x86_64-boot.iso
-sha256: 3763ffc178cea73e8270b1f1677585e6fc81e9e72f8a85517aa82136dd519d51
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260713.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
     </item>
     <item>
       <title>ChimeraOS 2025.02.13 (x86_64)</title>
