@@ -42,7 +42,9 @@ def _variants(distro: str) -> dict:
 
 def test_openbsd_config_expands_install_and_cd_over_two_arches():
     v = _variants("openbsd")
-    assert set(v) == {"openbsd:install", "openbsd:install:aarch64", "openbsd:cd", "openbsd:cd:aarch64"}
+    # `<=` not `==`: a discovery PR may add arches/editions. Pin that these expand, not that
+    # they are the only ones (the shipped config is append-only; see the {token}/arches mechanics).
+    assert {"openbsd:install", "openbsd:install:aarch64", "openbsd:cd", "openbsd:cd:aarch64"} <= set(v)
     # aarch64 substitutes the path segment; x86_64 stays implicit in the key.
     assert "/amd64/" in v["openbsd:install"].params["index"]
     assert "/arm64/" in v["openbsd:install:aarch64"].params["index"]
@@ -51,17 +53,17 @@ def test_openbsd_config_expands_install_and_cd_over_two_arches():
 
 def test_netbsd_config_expands_one_install_over_amd64_and_evbarm_aarch64():
     v = _variants("netbsd")
-    assert set(v) == {"netbsd:install", "netbsd:install:aarch64"}
+    assert {"netbsd:install", "netbsd:install:aarch64"} <= set(v)
     assert "-amd64\\.iso$" in v["netbsd:install"].params["match"]
     assert "-evbarm-aarch64\\.iso$" in v["netbsd:install:aarch64"].params["match"]
 
 
 def test_parrot_config_is_clearsigned_with_six_editions():
     v = _variants("parrot")
-    assert set(v) == {
+    assert {
         f"parrot:{e}"
         for e in ("home", "security", "spin-htb", "spin-mate", "spin-lxqt", "spin-enlightenment")
-    }
+    } <= set(v)
     assert v["parrot:home"].params["signing_key"]["covers"] == "clearsigned"
 
 
@@ -166,7 +168,7 @@ def test_parrot_publishes_the_strongest_hash_from_the_multi_algo_file():
 
 def test_ghostbsd_config_and_resolve_bare_iso_bsd_sidecar_no_signature():
     v = _variants("ghostbsd")
-    assert set(v) == {"ghostbsd:mate", "ghostbsd:xfce", "ghostbsd:gershwin"}
+    assert {"ghostbsd:mate", "ghostbsd:xfce", "ghostbsd:gershwin"} <= set(v)
     idx = "https://download.ghostbsd.org/releases/amd64/latest/"
     iso = "GhostBSD-26.1-R15.0p2.iso"
     client = FakeClient(
@@ -186,7 +188,7 @@ def test_xcp_ng_resolves_the_dot2_refresh_not_the_older_decoy():
     """The review bug: with a single-group version_pattern the clean `…20250606` parses as a higher
     Version tier than `…20250606.2` and the STALE ISO wins. The shipped two-group pattern picks .2."""
     v = _variants("xcp-ng")
-    assert set(v) == {"xcp-ng:install", "xcp-ng:netinstall"}
+    assert {"xcp-ng:install", "xcp-ng:netinstall"} <= set(v)
     base = "https://mirrors.xcp-ng.org/isos/"
     d = base + "8.3/"
     client = FakeClient(
@@ -208,7 +210,7 @@ def test_xcp_ng_resolves_the_dot2_refresh_not_the_older_decoy():
 
 def test_qubes_resolves_stable_over_rc_and_keeps_sha512_from_digests():
     v = _variants("qubes")
-    assert set(v) == {"qubes:iso"}
+    assert {"qubes:iso"} <= set(v)
     idx = "https://ftp.qubes-os.org/iso/"
     digests = f"{'a' * 64} *Qubes-R4.3.1-x86_64.iso\n{'b' * 128} *Qubes-R4.3.1-x86_64.iso\n"
     client = FakeClient(
@@ -227,9 +229,9 @@ def test_qubes_resolves_stable_over_rc_and_keeps_sha512_from_digests():
     assert r.signature_url.endswith(".DIGESTS.asc") and r.verify == "gpg"
 
 
-def test_gentoo_config_expands_two_arches_plus_livegui_and_resolves_datestamp():
+def test_gentoo_config_expands_arches_plus_livegui_and_resolves_datestamp():
     v = _variants("gentoo")
-    assert set(v) == {"gentoo:minimal", "gentoo:minimal:aarch64", "gentoo:livegui"}
+    assert {"gentoo:minimal", "gentoo:minimal:aarch64", "gentoo:livegui"} <= set(v)
     assert "/amd64/" in v["gentoo:minimal"].params["index"]
     assert "/arm64/" in v["gentoo:minimal:aarch64"].params["index"]      # {token} -> arm64 in the path
     assert "current-livegui-amd64" in v["gentoo:livegui"].params["index"]  # override, no leftover {token}

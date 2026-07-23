@@ -1513,7 +1513,7 @@ distros:
     variants:
       minimal:
         label: "Gentoo Minimal Install CD"
-        arches: {x86_64: amd64, aarch64: arm64}
+        arches: {x86_64: amd64, aarch64: arm64, hppa: hppa, ia64: ia64, x86: x86}
         params: {match: '^install-{token}-minimal-\d{8}T\d{6}Z\.iso$'}
       livegui:
         # Overrides the {token} distro index with a concrete amd64 URL (no arches -> no {token} left).
