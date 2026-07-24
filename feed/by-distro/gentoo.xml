@@ -4,7 +4,58 @@
   <title>Distro ISO Feed — gentoo</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/gentoo.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-20T09:38:46+00:00</updated>
+  <updated>2026-07-24T08:46:58+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:x86/20260721T170104Z</id>
+    <title>Gentoo Minimal Install CD 20260721T170104Z (x86)</title>
+    <updated>2026-07-24T08:46:58+00:00</updated>
+    <published>2026-07-24T08:46:58+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260721T170104Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260721T170104Z (x86)
+Filename: install-x86-minimal-20260721T170104Z.iso
+sha256: 8a598c520e87479ba34416f63569f5b824b858e44e1f88a96027fc08b7b8bb1b
+Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260721T170104Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:ia64/20240404T093405Z</id>
+    <title>Gentoo Minimal Install CD 20240404T093405Z (ia64)</title>
+    <updated>2026-07-24T08:46:58+00:00</updated>
+    <published>2026-07-24T08:46:58+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/ia64/autobuilds/current-install-ia64-minimal/install-ia64-minimal-20240404T093405Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20240404T093405Z (ia64)
+Filename: install-ia64-minimal-20240404T093405Z.iso
+sha256: 71940ab5629e4c56f7d55b122193d12dfff5784e0099e41c05a4f359278859aa
+Signature: https://distfiles.gentoo.org/releases/ia64/autobuilds/current-install-ia64-minimal/install-ia64-minimal-20240404T093405Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:hppa/20230418T174657Z</id>
+    <title>Gentoo Minimal Install CD 20230418T174657Z (hppa)</title>
+    <updated>2026-07-24T08:46:57+00:00</updated>
+    <published>2026-07-24T08:46:57+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/hppa/autobuilds/current-install-hppa-minimal/install-hppa-minimal-20230418T174657Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20230418T174657Z (hppa)
+Filename: install-hppa-minimal-20230418T174657Z.iso
+sha256: d5a125fca449a68a0dbc43485e288ca9504364ef96fb2621dcbe395868549fd4
+Signature: https://distfiles.gentoo.org/releases/hppa/autobuilds/current-install-hppa-minimal/install-hppa-minimal-20230418T174657Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260719T224605Z</id>
     <title>Gentoo Minimal Install CD 20260719T224605Z (aarch64)</title>
