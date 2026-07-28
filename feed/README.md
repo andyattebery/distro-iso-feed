@@ -27,8 +27,8 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | antix | core | x86_64 | 26 | gpg | — |
 | antix | full | x86_64 | 26 | gpg | — |
 | arch | iso | x86_64 | 2026.07.01 | gpg | ✓ |
-| aurora | nvidia-open | x86_64 | stable-20260714.1 | checksum | — |
-| aurora | stable | x86_64 | stable-20260714.1 | checksum | — |
+| aurora | nvidia-open | x86_64 | stable-20260728.1 | checksum | — |
+| aurora | stable | x86_64 | stable-20260728.1 | checksum | — |
 | batocera | x86_64 | x86_64 | 43.1-20260529 | checksum | — |
 | bazzite | deck | x86_64 | 44.20260721 | checksum | — |
 | bazzite | desktop | x86_64 | 44.20260721 | checksum | — |

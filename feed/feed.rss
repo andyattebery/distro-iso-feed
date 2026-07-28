@@ -4,8 +4,32 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Mon, 27 Jul 2026 10:14:30 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 09:09:27 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Aurora stable-20260728.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20260728.1</guid>
+      <pubDate>Tue, 28 Jul 2026 09:09:27 +0000</pubDate>
+      <description>Aurora stable-20260728.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 4a77e85e62101187b5eea8b8b05d9c4cc70dbf27f3dbcbeaa46b7800643c6469
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora NVIDIA Open stable-20260728.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20260728.1</guid>
+      <pubDate>Tue, 28 Jul 2026 09:09:27 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20260728.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 93d4521fd12a11cd14482716198ff8c9c2e9337014ab41395b463c2227322589
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
     <item>
       <title>Gentoo Minimal Install CD 20260726T221557Z (aarch64)</title>
       <link>https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260726T221557Z.iso</link>
@@ -871,30 +895,6 @@ Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debi
 Verify: gpg</description>
       <enclosure url="https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso" type="application/x-iso9660-image" length="0" />
       <category>debian</category>
-    </item>
-    <item>
-      <title>Aurora stable-20260714.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20260714.1</guid>
-      <pubDate>Thu, 16 Jul 2026 08:58:48 +0000</pubDate>
-      <description>Aurora stable-20260714.1 (x86_64)
-Filename: aurora-stable-webui-x86_64.iso
-sha256: 4a77e85e62101187b5eea8b8b05d9c4cc70dbf27f3dbcbeaa46b7800643c6469
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Aurora NVIDIA Open stable-20260714.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20260714.1</guid>
-      <pubDate>Thu, 16 Jul 2026 08:58:48 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20260714.1 (x86_64)
-Filename: aurora-nvidia-open-stable-webui-x86_64.iso
-sha256: 93d4521fd12a11cd14482716198ff8c9c2e9337014ab41395b463c2227322589
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
     </item>
     <item>
       <title>Q4OS Trinity 6.8 (x86_64)</title>
