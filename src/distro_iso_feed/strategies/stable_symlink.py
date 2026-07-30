@@ -17,7 +17,7 @@ from __future__ import annotations
 from urllib.parse import urljoin
 
 from ..client import Client
-from ..listers import Candidate, atom, candidate_probe, fixed
+from ..listers import Candidate, atom_until_stable, candidate_probe, entry_tag, fixed
 from ..models import Release
 from ..releases import candidates_for
 from ..select import is_prerelease
@@ -36,8 +36,14 @@ class StableSymlink(Strategy):
         return ["x86_64", "aarch64"] if "{token}" in str(params.get("url", "")) else []
 
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:
+        # Paged, like `_version` below, so the escalation issue lists the tag this variant
+        # actually wants. Reading only page one is what made Bazzite's ten `testing-` entries
+        # read as "upstream renamed everything". Costs nothing on a healthy run: for every
+        # `atom_tag` source this is reached only from `run_refresh.diagnose`, which runs after
+        # a variant has already failed (bazzite/bluefin are `enumerable: false` and aurora
+        # enumerates through `discover.index`, so `enumerate_all` never calls it).
         if repo := (params.get("token") or {}).get("repo"):
-            return atom(client, repo)
+            return atom_until_stable(client, repo)
         return fixed(params["url"]) if params.get("url") else []
 
     def claims(self, candidate: Candidate, params: dict) -> bool:
@@ -58,10 +64,14 @@ class StableSymlink(Strategy):
         self, token: dict, client: Client, sidecar_text: str | None
     ) -> str | None:
         # Strip the title's trailing prose BEFORE the prerelease check: the entry
-        # reads `stable-20260708: Stable (F44...)`, and elementary's `8.1.0-rc3: RC`
+        # reads `44.20260721: Stable (F44.20260721)`, and elementary's `8.1.0-rc3: RC`
         # must be rejected on the tag, never on GitHub's `prerelease` flag.
-        tags = [e.name.split(":", 1)[0].strip() for e in atom(client, token["repo"])]
-        tags = [t for t in tags if t and not is_prerelease(t)]
+        #
+        # Paged, because one page is ten entries and Bazzite publishes `testing-` builds
+        # faster than that window lasts -- its own latest stable tag falls off the page
+        # roughly four days after it ships.
+        entries = atom_until_stable(client, token["repo"])
+        tags = [t for e in entries if (t := entry_tag(e.name)) and not is_prerelease(t)]
         if not tags:
             return None  # a 200 with zero entries is not a release (Nobara)
         return from_atom_tag(tags[0], token.get("pattern"))

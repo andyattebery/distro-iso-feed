@@ -11,6 +11,7 @@ import pytest
 
 from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
 from distro_iso_feed.config import ConfigError, _validate_token
+from distro_iso_feed.listers import ATOM_MAX_PAGES, atom_until_stable
 from distro_iso_feed.strategies import REGISTRY, Strategy
 from distro_iso_feed.strategies.integrity import SumsUnavailable
 from distro_iso_feed.strategies.stable_symlink import StableSymlink
@@ -337,7 +338,7 @@ def test_stable_symlink_token_from_atom_tag_ublue():
     client = FakeClient(
         {
             "https://github.com/ublue-os/bazzite/releases.atom": atom_feed(
-                ["stable-20260708: Stable"]
+                ["44.20260721: Stable (F44.20260721)"]
             ),
             url + "-CHECKSUM": f"{SHA256}  bazzite-stable-amd64.iso",
         }
@@ -352,7 +353,7 @@ def test_stable_symlink_token_from_atom_tag_ublue():
         },
         client,
     )
-    assert rel.version == "stable-20260708"
+    assert rel.version == "44.20260721"
 
 
 def test_atom_feed_with_zero_entries_yields_none():
@@ -389,6 +390,94 @@ def test_atom_rc_tag_rejected_by_pattern_not_flag():
         client,
     )
     assert rel is None
+
+
+# ------------------------------------------------- the atom window (issues #5-#7)
+#
+# `releases.atom` serves ten entries, and that is a window, not a release list. Bazzite
+# ships `testing-` builds 2-3x a day and a stable tag every 8-14 days, so on 2026-07-28
+# page one held ten prereleases, all three variants resolved to None, and nothing upstream
+# had changed. These pin the paging that fixes it.
+
+BZ_ATOM = "https://github.com/ublue-os/bazzite/releases.atom"
+BZ_URL = "https://download.bazzite.gg/bazzite-stable-amd64.iso"
+BZ_PARAMS = {
+    "url": BZ_URL,
+    "sums": "{filename}-CHECKSUM",
+    "token": {"from": "atom_tag", "repo": "ublue-os/bazzite"},
+}
+# The real 2026-07-28 page one, newest first. Its last tag is the cursor for page two.
+BZ_PAGE1 = [
+    "testing-44.20260728.1: Testing (F44.20260728, #8e2a766)",
+    "testing-44.20260728: Testing (F44.20260728, #e4dc183)",
+    "testing-44.20260727.1: Testing (F44.20260727, #54fb374)",
+    "testing-44.20260727: Testing (F44.20260727, #7ba0a3e)",
+    "testing-44.20260726.1: Testing (F44.20260726, #5cfa5c1)",
+    "testing-44.20260726: Testing (F44.20260726, #1814fa1)",
+    "testing-44.20260725.1: Testing (F44.20260725, #0437982)",
+    "testing-44.20260724.4: Testing (F44.20260724, #cddddb6)",
+    "testing-44.20260724.2: Testing (F44.20260724, #d08622f)",
+    "testing-44.20260724.1: Testing (F44.20260724, #7eb285e)",
+]
+BZ_PAGE2 = [
+    "testing-44.20260722: Testing (F44.20260722, #8e1c068)",
+    "44.20260721: Stable (F44.20260721)",
+    "testing-44.20260721.1: Testing (F44.20260721, #e3ae03d)",
+]
+BZ_WINDOWED = {
+    BZ_ATOM: atom_feed(BZ_PAGE1),
+    f"{BZ_ATOM}?after=testing-44.20260724.1": atom_feed(BZ_PAGE2),
+}
+
+
+def test_stable_tag_on_the_second_atom_page_still_resolves():
+    """Issues #5-#7: ten prereleases on page one is not "upstream renamed everything"."""
+    sidecar = f"{SHA256}  {BZ_URL.rsplit('/', 1)[-1]}"
+    client = FakeClient({**BZ_WINDOWED, BZ_URL + "-CHECKSUM": sidecar})
+    rel = REGISTRY["stable_symlink"]().resolve("bazzite", "desktop", dict(BZ_PARAMS), client)
+    assert rel.version == "44.20260721"
+    assert rel.download_url == BZ_URL  # still the version-less URL
+
+
+def test_diagnose_candidates_carry_the_stable_tag_not_just_the_prereleases():
+    """What the escalation issue body renders. Reading page one alone is what made the
+    failure read as a Bazzite change -- the tag the variant wants was never in the list."""
+    client = FakeClient(dict(BZ_WINDOWED))
+    names = [c.name for c in StableSymlink().candidates("bazzite", dict(BZ_PARAMS), client)]
+    assert any(n.startswith("44.20260721:") for n in names)
+    assert len(names) == len(BZ_PAGE1) + len(BZ_PAGE2)
+
+
+def test_a_stable_tag_on_page_one_costs_exactly_one_fetch():
+    """Bluefin and Aurora publish no prereleases at all. The common path must not page."""
+    client = FakeClient({BZ_ATOM: atom_feed(["44.20260721: Stable (F44.20260721)"])})
+    assert len(atom_until_stable(client, "ublue-os/bazzite")) == 1
+    assert client.requested == [BZ_ATOM]
+
+
+def test_an_ignored_after_cursor_stops_instead_of_looping():
+    """`?page=` is silently ignored by GitHub and re-serves page one; if `after=` ever went
+    the same way, a walk that did not notice would burn every remaining page on one
+    identical response."""
+    page1 = atom_feed(BZ_PAGE1)
+    client = FakeClient({BZ_ATOM: page1, f"{BZ_ATOM}?after=testing-44.20260724.1": page1})
+    cands = atom_until_stable(client, "ublue-os/bazzite")
+    assert len(client.requested) == 2  # page one, one cursored retry, then stop
+    assert not any(c.name.startswith("44.") for c in cands)
+
+
+def test_the_page_walk_is_bounded():
+    """A repo that publishes nothing but prereleases must not walk forever."""
+    pages, url = {}, BZ_ATOM
+    for i in range(ATOM_MAX_PAGES + 3):
+        tag = f"testing-44.2026{i:04d}"
+        pages[url] = atom_feed([f"{tag}: Testing"])
+        url = f"{BZ_ATOM}?after={tag}"
+    client = FakeClient(pages)
+    assert atom_until_stable(client, "ublue-os/bazzite")  # entries seen, none usable
+    assert len(client.requested) == ATOM_MAX_PAGES
+    rel = REGISTRY["stable_symlink"]().resolve("bazzite", "desktop", dict(BZ_PARAMS), client)
+    assert rel is None  # no stable tag anywhere in reach
 
 
 def test_nixos_candidate_probe_finds_highest_channel():
@@ -655,7 +744,9 @@ def test_stable_symlink_dispatches_atom_tag_through_the_registry():
     """Behaviour-preserving: the ublue shape (fixed URL, version from the atom tag) still resolves
     through the registry dispatch, and prereleases are still rejected on the tag."""
     url = "https://dl.example/bazzite-stable-amd64.iso"
-    feed = atom_feed(["stable-20260708: Stable (F44)", "testing-20260709: Testing"])
+    # Bazzite's real page-one shape on 2026-07-23: the newest entry is a `testing-` build
+    # and the stable tag sits under it.
+    feed = atom_feed(["testing-44.20260722: Testing", "44.20260721: Stable (F44.20260721)"])
     client = FakeClient({"https://github.com/ublue-os/bazzite/releases.atom": feed})
     rel = REGISTRY["stable_symlink"]().resolve(
         "bazzite",
@@ -663,4 +754,4 @@ def test_stable_symlink_dispatches_atom_tag_through_the_registry():
         {"url": url, "token": {"from": "atom_tag", "repo": "ublue-os/bazzite"}},
         client,
     )
-    assert rel.version == "stable-20260708"  # newest non-prerelease tag; testing rejected
+    assert rel.version == "44.20260721"  # newest non-prerelease tag; testing rejected

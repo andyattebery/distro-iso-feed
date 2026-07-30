@@ -16,7 +16,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime
 from email.utils import parsedate_to_datetime
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin
 
 from defusedxml import ElementTree
 
@@ -140,14 +140,29 @@ def rss(client: Client, url: str) -> list[Candidate]:
     return out
 
 
-def atom(client: Client, repo: str) -> list[Candidate]:
-    """GitHub `releases.atom`.
+# How many `releases.atom` pages `atom_until_stable` will walk before giving up. 100 entries is
+# ~40 days of Bazzite's churn, and the walk short-circuits the moment a stable tag appears, so the
+# bound is only ever reached by a repo that genuinely publishes no release at all.
+ATOM_MAX_PAGES = 10
+
+
+def atom(client: Client, repo: str, after: str | None = None) -> list[Candidate]:
+    """GitHub `releases.atom`, one page.
 
     Unauthenticated, so it dodges the 60/hr REST limit that bites inside Actions.
-    Two traps: a 200 with zero entries (Nobara), and entries that are *tags* rather
-    than releases (EndeavourOS). Both surface here as an empty or asset-less list.
+    Three traps: a 200 with zero entries (Nobara), entries that are *tags* rather
+    than releases (EndeavourOS) -- both of which surface here as an empty or
+    asset-less list -- and the one that broke Bazzite: **the window is fixed at ten
+    entries**, so a project whose prereleases outpace its releases pushes its own
+    latest stable tag off the page. See `atom_until_stable`.
+
+    `after` is GitHub's exclusive cursor: pass a bare tag to get the ten entries
+    *older* than it. (`?page=` is silently ignored -- it re-serves page one.)
     """
-    text = client.text(f"https://github.com/{repo}/releases.atom")
+    url = f"https://github.com/{repo}/releases.atom"
+    if after:
+        url += f"?after={quote(after, safe='')}"
+    text = client.text(url)
     if not text:
         return []
     try:
@@ -168,6 +183,56 @@ def atom(client: Client, repo: str) -> list[Candidate]:
             except ValueError:
                 published = None
         out.append(Candidate(name=title, published=published))
+    return out
+
+
+def entry_tag(title: str) -> str:
+    """The bare tag out of an atom entry title.
+
+    Titles are ``<tag>: <prose>`` -- Bazzite's is ``44.20260721: Stable (F44.20260721)``.
+    One function because three things depend on the split agreeing: the prerelease test,
+    the `after=` cursor (built from the prose instead, it would page nowhere), and the
+    token `tokens.from_atom_tag` finally reads.
+
+    Named `entry_tag`, not `atom_tag`: `atom_tag` is already the config value naming this
+    *token source* (`token: {from: atom_tag}`), and `from_atom_tag` is the extractor that
+    consumes this function's output. Three near-identical names on adjacent lines is how
+    the wrong one gets called.
+    """
+    return title.split(":", 1)[0].strip()
+
+
+def atom_until_stable(
+    client: Client, repo: str, max_pages: int = ATOM_MAX_PAGES
+) -> list[Candidate]:
+    """`atom`, paged until a non-prerelease tag is in hand.
+
+    A ten-entry window is not a listing of a project's releases; it is a listing of its
+    *last ten publications*. Bazzite ships `testing-` builds 2-3x a day and a stable tag
+    every 8-14 days, so by 2026-07-28 page one held ten prereleases, every one was
+    rejected, and all three variants resolved to None with nothing upstream having
+    changed. Paging is what makes the lister's reach a function of the project's release
+    cadence rather than of its prerelease cadence.
+
+    Stops at the first page that *contains* a stable tag rather than eagerly walking
+    `max_pages`. Both halves matter: the escalation issue body prints only the first 30
+    candidates, so an eager walk would bury the stable tag it exists to surface.
+    """
+    out: list[Candidate] = []
+    after: str | None = None
+    for _ in range(max_pages):
+        page = atom(client, repo, after=after)
+        if not page:
+            break  # end of the releases, or a fetch that failed -- both mean stop
+        out.extend(page)
+        tags = [t for c in page if (t := entry_tag(c.name))]
+        if any(not is_prerelease(t) for t in tags):
+            break
+        if not tags or tags[-1] == after:
+            # `after` was ignored (GitHub re-served the same page). Without this the loop
+            # burns every remaining page on one identical response.
+            break
+        after = tags[-1]
     return out
 
 

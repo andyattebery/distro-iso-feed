@@ -7,7 +7,8 @@ The thing worth internalising before changing anything here:
 > would read — the atom entries, the redirect chain, the filenames, the page's own
 > JavaScript.
 
-Four wrong conclusions were reached during design by trusting the cheap signal:
+Five wrong conclusions were reached this way. The first four during design, by trusting the
+cheap signal; the fifth in production, by trusting a listing to be a listing:
 
 | Signal trusted | What it actually was |
 |---|---|
@@ -15,6 +16,7 @@ Four wrong conclusions were reached during design by trusting the cheap signal:
 | `curl -L` → `200` | A catch-all `302`, so *every* path "exists" (elementary) |
 | RSS → 100 items | An archive of versions 1–11 (Zorin) |
 | Page → no `.iso` in HTML | A 95-byte `<meta refresh>` stub (Manjaro) |
+| `releases.atom` → 10 valid entries | A fixed *window*, not the release list — Bazzite's stable tag had fallen off the end behind a week of `testing-` builds, and three variants stopped resolving with nothing upstream changed (`listers.atom_until_stable`) |
 
 `distro-iso-feed-refresh --dry-run` exists to mechanise the fix: it prints the resolved
 artifact — filename, version token, checksum, algorithm — and never a status code.

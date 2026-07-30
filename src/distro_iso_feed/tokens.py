@@ -61,7 +61,9 @@ def from_json_field(row: dict, fields: list[str], separator: str = "-") -> str |
 def from_atom_tag(tag: str, pattern: str | None = None) -> str | None:
     """ublue's `-CHECKSUM` names a version-less ISO, so the token is the atom tag.
 
-    Bazzite's entry title is ``stable-20260708: Stable (F44.20260708, #81d640c)``.
+    Bazzite's entry title is ``44.20260721: Stable (F44.20260721)``; Bluefin's and
+    Aurora's are ``stable-20260721: ...``. No `pattern` is configured for any of them,
+    so the tag passes through verbatim and the two shapes need no reconciling.
     """
     tag = tag.split(":", 1)[0].strip()
     if pattern:
