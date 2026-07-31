@@ -4,61 +4,61 @@
   <title>Distro ISO Feed — nixos</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/nixos.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-29T09:15:34+00:00</updated>
+  <updated>2026-07-31T09:20:54+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.6282.2f5a153c270b</id>
-    <title>NixOS Minimal 26.05.6282.2f5a153c270b (aarch64)</title>
-    <updated>2026-07-29T09:15:34+00:00</updated>
-    <published>2026-07-29T09:15:34+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.6282.2f5a153c270b (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: b46aa190cb87b6ff0fbe85be966abf2437606e28533ac10733becbbde4c31fe2
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.6282.2f5a153c270b</id>
-    <title>NixOS Graphical 26.05.6282.2f5a153c270b (aarch64)</title>
-    <updated>2026-07-29T09:15:34+00:00</updated>
-    <published>2026-07-29T09:15:34+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.6503.21ea275a7c46</id>
+    <title>NixOS Graphical 26.05.6503.21ea275a7c46 (aarch64)</title>
+    <updated>2026-07-31T09:20:54+00:00</updated>
+    <published>2026-07-31T09:20:54+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.6282.2f5a153c270b (aarch64)
+    <summary type="text">NixOS Graphical 26.05.6503.21ea275a7c46 (aarch64)
 Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 47c3f9aee290fb371eb35fba12ee145b09c5b4a5a4ab2e9aaf6ed48c655fd080
+sha256: 0045935997109dfea7382da1f74f9fd94e9c02216280000a445b962a86cd6472
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.6282.2f5a153c270b</id>
-    <title>NixOS Graphical 26.05.6282.2f5a153c270b (x86_64)</title>
-    <updated>2026-07-29T09:15:34+00:00</updated>
-    <published>2026-07-29T09:15:34+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.6503.21ea275a7c46</id>
+    <title>NixOS Minimal 26.05.6503.21ea275a7c46 (aarch64)</title>
+    <updated>2026-07-31T09:20:53+00:00</updated>
+    <published>2026-07-31T09:20:53+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.6503.21ea275a7c46 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 9beafbd782683c37b607c1a4363034fc445ed1ef7042abb5bc01b0fb3f294a91
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.6503.21ea275a7c46</id>
+    <title>NixOS Graphical 26.05.6503.21ea275a7c46 (x86_64)</title>
+    <updated>2026-07-31T09:20:53+00:00</updated>
+    <published>2026-07-31T09:20:53+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.6282.2f5a153c270b (x86_64)
+    <summary type="text">NixOS Graphical 26.05.6503.21ea275a7c46 (x86_64)
 Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 192ec6a3c7dcc61af884ba183dc0f128272afa67c658ef25b341d638dcdf5bf5
+sha256: c14dac6606b8e816e685bfa7c14a677b8719d9372da712e2c49c751c7a7d1574
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.6282.2f5a153c270b</id>
-    <title>NixOS Minimal 26.05.6282.2f5a153c270b (x86_64)</title>
-    <updated>2026-07-29T09:15:33+00:00</updated>
-    <published>2026-07-29T09:15:33+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.6503.21ea275a7c46</id>
+    <title>NixOS Minimal 26.05.6503.21ea275a7c46 (x86_64)</title>
+    <updated>2026-07-31T09:20:52+00:00</updated>
+    <published>2026-07-31T09:20:52+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.6282.2f5a153c270b (x86_64)
+    <summary type="text">NixOS Minimal 26.05.6503.21ea275a7c46 (x86_64)
 Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 8deb4a153e04042726179646a580278784349be2d7d4b94910cdf6fa568ab87e
+sha256: f727416a4aee523961d7045e870d1fcdd19dd3fd7856f8be622595c3c284496f
 Verify: checksum</summary>
   </entry>
 </feed>
