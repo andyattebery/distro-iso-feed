@@ -4350,16 +4350,16 @@
     "version": "25.2"
   },
   "netbsd:install": {
-    "hash": "7a5e5071307e1795885ffc6e1b8aac465082c21c8b79f4c9b4103ef44e4f2da45477299d213ae0093f6534dc99dc2bbf78f41e9dd556c72a02516068bf43fe49",
+    "hash": "2b8f15ea6f4012ef962ffd054bead5dcb1c2233ebdf6d41d23be066b2a9e19978378b0f7f588ed6ab9cde8a5ec618ea560e800fe762309aa28bc36b6480e2734",
     "release": {
       "arch": "x86_64",
-      "checksum": "7a5e5071307e1795885ffc6e1b8aac465082c21c8b79f4c9b4103ef44e4f2da45477299d213ae0093f6534dc99dc2bbf78f41e9dd556c72a02516068bf43fe49",
+      "checksum": "2b8f15ea6f4012ef962ffd054bead5dcb1c2233ebdf6d41d23be066b2a9e19978378b0f7f588ed6ab9cde8a5ec618ea560e800fe762309aa28bc36b6480e2734",
       "checksum_algo": "sha512",
       "distro": "netbsd",
-      "download_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso",
-      "filename": "NetBSD-10.1-amd64.iso",
-      "info_hash": "03f45a388d292d154301cea4290660d22718de19",
-      "magnet_uri": "magnet:?xt=urn:btih:03f45a388d292d154301cea4290660d22718de19&dn=NetBSD-10.1-amd64.iso&tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce",
+      "download_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso",
+      "filename": "NetBSD-11.0-amd64.iso",
+      "info_hash": "8479d2900438481594bbeef0960287f86e5a3cdf",
+      "magnet_uri": "magnet:?xt=urn:btih:8479d2900438481594bbeef0960287f86e5a3cdf&dn=NetBSD-11.0-amd64.iso&tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://www.netbsd.org/releases/formal.html",
       "published": null,
@@ -4368,28 +4368,28 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NetBSD install 10.1 (x86_64)",
+      "title": "NetBSD install 11.0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 25200,
-      "torrent_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso.torrent",
+      "torrent_size": 26660,
+      "torrent_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso.torrent",
       "variant": "install",
-      "version": "10.1"
+      "version": "11.0"
     },
-    "seen": "2026-07-12T23:21:43+00:00",
-    "version": "10.1"
+    "seen": "2026-08-01T08:35:49+00:00",
+    "version": "11.0"
   },
   "netbsd:install:aarch64": {
-    "hash": "155dba2cad71856c3ac1cd4c0f8f5ff70867ca3ff8625e6453fe1d692d70176c41a3974c6c867fd1d8758a5ee24e47c83faa0ab87b23a0185b1a602aa88ada07",
+    "hash": "4d7aa6414549da4453e09fa94758b59d601133cbeaa01ac6c55a819384dd4aea3a1019514f011c4d50ffa4ecf60e3eb21c092017de353c3d3525ce69976270c0",
     "release": {
       "arch": "aarch64",
-      "checksum": "155dba2cad71856c3ac1cd4c0f8f5ff70867ca3ff8625e6453fe1d692d70176c41a3974c6c867fd1d8758a5ee24e47c83faa0ab87b23a0185b1a602aa88ada07",
+      "checksum": "4d7aa6414549da4453e09fa94758b59d601133cbeaa01ac6c55a819384dd4aea3a1019514f011c4d50ffa4ecf60e3eb21c092017de353c3d3525ce69976270c0",
       "checksum_algo": "sha512",
       "distro": "netbsd",
-      "download_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso",
-      "filename": "NetBSD-10.1-evbarm-aarch64.iso",
-      "info_hash": "03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5",
-      "magnet_uri": "magnet:?xt=urn:btih:03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5&dn=NetBSD-10.1-evbarm-aarch64.iso&tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce",
+      "download_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso",
+      "filename": "NetBSD-11.0-evbarm-aarch64.iso",
+      "info_hash": "d0b11f5ce09463faa2bbcbfcb196985a65e17990",
+      "magnet_uri": "magnet:?xt=urn:btih:d0b11f5ce09463faa2bbcbfcb196985a65e17990&dn=NetBSD-11.0-evbarm-aarch64.iso&tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://www.netbsd.org/releases/formal.html",
       "published": null,
@@ -4398,22 +4398,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NetBSD install 10.1 (aarch64)",
+      "title": "NetBSD install 11.0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 42069,
-      "torrent_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso.torrent",
+      "torrent_size": 45349,
+      "torrent_url": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso.torrent",
       "variant": "install",
-      "version": "10.1"
+      "version": "11.0"
     },
-    "seen": "2026-07-12T23:21:43+00:00",
-    "version": "10.1"
+    "seen": "2026-08-01T08:35:49+00:00",
+    "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "c14dac6606b8e816e685bfa7c14a677b8719d9372da712e2c49c751c7a7d1574",
+    "hash": "aff74be35fce8f4fa0b9c094017e0b4fdd551a0615d90595a19c1822febbd1f8",
     "release": {
       "arch": "x86_64",
-      "checksum": "c14dac6606b8e816e685bfa7c14a677b8719d9372da712e2c49c751c7a7d1574",
+      "checksum": "aff74be35fce8f4fa0b9c094017e0b4fdd551a0615d90595a19c1822febbd1f8",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.6503.21ea275a7c46 (x86_64)",
+      "title": "NixOS Graphical 26.05.6603.5b4f72e1705a (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.6503.21ea275a7c46"
+      "version": "26.05.6603.5b4f72e1705a"
     },
-    "seen": "2026-07-31T09:20:53+00:00",
-    "version": "26.05.6503.21ea275a7c46"
+    "seen": "2026-08-01T08:37:00+00:00",
+    "version": "26.05.6603.5b4f72e1705a"
   },
   "nixos:graphical:aarch64": {
-    "hash": "0045935997109dfea7382da1f74f9fd94e9c02216280000a445b962a86cd6472",
+    "hash": "e5cd5331513edee578a39e8dc5d3f4c258db6d9397a2e7b786e7fa3fa5510769",
     "release": {
       "arch": "aarch64",
-      "checksum": "0045935997109dfea7382da1f74f9fd94e9c02216280000a445b962a86cd6472",
+      "checksum": "e5cd5331513edee578a39e8dc5d3f4c258db6d9397a2e7b786e7fa3fa5510769",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.6503.21ea275a7c46 (aarch64)",
+      "title": "NixOS Graphical 26.05.6603.5b4f72e1705a (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.6503.21ea275a7c46"
+      "version": "26.05.6603.5b4f72e1705a"
     },
-    "seen": "2026-07-31T09:20:54+00:00",
-    "version": "26.05.6503.21ea275a7c46"
+    "seen": "2026-08-01T08:37:01+00:00",
+    "version": "26.05.6603.5b4f72e1705a"
   },
   "nixos:minimal": {
-    "hash": "f727416a4aee523961d7045e870d1fcdd19dd3fd7856f8be622595c3c284496f",
+    "hash": "b85dd6d9a93284b3e333cdeb71f2b8d134caf47b5adbba19d10075a967a6a6ed",
     "release": {
       "arch": "x86_64",
-      "checksum": "f727416a4aee523961d7045e870d1fcdd19dd3fd7856f8be622595c3c284496f",
+      "checksum": "b85dd6d9a93284b3e333cdeb71f2b8d134caf47b5adbba19d10075a967a6a6ed",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.6503.21ea275a7c46 (x86_64)",
+      "title": "NixOS Minimal 26.05.6603.5b4f72e1705a (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.6503.21ea275a7c46"
+      "version": "26.05.6603.5b4f72e1705a"
     },
-    "seen": "2026-07-31T09:20:52+00:00",
-    "version": "26.05.6503.21ea275a7c46"
+    "seen": "2026-08-01T08:37:00+00:00",
+    "version": "26.05.6603.5b4f72e1705a"
   },
   "nixos:minimal:aarch64": {
-    "hash": "9beafbd782683c37b607c1a4363034fc445ed1ef7042abb5bc01b0fb3f294a91",
+    "hash": "6285fae53f0ea244d6af2ed447ab83cf03fc4b7a1bca4fab71212f183df4a89a",
     "release": {
       "arch": "aarch64",
-      "checksum": "9beafbd782683c37b607c1a4363034fc445ed1ef7042abb5bc01b0fb3f294a91",
+      "checksum": "6285fae53f0ea244d6af2ed447ab83cf03fc4b7a1bca4fab71212f183df4a89a",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.6503.21ea275a7c46 (aarch64)",
+      "title": "NixOS Minimal 26.05.6603.5b4f72e1705a (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.6503.21ea275a7c46"
+      "version": "26.05.6603.5b4f72e1705a"
     },
-    "seen": "2026-07-31T09:20:53+00:00",
-    "version": "26.05.6503.21ea275a7c46"
+    "seen": "2026-08-01T08:37:00+00:00",
+    "version": "26.05.6603.5b4f72e1705a"
   },
   "nobara:gnome": {
     "hash": "c52a5ad11082973bb67efa8d7b18b6b50f7cee71580b2a9ce28f36dff8f2c543",

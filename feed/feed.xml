@@ -4,62 +4,100 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-31T09:20:54+00:00</updated>
+  <updated>2026-08-01T08:37:01+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.6503.21ea275a7c46</id>
-    <title>NixOS Graphical 26.05.6503.21ea275a7c46 (aarch64)</title>
-    <updated>2026-07-31T09:20:54+00:00</updated>
-    <published>2026-07-31T09:20:54+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.6603.5b4f72e1705a</id>
+    <title>NixOS Graphical 26.05.6603.5b4f72e1705a (aarch64)</title>
+    <updated>2026-08-01T08:37:01+00:00</updated>
+    <published>2026-08-01T08:37:01+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.6503.21ea275a7c46 (aarch64)
+    <summary type="text">NixOS Graphical 26.05.6603.5b4f72e1705a (aarch64)
 Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 0045935997109dfea7382da1f74f9fd94e9c02216280000a445b962a86cd6472
+sha256: e5cd5331513edee578a39e8dc5d3f4c258db6d9397a2e7b786e7fa3fa5510769
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.6503.21ea275a7c46</id>
-    <title>NixOS Minimal 26.05.6503.21ea275a7c46 (aarch64)</title>
-    <updated>2026-07-31T09:20:53+00:00</updated>
-    <published>2026-07-31T09:20:53+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.6603.5b4f72e1705a</id>
+    <title>NixOS Minimal 26.05.6603.5b4f72e1705a (aarch64)</title>
+    <updated>2026-08-01T08:37:00+00:00</updated>
+    <published>2026-08-01T08:37:00+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.6503.21ea275a7c46 (aarch64)
+    <summary type="text">NixOS Minimal 26.05.6603.5b4f72e1705a (aarch64)
 Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 9beafbd782683c37b607c1a4363034fc445ed1ef7042abb5bc01b0fb3f294a91
+sha256: 6285fae53f0ea244d6af2ed447ab83cf03fc4b7a1bca4fab71212f183df4a89a
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.6503.21ea275a7c46</id>
-    <title>NixOS Graphical 26.05.6503.21ea275a7c46 (x86_64)</title>
-    <updated>2026-07-31T09:20:53+00:00</updated>
-    <published>2026-07-31T09:20:53+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.6503.21ea275a7c46 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: c14dac6606b8e816e685bfa7c14a677b8719d9372da712e2c49c751c7a7d1574
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.6503.21ea275a7c46</id>
-    <title>NixOS Minimal 26.05.6503.21ea275a7c46 (x86_64)</title>
-    <updated>2026-07-31T09:20:52+00:00</updated>
-    <published>2026-07-31T09:20:52+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.6603.5b4f72e1705a</id>
+    <title>NixOS Minimal 26.05.6603.5b4f72e1705a (x86_64)</title>
+    <updated>2026-08-01T08:37:00+00:00</updated>
+    <published>2026-08-01T08:37:00+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.6503.21ea275a7c46 (x86_64)
+    <summary type="text">NixOS Minimal 26.05.6603.5b4f72e1705a (x86_64)
 Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: f727416a4aee523961d7045e870d1fcdd19dd3fd7856f8be622595c3c284496f
+sha256: b85dd6d9a93284b3e333cdeb71f2b8d134caf47b5adbba19d10075a967a6a6ed
 Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.6603.5b4f72e1705a</id>
+    <title>NixOS Graphical 26.05.6603.5b4f72e1705a (x86_64)</title>
+    <updated>2026-08-01T08:37:00+00:00</updated>
+    <published>2026-08-01T08:37:00+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.6603.5b4f72e1705a (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: aff74be35fce8f4fa0b9c094017e0b4fdd551a0615d90595a19c1822febbd1f8
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install:aarch64/11.0</id>
+    <title>NetBSD install 11.0 (aarch64)</title>
+    <updated>2026-08-01T08:35:49+00:00</updated>
+    <published>2026-08-01T08:35:49+00:00</published>
+    <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="45349" />
+    <category term="netbsd" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">NetBSD install 11.0 (aarch64)
+Filename: NetBSD-11.0-evbarm-aarch64.iso
+sha512: 4d7aa6414549da4453e09fa94758b59d601133cbeaa01ac6c55a819384dd4aea3a1019514f011c4d50ffa4ecf60e3eb21c092017de353c3d3525ce69976270c0
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso.torrent
+Infohash: d0b11f5ce09463faa2bbcbfcb196985a65e17990
+Magnet: magnet:?xt=urn:btih:d0b11f5ce09463faa2bbcbfcb196985a65e17990&amp;dn=NetBSD-11.0-evbarm-aarch64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install/11.0</id>
+    <title>NetBSD install 11.0 (x86_64)</title>
+    <updated>2026-08-01T08:35:49+00:00</updated>
+    <published>2026-08-01T08:35:49+00:00</published>
+    <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="26660" />
+    <category term="netbsd" label="distro" />
+    <category term="install" label="variant" />
+    <summary type="text">NetBSD install 11.0 (x86_64)
+Filename: NetBSD-11.0-amd64.iso
+sha512: 2b8f15ea6f4012ef962ffd054bead5dcb1c2233ebdf6d41d23be066b2a9e19978378b0f7f588ed6ab9cde8a5ec618ea560e800fe762309aa28bc36b6480e2734
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso.torrent
+Infohash: 8479d2900438481594bbeef0960287f86e5a3cdf
+Magnet: magnet:?xt=urn:btih:8479d2900438481594bbeef0960287f86e5a3cdf&amp;dn=NetBSD-11.0-amd64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260729</id>
@@ -1221,44 +1259,6 @@ sha256: bfbb15cc30e68ed425785a336e0084d623f74aaa35094a5beeb758ed0f48632a
 Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.1-R15.0p2-GERSHWIN.iso.torrent
 Infohash: 70d7077235e02c11bc662b1bdc0bd6f764f18beb
 Magnet: magnet:?xt=urn:btih:70d7077235e02c11bc662b1bdc0bd6f764f18beb&amp;dn=GhostBSD-26.1-R15.0p2-GERSHWIN.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
-Verify: checksum
-NOTE: infohash is unsigned — trust on first use</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install:aarch64/10.1</id>
-    <title>NetBSD install 10.1 (aarch64)</title>
-    <updated>2026-07-12T23:21:43+00:00</updated>
-    <published>2026-07-12T23:21:43+00:00</published>
-    <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="42069" />
-    <category term="netbsd" label="distro" />
-    <category term="install" label="variant" />
-    <summary type="text">NetBSD install 10.1 (aarch64)
-Filename: NetBSD-10.1-evbarm-aarch64.iso
-sha512: 155dba2cad71856c3ac1cd4c0f8f5ff70867ca3ff8625e6453fe1d692d70176c41a3974c6c867fd1d8758a5ee24e47c83faa0ab87b23a0185b1a602aa88ada07
-Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-evbarm-aarch64.iso.torrent
-Infohash: 03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5
-Magnet: magnet:?xt=urn:btih:03de5fd797ad2d9ce0a02ad11c372bcfaf683ba5&amp;dn=NetBSD-10.1-evbarm-aarch64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
-Verify: checksum
-NOTE: infohash is unsigned — trust on first use</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install/10.1</id>
-    <title>NetBSD install 10.1 (x86_64)</title>
-    <updated>2026-07-12T23:21:43+00:00</updated>
-    <published>2026-07-12T23:21:43+00:00</published>
-    <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="25200" />
-    <category term="netbsd" label="distro" />
-    <category term="install" label="variant" />
-    <summary type="text">NetBSD install 10.1 (x86_64)
-Filename: NetBSD-10.1-amd64.iso
-sha512: 7a5e5071307e1795885ffc6e1b8aac465082c21c8b79f4c9b4103ef44e4f2da45477299d213ae0093f6534dc99dc2bbf78f41e9dd556c72a02516068bf43fe49
-Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.1/images/NetBSD-10.1-amd64.iso.torrent
-Infohash: 03f45a388d292d154301cea4290660d22718de19
-Magnet: magnet:?xt=urn:btih:03f45a388d292d154301cea4290660d22718de19&amp;dn=NetBSD-10.1-amd64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
 Verify: checksum
 NOTE: infohash is unsigned — trust on first use</summary>
   </entry>
