@@ -4,8 +4,26 @@
     <title>Distro ISO Feed — torrents</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed — torrents</description>
-    <lastBuildDate>Sat, 01 Aug 2026 08:35:49 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2026 08:38:20 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml</docs>
+    <item>
+      <title>Arch Linux 2026.08.01 (x86_64)</title>
+      <link>https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.torrent</link>
+      <guid isPermaLink="false">arch:iso:2026.08.01</guid>
+      <pubDate>Sun, 02 Aug 2026 08:38:20 +0000</pubDate>
+      <description>Arch Linux 2026.08.01 (x86_64)
+Filename: archlinux-2026.08.01-x86_64.iso
+sha256: 4e82dced1c4fd3e498b22a853f8db2a4d262d32b97e7e07d97390d9e425ffe5e
+Signature: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+Key-fingerprint: 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+Torrent: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.torrent
+Infohash: ed8507e22addc40fd6fb4f1677bf27fd75967f70
+Magnet: magnet:?xt=urn:btih:ed8507e22addc40fd6fb4f1677bf27fd75967f70&amp;dn=archlinux-2026.08.01-x86_64.iso
+Verify: gpg</description>
+      <enclosure url="https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.torrent" type="application/x-bittorrent" length="86847" />
+      <category>arch</category>
+    </item>
     <item>
       <title>NetBSD install 11.0 (aarch64)</title>
       <link>https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso.torrent</link>
@@ -1023,24 +1041,6 @@ Magnet: magnet:?xt=urn:btih:dafc8c076ca2f3ed376eeae7c76a0d6be2415c45&amp;dn=ubun
 Verify: gpg</description>
       <enclosure url="https://releases.ubuntu.com/26.04/ubuntu-26.04-desktop-amd64.iso.torrent" type="application/x-bittorrent" length="497716" />
       <category>ubuntu</category>
-    </item>
-    <item>
-      <title>Arch Linux 2026.07.01 (x86_64)</title>
-      <link>https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.07.01-x86_64.iso.torrent</link>
-      <guid isPermaLink="false">arch:iso:2026.07.01</guid>
-      <pubDate>Thu, 09 Jul 2026 23:40:13 +0000</pubDate>
-      <description>Arch Linux 2026.07.01 (x86_64)
-Filename: archlinux-2026.07.01-x86_64.iso
-sha256: e86295dc0bdf9b85a5a9256810c553239689d2ae8e80eeec81b4e2e910d8a6c0
-Signature: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.07.01-x86_64.iso.sig
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
-Key-fingerprint: 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
-Torrent: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.07.01-x86_64.iso.torrent
-Infohash: 0eb308382b47ee044a2c33a4f9feb46732671706
-Magnet: magnet:?xt=urn:btih:0eb308382b47ee044a2c33a4f9feb46732671706&amp;dn=archlinux-2026.07.01-x86_64.iso
-Verify: gpg</description>
-      <enclosure url="https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.07.01-x86_64.iso.torrent" type="application/x-bittorrent" length="86307" />
-      <category>arch</category>
     </item>
   </channel>
 </rss>
