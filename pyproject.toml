@@ -21,8 +21,8 @@ distro-iso-feed-audit = "distro_iso_feed.run_audit:main"
 dev = [
     "pytest>=8.0",
     "pytest-httpx>=0.35",
-    "feedparser>=6.0",
-    "ruff>=0.8",
+    "feedparser>=6.0.13",
+    "ruff>=0.16.0",
 ]
 
 [build-system]
