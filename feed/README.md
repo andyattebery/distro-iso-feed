@@ -35,7 +35,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | bazzite | nvidia-open | x86_64 | 44.20260802 | checksum | — |
 | bluefin | stable | x86_64 | stable-20260804 | checksum | — |
 | bluestar | default | x86_64 | 7.1.6-2-2026.08.07 | checksum | — |
-| cachyos | desktop | x86_64 | 260628 | gpg | — |
+| cachyos | desktop | x86_64 | 260809 | gpg | — |
 | cachyos | handheld | x86_64 | 260628 | gpg | — |
 | centos | boot | x86_64 | 20260803.0 | checksum | — |
 | centos | boot | aarch64 | 20260803.0 | checksum | — |
@@ -115,7 +115,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | garuda | xfce | x86_64 | 260309 | checksum | — |
 | gentoo | livegui | x86_64 | 20260712T170110Z | gpg | — |
 | gentoo | minimal | x86_64 | 20260712T170110Z | gpg | — |
-| gentoo | minimal | aarch64 | 20260802T233105Z | gpg | — |
+| gentoo | minimal | aarch64 | 20260809T234555Z | gpg | — |
 | gentoo | minimal | hppa | 20230418T174657Z | gpg | — |
 | gentoo | minimal | ia64 | 20240404T093405Z | gpg | — |
 | gentoo | minimal | x86 | 20260804T163056Z | gpg | — |
@@ -155,10 +155,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
 | netbsd | install | x86_64 | 11.0 | checksum | ✓ |
 | netbsd | install | aarch64 | 11.0 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.7201.ee48b147c18c | checksum | — |
-| nixos | graphical | aarch64 | 26.05.7201.ee48b147c18c | checksum | — |
-| nixos | minimal | x86_64 | 26.05.7201.ee48b147c18c | checksum | — |
-| nixos | minimal | aarch64 | 26.05.7201.ee48b147c18c | checksum | — |
+| nixos | graphical | x86_64 | 26.05.7273.8b8c811c7c25 | checksum | — |
+| nixos | graphical | aarch64 | 26.05.7273.8b8c811c7c25 | checksum | — |
+| nixos | minimal | x86_64 | 26.05.7273.8b8c811c7c25 | checksum | — |
+| nixos | minimal | aarch64 | 26.05.7273.8b8c811c7c25 | checksum | — |
 | nobara | gnome | x86_64 | 43-2026-04-19 | checksum | — |
 | nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | kde | x86_64 | 43-2026-04-19 | checksum | — |

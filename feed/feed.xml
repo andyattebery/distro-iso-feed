@@ -4,62 +4,96 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-08-09T07:20:05+00:00</updated>
+  <updated>2026-08-10T08:10:53+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.7201.ee48b147c18c</id>
-    <title>NixOS Minimal 26.05.7201.ee48b147c18c (aarch64)</title>
-    <updated>2026-08-09T07:20:05+00:00</updated>
-    <published>2026-08-09T07:20:05+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260809T234555Z</id>
+    <title>Gentoo Minimal Install CD 20260809T234555Z (aarch64)</title>
+    <updated>2026-08-10T08:10:53+00:00</updated>
+    <published>2026-08-10T08:10:53+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260809T234555Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.7201.ee48b147c18c (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 36cb641a3a4e882c7423d09b82f22b1c5d5e328afc71b7ff8775e07ba594949d
-Verify: checksum</summary>
+    <summary type="text">Gentoo Minimal Install CD 20260809T234555Z (aarch64)
+Filename: install-arm64-minimal-20260809T234555Z.iso
+sha256: bb5c527faca4142ae1992f9c3d4e363890d0011aa292a58aed14f4f3f08801de
+Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260809T234555Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.7201.ee48b147c18c</id>
-    <title>NixOS Minimal 26.05.7201.ee48b147c18c (x86_64)</title>
-    <updated>2026-08-09T07:20:05+00:00</updated>
-    <published>2026-08-09T07:20:05+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.7201.ee48b147c18c (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: ed42e235134e483ef745870bd5730fa4fdbac71f0718f5652abda4bab4b8b0af
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.7201.ee48b147c18c</id>
-    <title>NixOS Graphical 26.05.7201.ee48b147c18c (aarch64)</title>
-    <updated>2026-08-09T07:20:05+00:00</updated>
-    <published>2026-08-09T07:20:05+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.7273.8b8c811c7c25</id>
+    <title>NixOS Graphical 26.05.7273.8b8c811c7c25 (aarch64)</title>
+    <updated>2026-08-10T08:10:12+00:00</updated>
+    <published>2026-08-10T08:10:12+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.7201.ee48b147c18c (aarch64)
+    <summary type="text">NixOS Graphical 26.05.7273.8b8c811c7c25 (aarch64)
 Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: c608d41579d6135f1f37e912d4d7b5f841f8f26f8bb37e7680edc9fdc544b1bb
+sha256: 2257c82d976095ef55c24fb7073cc2e1281e70a25f8020ebfab74a586a107da5
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.7201.ee48b147c18c</id>
-    <title>NixOS Graphical 26.05.7201.ee48b147c18c (x86_64)</title>
-    <updated>2026-08-09T07:20:05+00:00</updated>
-    <published>2026-08-09T07:20:05+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.7273.8b8c811c7c25</id>
+    <title>NixOS Minimal 26.05.7273.8b8c811c7c25 (aarch64)</title>
+    <updated>2026-08-10T08:10:11+00:00</updated>
+    <published>2026-08-10T08:10:11+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.7273.8b8c811c7c25 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 495238b7476322d5b65fea030d225343348956316579a877d56ff2270f13de6c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.7273.8b8c811c7c25</id>
+    <title>NixOS Graphical 26.05.7273.8b8c811c7c25 (x86_64)</title>
+    <updated>2026-08-10T08:10:11+00:00</updated>
+    <published>2026-08-10T08:10:11+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.7201.ee48b147c18c (x86_64)
+    <summary type="text">NixOS Graphical 26.05.7273.8b8c811c7c25 (x86_64)
 Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: a5de8db817b8b82f83840802cfb3eee4cf3a0a70850a428493129c3d2b9c4f4b
+sha256: 9394680cfd328c891f19ab747c53f3310fc066ed1f39c71d7cba6e7820e4c6af
 Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.7273.8b8c811c7c25</id>
+    <title>NixOS Minimal 26.05.7273.8b8c811c7c25 (x86_64)</title>
+    <updated>2026-08-10T08:10:10+00:00</updated>
+    <published>2026-08-10T08:10:10+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.7273.8b8c811c7c25 (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: ca0534adad3472989d6e784015d4932403a38e866cc22ab3b34b129f98cf8ece
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/desktop/260809</id>
+    <title>CachyOS Desktop 260809 (x86_64)</title>
+    <updated>2026-08-09T17:25:54+00:00</updated>
+    <published>2026-08-09T17:25:54+00:00</published>
+    <link href="https://cachyos.org/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="cachyos" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">CachyOS Desktop 260809 (x86_64)
+Filename: cachyos-desktop-linux-260809.iso
+sha256: 959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c
+Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
+Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
+Verify: gpg</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260806</id>
@@ -515,23 +549,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
 Infohash: 5d76fafa035a7eb385aa6c499e2579f6a91c4f79
 Magnet: magnet:?xt=urn:btih:5d76fafa035a7eb385aa6c499e2579f6a91c4f79&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260802-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260802T233105Z</id>
-    <title>Gentoo Minimal Install CD 20260802T233105Z (aarch64)</title>
-    <updated>2026-08-03T10:13:11+00:00</updated>
-    <published>2026-08-03T10:13:11+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260802T233105Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Gentoo Minimal Install CD 20260802T233105Z (aarch64)
-Filename: install-arm64-minimal-20260802T233105Z.iso
-sha256: 9fe37ecd261116781dd1fea8bca1427eef5a455f1b2c142735530dcdd7dafaa7
-Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260802T233105Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -3997,23 +4014,6 @@ Verify: gpg</summary>
 Filename: cachyos-handheld-linux-260628.iso
 sha256: 670ba18b5d83b3d25307eda9d03a1cfb4ad9314cd28ea668d4c09720de68af3f
 Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/handheld/260628/cachyos-handheld-linux-260628.iso.sig/download
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
-Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/desktop/260628</id>
-    <title>CachyOS Desktop 260628 (x86_64)</title>
-    <updated>2026-06-28T14:21:02+00:00</updated>
-    <published>2026-06-28T14:21:02+00:00</published>
-    <link href="https://cachyos.org/" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="cachyos" label="distro" />
-    <category term="desktop" label="variant" />
-    <summary type="text">CachyOS Desktop 260628 (x86_64)
-Filename: cachyos-desktop-linux-260628.iso
-sha256: 136c84942eacdc6deed205fe7018c69fe7b70757f2f9b4010936ee05e060f336
-Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso.sig/download
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
 Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
 Verify: gpg</summary>

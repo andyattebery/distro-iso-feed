@@ -810,34 +810,34 @@
     "version": "7.1.6-2-2026.08.07"
   },
   "cachyos:desktop": {
-    "hash": "136c84942eacdc6deed205fe7018c69fe7b70757f2f9b4010936ee05e060f336",
+    "hash": "959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c",
     "release": {
       "arch": "x86_64",
-      "checksum": "136c84942eacdc6deed205fe7018c69fe7b70757f2f9b4010936ee05e060f336",
+      "checksum": "959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c",
       "checksum_algo": "sha256",
       "distro": "cachyos",
-      "download_url": "https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso/download",
-      "filename": "cachyos-desktop-linux-260628.iso",
+      "download_url": "https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download",
+      "filename": "cachyos-desktop-linux-260809.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://cachyos.org/",
-      "published": "2026-06-28T14:21:02+00:00",
+      "published": "2026-08-09T17:25:54+00:00",
       "signature_target": "image",
-      "signature_url": "https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso.sig/download",
+      "signature_url": "https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso.sig/download",
       "signing_key_fingerprint": "882DCFE48E2051D48E2562ABF3B607488DB35A47",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47",
       "size": null,
-      "title": "CachyOS Desktop 260628 (x86_64)",
+      "title": "CachyOS Desktop 260809 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "260628"
+      "version": "260809"
     },
-    "seen": "2026-07-09T23:40:37+00:00",
-    "version": "260628"
+    "seen": "2026-08-10T08:10:26+00:00",
+    "version": "260809"
   },
   "cachyos:handheld": {
     "hash": "670ba18b5d83b3d25307eda9d03a1cfb4ad9314cd28ea668d4c09720de68af3f",
@@ -3210,34 +3210,34 @@
     "version": "20260712T170110Z"
   },
   "gentoo:minimal:aarch64": {
-    "hash": "9fe37ecd261116781dd1fea8bca1427eef5a455f1b2c142735530dcdd7dafaa7",
+    "hash": "bb5c527faca4142ae1992f9c3d4e363890d0011aa292a58aed14f4f3f08801de",
     "release": {
       "arch": "aarch64",
-      "checksum": "9fe37ecd261116781dd1fea8bca1427eef5a455f1b2c142735530dcdd7dafaa7",
+      "checksum": "bb5c527faca4142ae1992f9c3d4e363890d0011aa292a58aed14f4f3f08801de",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260802T233105Z.iso",
-      "filename": "install-arm64-minimal-20260802T233105Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260809T234555Z.iso",
+      "filename": "install-arm64-minimal-20260809T234555Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260802T233105Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260809T234555Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260802T233105Z (aarch64)",
+      "title": "Gentoo Minimal Install CD 20260809T234555Z (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260802T233105Z"
+      "version": "20260809T234555Z"
     },
-    "seen": "2026-08-03T10:13:11+00:00",
-    "version": "20260802T233105Z"
+    "seen": "2026-08-10T08:10:53+00:00",
+    "version": "20260809T234555Z"
   },
   "gentoo:minimal:hppa": {
     "hash": "d5a125fca449a68a0dbc43485e288ca9504364ef96fb2621dcbe395868549fd4",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "a5de8db817b8b82f83840802cfb3eee4cf3a0a70850a428493129c3d2b9c4f4b",
+    "hash": "9394680cfd328c891f19ab747c53f3310fc066ed1f39c71d7cba6e7820e4c6af",
     "release": {
       "arch": "x86_64",
-      "checksum": "a5de8db817b8b82f83840802cfb3eee4cf3a0a70850a428493129c3d2b9c4f4b",
+      "checksum": "9394680cfd328c891f19ab747c53f3310fc066ed1f39c71d7cba6e7820e4c6af",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.7201.ee48b147c18c (x86_64)",
+      "title": "NixOS Graphical 26.05.7273.8b8c811c7c25 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.7201.ee48b147c18c"
+      "version": "26.05.7273.8b8c811c7c25"
     },
-    "seen": "2026-08-09T07:20:05+00:00",
-    "version": "26.05.7201.ee48b147c18c"
+    "seen": "2026-08-10T08:10:11+00:00",
+    "version": "26.05.7273.8b8c811c7c25"
   },
   "nixos:graphical:aarch64": {
-    "hash": "c608d41579d6135f1f37e912d4d7b5f841f8f26f8bb37e7680edc9fdc544b1bb",
+    "hash": "2257c82d976095ef55c24fb7073cc2e1281e70a25f8020ebfab74a586a107da5",
     "release": {
       "arch": "aarch64",
-      "checksum": "c608d41579d6135f1f37e912d4d7b5f841f8f26f8bb37e7680edc9fdc544b1bb",
+      "checksum": "2257c82d976095ef55c24fb7073cc2e1281e70a25f8020ebfab74a586a107da5",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.7201.ee48b147c18c (aarch64)",
+      "title": "NixOS Graphical 26.05.7273.8b8c811c7c25 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.7201.ee48b147c18c"
+      "version": "26.05.7273.8b8c811c7c25"
     },
-    "seen": "2026-08-09T07:20:05+00:00",
-    "version": "26.05.7201.ee48b147c18c"
+    "seen": "2026-08-10T08:10:12+00:00",
+    "version": "26.05.7273.8b8c811c7c25"
   },
   "nixos:minimal": {
-    "hash": "ed42e235134e483ef745870bd5730fa4fdbac71f0718f5652abda4bab4b8b0af",
+    "hash": "ca0534adad3472989d6e784015d4932403a38e866cc22ab3b34b129f98cf8ece",
     "release": {
       "arch": "x86_64",
-      "checksum": "ed42e235134e483ef745870bd5730fa4fdbac71f0718f5652abda4bab4b8b0af",
+      "checksum": "ca0534adad3472989d6e784015d4932403a38e866cc22ab3b34b129f98cf8ece",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.7201.ee48b147c18c (x86_64)",
+      "title": "NixOS Minimal 26.05.7273.8b8c811c7c25 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.7201.ee48b147c18c"
+      "version": "26.05.7273.8b8c811c7c25"
     },
-    "seen": "2026-08-09T07:20:05+00:00",
-    "version": "26.05.7201.ee48b147c18c"
+    "seen": "2026-08-10T08:10:10+00:00",
+    "version": "26.05.7273.8b8c811c7c25"
   },
   "nixos:minimal:aarch64": {
-    "hash": "36cb641a3a4e882c7423d09b82f22b1c5d5e328afc71b7ff8775e07ba594949d",
+    "hash": "495238b7476322d5b65fea030d225343348956316579a877d56ff2270f13de6c",
     "release": {
       "arch": "aarch64",
-      "checksum": "36cb641a3a4e882c7423d09b82f22b1c5d5e328afc71b7ff8775e07ba594949d",
+      "checksum": "495238b7476322d5b65fea030d225343348956316579a877d56ff2270f13de6c",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.7201.ee48b147c18c (aarch64)",
+      "title": "NixOS Minimal 26.05.7273.8b8c811c7c25 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.7201.ee48b147c18c"
+      "version": "26.05.7273.8b8c811c7c25"
     },
-    "seen": "2026-08-09T07:20:05+00:00",
-    "version": "26.05.7201.ee48b147c18c"
+    "seen": "2026-08-10T08:10:11+00:00",
+    "version": "26.05.7273.8b8c811c7c25"
   },
   "nobara:gnome": {
     "hash": "c52a5ad11082973bb67efa8d7b18b6b50f7cee71580b2a9ce28f36dff8f2c543",

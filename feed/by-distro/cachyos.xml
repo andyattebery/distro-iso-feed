@@ -4,7 +4,24 @@
   <title>Distro ISO Feed — cachyos</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/cachyos.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-06-28T14:25:13+00:00</updated>
+  <updated>2026-08-09T17:25:54+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/desktop/260809</id>
+    <title>CachyOS Desktop 260809 (x86_64)</title>
+    <updated>2026-08-09T17:25:54+00:00</updated>
+    <published>2026-08-09T17:25:54+00:00</published>
+    <link href="https://cachyos.org/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="cachyos" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">CachyOS Desktop 260809 (x86_64)
+Filename: cachyos-desktop-linux-260809.iso
+sha256: 959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c
+Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
+Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/handheld/260628</id>
     <title>CachyOS Handheld 260628 (x86_64)</title>
@@ -18,23 +35,6 @@
 Filename: cachyos-handheld-linux-260628.iso
 sha256: 670ba18b5d83b3d25307eda9d03a1cfb4ad9314cd28ea668d4c09720de68af3f
 Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/handheld/260628/cachyos-handheld-linux-260628.iso.sig/download
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
-Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/desktop/260628</id>
-    <title>CachyOS Desktop 260628 (x86_64)</title>
-    <updated>2026-06-28T14:21:02+00:00</updated>
-    <published>2026-06-28T14:21:02+00:00</published>
-    <link href="https://cachyos.org/" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="cachyos" label="distro" />
-    <category term="desktop" label="variant" />
-    <summary type="text">CachyOS Desktop 260628 (x86_64)
-Filename: cachyos-desktop-linux-260628.iso
-sha256: 136c84942eacdc6deed205fe7018c69fe7b70757f2f9b4010936ee05e060f336
-Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260628/cachyos-desktop-linux-260628.iso.sig/download
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
 Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
 Verify: gpg</summary>
