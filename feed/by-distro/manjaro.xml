@@ -4,20 +4,54 @@
   <title>Distro ISO Feed — manjaro</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/manjaro.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-18T08:14:38+00:00</updated>
+  <updated>2026-08-13T07:58:25+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/xfce/26.0.4-260327-linux618</id>
-    <title>Manjaro Xfce 26.0.4-260327-linux618 (x86_64)</title>
-    <updated>2026-07-18T08:14:38+00:00</updated>
-    <published>2026-07-18T08:14:38+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/xfce/26.1.0-260812-linux71</id>
+    <title>Manjaro Xfce 26.1.0-260812-linux71 (x86_64)</title>
+    <updated>2026-08-13T07:58:25+00:00</updated>
+    <published>2026-08-13T07:58:25+00:00</published>
     <link href="https://manjaro.org/" rel="alternate" type="text/html" />
-    <link href="https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-linux618.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.manjaro.org/xfce/26.1.0/manjaro-xfce-26.1.0-260812-linux71.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="manjaro" label="distro" />
     <category term="xfce" label="variant" />
-    <summary type="text">Manjaro Xfce 26.0.4-260327-linux618 (x86_64)
-Filename: manjaro-xfce-26.0.4-260327-linux618.iso
-sha256: 91024d93794a46c2605afdd0d102b7737b987d345770d106d9d0a1bb9af2563e
-Signature: https://download.manjaro.org/xfce/26.0.4/manjaro-xfce-26.0.4-260327-linux618.iso.sig
+    <summary type="text">Manjaro Xfce 26.1.0-260812-linux71 (x86_64)
+Filename: manjaro-xfce-26.1.0-260812-linux71.iso
+sha256: eb8e3d3f455475c06b508f0115e2247e8764562e36176203a2315552c84afc98
+Signature: https://download.manjaro.org/xfce/26.1.0/manjaro-xfce-26.1.0-260812-linux71.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/gnome/26.1.0-260812-linux71</id>
+    <title>Manjaro GNOME 26.1.0-260812-linux71 (x86_64)</title>
+    <updated>2026-08-13T07:58:24+00:00</updated>
+    <published>2026-08-13T07:58:24+00:00</published>
+    <link href="https://manjaro.org/" rel="alternate" type="text/html" />
+    <link href="https://download.manjaro.org/gnome/26.1.0/manjaro-gnome-26.1.0-260812-linux71.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="manjaro" label="distro" />
+    <category term="gnome" label="variant" />
+    <summary type="text">Manjaro GNOME 26.1.0-260812-linux71 (x86_64)
+Filename: manjaro-gnome-26.1.0-260812-linux71.iso
+sha256: b4c94d45c0da1992dfa9c7f3fbfd1bd5ebbdebaaa61f994660e0304357eb029f
+Signature: https://download.manjaro.org/gnome/26.1.0/manjaro-gnome-26.1.0-260812-linux71.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/kde/26.1.0-260812-linux71</id>
+    <title>Manjaro KDE Plasma 26.1.0-260812-linux71 (x86_64)</title>
+    <updated>2026-08-13T07:58:23+00:00</updated>
+    <published>2026-08-13T07:58:23+00:00</published>
+    <link href="https://manjaro.org/" rel="alternate" type="text/html" />
+    <link href="https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="manjaro" label="distro" />
+    <category term="kde" label="variant" />
+    <summary type="text">Manjaro KDE Plasma 26.1.0-260812-linux71 (x86_64)
+Filename: manjaro-kde-26.1.0-260812-linux71.iso
+sha256: 711b64362abe0b45348dc33bd4a2c654641e069b50ae9ae37c01771da880aa99
+Signature: https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso.sig
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</summary>
@@ -52,40 +86,6 @@ Verify: gpg</summary>
 Filename: manjaro-cinnamon-25.0.3-250609-linux612.iso
 sha256: 30460130c36e339fb97c39afe4c7f9587ecbc36b3dd7584bc898d3697d1d42ec
 Signature: https://download.manjaro.org/cinnamon/25.0.3/manjaro-cinnamon-25.0.3-250609-linux612.iso.sig
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/kde/26.0.4-260327-linux618</id>
-    <title>Manjaro KDE Plasma 26.0.4-260327-linux618 (x86_64)</title>
-    <updated>2026-07-09T23:40:40+00:00</updated>
-    <published>2026-07-09T23:40:40+00:00</published>
-    <link href="https://manjaro.org/" rel="alternate" type="text/html" />
-    <link href="https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="manjaro" label="distro" />
-    <category term="kde" label="variant" />
-    <summary type="text">Manjaro KDE Plasma 26.0.4-260327-linux618 (x86_64)
-Filename: manjaro-kde-26.0.4-260327-linux618.iso
-sha256: 9d9e5f6b1558a8850bf19ca21af9c71cf3810c69a77ab860130281d09f6a33b9
-Signature: https://download.manjaro.org/kde/26.0.4/manjaro-kde-26.0.4-260327-linux618.iso.sig
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/manjaro/gnome/26.0.4-260327-linux618</id>
-    <title>Manjaro GNOME 26.0.4-260327-linux618 (x86_64)</title>
-    <updated>2026-07-09T23:40:40+00:00</updated>
-    <published>2026-07-09T23:40:40+00:00</published>
-    <link href="https://manjaro.org/" rel="alternate" type="text/html" />
-    <link href="https://download.manjaro.org/gnome/26.0.4/manjaro-gnome-26.0.4-260327-linux618.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="manjaro" label="distro" />
-    <category term="gnome" label="variant" />
-    <summary type="text">Manjaro GNOME 26.0.4-260327-linux618 (x86_64)
-Filename: manjaro-gnome-26.0.4-260327-linux618.iso
-sha256: a5eaa016686a6db171a553e374bf8b3ec48ce320ea0d8e1192c4499ae4264fc1
-Signature: https://download.manjaro.org/gnome/26.0.4/manjaro-gnome-26.0.4-260327-linux618.iso.sig
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</summary>
