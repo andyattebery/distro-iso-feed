@@ -4,8 +4,326 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Wed, 19 Aug 2026 07:11:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 07:12:40 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Aurora stable-20260819.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20260819.1</guid>
+      <pubDate>Thu, 20 Aug 2026 07:12:40 +0000</pubDate>
+      <description>Aurora stable-20260819.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 8d61bc79d2b35ffbc30d6e6c916c6ff11828742ba1111bcfd24ca8aa5d07092c
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora NVIDIA Open stable-20260819.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20260819.1</guid>
+      <pubDate>Thu, 20 Aug 2026 07:12:40 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20260819.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 18fd6906680cd21b641aa3514cc9034b41b37ea828b428d5473f74a1b800a4bf
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.8045.b18a4b905f8d (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.8045.b18a4b905f8d</guid>
+      <pubDate>Thu, 20 Aug 2026 07:12:37 +0000</pubDate>
+      <description>NixOS Graphical 26.05.8045.b18a4b905f8d (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 01900dac1d46ba6007a5f733df92f985a1a09450a4106165510074ac43826158
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.8045.b18a4b905f8d (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.8045.b18a4b905f8d</guid>
+      <pubDate>Thu, 20 Aug 2026 07:12:36 +0000</pubDate>
+      <description>NixOS Minimal 26.05.8045.b18a4b905f8d (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 0f7325155e82f318064cdbec57147dd58c6b70bb8dcff8e7add4b3a54625e9be
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.8045.b18a4b905f8d (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.8045.b18a4b905f8d</guid>
+      <pubDate>Thu, 20 Aug 2026 07:12:36 +0000</pubDate>
+      <description>NixOS Graphical 26.05.8045.b18a4b905f8d (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: e644a3d0011ae9ce7deddeeda61c9d03c4df3ba4a04f7e2c69df1b8dc8e1fe5c
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.8045.b18a4b905f8d (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.8045.b18a4b905f8d</guid>
+      <pubDate>Thu, 20 Aug 2026 07:12:35 +0000</pubDate>
+      <description>NixOS Minimal 26.05.8045.b18a4b905f8d (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 512b53770490c67f7d97bd74767f3e4e077469de2d96d549b57d0472cc252657
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>Tails 7.11 (x86_64)</title>
+      <link>https://download.tails.net/tails/stable/tails-amd64-7.11/tails-amd64-7.11.iso</link>
+      <guid isPermaLink="false">tails:iso:7.11</guid>
+      <pubDate>Thu, 20 Aug 2026 07:11:43 +0000</pubDate>
+      <description>Tails 7.11 (x86_64)
+Filename: tails-amd64-7.11.iso
+Signature: https://download.tails.net/tails/stable/tails-amd64-7.11/tails-amd64-7.11.iso.sig
+Signing-key: https://tails.net/tails-signing.key
+Key-fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
+Verify: gpg
+WARNING: no published checksum — integrity unverifiable</description>
+      <enclosure url="https://download.tails.net/tails/stable/tails-amd64-7.11/tails-amd64-7.11.iso" type="application/x-iso9660-image" length="0" />
+      <category>tails</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:10:02 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20260818 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: 9bffed5a519ad5abeee374b5d41624d196178236fcaed02f23fbabd2e9abfe60
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:10:01 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20260818 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: f4d72edfe60cd7039ed52c5240bb72dd65689150e17f3831bb5d1d118eb34b88
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:10:00 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20260818 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: f81bb52fd93c75361c442ad2ae345abefa6c0192c494bf732fd4acd1460dd9ea
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:09:59 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20260818 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: c1d019548c3450804535e1a2339a03c80a379258363ceed4cb96acb95a089705
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:09:58 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260818 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: 9ee450c907ceb3c55a301ca81307c1ae7c58e24d08c1782c5b9e8976fda3c7fd
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:09:57 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260818 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: c98fe8403bc92fb84b7477fb30087966acc75979518b89829b33ca15260285c4
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: bc7b9c1a1c201af3fb9f351ec784575c1f08b554
+Magnet: magnet:?xt=urn:btih:bc7b9c1a1c201af3fb9f351ec784575c1f08b554&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260818-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260818 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260818</guid>
+      <pubDate>Thu, 20 Aug 2026 07:09:55 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260818 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 870a0c2742109f9c5dc26e5592b605d17ab9b310fdf750932e187f69fd579db8
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
+Infohash: 14a3a0d4d7e8c60d397811713c62069f5c507132
+Magnet: magnet:?xt=urn:btih:14a3a0d4d7e8c60d397811713c62069f5c507132&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260818-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>Garuda GNOME 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/gnome/260819/garuda-gnome-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:gnome:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 21:06:31 +0000</pubDate>
+      <description>Garuda GNOME 260819 (x86_64)
+Filename: garuda-gnome-linux-garuda-260819.iso
+sha256: 3660d518955494589d1bbedf0832a3ad3372dcbc658bd605c947f033430d2521
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/gnome/260819/garuda-gnome-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Hyprland 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/hyprland/260819/garuda-hyprland-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:hyprland:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 20:48:02 +0000</pubDate>
+      <description>Garuda Hyprland 260819 (x86_64)
+Filename: garuda-hyprland-linux-garuda-260819.iso
+sha256: d5e18231e8e21ba55b4861d34c850c4d9facdf5d3411c3f8b1dda7afef819d42
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/hyprland/260819/garuda-hyprland-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Mokka 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/mokka/260819/garuda-mokka-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:mokka:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 19:40:47 +0000</pubDate>
+      <description>Garuda Mokka 260819 (x86_64)
+Filename: garuda-mokka-linux-garuda-260819.iso
+sha256: 1cdfc50f5ffe87d1a294763270e802cb388a510b7fc3365c4a46fb3022e25923
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/mokka/260819/garuda-mokka-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Sway 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/sway/260819/garuda-sway-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:sway:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 19:29:38 +0000</pubDate>
+      <description>Garuda Sway 260819 (x86_64)
+Filename: garuda-sway-linux-garuda-260819.iso
+sha256: 59e069c699b0b495f0bb0d7f9458d9552c0cd8e4c62e22111313e393adb4530d
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/sway/260819/garuda-sway-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda i3 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/i3/260819/garuda-i3-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:i3:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 19:20:15 +0000</pubDate>
+      <description>Garuda i3 260819 (x86_64)
+Filename: garuda-i3-linux-garuda-260819.iso
+sha256: e02954e639fa14fbbd47f3a84690853163a62907df5b7e2498e592727bf15c5a
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/i3/260819/garuda-i3-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Cinnamon 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/cinnamon/260819/garuda-cinnamon-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:cinnamon:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 19:12:13 +0000</pubDate>
+      <description>Garuda Cinnamon 260819 (x86_64)
+Filename: garuda-cinnamon-linux-garuda-260819.iso
+sha256: 41bc490bc1d7cdee8be49d16f0d1fa8ae7f449157da0ed38ab1637068ed21d47
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/cinnamon/260819/garuda-cinnamon-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda KDE Lite 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/kde-lite/260819/garuda-kde-lite-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:kde-lite:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 18:59:50 +0000</pubDate>
+      <description>Garuda KDE Lite 260819 (x86_64)
+Filename: garuda-kde-lite-linux-garuda-260819.iso
+sha256: 686b69d506bcfa105cd09b873e6e6e5b7b5b5a45a72c7ed974f4999d5e682764
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/kde-lite/260819/garuda-kde-lite-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Xfce 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/xfce/260819/garuda-xfce-linux-lts-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:xfce:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 18:53:16 +0000</pubDate>
+      <description>Garuda Xfce 260819 (x86_64)
+Filename: garuda-xfce-linux-lts-260819.iso
+sha256: 97003774eea38a11561120f43dd238023628d2c5d4f7447fa9f2c01dbd48f949
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/xfce/260819/garuda-xfce-linux-lts-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Dr460nized Gaming 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized-gaming/260819/garuda-dr460nized-gaming-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:dr460nized-gaming:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 18:44:25 +0000</pubDate>
+      <description>Garuda Dr460nized Gaming 260819 (x86_64)
+Filename: garuda-dr460nized-gaming-linux-garuda-260819.iso
+sha256: d40fabba6edf25c17001ccd84e66c2f7a6449156e70b0c36431d6995a6caeb11
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized-gaming/260819/garuda-dr460nized-gaming-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
+    <item>
+      <title>Garuda Dr460nized 260819 (x86_64)</title>
+      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized/260819/garuda-dr460nized-linux-garuda-260819.iso/download</link>
+      <guid isPermaLink="false">garuda:dr460nized:260819</guid>
+      <pubDate>Wed, 19 Aug 2026 18:32:39 +0000</pubDate>
+      <description>Garuda Dr460nized 260819 (x86_64)
+Filename: garuda-dr460nized-linux-garuda-260819.iso
+sha256: 3dac6b04225fe9577ea0143a1c712e13316dff26985c2c4417f8c5e4af77f7f7
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized/260819/garuda-dr460nized-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>garuda</category>
+    </item>
     <item>
       <title>Gentoo Minimal Install CD 20260818T161602Z (x86)</title>
       <link>https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso</link>
@@ -56,54 +374,6 @@ sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
 Verify: checksum</description>
       <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>bazzite</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.7984.c69ae8fb8fae (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.7984.c69ae8fb8fae</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:15 +0000</pubDate>
-      <description>NixOS Graphical 26.05.7984.c69ae8fb8fae (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: e9f64bb3450bd309a1e7ce819f27f4eea62efa0623e5c571d2f1cc6de6e53e91
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.7984.c69ae8fb8fae (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.7984.c69ae8fb8fae</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:14 +0000</pubDate>
-      <description>NixOS Minimal 26.05.7984.c69ae8fb8fae (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 39f1330174dfe69b3c5a808d4f413b161cd862ebdc52fbd7f28d14b403a3b1fb
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.7984.c69ae8fb8fae (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.7984.c69ae8fb8fae</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:14 +0000</pubDate>
-      <description>NixOS Graphical 26.05.7984.c69ae8fb8fae (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 1df1df3c9d0b073255afdd046f96268b5e6d1ea3cb7576dd3b0d571b79d829f4
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.7984.c69ae8fb8fae (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.7984.c69ae8fb8fae</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:13 +0000</pubDate>
-      <description>NixOS Minimal 26.05.7984.c69ae8fb8fae (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: bdeed4aa26173ec13e9df672eb299d68f49c3bc927c4d59865707a8281b30eb5
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>CentOS Stream DVD 20260818.0 (s390x)</title>
@@ -200,141 +470,6 @@ sha256: 63e4e1df7d3f849576f3b98fc1a4dd1919d83341115d4fb9b017dab05f47f3b5
 Verify: checksum</description>
       <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>centos</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:18 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20260817 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: 5a2cc6cfeaf282191b325705189095a5569d928531d9902fb117de217dbc7db0
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:17 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20260817 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 929f29fe2ece0c1b5f4dbfea94412b07894c4869f0e8070d7d106d0e2f28cfa2
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:15 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20260817 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 5ea0515da2ac99116ea7d19b92ef36310cac93c2d6697a9da9232f6f29a8a915
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:14 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20260817 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: 0cc5a2de0e37b15999e0036003a9adda604fdc449f9f7872c2c620aa1bb73e68
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:13 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20260817 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: de87d58ccae7df42318dd661dfaf71aca916bb383dd425de936153b33921ed52
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:11 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260817 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 3dedb20ae03996f9e1744f2a3584db610a058bd37f39e8c0dd60a1a23ee69c12
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 9a9efa6c45b3a2bfbdc511ac3d60d4a70a1ca481
-Magnet: magnet:?xt=urn:btih:9a9efa6c45b3a2bfbdc511ac3d60d4a70a1ca481&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260817-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260817 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260817</guid>
-      <pubDate>Wed, 19 Aug 2026 07:09:09 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260817 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 2ebe4ef37b35fbbd0354ebb0f99255350964a2a030debe40d2e83dbed88ddcda
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: bf55d13baa99be47e60528880e80df9309cf9ed2
-Magnet: magnet:?xt=urn:btih:bf55d13baa99be47e60528880e80df9309cf9ed2&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260817-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>Aurora stable-20260818.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20260818.1</guid>
-      <pubDate>Tue, 18 Aug 2026 07:08:58 +0000</pubDate>
-      <description>Aurora stable-20260818.1 (x86_64)
-Filename: aurora-stable-webui-x86_64.iso
-sha256: 8d61bc79d2b35ffbc30d6e6c916c6ff11828742ba1111bcfd24ca8aa5d07092c
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Aurora NVIDIA Open stable-20260818.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20260818.1</guid>
-      <pubDate>Tue, 18 Aug 2026 07:08:58 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20260818.1 (x86_64)
-Filename: aurora-nvidia-open-stable-webui-x86_64.iso
-sha256: 18fd6906680cd21b641aa3514cc9034b41b37ea828b428d5473f74a1b800a4bf
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
     </item>
     <item>
       <title>Bluefin stable-20260818 (x86_64)</title>
@@ -620,21 +755,6 @@ Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download" type="application/x-iso9660-image" length="0" />
       <category>cachyos</category>
-    </item>
-    <item>
-      <title>Tails 7.10.1 (x86_64)</title>
-      <link>https://download.tails.net/tails/stable/tails-amd64-7.10.1/tails-amd64-7.10.1.iso</link>
-      <guid isPermaLink="false">tails:iso:7.10.1</guid>
-      <pubDate>Wed, 05 Aug 2026 09:09:50 +0000</pubDate>
-      <description>Tails 7.10.1 (x86_64)
-Filename: tails-amd64-7.10.1.iso
-Signature: https://download.tails.net/tails/stable/tails-amd64-7.10.1/tails-amd64-7.10.1.iso.sig
-Signing-key: https://tails.net/tails-signing.key
-Key-fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
-Verify: gpg
-WARNING: no published checksum — integrity unverifiable</description>
-      <enclosure url="https://download.tails.net/tails/stable/tails-amd64-7.10.1/tails-amd64-7.10.1.iso" type="application/x-iso9660-image" length="0" />
-      <category>tails</category>
     </item>
     <item>
       <title>Arch Linux 2026.08.01 (x86_64)</title>
@@ -3589,126 +3709,6 @@ Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso/download" type="application/x-iso9660-image" length="0" />
       <category>antix</category>
-    </item>
-    <item>
-      <title>Garuda Mokka 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/mokka/260309/garuda-mokka-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:mokka:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 06:00:48 +0000</pubDate>
-      <description>Garuda Mokka 260309 (x86_64)
-Filename: garuda-mokka-linux-zen-260309.iso
-sha256: 067262d8589febdd42003cebf0836696bf4c210570ea95ec08224761068c617e
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/mokka/260309/garuda-mokka-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda Sway 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/sway/260309/garuda-sway-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:sway:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 05:49:43 +0000</pubDate>
-      <description>Garuda Sway 260309 (x86_64)
-Filename: garuda-sway-linux-zen-260309.iso
-sha256: 189cae773efb6b207b8d3920bc9b6d147eca309a1ee5f27e8ebc493e77566ae6
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/sway/260309/garuda-sway-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda i3 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/i3/260309/garuda-i3-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:i3:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 05:39:36 +0000</pubDate>
-      <description>Garuda i3 260309 (x86_64)
-Filename: garuda-i3-linux-zen-260309.iso
-sha256: c6f34b83e6d8979c402ac11bc5a8f68bdbe5e2291b0c98982621f852afa0b0bc
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/i3/260309/garuda-i3-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda Cinnamon 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/cinnamon/260309/garuda-cinnamon-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:cinnamon:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 05:30:41 +0000</pubDate>
-      <description>Garuda Cinnamon 260309 (x86_64)
-Filename: garuda-cinnamon-linux-zen-260309.iso
-sha256: e88e35bfa297e7272ff2da8bddd4f1feee70f24625c903d2a982431956ae7584
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/cinnamon/260309/garuda-cinnamon-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda Hyprland 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/hyprland/260309/garuda-hyprland-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:hyprland:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 05:21:31 +0000</pubDate>
-      <description>Garuda Hyprland 260309 (x86_64)
-Filename: garuda-hyprland-linux-zen-260309.iso
-sha256: 98155bc036a029e480201483d2ef0e35759079950d4b94f16dc4767e95c5d4f4
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/hyprland/260309/garuda-hyprland-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda KDE Lite 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/kde-lite/260309/garuda-kde-lite-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:kde-lite:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 05:12:27 +0000</pubDate>
-      <description>Garuda KDE Lite 260309 (x86_64)
-Filename: garuda-kde-lite-linux-zen-260309.iso
-sha256: be8e0573c342238e5b6c0fd69089d411551c4ecef2d81db29ce67ac5152eae6a
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/kde-lite/260309/garuda-kde-lite-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda GNOME 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/gnome/260309/garuda-gnome-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:gnome:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 05:05:00 +0000</pubDate>
-      <description>Garuda GNOME 260309 (x86_64)
-Filename: garuda-gnome-linux-zen-260309.iso
-sha256: 41415ce3299b9ac4c8e9684dd0be5d6891c48fecdcec65020bb51a75bb8204e0
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/gnome/260309/garuda-gnome-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda Xfce 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/xfce/260309/garuda-xfce-linux-lts-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:xfce:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 04:54:06 +0000</pubDate>
-      <description>Garuda Xfce 260309 (x86_64)
-Filename: garuda-xfce-linux-lts-260309.iso
-sha256: dcefc2e2acd3cfbe548300f9417c1cf91fb7c4719e65cbb6aa19337d32886b94
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/xfce/260309/garuda-xfce-linux-lts-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda Dr460nized Gaming 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized-gaming/260309/garuda-dr460nized-gaming-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:dr460nized-gaming:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 04:43:02 +0000</pubDate>
-      <description>Garuda Dr460nized Gaming 260309 (x86_64)
-Filename: garuda-dr460nized-gaming-linux-zen-260309.iso
-sha256: 04722e4ca6ad406f36b491cb56798696df44541b2fdca5e8abdefb36d8c46cc3
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized-gaming/260309/garuda-dr460nized-gaming-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
-    </item>
-    <item>
-      <title>Garuda Dr460nized 260309 (x86_64)</title>
-      <link>https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized/260309/garuda-dr460nized-linux-zen-260309.iso/download</link>
-      <guid isPermaLink="false">garuda:dr460nized:260309</guid>
-      <pubDate>Mon, 09 Mar 2026 04:22:06 +0000</pubDate>
-      <description>Garuda Dr460nized 260309 (x86_64)
-Filename: garuda-dr460nized-linux-zen-260309.iso
-sha256: 95a87feb22e1bc3bf8cac5a0a92aea386364d849ca01d4eac766b6a20f531d80
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized/260309/garuda-dr460nized-linux-zen-260309.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>garuda</category>
     </item>
   </channel>
 </rss>
