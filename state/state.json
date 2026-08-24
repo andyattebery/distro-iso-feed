@@ -780,34 +780,34 @@
     "version": "stable-20260818"
   },
   "bluestar:default": {
-    "hash": "e80b1530a7e2264d92374e9e92d0182b",
+    "hash": "66b14bf22d9c0d26e2ae037ae71d7147",
     "release": {
       "arch": "x86_64",
-      "checksum": "e80b1530a7e2264d92374e9e92d0182b",
+      "checksum": "66b14bf22d9c0d26e2ae037ae71d7147",
       "checksum_algo": "md5",
       "distro": "bluestar",
-      "download_url": "https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.8-3-2026.08.12-x86_64.iso/download",
-      "filename": "bslx-7.1.8-3-2026.08.12-x86_64.iso",
+      "download_url": "https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.9-1-2026.08.23-x86_64.iso/download",
+      "filename": "bslx-7.1.9-1-2026.08.23-x86_64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://bluestarlinux.sourceforge.net/",
-      "published": "2026-08-13T04:08:01+00:00",
+      "published": "2026-08-23T22:27:42+00:00",
       "signature_target": null,
       "signature_url": null,
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bluestar Linux 7.1.8-3-2026.08.12 (x86_64)",
+      "title": "Bluestar Linux 7.1.9-1-2026.08.23 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "default",
-      "version": "7.1.8-3-2026.08.12"
+      "version": "7.1.9-1-2026.08.23"
     },
-    "seen": "2026-08-13T07:58:10+00:00",
-    "version": "7.1.8-3-2026.08.12"
+    "seen": "2026-08-24T07:35:16+00:00",
+    "version": "7.1.9-1-2026.08.23"
   },
   "cachyos:desktop": {
     "hash": "959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c",
@@ -3150,94 +3150,94 @@
     "version": "260819"
   },
   "gentoo:livegui": {
-    "hash": "74a1357d42f4879008cc5ed37541154af24da38928d008920e20357f1bfdf470",
+    "hash": "af4323489d44be5715334ee3017acaf7d8cfa54668b7a3bbf24ac728a1a482a9",
     "release": {
       "arch": "x86_64",
-      "checksum": "74a1357d42f4879008cc5ed37541154af24da38928d008920e20357f1bfdf470",
+      "checksum": "af4323489d44be5715334ee3017acaf7d8cfa54668b7a3bbf24ac728a1a482a9",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260811T083102Z.iso",
-      "filename": "livegui-amd64-20260811T083102Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260823T153057Z.iso",
+      "filename": "livegui-amd64-20260823T153057Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260811T083102Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260823T153057Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo LiveGUI 20260811T083102Z (x86_64)",
+      "title": "Gentoo LiveGUI 20260823T153057Z (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "livegui",
-      "version": "20260811T083102Z"
+      "version": "20260823T153057Z"
     },
-    "seen": "2026-08-12T07:57:51+00:00",
-    "version": "20260811T083102Z"
+    "seen": "2026-08-24T07:36:04+00:00",
+    "version": "20260823T153057Z"
   },
   "gentoo:minimal": {
-    "hash": "a058ca1e178c63d19814f3646126615fd840f638e5c515d717db2d93cd9cc4c4",
+    "hash": "1ba2c4bc525ce57b6397695afa93ecee35a15184fb3409dcdfa9f3f1967ad4bd",
     "release": {
       "arch": "x86_64",
-      "checksum": "a058ca1e178c63d19814f3646126615fd840f638e5c515d717db2d93cd9cc4c4",
+      "checksum": "1ba2c4bc525ce57b6397695afa93ecee35a15184fb3409dcdfa9f3f1967ad4bd",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260816T170110Z.iso",
-      "filename": "install-amd64-minimal-20260816T170110Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260823T153057Z.iso",
+      "filename": "install-amd64-minimal-20260823T153057Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260816T170110Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260823T153057Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260816T170110Z (x86_64)",
+      "title": "Gentoo Minimal Install CD 20260823T153057Z (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260816T170110Z"
+      "version": "20260823T153057Z"
     },
-    "seen": "2026-08-17T07:22:49+00:00",
-    "version": "20260816T170110Z"
+    "seen": "2026-08-24T07:36:01+00:00",
+    "version": "20260823T153057Z"
   },
   "gentoo:minimal:aarch64": {
-    "hash": "48e02dbcd3ad679ee861a526eede4123b31f825d7e59fbbe0a4d34fdb4c8418f",
+    "hash": "eb64f190e1c91eb66c88815fda91860dd676d25a09b73edbf5746021e22b54f1",
     "release": {
       "arch": "aarch64",
-      "checksum": "48e02dbcd3ad679ee861a526eede4123b31f825d7e59fbbe0a4d34fdb4c8418f",
+      "checksum": "eb64f190e1c91eb66c88815fda91860dd676d25a09b73edbf5746021e22b54f1",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260816T204555Z.iso",
-      "filename": "install-arm64-minimal-20260816T204555Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260823T234554Z.iso",
+      "filename": "install-arm64-minimal-20260823T234554Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260816T204555Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260823T234554Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260816T204555Z (aarch64)",
+      "title": "Gentoo Minimal Install CD 20260823T234554Z (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260816T204555Z"
+      "version": "20260823T234554Z"
     },
-    "seen": "2026-08-17T07:22:50+00:00",
-    "version": "20260816T204555Z"
+    "seen": "2026-08-24T07:36:02+00:00",
+    "version": "20260823T234554Z"
   },
   "gentoo:minimal:hppa": {
     "hash": "d5a125fca449a68a0dbc43485e288ca9504364ef96fb2621dcbe395868549fd4",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "2a783ebef1eff1360b63d0a4106c5221e6a7c2cef5b2ed59510e360308097f45",
+    "hash": "f7e89d36c7e102a1ade3ccc845b01779f89b06e0bd3006daf2c6f477caddaf09",
     "release": {
       "arch": "x86_64",
-      "checksum": "2a783ebef1eff1360b63d0a4106c5221e6a7c2cef5b2ed59510e360308097f45",
+      "checksum": "f7e89d36c7e102a1ade3ccc845b01779f89b06e0bd3006daf2c6f477caddaf09",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.8111.5880666fd9eb (x86_64)",
+      "title": "NixOS Graphical 26.05.8255.a9e6d84f9c2f (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.8111.5880666fd9eb"
+      "version": "26.05.8255.a9e6d84f9c2f"
     },
-    "seen": "2026-08-22T07:05:01+00:00",
-    "version": "26.05.8111.5880666fd9eb"
+    "seen": "2026-08-24T07:35:09+00:00",
+    "version": "26.05.8255.a9e6d84f9c2f"
   },
   "nixos:graphical:aarch64": {
-    "hash": "0613bb5de34a9c5ecd55b16b7c79d6ecbe31b04cf5b49fac64e05b12f148ec17",
+    "hash": "f1884d6bf1fc4ffa99ec4085f5ca6d437088360493aa3971bd0e5ee3f779d58b",
     "release": {
       "arch": "aarch64",
-      "checksum": "0613bb5de34a9c5ecd55b16b7c79d6ecbe31b04cf5b49fac64e05b12f148ec17",
+      "checksum": "f1884d6bf1fc4ffa99ec4085f5ca6d437088360493aa3971bd0e5ee3f779d58b",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.8111.5880666fd9eb (aarch64)",
+      "title": "NixOS Graphical 26.05.8255.a9e6d84f9c2f (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.8111.5880666fd9eb"
+      "version": "26.05.8255.a9e6d84f9c2f"
     },
-    "seen": "2026-08-22T07:05:01+00:00",
-    "version": "26.05.8111.5880666fd9eb"
+    "seen": "2026-08-24T07:35:09+00:00",
+    "version": "26.05.8255.a9e6d84f9c2f"
   },
   "nixos:minimal": {
-    "hash": "2fdadb46de65e53bb407c3045212dff751cd5d5a9e3dcb51b15d300b32716592",
+    "hash": "5f74965b030247f03c6a7f68cafcab95211fd1c1cbcbe859ef6f4d7bf7e57e77",
     "release": {
       "arch": "x86_64",
-      "checksum": "2fdadb46de65e53bb407c3045212dff751cd5d5a9e3dcb51b15d300b32716592",
+      "checksum": "5f74965b030247f03c6a7f68cafcab95211fd1c1cbcbe859ef6f4d7bf7e57e77",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.8111.5880666fd9eb (x86_64)",
+      "title": "NixOS Minimal 26.05.8255.a9e6d84f9c2f (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.8111.5880666fd9eb"
+      "version": "26.05.8255.a9e6d84f9c2f"
     },
-    "seen": "2026-08-22T07:05:01+00:00",
-    "version": "26.05.8111.5880666fd9eb"
+    "seen": "2026-08-24T07:35:08+00:00",
+    "version": "26.05.8255.a9e6d84f9c2f"
   },
   "nixos:minimal:aarch64": {
-    "hash": "cda49ff9688d1f6fb759e98d85ebfbf5cfb3963c755be4cac3b4f76ee010f5da",
+    "hash": "89a3252e90b43cfb0aa3b4863e40c4db3b47ec42c1d10aafd6ceb073656f15c4",
     "release": {
       "arch": "aarch64",
-      "checksum": "cda49ff9688d1f6fb759e98d85ebfbf5cfb3963c755be4cac3b4f76ee010f5da",
+      "checksum": "89a3252e90b43cfb0aa3b4863e40c4db3b47ec42c1d10aafd6ceb073656f15c4",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.8111.5880666fd9eb (aarch64)",
+      "title": "NixOS Minimal 26.05.8255.a9e6d84f9c2f (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.8111.5880666fd9eb"
+      "version": "26.05.8255.a9e6d84f9c2f"
     },
-    "seen": "2026-08-22T07:05:01+00:00",
-    "version": "26.05.8111.5880666fd9eb"
+    "seen": "2026-08-24T07:35:09+00:00",
+    "version": "26.05.8255.a9e6d84f9c2f"
   },
   "nobara:gnome": {
     "hash": "c52a5ad11082973bb67efa8d7b18b6b50f7cee71580b2a9ce28f36dff8f2c543",

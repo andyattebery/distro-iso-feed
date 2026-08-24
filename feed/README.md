@@ -34,7 +34,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | bazzite | desktop | x86_64 | 44.20260820 | checksum | — |
 | bazzite | nvidia-open | x86_64 | 44.20260820 | checksum | — |
 | bluefin | stable | x86_64 | stable-20260818 | checksum | — |
-| bluestar | default | x86_64 | 7.1.8-3-2026.08.12 | checksum | — |
+| bluestar | default | x86_64 | 7.1.9-1-2026.08.23 | checksum | — |
 | cachyos | desktop | x86_64 | 260809 | gpg | — |
 | cachyos | handheld | x86_64 | 260628 | gpg | — |
 | centos | boot | x86_64 | 20260818.0 | checksum | — |
@@ -113,9 +113,9 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | garuda | mokka | x86_64 | 260819 | checksum | — |
 | garuda | sway | x86_64 | 260819 | checksum | — |
 | garuda | xfce | x86_64 | 260819 | checksum | — |
-| gentoo | livegui | x86_64 | 20260811T083102Z | gpg | — |
-| gentoo | minimal | x86_64 | 20260816T170110Z | gpg | — |
-| gentoo | minimal | aarch64 | 20260816T204555Z | gpg | — |
+| gentoo | livegui | x86_64 | 20260823T153057Z | gpg | — |
+| gentoo | minimal | x86_64 | 20260823T153057Z | gpg | — |
+| gentoo | minimal | aarch64 | 20260823T234554Z | gpg | — |
 | gentoo | minimal | hppa | 20230418T174657Z | gpg | — |
 | gentoo | minimal | ia64 | 20240404T093405Z | gpg | — |
 | gentoo | minimal | x86 | 20260818T161602Z | gpg | — |
@@ -155,10 +155,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
 | netbsd | install | x86_64 | 11.0 | checksum | ✓ |
 | netbsd | install | aarch64 | 11.0 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.8111.5880666fd9eb | checksum | — |
-| nixos | graphical | aarch64 | 26.05.8111.5880666fd9eb | checksum | — |
-| nixos | minimal | x86_64 | 26.05.8111.5880666fd9eb | checksum | — |
-| nixos | minimal | aarch64 | 26.05.8111.5880666fd9eb | checksum | — |
+| nixos | graphical | x86_64 | 26.05.8255.a9e6d84f9c2f | checksum | — |
+| nixos | graphical | aarch64 | 26.05.8255.a9e6d84f9c2f | checksum | — |
+| nixos | minimal | x86_64 | 26.05.8255.a9e6d84f9c2f | checksum | — |
+| nixos | minimal | aarch64 | 26.05.8255.a9e6d84f9c2f | checksum | — |
 | nobara | gnome | x86_64 | 43-2026-04-19 | checksum | — |
 | nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | kde | x86_64 | 43-2026-04-19 | checksum | — |

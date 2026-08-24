@@ -4,7 +4,128 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-08-23T07:07:18+00:00</updated>
+  <updated>2026-08-24T07:36:04+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/livegui/20260823T153057Z</id>
+    <title>Gentoo LiveGUI 20260823T153057Z (x86_64)</title>
+    <updated>2026-08-24T07:36:04+00:00</updated>
+    <published>2026-08-24T07:36:04+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260823T153057Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="livegui" label="variant" />
+    <summary type="text">Gentoo LiveGUI 20260823T153057Z (x86_64)
+Filename: livegui-amd64-20260823T153057Z.iso
+sha256: af4323489d44be5715334ee3017acaf7d8cfa54668b7a3bbf24ac728a1a482a9
+Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260823T153057Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260823T234554Z</id>
+    <title>Gentoo Minimal Install CD 20260823T234554Z (aarch64)</title>
+    <updated>2026-08-24T07:36:02+00:00</updated>
+    <published>2026-08-24T07:36:02+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260823T234554Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260823T234554Z (aarch64)
+Filename: install-arm64-minimal-20260823T234554Z.iso
+sha256: eb64f190e1c91eb66c88815fda91860dd676d25a09b73edbf5746021e22b54f1
+Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260823T234554Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal/20260823T153057Z</id>
+    <title>Gentoo Minimal Install CD 20260823T153057Z (x86_64)</title>
+    <updated>2026-08-24T07:36:01+00:00</updated>
+    <published>2026-08-24T07:36:01+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260823T153057Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260823T153057Z (x86_64)
+Filename: install-amd64-minimal-20260823T153057Z.iso
+sha256: 1ba2c4bc525ce57b6397695afa93ecee35a15184fb3409dcdfa9f3f1967ad4bd
+Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260823T153057Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.8255.a9e6d84f9c2f</id>
+    <title>NixOS Minimal 26.05.8255.a9e6d84f9c2f (aarch64)</title>
+    <updated>2026-08-24T07:35:09+00:00</updated>
+    <published>2026-08-24T07:35:09+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.8255.a9e6d84f9c2f (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 89a3252e90b43cfb0aa3b4863e40c4db3b47ec42c1d10aafd6ceb073656f15c4
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.8255.a9e6d84f9c2f</id>
+    <title>NixOS Graphical 26.05.8255.a9e6d84f9c2f (aarch64)</title>
+    <updated>2026-08-24T07:35:09+00:00</updated>
+    <published>2026-08-24T07:35:09+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.8255.a9e6d84f9c2f (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: f1884d6bf1fc4ffa99ec4085f5ca6d437088360493aa3971bd0e5ee3f779d58b
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.8255.a9e6d84f9c2f</id>
+    <title>NixOS Graphical 26.05.8255.a9e6d84f9c2f (x86_64)</title>
+    <updated>2026-08-24T07:35:09+00:00</updated>
+    <published>2026-08-24T07:35:09+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.8255.a9e6d84f9c2f (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: f7e89d36c7e102a1ade3ccc845b01779f89b06e0bd3006daf2c6f477caddaf09
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.8255.a9e6d84f9c2f</id>
+    <title>NixOS Minimal 26.05.8255.a9e6d84f9c2f (x86_64)</title>
+    <updated>2026-08-24T07:35:08+00:00</updated>
+    <published>2026-08-24T07:35:08+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.8255.a9e6d84f9c2f (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 5f74965b030247f03c6a7f68cafcab95211fd1c1cbcbe859ef6f4d7bf7e57e77
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bluestar/default/7.1.9-1-2026.08.23</id>
+    <title>Bluestar Linux 7.1.9-1-2026.08.23 (x86_64)</title>
+    <updated>2026-08-23T22:27:42+00:00</updated>
+    <published>2026-08-23T22:27:42+00:00</published>
+    <link href="https://bluestarlinux.sourceforge.net/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.9-1-2026.08.23-x86_64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bluestar" label="distro" />
+    <category term="default" label="variant" />
+    <summary type="text">Bluestar Linux 7.1.9-1-2026.08.23 (x86_64)
+Filename: bslx-7.1.9-1-2026.08.23-x86_64.iso
+md5: 66b14bf22d9c0d26e2ae037ae71d7147
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260821</id>
     <title>openSUSE Tumbleweed Rescue CD Snapshot20260821 (x86_64)</title>
@@ -131,62 +252,6 @@ Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x8
 Infohash: 3ede93c1b3e749f928cad8ce7278e0ee0b0ba8b4
 Magnet: magnet:?xt=urn:btih:3ede93c1b3e749f928cad8ce7278e0ee0b0ba8b4&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260821-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.8111.5880666fd9eb</id>
-    <title>NixOS Minimal 26.05.8111.5880666fd9eb (aarch64)</title>
-    <updated>2026-08-22T07:05:01+00:00</updated>
-    <published>2026-08-22T07:05:01+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.8111.5880666fd9eb (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: cda49ff9688d1f6fb759e98d85ebfbf5cfb3963c755be4cac3b4f76ee010f5da
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.8111.5880666fd9eb</id>
-    <title>NixOS Minimal 26.05.8111.5880666fd9eb (x86_64)</title>
-    <updated>2026-08-22T07:05:01+00:00</updated>
-    <published>2026-08-22T07:05:01+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.8111.5880666fd9eb (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 2fdadb46de65e53bb407c3045212dff751cd5d5a9e3dcb51b15d300b32716592
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.8111.5880666fd9eb</id>
-    <title>NixOS Graphical 26.05.8111.5880666fd9eb (aarch64)</title>
-    <updated>2026-08-22T07:05:01+00:00</updated>
-    <published>2026-08-22T07:05:01+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.8111.5880666fd9eb (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 0613bb5de34a9c5ecd55b16b7c79d6ecbe31b04cf5b49fac64e05b12f148ec17
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.8111.5880666fd9eb</id>
-    <title>NixOS Graphical 26.05.8111.5880666fd9eb (x86_64)</title>
-    <updated>2026-08-22T07:05:01+00:00</updated>
-    <published>2026-08-22T07:05:01+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.8111.5880666fd9eb (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 2a783ebef1eff1360b63d0a4106c5221e6a7c2cef5b2ed59510e360308097f45
-Verify: checksum</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/44.20260820</id>
@@ -559,40 +624,6 @@ sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:aarch64/20260816T204555Z</id>
-    <title>Gentoo Minimal Install CD 20260816T204555Z (aarch64)</title>
-    <updated>2026-08-17T07:22:50+00:00</updated>
-    <published>2026-08-17T07:22:50+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260816T204555Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Gentoo Minimal Install CD 20260816T204555Z (aarch64)
-Filename: install-arm64-minimal-20260816T204555Z.iso
-sha256: 48e02dbcd3ad679ee861a526eede4123b31f825d7e59fbbe0a4d34fdb4c8418f
-Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260816T204555Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal/20260816T170110Z</id>
-    <title>Gentoo Minimal Install CD 20260816T170110Z (x86_64)</title>
-    <updated>2026-08-17T07:22:49+00:00</updated>
-    <published>2026-08-17T07:22:49+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260816T170110Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Gentoo Minimal Install CD 20260816T170110Z (x86_64)
-Filename: install-amd64-minimal-20260816T170110Z.iso
-sha256: a058ca1e178c63d19814f3646126615fd840f638e5c515d717db2d93cd9cc4c4
-Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260816T170110Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/xcp-ng/netinstall/8.3.0-20260806</id>
     <title>XCP-ng netinstall 8.3.0-20260806 (x86_64)</title>
     <updated>2026-08-14T07:55:40+00:00</updated>
@@ -692,37 +723,6 @@ sha256: 711b64362abe0b45348dc33bd4a2c654641e069b50ae9ae37c01771da880aa99
 Signature: https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso.sig
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bluestar/default/7.1.8-3-2026.08.12</id>
-    <title>Bluestar Linux 7.1.8-3-2026.08.12 (x86_64)</title>
-    <updated>2026-08-13T04:08:01+00:00</updated>
-    <published>2026-08-13T04:08:01+00:00</published>
-    <link href="https://bluestarlinux.sourceforge.net/" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.8-3-2026.08.12-x86_64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bluestar" label="distro" />
-    <category term="default" label="variant" />
-    <summary type="text">Bluestar Linux 7.1.8-3-2026.08.12 (x86_64)
-Filename: bslx-7.1.8-3-2026.08.12-x86_64.iso
-md5: e80b1530a7e2264d92374e9e92d0182b
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/livegui/20260811T083102Z</id>
-    <title>Gentoo LiveGUI 20260811T083102Z (x86_64)</title>
-    <updated>2026-08-12T07:57:51+00:00</updated>
-    <published>2026-08-12T07:57:51+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260811T083102Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="livegui" label="variant" />
-    <summary type="text">Gentoo LiveGUI 20260811T083102Z (x86_64)
-Filename: livegui-amd64-20260811T083102Z.iso
-sha256: 74a1357d42f4879008cc5ed37541154af24da38928d008920e20357f1bfdf470
-Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260811T083102Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</summary>
   </entry>
   <entry>
