@@ -4,8 +4,203 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Tue, 25 Aug 2026 07:12:39 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 07:15:46 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Gentoo Minimal Install CD 20260825T154602Z (x86)</title>
+      <link>https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso</link>
+      <guid isPermaLink="false">gentoo:minimal:x86:20260825T154602Z</guid>
+      <pubDate>Wed, 26 Aug 2026 07:15:46 +0000</pubDate>
+      <description>Gentoo Minimal Install CD 20260825T154602Z (x86)
+Filename: install-x86-minimal-20260825T154602Z.iso
+sha256: 591f86ca28a1c60f985c27975ac8f927ea3ce7f924304c67c2edb6d036e0ff96
+Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</description>
+      <enclosure url="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso" type="application/x-iso9660-image" length="0" />
+      <category>gentoo</category>
+    </item>
+    <item>
+      <title>Bazzite NVIDIA Open 44.20260825 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:nvidia-open:44.20260825</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:25 +0000</pubDate>
+      <description>Bazzite NVIDIA Open 44.20260825 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Desktop 44.20260825 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:desktop:44.20260825</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:25 +0000</pubDate>
+      <description>Bazzite Desktop 44.20260825 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Deck 44.20260825 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:deck:44.20260825</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:25 +0000</pubDate>
+      <description>Bazzite Deck 44.20260825 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.8409.f4f698677b11 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.8409.f4f698677b11</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:24 +0000</pubDate>
+      <description>NixOS Minimal 26.05.8409.f4f698677b11 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 5d65c43968a8fdfb0b854db2e2efc44deae0a3c9ae601aa6514feb7582a651dc
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.8409.f4f698677b11 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.8409.f4f698677b11</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:24 +0000</pubDate>
+      <description>NixOS Graphical 26.05.8409.f4f698677b11 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: b0fd4fb8ee4e882cf9d14cb2fe6fd9f53e4dc9d7a9688a89c9b554d22bcc2331
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.8409.f4f698677b11 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.8409.f4f698677b11</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:24 +0000</pubDate>
+      <description>NixOS Graphical 26.05.8409.f4f698677b11 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: b7c7b3d2e2067f4d4f17ac89993f70c2d21a6daecc29fe8d64e6b9d57764e587
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.8409.f4f698677b11 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.8409.f4f698677b11</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:23 +0000</pubDate>
+      <description>NixOS Minimal 26.05.8409.f4f698677b11 (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 7f362dae9112af02ecd20f1a04b8838c41ad2b93a0e667ede98a616059c96583
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260825.0 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260825.0-s390x-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:s390x:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream DVD 20260825.0 (s390x)
+Filename: CentOS-Stream-10-20260825.0-s390x-dvd1.iso
+sha256: 51ce065a77f768891db63059c668cd218cce24c5cdc23d7b102defde5342363c
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260825.0-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260825.0 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260825.0-ppc64le-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:ppc64le:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream DVD 20260825.0 (ppc64le)
+Filename: CentOS-Stream-10-20260825.0-ppc64le-dvd1.iso
+sha256: 6a512cc477533c8310e83c8b26a214c2956df8f4db4510d71752608fec542c62
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260825.0-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260825.0 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260825.0-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:aarch64:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream DVD 20260825.0 (aarch64)
+Filename: CentOS-Stream-10-20260825.0-aarch64-dvd1.iso
+sha256: c7801d4c6546e16d00eb2aafe9ea1968f71c1f2cc0c2a3c2752ca327a086d240
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260825.0-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260825.0 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260825.0-x86_64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream DVD 20260825.0 (x86_64)
+Filename: CentOS-Stream-10-20260825.0-x86_64-dvd1.iso
+sha256: 132030b5bad4434901c583f1012e2b7bd159bff292e298d1406cc10c33a1b5de
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260825.0-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260825.0 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260825.0-s390x-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:s390x:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream boot 20260825.0 (s390x)
+Filename: CentOS-Stream-10-20260825.0-s390x-boot.iso
+sha256: da7557ac0f3f00f56edd4311a971f25e23207feca9ce211265605c9153a4ea19
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260825.0-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260825.0 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260825.0-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:ppc64le:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream boot 20260825.0 (ppc64le)
+Filename: CentOS-Stream-10-20260825.0-ppc64le-boot.iso
+sha256: 134aed8b17b98d4aa4a5a41aea1df7b6f9c37720ad2a70288a9979ac5359f403
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260825.0-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260825.0 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260825.0-aarch64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:aarch64:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream boot 20260825.0 (aarch64)
+Filename: CentOS-Stream-10-20260825.0-aarch64-boot.iso
+sha256: 960838f78a26122497768e62c45a763814eea9b2ab30dfc271386566b5f678df
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260825.0-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260825.0 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260825.0-x86_64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:20260825.0</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:17 +0000</pubDate>
+      <description>CentOS Stream boot 20260825.0 (x86_64)
+Filename: CentOS-Stream-10-20260825.0-x86_64-boot.iso
+sha256: c8acf7297e6313c0f93d5c92f61bc1fd66c22f34f5f7b4098ab25e20311125cf
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260825.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
     <item>
       <title>Aurora stable-20260825.1 (x86_64)</title>
       <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
@@ -41,90 +236,6 @@ sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
 Verify: checksum</description>
       <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
       <category>bluefin</category>
-    </item>
-    <item>
-      <title>Bazzite NVIDIA Open unstable-44.20260824 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:unstable-44.20260824</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:37 +0000</pubDate>
-      <description>Bazzite NVIDIA Open unstable-44.20260824 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Desktop unstable-44.20260824 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:unstable-44.20260824</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:37 +0000</pubDate>
-      <description>Bazzite Desktop unstable-44.20260824 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Deck unstable-44.20260824 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:unstable-44.20260824</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:37 +0000</pubDate>
-      <description>Bazzite Deck unstable-44.20260824 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.8334.a3b98866eecd (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.8334.a3b98866eecd</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:35 +0000</pubDate>
-      <description>NixOS Minimal 26.05.8334.a3b98866eecd (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: c178d8ad66895ef5d693a4f21f41d871687d564beb2ac1c0e40d5d3b5aa80fd3
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.8334.a3b98866eecd (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.8334.a3b98866eecd</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:35 +0000</pubDate>
-      <description>NixOS Graphical 26.05.8334.a3b98866eecd (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 15e007b510c59d0253011447e3a6f06ec55ded504f53cd91e9d217c25022cd83
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.8334.a3b98866eecd (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.8334.a3b98866eecd</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:35 +0000</pubDate>
-      <description>NixOS Graphical 26.05.8334.a3b98866eecd (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 716220d5fbf9d3f208a8670ce8b9bc8183fae915b017c7bf3a66fc5afae2e44d
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.8334.a3b98866eecd (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.8334.a3b98866eecd</guid>
-      <pubDate>Tue, 25 Aug 2026 07:12:34 +0000</pubDate>
-      <description>NixOS Minimal 26.05.8334.a3b98866eecd (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: ebfbdfb862431d9d2e8f384bb088680b9263070b2858088aaff91e4caa0f431f
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260822 (x86_64)</title>
@@ -428,117 +539,6 @@ sha256: 3dac6b04225fe9577ea0143a1c712e13316dff26985c2c4417f8c5e4af77f7f7
 Verify: checksum</description>
       <enclosure url="https://sourceforge.net/projects/garuda-linux/files/garuda/dr460nized/260819/garuda-dr460nized-linux-garuda-260819.iso/download" type="application/x-iso9660-image" length="0" />
       <category>garuda</category>
-    </item>
-    <item>
-      <title>Gentoo Minimal Install CD 20260818T161602Z (x86)</title>
-      <link>https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso</link>
-      <guid isPermaLink="false">gentoo:minimal:x86:20260818T161602Z</guid>
-      <pubDate>Wed, 19 Aug 2026 07:11:00 +0000</pubDate>
-      <description>Gentoo Minimal Install CD 20260818T161602Z (x86)
-Filename: install-x86-minimal-20260818T161602Z.iso
-sha256: 850cd8016abd9b9e8176f08a555b45b1325b1cebe06caed79ed408f03cc1598a
-Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Verify: gpg</description>
-      <enclosure url="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso" type="application/x-iso9660-image" length="0" />
-      <category>gentoo</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260818.0 (s390x)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260818.0-s390x-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:s390x:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream DVD 20260818.0 (s390x)
-Filename: CentOS-Stream-10-20260818.0-s390x-dvd1.iso
-sha256: 63ac3c6b92dca7dc0ef7bb85a8e335e9791bdad0b4d58cde3a3319787ec7e159
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260818.0-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260818.0 (ppc64le)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260818.0-ppc64le-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:ppc64le:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream DVD 20260818.0 (ppc64le)
-Filename: CentOS-Stream-10-20260818.0-ppc64le-dvd1.iso
-sha256: 5086022393539d84828e984be0829976cbc25f397735bd244233f3de1d91974b
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260818.0-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260818.0 (aarch64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260818.0-aarch64-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:aarch64:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream DVD 20260818.0 (aarch64)
-Filename: CentOS-Stream-10-20260818.0-aarch64-dvd1.iso
-sha256: 7ea4f4c361ad14efb65f204764da151e5f69ff3d422b92b6771c309a8fc11c57
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260818.0-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260818.0 (x86_64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream DVD 20260818.0 (x86_64)
-Filename: CentOS-Stream-10-20260818.0-x86_64-dvd1.iso
-sha256: 0bb3dc6c705d8065be287562233815db75a372daa10acddd4c5812fa7bbf6e47
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260818.0 (s390x)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260818.0-s390x-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:s390x:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream boot 20260818.0 (s390x)
-Filename: CentOS-Stream-10-20260818.0-s390x-boot.iso
-sha256: 894694bc2c4d7bd9160aa86b836885abc81d1d0dbfac997e6b4b08d3ab2fa4ab
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260818.0-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260818.0 (ppc64le)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260818.0-ppc64le-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:ppc64le:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream boot 20260818.0 (ppc64le)
-Filename: CentOS-Stream-10-20260818.0-ppc64le-boot.iso
-sha256: 846fa32ca20a9478da9acb93ccfa6863acba2288c736dfd258ec30cf7f66b7e3
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260818.0-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260818.0 (aarch64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260818.0-aarch64-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:aarch64:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream boot 20260818.0 (aarch64)
-Filename: CentOS-Stream-10-20260818.0-aarch64-boot.iso
-sha256: 743d636bdcb6bc40f21c3e6ca8d4e0ddc75dea7673b8f70c02d3104e3e515856
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260818.0-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260818.0 (x86_64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:20260818.0</guid>
-      <pubDate>Wed, 19 Aug 2026 07:10:07 +0000</pubDate>
-      <description>CentOS Stream boot 20260818.0 (x86_64)
-Filename: CentOS-Stream-10-20260818.0-x86_64-boot.iso
-sha256: 63e4e1df7d3f849576f3b98fc1a4dd1919d83341115d4fb9b017dab05f47f3b5
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
     </item>
     <item>
       <title>XCP-ng netinstall 8.3.0-20260806 (x86_64)</title>

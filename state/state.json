@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck unstable-44.20260824 (x86_64)",
+      "title": "Bazzite Deck 44.20260825 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "unstable-44.20260824"
+      "version": "44.20260825"
     },
-    "seen": "2026-08-25T07:12:37+00:00",
-    "version": "unstable-44.20260824"
+    "seen": "2026-08-26T07:13:25+00:00",
+    "version": "44.20260825"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop unstable-44.20260824 (x86_64)",
+      "title": "Bazzite Desktop 44.20260825 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "unstable-44.20260824"
+      "version": "44.20260825"
     },
-    "seen": "2026-08-25T07:12:37+00:00",
-    "version": "unstable-44.20260824"
+    "seen": "2026-08-26T07:13:25+00:00",
+    "version": "44.20260825"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open unstable-44.20260824 (x86_64)",
+      "title": "Bazzite NVIDIA Open 44.20260825 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "unstable-44.20260824"
+      "version": "44.20260825"
     },
-    "seen": "2026-08-25T07:12:37+00:00",
-    "version": "unstable-44.20260824"
+    "seen": "2026-08-26T07:13:25+00:00",
+    "version": "44.20260825"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -870,14 +870,14 @@
     "version": "260628"
   },
   "centos:boot": {
-    "hash": "63e4e1df7d3f849576f3b98fc1a4dd1919d83341115d4fb9b017dab05f47f3b5",
+    "hash": "c8acf7297e6313c0f93d5c92f61bc1fd66c22f34f5f7b4098ab25e20311125cf",
     "release": {
       "arch": "x86_64",
-      "checksum": "63e4e1df7d3f849576f3b98fc1a4dd1919d83341115d4fb9b017dab05f47f3b5",
+      "checksum": "c8acf7297e6313c0f93d5c92f61bc1fd66c22f34f5f7b4098ab25e20311125cf",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-boot.iso",
-      "filename": "CentOS-Stream-10-20260818.0-x86_64-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260825.0-x86_64-boot.iso",
+      "filename": "CentOS-Stream-10-20260825.0-x86_64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -888,26 +888,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20260818.0 (x86_64)",
+      "title": "CentOS Stream boot 20260825.0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:boot:aarch64": {
-    "hash": "743d636bdcb6bc40f21c3e6ca8d4e0ddc75dea7673b8f70c02d3104e3e515856",
+    "hash": "960838f78a26122497768e62c45a763814eea9b2ab30dfc271386566b5f678df",
     "release": {
       "arch": "aarch64",
-      "checksum": "743d636bdcb6bc40f21c3e6ca8d4e0ddc75dea7673b8f70c02d3104e3e515856",
+      "checksum": "960838f78a26122497768e62c45a763814eea9b2ab30dfc271386566b5f678df",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260818.0-aarch64-boot.iso",
-      "filename": "CentOS-Stream-10-20260818.0-aarch64-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260825.0-aarch64-boot.iso",
+      "filename": "CentOS-Stream-10-20260825.0-aarch64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -918,26 +918,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20260818.0 (aarch64)",
+      "title": "CentOS Stream boot 20260825.0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:boot:ppc64le": {
-    "hash": "846fa32ca20a9478da9acb93ccfa6863acba2288c736dfd258ec30cf7f66b7e3",
+    "hash": "134aed8b17b98d4aa4a5a41aea1df7b6f9c37720ad2a70288a9979ac5359f403",
     "release": {
       "arch": "ppc64le",
-      "checksum": "846fa32ca20a9478da9acb93ccfa6863acba2288c736dfd258ec30cf7f66b7e3",
+      "checksum": "134aed8b17b98d4aa4a5a41aea1df7b6f9c37720ad2a70288a9979ac5359f403",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260818.0-ppc64le-boot.iso",
-      "filename": "CentOS-Stream-10-20260818.0-ppc64le-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260825.0-ppc64le-boot.iso",
+      "filename": "CentOS-Stream-10-20260825.0-ppc64le-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -948,26 +948,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20260818.0 (ppc64le)",
+      "title": "CentOS Stream boot 20260825.0 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:boot:s390x": {
-    "hash": "894694bc2c4d7bd9160aa86b836885abc81d1d0dbfac997e6b4b08d3ab2fa4ab",
+    "hash": "da7557ac0f3f00f56edd4311a971f25e23207feca9ce211265605c9153a4ea19",
     "release": {
       "arch": "s390x",
-      "checksum": "894694bc2c4d7bd9160aa86b836885abc81d1d0dbfac997e6b4b08d3ab2fa4ab",
+      "checksum": "da7557ac0f3f00f56edd4311a971f25e23207feca9ce211265605c9153a4ea19",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260818.0-s390x-boot.iso",
-      "filename": "CentOS-Stream-10-20260818.0-s390x-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260825.0-s390x-boot.iso",
+      "filename": "CentOS-Stream-10-20260825.0-s390x-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -978,26 +978,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20260818.0 (s390x)",
+      "title": "CentOS Stream boot 20260825.0 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:dvd": {
-    "hash": "0bb3dc6c705d8065be287562233815db75a372daa10acddd4c5812fa7bbf6e47",
+    "hash": "132030b5bad4434901c583f1012e2b7bd159bff292e298d1406cc10c33a1b5de",
     "release": {
       "arch": "x86_64",
-      "checksum": "0bb3dc6c705d8065be287562233815db75a372daa10acddd4c5812fa7bbf6e47",
+      "checksum": "132030b5bad4434901c583f1012e2b7bd159bff292e298d1406cc10c33a1b5de",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260818.0-x86_64-dvd1.iso",
-      "filename": "CentOS-Stream-10-20260818.0-x86_64-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260825.0-x86_64-dvd1.iso",
+      "filename": "CentOS-Stream-10-20260825.0-x86_64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1008,26 +1008,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20260818.0 (x86_64)",
+      "title": "CentOS Stream DVD 20260825.0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:dvd:aarch64": {
-    "hash": "7ea4f4c361ad14efb65f204764da151e5f69ff3d422b92b6771c309a8fc11c57",
+    "hash": "c7801d4c6546e16d00eb2aafe9ea1968f71c1f2cc0c2a3c2752ca327a086d240",
     "release": {
       "arch": "aarch64",
-      "checksum": "7ea4f4c361ad14efb65f204764da151e5f69ff3d422b92b6771c309a8fc11c57",
+      "checksum": "c7801d4c6546e16d00eb2aafe9ea1968f71c1f2cc0c2a3c2752ca327a086d240",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260818.0-aarch64-dvd1.iso",
-      "filename": "CentOS-Stream-10-20260818.0-aarch64-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260825.0-aarch64-dvd1.iso",
+      "filename": "CentOS-Stream-10-20260825.0-aarch64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1038,26 +1038,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20260818.0 (aarch64)",
+      "title": "CentOS Stream DVD 20260825.0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:dvd:ppc64le": {
-    "hash": "5086022393539d84828e984be0829976cbc25f397735bd244233f3de1d91974b",
+    "hash": "6a512cc477533c8310e83c8b26a214c2956df8f4db4510d71752608fec542c62",
     "release": {
       "arch": "ppc64le",
-      "checksum": "5086022393539d84828e984be0829976cbc25f397735bd244233f3de1d91974b",
+      "checksum": "6a512cc477533c8310e83c8b26a214c2956df8f4db4510d71752608fec542c62",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260818.0-ppc64le-dvd1.iso",
-      "filename": "CentOS-Stream-10-20260818.0-ppc64le-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260825.0-ppc64le-dvd1.iso",
+      "filename": "CentOS-Stream-10-20260825.0-ppc64le-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1068,26 +1068,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20260818.0 (ppc64le)",
+      "title": "CentOS Stream DVD 20260825.0 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "centos:dvd:s390x": {
-    "hash": "63ac3c6b92dca7dc0ef7bb85a8e335e9791bdad0b4d58cde3a3319787ec7e159",
+    "hash": "51ce065a77f768891db63059c668cd218cce24c5cdc23d7b102defde5342363c",
     "release": {
       "arch": "s390x",
-      "checksum": "63ac3c6b92dca7dc0ef7bb85a8e335e9791bdad0b4d58cde3a3319787ec7e159",
+      "checksum": "51ce065a77f768891db63059c668cd218cce24c5cdc23d7b102defde5342363c",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260818.0-s390x-dvd1.iso",
-      "filename": "CentOS-Stream-10-20260818.0-s390x-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260825.0-s390x-dvd1.iso",
+      "filename": "CentOS-Stream-10-20260825.0-s390x-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1098,16 +1098,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20260818.0 (s390x)",
+      "title": "CentOS Stream DVD 20260825.0 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20260818.0"
+      "version": "20260825.0"
     },
-    "seen": "2026-08-19T07:10:07+00:00",
-    "version": "20260818.0"
+    "seen": "2026-08-26T07:13:17+00:00",
+    "version": "20260825.0"
   },
   "chimeraos:iso": {
     "hash": "e9914e59f6cd817548742d5934c85fc85f53822261e3d478d2c690e10ce2689a",
@@ -3300,34 +3300,34 @@
     "version": "20240404T093405Z"
   },
   "gentoo:minimal:x86": {
-    "hash": "850cd8016abd9b9e8176f08a555b45b1325b1cebe06caed79ed408f03cc1598a",
+    "hash": "591f86ca28a1c60f985c27975ac8f927ea3ce7f924304c67c2edb6d036e0ff96",
     "release": {
       "arch": "x86",
-      "checksum": "850cd8016abd9b9e8176f08a555b45b1325b1cebe06caed79ed408f03cc1598a",
+      "checksum": "591f86ca28a1c60f985c27975ac8f927ea3ce7f924304c67c2edb6d036e0ff96",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso",
-      "filename": "install-x86-minimal-20260818T161602Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso",
+      "filename": "install-x86-minimal-20260825T154602Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260818T161602Z (x86)",
+      "title": "Gentoo Minimal Install CD 20260825T154602Z (x86)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260818T161602Z"
+      "version": "20260825T154602Z"
     },
-    "seen": "2026-08-19T07:11:00+00:00",
-    "version": "20260818T161602Z"
+    "seen": "2026-08-26T07:15:46+00:00",
+    "version": "20260825T154602Z"
   },
   "ghostbsd:gershwin": {
     "hash": "bfbb15cc30e68ed425785a336e0084d623f74aaa35094a5beeb758ed0f48632a",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "716220d5fbf9d3f208a8670ce8b9bc8183fae915b017c7bf3a66fc5afae2e44d",
+    "hash": "b7c7b3d2e2067f4d4f17ac89993f70c2d21a6daecc29fe8d64e6b9d57764e587",
     "release": {
       "arch": "x86_64",
-      "checksum": "716220d5fbf9d3f208a8670ce8b9bc8183fae915b017c7bf3a66fc5afae2e44d",
+      "checksum": "b7c7b3d2e2067f4d4f17ac89993f70c2d21a6daecc29fe8d64e6b9d57764e587",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.8334.a3b98866eecd (x86_64)",
+      "title": "NixOS Graphical 26.05.8409.f4f698677b11 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.8334.a3b98866eecd"
+      "version": "26.05.8409.f4f698677b11"
     },
-    "seen": "2026-08-25T07:12:35+00:00",
-    "version": "26.05.8334.a3b98866eecd"
+    "seen": "2026-08-26T07:13:24+00:00",
+    "version": "26.05.8409.f4f698677b11"
   },
   "nixos:graphical:aarch64": {
-    "hash": "15e007b510c59d0253011447e3a6f06ec55ded504f53cd91e9d217c25022cd83",
+    "hash": "b0fd4fb8ee4e882cf9d14cb2fe6fd9f53e4dc9d7a9688a89c9b554d22bcc2331",
     "release": {
       "arch": "aarch64",
-      "checksum": "15e007b510c59d0253011447e3a6f06ec55ded504f53cd91e9d217c25022cd83",
+      "checksum": "b0fd4fb8ee4e882cf9d14cb2fe6fd9f53e4dc9d7a9688a89c9b554d22bcc2331",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.8334.a3b98866eecd (aarch64)",
+      "title": "NixOS Graphical 26.05.8409.f4f698677b11 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.8334.a3b98866eecd"
+      "version": "26.05.8409.f4f698677b11"
     },
-    "seen": "2026-08-25T07:12:35+00:00",
-    "version": "26.05.8334.a3b98866eecd"
+    "seen": "2026-08-26T07:13:24+00:00",
+    "version": "26.05.8409.f4f698677b11"
   },
   "nixos:minimal": {
-    "hash": "ebfbdfb862431d9d2e8f384bb088680b9263070b2858088aaff91e4caa0f431f",
+    "hash": "7f362dae9112af02ecd20f1a04b8838c41ad2b93a0e667ede98a616059c96583",
     "release": {
       "arch": "x86_64",
-      "checksum": "ebfbdfb862431d9d2e8f384bb088680b9263070b2858088aaff91e4caa0f431f",
+      "checksum": "7f362dae9112af02ecd20f1a04b8838c41ad2b93a0e667ede98a616059c96583",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.8334.a3b98866eecd (x86_64)",
+      "title": "NixOS Minimal 26.05.8409.f4f698677b11 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.8334.a3b98866eecd"
+      "version": "26.05.8409.f4f698677b11"
     },
-    "seen": "2026-08-25T07:12:34+00:00",
-    "version": "26.05.8334.a3b98866eecd"
+    "seen": "2026-08-26T07:13:23+00:00",
+    "version": "26.05.8409.f4f698677b11"
   },
   "nixos:minimal:aarch64": {
-    "hash": "c178d8ad66895ef5d693a4f21f41d871687d564beb2ac1c0e40d5d3b5aa80fd3",
+    "hash": "5d65c43968a8fdfb0b854db2e2efc44deae0a3c9ae601aa6514feb7582a651dc",
     "release": {
       "arch": "aarch64",
-      "checksum": "c178d8ad66895ef5d693a4f21f41d871687d564beb2ac1c0e40d5d3b5aa80fd3",
+      "checksum": "5d65c43968a8fdfb0b854db2e2efc44deae0a3c9ae601aa6514feb7582a651dc",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.8334.a3b98866eecd (aarch64)",
+      "title": "NixOS Minimal 26.05.8409.f4f698677b11 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.8334.a3b98866eecd"
+      "version": "26.05.8409.f4f698677b11"
     },
-    "seen": "2026-08-25T07:12:35+00:00",
-    "version": "26.05.8334.a3b98866eecd"
+    "seen": "2026-08-26T07:13:24+00:00",
+    "version": "26.05.8409.f4f698677b11"
   },
   "nobara:gnome": {
     "hash": "c52a5ad11082973bb67efa8d7b18b6b50f7cee71580b2a9ce28f36dff8f2c543",
@@ -5301,7 +5301,7 @@
       "title": "openSUSE Tumbleweed DVD Snapshot20260806 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 20327,
+      "torrent_size": 20328,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-dvd",
       "version": "Snapshot20260806"
@@ -5481,7 +5481,7 @@
       "title": "openSUSE Tumbleweed NET Snapshot20260806 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 2765,
+      "torrent_size": 2766,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-net",
       "version": "Snapshot20260806"

@@ -4,7 +4,24 @@
   <title>Distro ISO Feed — gentoo</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/gentoo.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-08-24T07:36:04+00:00</updated>
+  <updated>2026-08-26T07:15:46+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:x86/20260825T154602Z</id>
+    <title>Gentoo Minimal Install CD 20260825T154602Z (x86)</title>
+    <updated>2026-08-26T07:15:46+00:00</updated>
+    <published>2026-08-26T07:15:46+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20260825T154602Z (x86)
+Filename: install-x86-minimal-20260825T154602Z.iso
+sha256: 591f86ca28a1c60f985c27975ac8f927ea3ce7f924304c67c2edb6d036e0ff96
+Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260825T154602Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/livegui/20260823T153057Z</id>
     <title>Gentoo LiveGUI 20260823T153057Z (x86_64)</title>
@@ -52,23 +69,6 @@ Verify: gpg</summary>
 Filename: install-amd64-minimal-20260823T153057Z.iso
 sha256: 1ba2c4bc525ce57b6397695afa93ecee35a15184fb3409dcdfa9f3f1967ad4bd
 Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260823T153057Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:x86/20260818T161602Z</id>
-    <title>Gentoo Minimal Install CD 20260818T161602Z (x86)</title>
-    <updated>2026-08-19T07:11:00+00:00</updated>
-    <published>2026-08-19T07:11:00+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Gentoo Minimal Install CD 20260818T161602Z (x86)
-Filename: install-x86-minimal-20260818T161602Z.iso
-sha256: 850cd8016abd9b9e8176f08a555b45b1325b1cebe06caed79ed408f03cc1598a
-Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260818T161602Z.iso.sha256
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</summary>
