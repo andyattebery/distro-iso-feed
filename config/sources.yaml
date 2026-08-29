@@ -1322,15 +1322,15 @@ distros:
       # `./` is normalized away, or every lookup misses and the entry looks unsigned.
       sums: "{filename}.sha256sum"
       version_pattern: 'Nobara-(\d+)-[A-Za-z-]+-(\d{4}-\d{2}-\d{2})\.iso$'
+    # Five editions, no NVIDIA twins: Nobara 44 (2026-08-28) unified the images -- the page
+    # says "A separate NVIDIA image is no longer required", and no NV-suffixed 44 ISO is
+    # built. The four NVIDIA variants were removed here and from `state.json` on 2026-08-29.
+    # Do not re-add them from an old 43 filename: those still 200 but are frozen at Nobara 43.
     variants:
       gnome: {label: "Nobara GNOME", params: {match: '^Nobara-\d+-GNOME-\d{4}-\d{2}-\d{2}\.iso$'}}
-      gnome-nv: {label: "Nobara GNOME (NVIDIA)", params: {match: '^Nobara-\d+-GNOME-NV-\d{4}-\d{2}-\d{2}\.iso$'}}
       kde: {label: "Nobara KDE", params: {match: '^Nobara-\d+-KDE-\d{4}-\d{2}-\d{2}\.iso$'}}
-      kde-nv: {label: "Nobara KDE (NVIDIA)", params: {match: '^Nobara-\d+-KDE-NV-\d{4}-\d{2}-\d{2}\.iso$'}}
       official: {label: "Nobara Official", params: {match: '^Nobara-\d+-Official-\d{4}-\d{2}-\d{2}\.iso$'}}
-      official-nv: {label: "Nobara Official (NVIDIA)", params: {match: '^Nobara-\d+-Official-NV-\d{4}-\d{2}-\d{2}\.iso$'}}
       steam-htpc: {label: "Nobara Steam HTPC", params: {match: '^Nobara-\d+-Steam-HTPC-\d{4}-\d{2}-\d{2}\.iso$'}}
-      steam-htpc-nv: {label: "Nobara Steam HTPC (NVIDIA)", params: {match: '^Nobara-\d+-Steam-HTPC-NV-\d{4}-\d{2}-\d{2}\.iso$'}}
       steam-handheld: {label: "Nobara Steam Handheld", params: {match: '^Nobara-\d+-Steam-Handheld-\d{4}-\d{2}-\d{2}\.iso$'}}
     discover:
       # The page is the only surface Nobara has, so enumerate it: a new edition here

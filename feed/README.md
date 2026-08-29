@@ -160,14 +160,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | nixos | minimal | x86_64 | 26.05.8538.d57af924f160 | checksum | — |
 | nixos | minimal | aarch64 | 26.05.8538.d57af924f160 | checksum | — |
 | nobara | gnome | x86_64 | 44-2026-08-28 | checksum | — |
-| nobara | gnome-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | kde | x86_64 | 44-2026-08-28 | checksum | — |
-| nobara | kde-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | nobara | official | x86_64 | 44-2026-08-28 | checksum | — |
-| nobara | official-nv | x86_64 | 43-2026-04-24 | checksum | — |
 | nobara | steam-handheld | x86_64 | 44-2026-08-28 | checksum | — |
 | nobara | steam-htpc | x86_64 | 44-2026-08-28 | checksum | — |
-| nobara | steam-htpc-nv | x86_64 | 43-2026-04-25 | checksum | — |
 | openbsd | cd | x86_64 | 7.9 | checksum | — |
 | openbsd | cd | aarch64 | 7.9 | checksum | — |
 | openbsd | install | x86_64 | 7.9 | checksum | — |

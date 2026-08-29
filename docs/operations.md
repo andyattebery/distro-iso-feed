@@ -47,16 +47,31 @@ the raw report JSON. Point Claude Code (or yourself) at one and it has what a fi
 
 | Issue (label) | Trigger | Fails job? | The resolving PR | Key fields the issue carries |
 |---|---|---|---|---|
-| **resolve regression** (`refresh-failure`) | A *tracked* source stopped resolving structurally: 404/moved, 200-but-empty (redesigned), candidates present but none match, matched-but-no-version-token, or the resolver returned None with candidates listed | Yes | Usually `config/sources.yaml` for the key — bring `match`/`version_pattern`/`index`/`url` back in line with what upstream lists now; `--dry-run --only <key>` confirms. If upstream still publishes the right artifact, suspect the **lister** instead: a windowed listing can push it off the end with nothing changed upstream (`releases.atom` is 10 entries — that is how Bazzite's three variants broke on 2026-07-28) | `cause`, `endpoint`+`status`, `observed_candidates` (what it lists now), current `params`, `last_good` (+`last_resolved`), `page_url`, `repro` |
+| **resolve regression** (`refresh-failure`) | A *tracked* source stopped resolving structurally: 404/moved, 200-but-empty (redesigned), candidates present but none match, matched-but-no-version-token, or the resolver returned None with candidates listed *and its own fetches having succeeded* (a listing that failed on the network is transient) | Yes | Usually `config/sources.yaml` for the key — bring `match`/`version_pattern`/`index`/`url` back in line with what upstream lists now; `--dry-run --only <key>` confirms. If upstream still publishes the right artifact, suspect the **lister** instead: a windowed listing can push it off the end with nothing changed upstream (`releases.atom` is 10 entries — that is how Bazzite's three variants broke on 2026-07-28). Third outcome: **upstream retired the edition** — then remove the variant from `config/sources.yaml` **and delete its `state.json` keys**, in one commit (see below) | `cause`, `endpoint`+`status`, `observed_candidates` (what it lists now), current `params`, `last_good` (+`last_resolved`), `page_url`, `repro` |
 | **rotated signing key** (`refresh-signing-key`) | The pinned GPG key no longer verifies — every required fetch landed (2xx) and gpg produced *contrary evidence* (verdict `REJECTED`); the entry dropped to `checksum`. > 5 at once collapse into one rotation issue | Yes | **Verify the rotation is the project's announced key first** (official channel / chained to trust anchor), *then* update `signing_key.fingerprint`; `--dry-run` proves it re-verifies | `pinned_fpr`, `actual_signer_fpr` (who signs now), `key_url`, `covers` |
 | **pinned release** (`refresh-pin`) | A source frozen to a literal release (`audit.pins`) — resolves cleanly, serves stale forever, every check keeps passing | No (ticket only) | Replace the literal with `version_dir`/`probe_versions` if upstream lists; else add `pinned_ok: true` with a reason | `detail` (the literal + where), `page_url` |
 
 **Security note on rotated keys:** never bump the fingerprint to whatever signed the artifact — that
 voids the pin's entire purpose. Confirm the new key's provenance first; the ticket says so.
 
+**Retiring a variant upstream dropped.** Removing it from `config/sources.yaml` is only half the fix, and
+the half that is not enforced. `state/state.json` is loaded and saved whole and *is* what the feed renders
+from, so a key whose config variant disappeared is never pruned — it keeps being republished, at whatever
+version it last resolved, with no failure and no issue to catch it. **Delete the state keys in the same
+commit**, then regenerate with `--only <distro>` (`--only` narrows resolution; the render still writes the
+whole feed). Nobara's four `-nv` variants went this way on 2026-08-29 — Nobara 44 unified its images and
+stopped building a separate NVIDIA ISO — as the 13 `*-interim` keys did in 8c0cd15. Say *why* in a comment
+beside the surviving variants, or the next person re-adds them from an old filename that still 200s.
+
 ### What deliberately does *not* open an issue
 
 - **Transient** resolve failures — self-heal, shown in the run summary only. This includes a
+  **listing fetch that failed on the network and succeeded on the diagnose re-listing**: the
+  classification comes from the trace of the resolve that actually failed, not from `diagnose`'s
+  own retry. Until 2026-08-29 it came from the retry, so a mirror blip that had healed seconds
+  later opened `refresh failure: debian:netinst` and failed the job. A re-listing that shows the
+  regex genuinely stopped matching still escalates — the downgrade applies only in the one
+  branch that has no evidence of its own. It also includes a
   **configured checksum sidecar that timed out**: the entry is left exactly as it was rather than
   republished without a checksum, and it retries next run.
 - **A host over its failure budget** — after 3 transient failures to one host in a run, its
