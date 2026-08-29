@@ -487,6 +487,45 @@ def test_diagnose_classifies_and_shows_what_upstream_lists_now():
     assert bad_token.failure_class == "structural" and "extracted no token" in bad_token.reason
 
 
+def test_diagnose_does_not_escalate_a_blip_the_re_listing_already_healed():
+    """`diagnose` re-fetches, so its own trace is the *retry's*, not the failure's. On 2026-08-28
+    `debian:netinst` lost three tries to `Network is unreachable`, re-listed cleanly 3s later, and
+    was filed as a structural regression on the strength of the retry that worked. `attempt_class`
+    carries the verdict of the fetch that actually failed."""
+    from conftest import FakeClient, autoindex_html
+    from distro_iso_feed.models import Variant
+    from distro_iso_feed.run_refresh import diagnose
+
+    s = REGISTRY["directory_index"]()
+    v = Variant(distro="x", name="y", strategy="directory_index", params={})
+    idx = "https://live.example/"
+    iso = "debian-13.6.0-amd64-netinst.iso"
+    good = {"index": idx, "match": r"^debian-[0-9.]+-amd64-netinst\.iso$"}
+
+    # The incident: the resolve's fetch failed on the network, this listing finds the artifact.
+    blip = diagnose(s, v, good, FakeClient({idx: autoindex_html([iso])}), "transient")
+    assert blip.failure_class == "transient" and blip.cause == "attempt-transient"
+    assert iso in blip.observed_candidates  # the diagnosis is still worth reading
+
+    # Same transient attempt, but the re-listing shows the regex genuinely stopped matching. That
+    # evidence holds whatever the network did -- a blip in the same run must not swallow it.
+    real_break = diagnose(
+        s, v, {"index": idx, "match": r"^ubuntu-.*\.iso$"},
+        FakeClient({idx: autoindex_html([iso])}), "transient",
+    )  # fmt: skip
+    assert real_break.failure_class == "structural" and real_break.cause == "none-matched"
+
+    # No transient attempt: the terminal branch is unchanged.
+    unexplained = diagnose(s, v, good, FakeClient({idx: autoindex_html([iso])}))
+    assert unexplained.failure_class == "structural" and unexplained.cause == "resolver-none"
+
+    # 61 of 248 variants (`json_api`, `stable_symlink`) configure no `match`, so they skip the
+    # selection block entirely and land in the terminal branch with nothing selected. The attempt's
+    # failed fetch is then the only evidence there is.
+    no_match = diagnose(s, v, {"index": idx}, FakeClient({idx: autoindex_html([iso])}), "transient")
+    assert no_match.failure_class == "transient" and no_match.cause == "attempt-transient"
+
+
 def test_summary_reports_no_commit_when_nothing_moved(tmp_path):
     from distro_iso_feed.run_refresh import write_summary
 

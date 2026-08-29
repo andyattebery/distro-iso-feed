@@ -270,6 +270,68 @@ def test_a_timed_out_sums_leaves_the_entry_untouched_and_the_gate_green(tmp_path
     assert kept.release.checksum == "b" * 128
 
 
+def test_a_listing_blip_that_heals_by_the_re_listing_opens_no_issue(tmp_path, monkeypatch):
+    """The 2026-08-28 incident, end to end.
+
+    `mirrors.edge.kernel.org` lost three tries to a handshake timeout and `Network is unreachable`,
+    so `autoindex` returned `[]` and the resolver returned None. Three seconds later `diagnose`'s
+    own re-listing served all 8 files -- and *that* fetch is what got classified, so a mirror blip
+    opened `refresh failure: debian:netinst` and failed the nightly job. The failing fetch is the
+    one that decides.
+    """
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "distros:\n  debian:\n    strategy: directory_index\n"
+        "    discover: {enumerable: false, reason: fixture}\n"
+        "    params:\n"
+        '      index: "https://mirror/iso-cd/"\n'
+        "      match: '^debian-[0-9.]+-amd64-netinst\\.iso$'\n"
+        "      version_pattern: 'debian-([0-9.]+)-amd64'\n"
+        "    variants:\n      netinst: {label: Debian netinst}\n"
+    )
+    iso = "debian-13.6.0-amd64-netinst.iso"
+    # It was resolving yesterday, so a structural verdict here WOULD escalate.
+    state_path = tmp_path / "state.json"
+    s = State()
+    s.update(
+        Release(distro="debian", variant="netinst", version="13.6.0", title="t", filename=iso, checksum="b"),
+        "b",
+    )  # fmt: skip
+    s.save(state_path)
+
+    class BlipThenFine(FakeClient):
+        """Fails the index once, then serves it -- resolve loses the wire, diagnose does not."""
+
+        def get(self, url, headers=None):
+            r = super().get(url, headers)
+            self.fail.pop(url, None)  # the blip cleared before the next fetch
+            return r
+
+    client = BlipThenFine(
+        {"https://mirror/iso-cd/": autoindex_html([iso])},
+        fail={"https://mirror/iso-cd/": "ConnectTimeout"},
+    )
+    monkeypatch.setattr(run_refresh, "CONFIG", cfg)
+    monkeypatch.setattr(run_refresh, "STATE", state_path)
+    monkeypatch.setattr(run_refresh, "Client", lambda *a, **k: client)
+
+    report = tmp_path / "report.json"
+    run_refresh.main(["--dry-run", "--report", str(report), "--only", "debian"])
+
+    data = json.loads(report.read_text())
+    assert len(data["failures"]) == 1
+    f = data["failures"][0]
+    assert f["key"] == "debian:netinst"
+    assert f["failure_class"] == "transient", "a mirror blip is not a content regression"
+    assert f["cause"] == "attempt-transient"
+    assert f["regression"] is True  # it WAS resolving -- classification is the only thing gating
+    assert iso in f["observed_candidates"], "the re-listing's evidence is still carried"
+
+    # The gate stays green and silent: nothing to fix, retry tomorrow.
+    plan = plan_escalation(data, open_issues=[])
+    assert plan == {"exit_code": 0, "to_open": [], "to_close": [], "mass_outage": False}
+
+
 def test_a_transient_torrent_sums_failure_does_not_take_the_whole_run_down(tmp_path, monkeypatch):
     """`attach_torrent` is called outside the resolver try/except, so a `SumsUnavailable` escaping
     it would abort every remaining variant. The ISO resolves; only the torrent is dropped."""

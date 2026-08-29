@@ -55,12 +55,27 @@ endpoint_of = escalate.endpoint_of
 _exc_class = escalate.exc_class
 
 
-def diagnose(strategy, variant: Variant, params: dict, client: Client) -> Failure:
+def diagnose(
+    strategy,
+    variant: Variant,
+    params: dict,
+    client: Client,
+    attempt_class: str = escalate.STRUCTURAL,
+) -> Failure:
     """Say *why* a variant failed AND classify it, because the two causes have opposite fixes and
-    only one should escalate. Reads the `Client` trace for the *real* outcome of its own listing
-    fetch -- a 404/200-empty is structural (the page moved or changed), a timeout/5xx transient. The
+    only one should escalate. Re-lists and reads the `Client` trace for the outcome of that fetch --
+    a 404/200-empty is structural (the page moved or changed), a timeout/5xx transient. The
     candidates the endpoint lists *now* are carried so a fix can see what upstream renamed. Costs
     one extra listing, only for a variant that already failed.
+
+    `attempt_class` classifies the trace of the *resolve* that actually failed, which is a different
+    fetch from this one. It matters only in the terminal `resolver-none` branch -- the one branch
+    with no structural evidence of its own: the listing arrived non-empty, and either the config
+    still selects an artifact and extracts its token, or (the 61 `json_api`/`stable_symlink`
+    variants that configure no `match`) there was no selection to check. Nothing there contradicts
+    the attempt's own failed fetch, so it decides. `debian:netinst` on 2026-08-28 lost three tries
+    to `Network is unreachable`, re-listed cleanly 3s later, and was filed as a structural
+    regression on the strength of the retry that worked.
     """
     key, endpoint = variant.key, endpoint_of(params)
     repro = f"uv run distro-iso-feed-refresh --dry-run --only {key} -v"
@@ -112,6 +127,18 @@ def diagnose(strategy, variant: Variant, params: dict, client: Client) -> Failur
                 f"matched `{chosen}` but `version_pattern` extracted no token",
                 "no-token", escalate.STRUCTURAL, status, names,
             )  # fmt: skip
+
+    # Nothing above found anything wrong: the listing arrived, and any configured selection still
+    # works. So if the resolve's own fetch failed on the network, that IS the explanation -- do not
+    # escalate a mirror blip that had already healed by the time this line ran. `none-matched` and
+    # `no-token` are deliberately NOT downgraded: their evidence is positive and holds whatever the
+    # network did, and swallowing one because a blip landed in the same run is the worse failure.
+    if attempt_class == escalate.TRANSIENT:
+        return mk(
+            f"resolve's fetch failed transiently; re-listing returned {len(names)} candidates "
+            f"at {endpoint} -- entry left untouched, retried next run",
+            "attempt-transient", escalate.TRANSIENT, status, names,
+        )  # fmt: skip
 
     return mk(
         f"resolver returned None; {len(names)} candidates at {endpoint}",
@@ -256,6 +283,10 @@ def main(argv: list[str] | None = None) -> int:
             params = dict(variant.params)
             params.setdefault("page_url", page_urls.get(variant.distro))
             params.setdefault("label", variant.label)
+            # Mark before the attempt: `diagnose` re-fetches, so without this slice the only
+            # trace it can read is its own retry's -- and a retry that succeeds classifies a
+            # network failure as a content regression.
+            attempt_mark = len(client.trace)
             try:
                 release = strategy.resolve(variant.distro, variant.name, params, client)
             except Exception as exc:  # a strategy must not take the run down with it
@@ -273,7 +304,12 @@ def main(argv: list[str] | None = None) -> int:
 
             if release is None:
                 # Costs one extra listing, and only for variants that already failed.
-                f = _enrich(diagnose(strategy, variant, params, client), variant, state)
+                attempt_class = escalate.classify_outcomes(
+                    [o for _, o in client.trace[attempt_mark:]]
+                )
+                f = _enrich(
+                    diagnose(strategy, variant, params, client, attempt_class), variant, state
+                )
                 log.warning("%s: %s (entry left untouched)", variant.key, f.reason)
                 failures.append(f)
                 continue

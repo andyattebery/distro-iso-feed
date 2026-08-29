@@ -30,7 +30,11 @@ succeed?"**, not "was there an error":
     with zero candidates) — the page changed shape
   - `listed N candidates, none matched \`match\`` — regex/layout regression
   - `matched \`X\` but version_pattern extracted no token`
-  - `resolver returned None; N candidates at <endpoint>`
+  - `resolver returned None; N candidates at <endpoint>` — **only when the resolve's own fetches
+    succeeded.** This branch is reached precisely when the re-listing found the artifact and
+    extracted its token, so it has no structural evidence of its own; if the trace of the resolve
+    attempt (marked before `strategy.resolve`, distinct from `diagnose`'s re-listing) classifies
+    TRANSIENT, the failure is transient. See §1d.
 - **TRANSIENT** — the request itself *failed*. Usually self-heals by tomorrow; do **not**
   escalate per-source.
   - connect/read timeout, DNS failure, connection refused, TLS error, 5xx, 429
@@ -120,6 +124,32 @@ its URLs skipped, recording a `BUDGET_EXHAUSTED` trace entry (a `str`, so it cla
   breaker implements — would have reset constantly and never tripped.
 - **No half-open recovery.** For a nightly batch, "this host is having a bad night; leave its
   entries alone and retry tomorrow" is the correct semantics.
+
+### 1d. `diagnose` re-fetches, so it must be told what the failing fetch did
+
+`diagnose` deliberately hits the wire again — that is how it reports the candidates upstream lists
+*now*. The cost is that its own trace slice describes a **different fetch** from the one that failed,
+and on 2026-08-28 that inverted the verdict: `debian:netinst` lost three tries to a handshake timeout
+and `Network is unreachable`, `autoindex` collapsed them to `[]`, the resolver returned None — and the
+re-listing 3s later served all 8 files. Textbook TRANSIENT, filed as a structural regression, on the
+strength of the retry that worked.
+
+So the resolve loop marks `client.trace` **before** `strategy.resolve` and passes that slice's
+classification to `diagnose` as `attempt_class`. It is applied in exactly one place — the terminal
+`resolver-none` branch — and nowhere else:
+
+- `none-matched` / `no-token` carry **positive evidence** that holds whatever the network did. A blip
+  landing in the same run must not swallow a real break, so they stay STRUCTURAL.
+- `reachable-empty` already reads `diagnose`'s own trace, which is the right one there: an empty
+  listing is only structural if that listing actually arrived.
+- The terminal branch is the one with **no evidence of its own**. Either the config still selects an
+  artifact and extracts its token, or the variant configures no `match` at all (61 of 248 today --
+  every `json_api` and `stable_symlink` one), so there was never a selection to check. Neither
+  contradicts the attempt's failed fetch, which is why it is the only branch the attempt decides.
+
+Same shape as `SumsUnavailable` (§1b) — a transient sub-fetch must not reach `diagnose` as a bare
+`None` — and the same discipline `audit.unresolvable` already used, which is why the audit never had
+this bug.
 
 ---
 
