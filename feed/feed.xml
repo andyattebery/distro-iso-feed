@@ -4,7 +4,232 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-08-31T14:02:17+00:00</updated>
+  <updated>2026-09-01T11:46:19+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/nvidia-open/stable-20260901.1</id>
+    <title>Aurora NVIDIA Open stable-20260901.1 (x86_64)</title>
+    <updated>2026-09-01T11:46:19+00:00</updated>
+    <published>2026-09-01T11:46:19+00:00</published>
+    <link href="https://getaurora.dev/" rel="alternate" type="text/html" />
+    <link href="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="aurora" label="distro" />
+    <category term="nvidia-open" label="variant" />
+    <summary type="text">Aurora NVIDIA Open stable-20260901.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 18fd6906680cd21b641aa3514cc9034b41b37ea828b428d5473f74a1b800a4bf
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/stable/stable-20260901.1</id>
+    <title>Aurora stable-20260901.1 (x86_64)</title>
+    <updated>2026-09-01T11:46:18+00:00</updated>
+    <published>2026-09-01T11:46:18+00:00</published>
+    <link href="https://getaurora.dev/" rel="alternate" type="text/html" />
+    <link href="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="aurora" label="distro" />
+    <category term="stable" label="variant" />
+    <summary type="text">Aurora stable-20260901.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 8d61bc79d2b35ffbc30d6e6c916c6ff11828742ba1111bcfd24ca8aa5d07092c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bluefin/stable/stable-20260901</id>
+    <title>Bluefin stable-20260901 (x86_64)</title>
+    <updated>2026-09-01T11:46:17+00:00</updated>
+    <published>2026-09-01T11:46:17+00:00</published>
+    <link href="https://projectbluefin.io/" rel="alternate" type="text/html" />
+    <link href="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bluefin" label="distro" />
+    <category term="stable" label="variant" />
+    <summary type="text">Bluefin stable-20260901 (x86_64)
+Filename: bluefin-stable-x86_64.iso
+sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/44.20260831</id>
+    <title>Bazzite NVIDIA Open 44.20260831 (x86_64)</title>
+    <updated>2026-09-01T11:46:16+00:00</updated>
+    <published>2026-09-01T11:46:16+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="nvidia-open" label="variant" />
+    <summary type="text">Bazzite NVIDIA Open 44.20260831 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/44.20260831</id>
+    <title>Bazzite Desktop 44.20260831 (x86_64)</title>
+    <updated>2026-09-01T11:46:16+00:00</updated>
+    <published>2026-09-01T11:46:16+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">Bazzite Desktop 44.20260831 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/44.20260831</id>
+    <title>Bazzite Deck 44.20260831 (x86_64)</title>
+    <updated>2026-09-01T11:46:16+00:00</updated>
+    <published>2026-09-01T11:46:16+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="deck" label="variant" />
+    <summary type="text">Bazzite Deck 44.20260831 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd:aarch64/Snapshot20260830</id>
+    <title>openSUSE Tumbleweed Rescue CD Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:45:04+00:00</updated>
+    <published>2026-09-01T11:45:04+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-rescue-cd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20260830 (aarch64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
+sha256: a03d6e62ccc7cb57f37a39ccf37a4c7cd848d63b905092ee8605992e9c8123a2
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live:aarch64/Snapshot20260830</id>
+    <title>openSUSE Tumbleweed XFCE Live Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:45:03+00:00</updated>
+    <published>2026-09-01T11:45:03+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-xfce-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20260830 (aarch64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
+sha256: c84b4d08df539610cc5fd596294d886652040fefba27174292a121651f818e47
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live:aarch64/Snapshot20260830</id>
+    <title>openSUSE Tumbleweed KDE Live Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:45:01+00:00</updated>
+    <published>2026-09-01T11:45:01+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-kde-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20260830 (aarch64)
+Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
+sha256: a4485754e4d8f0a1c0dabfaec397204bd2ff7605039c8801831211303ea1c686
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live:aarch64/Snapshot20260830</id>
+    <title>openSUSE Tumbleweed GNOME Live Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:45:00+00:00</updated>
+    <published>2026-09-01T11:45:00+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-gnome-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20260830 (aarch64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
+sha256: 03230619a8566cd691c2e7d9e5ae6a8db363c4b32c8b8380187839d303d5791e
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd:aarch64/Snapshot20260830</id>
+    <title>openSUSE MicroOS DVD Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:44:59+00:00</updated>
+    <published>2026-09-01T11:44:59+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="microos-dvd" label="variant" />
+    <summary type="text">openSUSE MicroOS DVD Snapshot20260830 (aarch64)
+Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
+sha256: 805a3b4056fc39173089118d0dafc1871a091484a96f2ee01abc1d1fa7c3025b
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20260830</id>
+    <title>openSUSE Tumbleweed NET Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:44:58+00:00</updated>
+    <published>2026-09-01T11:44:58+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2812" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20260830 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: f5d8b092f1ff26d05c4a18f5204f81501b8c3919a15c5b2659a7b36543567e83
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
+Infohash: 43fd9282c2254158da40b7242b437ffd8c61454b
+Magnet: magnet:?xt=urn:btih:43fd9282c2254158da40b7242b437ffd8c61454b&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260830-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd:aarch64/Snapshot20260830</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20260830 (aarch64)</title>
+    <updated>2026-09-01T11:44:56+00:00</updated>
+    <published>2026-09-01T11:44:56+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20414" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260830 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
+sha256: da051d436fdc81bd6f2c3501d355408331866591496ac36c961c62583780bd44
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
+Infohash: 65b96de87749f7bd14f82c8dd19b00f341409b3f
+Magnet: magnet:?xt=urn:btih:65b96de87749f7bd14f82c8dd19b00f341409b3f&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260830-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bluestar/default/7.2.2-1-2026.08.31</id>
+    <title>Bluestar Linux 7.2.2-1-2026.08.31 (x86_64)</title>
+    <updated>2026-09-01T05:03:24+00:00</updated>
+    <published>2026-09-01T05:03:24+00:00</published>
+    <link href="https://bluestarlinux.sourceforge.net/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.2.2-1-2026.08.31-x86_64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bluestar" label="distro" />
+    <category term="default" label="variant" />
+    <summary type="text">Bluestar Linux 7.2.2-1-2026.08.31 (x86_64)
+Filename: bslx-7.2.2-1-2026.08.31-x86_64.iso
+md5: 7c272fabd7caab281c275aa73034a014
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/livegui/20260830T151604Z</id>
     <title>Gentoo LiveGUI 20260830T151604Z (x86_64)</title>
@@ -165,7 +390,7 @@ Verify: gpg</summary>
     <published>2026-08-31T13:59:28+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2615" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2608" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
     <summary type="text">openSUSE Tumbleweed NET Snapshot20260830 (x86_64)
@@ -186,7 +411,7 @@ Verify: gpg</summary>
     <published>2026-08-31T13:59:26+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22297" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22290" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20260830 (x86_64)
@@ -254,20 +479,6 @@ Verify: checksum</summary>
     <summary type="text">NixOS Minimal 26.05.8639.c5c4a43b0e80 (x86_64)
 Filename: latest-nixos-minimal-x86_64-linux.iso
 sha256: 3d4dc6907738e2411196b1b403060220b5964b423dac8b8062f53ef58e85b16a
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bluestar/default/7.1.11-1-2026.08.28</id>
-    <title>Bluestar Linux 7.1.11-1-2026.08.28 (x86_64)</title>
-    <updated>2026-08-28T22:28:12+00:00</updated>
-    <published>2026-08-28T22:28:12+00:00</published>
-    <link href="https://bluestarlinux.sourceforge.net/" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-7.1.11-1-2026.08.28-x86_64.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bluestar" label="distro" />
-    <category term="default" label="variant" />
-    <summary type="text">Bluestar Linux 7.1.11-1-2026.08.28 (x86_64)
-Filename: bslx-7.1.11-1-2026.08.28-x86_64.iso
-md5: a0536176e6c9a943f4a86a5f00635188
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -974,90 +1185,6 @@ sha256: 7d4ea100712ea3f43dcfa5415dc5a461034556624910c6e25266f43f87b6584b
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/44.20260825</id>
-    <title>Bazzite NVIDIA Open 44.20260825 (x86_64)</title>
-    <updated>2026-08-26T07:13:25+00:00</updated>
-    <published>2026-08-26T07:13:25+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="nvidia-open" label="variant" />
-    <summary type="text">Bazzite NVIDIA Open 44.20260825 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/44.20260825</id>
-    <title>Bazzite Desktop 44.20260825 (x86_64)</title>
-    <updated>2026-08-26T07:13:25+00:00</updated>
-    <published>2026-08-26T07:13:25+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="desktop" label="variant" />
-    <summary type="text">Bazzite Desktop 44.20260825 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/44.20260825</id>
-    <title>Bazzite Deck 44.20260825 (x86_64)</title>
-    <updated>2026-08-26T07:13:25+00:00</updated>
-    <published>2026-08-26T07:13:25+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="deck" label="variant" />
-    <summary type="text">Bazzite Deck 44.20260825 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/stable/stable-20260825.1</id>
-    <title>Aurora stable-20260825.1 (x86_64)</title>
-    <updated>2026-08-25T07:12:39+00:00</updated>
-    <published>2026-08-25T07:12:39+00:00</published>
-    <link href="https://getaurora.dev/" rel="alternate" type="text/html" />
-    <link href="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="aurora" label="distro" />
-    <category term="stable" label="variant" />
-    <summary type="text">Aurora stable-20260825.1 (x86_64)
-Filename: aurora-stable-webui-x86_64.iso
-sha256: 8d61bc79d2b35ffbc30d6e6c916c6ff11828742ba1111bcfd24ca8aa5d07092c
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/nvidia-open/stable-20260825.1</id>
-    <title>Aurora NVIDIA Open stable-20260825.1 (x86_64)</title>
-    <updated>2026-08-25T07:12:39+00:00</updated>
-    <published>2026-08-25T07:12:39+00:00</published>
-    <link href="https://getaurora.dev/" rel="alternate" type="text/html" />
-    <link href="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="aurora" label="distro" />
-    <category term="nvidia-open" label="variant" />
-    <summary type="text">Aurora NVIDIA Open stable-20260825.1 (x86_64)
-Filename: aurora-nvidia-open-stable-webui-x86_64.iso
-sha256: 18fd6906680cd21b641aa3514cc9034b41b37ea828b428d5473f74a1b800a4bf
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bluefin/stable/stable-20260825</id>
-    <title>Bluefin stable-20260825 (x86_64)</title>
-    <updated>2026-08-25T07:12:38+00:00</updated>
-    <published>2026-08-25T07:12:38+00:00</published>
-    <link href="https://projectbluefin.io/" rel="alternate" type="text/html" />
-    <link href="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bluefin" label="distro" />
-    <category term="stable" label="variant" />
-    <summary type="text">Bluefin stable-20260825 (x86_64)
-Filename: bluefin-stable-x86_64.iso
-sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/tails/iso/7.11</id>
     <title>Tails 7.11 (x86_64)</title>
     <updated>2026-08-20T07:11:43+00:00</updated>
@@ -1314,133 +1441,6 @@ sha256: 711b64362abe0b45348dc33bd4a2c654641e069b50ae9ae37c01771da880aa99
 Signature: https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso.sig
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd:aarch64/Snapshot20260806</id>
-    <title>openSUSE Tumbleweed Rescue CD Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:45+00:00</updated>
-    <published>2026-08-11T07:40:45+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-rescue-cd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20260806 (aarch64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
-sha256: a13b1292704e991b98a59c4aa1d7b8efed4c974562ab12fadb5feec83c854908
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live:aarch64/Snapshot20260806</id>
-    <title>openSUSE Tumbleweed XFCE Live Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:44+00:00</updated>
-    <published>2026-08-11T07:40:44+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-xfce-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20260806 (aarch64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
-sha256: d9292f55628388a0ed4ba84e22d95950a190a289d1c97d99b144ceefad245c13
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live:aarch64/Snapshot20260806</id>
-    <title>openSUSE Tumbleweed KDE Live Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:43+00:00</updated>
-    <published>2026-08-11T07:40:43+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-kde-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20260806 (aarch64)
-Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
-sha256: f4823cc5bf2ba2faa0bcbb792ba321a3e3764935ef7176fd34259fc1a86d3d67
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live:aarch64/Snapshot20260806</id>
-    <title>openSUSE Tumbleweed GNOME Live Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:41+00:00</updated>
-    <published>2026-08-11T07:40:41+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-gnome-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20260806 (aarch64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
-sha256: b96856e45599659328d02af68676c6f9404f4de8cf75aa50e3d9b9fc774c9fdc
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd:aarch64/Snapshot20260806</id>
-    <title>openSUSE MicroOS DVD Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:40+00:00</updated>
-    <published>2026-08-11T07:40:40+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="microos-dvd" label="variant" />
-    <summary type="text">openSUSE MicroOS DVD Snapshot20260806 (aarch64)
-Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
-sha256: f1efe144e960125cd1e5008526c1aaca5e301ba45db1d9e573943316c930745d
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20260806</id>
-    <title>openSUSE Tumbleweed NET Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:39+00:00</updated>
-    <published>2026-08-11T07:40:39+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2765" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20260806 (aarch64)
-Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
-sha256: 96ad94913acaa3deaa07677ad6864f3a6599b6b3e284ae077e05d2b5b8ceeada
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
-Infohash: f1dec7f5b12cd147183536f3b26016a00109fd45
-Magnet: magnet:?xt=urn:btih:f1dec7f5b12cd147183536f3b26016a00109fd45&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260806-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd:aarch64/Snapshot20260806</id>
-    <title>openSUSE Tumbleweed DVD Snapshot20260806 (aarch64)</title>
-    <updated>2026-08-11T07:40:37+00:00</updated>
-    <published>2026-08-11T07:40:37+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20327" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-dvd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260806 (aarch64)
-Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
-sha256: 2499d6117880c9da0c6add8ce06518db911ecd7fc350de6396f004fba31bace1
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
-Infohash: f9272c875edc84490485b057de804f789c2dc7c8
-Magnet: magnet:?xt=urn:btih:f9272c875edc84490485b057de804f789c2dc7c8&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260806-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
