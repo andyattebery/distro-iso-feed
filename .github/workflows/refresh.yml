@@ -31,7 +31,7 @@ jobs:
           # shallow history fails; a full clone is cheap for a repo of this size.
           fetch-depth: 0
 
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@v10.0.1
         # No floating `v8` tag exists for this action -- only exact `v8.x.y`.
         # `@v8` fails to resolve. Pin the patch.
         with:
