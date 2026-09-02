@@ -4,8 +4,26 @@
     <title>Distro ISO Feed — torrents</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed — torrents</description>
-    <lastBuildDate>Tue, 01 Sep 2026 11:44:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 11:23:49 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml</docs>
+    <item>
+      <title>Arch Linux 2026.09.01 (x86_64)</title>
+      <link>https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.09.01-x86_64.iso.torrent</link>
+      <guid isPermaLink="false">arch:iso:2026.09.01</guid>
+      <pubDate>Wed, 02 Sep 2026 11:23:49 +0000</pubDate>
+      <description>Arch Linux 2026.09.01 (x86_64)
+Filename: archlinux-2026.09.01-x86_64.iso
+sha256: be8458032f8105e60ee2a3067f950b6e3c007ee51b38dac50e8b48e765561c91
+Signature: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.09.01-x86_64.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+Key-fingerprint: 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+Torrent: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.09.01-x86_64.iso.torrent
+Infohash: f45add9d1a5185d8588df7dd6cd89993dd0174fa
+Magnet: magnet:?xt=urn:btih:f45add9d1a5185d8588df7dd6cd89993dd0174fa&amp;dn=archlinux-2026.09.01-x86_64.iso
+Verify: gpg</description>
+      <enclosure url="https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.09.01-x86_64.iso.torrent" type="application/x-bittorrent" length="87307" />
+      <category>arch</category>
+    </item>
     <item>
       <title>openSUSE Tumbleweed NET Snapshot20260830 (aarch64)</title>
       <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent</link>
@@ -21,7 +39,7 @@ Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tum
 Infohash: 43fd9282c2254158da40b7242b437ffd8c61454b
 Magnet: magnet:?xt=urn:btih:43fd9282c2254158da40b7242b437ffd8c61454b&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260830-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" type="application/x-bittorrent" length="2812" />
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" type="application/x-bittorrent" length="2805" />
       <category>opensuse</category>
     </item>
     <item>
@@ -39,7 +57,7 @@ Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tum
 Infohash: 65b96de87749f7bd14f82c8dd19b00f341409b3f
 Magnet: magnet:?xt=urn:btih:65b96de87749f7bd14f82c8dd19b00f341409b3f&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260830-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" type="application/x-bittorrent" length="20414" />
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" type="application/x-bittorrent" length="20407" />
       <category>opensuse</category>
     </item>
     <item>
@@ -509,24 +527,6 @@ Magnet: magnet:?xt=urn:btih:5b1e0d988fc7a0c9e99bd852071681a59974b39f&amp;dn=ubun
 Verify: gpg</description>
       <enclosure url="https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-desktop-amd64.iso.torrent" type="application/x-bittorrent" length="494938" />
       <category>ubuntu</category>
-    </item>
-    <item>
-      <title>Arch Linux 2026.08.01 (x86_64)</title>
-      <link>https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.torrent</link>
-      <guid isPermaLink="false">arch:iso:2026.08.01</guid>
-      <pubDate>Sun, 02 Aug 2026 08:38:20 +0000</pubDate>
-      <description>Arch Linux 2026.08.01 (x86_64)
-Filename: archlinux-2026.08.01-x86_64.iso
-sha256: 4e82dced1c4fd3e498b22a853f8db2a4d262d32b97e7e07d97390d9e425ffe5e
-Signature: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.sig
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
-Key-fingerprint: 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
-Torrent: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.torrent
-Infohash: ed8507e22addc40fd6fb4f1677bf27fd75967f70
-Magnet: magnet:?xt=urn:btih:ed8507e22addc40fd6fb4f1677bf27fd75967f70&amp;dn=archlinux-2026.08.01-x86_64.iso
-Verify: gpg</description>
-      <enclosure url="https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.08.01-x86_64.iso.torrent" type="application/x-bittorrent" length="86847" />
-      <category>arch</category>
     </item>
     <item>
       <title>NetBSD install 11.0 (aarch64)</title>
