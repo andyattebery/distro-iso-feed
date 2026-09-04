@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "fed6bb8d41e3ca819565bf6515145bdc6fcfed2f5de87b1b35e85f4939e6206e",
+    "hash": "4fe1e5f85166506bebb17831ec07c8db3593c2bf393fc1bb649acb4993439f21",
     "release": {
       "arch": "x86_64",
-      "checksum": "fed6bb8d41e3ca819565bf6515145bdc6fcfed2f5de87b1b35e85f4939e6206e",
+      "checksum": "4fe1e5f85166506bebb17831ec07c8db3593c2bf393fc1bb649acb4993439f21",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.8846.a3116115851d (x86_64)",
+      "title": "NixOS Graphical 26.05.8954.a5cc6f2c37bf (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.8846.a3116115851d"
+      "version": "26.05.8954.a5cc6f2c37bf"
     },
-    "seen": "2026-09-03T11:22:39+00:00",
-    "version": "26.05.8846.a3116115851d"
+    "seen": "2026-09-04T11:25:32+00:00",
+    "version": "26.05.8954.a5cc6f2c37bf"
   },
   "nixos:graphical:aarch64": {
-    "hash": "a27692614a358ea96e0313d8eab12da04ec180c9690f4a48d0ce36fb66f0e7c1",
+    "hash": "79469f4ec90cd0217f6a3e20fe976628eaea1f568170d363d5090f9effe31b2b",
     "release": {
       "arch": "aarch64",
-      "checksum": "a27692614a358ea96e0313d8eab12da04ec180c9690f4a48d0ce36fb66f0e7c1",
+      "checksum": "79469f4ec90cd0217f6a3e20fe976628eaea1f568170d363d5090f9effe31b2b",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.8846.a3116115851d (aarch64)",
+      "title": "NixOS Graphical 26.05.8954.a5cc6f2c37bf (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.8846.a3116115851d"
+      "version": "26.05.8954.a5cc6f2c37bf"
     },
-    "seen": "2026-09-03T11:22:40+00:00",
-    "version": "26.05.8846.a3116115851d"
+    "seen": "2026-09-04T11:25:32+00:00",
+    "version": "26.05.8954.a5cc6f2c37bf"
   },
   "nixos:minimal": {
-    "hash": "d54179de392bcdb61caebb835644cb8ebb4bd77a76bffe279caa1e621126a984",
+    "hash": "efea0bd01d823ff8080fa090eeefaf35793afcc4792d55412457ec7963ce6d63",
     "release": {
       "arch": "x86_64",
-      "checksum": "d54179de392bcdb61caebb835644cb8ebb4bd77a76bffe279caa1e621126a984",
+      "checksum": "efea0bd01d823ff8080fa090eeefaf35793afcc4792d55412457ec7963ce6d63",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.8846.a3116115851d (x86_64)",
+      "title": "NixOS Minimal 26.05.8954.a5cc6f2c37bf (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.8846.a3116115851d"
+      "version": "26.05.8954.a5cc6f2c37bf"
     },
-    "seen": "2026-09-03T11:22:39+00:00",
-    "version": "26.05.8846.a3116115851d"
+    "seen": "2026-09-04T11:25:31+00:00",
+    "version": "26.05.8954.a5cc6f2c37bf"
   },
   "nixos:minimal:aarch64": {
-    "hash": "04aade5ef8843fde8b318f93f59746caacfc12d51497a4b15e1e8b8c11e5dc6c",
+    "hash": "1662e940457aac46f29cf15425001aa48eb5ceb5040e26d688c6b34d18473ed6",
     "release": {
       "arch": "aarch64",
-      "checksum": "04aade5ef8843fde8b318f93f59746caacfc12d51497a4b15e1e8b8c11e5dc6c",
+      "checksum": "1662e940457aac46f29cf15425001aa48eb5ceb5040e26d688c6b34d18473ed6",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.8846.a3116115851d (aarch64)",
+      "title": "NixOS Minimal 26.05.8954.a5cc6f2c37bf (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.8846.a3116115851d"
+      "version": "26.05.8954.a5cc6f2c37bf"
     },
-    "seen": "2026-09-03T11:22:39+00:00",
-    "version": "26.05.8846.a3116115851d"
+    "seen": "2026-09-04T11:25:32+00:00",
+    "version": "26.05.8954.a5cc6f2c37bf"
   },
   "nobara:gnome": {
     "hash": "5edb4c239e385d2f2b93cf5a33810458c262acb2574a3987e9fc2e65f0c48479",
