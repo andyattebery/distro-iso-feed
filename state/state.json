@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck 44.20260902 (x86_64)",
+      "title": "Bazzite Deck 44.20260907 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "44.20260902"
+      "version": "44.20260907"
     },
-    "seen": "2026-09-02T11:26:03+00:00",
-    "version": "44.20260902"
+    "seen": "2026-09-07T12:42:56+00:00",
+    "version": "44.20260907"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop 44.20260902 (x86_64)",
+      "title": "Bazzite Desktop 44.20260907 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "44.20260902"
+      "version": "44.20260907"
     },
-    "seen": "2026-09-02T11:26:03+00:00",
-    "version": "44.20260902"
+    "seen": "2026-09-07T12:42:56+00:00",
+    "version": "44.20260907"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open 44.20260902 (x86_64)",
+      "title": "Bazzite NVIDIA Open 44.20260907 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "44.20260902"
+      "version": "44.20260907"
     },
-    "seen": "2026-09-02T11:26:03+00:00",
-    "version": "44.20260902"
+    "seen": "2026-09-07T12:42:56+00:00",
+    "version": "44.20260907"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -3180,64 +3180,64 @@
     "version": "20260830T151604Z"
   },
   "gentoo:minimal": {
-    "hash": "01f876f279d2681d3cbb8cf3da9e01dda63851dd9b7cdbae55444d3056e6ba0d",
+    "hash": "84373d1b54a12426902528f8ff89620c6b012460b6f5be2a8eace227daac42ac",
     "release": {
       "arch": "x86_64",
-      "checksum": "01f876f279d2681d3cbb8cf3da9e01dda63851dd9b7cdbae55444d3056e6ba0d",
+      "checksum": "84373d1b54a12426902528f8ff89620c6b012460b6f5be2a8eace227daac42ac",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260830T151604Z.iso",
-      "filename": "install-amd64-minimal-20260830T151604Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260906T170102Z.iso",
+      "filename": "install-amd64-minimal-20260906T170102Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260830T151604Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260906T170102Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260830T151604Z (x86_64)",
+      "title": "Gentoo Minimal Install CD 20260906T170102Z (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260830T151604Z"
+      "version": "20260906T170102Z"
     },
-    "seen": "2026-08-31T14:02:14+00:00",
-    "version": "20260830T151604Z"
+    "seen": "2026-09-07T12:43:32+00:00",
+    "version": "20260906T170102Z"
   },
   "gentoo:minimal:aarch64": {
-    "hash": "0526fe89b626a50dd94187eb83008174493464fb320a873cf2917155b6788a3c",
+    "hash": "fa0f787cc6a1c49b80ddf6b7df231e179fb7fe08267219f23a65efc2bc931395",
     "release": {
       "arch": "aarch64",
-      "checksum": "0526fe89b626a50dd94187eb83008174493464fb320a873cf2917155b6788a3c",
+      "checksum": "fa0f787cc6a1c49b80ddf6b7df231e179fb7fe08267219f23a65efc2bc931395",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260830T234553Z.iso",
-      "filename": "install-arm64-minimal-20260830T234553Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260906T223105Z.iso",
+      "filename": "install-arm64-minimal-20260906T223105Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260830T234553Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260906T223105Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260830T234553Z (aarch64)",
+      "title": "Gentoo Minimal Install CD 20260906T223105Z (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260830T234553Z"
+      "version": "20260906T223105Z"
     },
-    "seen": "2026-08-31T14:02:15+00:00",
-    "version": "20260830T234553Z"
+    "seen": "2026-09-07T12:43:33+00:00",
+    "version": "20260906T223105Z"
   },
   "gentoo:minimal:hppa": {
     "hash": "d5a125fca449a68a0dbc43485e288ca9504364ef96fb2621dcbe395868549fd4",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "0af4319821f833002e4fed8c5c4bbee2bb6fc0507679c1f1dcc8fcd358860655",
+    "hash": "e0bfb532f2f6b9e1487a953098c9415a579a4f11a87a8a1cf4a7d8cd92bd9df1",
     "release": {
       "arch": "x86_64",
-      "checksum": "0af4319821f833002e4fed8c5c4bbee2bb6fc0507679c1f1dcc8fcd358860655",
+      "checksum": "e0bfb532f2f6b9e1487a953098c9415a579a4f11a87a8a1cf4a7d8cd92bd9df1",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.9173.6713828a351e (x86_64)",
+      "title": "NixOS Graphical 26.05.9227.c25784012c99 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.9173.6713828a351e"
+      "version": "26.05.9227.c25784012c99"
     },
-    "seen": "2026-09-06T11:05:06+00:00",
-    "version": "26.05.9173.6713828a351e"
+    "seen": "2026-09-07T12:42:55+00:00",
+    "version": "26.05.9227.c25784012c99"
   },
   "nixos:graphical:aarch64": {
-    "hash": "ef50c8164aa30a77b9b396feaf03fd3b7d03678cc6fad8091a187c0d78b678af",
+    "hash": "e7917098f7af41fccc1ccefa7e92a449e39c65be828b105a5dc242a4013246de",
     "release": {
       "arch": "aarch64",
-      "checksum": "ef50c8164aa30a77b9b396feaf03fd3b7d03678cc6fad8091a187c0d78b678af",
+      "checksum": "e7917098f7af41fccc1ccefa7e92a449e39c65be828b105a5dc242a4013246de",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.9173.6713828a351e (aarch64)",
+      "title": "NixOS Graphical 26.05.9227.c25784012c99 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.9173.6713828a351e"
+      "version": "26.05.9227.c25784012c99"
     },
-    "seen": "2026-09-06T11:05:06+00:00",
-    "version": "26.05.9173.6713828a351e"
+    "seen": "2026-09-07T12:42:55+00:00",
+    "version": "26.05.9227.c25784012c99"
   },
   "nixos:minimal": {
-    "hash": "bc64e5ccb058c7143c3803ad5ded61564d82509b0c13bcf572d012e82ecf3e4e",
+    "hash": "d58b42d341136325dbda7bac47f86b68cb3d2cd34369adff6bd58c97754bf179",
     "release": {
       "arch": "x86_64",
-      "checksum": "bc64e5ccb058c7143c3803ad5ded61564d82509b0c13bcf572d012e82ecf3e4e",
+      "checksum": "d58b42d341136325dbda7bac47f86b68cb3d2cd34369adff6bd58c97754bf179",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.9173.6713828a351e (x86_64)",
+      "title": "NixOS Minimal 26.05.9227.c25784012c99 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.9173.6713828a351e"
+      "version": "26.05.9227.c25784012c99"
     },
-    "seen": "2026-09-06T11:05:06+00:00",
-    "version": "26.05.9173.6713828a351e"
+    "seen": "2026-09-07T12:42:54+00:00",
+    "version": "26.05.9227.c25784012c99"
   },
   "nixos:minimal:aarch64": {
-    "hash": "cc202b5d9d764c34835931ff727f22ada136b82fc75ed6e49e9d42458f84f19d",
+    "hash": "df7891e467b24dbca04274f6e31778e8252de4440181c5b90b3bf544f18c6104",
     "release": {
       "arch": "aarch64",
-      "checksum": "cc202b5d9d764c34835931ff727f22ada136b82fc75ed6e49e9d42458f84f19d",
+      "checksum": "df7891e467b24dbca04274f6e31778e8252de4440181c5b90b3bf544f18c6104",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.9173.6713828a351e (aarch64)",
+      "title": "NixOS Minimal 26.05.9227.c25784012c99 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.9173.6713828a351e"
+      "version": "26.05.9227.c25784012c99"
     },
-    "seen": "2026-09-06T11:05:06+00:00",
-    "version": "26.05.9173.6713828a351e"
+    "seen": "2026-09-07T12:42:55+00:00",
+    "version": "26.05.9227.c25784012c99"
   },
   "nobara:gnome": {
     "hash": "5edb4c239e385d2f2b93cf5a33810458c262acb2574a3987e9fc2e65f0c48479",
@@ -5070,10 +5070,10 @@
     "version": "15.6-710.3"
   },
   "opensuse:microos-dvd": {
-    "hash": "be46a0e11eeb63515b3e760a595450fcab5ba398172df926ab17f2c4278e3abd",
+    "hash": "381a8778be2d11b46de7eca07915c5bc9a72456770d270fd3f720670ec754e92",
     "release": {
       "arch": "x86_64",
-      "checksum": "be46a0e11eeb63515b3e760a595450fcab5ba398172df926ab17f2c4278e3abd",
+      "checksum": "381a8778be2d11b46de7eca07915c5bc9a72456770d270fd3f720670ec754e92",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso",
@@ -5088,16 +5088,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE MicroOS DVD Snapshot20260902 (x86_64)",
+      "title": "openSUSE MicroOS DVD Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "microos-dvd",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:46+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:53+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:microos-dvd:aarch64": {
     "hash": "805a3b4056fc39173089118d0dafc1871a091484a96f2ee01abc1d1fa7c3025b",
@@ -5130,16 +5130,16 @@
     "version": "Snapshot20260830"
   },
   "opensuse:tumbleweed-dvd": {
-    "hash": "3656fa7feb8147906531f95d4f2447350c1118b42617debf512f88c3893634f8",
+    "hash": "f2f9470836cbc3112a5b6a294c3dc857cb3a12531ddfb486a558bf097b0c1eaf",
     "release": {
       "arch": "x86_64",
-      "checksum": "3656fa7feb8147906531f95d4f2447350c1118b42617debf512f88c3893634f8",
+      "checksum": "f2f9470836cbc3112a5b6a294c3dc857cb3a12531ddfb486a558bf097b0c1eaf",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
       "filename": "openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
-      "info_hash": null,
-      "magnet_uri": null,
+      "info_hash": "8abe62aeae8f98b87f2efb655e31a3e6b649f875",
+      "magnet_uri": "magnet:?xt=urn:btih:8abe62aeae8f98b87f2efb655e31a3e6b649f875&dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260904-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5148,16 +5148,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed DVD Snapshot20260902 (x86_64)",
+      "title": "openSUSE Tumbleweed DVD Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": null,
-      "torrent_url": null,
+      "torrent_size": 22770,
+      "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent",
       "variant": "tumbleweed-dvd",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:43+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:49+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:tumbleweed-dvd:aarch64": {
     "hash": "da051d436fdc81bd6f2c3501d355408331866591496ac36c961c62583780bd44",
@@ -5181,7 +5181,7 @@
       "title": "openSUSE Tumbleweed DVD Snapshot20260830 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 20407,
+      "torrent_size": 20408,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-dvd",
       "version": "Snapshot20260830"
@@ -5190,10 +5190,10 @@
     "version": "Snapshot20260830"
   },
   "opensuse:tumbleweed-gnome-live": {
-    "hash": "e219d9006f26771da2735632675751b4df0387bbae1f982d321378cced8f5f1f",
+    "hash": "50df22e3676ee942c37a5ac46099f1cb151b3d2e5ababe2eb26a50680ab97821",
     "release": {
       "arch": "x86_64",
-      "checksum": "e219d9006f26771da2735632675751b4df0387bbae1f982d321378cced8f5f1f",
+      "checksum": "50df22e3676ee942c37a5ac46099f1cb151b3d2e5ababe2eb26a50680ab97821",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso",
@@ -5208,16 +5208,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed GNOME Live Snapshot20260902 (x86_64)",
+      "title": "openSUSE Tumbleweed GNOME Live Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-gnome-live",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:47+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:54+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:tumbleweed-gnome-live:aarch64": {
     "hash": "03230619a8566cd691c2e7d9e5ae6a8db363c4b32c8b8380187839d303d5791e",
@@ -5250,10 +5250,10 @@
     "version": "Snapshot20260830"
   },
   "opensuse:tumbleweed-kde-live": {
-    "hash": "9861d2230ca5a4fb43ebeed84eea86baa23c48e11098df2e98215b5495b88052",
+    "hash": "dc41e6428fea85f285973953c2acf76e8fff6f419baa8e30f6422ac8f11c3676",
     "release": {
       "arch": "x86_64",
-      "checksum": "9861d2230ca5a4fb43ebeed84eea86baa23c48e11098df2e98215b5495b88052",
+      "checksum": "dc41e6428fea85f285973953c2acf76e8fff6f419baa8e30f6422ac8f11c3676",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso",
@@ -5268,16 +5268,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed KDE Live Snapshot20260902 (x86_64)",
+      "title": "openSUSE Tumbleweed KDE Live Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-kde-live",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:48+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:55+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:tumbleweed-kde-live:aarch64": {
     "hash": "a4485754e4d8f0a1c0dabfaec397204bd2ff7605039c8801831211303ea1c686",
@@ -5310,16 +5310,16 @@
     "version": "Snapshot20260830"
   },
   "opensuse:tumbleweed-net": {
-    "hash": "182b8dcf758795011cab36ec37c097b46e9426445885b09ebd11ea9943221578",
+    "hash": "36f1a2030b3cdf4bf26c6220e0e838b22034156bed9ed10c27eda36e5be8ab45",
     "release": {
       "arch": "x86_64",
-      "checksum": "182b8dcf758795011cab36ec37c097b46e9426445885b09ebd11ea9943221578",
+      "checksum": "36f1a2030b3cdf4bf26c6220e0e838b22034156bed9ed10c27eda36e5be8ab45",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
       "filename": "openSUSE-Tumbleweed-NET-x86_64-Current.iso",
-      "info_hash": null,
-      "magnet_uri": null,
+      "info_hash": "2a431597a57c857ca970b3319af22a3d70bdffd6",
+      "magnet_uri": "magnet:?xt=urn:btih:2a431597a57c857ca970b3319af22a3d70bdffd6&dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260904-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5328,16 +5328,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed NET Snapshot20260902 (x86_64)",
+      "title": "openSUSE Tumbleweed NET Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": null,
-      "torrent_url": null,
+      "torrent_size": 2608,
+      "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent",
       "variant": "tumbleweed-net",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:45+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:51+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:tumbleweed-net:aarch64": {
     "hash": "f5d8b092f1ff26d05c4a18f5204f81501b8c3919a15c5b2659a7b36543567e83",
@@ -5361,7 +5361,7 @@
       "title": "openSUSE Tumbleweed NET Snapshot20260830 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 2805,
+      "torrent_size": 2806,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-net",
       "version": "Snapshot20260830"
@@ -5370,10 +5370,10 @@
     "version": "Snapshot20260830"
   },
   "opensuse:tumbleweed-rescue-cd": {
-    "hash": "3ac4d40e86b2d4d87c0c008b9fc2ef15211d4abf1fee53cc345cdc8b6d87db1e",
+    "hash": "57a7d86275189299d1ef916874709db78c6063f9d76aec708474b2a1dab6097f",
     "release": {
       "arch": "x86_64",
-      "checksum": "3ac4d40e86b2d4d87c0c008b9fc2ef15211d4abf1fee53cc345cdc8b6d87db1e",
+      "checksum": "57a7d86275189299d1ef916874709db78c6063f9d76aec708474b2a1dab6097f",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso",
@@ -5388,16 +5388,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed Rescue CD Snapshot20260902 (x86_64)",
+      "title": "openSUSE Tumbleweed Rescue CD Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-rescue-cd",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:50+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:58+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:tumbleweed-rescue-cd:aarch64": {
     "hash": "a03d6e62ccc7cb57f37a39ccf37a4c7cd848d63b905092ee8605992e9c8123a2",
@@ -5430,10 +5430,10 @@
     "version": "Snapshot20260830"
   },
   "opensuse:tumbleweed-xfce-live": {
-    "hash": "1b34ad35681b7a5134cadb0744a67960209198c57e6e1159728ffb7b9fe05431",
+    "hash": "c0f01f9d30f2c6fdd565795bcea6e1a0a7195bb69f07e9fe368822dca9102a06",
     "release": {
       "arch": "x86_64",
-      "checksum": "1b34ad35681b7a5134cadb0744a67960209198c57e6e1159728ffb7b9fe05431",
+      "checksum": "c0f01f9d30f2c6fdd565795bcea6e1a0a7195bb69f07e9fe368822dca9102a06",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso",
@@ -5448,16 +5448,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed XFCE Live Snapshot20260902 (x86_64)",
+      "title": "openSUSE Tumbleweed XFCE Live Snapshot20260904 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-xfce-live",
-      "version": "Snapshot20260902"
+      "version": "Snapshot20260904"
     },
-    "seen": "2026-09-05T10:40:49+00:00",
-    "version": "Snapshot20260902"
+    "seen": "2026-09-07T12:41:56+00:00",
+    "version": "Snapshot20260904"
   },
   "opensuse:tumbleweed-xfce-live:aarch64": {
     "hash": "c84b4d08df539610cc5fd596294d886652040fefba27174292a121651f818e47",
