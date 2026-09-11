@@ -155,10 +155,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.2 | gpg | — |
 | netbsd | install | x86_64 | 11.0 | checksum | ✓ |
 | netbsd | install | aarch64 | 11.0 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.9440.6aefcda9401b | checksum | — |
-| nixos | graphical | aarch64 | 26.05.9440.6aefcda9401b | checksum | — |
-| nixos | minimal | x86_64 | 26.05.9440.6aefcda9401b | checksum | — |
-| nixos | minimal | aarch64 | 26.05.9440.6aefcda9401b | checksum | — |
+| nixos | graphical | x86_64 | 26.05.9498.d58a46e3bc02 | checksum | — |
+| nixos | graphical | aarch64 | 26.05.9498.d58a46e3bc02 | checksum | — |
+| nixos | minimal | x86_64 | 26.05.9498.d58a46e3bc02 | checksum | — |
+| nixos | minimal | aarch64 | 26.05.9498.d58a46e3bc02 | checksum | — |
 | nobara | gnome | x86_64 | 44-2026-09-02 | checksum | — |
 | nobara | kde | x86_64 | 44-2026-09-02 | checksum | — |
 | nobara | official | x86_64 | 44-2026-09-02 | checksum | — |
@@ -227,7 +227,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | ubuntu-budgie | desktop-latest | x86_64 | 26.04.1 | gpg | ✓ |
 | ubuntu-budgie | desktop-lts | x86_64 | 26.04.1 | gpg | ✓ |
 | ubuntu-mate | desktop-latest | x86_64 | 25.10 | gpg | ✓ |
-| ubuntu-mate | desktop-lts | x86_64 | 24.04.4 | gpg | ✓ |
+| ubuntu-mate | desktop-lts | x86_64 | 24.04.5 | gpg | ✓ |
 | ubuntu-unity | desktop-latest | x86_64 | 26.04 | gpg | ✓ |
 | ubuntu-unity | desktop-lts | x86_64 | 26.04 | gpg | ✓ |
 | ubuntu | desktop-latest | x86_64 | 26.04.1 | gpg | ✓ |

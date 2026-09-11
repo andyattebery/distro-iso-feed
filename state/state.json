@@ -1140,11 +1140,11 @@
     "version": "2025.02.13"
   },
   "clonezilla:default": {
-    "hash": "238817626be6a0e7940d7be120225e5089ce7b2ad03ae062d64866014ded9a47",
+    "hash": "8769d90907c47afa85e0b15a8a34c295d1f30a6de7bfc3ebdd5c1123d1d54484b1a468ac15a1971d28b2c72e6a0f3a4aac97701b98417c946a3d15cb5cd1a656",
     "release": {
       "arch": "x86_64",
-      "checksum": null,
-      "checksum_algo": null,
+      "checksum": "8769d90907c47afa85e0b15a8a34c295d1f30a6de7bfc3ebdd5c1123d1d54484b1a468ac15a1971d28b2c72e6a0f3a4aac97701b98417c946a3d15cb5cd1a656",
+      "checksum_algo": "sha512",
       "distro": "clonezilla",
       "download_url": "https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.3-15/clonezilla-live-3.3.3-15-amd64.iso/download",
       "filename": "clonezilla-live-3.3.3-15-amd64.iso",
@@ -1155,8 +1155,8 @@
       "published": "2026-07-05T03:11:25+00:00",
       "signature_target": "checksums",
       "signature_url": "https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg",
-      "signing_key_fingerprint": null,
-      "signing_key_url": null,
+      "signing_key_fingerprint": "54C0821A48715DAFD61BFCAF667857D045599AFD",
+      "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x54C0821A48715DAFD61BFCAF667857D045599AFD",
       "size": null,
       "title": "Clonezilla Live 3.3.3-15 (x86_64)",
       "torrent_checksum": null,
@@ -1166,7 +1166,7 @@
       "variant": "default",
       "version": "3.3.3-15"
     },
-    "seen": "2026-09-09T11:31:03+00:00",
+    "seen": "2026-09-11T11:29:18+00:00",
     "version": "3.3.3-15"
   },
   "debian:live-cinnamon": {
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "630fc0e566c0daa917afab8fe204333a2c072852d8ad766930452d2a29d63ca3",
+    "hash": "bee453775bea882bc7a3bfda80373bcff1a321bd3f88e4c41254fccb583d7b9c",
     "release": {
       "arch": "x86_64",
-      "checksum": "630fc0e566c0daa917afab8fe204333a2c072852d8ad766930452d2a29d63ca3",
+      "checksum": "bee453775bea882bc7a3bfda80373bcff1a321bd3f88e4c41254fccb583d7b9c",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.9440.6aefcda9401b (x86_64)",
+      "title": "NixOS Graphical 26.05.9498.d58a46e3bc02 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.9440.6aefcda9401b"
+      "version": "26.05.9498.d58a46e3bc02"
     },
-    "seen": "2026-09-09T11:30:48+00:00",
-    "version": "26.05.9440.6aefcda9401b"
+    "seen": "2026-09-11T11:29:02+00:00",
+    "version": "26.05.9498.d58a46e3bc02"
   },
   "nixos:graphical:aarch64": {
-    "hash": "1324383bfe9cfd956408dec2c8ce0e28ed3a5ffcab0bf06cc4d3a939b5b705e0",
+    "hash": "9d5d074c37962353f04d7c87faf5ef29eac39826c2d794b9cb06baead52dd4bb",
     "release": {
       "arch": "aarch64",
-      "checksum": "1324383bfe9cfd956408dec2c8ce0e28ed3a5ffcab0bf06cc4d3a939b5b705e0",
+      "checksum": "9d5d074c37962353f04d7c87faf5ef29eac39826c2d794b9cb06baead52dd4bb",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.9440.6aefcda9401b (aarch64)",
+      "title": "NixOS Graphical 26.05.9498.d58a46e3bc02 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.9440.6aefcda9401b"
+      "version": "26.05.9498.d58a46e3bc02"
     },
-    "seen": "2026-09-09T11:30:48+00:00",
-    "version": "26.05.9440.6aefcda9401b"
+    "seen": "2026-09-11T11:29:03+00:00",
+    "version": "26.05.9498.d58a46e3bc02"
   },
   "nixos:minimal": {
-    "hash": "fdbb66a647675b9fc654a81824f80f3ecda9dc333ec5c2437a42ec04a89d57a6",
+    "hash": "9a50e2e27e10fb1c33bca8191b861410ac00dea7398d3e8b876184d1445d2b46",
     "release": {
       "arch": "x86_64",
-      "checksum": "fdbb66a647675b9fc654a81824f80f3ecda9dc333ec5c2437a42ec04a89d57a6",
+      "checksum": "9a50e2e27e10fb1c33bca8191b861410ac00dea7398d3e8b876184d1445d2b46",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.9440.6aefcda9401b (x86_64)",
+      "title": "NixOS Minimal 26.05.9498.d58a46e3bc02 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.9440.6aefcda9401b"
+      "version": "26.05.9498.d58a46e3bc02"
     },
-    "seen": "2026-09-09T11:30:46+00:00",
-    "version": "26.05.9440.6aefcda9401b"
+    "seen": "2026-09-11T11:29:00+00:00",
+    "version": "26.05.9498.d58a46e3bc02"
   },
   "nixos:minimal:aarch64": {
-    "hash": "63b986239f62b445a36ddc4aff49af5149485be8924e12c86145575248339cb4",
+    "hash": "162d1ea1935929fc55f1b506e104833a1384d15f28323f997bcca61ff06da409",
     "release": {
       "arch": "aarch64",
-      "checksum": "63b986239f62b445a36ddc4aff49af5149485be8924e12c86145575248339cb4",
+      "checksum": "162d1ea1935929fc55f1b506e104833a1384d15f28323f997bcca61ff06da409",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.9440.6aefcda9401b (aarch64)",
+      "title": "NixOS Minimal 26.05.9498.d58a46e3bc02 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.9440.6aefcda9401b"
+      "version": "26.05.9498.d58a46e3bc02"
     },
-    "seen": "2026-09-09T11:30:47+00:00",
-    "version": "26.05.9440.6aefcda9401b"
+    "seen": "2026-09-11T11:29:01+00:00",
+    "version": "26.05.9498.d58a46e3bc02"
   },
   "nobara:gnome": {
     "hash": "5edb4c239e385d2f2b93cf5a33810458c262acb2574a3987e9fc2e65f0c48479",
@@ -4815,8 +4815,8 @@
       "published": "2026-06-06T09:34:27+00:00",
       "signature_target": "image",
       "signature_url": "https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso.asc/download",
-      "signing_key_fingerprint": null,
-      "signing_key_url": null,
+      "signing_key_fingerprint": "D67506C878E08A94FD7E009424863F0C716B980B",
+      "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xD67506C878E08A94FD7E009424863F0C716B980B",
       "size": null,
       "title": "OpenMediaVault 8.3.1 (x86_64)",
       "torrent_checksum": null,
@@ -6570,34 +6570,34 @@
     "version": "25.10"
   },
   "ubuntu-mate:desktop-lts": {
-    "hash": "8b7c08c056ba9312fe83e5bf13751216236e6382584861c3b64701ae039c4009",
+    "hash": "60430d35da5c0bdb3d84a2fdf4052495256fc26ec300d7cd5a9933a534f0422c",
     "release": {
       "arch": "x86_64",
-      "checksum": "8b7c08c056ba9312fe83e5bf13751216236e6382584861c3b64701ae039c4009",
+      "checksum": "60430d35da5c0bdb3d84a2fdf4052495256fc26ec300d7cd5a9933a534f0422c",
       "checksum_algo": "sha256",
       "distro": "ubuntu-mate",
-      "download_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso",
-      "filename": "ubuntu-mate-24.04.4-desktop-amd64.iso",
-      "info_hash": "c761c94242082f8f45e85d5f470e9aa7ef848a55",
-      "magnet_uri": "magnet:?xt=urn:btih:c761c94242082f8f45e85d5f470e9aa7ef848a55&dn=ubuntu-mate-24.04.4-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso",
+      "filename": "ubuntu-mate-24.04.5-desktop-amd64.iso",
+      "info_hash": "588149d617ee9061aa6a4ee946df7ab7d7bf1f76",
+      "magnet_uri": "magnet:?xt=urn:btih:588149d617ee9061aa6a4ee946df7ab7d7bf1f76&dn=ubuntu-mate-24.04.5-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntu-mate.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu MATE LTS 24.04.4 (x86_64)",
+      "title": "Ubuntu MATE LTS 24.04.5 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 345044,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso.torrent",
+      "torrent_size": 394164,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso.torrent",
       "variant": "desktop-lts",
-      "version": "24.04.4"
+      "version": "24.04.5"
     },
-    "seen": "2026-07-12T23:21:32+00:00",
-    "version": "24.04.4"
+    "seen": "2026-09-11T11:27:30+00:00",
+    "version": "24.04.5"
   },
   "ubuntu-unity:desktop-latest": {
     "hash": "b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0",

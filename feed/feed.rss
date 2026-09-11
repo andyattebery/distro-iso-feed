@@ -4,8 +4,74 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Thu, 10 Sep 2026 11:26:31 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 11:29:03 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>NixOS Graphical 26.05.9498.d58a46e3bc02 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.9498.d58a46e3bc02</guid>
+      <pubDate>Fri, 11 Sep 2026 11:29:03 +0000</pubDate>
+      <description>NixOS Graphical 26.05.9498.d58a46e3bc02 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 9d5d074c37962353f04d7c87faf5ef29eac39826c2d794b9cb06baead52dd4bb
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.9498.d58a46e3bc02 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.9498.d58a46e3bc02</guid>
+      <pubDate>Fri, 11 Sep 2026 11:29:02 +0000</pubDate>
+      <description>NixOS Graphical 26.05.9498.d58a46e3bc02 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: bee453775bea882bc7a3bfda80373bcff1a321bd3f88e4c41254fccb583d7b9c
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.9498.d58a46e3bc02 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.9498.d58a46e3bc02</guid>
+      <pubDate>Fri, 11 Sep 2026 11:29:01 +0000</pubDate>
+      <description>NixOS Minimal 26.05.9498.d58a46e3bc02 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 162d1ea1935929fc55f1b506e104833a1384d15f28323f997bcca61ff06da409
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.9498.d58a46e3bc02 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.9498.d58a46e3bc02</guid>
+      <pubDate>Fri, 11 Sep 2026 11:29:00 +0000</pubDate>
+      <description>NixOS Minimal 26.05.9498.d58a46e3bc02 (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 9a50e2e27e10fb1c33bca8191b861410ac00dea7398d3e8b876184d1445d2b46
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>Ubuntu MATE LTS 24.04.5 (x86_64)</title>
+      <link>https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso</link>
+      <guid isPermaLink="false">ubuntu-mate:desktop-lts:24.04.5</guid>
+      <pubDate>Fri, 11 Sep 2026 11:27:30 +0000</pubDate>
+      <description>Ubuntu MATE LTS 24.04.5 (x86_64)
+Filename: ubuntu-mate-24.04.5-desktop-amd64.iso
+sha256: 60430d35da5c0bdb3d84a2fdf4052495256fc26ec300d7cd5a9933a534f0422c
+Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso.torrent
+Infohash: 588149d617ee9061aa6a4ee946df7ab7d7bf1f76
+Magnet: magnet:?xt=urn:btih:588149d617ee9061aa6a4ee946df7ab7d7bf1f76&amp;dn=ubuntu-mate-24.04.5-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu-mate</category>
+    </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260908 (aarch64)</title>
       <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso</link>
@@ -257,54 +323,6 @@ Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260908T163056Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.9440.6aefcda9401b (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.9440.6aefcda9401b</guid>
-      <pubDate>Wed, 09 Sep 2026 11:30:48 +0000</pubDate>
-      <description>NixOS Graphical 26.05.9440.6aefcda9401b (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 1324383bfe9cfd956408dec2c8ce0e28ed3a5ffcab0bf06cc4d3a939b5b705e0
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.9440.6aefcda9401b (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.9440.6aefcda9401b</guid>
-      <pubDate>Wed, 09 Sep 2026 11:30:48 +0000</pubDate>
-      <description>NixOS Graphical 26.05.9440.6aefcda9401b (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 630fc0e566c0daa917afab8fe204333a2c072852d8ad766930452d2a29d63ca3
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.9440.6aefcda9401b (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.9440.6aefcda9401b</guid>
-      <pubDate>Wed, 09 Sep 2026 11:30:47 +0000</pubDate>
-      <description>NixOS Minimal 26.05.9440.6aefcda9401b (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 63b986239f62b445a36ddc4aff49af5149485be8924e12c86145575248339cb4
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.9440.6aefcda9401b (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.9440.6aefcda9401b</guid>
-      <pubDate>Wed, 09 Sep 2026 11:30:46 +0000</pubDate>
-      <description>NixOS Minimal 26.05.9440.6aefcda9401b (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: fdbb66a647675b9fc654a81824f80f3ecda9dc333ec5c2437a42ec04a89d57a6
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>CentOS Stream DVD 20260908.0 (s390x)</title>
@@ -1645,24 +1663,6 @@ Magnet: magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&amp;dn=ubun
 Verify: gpg</description>
       <enclosure url="https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>ubuntu-unity</category>
-    </item>
-    <item>
-      <title>Ubuntu MATE LTS 24.04.4 (x86_64)</title>
-      <link>https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso</link>
-      <guid isPermaLink="false">ubuntu-mate:desktop-lts:24.04.4</guid>
-      <pubDate>Sun, 12 Jul 2026 23:21:32 +0000</pubDate>
-      <description>Ubuntu MATE LTS 24.04.4 (x86_64)
-Filename: ubuntu-mate-24.04.4-desktop-amd64.iso
-sha256: 8b7c08c056ba9312fe83e5bf13751216236e6382584861c3b64701ae039c4009
-Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso.torrent
-Infohash: c761c94242082f8f45e85d5f470e9aa7ef848a55
-Magnet: magnet:?xt=urn:btih:c761c94242082f8f45e85d5f470e9aa7ef848a55&amp;dn=ubuntu-mate-24.04.4-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>ubuntu-mate</category>
     </item>
     <item>
       <title>Parrot Enlightenment 7.3 (x86_64)</title>
@@ -3542,9 +3542,11 @@ Verify: checksum</description>
       <pubDate>Sun, 05 Jul 2026 03:11:25 +0000</pubDate>
       <description>Clonezilla Live 3.3.3-15 (x86_64)
 Filename: clonezilla-live-3.3.3-15-amd64.iso
+sha512: 8769d90907c47afa85e0b15a8a34c295d1f30a6de7bfc3ebdd5c1123d1d54484b1a468ac15a1971d28b2c72e6a0f3a4aac97701b98417c946a3d15cb5cd1a656
 Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
-Verify: gpg
-WARNING: no published checksum — integrity unverifiable</description>
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
+Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.3-15/clonezilla-live-3.3.3-15-amd64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>clonezilla</category>
     </item>
@@ -3572,6 +3574,8 @@ Verify: gpg</description>
 Filename: openmediavault_8.3.1-amd64.iso
 sha256: 5ada7dea09dbb10365b6f245515e71c79c5398d8f8f1acda675ee6d8b572d2e5
 Signature: https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso.asc/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xD67506C878E08A94FD7E009424863F0C716B980B
+Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>openmediavault</category>

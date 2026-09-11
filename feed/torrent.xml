@@ -4,7 +4,27 @@
   <title>Distro ISO Feed — torrents</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-09-10T11:26:25+00:00</updated>
+  <updated>2026-09-11T11:27:30+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-mate/desktop-lts/24.04.5</id>
+    <title>Ubuntu MATE LTS 24.04.5 (x86_64)</title>
+    <updated>2026-09-11T11:27:30+00:00</updated>
+    <published>2026-09-11T11:27:30+00:00</published>
+    <link href="https://ubuntu-mate.org/" rel="alternate" type="text/html" />
+    <link href="https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="394164" />
+    <category term="ubuntu-mate" label="distro" />
+    <category term="desktop-lts" label="variant" />
+    <summary type="text">Ubuntu MATE LTS 24.04.5 (x86_64)
+Filename: ubuntu-mate-24.04.5-desktop-amd64.iso
+sha256: 60430d35da5c0bdb3d84a2fdf4052495256fc26ec300d7cd5a9933a534f0422c
+Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso.torrent
+Infohash: 588149d617ee9061aa6a4ee946df7ab7d7bf1f76
+Magnet: magnet:?xt=urn:btih:588149d617ee9061aa6a4ee946df7ab7d7bf1f76&amp;dn=ubuntu-mate-24.04.5-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20260908</id>
     <title>openSUSE Tumbleweed NET Snapshot20260908 (aarch64)</title>
@@ -817,26 +837,6 @@ Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent
 Infohash: a5283cf4e0f3aa287ed45e4945e67d28eac07de8
 Magnet: magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&amp;dn=ubuntu-unity-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-mate/desktop-lts/24.04.4</id>
-    <title>Ubuntu MATE LTS 24.04.4 (x86_64)</title>
-    <updated>2026-07-12T23:21:32+00:00</updated>
-    <published>2026-07-12T23:21:32+00:00</published>
-    <link href="https://ubuntu-mate.org/" rel="alternate" type="text/html" />
-    <link href="https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="345044" />
-    <category term="ubuntu-mate" label="distro" />
-    <category term="desktop-lts" label="variant" />
-    <summary type="text">Ubuntu MATE LTS 24.04.4 (x86_64)
-Filename: ubuntu-mate-24.04.4-desktop-amd64.iso
-sha256: 8b7c08c056ba9312fe83e5bf13751216236e6382584861c3b64701ae039c4009
-Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.4/release/ubuntu-mate-24.04.4-desktop-amd64.iso.torrent
-Infohash: c761c94242082f8f45e85d5f470e9aa7ef848a55
-Magnet: magnet:?xt=urn:btih:c761c94242082f8f45e85d5f470e9aa7ef848a55&amp;dn=ubuntu-mate-24.04.4-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
