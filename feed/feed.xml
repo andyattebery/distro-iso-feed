@@ -4,7 +4,484 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-09-12T10:54:01+00:00</updated>
+  <updated>2026-09-13T11:59:14+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/unstable-44.20260913</id>
+    <title>Bazzite NVIDIA Open unstable-44.20260913 (x86_64)</title>
+    <updated>2026-09-13T11:59:14+00:00</updated>
+    <published>2026-09-13T11:59:14+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="nvidia-open" label="variant" />
+    <summary type="text">Bazzite NVIDIA Open unstable-44.20260913 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/unstable-44.20260913</id>
+    <title>Bazzite Desktop unstable-44.20260913 (x86_64)</title>
+    <updated>2026-09-13T11:59:14+00:00</updated>
+    <published>2026-09-13T11:59:14+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">Bazzite Desktop unstable-44.20260913 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/unstable-44.20260913</id>
+    <title>Bazzite Deck unstable-44.20260913 (x86_64)</title>
+    <updated>2026-09-13T11:59:14+00:00</updated>
+    <published>2026-09-13T11:59:14+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="deck" label="variant" />
+    <summary type="text">Bazzite Deck unstable-44.20260913 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260911</id>
+    <title>openSUSE Tumbleweed Rescue CD Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:20+00:00</updated>
+    <published>2026-09-13T11:58:20+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-rescue-cd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20260911 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: 0793b74b0cdb3f308a93e000afc9d2110d0e66ecdbee9e4562a6d36c3ba3fd7f
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live/Snapshot20260911</id>
+    <title>openSUSE Tumbleweed XFCE Live Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:19+00:00</updated>
+    <published>2026-09-13T11:58:19+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-xfce-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20260911 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: 9c8f7c3e19b4ee0347a4492b109c88fb69efee1a60454a4af3b7d2c7c2bdfaa6
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live/Snapshot20260911</id>
+    <title>openSUSE Tumbleweed KDE Live Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:18+00:00</updated>
+    <published>2026-09-13T11:58:18+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-kde-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20260911 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: fedb4262fa998886a9a74a6aeb38bf8b1a336695de706dcc81de0fdd279f03ae
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live/Snapshot20260911</id>
+    <title>openSUSE Tumbleweed GNOME Live Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:17+00:00</updated>
+    <published>2026-09-13T11:58:17+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-gnome-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20260911 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: 5ef229b028d4163d01282fd4c9469f5a31842aaa92d1dbe24f0d26e5874117a2
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd/Snapshot20260911</id>
+    <title>openSUSE MicroOS DVD Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:16+00:00</updated>
+    <published>2026-09-13T11:58:16+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="microos-dvd" label="variant" />
+    <summary type="text">openSUSE MicroOS DVD Snapshot20260911 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: 0cb53d102011a5c9eaae603c4fb0de68112f71fa5173c3c3288180845c9651db
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20260911</id>
+    <title>openSUSE Tumbleweed NET Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:15+00:00</updated>
+    <published>2026-09-13T11:58:15+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2615" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20260911 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: 374016516daf3186fdc2e0a10687e6163e7932d941f3b1ea8fafcbf9b3a1ee42
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: f4857e6b8769b6cdb9dc77efecc8803d7634fabc
+Magnet: magnet:?xt=urn:btih:f4857e6b8769b6cdb9dc77efecc8803d7634fabc&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260911-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20260911</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20260911 (x86_64)</title>
+    <updated>2026-09-13T11:58:14+00:00</updated>
+    <published>2026-09-13T11:58:14+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22777" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260911 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 11cf7e40425aea492bd6e8463a8818b613e7eac081e948d2aaceee4515fd8b57
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
+Infohash: 2a73f6d6774844122fda58fa5c89eca9f6aef7a7
+Magnet: magnet:?xt=urn:btih:2a73f6d6774844122fda58fa5c89eca9f6aef7a7&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260911-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-standard/13.7.0</id>
+    <title>Debian Live Standard 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:36+00:00</updated>
+    <published>2026-09-13T11:57:36+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-standard.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-standard.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="154648" />
+    <category term="debian" label="distro" />
+    <category term="live-standard" label="variant" />
+    <summary type="text">Debian Live Standard 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-standard.iso
+sha512: 79549808584a5c3fd8e3bda584652c47a3145f79c06f157ee8f9a3ff98d92fd548d235617e84ddef884ae535f35855e44cff222882cd62fad1898e397e9b2240
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-standard.iso.torrent
+torrent-sha512: d7e08121eb4454d8a3a96d6d3e667cab5388ccb01848b430088abefaeb8af6ed7cc99cedd0f7d2d4c197da0bb858e1703eecf21ff8c63c5b470df25376cbad68
+Infohash: e3da5bd17fb26f462e1d3e01247f38d3df2c4fd0
+Magnet: magnet:?xt=urn:btih:e3da5bd17fb26f462e1d3e01247f38d3df2c4fd0&amp;dn=debian-live-13.7.0-amd64-standard.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxqt/13.7.0</id>
+    <title>Debian Live LXQt 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:36+00:00</updated>
+    <published>2026-09-13T11:57:36+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-lxqt.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxqt.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="305236" />
+    <category term="debian" label="distro" />
+    <category term="live-lxqt" label="variant" />
+    <summary type="text">Debian Live LXQt 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-lxqt.iso
+sha512: d001b888c4a64215b3f579f048d4a69d358ccf3f125a7c06abafd1c7d6decbb6078cf922f6c0b102a6d037874575844008ee9923ef3286296d84dfcdd24b9603
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxqt.iso.torrent
+torrent-sha512: d393bda8e6aab5ab497dcf6bd8545fc212146f0a954648dca0bc28eb62d735da344cfc7aba099874453e9f9eb20eab51d6b72311c5ef36ce7e2bd72dc7cb01a5
+Infohash: 6261faad35da019e2a44d6e354034dc52ce53d0d
+Magnet: magnet:?xt=urn:btih:6261faad35da019e2a44d6e354034dc52ce53d0d&amp;dn=debian-live-13.7.0-amd64-lxqt.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxde/13.7.0</id>
+    <title>Debian Live LXDE 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:36+00:00</updated>
+    <published>2026-09-13T11:57:36+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-lxde.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="290496" />
+    <category term="debian" label="distro" />
+    <category term="live-lxde" label="variant" />
+    <summary type="text">Debian Live LXDE 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-lxde.iso
+sha512: e52012e2d5770a700f5e8db71724ed4eefb3d072af25389997f492d12055bb5379637ae885ac6621162f9c246d4ade2f4d729fd79e2ff40729e94314065759e9
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxde.iso.torrent
+torrent-sha512: ffaef132b80f6747eafe7841c33cf4f53d59216080c7af33c305105b44d5df21f371aa2d2d35cecef4d8106836a30ae62473e0c953fe2778fcb3b4da7783a215
+Infohash: 78fb2a1b08069f2dd415302b7ab517bb82eb3619
+Magnet: magnet:?xt=urn:btih:78fb2a1b08069f2dd415302b7ab517bb82eb3619&amp;dn=debian-live-13.7.0-amd64-lxde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-xfce/13.7.0</id>
+    <title>Debian Live Xfce 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:35+00:00</updated>
+    <published>2026-09-13T11:57:35+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-xfce.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="292476" />
+    <category term="debian" label="distro" />
+    <category term="live-xfce" label="variant" />
+    <summary type="text">Debian Live Xfce 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-xfce.iso
+sha512: 3fa03343a9868b2afee10adadd8f4ebf0031f222bef0858a3c9a0d9fd74325d17b999cdeba2c88d9a8d0856f3bb0ed0d8a240dfa02651fb15c93f97b3b2ef8e5
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-xfce.iso.torrent
+torrent-sha512: 94acfe106424df14cdc006cdb9d28991d18392274b979d6cfc4c430d68b71a1b42b8f2f08a39685bab69eb376b3d0c8830f2d7315f37ee42b2b000238bc21348
+Infohash: 8b3b328db6514130fe3401f029b4076837eedb13
+Magnet: magnet:?xt=urn:btih:8b3b328db6514130fe3401f029b4076837eedb13&amp;dn=debian-live-13.7.0-amd64-xfce.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-mate/13.7.0</id>
+    <title>Debian Live MATE 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:35+00:00</updated>
+    <published>2026-09-13T11:57:35+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-mate.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-mate.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="302976" />
+    <category term="debian" label="distro" />
+    <category term="live-mate" label="variant" />
+    <summary type="text">Debian Live MATE 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-mate.iso
+sha512: 02f1103b53643916893ac429541cbfd266541ca46961122c8882bf95f38a82fc90f3aa1ae93071129466d5b54f972521617cb48e0633ed00e0c4753b10fd0615
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-mate.iso.torrent
+torrent-sha512: e056d04bab931e9c337007679ed54b1fe427866ef62fcb45ed1ab52067708f5f003e021c026236d00b2a34670965178010d59d6a8ccdbd3819faed59f5543d7a
+Infohash: 124ebf9b7d7e2881dec9f91d8bd8b2c62cc2b945
+Magnet: magnet:?xt=urn:btih:124ebf9b7d7e2881dec9f91d8bd8b2c62cc2b945&amp;dn=debian-live-13.7.0-amd64-mate.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-kde/13.7.0</id>
+    <title>Debian Live KDE 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:35+00:00</updated>
+    <published>2026-09-13T11:57:35+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-kde.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-kde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="319873" />
+    <category term="debian" label="distro" />
+    <category term="live-kde" label="variant" />
+    <summary type="text">Debian Live KDE 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-kde.iso
+sha512: 079193350497fcbdc04271bf34d7ef26dfc3f21f27d1b6fc61933515fb868987fe313ff205ef98a7f82a5c63e18e259a0a957443d7cb417ebeb93ad961c43342
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-kde.iso.torrent
+torrent-sha512: 36d85284305ac1e00726916c5972e6871ed38746f1e849d917892de6d79effc967bbf17863db1032a277e307e029ae5761720da17452715ad6961b0ea7369ab7
+Infohash: b3c432c4c2c85a0c41659a4cc2f165703fcc53fe
+Magnet: magnet:?xt=urn:btih:b3c432c4c2c85a0c41659a4cc2f165703fcc53fe&amp;dn=debian-live-13.7.0-amd64-kde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-cinnamon/13.7.0</id>
+    <title>Debian Live Cinnamon 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:35+00:00</updated>
+    <published>2026-09-13T11:57:35+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-cinnamon.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-cinnamon.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="314468" />
+    <category term="debian" label="distro" />
+    <category term="live-cinnamon" label="variant" />
+    <summary type="text">Debian Live Cinnamon 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-cinnamon.iso
+sha512: 4a85cdf7b7b9d693617ae5184b718a6c140a7efbe99fc495ec32b8b7a5ca83fbc910ddcb4f49219c48d27cdce4e40d40c0aed1c298d7f70ec238326455bef094
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-cinnamon.iso.torrent
+torrent-sha512: c12bb1056eae4ff14d403a741159b21e833e2d1d16c59294a269dac37c0ac77416abab59d9c768fe870741c90a7105ddc1894fded56d3271424e8dfdd84f9c7d
+Infohash: c9aadecd13fbd99d7ffbfdc44c1a6448c0213088
+Magnet: magnet:?xt=urn:btih:c9aadecd13fbd99d7ffbfdc44c1a6448c0213088&amp;dn=debian-live-13.7.0-amd64-cinnamon.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:s390x/13.7.0</id>
+    <title>Debian netinst 13.7.0 (s390x)</title>
+    <updated>2026-09-13T11:57:32+00:00</updated>
+    <published>2026-09-13T11:57:32+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/debian-13.7.0-s390x-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.7.0-s390x-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="34188" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.7.0 (s390x)
+Filename: debian-13.7.0-s390x-netinst.iso
+sha512: 76594fcfd3d0ce0e4c3d02689667f4384e2c9846b038b0a2c1a351a61995a3e74ba438368a9464b17be357cee253ee9294050395dcd325b4b5bc8577fcdd0333
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.7.0-s390x-netinst.iso.torrent
+torrent-sha512: 67ae8262b79f16822aaeaa4725b56ec9014398317e05a4e97138e24f15865748a341f381a47a5b1e3be781596f56fca176d7b3dcbd7446cdd4719b3c0e4ccd36
+Infohash: 112cc7294b83677269d5b21a5c201f79b9dff20d
+Magnet: magnet:?xt=urn:btih:112cc7294b83677269d5b21a5c201f79b9dff20d&amp;dn=debian-13.7.0-s390x-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:riscv64/13.7.0</id>
+    <title>Debian netinst 13.7.0 (riscv64)</title>
+    <updated>2026-09-13T11:57:32+00:00</updated>
+    <published>2026-09-13T11:57:32+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/debian-13.7.0-riscv64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.7.0-riscv64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="47398" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.7.0 (riscv64)
+Filename: debian-13.7.0-riscv64-netinst.iso
+sha512: ca639aa0acdd64f6fbef578fd7a5aba064640ef03f180661d2ebbf13a709f13ca2128841e5d8626025cc9d998a52736f8b46470952d3e8e1bf9c73cd2f2b5fbd
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.7.0-riscv64-netinst.iso.torrent
+torrent-sha512: 7b1c3b1e39f43b1db99831afd86bd2a3887ba413f7f80766a445ecc1bbf683521db3771e957498d477fa400a77354cbdd5f005a8c7de6ab0bb2ca2fa4fa6102c
+Infohash: 1c12122d80af9f194e805d369d13bc93e1c07347
+Magnet: magnet:?xt=urn:btih:1c12122d80af9f194e805d369d13bc93e1c07347&amp;dn=debian-13.7.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-gnome/13.7.0</id>
+    <title>Debian Live GNOME 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:32+00:00</updated>
+    <published>2026-09-13T11:57:32+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-gnome.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-gnome.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="290779" />
+    <category term="debian" label="distro" />
+    <category term="live-gnome" label="variant" />
+    <summary type="text">Debian Live GNOME 13.7.0 (x86_64)
+Filename: debian-live-13.7.0-amd64-gnome.iso
+sha512: 5c70c54db8742bb760a6dfbe2f3c208a550938edee22b858dfb2e09a09b87666f1454134f24df3a5a2f8ae6a7c81c9ab8a2500b1eae53927691ffd6e73997380
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-gnome.iso.torrent
+torrent-sha512: 2cb3fe4f8b71d8b03246c411c2c855b95af183ec70f1597c9aca0f57c75d9707cc3fb7db59fab853b45f6ee48c9ad13c5831ed97115619d44079286572f33155
+Infohash: 0697aa4c78e1237966925f250c2189eac36020f2
+Magnet: magnet:?xt=urn:btih:0697aa4c78e1237966925f250c2189eac36020f2&amp;dn=debian-live-13.7.0-amd64-gnome.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:ppc64le/13.7.0</id>
+    <title>Debian netinst 13.7.0 (ppc64le)</title>
+    <updated>2026-09-13T11:57:31+00:00</updated>
+    <published>2026-09-13T11:57:31+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/debian-13.7.0-ppc64el-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.7.0-ppc64el-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="50218" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.7.0 (ppc64le)
+Filename: debian-13.7.0-ppc64el-netinst.iso
+sha512: c528d1b1d4fd138deeffc02f891878736be303d022dbf643b338ef02c099b1a57d46027dd3e9a89276057848295c8cd79539493dc257853f5cff660038b1c8da
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.7.0-ppc64el-netinst.iso.torrent
+torrent-sha512: 26b81db63870ef41b91e067f82cf0debdb79691e498d0d52b8938594adeb0e7ff2ae4e767a66102b1524f55bbd89e39025f020cd06baf01e6499f354f190876c
+Infohash: 7bc06aa26dadac4e4e2d5f35251d2072fb8c8032
+Magnet: magnet:?xt=urn:btih:7bc06aa26dadac4e4e2d5f35251d2072fb8c8032&amp;dn=debian-13.7.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:armhf/13.7.0</id>
+    <title>Debian netinst 13.7.0 (armhf)</title>
+    <updated>2026-09-13T11:57:31+00:00</updated>
+    <published>2026-09-13T11:57:31+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/debian-13.7.0-armhf-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.7.0-armhf-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="72188" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.7.0 (armhf)
+Filename: debian-13.7.0-armhf-netinst.iso
+sha512: 3db55920a176bb90775cca1425d8dd8e28c637aec7d6aae644ff083d0140a3ebe99c8e0e8d6f6f5022b9c0df2c7a7e3708268f2d399a32edf551b26ad7952d9a
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.7.0-armhf-netinst.iso.torrent
+torrent-sha512: d4bed7048a404b97003e279fa7d550e1b4cbf1332a1959bb2045865fff2fb3ee9534fe69bb570bfdf8e282a4a7a2ad4c5de2f5ee32da70f5c256fbd64241832b
+Infohash: cc6464617ff7af0b9e598ca2244717cea8b899d9
+Magnet: magnet:?xt=urn:btih:cc6464617ff7af0b9e598ca2244717cea8b899d9&amp;dn=debian-13.7.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:aarch64/13.7.0</id>
+    <title>Debian netinst 13.7.0 (aarch64)</title>
+    <updated>2026-09-13T11:57:29+00:00</updated>
+    <published>2026-09-13T11:57:29+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/debian-13.7.0-arm64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.7.0-arm64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="56588" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.7.0 (aarch64)
+Filename: debian-13.7.0-arm64-netinst.iso
+sha512: cff08e2f29c2846f0503fe57ad1085b5067f29acab444acdf7cdf5b10f2a11140a0e87828e4ffeb9828d188053690467ebe50151c142551d6053fc3288808b86
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.7.0-arm64-netinst.iso.torrent
+torrent-sha512: 88ae35f565d02ffe671f41770bed85d18e11dfa88546ff5c3a2d87177cf0ea2e4d26af05da8fe912c8251cae5a418be802dd62838988c31f982d9070533d17cb
+Infohash: bf7ed99351f7b08f0916b7b3e49cfa574d206879
+Magnet: magnet:?xt=urn:btih:bf7ed99351f7b08f0916b7b3e49cfa574d206879&amp;dn=debian-13.7.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst/13.7.0</id>
+    <title>Debian netinst 13.7.0 (x86_64)</title>
+    <updated>2026-09-13T11:57:24+00:00</updated>
+    <published>2026-09-13T11:57:24+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.7.0-amd64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="60948" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.7.0 (x86_64)
+Filename: debian-13.7.0-amd64-netinst.iso
+sha512: ef04d0276850d70e4aaec0b55003628660e9631b26e35215a70ab3c8c707294a4b12731bc73c75a932902f703a7c278310ca99df28d6b36fb06d5618d8d0f678
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.7.0-amd64-netinst.iso.torrent
+torrent-sha512: 668f759e6454e5400ca1c34ab7b0e63b4e671b07a8838427e76af8e8c22f359befb4391aa1f8f09bde88957349f632247748f74de8b82bfafb7495a6f89839d3
+Infohash: 7acf8fb590b2060dd9c3146ef770169d593433b0
+Magnet: magnet:?xt=urn:btih:7acf8fb590b2060dd9c3146ef770169d593433b0&amp;dn=debian-13.7.0-amd64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.9592.21a67dc47014</id>
     <title>NixOS Minimal 26.05.9592.21a67dc47014 (aarch64)</title>
@@ -60,133 +537,6 @@ Verify: checksum</summary>
 Filename: latest-nixos-minimal-x86_64-linux.iso
 sha256: c96da9819242f67fc4cd5ee4ef367bf734ea59c0f5761e3f392079e8d30a8c4c
 Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20260910</id>
-    <title>openSUSE Tumbleweed Rescue CD Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:53:03+00:00</updated>
-    <published>2026-09-12T10:53:03+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-rescue-cd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20260910 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: 24f50090940ac1a6c8402f3958f37b78d79084c4d9068240075debfdd7e752c3
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live/Snapshot20260910</id>
-    <title>openSUSE Tumbleweed XFCE Live Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:53:02+00:00</updated>
-    <published>2026-09-12T10:53:02+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-xfce-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20260910 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 9128fe05d635881d523bafd903ce1977ff8b065d2c7f32b247f69d65636cd77c
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live/Snapshot20260910</id>
-    <title>openSUSE Tumbleweed KDE Live Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:53:01+00:00</updated>
-    <published>2026-09-12T10:53:01+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-kde-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20260910 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 8dcc5d672d815f60323b201c13434a3999f676bd1e0fb6a148edd3f05f131de9
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live/Snapshot20260910</id>
-    <title>openSUSE Tumbleweed GNOME Live Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:52:59+00:00</updated>
-    <published>2026-09-12T10:52:59+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-gnome-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20260910 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: 163f9350c9141ad927607d4f0dd04672a0180f277dc78f3b31cc7fdf70e2599a
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd/Snapshot20260910</id>
-    <title>openSUSE MicroOS DVD Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:52:58+00:00</updated>
-    <published>2026-09-12T10:52:58+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="microos-dvd" label="variant" />
-    <summary type="text">openSUSE MicroOS DVD Snapshot20260910 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: dd31e711be44fbbd460ecba1491fd8b3b131296bef1fa674742e2f23f98304f8
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20260910</id>
-    <title>openSUSE Tumbleweed NET Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:52:56+00:00</updated>
-    <published>2026-09-12T10:52:56+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2608" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20260910 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 37ea4d5b8b77afad7a01730f5c7e1c2426baec65c382af9ceb75d17e1123ab02
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 07cb44427714232cb26134b71cb8564ca1afd5d4
-Magnet: magnet:?xt=urn:btih:07cb44427714232cb26134b71cb8564ca1afd5d4&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260910-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20260910</id>
-    <title>openSUSE Tumbleweed DVD Snapshot20260910 (x86_64)</title>
-    <updated>2026-09-12T10:52:54+00:00</updated>
-    <published>2026-09-12T10:52:54+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22770" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-dvd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed DVD Snapshot20260910 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 614620daeee795a255a21a67bd603bcd4d80f8c433931d0cf02b34dd23d45099
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: 6a4e8a4a4019814de826219afc0e80a417e780cf
-Magnet: magnet:?xt=urn:btih:6a4e8a4a4019814de826219afc0e80a417e780cf&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260910-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ubuntu-mate/desktop-lts/24.04.5</id>
@@ -522,48 +872,6 @@ Verify: checksum</summary>
     <summary type="text">Bluefin stable-20260908 (x86_64)
 Filename: bluefin-stable-x86_64.iso
 sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/44.20260908</id>
-    <title>Bazzite NVIDIA Open 44.20260908 (x86_64)</title>
-    <updated>2026-09-08T11:26:21+00:00</updated>
-    <published>2026-09-08T11:26:21+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="nvidia-open" label="variant" />
-    <summary type="text">Bazzite NVIDIA Open 44.20260908 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/44.20260908</id>
-    <title>Bazzite Desktop 44.20260908 (x86_64)</title>
-    <updated>2026-09-08T11:26:21+00:00</updated>
-    <published>2026-09-08T11:26:21+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="desktop" label="variant" />
-    <summary type="text">Bazzite Desktop 44.20260908 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/44.20260908</id>
-    <title>Bazzite Deck 44.20260908 (x86_64)</title>
-    <updated>2026-09-08T11:26:21+00:00</updated>
-    <published>2026-09-08T11:26:21+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="deck" label="variant" />
-    <summary type="text">Bazzite Deck 44.20260908 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -1629,94 +1937,6 @@ Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso.torrent
 Infohash: b91d49b1313f5aa27f2b3a9dc48af8248f40908e
 Magnet: magnet:?xt=urn:btih:b91d49b1313f5aa27f2b3a9dc48af8248f40908e&amp;dn=ubuntu-mate-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:riscv64/13.6.0</id>
-    <title>Debian netinst 13.6.0 (riscv64)</title>
-    <updated>2026-07-17T02:01:06+00:00</updated>
-    <published>2026-07-17T02:01:06+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/debian-13.6.0-riscv64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="47318" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (riscv64)
-Filename: debian-13.6.0-riscv64-netinst.iso
-sha512: e989a50de60107703c6383b8a45d05b970a117e7f33cacd195a80b5629367fa46188a28869a096d23bee83563a1d1eb4c9c8f7e89c3db01fda50e988c087a05a
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.6.0-riscv64-netinst.iso.torrent
-torrent-sha512: f6e5a99959b142bbff3636584d6b49554256ef6840488a1fb6245bfed6220088bb54e5f84e86fab47c6841e5005f41b2880a9b2c1c971dedf7f38921e0388db9
-Infohash: 1831a699a718331f6e41c6bbc55c761c36377a8b
-Magnet: magnet:?xt=urn:btih:1831a699a718331f6e41c6bbc55c761c36377a8b&amp;dn=debian-13.6.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:ppc64le/13.6.0</id>
-    <title>Debian netinst 13.6.0 (ppc64le)</title>
-    <updated>2026-07-17T02:00:59+00:00</updated>
-    <published>2026-07-17T02:00:59+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/debian-13.6.0-ppc64el-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="50178" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (ppc64le)
-Filename: debian-13.6.0-ppc64el-netinst.iso
-sha512: ebde611a1014b044e912ef1e2c0e4be8c2a488d03df0e15f48bef32daafb1441327321fd4d880a4e4b56f680a05c1047abf6dc93f65da095bbe1ea5b76b9d02b
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.6.0-ppc64el-netinst.iso.torrent
-torrent-sha512: ac14b26d6173ee913fccf98b8de39edf1409efe46a879dfe194f0cb3286f27fd885bdcc1285503faf0729ce079ad00db9beaef3c8a1a21f6293d393eedc6c6ae
-Infohash: dae669270774ba8bbac8272656e22477e01b5d89
-Magnet: magnet:?xt=urn:btih:dae669270774ba8bbac8272656e22477e01b5d89&amp;dn=debian-13.6.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:armhf/13.6.0</id>
-    <title>Debian netinst 13.6.0 (armhf)</title>
-    <updated>2026-07-17T02:00:48+00:00</updated>
-    <published>2026-07-17T02:00:48+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/debian-13.6.0-armhf-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="72188" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (armhf)
-Filename: debian-13.6.0-armhf-netinst.iso
-sha512: 9a8f507f353c20b2a409097a6190711eb08f4df4f39819c6dfabb4e8f087a51ccb208aff70b6763f535ad4ead89503f604e93a8db715c6ee623059898f3926bd
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.6.0-armhf-netinst.iso.torrent
-torrent-sha512: c4173881b9efa235b1a6fbdf41479c7ed9fa2dadb02d2ac4e0ecbcd8cbec8e4411e288cb1854ff115b4a6fe280d62d32f2886c37e604c1ae595fa973ce8a2e40
-Infohash: 45c0b6d858f5cc7b31c1b90cae532fa40295278f
-Magnet: magnet:?xt=urn:btih:45c0b6d858f5cc7b31c1b90cae532fa40295278f&amp;dn=debian-13.6.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:aarch64/13.6.0</id>
-    <title>Debian netinst 13.6.0 (aarch64)</title>
-    <updated>2026-07-17T02:00:28+00:00</updated>
-    <published>2026-07-17T02:00:28+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/debian-13.6.0-arm64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="56588" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (aarch64)
-Filename: debian-13.6.0-arm64-netinst.iso
-sha512: 43eef37fe589c8995f713c2d731604494f4353dfcc9c6f7dc4abdedab1e8f313a68bd1eb1ae299f4fb8995cbc1306c7348dc20d3dbd95ad1b613131611506bb8
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.6.0-arm64-netinst.iso.torrent
-torrent-sha512: ec8e45003b30c2eec4a9e33d310933ee7d6b1d4fdf0170154964512e1731ff731e5c7885ea4ccd81cc22e3f3ebc151a2a19e947eae5153b9d7acbccf0d278e18
-Infohash: 94088d5e57c3a12e7f58ea3a34a232a7ec138cc9
-Magnet: magnet:?xt=urn:btih:94088d5e57c3a12e7f58ea3a34a232a7ec138cc9&amp;dn=debian-13.6.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -2989,28 +3209,6 @@ sha256: 359136c2af73e03da6f15ad59f0c67bc561ca8b69631d78bfb8f2225e2c9a5ef
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:s390x/13.6.0</id>
-    <title>Debian netinst 13.6.0 (s390x)</title>
-    <updated>2026-07-12T18:37:09+00:00</updated>
-    <published>2026-07-12T18:37:09+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/debian-13.6.0-s390x-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.6.0-s390x-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="34168" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (s390x)
-Filename: debian-13.6.0-s390x-netinst.iso
-sha512: 1a903bd36a8fdccb7edd52bf677a7d196950eb41e0669784fa9afc9d4410c973ba218ae0f6fc2157aa0baa435633e88b1814ee7007004bddb6b32702d00d4c1e
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.6.0-s390x-netinst.iso.torrent
-torrent-sha512: 46d7882b229895bf35e9e861412b57615177158b54fb3084c9b407060d714cb414f961a1c9eaf5188599877dc07f83f9edfd1883624c4dc68f31dc28ff1bb095
-Infohash: f6719dc304136f6dfbe537d3736b1dae2e1b1fba
-Magnet: magnet:?xt=urn:btih:f6719dc304136f6dfbe537d3736b1dae2e1b1fba&amp;dn=debian-13.6.0-s390x-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/memtest/iso/8.10</id>
     <title>Memtest86+ 8.10 (x86_64)</title>
     <updated>2026-07-12T17:03:33+00:00</updated>
@@ -3166,204 +3364,6 @@ Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
 Torrent: http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso.torrent
 Infohash: f253613924f079ec8da61180680768d9e8331e44
 Magnet: magnet:?xt=urn:btih:f253613924f079ec8da61180680768d9e8331e44&amp;dn=proxmox-ve_9.2-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-standard/13.6.0</id>
-    <title>Debian Live Standard 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:52+00:00</updated>
-    <published>2026-07-12T08:32:52+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-standard.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-standard.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="154488" />
-    <category term="debian" label="distro" />
-    <category term="live-standard" label="variant" />
-    <summary type="text">Debian Live Standard 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-standard.iso
-sha512: 6b829e71297b729bc5f35b0ee287d8663ad2faf8450ae55dc3564783d188f0ee1db228459b83c2ffd3a7532360ed07b13741573c8fe8116fffa45be443fead1b
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-standard.iso.torrent
-torrent-sha512: 4bf90a4ca46f39c53e23ab88f3d78fc558ee68eeb85c3f9b33b2edcb3829d5d8e2110726aefdf043289e109525fef36a78f9aeafcc3a3f723e7a8e02b6e510dc
-Infohash: 40362bc9b79f56379f22b7d916395f34f3123e92
-Magnet: magnet:?xt=urn:btih:40362bc9b79f56379f22b7d916395f34f3123e92&amp;dn=debian-live-13.6.0-amd64-standard.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxde/13.6.0</id>
-    <title>Debian Live LXDE 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:51+00:00</updated>
-    <published>2026-07-12T08:32:51+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-lxde.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-lxde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="290496" />
-    <category term="debian" label="distro" />
-    <category term="live-lxde" label="variant" />
-    <summary type="text">Debian Live LXDE 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-lxde.iso
-sha512: 04785fdb4efd35584f95ef0de870e23bdc6c9196f1cd8485f69fb989499636e1fe98152db156dcb74d9108d850a7a66f16f8ec606fbe8f4ff59561359240711d
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-lxde.iso.torrent
-torrent-sha512: 0fb0ffb79a9f770c5ff60d2267092e4a30b89f04d2cbad783e4b8b18f822ca1c4ef44f84f4432523248a31822223c26447bab4a16f3573ef25e98c2b1fb1427f
-Infohash: 43da447d54bccec4b14e8a2570f4123a6007afcd
-Magnet: magnet:?xt=urn:btih:43da447d54bccec4b14e8a2570f4123a6007afcd&amp;dn=debian-live-13.6.0-amd64-lxde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxqt/13.6.0</id>
-    <title>Debian Live LXQt 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:50+00:00</updated>
-    <published>2026-07-12T08:32:50+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-lxqt.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-lxqt.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="305136" />
-    <category term="debian" label="distro" />
-    <category term="live-lxqt" label="variant" />
-    <summary type="text">Debian Live LXQt 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-lxqt.iso
-sha512: 72ebb2780041800d0716958c4d9b44eb202983eee6f02ca9d4346f9f2a548e39d68435531d96fcf72c34e991d121a9d02d6ebc0864a700bea6b162870ca00f09
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-lxqt.iso.torrent
-torrent-sha512: ac06c02325524283dca0d8baebd98a1a8775d7c16adc4128759323ab920dc2bc5e2f107efc05cb0ab13af3e44d9fb10b3c137b42079c5ff26c4ac4bc9a55d457
-Infohash: ed981706f9086807f7a8ebd5b16a6fede96791e3
-Magnet: magnet:?xt=urn:btih:ed981706f9086807f7a8ebd5b16a6fede96791e3&amp;dn=debian-live-13.6.0-amd64-lxqt.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-mate/13.6.0</id>
-    <title>Debian Live MATE 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:48+00:00</updated>
-    <published>2026-07-12T08:32:48+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-mate.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-mate.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="302676" />
-    <category term="debian" label="distro" />
-    <category term="live-mate" label="variant" />
-    <summary type="text">Debian Live MATE 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-mate.iso
-sha512: 62640372396486e39ce6334044d4a2ca291c4b27f135788083844b83047ad3cd72b0b2c7ea74f33d9850cb6d4289f6ef99d2f44c6f57c60bf94953e6a293f555
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-mate.iso.torrent
-torrent-sha512: f20e5bfe153e01f6331f6aa596b4bd6c1e5b82f238775fc4417e1e4b7a0f801ae7470cae9bad1a37fef94358d0e00d58323ae3f9e1aaa2c63e2374f5e5dc8371
-Infohash: 84901ca1ca4121b2f9c44842572881be46c2630d
-Magnet: magnet:?xt=urn:btih:84901ca1ca4121b2f9c44842572881be46c2630d&amp;dn=debian-live-13.6.0-amd64-mate.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-cinnamon/13.6.0</id>
-    <title>Debian Live Cinnamon 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:47+00:00</updated>
-    <published>2026-07-12T08:32:47+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-cinnamon.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-cinnamon.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="314468" />
-    <category term="debian" label="distro" />
-    <category term="live-cinnamon" label="variant" />
-    <summary type="text">Debian Live Cinnamon 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-cinnamon.iso
-sha512: c82703b22ae3ea829422034a66f3552e77caa4b9389e795a85186ec55bbce80e42e0efc5d813f0dfe1683fd170536a4706e8eb1507cf3458d6aad87d623c003e
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-cinnamon.iso.torrent
-torrent-sha512: 17e8d56c5aa300aeab5c57af1925717919d8301e9bd517c1345d2e8a0dd4982644f6dc8bad54ebb47327e70aaa4d4aabd427a6608469be9aadd47692fb02250f
-Infohash: 9f088aeaf29a43fc22f048a8fe10f7d5e265d932
-Magnet: magnet:?xt=urn:btih:9f088aeaf29a43fc22f048a8fe10f7d5e265d932&amp;dn=debian-live-13.6.0-amd64-cinnamon.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-xfce/13.6.0</id>
-    <title>Debian Live Xfce 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:46+00:00</updated>
-    <published>2026-07-12T08:32:46+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-xfce.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="292336" />
-    <category term="debian" label="distro" />
-    <category term="live-xfce" label="variant" />
-    <summary type="text">Debian Live Xfce 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-xfce.iso
-sha512: 917be6d5667cfb7281b82eb8c43b3740ed36ce5446f867a3011059f2fc51cda1ddc01fc3d543c2c96668be92c825d75008912e8c746e2abb0a1b849969d79aaf
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-xfce.iso.torrent
-torrent-sha512: c3e9f11d84e2b032fc6d4a5cf499fd51fc3a3ec864c0d78eaa3a877c2f26bf32967a05c6a623dcdbcf27e3ae6788756a764bfd48b14aa7c8ff4c55969d094940
-Infohash: 147c8f80367ff2f9341e4448e009543798167f6c
-Magnet: magnet:?xt=urn:btih:147c8f80367ff2f9341e4448e009543798167f6c&amp;dn=debian-live-13.6.0-amd64-xfce.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-kde/13.6.0</id>
-    <title>Debian Live KDE 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:45+00:00</updated>
-    <published>2026-07-12T08:32:45+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-kde.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-kde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="319873" />
-    <category term="debian" label="distro" />
-    <category term="live-kde" label="variant" />
-    <summary type="text">Debian Live KDE 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-kde.iso
-sha512: afdf775ba4bebcba9b4c75ee2afb9e4b014ea2d8c630bf7ed733644e60e77eaf1dd31cf03d64db53cb477d8e72488adc8816aea54983a783b28af53fb7aadf0f
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-kde.iso.torrent
-torrent-sha512: 64cff1ab5acd6c38671a355b9e44e316407b71cee52a8e5bdb5bba8afacdd19a09339b015c4943ea1b3dd6070615435c43948b668f317698580dccbe4e5757e7
-Infohash: aa42432b332543aacd252ff86e429ca906e5ce08
-Magnet: magnet:?xt=urn:btih:aa42432b332543aacd252ff86e429ca906e5ce08&amp;dn=debian-live-13.6.0-amd64-kde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-gnome/13.6.0</id>
-    <title>Debian Live GNOME 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:44+00:00</updated>
-    <published>2026-07-12T08:32:44+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.6.0-amd64-gnome.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-gnome.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="290499" />
-    <category term="debian" label="distro" />
-    <category term="live-gnome" label="variant" />
-    <summary type="text">Debian Live GNOME 13.6.0 (x86_64)
-Filename: debian-live-13.6.0-amd64-gnome.iso
-sha512: 683557a032586fe80fe63116a86a3cf45d8570d27e584c6d73547293b03e05fcbf3227e4dfa4b71e03b01e68353007e3b1ef7af71e06682a8221076d27c19e47
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.6.0-amd64-gnome.iso.torrent
-torrent-sha512: b0e8fc3238394fcfde335bd6bfa7c0d10a3ffbc4d4497b9ccd2f575ff43c3e1f968e0ccd80d11c81cdef36d8873c64dc8d29fbe7e3fb98ae57ad398526cc5bfb
-Infohash: 32582b6ece42a8a3a2ee012b3e5f0577d68e4ec4
-Magnet: magnet:?xt=urn:btih:32582b6ece42a8a3a2ee012b3e5f0577d68e4ec4&amp;dn=debian-live-13.6.0-amd64-gnome.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst/13.6.0</id>
-    <title>Debian netinst 13.6.0 (x86_64)</title>
-    <updated>2026-07-12T08:32:42+00:00</updated>
-    <published>2026-07-12T08:32:42+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/debian-13.6.0-amd64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.6.0-amd64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="60868" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.6.0 (x86_64)
-Filename: debian-13.6.0-amd64-netinst.iso
-sha512: ce0eeee7b51fdcdbed1e5116668c1fee27e528767bdf488e5f115a67b225e5dfd0afca1d456aaa9408ceb6b8527521ff7b6b5d62fdbe6f8c5faaf8df56a96292
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.6.0-amd64-netinst.iso.torrent
-torrent-sha512: 216241bfee1585d9a0e88760d880e9a7f5502932c529c829e3c9ece5c3633b4986650a1260cb5f5995f661bdf7559a2d8e3a8d4169828949fbbdf48720cd759c
-Infohash: 481b6e3617be4c88f96cb25e47c9d8272130071e
-Magnet: magnet:?xt=urn:btih:481b6e3617be4c88f96cb25e47c9d8272130071e&amp;dn=debian-13.6.0-amd64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -4079,11 +4079,9 @@ Verify: checksum</summary>
     <category term="default" label="variant" />
     <summary type="text">Clonezilla Live 3.3.3-15 (x86_64)
 Filename: clonezilla-live-3.3.3-15-amd64.iso
-sha512: 8769d90907c47afa85e0b15a8a34c295d1f30a6de7bfc3ebdd5c1123d1d54484b1a468ac15a1971d28b2c72e6a0f3a4aac97701b98417c946a3d15cb5cd1a656
 Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
-Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
-Verify: gpg</summary>
+Verify: gpg
+WARNING: no published checksum — integrity unverifiable</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/cachyos/handheld/260628</id>
