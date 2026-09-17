@@ -4,8 +4,278 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Wed, 16 Sep 2026 11:45:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 11:49:50 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>NixOS Graphical 26.05.9904.4c7870105e7f (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.9904.4c7870105e7f</guid>
+      <pubDate>Thu, 17 Sep 2026 11:49:50 +0000</pubDate>
+      <description>NixOS Graphical 26.05.9904.4c7870105e7f (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: da8ffca839d545c9c1859f4a5bc7a90f28d2dba7dab4d4d746aee9a8ac9d1fdc
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.9904.4c7870105e7f (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.9904.4c7870105e7f</guid>
+      <pubDate>Thu, 17 Sep 2026 11:49:49 +0000</pubDate>
+      <description>NixOS Minimal 26.05.9904.4c7870105e7f (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 87cbdb6ded847997047a1843a4f217c166e208d37deb41f9995cdd148be7fc75
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.9904.4c7870105e7f (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.9904.4c7870105e7f</guid>
+      <pubDate>Thu, 17 Sep 2026 11:49:49 +0000</pubDate>
+      <description>NixOS Graphical 26.05.9904.4c7870105e7f (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 86f4651c2c765c99a565fe64e398d728454f79a9670674e2facce57f2bf3b940
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.9904.4c7870105e7f (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.9904.4c7870105e7f</guid>
+      <pubDate>Thu, 17 Sep 2026 11:49:48 +0000</pubDate>
+      <description>NixOS Minimal 26.05.9904.4c7870105e7f (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: d6cd8a5919759e139a8a7254b541ec34f2018d6adac685212e69792c14a65a70
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:50 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20260915 (aarch64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
+sha256: a2ee77d90274da3558492e01da31353f6eb29fd2407c19f7e0b85adc4596ce9a
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:50 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20260915 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: e01f13a7ca51994aaa9a867b5402bdd036ea93d04e45e44a1d415bb4cd141da9
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:49 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20260915 (aarch64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
+sha256: 58b99c15ccc94f0fded038bd93591bac8c8fdd5a2b64f160576fbea3cb968a5b
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:48 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20260915 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: df0614d5f16ba236a6c88b1e2b9ddf35aadfdd8572eb6e3cf8afdb143a08888f
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:47 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20260915 (aarch64)
+Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
+sha256: 1b0a8640ec790acfe218d65080644741dd8f0f85260dcb99784f439624889c32
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:47 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20260915 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: 2a53c3cca56915130b368423187f639c11b8c57dd0621245355d5bc8988b712d
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:46 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20260915 (aarch64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
+sha256: f82dbc96d268093f9a3cb71b9f23ebd924e0ead69649b73c961b7287b42f312a
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:45 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20260915 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: 4052e81894f560e73dfcd8329d2c1965ea7063e70adc78ab13b3857cfaccb123
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:45 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260915 (aarch64)
+Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
+sha256: b5fda72693c4e329ec59254b4c39d5c92804d2b5581a37f2f2a8c6fbfe02654c
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:44 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260915 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: 1364fa6321d3ab61efe9f374fd14854605cebb94ed1853399ebb6ad6c276a1af
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:43 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260915 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: c19c2354c1b51877de818680276701dfa6d457f781799fc09b790e66843fcb4c
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
+Infohash: d23f558bc141e128299eadd58113609191434a85
+Magnet: magnet:?xt=urn:btih:d23f558bc141e128299eadd58113609191434a85&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260915-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:42 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260915 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: dad4fcf666e58618bb1a9dea1e2536d720d04adebdb3ed719b21a64f0a66ae40
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: 9a9be325de961ccf21b5ed6e5b533afb4c055d71
+Magnet: magnet:?xt=urn:btih:9a9be325de961ccf21b5ed6e5b533afb4c055d71&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260915-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260915 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:41 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260915 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
+sha256: 05e1c92675a4c06c45e79848c4e2f7fd8c6f82f005105a55f698ed85e3bed077
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
+Infohash: e3aebaf95346b1a4b04b0d4b2ff085d171ec31bf
+Magnet: magnet:?xt=urn:btih:e3aebaf95346b1a4b04b0d4b2ff085d171ec31bf&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260915-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260915 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260915</guid>
+      <pubDate>Thu, 17 Sep 2026 11:48:40 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260915 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 8b2ac5e3c83fd0c2da1001235a1abca0ad931a79a397a685871a7fa634bac54a
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
+Infohash: 4c5b671475225436141875c0b61367a7409b25c1
+Magnet: magnet:?xt=urn:btih:4c5b671475225436141875c0b61367a7409b25c1&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260915-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
     <item>
       <title>Gentoo Minimal Install CD 20260915T164555Z (x86)</title>
       <link>https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260915T164555Z.iso</link>
@@ -82,54 +352,6 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>NixOS Graphical 26.05.9843.b67c7a60c373 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.9843.b67c7a60c373</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:55 +0000</pubDate>
-      <description>NixOS Graphical 26.05.9843.b67c7a60c373 (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 49b40c79b015202b5941f0e2535d9210b391452b920b13ecd7775550cf04714c
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.9843.b67c7a60c373 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.9843.b67c7a60c373</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:54 +0000</pubDate>
-      <description>NixOS Minimal 26.05.9843.b67c7a60c373 (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 470c5f05ebe6a20187633a63595d6a2f4ef90fff2613b79105c5be7879764108
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.9843.b67c7a60c373 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.9843.b67c7a60c373</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:54 +0000</pubDate>
-      <description>NixOS Graphical 26.05.9843.b67c7a60c373 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: c7839513ff8c5fdb0836d725e8d61bc72dd6ddd482ef55ba9ec305b9e4dfa7c4
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.9843.b67c7a60c373 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.9843.b67c7a60c373</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:53 +0000</pubDate>
-      <description>NixOS Minimal 26.05.9843.b67c7a60c373 (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: f82400ba9f31fae938de2b3f02d1c8b5751f287b248eb359f2ab944ef2d0fcd3
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
       <title>Tails 7.13 (x86_64)</title>
       <link>https://download.tails.net/tails/stable/tails-amd64-7.13/tails-amd64-7.13.iso</link>
       <guid isPermaLink="false">tails:iso:7.13</guid>
@@ -145,226 +367,28 @@ WARNING: no published checksum — integrity unverifiable</description>
       <category>tails</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:00 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20260914 (aarch64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
-sha256: a1b552be45ef1847f10b49b18a091c82b1b613c4c0cb77017c56a0d0213edf3e
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
+      <title>Q4OS Plasma 6.9 (x86_64)</title>
+      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.9-x64.r1.iso/download</link>
+      <guid isPermaLink="false">q4os:plasma:6.9</guid>
+      <pubDate>Wed, 16 Sep 2026 10:58:08 +0000</pubDate>
+      <description>Q4OS Plasma 6.9 (x86_64)
+Filename: q4os-6.9-x64.r1.iso
+md5: 740ab09a69682275267015e828bd0044
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.9-x64.r1.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>q4os</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:00 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20260914 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: ff366b13861b1bc57e24b1962a83dc916c2410f60c7db40b260a2d585cdb036d
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:59 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20260914 (aarch64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
-sha256: 4a8f9313712aeb664189d13a2f659b758f8cda13822bbc015ca9fb4f326f4699
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:59 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20260914 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 8f874836739c569dd12c341891f3dd3656ddaba784b72b07aa413296ed05bb9d
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:58 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20260914 (aarch64)
-Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
-sha256: 2d1b4da63b3c2e0b9b0fed60fdb794182b099e869d55980b0c27b2610ec00c47
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:57 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20260914 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 4d9049fc02c4c578135d5866a6fdfb8bd63ba71eee65702d7ee55f30204903d8
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:57 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20260914 (aarch64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
-sha256: a1bcd8ae8158c52b2912d2df6b58fa4de30a1749fb0211371ba60ea033eb67b1
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:56 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20260914 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: 6edf872269e773b509900dbccb4cf2d5192d8bdcafbc326bdc4a803ffa907031
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:56 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20260914 (aarch64)
-Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
-sha256: 19287ce97e565295f09542a8d0c2ed30719f7933e26b29f5b960f0cab1598f65
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:55 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260914 (aarch64)
-Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
-sha256: 52e8fd869f3eeb546ad432668dca8529ac1aee0488019298b8145557939b44a2
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
-Infohash: ee1170b7fec2ca5ce63113887871d4732b514aeb
-Magnet: magnet:?xt=urn:btih:ee1170b7fec2ca5ce63113887871d4732b514aeb&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260914-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:55 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20260914 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: af280b9e7adf3a41c17fa4cfa7e711eb0531d614264cc5b83965bba74fcc84b3
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:54 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260914 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: cba83a1bc4e00c09ef58511c61e1f371083e7c6f464dc84aa455f3071c29c2f4
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: c2a896aee90ec7f3b843229d50e7cdb144893ffa
-Magnet: magnet:?xt=urn:btih:c2a896aee90ec7f3b843229d50e7cdb144893ffa&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260914-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260914 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:53 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260914 (aarch64)
-Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
-sha256: 52e3c757f11e7a7d2006f225d9f445c84614701535b5ea59d6bee966b6a576ca
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
-Infohash: 019075f95f3ab5b262d629b5c9d9b7cc861f116d
-Magnet: magnet:?xt=urn:btih:019075f95f3ab5b262d629b5c9d9b7cc861f116d&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260914-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260914 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20260914</guid>
-      <pubDate>Wed, 16 Sep 2026 11:42:52 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260914 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 9e9065d760774ee0136beab90cafc384a4970e381afc69683907b423d5e75995
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: 53537e64ff6d41d7a5e0d6af9706e3cbc09fea74
-Magnet: magnet:?xt=urn:btih:53537e64ff6d41d7a5e0d6af9706e3cbc09fea74&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260914-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
+      <title>Q4OS Trinity 6.9 (x86_64)</title>
+      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.9-x64-tde.r1.iso/download</link>
+      <guid isPermaLink="false">q4os:tde:6.9</guid>
+      <pubDate>Wed, 16 Sep 2026 10:42:37 +0000</pubDate>
+      <description>Q4OS Trinity 6.9 (x86_64)
+Filename: q4os-6.9-x64-tde.r1.iso
+md5: b278a149657fed10d5ea9b3f9d667071
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.9-x64-tde.r1.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>q4os</category>
     </item>
     <item>
       <title>Bluefin stable-20260915 (x86_64)</title>
@@ -1675,30 +1699,6 @@ Magnet: magnet:?xt=urn:btih:b91d49b1313f5aa27f2b3a9dc48af8248f40908e&amp;dn=ubun
 Verify: gpg</description>
       <enclosure url="https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>ubuntu-mate</category>
-    </item>
-    <item>
-      <title>Q4OS Trinity 6.8 (x86_64)</title>
-      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64-tde.r1.iso/download</link>
-      <guid isPermaLink="false">q4os:tde:6.8</guid>
-      <pubDate>Wed, 15 Jul 2026 10:11:24 +0000</pubDate>
-      <description>Q4OS Trinity 6.8 (x86_64)
-Filename: q4os-6.8-x64-tde.r1.iso
-md5: ffabeef8fa31f39b276e24cf60019e19
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64-tde.r1.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>q4os</category>
-    </item>
-    <item>
-      <title>Q4OS Plasma 6.8 (x86_64)</title>
-      <link>https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64.r1.iso/download</link>
-      <guid isPermaLink="false">q4os:plasma:6.8</guid>
-      <pubDate>Wed, 15 Jul 2026 10:05:44 +0000</pubDate>
-      <description>Q4OS Plasma 6.8 (x86_64)
-Filename: q4os-6.8-x64.r1.iso
-md5: 06f1e0de3e8aa5f80e05c3cf19625e1a
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.8-x64.r1.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>q4os</category>
     </item>
     <item>
       <title>OPNsense DVD 26.7 (x86_64)</title>
