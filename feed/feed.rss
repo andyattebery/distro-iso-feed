@@ -4,8 +4,56 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Fri, 18 Sep 2026 11:25:23 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 11:07:32 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>NixOS Graphical 26.05.10057.cf9d2fb3e50f (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.10057.cf9d2fb3e50f</guid>
+      <pubDate>Sat, 19 Sep 2026 11:07:32 +0000</pubDate>
+      <description>NixOS Graphical 26.05.10057.cf9d2fb3e50f (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 1471f7edf47320903da111adac978c8cfe59336d63905bb44145e4126d69f325
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.10057.cf9d2fb3e50f (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.10057.cf9d2fb3e50f</guid>
+      <pubDate>Sat, 19 Sep 2026 11:07:31 +0000</pubDate>
+      <description>NixOS Minimal 26.05.10057.cf9d2fb3e50f (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 90115164474cb7a9713ac3036259cdad573cb90fd8b6c9ed44c9394c5442ebab
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.10057.cf9d2fb3e50f (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.10057.cf9d2fb3e50f</guid>
+      <pubDate>Sat, 19 Sep 2026 11:07:31 +0000</pubDate>
+      <description>NixOS Graphical 26.05.10057.cf9d2fb3e50f (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: a5135b96a6b6f83195e36d4f9b21a7b885f30e62b2df3d97e072d7c35c8590dc
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.10057.cf9d2fb3e50f (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.10057.cf9d2fb3e50f</guid>
+      <pubDate>Sat, 19 Sep 2026 11:07:30 +0000</pubDate>
+      <description>NixOS Minimal 26.05.10057.cf9d2fb3e50f (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 667f9e3a0f4feb478446bcc64cbd9d13b364a10a89f3f6015fed61d7b3131307
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
     <item>
       <title>Bazzite NVIDIA Open unstable-44.20260917 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
@@ -165,54 +213,6 @@ sha256: bd867a6b93810769b2189471cfc2d7b6b9c642213c7bf827de511be5f42ce666
 Verify: checksum</description>
       <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/28/pop-os_24.04_amd64_nvidia_28.iso" type="application/x-iso9660-image" length="3934945280" />
       <category>pop-os</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.9904.4c7870105e7f (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.9904.4c7870105e7f</guid>
-      <pubDate>Thu, 17 Sep 2026 11:49:50 +0000</pubDate>
-      <description>NixOS Graphical 26.05.9904.4c7870105e7f (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: da8ffca839d545c9c1859f4a5bc7a90f28d2dba7dab4d4d746aee9a8ac9d1fdc
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.9904.4c7870105e7f (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.9904.4c7870105e7f</guid>
-      <pubDate>Thu, 17 Sep 2026 11:49:49 +0000</pubDate>
-      <description>NixOS Minimal 26.05.9904.4c7870105e7f (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 87cbdb6ded847997047a1843a4f217c166e208d37deb41f9995cdd148be7fc75
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.9904.4c7870105e7f (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.9904.4c7870105e7f</guid>
-      <pubDate>Thu, 17 Sep 2026 11:49:49 +0000</pubDate>
-      <description>NixOS Graphical 26.05.9904.4c7870105e7f (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 86f4651c2c765c99a565fe64e398d728454f79a9670674e2facce57f2bf3b940
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.9904.4c7870105e7f (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.9904.4c7870105e7f</guid>
-      <pubDate>Thu, 17 Sep 2026 11:49:48 +0000</pubDate>
-      <description>NixOS Minimal 26.05.9904.4c7870105e7f (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: d6cd8a5919759e139a8a7254b541ec34f2018d6adac685212e69792c14a65a70
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260915 (aarch64)</title>
