@@ -4,8 +4,203 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Mon, 21 Sep 2026 13:07:05 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 11:46:49 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Aurora stable-20260922.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20260922.1</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:49 +0000</pubDate>
+      <description>Aurora stable-20260922.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 99c092a008a6a38f4876a389dd697aac09e95de1867766106f1cea5f3821ff96
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora NVIDIA Open stable-20260922.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20260922.1</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:49 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20260922.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 5e9809dc066c7a748f39ccca8ec9b500d7dd7b610f46e97ccdfe1c26a43cc9db
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Bluefin stable-20260922 (x86_64)</title>
+      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
+      <guid isPermaLink="false">bluefin:stable:stable-20260922</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:48 +0000</pubDate>
+      <description>Bluefin stable-20260922 (x86_64)
+Filename: bluefin-stable-x86_64.iso
+sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
+Verify: checksum</description>
+      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bluefin</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.10402.1e8bc658fc98 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.10402.1e8bc658fc98</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:46 +0000</pubDate>
+      <description>NixOS Graphical 26.05.10402.1e8bc658fc98 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 5adac3cadf3fc97fdc7e5e713da4af03a40ac4919c95db8ae44e955b338bc3d4
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.10402.1e8bc658fc98 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.10402.1e8bc658fc98</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:46 +0000</pubDate>
+      <description>NixOS Graphical 26.05.10402.1e8bc658fc98 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: f1f9b10cd1a7328351842ca61974553b420f6ad258072de4aa013c4a32f315ff
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.10402.1e8bc658fc98 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.10402.1e8bc658fc98</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:45 +0000</pubDate>
+      <description>NixOS Minimal 26.05.10402.1e8bc658fc98 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: f5a140c2ee70647188412addabbbef20f4373c5f4d85e4515b1c2335c20f8bb0
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.10402.1e8bc658fc98 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.10402.1e8bc658fc98</guid>
+      <pubDate>Tue, 22 Sep 2026 11:46:45 +0000</pubDate>
+      <description>NixOS Minimal 26.05.10402.1e8bc658fc98 (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 759d63493bea33a2b320c1ec82d1fdf9a73c61c08e037a526bd364294ed9580f
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:41 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20260919 (aarch64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
+sha256: a5b57f4f47bd0f9489cced7a531f7b186550e09f91052dec89cbd6e31539b83d
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:40 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20260919 (aarch64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
+sha256: d9331eb739a1f275fbf5180af0c54e0af4a9329c43006a900360e7187dfd6430
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:39 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20260919 (aarch64)
+Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
+sha256: 445c004582ad3bae20883fc039c05c2a3330d0e621a295a1a6418360c8f2884a
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:37 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20260919 (aarch64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
+sha256: 0668771d1664127a65942e1ce8a621bd2554aa8212fb94917a9890e0e051adc6
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:36 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20260919 (aarch64)
+Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
+sha256: 5a71e1214c40979619f86a4a1974adfa36f0955063b97e1da8af93aa99349ab6
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:35 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20260919 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: 8d7609f5b1f2e5bdb39119033a55347973f38e97297272a0e9ed498cc1cc5a0d
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
+Infohash: e157043e2fb10826b4990eb0c58c498abf022025
+Magnet: magnet:?xt=urn:btih:e157043e2fb10826b4990eb0c58c498abf022025&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260919-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20260919 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20260919</guid>
+      <pubDate>Tue, 22 Sep 2026 11:45:34 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20260919 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
+sha256: 7565b3f3a3865e6ed48edea10fa3ef7a47ba4265f713c36dc94a9b6ff065e8e8
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
+Infohash: 69576210253788e4b7b1c4ea7e5dd80dd03c4312
+Magnet: magnet:?xt=urn:btih:69576210253788e4b7b1c4ea7e5dd80dd03c4312&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260919-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
     <item>
       <title>Bazzite NVIDIA Open 44.20260921 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
@@ -43,54 +238,6 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>NixOS Minimal 26.05.10304.6d663c0533ff (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.10304.6d663c0533ff</guid>
-      <pubDate>Mon, 21 Sep 2026 13:07:04 +0000</pubDate>
-      <description>NixOS Minimal 26.05.10304.6d663c0533ff (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: b388e4b09679bba6cdd0e617fd47f5ff5eed603d55926046c892eaf74766c789
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.10304.6d663c0533ff (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.10304.6d663c0533ff</guid>
-      <pubDate>Mon, 21 Sep 2026 13:07:04 +0000</pubDate>
-      <description>NixOS Minimal 26.05.10304.6d663c0533ff (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: a09d6be915449466c1c72aaeb3296d58f37cbd5c32b3b7bad4e68ee93a153950
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.10304.6d663c0533ff (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.10304.6d663c0533ff</guid>
-      <pubDate>Mon, 21 Sep 2026 13:07:04 +0000</pubDate>
-      <description>NixOS Graphical 26.05.10304.6d663c0533ff (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 7e5e6f51abf0802d4805c63e18f0f061d69a6fc6507775418b3848da46395294
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.10304.6d663c0533ff (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.10304.6d663c0533ff</guid>
-      <pubDate>Mon, 21 Sep 2026 13:07:04 +0000</pubDate>
-      <description>NixOS Graphical 26.05.10304.6d663c0533ff (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 559baa4d7c2eec718978bf8a87b4660cdd0a3f666a21aa3ea73c49b277ed37cd
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260919 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
       <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20260919</guid>
@@ -99,6 +246,8 @@ Verify: checksum</description>
 Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
 sha256: 694859e0a064e5f53a6432522c14013ea8d325af79c540be0ce3ec011ae60cbf
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -112,6 +261,8 @@ Verify: gpg</description>
 Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
 sha256: abd290876b395a17b9a866453a6d758a1dda2b322721a1830a0f0ff61dad14f9
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -125,6 +276,8 @@ Verify: gpg</description>
 Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
 sha256: 7572f60ce191a9529fc7a921687922376b13a91833918cb39279c1f7ebea390a
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -138,6 +291,8 @@ Verify: gpg</description>
 Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
 sha256: 74bc35303f3ede4267b670e9cc4a0f84ae0ab1f9dc52918f77381a83dc1971e2
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -151,6 +306,8 @@ Verify: gpg</description>
 Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
 sha256: b6c1c84c86912d91137d93f64831dd270a80f1ef00018193936cc2ac6b7da0bd
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -164,6 +321,8 @@ Verify: gpg</description>
 Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
 sha256: 0d0f8c5564cdecb7e25cd8ad7d58b74da19a5eef99d7e58f824217805e30a5a9
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
 Infohash: b3f932aa8d905f33a4108e98f9fc6e39b7a755c9
 Magnet: magnet:?xt=urn:btih:b3f932aa8d905f33a4108e98f9fc6e39b7a755c9&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20260919-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
@@ -180,6 +339,8 @@ Verify: gpg</description>
 Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
 sha256: 8d341f3571c67b08ac01ab6a27bff9a44c53032e149d48d91679e274c7d5cc72
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
 Infohash: bb9092d97ea51dd1b3289c3f685697ae643719cb
 Magnet: magnet:?xt=urn:btih:bb9092d97ea51dd1b3289c3f685697ae643719cb&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260919-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
@@ -253,103 +414,6 @@ Verify: checksum</description>
       <category>pop-os</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:50 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20260915 (aarch64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
-sha256: a2ee77d90274da3558492e01da31353f6eb29fd2407c19f7e0b85adc4596ce9a
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:49 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20260915 (aarch64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
-sha256: 58b99c15ccc94f0fded038bd93591bac8c8fdd5a2b64f160576fbea3cb968a5b
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:47 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20260915 (aarch64)
-Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
-sha256: 1b0a8640ec790acfe218d65080644741dd8f0f85260dcb99784f439624889c32
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:46 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20260915 (aarch64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
-sha256: f82dbc96d268093f9a3cb71b9f23ebd924e0ead69649b73c961b7287b42f312a
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:45 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20260915 (aarch64)
-Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
-sha256: b5fda72693c4e329ec59254b4c39d5c92804d2b5581a37f2f2a8c6fbfe02654c
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:43 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20260915 (aarch64)
-Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
-sha256: c19c2354c1b51877de818680276701dfa6d457f781799fc09b790e66843fcb4c
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
-Infohash: d23f558bc141e128299eadd58113609191434a85
-Magnet: magnet:?xt=urn:btih:d23f558bc141e128299eadd58113609191434a85&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20260915-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20260915 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20260915</guid>
-      <pubDate>Thu, 17 Sep 2026 11:48:41 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20260915 (aarch64)
-Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
-sha256: 05e1c92675a4c06c45e79848c4e2f7fd8c6f82f005105a55f698ed85e3bed077
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
-Infohash: e3aebaf95346b1a4b04b0d4b2ff085d171ec31bf
-Magnet: magnet:?xt=urn:btih:e3aebaf95346b1a4b04b0d4b2ff085d171ec31bf&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20260915-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
       <title>Gentoo Minimal Install CD 20260915T164555Z (x86)</title>
       <link>https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260915T164555Z.iso</link>
       <guid isPermaLink="false">gentoo:minimal:x86:20260915T164555Z</guid>
@@ -358,33 +422,11 @@ Verify: gpg</description>
 Filename: install-x86-minimal-20260915T164555Z.iso
 sha256: 7a7e8db65948fb65cabff5d0636db79ec7ad24bab6437f4bd287bc26f8d953f6
 Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260915T164555Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260915T164555Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
-    </item>
-    <item>
-      <title>Aurora stable-20260915.2 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20260915.2</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:58 +0000</pubDate>
-      <description>Aurora stable-20260915.2 (x86_64)
-Filename: aurora-stable-webui-x86_64.iso
-sha256: 99c092a008a6a38f4876a389dd697aac09e95de1867766106f1cea5f3821ff96
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Aurora NVIDIA Open stable-20260915.2 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20260915.2</guid>
-      <pubDate>Wed, 16 Sep 2026 11:43:58 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20260915.2 (x86_64)
-Filename: aurora-nvidia-open-stable-webui-x86_64.iso
-sha256: 5e9809dc066c7a748f39ccca8ec9b500d7dd7b610f46e97ccdfe1c26a43cc9db
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
     </item>
     <item>
       <title>Tails 7.13 (x86_64)</title>
@@ -424,18 +466,6 @@ md5: b278a149657fed10d5ea9b3f9d667071
 Verify: checksum</description>
       <enclosure url="https://sourceforge.net/projects/q4os/files/stable/q4os-6.9-x64-tde.r1.iso/download" type="application/x-iso9660-image" length="0" />
       <category>q4os</category>
-    </item>
-    <item>
-      <title>Bluefin stable-20260915 (x86_64)</title>
-      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
-      <guid isPermaLink="false">bluefin:stable:stable-20260915</guid>
-      <pubDate>Tue, 15 Sep 2026 11:51:31 +0000</pubDate>
-      <description>Bluefin stable-20260915 (x86_64)
-Filename: bluefin-stable-x86_64.iso
-sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</description>
-      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bluefin</category>
     </item>
     <item>
       <title>CentOS Stream DVD 20260914.0 (s390x)</title>
@@ -542,6 +572,8 @@ Verify: checksum</description>
 Filename: livegui-amd64-20260913T163055Z.iso
 sha256: d27a05ede7d568cc243f7503187ab7b60d1b0d70f2a5c18d5ffd601637239b3a
 Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260913T163055Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-livegui-amd64/livegui-amd64-20260913T163055Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
@@ -555,6 +587,8 @@ Verify: gpg</description>
 Filename: install-arm64-minimal-20260913T234554Z.iso
 sha256: bb664139079216f570617bbb166fb65dcce99c8e07ef1e0afebe1c943106aed7
 Signature: https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260913T234554Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20260913T234554Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
@@ -568,6 +602,8 @@ Verify: gpg</description>
 Filename: install-amd64-minimal-20260913T163055Z.iso
 sha256: 4f155acdffd6b9ea88c69a06a22fb4db1ca780d37fd11dd370510ec28a3ab546
 Signature: https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260913T163055Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20260913T163055Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
@@ -581,6 +617,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-standard.iso
 sha512: 79549808584a5c3fd8e3bda584652c47a3145f79c06f157ee8f9a3ff98d92fd548d235617e84ddef884ae535f35855e44cff222882cd62fad1898e397e9b2240
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-standard.iso.torrent
 torrent-sha512: d7e08121eb4454d8a3a96d6d3e667cab5388ccb01848b430088abefaeb8af6ed7cc99cedd0f7d2d4c197da0bb858e1703eecf21ff8c63c5b470df25376cbad68
 Infohash: e3da5bd17fb26f462e1d3e01247f38d3df2c4fd0
@@ -598,6 +636,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-lxqt.iso
 sha512: d001b888c4a64215b3f579f048d4a69d358ccf3f125a7c06abafd1c7d6decbb6078cf922f6c0b102a6d037874575844008ee9923ef3286296d84dfcdd24b9603
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxqt.iso.torrent
 torrent-sha512: d393bda8e6aab5ab497dcf6bd8545fc212146f0a954648dca0bc28eb62d735da344cfc7aba099874453e9f9eb20eab51d6b72311c5ef36ce7e2bd72dc7cb01a5
 Infohash: 6261faad35da019e2a44d6e354034dc52ce53d0d
@@ -615,6 +655,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-lxde.iso
 sha512: e52012e2d5770a700f5e8db71724ed4eefb3d072af25389997f492d12055bb5379637ae885ac6621162f9c246d4ade2f4d729fd79e2ff40729e94314065759e9
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxde.iso.torrent
 torrent-sha512: ffaef132b80f6747eafe7841c33cf4f53d59216080c7af33c305105b44d5df21f371aa2d2d35cecef4d8106836a30ae62473e0c953fe2778fcb3b4da7783a215
 Infohash: 78fb2a1b08069f2dd415302b7ab517bb82eb3619
@@ -632,6 +674,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-xfce.iso
 sha512: 3fa03343a9868b2afee10adadd8f4ebf0031f222bef0858a3c9a0d9fd74325d17b999cdeba2c88d9a8d0856f3bb0ed0d8a240dfa02651fb15c93f97b3b2ef8e5
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-xfce.iso.torrent
 torrent-sha512: 94acfe106424df14cdc006cdb9d28991d18392274b979d6cfc4c430d68b71a1b42b8f2f08a39685bab69eb376b3d0c8830f2d7315f37ee42b2b000238bc21348
 Infohash: 8b3b328db6514130fe3401f029b4076837eedb13
@@ -649,6 +693,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-mate.iso
 sha512: 02f1103b53643916893ac429541cbfd266541ca46961122c8882bf95f38a82fc90f3aa1ae93071129466d5b54f972521617cb48e0633ed00e0c4753b10fd0615
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-mate.iso.torrent
 torrent-sha512: e056d04bab931e9c337007679ed54b1fe427866ef62fcb45ed1ab52067708f5f003e021c026236d00b2a34670965178010d59d6a8ccdbd3819faed59f5543d7a
 Infohash: 124ebf9b7d7e2881dec9f91d8bd8b2c62cc2b945
@@ -666,6 +712,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-kde.iso
 sha512: 079193350497fcbdc04271bf34d7ef26dfc3f21f27d1b6fc61933515fb868987fe313ff205ef98a7f82a5c63e18e259a0a957443d7cb417ebeb93ad961c43342
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-kde.iso.torrent
 torrent-sha512: 36d85284305ac1e00726916c5972e6871ed38746f1e849d917892de6d79effc967bbf17863db1032a277e307e029ae5761720da17452715ad6961b0ea7369ab7
 Infohash: b3c432c4c2c85a0c41659a4cc2f165703fcc53fe
@@ -683,6 +731,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-cinnamon.iso
 sha512: 4a85cdf7b7b9d693617ae5184b718a6c140a7efbe99fc495ec32b8b7a5ca83fbc910ddcb4f49219c48d27cdce4e40d40c0aed1c298d7f70ec238326455bef094
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-cinnamon.iso.torrent
 torrent-sha512: c12bb1056eae4ff14d403a741159b21e833e2d1d16c59294a269dac37c0ac77416abab59d9c768fe870741c90a7105ddc1894fded56d3271424e8dfdd84f9c7d
 Infohash: c9aadecd13fbd99d7ffbfdc44c1a6448c0213088
@@ -700,6 +750,8 @@ Verify: gpg</description>
 Filename: debian-13.7.0-s390x-netinst.iso
 sha512: 76594fcfd3d0ce0e4c3d02689667f4384e2c9846b038b0a2c1a351a61995a3e74ba438368a9464b17be357cee253ee9294050395dcd325b4b5bc8577fcdd0333
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.7.0-s390x-netinst.iso.torrent
 torrent-sha512: 67ae8262b79f16822aaeaa4725b56ec9014398317e05a4e97138e24f15865748a341f381a47a5b1e3be781596f56fca176d7b3dcbd7446cdd4719b3c0e4ccd36
 Infohash: 112cc7294b83677269d5b21a5c201f79b9dff20d
@@ -717,6 +769,8 @@ Verify: gpg</description>
 Filename: debian-13.7.0-riscv64-netinst.iso
 sha512: ca639aa0acdd64f6fbef578fd7a5aba064640ef03f180661d2ebbf13a709f13ca2128841e5d8626025cc9d998a52736f8b46470952d3e8e1bf9c73cd2f2b5fbd
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.7.0-riscv64-netinst.iso.torrent
 torrent-sha512: 7b1c3b1e39f43b1db99831afd86bd2a3887ba413f7f80766a445ecc1bbf683521db3771e957498d477fa400a77354cbdd5f005a8c7de6ab0bb2ca2fa4fa6102c
 Infohash: 1c12122d80af9f194e805d369d13bc93e1c07347
@@ -734,6 +788,8 @@ Verify: gpg</description>
 Filename: debian-live-13.7.0-amd64-gnome.iso
 sha512: 5c70c54db8742bb760a6dfbe2f3c208a550938edee22b858dfb2e09a09b87666f1454134f24df3a5a2f8ae6a7c81c9ab8a2500b1eae53927691ffd6e73997380
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-gnome.iso.torrent
 torrent-sha512: 2cb3fe4f8b71d8b03246c411c2c855b95af183ec70f1597c9aca0f57c75d9707cc3fb7db59fab853b45f6ee48c9ad13c5831ed97115619d44079286572f33155
 Infohash: 0697aa4c78e1237966925f250c2189eac36020f2
@@ -751,6 +807,8 @@ Verify: gpg</description>
 Filename: debian-13.7.0-ppc64el-netinst.iso
 sha512: c528d1b1d4fd138deeffc02f891878736be303d022dbf643b338ef02c099b1a57d46027dd3e9a89276057848295c8cd79539493dc257853f5cff660038b1c8da
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.7.0-ppc64el-netinst.iso.torrent
 torrent-sha512: 26b81db63870ef41b91e067f82cf0debdb79691e498d0d52b8938594adeb0e7ff2ae4e767a66102b1524f55bbd89e39025f020cd06baf01e6499f354f190876c
 Infohash: 7bc06aa26dadac4e4e2d5f35251d2072fb8c8032
@@ -768,6 +826,8 @@ Verify: gpg</description>
 Filename: debian-13.7.0-armhf-netinst.iso
 sha512: 3db55920a176bb90775cca1425d8dd8e28c637aec7d6aae644ff083d0140a3ebe99c8e0e8d6f6f5022b9c0df2c7a7e3708268f2d399a32edf551b26ad7952d9a
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.7.0-armhf-netinst.iso.torrent
 torrent-sha512: d4bed7048a404b97003e279fa7d550e1b4cbf1332a1959bb2045865fff2fb3ee9534fe69bb570bfdf8e282a4a7a2ad4c5de2f5ee32da70f5c256fbd64241832b
 Infohash: cc6464617ff7af0b9e598ca2244717cea8b899d9
@@ -785,6 +845,8 @@ Verify: gpg</description>
 Filename: debian-13.7.0-arm64-netinst.iso
 sha512: cff08e2f29c2846f0503fe57ad1085b5067f29acab444acdf7cdf5b10f2a11140a0e87828e4ffeb9828d188053690467ebe50151c142551d6053fc3288808b86
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.7.0-arm64-netinst.iso.torrent
 torrent-sha512: 88ae35f565d02ffe671f41770bed85d18e11dfa88546ff5c3a2d87177cf0ea2e4d26af05da8fe912c8251cae5a418be802dd62838988c31f982d9070533d17cb
 Infohash: bf7ed99351f7b08f0916b7b3e49cfa574d206879
@@ -802,6 +864,8 @@ Verify: gpg</description>
 Filename: debian-13.7.0-amd64-netinst.iso
 sha512: ef04d0276850d70e4aaec0b55003628660e9631b26e35215a70ab3c8c707294a4b12731bc73c75a932902f703a7c278310ca99df28d6b36fb06d5618d8d0f678
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Torrent: https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.7.0-amd64-netinst.iso.torrent
 torrent-sha512: 668f759e6454e5400ca1c34ab7b0e63b4e671b07a8838427e76af8e8c22f359befb4391aa1f8f09bde88957349f632247748f74de8b82bfafb7495a6f89839d3
 Infohash: 7acf8fb590b2060dd9c3146ef770169d593433b0
@@ -819,6 +883,8 @@ Verify: gpg</description>
 Filename: clonezilla-live-3.3.3-37-amd64.iso
 sha512: aaa56b3e60f39e8d96fb7363a7be956898c729f5e8417b952947d8f3a92066b5811e2b4abfa9b9d5c093a9877003ae010f6cb5b94316597c9f7380ffa42cc60d
 Signature: https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x54C0821A48715DAFD61BFCAF667857D045599AFD
+Key-fingerprint: 54C0821A48715DAFD61BFCAF667857D045599AFD
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable/3.3.3-37/clonezilla-live-3.3.3-37-amd64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>clonezilla</category>
@@ -832,6 +898,8 @@ Verify: gpg</description>
 Filename: ubuntu-mate-24.04.5-desktop-amd64.iso
 sha256: 60430d35da5c0bdb3d84a2fdf4052495256fc26ec300d7cd5a9933a534f0422c
 Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/24.04.5/release/ubuntu-mate-24.04.5-desktop-amd64.iso.torrent
 Infohash: 588149d617ee9061aa6a4ee946df7ab7d7bf1f76
 Magnet: magnet:?xt=urn:btih:588149d617ee9061aa6a4ee946df7ab7d7bf1f76&amp;dn=ubuntu-mate-24.04.5-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -860,6 +928,8 @@ Verify: checksum</description>
 Filename: TrueNAS-SCALE-25.10.7.iso
 sha256: 54ce9441ce66966a392e28f63604ca3c2c083d0bec4db7bb5af2f74f7a007c8e
 Signature: https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.7/TrueNAS-SCALE-25.10.7.iso.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
+Key-fingerprint: C8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
 Verify: gpg</description>
       <enclosure url="https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.7/TrueNAS-SCALE-25.10.7.iso" type="application/x-iso9660-image" length="0" />
       <category>truenas</category>
@@ -933,6 +1003,8 @@ Verify: checksum</description>
 Filename: archlinux-2026.09.01-x86_64.iso
 sha256: be8458032f8105e60ee2a3067f950b6e3c007ee51b38dac50e8b48e765561c91
 Signature: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.09.01-x86_64.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+Key-fingerprint: 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
 Torrent: https://geo.mirror.pkgbuild.com/iso/latest/archlinux-2026.09.01-x86_64.iso.torrent
 Infohash: f45add9d1a5185d8588df7dd6cd89993dd0174fa
 Magnet: magnet:?xt=urn:btih:f45add9d1a5185d8588df7dd6cd89993dd0174fa&amp;dn=archlinux-2026.09.01-x86_64.iso
@@ -948,6 +1020,8 @@ Verify: gpg</description>
       <description>EndeavourOS 2026.08.15 (x86_64)
 Filename: EndeavourOS_Titan-Nova-2026.08.15.iso
 Signature: https://ftp.belnet.be/mirror/endeavouros/iso/EndeavourOS_Titan-Nova-2026.08.15.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x8F43FC374CD4CEEA19CEE323E3D8752ACDF595A1
+Key-fingerprint: 8F43FC374CD4CEEA19CEE323E3D8752ACDF595A1
 Verify: gpg
 WARNING: no published checksum — integrity unverifiable</description>
       <enclosure url="https://ftp.belnet.be/mirror/endeavouros/iso/EndeavourOS_Titan-Nova-2026.08.15.iso" type="application/x-iso9660-image" length="0" />
@@ -962,6 +1036,8 @@ WARNING: no published checksum — integrity unverifiable</description>
 Filename: ubuntucinnamon-26.04.1-desktop-amd64.iso
 sha256: ceb8156f6aabf597da4a98a9794a319d765b39c888a5200ae88f3915d22c8371
 Signature: https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/ubuntucinnamon-26.04.1-desktop-amd64.iso.torrent
 Infohash: 7e0571a502b7f2f78cdb506715a18b4e5c9ca7c7
 Magnet: magnet:?xt=urn:btih:7e0571a502b7f2f78cdb506715a18b4e5c9ca7c7&amp;dn=ubuntucinnamon-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -978,6 +1054,8 @@ Verify: gpg</description>
 Filename: ubuntucinnamon-26.04.1-desktop-amd64.iso
 sha256: ceb8156f6aabf597da4a98a9794a319d765b39c888a5200ae88f3915d22c8371
 Signature: https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/ubuntucinnamon-26.04.1-desktop-amd64.iso.torrent
 Infohash: 7e0571a502b7f2f78cdb506715a18b4e5c9ca7c7
 Magnet: magnet:?xt=urn:btih:7e0571a502b7f2f78cdb506715a18b4e5c9ca7c7&amp;dn=ubuntucinnamon-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -994,6 +1072,8 @@ Verify: gpg</description>
 Filename: edubuntu-26.04.1-desktop-amd64.iso
 sha256: 1bd6aa9285b4b0f15af69b281c35513305506a7743a6cb32bc22528856b694e2
 Signature: https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/edubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: 698ebaa67b0b025bc02ba7d164ed2ffdc6e4c0be
 Magnet: magnet:?xt=urn:btih:698ebaa67b0b025bc02ba7d164ed2ffdc6e4c0be&amp;dn=edubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1010,6 +1090,8 @@ Verify: gpg</description>
 Filename: edubuntu-26.04.1-desktop-amd64.iso
 sha256: 1bd6aa9285b4b0f15af69b281c35513305506a7743a6cb32bc22528856b694e2
 Signature: https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/edubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: 698ebaa67b0b025bc02ba7d164ed2ffdc6e4c0be
 Magnet: magnet:?xt=urn:btih:698ebaa67b0b025bc02ba7d164ed2ffdc6e4c0be&amp;dn=edubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1026,6 +1108,8 @@ Verify: gpg</description>
 Filename: ubuntukylin-26.04.1-desktop-amd64.iso
 sha256: 53d34c1255a9ba3e83c1e6e69619e494de2ac10e7d01559fd61fb822a25c645e
 Signature: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/ubuntukylin-26.04.1-desktop-amd64.iso.torrent
 Infohash: 772efd8d8b6add315d9271baaa253cf695ff7288
 Magnet: magnet:?xt=urn:btih:772efd8d8b6add315d9271baaa253cf695ff7288&amp;dn=ubuntukylin-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1042,6 +1126,8 @@ Verify: gpg</description>
 Filename: ubuntukylin-26.04.1-desktop-amd64.iso
 sha256: 53d34c1255a9ba3e83c1e6e69619e494de2ac10e7d01559fd61fb822a25c645e
 Signature: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/ubuntukylin-26.04.1-desktop-amd64.iso.torrent
 Infohash: 772efd8d8b6add315d9271baaa253cf695ff7288
 Magnet: magnet:?xt=urn:btih:772efd8d8b6add315d9271baaa253cf695ff7288&amp;dn=ubuntukylin-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1058,6 +1144,8 @@ Verify: gpg</description>
 Filename: ubuntustudio-26.04.1-desktop-amd64.iso
 sha256: 2b25d06203c8a2f60da23e20e3afd1fa400f8ff8104fd074c1b7e49fc3768084
 Signature: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/ubuntustudio-26.04.1-desktop-amd64.iso.torrent
 Infohash: d738c3042effc632f5dc224c1c319d753ab8fee1
 Magnet: magnet:?xt=urn:btih:d738c3042effc632f5dc224c1c319d753ab8fee1&amp;dn=ubuntustudio-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1074,6 +1162,8 @@ Verify: gpg</description>
 Filename: ubuntustudio-26.04.1-desktop-amd64.iso
 sha256: 2b25d06203c8a2f60da23e20e3afd1fa400f8ff8104fd074c1b7e49fc3768084
 Signature: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/ubuntustudio-26.04.1-desktop-amd64.iso.torrent
 Infohash: d738c3042effc632f5dc224c1c319d753ab8fee1
 Magnet: magnet:?xt=urn:btih:d738c3042effc632f5dc224c1c319d753ab8fee1&amp;dn=ubuntustudio-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1090,6 +1180,8 @@ Verify: gpg</description>
 Filename: ubuntu-budgie-26.04.1-desktop-amd64.iso
 sha256: a0a712266e536246786a4e29f6d0d7328326b9b4b54f746202a8575208c23921
 Signature: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/ubuntu-budgie-26.04.1-desktop-amd64.iso.torrent
 Infohash: 5a3971c963393a0d6a93106fa16c645843fc554d
 Magnet: magnet:?xt=urn:btih:5a3971c963393a0d6a93106fa16c645843fc554d&amp;dn=ubuntu-budgie-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1106,6 +1198,8 @@ Verify: gpg</description>
 Filename: ubuntu-budgie-26.04.1-desktop-amd64.iso
 sha256: a0a712266e536246786a4e29f6d0d7328326b9b4b54f746202a8575208c23921
 Signature: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/ubuntu-budgie-26.04.1-desktop-amd64.iso.torrent
 Infohash: 5a3971c963393a0d6a93106fa16c645843fc554d
 Magnet: magnet:?xt=urn:btih:5a3971c963393a0d6a93106fa16c645843fc554d&amp;dn=ubuntu-budgie-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1122,6 +1216,8 @@ Verify: gpg</description>
 Filename: lubuntu-26.04.1-desktop-amd64.iso
 sha256: a8038585420f2270845549c6f493e0ec98e68d4b2c49571cbe500a4b5fab3062
 Signature: https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/lubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: aabb2304138444112c2189a5916067b8791d37d5
 Magnet: magnet:?xt=urn:btih:aabb2304138444112c2189a5916067b8791d37d5&amp;dn=lubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1138,6 +1234,8 @@ Verify: gpg</description>
 Filename: lubuntu-26.04.1-desktop-amd64.iso
 sha256: a8038585420f2270845549c6f493e0ec98e68d4b2c49571cbe500a4b5fab3062
 Signature: https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/lubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: aabb2304138444112c2189a5916067b8791d37d5
 Magnet: magnet:?xt=urn:btih:aabb2304138444112c2189a5916067b8791d37d5&amp;dn=lubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1154,6 +1252,8 @@ Verify: gpg</description>
 Filename: xubuntu-26.04.1-desktop-amd64.iso
 sha256: 0cd5160f72ae6b7a26be7a29248b60cbd579b9e6aa8fbd274e95264da0ade43d
 Signature: https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/xubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: f27a4e4455123e71d411b3941a7d68dfb098354f
 Magnet: magnet:?xt=urn:btih:f27a4e4455123e71d411b3941a7d68dfb098354f&amp;dn=xubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1170,6 +1270,8 @@ Verify: gpg</description>
 Filename: xubuntu-26.04.1-desktop-amd64.iso
 sha256: 0cd5160f72ae6b7a26be7a29248b60cbd579b9e6aa8fbd274e95264da0ade43d
 Signature: https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/xubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: f27a4e4455123e71d411b3941a7d68dfb098354f
 Magnet: magnet:?xt=urn:btih:f27a4e4455123e71d411b3941a7d68dfb098354f&amp;dn=xubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1186,6 +1288,8 @@ Verify: gpg</description>
 Filename: kubuntu-26.04.1-desktop-amd64.iso
 sha256: 831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8
 Signature: https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: 7751f52345b9a0b4bc03782611b9e676d63ce294
 Magnet: magnet:?xt=urn:btih:7751f52345b9a0b4bc03782611b9e676d63ce294&amp;dn=kubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1202,6 +1306,8 @@ Verify: gpg</description>
 Filename: kubuntu-26.04.1-desktop-amd64.iso
 sha256: 831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8
 Signature: https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: 7751f52345b9a0b4bc03782611b9e676d63ce294
 Magnet: magnet:?xt=urn:btih:7751f52345b9a0b4bc03782611b9e676d63ce294&amp;dn=kubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1218,6 +1324,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-live-server-arm64.iso
 sha256: af78753c94b924c85c4964c670692a853f7c80299a4064e317edad95462e3168
 Signature: https://cdimage.ubuntu.com/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-live-server-arm64.iso.torrent
 Infohash: 183f3a78d9d7766f584edc0de8a1d197efa42dc1
 Magnet: magnet:?xt=urn:btih:183f3a78d9d7766f584edc0de8a1d197efa42dc1&amp;dn=ubuntu-26.04.1-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1234,6 +1342,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-live-server-amd64.iso
 sha256: cc8a95cde20f6ced61a322420de00f10cc3c90ced545daa46cb9c1a117f1d927
 Signature: https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-live-server-amd64.iso.torrent
 Infohash: e4f19cf636409b72571766c2ae89c98fc21a109d
 Magnet: magnet:?xt=urn:btih:e4f19cf636409b72571766c2ae89c98fc21a109d&amp;dn=ubuntu-26.04.1-live-server-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
@@ -1250,6 +1360,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-desktop-arm64.iso
 sha256: c54d196489d3c867975fb3bbb72ca52ec2e137456e305481f81096304e4d2517
 Signature: https://cdimage.ubuntu.com/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-desktop-arm64.iso.torrent
 Infohash: be5cfaffdaea1a5545944155fb496136923babda
 Magnet: magnet:?xt=urn:btih:be5cfaffdaea1a5545944155fb496136923babda&amp;dn=ubuntu-26.04.1-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1266,6 +1378,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-desktop-amd64.iso
 sha256: 601e30fbf5d97759367c632e2c33630665039b7e2158fd068403da3ccf1bda1f
 Signature: https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: 5b1e0d988fc7a0c9e99bd852071681a59974b39f
 Magnet: magnet:?xt=urn:btih:5b1e0d988fc7a0c9e99bd852071681a59974b39f&amp;dn=ubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
@@ -1282,6 +1396,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-live-server-arm64.iso
 sha256: af78753c94b924c85c4964c670692a853f7c80299a4064e317edad95462e3168
 Signature: https://cdimage.ubuntu.com/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-live-server-arm64.iso.torrent
 Infohash: 183f3a78d9d7766f584edc0de8a1d197efa42dc1
 Magnet: magnet:?xt=urn:btih:183f3a78d9d7766f584edc0de8a1d197efa42dc1&amp;dn=ubuntu-26.04.1-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1298,6 +1414,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-live-server-amd64.iso
 sha256: cc8a95cde20f6ced61a322420de00f10cc3c90ced545daa46cb9c1a117f1d927
 Signature: https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-live-server-amd64.iso.torrent
 Infohash: e4f19cf636409b72571766c2ae89c98fc21a109d
 Magnet: magnet:?xt=urn:btih:e4f19cf636409b72571766c2ae89c98fc21a109d&amp;dn=ubuntu-26.04.1-live-server-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
@@ -1314,6 +1432,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-desktop-arm64.iso
 sha256: c54d196489d3c867975fb3bbb72ca52ec2e137456e305481f81096304e4d2517
 Signature: https://cdimage.ubuntu.com/releases/26.04.1/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-desktop-arm64.iso.torrent
 Infohash: be5cfaffdaea1a5545944155fb496136923babda
 Magnet: magnet:?xt=urn:btih:be5cfaffdaea1a5545944155fb496136923babda&amp;dn=ubuntu-26.04.1-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1330,6 +1450,8 @@ Verify: gpg</description>
 Filename: ubuntu-26.04.1-desktop-amd64.iso
 sha256: 601e30fbf5d97759367c632e2c33630665039b7e2158fd068403da3ccf1bda1f
 Signature: https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-desktop-amd64.iso.torrent
 Infohash: 5b1e0d988fc7a0c9e99bd852071681a59974b39f
 Magnet: magnet:?xt=urn:btih:5b1e0d988fc7a0c9e99bd852071681a59974b39f&amp;dn=ubuntu-26.04.1-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
@@ -1496,6 +1618,8 @@ Verify: gpg</description>
 Filename: manjaro-xfce-26.1.0-260812-linux71.iso
 sha256: eb8e3d3f455475c06b508f0115e2247e8764562e36176203a2315552c84afc98
 Signature: https://download.manjaro.org/xfce/26.1.0/manjaro-xfce-26.1.0-260812-linux71.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</description>
       <enclosure url="https://download.manjaro.org/xfce/26.1.0/manjaro-xfce-26.1.0-260812-linux71.iso" type="application/x-iso9660-image" length="0" />
       <category>manjaro</category>
@@ -1509,6 +1633,8 @@ Verify: gpg</description>
 Filename: manjaro-gnome-26.1.0-260812-linux71.iso
 sha256: b4c94d45c0da1992dfa9c7f3fbfd1bd5ebbdebaaa61f994660e0304357eb029f
 Signature: https://download.manjaro.org/gnome/26.1.0/manjaro-gnome-26.1.0-260812-linux71.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</description>
       <enclosure url="https://download.manjaro.org/gnome/26.1.0/manjaro-gnome-26.1.0-260812-linux71.iso" type="application/x-iso9660-image" length="0" />
       <category>manjaro</category>
@@ -1522,6 +1648,8 @@ Verify: gpg</description>
 Filename: manjaro-kde-26.1.0-260812-linux71.iso
 sha256: 711b64362abe0b45348dc33bd4a2c654641e069b50ae9ae37c01771da880aa99
 Signature: https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</description>
       <enclosure url="https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso" type="application/x-iso9660-image" length="0" />
       <category>manjaro</category>
@@ -1535,6 +1663,8 @@ Verify: gpg</description>
 Filename: cachyos-desktop-linux-260809.iso
 sha256: 959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c
 Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
+Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download" type="application/x-iso9660-image" length="0" />
       <category>cachyos</category>
@@ -1580,6 +1710,8 @@ NOTE: infohash is unsigned — trust on first use</description>
 Filename: install-ia64-minimal-20240404T093405Z.iso
 sha256: 71940ab5629e4c56f7d55b122193d12dfff5784e0099e41c05a4f359278859aa
 Signature: https://distfiles.gentoo.org/releases/ia64/autobuilds/current-install-ia64-minimal/install-ia64-minimal-20240404T093405Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/ia64/autobuilds/current-install-ia64-minimal/install-ia64-minimal-20240404T093405Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
@@ -1593,6 +1725,8 @@ Verify: gpg</description>
 Filename: install-hppa-minimal-20230418T174657Z.iso
 sha256: d5a125fca449a68a0dbc43485e288ca9504364ef96fb2621dcbe395868549fd4
 Signature: https://distfiles.gentoo.org/releases/hppa/autobuilds/current-install-hppa-minimal/install-hppa-minimal-20230418T174657Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/hppa/autobuilds/current-install-hppa-minimal/install-hppa-minimal-20230418T174657Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
@@ -1606,6 +1740,8 @@ Verify: gpg</description>
 Filename: ubuntu-unity-26.04-desktop-amd64.iso
 sha256: b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0
 Signature: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent
 Infohash: a5283cf4e0f3aa287ed45e4945e67d28eac07de8
 Magnet: magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&amp;dn=ubuntu-unity-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1622,6 +1758,8 @@ Verify: gpg</description>
 Filename: ubuntu-mate-25.10-desktop-amd64.iso
 sha256: f9e441110886e79a2dfce9f7596f4e0d6479f115dd8792670681743e5917694f
 Signature: https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso.torrent
 Infohash: b91d49b1313f5aa27f2b3a9dc48af8248f40908e
 Magnet: magnet:?xt=urn:btih:b91d49b1313f5aa27f2b3a9dc48af8248f40908e&amp;dn=ubuntu-mate-25.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1663,6 +1801,8 @@ Verify: checksum</description>
 Filename: Qubes-R4.3.1-x86_64.iso
 sha512: 453699a42b85a9dcf33434b9da419e43001ce30b6014befc26f4fbb1cbf70fd30bc9b479b4499d64de29daae9edaf73b4b78b92e32379e11287d017293b95893
 Signature: https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso.DIGESTS.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Key-fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
 Verify: gpg</description>
       <enclosure url="https://ftp.qubes-os.org/iso/Qubes-R4.3.1-x86_64.iso" type="application/x-iso9660-image" length="0" />
       <category>qubes</category>
@@ -1772,6 +1912,8 @@ Verify: checksum</description>
 Filename: ubuntu-unity-26.04-desktop-amd64.iso
 sha256: b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0
 Signature: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent
 Infohash: a5283cf4e0f3aa287ed45e4945e67d28eac07de8
 Magnet: magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&amp;dn=ubuntu-unity-26.04-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
@@ -1878,6 +2020,8 @@ Verify: gpg</description>
 Filename: proxmox-datacenter-manager_1.1-1.iso
 sha256: 11a55a069ba564220bd986241b57920a83781d40be18d6f2bf7b9b12696ae2cc
 Signature: http://download.proxmox.com/iso/proxmox-datacenter-manager_1.1-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
 Torrent: http://download.proxmox.com/iso/proxmox-datacenter-manager_1.1-1.iso.torrent
 Infohash: 728a569a19359aef0dfc60cd695053e124cbc635
 Magnet: magnet:?xt=urn:btih:728a569a19359aef0dfc60cd695053e124cbc635&amp;dn=proxmox-datacenter-manager_1.1-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
@@ -1894,6 +2038,8 @@ Verify: gpg</description>
 Filename: proxmox-mail-gateway_9.1-1.iso
 sha256: 79402f6398c50a76fca66a32c3c0a50da3f71d35c1d7a1bea022e4b1c6c864d6
 Signature: http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
 Torrent: http://download.proxmox.com/iso/proxmox-mail-gateway_9.1-1.iso.torrent
 Infohash: a085f80fa75ef2b9c4d2443dbb596e0af2e8c829
 Magnet: magnet:?xt=urn:btih:a085f80fa75ef2b9c4d2443dbb596e0af2e8c829&amp;dn=proxmox-mail-gateway_9.1-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
@@ -2090,6 +2236,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-s390x-dvd1.iso
 sha256: 52e5cab95904d0cc15b4f4c7762d1e31251351d41d96fbb217cb3bb59da424ce
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2103,6 +2251,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-riscv64-dvd1.iso
 sha256: 8b4710a427d1c8d17a787d9d59d0f19c384b92140a3d151d26ea030a6158ec50
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-dvd1.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2116,6 +2266,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-ppc64le-dvd1.iso
 sha256: fe587686b74a3639402d909b4ff3da410d5f45839606b384860c030cdd97db2f
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2129,6 +2281,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-aarch64-dvd1.iso
 sha256: 3b8253987604df1bc5e1c33c838ff3ee9ce4a8f02ed9e27e300ecff58c0c9588
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2142,6 +2296,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-s390x-minimal.iso
 sha256: 23db96776c6662a146ebc6af26e8c9ace4ff1ec3b173cf16288b5142bcb290f5
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-minimal.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2155,6 +2311,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-riscv64-minimal.iso
 sha256: 95d6d9eb18734a34cc2bad046a3f8f64e6aa76837fd186f2a1ca948a79ed6bd1
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-minimal.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2168,6 +2326,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-ppc64le-minimal.iso
 sha256: 4fa402c32141d4f11f937932669eabeba0ee2d00c40ea91949f4abf959ef28a3
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-minimal.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2181,6 +2341,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-aarch64-minimal.iso
 sha256: 1d1c21199df32f6d17eedb4f713ee0d089b49294401a364b640fcf4ffab45f35
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-minimal.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2194,6 +2356,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-s390x-boot.iso
 sha256: 40cfb90d9a33c5ebe32987f09d2f0f1b6558a80ab7a60f042914839ff3cb55f2
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2207,6 +2371,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-riscv64-boot.iso
 sha256: 5b0bed04197961440be649ccd9f87795c398dad8f36046444353fb8afb811ac4
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2220,6 +2386,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-ppc64le-boot.iso
 sha256: 2d30723555598a5f60d55d831c7b69065a1c5b310ecce38df4c13fb4f35db045
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2233,6 +2401,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-aarch64-boot.iso
 sha256: 33c2d3dfd5f947b3201478180b549bb2995bd9573c2776b384e5ec1dd47326c0
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2246,6 +2416,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso
 sha256: 9649be14ffde9aeb5cc5915e703237a417e33d9c3800fc4f71a3d6bb48addf0a
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -2259,6 +2431,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso
 sha256: 032ba016087b725bb26bc0d2cce76e5b7eb67152c984ce4c10e803f1644c4b03
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -2272,6 +2446,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso
 sha256: 1ae50c465460e3cf7131567d37ea02952b5a31339b8c06521a51080be6f491f7
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -2285,6 +2461,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso
 sha256: 5dd1bec7c2bf386f9eb80b0d73740949f8ea2cfb4336d02697410ebc4e737e45
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -2298,6 +2476,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso
 sha256: 6f9504a6710d59ce20f3c16294fe3738be6b08c1b51e1dfd8d6f4a2f6eb8af5e
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -2311,6 +2491,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso
 sha256: 6ecade658ef3e4dd7175176781f80fcd070250fe7e922f6240224ff810755ac6
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -2397,6 +2579,8 @@ Filename: kali-linux-2026.2-live-arm64.iso
 Size: 4109303808
 sha256: e9b41bfa21eea4e1a4ea941f0170aad5d1bdbbec6425254c5fc6304927245493
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent
 torrent-sha256: 83017ce9cf7499d1a3d43499fe6809cf1d5dec753e7f304b12b2348dba39b66e
 Infohash: 4bcb5d5346f20cc05134a9e6b0439c93af55cf72
@@ -2414,6 +2598,8 @@ Verify: gpg</description>
 Filename: kali-linux-2026.2-installer-netinst-arm64.iso
 sha256: 8ca1bdd6a85f37e380eca84c780256b6e634fc768426396f51967ec3be006ed1
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Verify: gpg</description>
       <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-arm64.iso" type="application/x-iso9660-image" length="0" />
       <category>kali</category>
@@ -2427,6 +2613,8 @@ Verify: gpg</description>
 Filename: kali-linux-2026.2-installer-arm64.iso
 sha256: b9a08050ee522fbee7cac703b1bc48178f79eb974c962d4ed9dc1ccfdfa77fb6
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Verify: gpg</description>
       <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-arm64.iso" type="application/x-iso9660-image" length="0" />
       <category>kali</category>
@@ -2728,6 +2916,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-x86_64-minimal.iso
 sha256: aac6ac3ce781b91a91ce78463405f66c611a5dca4b3840c79e5e01d97302f6c8
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2741,6 +2931,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-x86_64-dvd1.iso
 sha256: 16ca9c96cdb221ba6e1f68579f21bd69fd8da81c6a921d9068949796f91c8feb
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2754,6 +2946,8 @@ Verify: gpg</description>
 Filename: Rocky-10.2-x86_64-boot.iso
 sha256: bf3a75907948563d0c11f3d1b8546ee9216e18a3ea2dc0a67eb4c45452e210f9
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</description>
       <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
       <category>rocky</category>
@@ -2767,6 +2961,8 @@ Verify: gpg</description>
 Filename: proxmox-backup-server_4.2-1.iso
 sha256: 2fb299deac3929253712c9c3dfc9237edbe70af83c8848467616b771a1d5453e
 Signature: http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
 Torrent: http://download.proxmox.com/iso/proxmox-backup-server_4.2-1.iso.torrent
 Infohash: 11b513dda4f78448362fddc33bec5ac1ee9d07da
 Magnet: magnet:?xt=urn:btih:11b513dda4f78448362fddc33bec5ac1ee9d07da&amp;dn=proxmox-backup-server_4.2-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
@@ -2783,6 +2979,8 @@ Verify: gpg</description>
 Filename: proxmox-ve_9.2-1.iso
 sha256: 4e88fe416df9b527624a175f24c9aa07c714d3332afb1ee3dbf3879573ef2c6c
 Signature: http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
+Key-fingerprint: 24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E
 Torrent: http://download.proxmox.com/iso/proxmox-ve_9.2-1.iso.torrent
 Infohash: f253613924f079ec8da61180680768d9e8331e44
 Magnet: magnet:?xt=urn:btih:f253613924f079ec8da61180680768d9e8331e44&amp;dn=proxmox-ve_9.2-1.iso&amp;tr=http%3A%2F%2Ftorrent.cdn.proxmox.com%3A6969%2Fannounce
@@ -2816,6 +3014,8 @@ Filename: kali-linux-2026.2-live-amd64.iso
 Size: 5531987968
 sha256: 49e90e694d1b3dedd47f94afbe99dfdd5afb41c8462b638bbd332929769c773a
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-amd64.iso.torrent
 torrent-sha256: 6ef7d1bdb2d2c9dd59a5be72c0fc464935e6124c6e3d12bb11a0c34323644942
 Infohash: a7c8026d2ca26f336f1df40defdc10a2d36b7b07
@@ -2834,6 +3034,8 @@ Filename: kali-linux-2026.2-live-everything-amd64.iso
 Size: 16456388608
 sha256: 89ba86d14e0287b28ba25a185a32ce2ca68ef2233c628e8995c26311c09ebae4
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-everything-amd64.iso.torrent
 torrent-sha256: 303cef4851062b800457d22f17ec69e2eb4b952f1105297978f3cf4d2ca648eb
 Infohash: 5863bb444d27e8863eb44d7d8834a3f37ecf46f2
@@ -2852,6 +3054,8 @@ Filename: kali-linux-2026.2-installer-everything-amd64.iso
 Size: 14522228736
 sha256: ccedeb4e72fdaf7e5ba676ccf361cabe0e6e37174d83e38df0efcb6734b0f20d
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Torrent: https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-everything-amd64.iso.torrent
 torrent-sha256: 6f88e1f3704d560b7e468ada37ea02ded4a7b60989cbd6b9aa6554bc83b0eaf3
 Infohash: 1f7482c9dad2653af474a806a93e6c266e1a1b3c
@@ -2999,6 +3203,8 @@ Verify: checksum</description>
 Filename: manjaro-i3-25.0.3-250609-linux612.iso
 sha256: 0326f316bddc52d65b7081c7f529f356bbd2fbbe39939aa49e2d224c32eb16d6
 Signature: https://download.manjaro.org/i3/25.0.3/manjaro-i3-25.0.3-250609-linux612.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</description>
       <enclosure url="https://download.manjaro.org/i3/25.0.3/manjaro-i3-25.0.3-250609-linux612.iso" type="application/x-iso9660-image" length="0" />
       <category>manjaro</category>
@@ -3012,6 +3218,8 @@ Verify: gpg</description>
 Filename: manjaro-cinnamon-25.0.3-250609-linux612.iso
 sha256: 30460130c36e339fb97c39afe4c7f9587ecbc36b3dd7584bc898d3697d1d42ec
 Signature: https://download.manjaro.org/cinnamon/25.0.3/manjaro-cinnamon-25.0.3-250609-linux612.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
+Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</description>
       <enclosure url="https://download.manjaro.org/cinnamon/25.0.3/manjaro-cinnamon-25.0.3-250609-linux612.iso" type="application/x-iso9660-image" length="0" />
       <category>manjaro</category>
@@ -3064,6 +3272,8 @@ Verify: checksum</description>
 Filename: neon-dev-current.iso
 sha256: c4aaf661b2edced96aab863a093e1303e91649d7efcf1a5608b5dc48aa7f35f1
 Signature: https://files.kde.org/neon/images/dev/current/neon-dev-current.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xB74EA2162376765BEAC3AE4345F4C354638D1F29
+Key-fingerprint: B74EA2162376765BEAC3AE4345F4C354638D1F29
 Verify: gpg</description>
       <enclosure url="https://files.kde.org/neon/images/dev/current/neon-dev-current.iso" type="application/x-iso9660-image" length="0" />
       <category>kde-neon</category>
@@ -3077,6 +3287,8 @@ Verify: gpg</description>
 Filename: neon-desktop-current.iso
 sha256: ce5a614082c19bb084d411dbc98ead1ba33af88490568ec97dabaffc761ff205
 Signature: https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso.sig
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xB74EA2162376765BEAC3AE4345F4C354638D1F29
+Key-fingerprint: B74EA2162376765BEAC3AE4345F4C354638D1F29
 Verify: gpg</description>
       <enclosure url="https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso" type="application/x-iso9660-image" length="0" />
       <category>kde-neon</category>
@@ -3102,6 +3314,8 @@ Verify: checksum</description>
 Filename: openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso
 sha256: 0984b36d0f420487f2766733ff8f9d779ade81d432b08e40e852a675313750bb
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -3115,6 +3329,8 @@ Verify: gpg</description>
 Filename: openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso
 sha256: a74d4072e639c75ca127df3d869c1e57bcc44a093a969550f348a3ead561fe4f
 Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
@@ -3164,6 +3380,8 @@ Verify: checksum</description>
 Filename: linuxmint-22.3-xfce-64bit.iso
 sha256: 45a835b5dddaf40e84d776549e0b19b3fbd49673b6cc6434ebddbfcd217df776
 Signature: https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x27DEB15644C6B3CF3BD7D291300F846BA25BAE09
+Key-fingerprint: 27DEB15644C6B3CF3BD7D291300F846BA25BAE09
 Verify: gpg</description>
       <enclosure url="https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-xfce-64bit.iso" type="application/x-iso9660-image" length="0" />
       <category>mint</category>
@@ -3201,6 +3419,8 @@ Verify: checksum</description>
 Filename: linuxmint-22.3-mate-64bit.iso
 sha256: 7609294da613b75eea89bb918292125e9f06418a368136fb190466e15bf8c373
 Signature: https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x27DEB15644C6B3CF3BD7D291300F846BA25BAE09
+Key-fingerprint: 27DEB15644C6B3CF3BD7D291300F846BA25BAE09
 Verify: gpg</description>
       <enclosure url="https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-mate-64bit.iso" type="application/x-iso9660-image" length="0" />
       <category>mint</category>
@@ -3214,6 +3434,8 @@ Verify: gpg</description>
 Filename: linuxmint-22.3-cinnamon-64bit.iso
 sha256: a081ab202cfda17f6924128dbd2de8b63518ac0531bcfe3f1a1b88097c459bd4
 Signature: https://mirrors.edge.kernel.org/linuxmint/stable/22.3/sha256sum.txt.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x27DEB15644C6B3CF3BD7D291300F846BA25BAE09
+Key-fingerprint: 27DEB15644C6B3CF3BD7D291300F846BA25BAE09
 Verify: gpg</description>
       <enclosure url="https://mirrors.edge.kernel.org/linuxmint/stable/22.3/linuxmint-22.3-cinnamon-64bit.iso" type="application/x-iso9660-image" length="0" />
       <category>mint</category>
@@ -3227,6 +3449,8 @@ Verify: gpg</description>
 Filename: kali-linux-2026.2-installer-amd64.iso
 sha256: 6dbefacc95e3b556c19c48e8bae39b8b505e2d3a1aba0bfb7ab62b036c3d2ba3
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Verify: gpg</description>
       <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>kali</category>
@@ -3240,6 +3464,8 @@ Verify: gpg</description>
 Filename: kali-linux-2026.2-installer-purple-amd64.iso
 sha256: bbde629937a9eabc110062989d49947fae7fd4c0fef19f590f990b1cb97a497c
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Verify: gpg</description>
       <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-purple-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>kali</category>
@@ -3253,6 +3479,8 @@ Verify: gpg</description>
 Filename: kali-linux-2026.2-installer-netinst-amd64.iso
 sha256: d32f929dacc48134a31461a09f2160d13ad1d26b820cee920446813ca979b39b
 Signature: https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5
+Key-fingerprint: 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 Verify: gpg</description>
       <enclosure url="https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-amd64.iso" type="application/x-iso9660-image" length="0" />
       <category>kali</category>
@@ -3383,6 +3611,8 @@ Verify: checksum</description>
 Filename: cachyos-handheld-linux-260628.iso
 sha256: 670ba18b5d83b3d25307eda9d03a1cfb4ad9314cd28ea668d4c09720de68af3f
 Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/handheld/260628/cachyos-handheld-linux-260628.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
+Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/handheld/260628/cachyos-handheld-linux-260628.iso/download" type="application/x-iso9660-image" length="0" />
       <category>cachyos</category>
@@ -3396,6 +3626,8 @@ Verify: gpg</description>
 Filename: openmediavault_8.3.1-amd64.iso
 sha256: 5ada7dea09dbb10365b6f245515e71c79c5398d8f8f1acda675ee6d8b572d2e5
 Signature: https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso.asc/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xD67506C878E08A94FD7E009424863F0C716B980B
+Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>openmediavault</category>
@@ -3409,6 +3641,8 @@ Verify: gpg</description>
 Filename: antiX-26_x64-full.iso
 sha256: ea8926e517a2fd7fc6486981bc26c9dab474a226bbb28686f583cc36b49d6dae
 Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x30AA418A0C723D937B50A986A80582E000067FDD
+Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso/download" type="application/x-iso9660-image" length="0" />
       <category>antix</category>
@@ -3422,6 +3656,8 @@ Verify: gpg</description>
 Filename: antiX-26_x64-core.iso
 sha256: de0dc55dea576c897eba345a0a0f1d8695fc1c4db5990b46efebe08bfbce9e22
 Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x30AA418A0C723D937B50A986A80582E000067FDD
+Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso/download" type="application/x-iso9660-image" length="0" />
       <category>antix</category>
