@@ -155,10 +155,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.3 | gpg | — |
 | netbsd | install | x86_64 | 11.0 | checksum | ✓ |
 | netbsd | install | aarch64 | 11.0 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.10529.c508844df6c2 | checksum | — |
-| nixos | graphical | aarch64 | 26.05.10529.c508844df6c2 | checksum | — |
-| nixos | minimal | x86_64 | 26.05.10529.c508844df6c2 | checksum | — |
-| nixos | minimal | aarch64 | 26.05.10529.c508844df6c2 | checksum | — |
+| nixos | graphical | x86_64 | 26.05.10620.f5c082a40f75 | checksum | — |
+| nixos | graphical | aarch64 | 26.05.10620.f5c082a40f75 | checksum | — |
+| nixos | minimal | x86_64 | 26.05.10620.f5c082a40f75 | checksum | — |
+| nixos | minimal | aarch64 | 26.05.10620.f5c082a40f75 | checksum | — |
 | nobara | gnome | x86_64 | 44-2026-09-02 | checksum | — |
 | nobara | kde | x86_64 | 44-2026-09-02 | checksum | — |
 | nobara | official | x86_64 | 44-2026-09-02 | checksum | — |
