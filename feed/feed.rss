@@ -4,79 +4,79 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Sat, 26 Sep 2026 11:31:11 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 12:10:20 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
     <item>
-      <title>NixOS Graphical 26.05.10620.f5c082a40f75 (aarch64)</title>
+      <title>Nobara Steam HTPC 44-2026-09-26 (x86_64)</title>
+      <link>https://nobara-images.nobaraproject.org/Nobara-44-Steam-HTPC-2026-09-26.iso</link>
+      <guid isPermaLink="false">nobara:steam-htpc:44-2026-09-26</guid>
+      <pubDate>Sun, 27 Sep 2026 12:10:20 +0000</pubDate>
+      <description>Nobara Steam HTPC 44-2026-09-26 (x86_64)
+Filename: Nobara-44-Steam-HTPC-2026-09-26.iso
+sha256: 40488132ab2f272de49b587ed57e62dc0713aba6a07d0bce1a8751b07c939fe5
+Verify: checksum</description>
+      <enclosure url="https://nobara-images.nobaraproject.org/Nobara-44-Steam-HTPC-2026-09-26.iso" type="application/x-iso9660-image" length="0" />
+      <category>nobara</category>
+    </item>
+    <item>
+      <title>Nobara Steam Handheld 44-2026-09-26 (x86_64)</title>
+      <link>https://nobara-images.nobaraproject.org/Nobara-44-Steam-Handheld-2026-09-26.iso</link>
+      <guid isPermaLink="false">nobara:steam-handheld:44-2026-09-26</guid>
+      <pubDate>Sun, 27 Sep 2026 12:10:20 +0000</pubDate>
+      <description>Nobara Steam Handheld 44-2026-09-26 (x86_64)
+Filename: Nobara-44-Steam-Handheld-2026-09-26.iso
+sha256: e48ce7a5fcfa9a8bd1feaf7a5952a20be5d2da9e8cd4eea0921e3cb0004dfb3b
+Verify: checksum</description>
+      <enclosure url="https://nobara-images.nobaraproject.org/Nobara-44-Steam-Handheld-2026-09-26.iso" type="application/x-iso9660-image" length="0" />
+      <category>nobara</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.10718.5e2305d577ca (aarch64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.10620.f5c082a40f75</guid>
-      <pubDate>Sat, 26 Sep 2026 11:31:11 +0000</pubDate>
-      <description>NixOS Graphical 26.05.10620.f5c082a40f75 (aarch64)
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.10718.5e2305d577ca</guid>
+      <pubDate>Sun, 27 Sep 2026 12:09:50 +0000</pubDate>
+      <description>NixOS Graphical 26.05.10718.5e2305d577ca (aarch64)
 Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 3516c95753c9561ff4554222eaabec8668222f150a7faba9dbd6df2d16bb37a0
+sha256: ab0cc35ad62e494f2b284b764fb51bd33b434deed1675526338b163e1bd1f526
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
     </item>
     <item>
-      <title>NixOS Graphical 26.05.10620.f5c082a40f75 (x86_64)</title>
+      <title>NixOS Graphical 26.05.10718.5e2305d577ca (x86_64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.10620.f5c082a40f75</guid>
-      <pubDate>Sat, 26 Sep 2026 11:31:11 +0000</pubDate>
-      <description>NixOS Graphical 26.05.10620.f5c082a40f75 (x86_64)
+      <guid isPermaLink="false">nixos:graphical:26.05.10718.5e2305d577ca</guid>
+      <pubDate>Sun, 27 Sep 2026 12:09:50 +0000</pubDate>
+      <description>NixOS Graphical 26.05.10718.5e2305d577ca (x86_64)
 Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 1f1d832a972a0a0b485a36721e0341fb864ff5caf582d04a2c73fe7c02ba7097
+sha256: 1611c9473c6294dd90f06e42d637efa2787cb972ab39554648bacd3c8604c018
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
     </item>
     <item>
-      <title>NixOS Minimal 26.05.10620.f5c082a40f75 (aarch64)</title>
+      <title>NixOS Minimal 26.05.10718.5e2305d577ca (aarch64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.10620.f5c082a40f75</guid>
-      <pubDate>Sat, 26 Sep 2026 11:31:10 +0000</pubDate>
-      <description>NixOS Minimal 26.05.10620.f5c082a40f75 (aarch64)
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.10718.5e2305d577ca</guid>
+      <pubDate>Sun, 27 Sep 2026 12:09:49 +0000</pubDate>
+      <description>NixOS Minimal 26.05.10718.5e2305d577ca (aarch64)
 Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 75c626e19e6e1ebc6ce884429523702f69099287b9bc22aebd9340ca84579e03
+sha256: f4020c6a5a9aea4bd76c7c4749fac9612162173eaa505670578f98dec300021c
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
     </item>
     <item>
-      <title>NixOS Minimal 26.05.10620.f5c082a40f75 (x86_64)</title>
+      <title>NixOS Minimal 26.05.10718.5e2305d577ca (x86_64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.10620.f5c082a40f75</guid>
-      <pubDate>Sat, 26 Sep 2026 11:31:10 +0000</pubDate>
-      <description>NixOS Minimal 26.05.10620.f5c082a40f75 (x86_64)
+      <guid isPermaLink="false">nixos:minimal:26.05.10718.5e2305d577ca</guid>
+      <pubDate>Sun, 27 Sep 2026 12:09:49 +0000</pubDate>
+      <description>NixOS Minimal 26.05.10718.5e2305d577ca (x86_64)
 Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: d0bc0b923a7a1f8957c0eb3a2869cdfa6135face1682b61d2cf91722941b13cb
+sha256: d8c7780cb7e30e462b00aed95fdb098867397c91d65b2be93e558998cdd9aa58
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
-    </item>
-    <item>
-      <title>Nobara Steam Handheld 44-2026-09-24 (x86_64)</title>
-      <link>https://nobara-images.nobaraproject.org/Nobara-44-Steam-Handheld-2026-09-24.iso</link>
-      <guid isPermaLink="false">nobara:steam-handheld:44-2026-09-24</guid>
-      <pubDate>Fri, 25 Sep 2026 11:58:27 +0000</pubDate>
-      <description>Nobara Steam Handheld 44-2026-09-24 (x86_64)
-Filename: Nobara-44-Steam-Handheld-2026-09-24.iso
-Verify: none
-WARNING: no published checksum — integrity unverifiable</description>
-      <enclosure url="https://nobara-images.nobaraproject.org/Nobara-44-Steam-Handheld-2026-09-24.iso" type="application/x-iso9660-image" length="0" />
-      <category>nobara</category>
-    </item>
-    <item>
-      <title>Nobara Steam HTPC 44-2026-09-25 (x86_64)</title>
-      <link>https://nobara-images.nobaraproject.org/Nobara-44-Steam-HTPC-2026-09-25.iso</link>
-      <guid isPermaLink="false">nobara:steam-htpc:44-2026-09-25</guid>
-      <pubDate>Fri, 25 Sep 2026 11:58:26 +0000</pubDate>
-      <description>Nobara Steam HTPC 44-2026-09-25 (x86_64)
-Filename: Nobara-44-Steam-HTPC-2026-09-25.iso
-Verify: none
-WARNING: no published checksum — integrity unverifiable</description>
-      <enclosure url="https://nobara-images.nobaraproject.org/Nobara-44-Steam-HTPC-2026-09-25.iso" type="application/x-iso9660-image" length="0" />
-      <category>nobara</category>
     </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20260923 (x86_64)</title>
