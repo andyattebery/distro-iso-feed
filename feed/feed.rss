@@ -4,14 +4,50 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Mon, 28 Sep 2026 14:04:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 13:00:48 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
     <item>
-      <title>Bazzite NVIDIA Open 44.20260928 (x86_64)</title>
+      <title>Aurora NVIDIA Open stable-20260929.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20260929.1</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:48 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20260929.1 (x86_64)
+Filename: aurora-nvidia-open-stable-webui-x86_64.iso
+sha256: 5e9809dc066c7a748f39ccca8ec9b500d7dd7b610f46e97ccdfe1c26a43cc9db
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora stable-20260929.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20260929.1</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:47 +0000</pubDate>
+      <description>Aurora stable-20260929.1 (x86_64)
+Filename: aurora-stable-webui-x86_64.iso
+sha256: 99c092a008a6a38f4876a389dd697aac09e95de1867766106f1cea5f3821ff96
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Bluefin stable-20260929 (x86_64)</title>
+      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
+      <guid isPermaLink="false">bluefin:stable:stable-20260929</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:46 +0000</pubDate>
+      <description>Bluefin stable-20260929 (x86_64)
+Filename: bluefin-stable-x86_64.iso
+sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
+Verify: checksum</description>
+      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bluefin</category>
+    </item>
+    <item>
+      <title>Bazzite NVIDIA Open 44.20260928.1 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:44.20260928</guid>
-      <pubDate>Mon, 28 Sep 2026 14:04:38 +0000</pubDate>
-      <description>Bazzite NVIDIA Open 44.20260928 (x86_64)
+      <guid isPermaLink="false">bazzite:nvidia-open:44.20260928.1</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:46 +0000</pubDate>
+      <description>Bazzite NVIDIA Open 44.20260928.1 (x86_64)
 Filename: bazzite-nvidia-open-stable-amd64.iso
 sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
 Verify: checksum</description>
@@ -19,11 +55,23 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>Bazzite Desktop 44.20260928 (x86_64)</title>
+      <title>Bazzite Deck 44.20260928.1 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:deck:44.20260928.1</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:46 +0000</pubDate>
+      <description>Bazzite Deck 44.20260928.1 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Desktop 44.20260928.1 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:44.20260928</guid>
-      <pubDate>Mon, 28 Sep 2026 14:04:37 +0000</pubDate>
-      <description>Bazzite Desktop 44.20260928 (x86_64)
+      <guid isPermaLink="false">bazzite:desktop:44.20260928.1</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:45 +0000</pubDate>
+      <description>Bazzite Desktop 44.20260928.1 (x86_64)
 Filename: bazzite-stable-amd64.iso
 sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
 Verify: checksum</description>
@@ -31,16 +79,115 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>Bazzite Deck 44.20260928 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:44.20260928</guid>
-      <pubDate>Mon, 28 Sep 2026 14:04:37 +0000</pubDate>
-      <description>Bazzite Deck 44.20260928 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+      <title>CentOS Stream DVD 20260928.0 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260928.0-s390x-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:s390x:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:39 +0000</pubDate>
+      <description>CentOS Stream DVD 20260928.0 (s390x)
+Filename: CentOS-Stream-10-20260928.0-s390x-dvd1.iso
+sha256: 62d69d4941dabfb78ae50331040074c9db460a71fcfc4f006e9c79ce2c19ecef
 Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260928.0-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260928.0 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260928.0-ppc64le-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:ppc64le:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:39 +0000</pubDate>
+      <description>CentOS Stream DVD 20260928.0 (ppc64le)
+Filename: CentOS-Stream-10-20260928.0-ppc64le-dvd1.iso
+sha256: 70ae77fa369169f41fac647cecd836c54f4f106257d6b99806fd0fb48e9830e3
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260928.0-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260928.0 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260928.0-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:aarch64:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:38 +0000</pubDate>
+      <description>CentOS Stream DVD 20260928.0 (aarch64)
+Filename: CentOS-Stream-10-20260928.0-aarch64-dvd1.iso
+sha256: 0ffe099047dc478e8ed699f40f7b42bc34cebf0226235f9b4c7484bb93ba9403
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260928.0-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream DVD 20260928.0 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260928.0-x86_64-dvd1.iso</link>
+      <guid isPermaLink="false">centos:dvd:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:38 +0000</pubDate>
+      <description>CentOS Stream DVD 20260928.0 (x86_64)
+Filename: CentOS-Stream-10-20260928.0-x86_64-dvd1.iso
+sha256: 7b5a3e5bdc8a18a1372515e8dc68d2d75b2d365bb71d2dcb021e2de7f4cf53b0
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260928.0-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260928.0 (s390x)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260928.0-s390x-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:s390x:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:38 +0000</pubDate>
+      <description>CentOS Stream boot 20260928.0 (s390x)
+Filename: CentOS-Stream-10-20260928.0-s390x-boot.iso
+sha256: 08374ea0fd11d3f8c1e957368548f31265ffbfac5c94fcf96cbe4d33c4bb4c97
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260928.0-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260928.0 (ppc64le)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260928.0-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:ppc64le:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:38 +0000</pubDate>
+      <description>CentOS Stream boot 20260928.0 (ppc64le)
+Filename: CentOS-Stream-10-20260928.0-ppc64le-boot.iso
+sha256: 5f20422ad8754694abe7bc70a9fc1606b3773977dc920d4fc33282801a71978f
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260928.0-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260928.0 (aarch64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260928.0-aarch64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:aarch64:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:38 +0000</pubDate>
+      <description>CentOS Stream boot 20260928.0 (aarch64)
+Filename: CentOS-Stream-10-20260928.0-aarch64-boot.iso
+sha256: 5070940c1fec50e7c6eb7be145c311be23964ab0e14bc42e66e606cc00cee64a
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260928.0-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>CentOS Stream boot 20260928.0 (x86_64)</title>
+      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260928.0-x86_64-boot.iso</link>
+      <guid isPermaLink="false">centos:boot:20260928.0</guid>
+      <pubDate>Tue, 29 Sep 2026 13:00:38 +0000</pubDate>
+      <description>CentOS Stream boot 20260928.0 (x86_64)
+Filename: CentOS-Stream-10-20260928.0-x86_64-boot.iso
+sha256: f118af25372fdc7d0f2f83eaf4460a11131a06deddd530bab453d5ab5dd33529
+Verify: checksum</description>
+      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260928.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>centos</category>
+    </item>
+    <item>
+      <title>antiX Full 26.1 (x86_64)</title>
+      <link>https://sourceforge.net/projects/antix-linux/files/Final/antiX-26.1/antiX-26.1_x64-full.iso/download</link>
+      <guid isPermaLink="false">antix:full:26.1</guid>
+      <pubDate>Mon, 28 Sep 2026 21:11:46 +0000</pubDate>
+      <description>antiX Full 26.1 (x86_64)
+Filename: antiX-26.1_x64-full.iso
+sha256: 293381af0b7c48399abe015da8f67d41fd34372b73c4aafcf53747fbaed22371
+Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26.1/antiX-26.1_x64-full.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x30AA418A0C723D937B50A986A80582E000067FDD
+Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
+Verify: gpg</description>
+      <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26.1/antiX-26.1_x64-full.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>antix</category>
     </item>
     <item>
       <title>NixOS Graphical 26.05.10769.cf5e76507c6e (aarch64)</title>
@@ -337,6 +484,21 @@ Verify: checksum</description>
       <category>nobara</category>
     </item>
     <item>
+      <title>antiX Core 26.1 (x86_64)</title>
+      <link>https://sourceforge.net/projects/antix-linux/files/Final/antiX-26.1/antiX-26.1_x64-core.iso/download</link>
+      <guid isPermaLink="false">antix:core:26.1</guid>
+      <pubDate>Sat, 26 Sep 2026 15:23:07 +0000</pubDate>
+      <description>antiX Core 26.1 (x86_64)
+Filename: antiX-26.1_x64-core.iso
+sha256: 4f17a36c506a6771460545e18de6f5ea08f5664bca0e0bc285be52b41f5be762
+Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26.1/antiX-26.1_x64-core.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x30AA418A0C723D937B50A986A80582E000067FDD
+Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
+Verify: gpg</description>
+      <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26.1/antiX-26.1_x64-core.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>antix</category>
+    </item>
+    <item>
       <title>Gentoo Minimal Install CD 20260922T170055Z (x86)</title>
       <link>https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260922T170055Z.iso</link>
       <guid isPermaLink="false">gentoo:minimal:x86:20260922T170055Z</guid>
@@ -350,138 +512,6 @@ Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260922T170055Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260922.0 (s390x)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260922.0-s390x-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:s390x:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:58 +0000</pubDate>
-      <description>CentOS Stream DVD 20260922.0 (s390x)
-Filename: CentOS-Stream-10-20260922.0-s390x-dvd1.iso
-sha256: 752a2c358871378b0f07b4e62395c4fdcb4aadf4f9056f412e6a95c7036899a5
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260922.0-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260922.0 (ppc64le)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260922.0-ppc64le-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:ppc64le:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:58 +0000</pubDate>
-      <description>CentOS Stream DVD 20260922.0 (ppc64le)
-Filename: CentOS-Stream-10-20260922.0-ppc64le-dvd1.iso
-sha256: 16b430491fd6c2ae705bb7d4387090b599da6e2e737a07a324107ac864dc7f14
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260922.0-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260922.0 (aarch64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260922.0-aarch64-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:aarch64:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:58 +0000</pubDate>
-      <description>CentOS Stream DVD 20260922.0 (aarch64)
-Filename: CentOS-Stream-10-20260922.0-aarch64-dvd1.iso
-sha256: bfeff117c07cbeea9e055bf8cdc55e98550051ff28535e42247e5f800a29eae4
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260922.0-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream DVD 20260922.0 (x86_64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260922.0-x86_64-dvd1.iso</link>
-      <guid isPermaLink="false">centos:dvd:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:57 +0000</pubDate>
-      <description>CentOS Stream DVD 20260922.0 (x86_64)
-Filename: CentOS-Stream-10-20260922.0-x86_64-dvd1.iso
-sha256: b15ba37692796e5b385ca1a42769d1da812f24b1cf41d4afce4a13f45ac8af5c
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260922.0-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260922.0 (s390x)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260922.0-s390x-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:s390x:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:57 +0000</pubDate>
-      <description>CentOS Stream boot 20260922.0 (s390x)
-Filename: CentOS-Stream-10-20260922.0-s390x-boot.iso
-sha256: a79055f3972bca3e18ff24d722ebabb4a43ede7aa0613815943efc6c204f692b
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20260922.0-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260922.0 (ppc64le)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260922.0-ppc64le-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:ppc64le:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:57 +0000</pubDate>
-      <description>CentOS Stream boot 20260922.0 (ppc64le)
-Filename: CentOS-Stream-10-20260922.0-ppc64le-boot.iso
-sha256: 3b80f6acabcf5cc383b673998a6ef95a68fedadcb355df5cc5b37e95ac113fe5
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20260922.0-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260922.0 (aarch64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260922.0-aarch64-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:aarch64:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:57 +0000</pubDate>
-      <description>CentOS Stream boot 20260922.0 (aarch64)
-Filename: CentOS-Stream-10-20260922.0-aarch64-boot.iso
-sha256: 2a5ff101e148026cf12bc28d618a905725668aa148d1b97308abd50b51e85b43
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20260922.0-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>CentOS Stream boot 20260922.0 (x86_64)</title>
-      <link>https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260922.0-x86_64-boot.iso</link>
-      <guid isPermaLink="false">centos:boot:20260922.0</guid>
-      <pubDate>Wed, 23 Sep 2026 11:45:57 +0000</pubDate>
-      <description>CentOS Stream boot 20260922.0 (x86_64)
-Filename: CentOS-Stream-10-20260922.0-x86_64-boot.iso
-sha256: 4a170eb4498a93c0e90d4c56e8f8b6c670fa9bea47460b0a091fa71e259c2c3e
-Verify: checksum</description>
-      <enclosure url="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20260922.0-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>centos</category>
-    </item>
-    <item>
-      <title>Aurora stable-20260922.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20260922.1</guid>
-      <pubDate>Tue, 22 Sep 2026 11:46:49 +0000</pubDate>
-      <description>Aurora stable-20260922.1 (x86_64)
-Filename: aurora-stable-webui-x86_64.iso
-sha256: 99c092a008a6a38f4876a389dd697aac09e95de1867766106f1cea5f3821ff96
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Aurora NVIDIA Open stable-20260922.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20260922.1</guid>
-      <pubDate>Tue, 22 Sep 2026 11:46:49 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20260922.1 (x86_64)
-Filename: aurora-nvidia-open-stable-webui-x86_64.iso
-sha256: 5e9809dc066c7a748f39ccca8ec9b500d7dd7b610f46e97ccdfe1c26a43cc9db
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Bluefin stable-20260922 (x86_64)</title>
-      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
-      <guid isPermaLink="false">bluefin:stable:stable-20260922</guid>
-      <pubDate>Tue, 22 Sep 2026 11:46:48 +0000</pubDate>
-      <description>Bluefin stable-20260922 (x86_64)
-Filename: bluefin-stable-x86_64.iso
-sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</description>
-      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bluefin</category>
     </item>
     <item>
       <title>MX Linux Xfce 25.3 (x86_64)</title>
@@ -3631,36 +3661,6 @@ Key-fingerprint: D67506C878E08A94FD7E009424863F0C716B980B
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/openmediavault/files/iso/8.3.1/openmediavault_8.3.1-amd64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>openmediavault</category>
-    </item>
-    <item>
-      <title>antiX Full 26 (x86_64)</title>
-      <link>https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso/download</link>
-      <guid isPermaLink="false">antix:full:26</guid>
-      <pubDate>Sat, 21 Mar 2026 12:57:39 +0000</pubDate>
-      <description>antiX Full 26 (x86_64)
-Filename: antiX-26_x64-full.iso
-sha256: ea8926e517a2fd7fc6486981bc26c9dab474a226bbb28686f583cc36b49d6dae
-Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso.sig/download
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x30AA418A0C723D937B50A986A80582E000067FDD
-Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
-Verify: gpg</description>
-      <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-full.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>antix</category>
-    </item>
-    <item>
-      <title>antiX Core 26 (x86_64)</title>
-      <link>https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso/download</link>
-      <guid isPermaLink="false">antix:core:26</guid>
-      <pubDate>Fri, 20 Mar 2026 23:37:19 +0000</pubDate>
-      <description>antiX Core 26 (x86_64)
-Filename: antiX-26_x64-core.iso
-sha256: de0dc55dea576c897eba345a0a0f1d8695fc1c4db5990b46efebe08bfbce9e22
-Signature: https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso.sig/download
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x30AA418A0C723D937B50A986A80582E000067FDD
-Key-fingerprint: 30AA418A0C723D937B50A986A80582E000067FDD
-Verify: gpg</description>
-      <enclosure url="https://sourceforge.net/projects/antix-linux/files/Final/antiX-26/antiX-26_x64-core.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>antix</category>
     </item>
   </channel>
 </rss>
