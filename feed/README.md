@@ -30,9 +30,9 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | aurora | nvidia-open | x86_64 | stable-20260929.1 | checksum | — |
 | aurora | stable | x86_64 | stable-20260929.1 | checksum | — |
 | batocera | x86_64 | x86_64 | 43.1-20260529 | checksum | — |
-| bazzite | deck | x86_64 | 44.20260928.1 | checksum | — |
-| bazzite | desktop | x86_64 | 44.20260928.1 | checksum | — |
-| bazzite | nvidia-open | x86_64 | 44.20260928.1 | checksum | — |
+| bazzite | deck | x86_64 | 44.20260929 | checksum | — |
+| bazzite | desktop | x86_64 | 44.20260929 | checksum | — |
+| bazzite | nvidia-open | x86_64 | 44.20260929 | checksum | — |
 | bluefin | stable | x86_64 | stable-20260929 | checksum | — |
 | bluestar | default | x86_64 | 7.2.3-1-2026.09.04 | checksum | — |
 | cachyos | desktop | x86_64 | 260809 | gpg | — |
@@ -118,7 +118,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | gentoo | minimal | aarch64 | 20260913T234554Z | gpg | — |
 | gentoo | minimal | hppa | 20230418T174657Z | gpg | — |
 | gentoo | minimal | ia64 | 20240404T093405Z | gpg | — |
-| gentoo | minimal | x86 | 20260922T170055Z | gpg | — |
+| gentoo | minimal | x86 | 20260929T170055Z | gpg | — |
 | ghostbsd | gershwin | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
 | ghostbsd | mate | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
 | ghostbsd | xfce | x86_64 | 26.1-R15.0p2 | checksum | ✓ |
@@ -155,10 +155,10 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | mx | xfce-ahs | x86_64 | 25.3 | gpg | — |
 | netbsd | install | x86_64 | 11.0 | checksum | ✓ |
 | netbsd | install | aarch64 | 11.0 | checksum | ✓ |
-| nixos | graphical | x86_64 | 26.05.10769.cf5e76507c6e | checksum | — |
-| nixos | graphical | aarch64 | 26.05.10769.cf5e76507c6e | checksum | — |
-| nixos | minimal | x86_64 | 26.05.10769.cf5e76507c6e | checksum | — |
-| nixos | minimal | aarch64 | 26.05.10769.cf5e76507c6e | checksum | — |
+| nixos | graphical | x86_64 | 26.05.10882.7fc6f2c20af0 | checksum | — |
+| nixos | graphical | aarch64 | 26.05.10882.7fc6f2c20af0 | checksum | — |
+| nixos | minimal | x86_64 | 26.05.10882.7fc6f2c20af0 | checksum | — |
+| nixos | minimal | aarch64 | 26.05.10882.7fc6f2c20af0 | checksum | — |
 | nobara | gnome | x86_64 | 44-2026-09-02 | checksum | — |
 | nobara | kde | x86_64 | 44-2026-09-02 | checksum | — |
 | nobara | official | x86_64 | 44-2026-09-02 | checksum | — |
@@ -222,7 +222,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | rocky | minimal | ppc64le | 10.2 | gpg | — |
 | rocky | minimal | riscv64 | 10.2 | gpg | — |
 | rocky | minimal | s390x | 10.2 | gpg | — |
-| tails | iso | x86_64 | 7.13 | gpg | — |
+| tails | iso | x86_64 | 7.14 | gpg | — |
 | truenas | scale | x86_64 | 25.10.7 | gpg | — |
 | ubuntu-budgie | desktop-latest | x86_64 | 26.04.1 | gpg | ✓ |
 | ubuntu-budgie | desktop-lts | x86_64 | 26.04.1 | gpg | ✓ |

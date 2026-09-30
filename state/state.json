@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck 44.20260928.1 (x86_64)",
+      "title": "Bazzite Deck 44.20260929 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "44.20260928.1"
+      "version": "44.20260929"
     },
-    "seen": "2026-09-29T13:00:46+00:00",
-    "version": "44.20260928.1"
+    "seen": "2026-09-30T12:43:32+00:00",
+    "version": "44.20260929"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop 44.20260928.1 (x86_64)",
+      "title": "Bazzite Desktop 44.20260929 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "44.20260928.1"
+      "version": "44.20260929"
     },
-    "seen": "2026-09-29T13:00:45+00:00",
-    "version": "44.20260928.1"
+    "seen": "2026-09-30T12:43:32+00:00",
+    "version": "44.20260929"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open 44.20260928.1 (x86_64)",
+      "title": "Bazzite NVIDIA Open 44.20260929 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "44.20260928.1"
+      "version": "44.20260929"
     },
-    "seen": "2026-09-29T13:00:46+00:00",
-    "version": "44.20260928.1"
+    "seen": "2026-09-30T12:43:32+00:00",
+    "version": "44.20260929"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -3300,34 +3300,34 @@
     "version": "20240404T093405Z"
   },
   "gentoo:minimal:x86": {
-    "hash": "35cfc8bdb19e5b5e766e1288ccfbb8c5f956f421cc938bf6140564b29a9894d0",
+    "hash": "3510f846c2c26acc02269cb7bb55fc6aea7d8783c3079a25f9aa7202eebe1138",
     "release": {
       "arch": "x86",
-      "checksum": "35cfc8bdb19e5b5e766e1288ccfbb8c5f956f421cc938bf6140564b29a9894d0",
+      "checksum": "3510f846c2c26acc02269cb7bb55fc6aea7d8783c3079a25f9aa7202eebe1138",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260922T170055Z.iso",
-      "filename": "install-x86-minimal-20260922T170055Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260929T170055Z.iso",
+      "filename": "install-x86-minimal-20260929T170055Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260922T170055Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20260929T170055Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20260922T170055Z (x86)",
+      "title": "Gentoo Minimal Install CD 20260929T170055Z (x86)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20260922T170055Z"
+      "version": "20260929T170055Z"
     },
-    "seen": "2026-09-23T11:46:56+00:00",
-    "version": "20260922T170055Z"
+    "seen": "2026-09-30T12:44:28+00:00",
+    "version": "20260929T170055Z"
   },
   "ghostbsd:gershwin": {
     "hash": "bfbb15cc30e68ed425785a336e0084d623f74aaa35094a5beeb758ed0f48632a",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "93ca67ced4cc00920a838fbb241f5574e294f4eb71e476738923cb7b83105b05",
+    "hash": "50a092e91b7f7e9069ef43bd42e930747bdcff9a6c7ed3be5c4635e5d6148f3e",
     "release": {
       "arch": "x86_64",
-      "checksum": "93ca67ced4cc00920a838fbb241f5574e294f4eb71e476738923cb7b83105b05",
+      "checksum": "50a092e91b7f7e9069ef43bd42e930747bdcff9a6c7ed3be5c4635e5d6148f3e",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.10769.cf5e76507c6e (x86_64)",
+      "title": "NixOS Graphical 26.05.10882.7fc6f2c20af0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.10769.cf5e76507c6e"
+      "version": "26.05.10882.7fc6f2c20af0"
     },
-    "seen": "2026-09-28T14:04:36+00:00",
-    "version": "26.05.10769.cf5e76507c6e"
+    "seen": "2026-09-30T12:43:30+00:00",
+    "version": "26.05.10882.7fc6f2c20af0"
   },
   "nixos:graphical:aarch64": {
-    "hash": "4f9c3c4e9ae892ebc932ad7d2cfe16a6d54bdf9c42152e9fa78aa7a22f6fd786",
+    "hash": "f272af04e548603ce9e3046808993932ffd41047e224a68cc14494113c3428d6",
     "release": {
       "arch": "aarch64",
-      "checksum": "4f9c3c4e9ae892ebc932ad7d2cfe16a6d54bdf9c42152e9fa78aa7a22f6fd786",
+      "checksum": "f272af04e548603ce9e3046808993932ffd41047e224a68cc14494113c3428d6",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.10769.cf5e76507c6e (aarch64)",
+      "title": "NixOS Graphical 26.05.10882.7fc6f2c20af0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.10769.cf5e76507c6e"
+      "version": "26.05.10882.7fc6f2c20af0"
     },
-    "seen": "2026-09-28T14:04:36+00:00",
-    "version": "26.05.10769.cf5e76507c6e"
+    "seen": "2026-09-30T12:43:30+00:00",
+    "version": "26.05.10882.7fc6f2c20af0"
   },
   "nixos:minimal": {
-    "hash": "29fc961c6e1bf955193786af4785280676a185d2483faafb9058ec6d06c2f865",
+    "hash": "92836e340ba783ba4059100075792fea3880e22cf5e7780384411a5b75592d5c",
     "release": {
       "arch": "x86_64",
-      "checksum": "29fc961c6e1bf955193786af4785280676a185d2483faafb9058ec6d06c2f865",
+      "checksum": "92836e340ba783ba4059100075792fea3880e22cf5e7780384411a5b75592d5c",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.10769.cf5e76507c6e (x86_64)",
+      "title": "NixOS Minimal 26.05.10882.7fc6f2c20af0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.10769.cf5e76507c6e"
+      "version": "26.05.10882.7fc6f2c20af0"
     },
-    "seen": "2026-09-28T14:04:35+00:00",
-    "version": "26.05.10769.cf5e76507c6e"
+    "seen": "2026-09-30T12:43:29+00:00",
+    "version": "26.05.10882.7fc6f2c20af0"
   },
   "nixos:minimal:aarch64": {
-    "hash": "db98b20882c0c991a637f712c1357f84b4ce36eb464b63d4021ba274e5ae4fe9",
+    "hash": "2ea91dd45b48932b811b22878a4b0f5680310fef26430d8a784e60a68593cc04",
     "release": {
       "arch": "aarch64",
-      "checksum": "db98b20882c0c991a637f712c1357f84b4ce36eb464b63d4021ba274e5ae4fe9",
+      "checksum": "2ea91dd45b48932b811b22878a4b0f5680310fef26430d8a784e60a68593cc04",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.10769.cf5e76507c6e (aarch64)",
+      "title": "NixOS Minimal 26.05.10882.7fc6f2c20af0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.10769.cf5e76507c6e"
+      "version": "26.05.10882.7fc6f2c20af0"
     },
-    "seen": "2026-09-28T14:04:35+00:00",
-    "version": "26.05.10769.cf5e76507c6e"
+    "seen": "2026-09-30T12:43:30+00:00",
+    "version": "26.05.10882.7fc6f2c20af0"
   },
   "nobara:gnome": {
     "hash": "5edb4c239e385d2f2b93cf5a33810458c262acb2574a3987e9fc2e65f0c48479",
@@ -6420,34 +6420,34 @@
     "version": "10.2"
   },
   "tails:iso": {
-    "hash": "c3f3aabc596e80e62094e5fb090ffb9b7336157071427376a35ec0b7e7662134",
+    "hash": "ecba0b32ec8be57516ec53a467a9cceda2f4b4a1f0b523ed815555b004ba2c8c",
     "release": {
       "arch": "x86_64",
       "checksum": null,
       "checksum_algo": null,
       "distro": "tails",
-      "download_url": "https://download.tails.net/tails/stable/tails-amd64-7.13/tails-amd64-7.13.iso",
-      "filename": "tails-amd64-7.13.iso",
+      "download_url": "https://download.tails.net/tails/stable/tails-amd64-7.14/tails-amd64-7.14.iso",
+      "filename": "tails-amd64-7.14.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://tails.net/",
       "published": null,
       "signature_target": "image",
-      "signature_url": "https://download.tails.net/tails/stable/tails-amd64-7.13/tails-amd64-7.13.iso.sig",
+      "signature_url": "https://download.tails.net/tails/stable/tails-amd64-7.14/tails-amd64-7.14.iso.sig",
       "signing_key_fingerprint": "A490D0F4D311A4153E2BB7CADBB802B258ACD84F",
       "signing_key_url": "https://tails.net/tails-signing.key",
       "size": null,
-      "title": "Tails 7.13 (x86_64)",
+      "title": "Tails 7.14 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "iso",
-      "version": "7.13"
+      "version": "7.14"
     },
-    "seen": "2026-09-16T11:43:03+00:00",
-    "version": "7.13"
+    "seen": "2026-09-30T12:42:37+00:00",
+    "version": "7.14"
   },
   "truenas:scale": {
     "hash": "54ce9441ce66966a392e28f63604ca3c2c083d0bec4db7bb5af2f74f7a007c8e",
