@@ -80,18 +80,29 @@ was verified by nothing.
 ### 1a. Signing failures classify themselves
 
 This spec's two axes govern **resolve** failures. Signing has its own classifier and deliberately
-does not carry a `failure_class`: `verify_signing_key` returns REJECTED **only** when every
-required fetch (key, signature, and for `covers: checksums` the signed body) returned 2xx *and*
-gpg produced contrary evidence. Couldn't-check — gpg absent, a key/sig/sums fetch that failed,
-or no checksum to check against — is DEFERRED and never reaches the report. **The verdict IS the
-classification: DEFERRED is transient, REJECTED is structural.**
+does not carry a `failure_class`: `verify_signing_key` returns REJECTED **only** on evidence. The
+evidence is one of:
+- the key URL serves a key other than the pin;
+- gpg read the fetched bytes and found a signature that is not the pin's, a pin signature that no
+  longer checks out, no signature at all, or a valid pin signature over a file that doesn't list
+  this artifact;
+- a required fetch (key, signature, and for `covers: checksums` the signed body) was *answered*
+  structurally: a 4xx other than 429, or an empty 200.
+Couldn't-check — gpg absent or unable to read the signature, a network failure on one of those
+fetches, or no checksum to check against — is DEFERRED and never reaches the report. **The verdict
+IS the classification: DEFERRED is transient, REJECTED is structural.** `cause` says *which*
+evidence, and only `foreign-signer` can be a key rotation. Reading every REJECTED as a rotation is
+how #17 sent the reader after a Parrot key that did not exist: the 7.4 file was simply unsigned.
 
 A `failure_class` field on `SigningFailure` would therefore be the constant `"structural"`
 forever, and a filter on it could only ever be a no-op whose one failure mode is silently
-swallowing a real key rotation. Do not add one. Classifying signing from the `Client` trace is
-worse: the trace is global to the run, and even a correctly-scoped slice would flip a genuine
-rotation to TRANSIENT the moment one retried-then-succeeded timeout landed in it — suppressing
-exactly the tamper case that must never be suppressed.
+swallowing a real key rotation. Do not add one. Never classify a *verdict* from the `Client` trace
+either. The trace is global to the run, and even a correctly-scoped slice would flip a genuine
+rotation to TRANSIENT the moment one retried-then-succeeded timeout landed in it, suppressing
+exactly the tamper case that must never be suppressed. The one read of the trace is narrower:
+when a required fetch returned **no body at all**, its own outcomes for that one URL say whether
+the host answered (4xx → evidence) or the network failed (→ DEFERRED). That is the same split
+`diagnose` makes for a resolve. Bytes that did arrive are judged by gpg alone.
 
 The invariant that keeps this honest: **an environmental hiccup must never strip a valid pin or
 flap an entry's `verify` level.** A `checksum=None` (the sums fetch did not land) is the case that

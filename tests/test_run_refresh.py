@@ -52,7 +52,7 @@ def test_gate_opens_only_structural_regressions_signing_and_pins():
             Failure("void:base", "timeout", "transient", "unreachable", regression=True),  # transient
             Failure("new:variant", "none matched", "structural", "none-matched", regression=False),  # never resolved
         ],
-        signing_key_failures=[SigningFailure("qubes:iso", "signed by BBB now", actual_signer_fpr="BBB")],
+        signing_key_failures=[SigningFailure("qubes:iso", "signed by BBB now", "foreign-signer", actual_signer_fpr="BBB")],
         pins=[Pin("popos:intel:url", "literal `24.04` in `...`")],
     )
     plan = plan_escalation(report, open_issues=[])
@@ -118,7 +118,10 @@ def test_gate_mass_signing_failures_collapse_to_one_rotation_issue():
     """One key backs many variants -- 28 share Ubuntu's, 14 Debian's -- so a single rotation
     trips every one of them in the same run. That is one event, not N breaks."""
     sf = [
-        SigningFailure(f"ubuntu-flavour-{i}:desktop", "signed by BBB now", actual_signer_fpr="BBB")
+        SigningFailure(
+            f"ubuntu-flavour-{i}:desktop", "signed by BBB now", "foreign-signer",
+            actual_signer_fpr="BBB",
+        )
         for i in range(8)
     ]
     plan = plan_escalation(_report(total=8, signing_key_failures=sf), [])
@@ -133,7 +136,9 @@ def test_gate_mass_signing_failures_collapse_to_one_rotation_issue():
 def test_gate_mass_signing_with_different_signers_does_not_read_as_a_rotation():
     """N different new signers is not a simple rotation, and the body must not imply it is."""
     sf = [
-        SigningFailure(f"d{i}:v", "signed by someone else", actual_signer_fpr=f"FPR{i}")
+        SigningFailure(
+            f"d{i}:v", "signed by someone else", "foreign-signer", actual_signer_fpr=f"FPR{i}"
+        )
         for i in range(8)
     ]
     plan = plan_escalation(_report(total=8, signing_key_failures=sf), [])
@@ -147,7 +152,10 @@ def test_gate_signing_and_resolve_mass_outages_stay_separate_buckets():
         Failure(f"d{i}:v", "none matched", "structural", "none-matched", regression=True)
         for i in range(8)
     ]
-    sf = [SigningFailure(f"s{i}:v", "rotated", actual_signer_fpr="BBB") for i in range(8)]
+    sf = [
+        SigningFailure(f"s{i}:v", "rotated", "foreign-signer", actual_signer_fpr="BBB")
+        for i in range(8)
+    ]
     plan = plan_escalation(_report(total=16, failures=fails, signing_key_failures=sf), [])
     titles = sorted(t["title"] for t in plan["to_open"])
     assert titles == [
@@ -157,7 +165,10 @@ def test_gate_signing_and_resolve_mass_outages_stay_separate_buckets():
 
 
 def test_gate_signing_below_the_threshold_still_opens_one_issue_each():
-    sf = [SigningFailure(f"d{i}:v", "rotated", actual_signer_fpr="BBB") for i in range(3)]
+    sf = [
+        SigningFailure(f"d{i}:v", "rotated", "foreign-signer", actual_signer_fpr="BBB")
+        for i in range(3)
+    ]
     plan = plan_escalation(_report(total=3, signing_key_failures=sf), [])
     assert sorted(t["title"] for t in plan["to_open"]) == [
         "refresh signing-key: d0:v",
@@ -165,6 +176,49 @@ def test_gate_signing_below_the_threshold_still_opens_one_issue_each():
         "refresh signing-key: d2:v",
     ]
     assert plan["mass_outage"] is False
+
+
+def _body(*failures: SigningFailure) -> str:
+    report = _report(total=len(failures), signing_key_failures=list(failures))
+    return plan_escalation(report, [])["to_open"][0]["body"]
+
+
+def test_gate_unsigned_issue_does_not_send_the_reader_after_a_new_key():
+    """Parrot 7.4: nothing signed the file. The rotation copy -- confirm the new signer is the
+    project's announced key, then update `signing_key.fingerprint` -- points at a key that does
+    not exist."""
+    body = _body(SigningFailure("parrot:home", "the file carries no signature", "unsigned"))
+    assert "not a key rotation" in body
+    assert "rotation is the usual cause" not in body
+    assert "update `signing_key.fingerprint`" not in body
+
+
+def test_gate_bad_signature_issue_is_not_a_rotation():
+    """The pin's own signature stopped matching its file: skew or tampering, no new key."""
+    body = _body(SigningFailure("debian:netinst", "pin sig mismatch", "bad-signature"))
+    assert "not a key rotation" in body
+    assert "update `signing_key.fingerprint`" not in body
+
+
+def test_gate_mass_unsigned_failures_do_not_read_as_a_rotation():
+    """Issue #17's body: six unsigned files, headlined "likely a single upstream rotation"."""
+    body = _body(*(SigningFailure(f"parrot:e{i}", "no signature", "unsigned") for i in range(6)))
+    assert "likely a single upstream rotation" not in body
+    assert "not a key rotation" in body
+    assert "parrot:e3" in body  # every affected key still named
+
+
+def test_gate_mass_mixed_causes_judge_the_rotation_on_the_foreign_signers_alone():
+    """Four unsigned + three re-signed by one new key: the one-signer verdict is about those three,
+    and must not claim that all seven share a signer."""
+    sf = [SigningFailure(f"u{i}:v", "no signature", "unsigned") for i in range(4)]
+    sf += [
+        SigningFailure(f"f{i}:v", "signed by BBB", "foreign-signer", actual_signer_fpr="BBB")
+        for i in range(3)
+    ]
+    body = _body(*sf)
+    assert "All 3 are now signed" in body and "All 7" not in body
+    assert "u2:v" in body and "f1:v" in body
 
 
 # --------------------------------------------------------- end-to-end report from a run
@@ -368,3 +422,18 @@ def test_a_transient_torrent_sums_failure_does_not_take_the_whole_run_down(tmp_p
 
     data = json.loads(report.read_text())
     assert data["resolved"] == 1 and data["failures"] == []  # the run survived; ISO still resolved
+
+
+
+def test_gate_a_refused_signature_url_is_not_read_as_an_unsigned_release():
+    """clonezilla.org's CDN answers 403 to the feed's client (and 200 to curl, same UA): the
+    signature exists, the host refuses us. The copy must not tell the reader nothing signed it."""
+    body = _body(
+        SigningFailure(
+            "clonezilla:default",
+            "no signature at https://clonezilla.org/downloads/stable/data/CHECKSUMS.TXT.gpg"
+            " (it answered 403)",
+            "unsigned",
+        )
+    )
+    assert "refuses this client" in body

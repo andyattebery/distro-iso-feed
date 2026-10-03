@@ -18,10 +18,11 @@ Two verification strengths, because the two sig shapes differ:
   a signature by a key appended to the fetched blob has a different primary fpr, so it is
   not the pin and is rejected. Used where the signed file is small (a `SHA*SUMS`/`.sha256`
   or a clearsigned `CHECKSUM`), which is fetchable at build time.
-* `sig_issuers` -- the issuer (sub)keys a signature names, without the signed data. Used
-  where the signature covers the multi-GB ISO, which the build does not fetch; the caller
-  checks an issuer is the pinned key or one of its subkeys. Returns *all* issuers, because a
-  dual-signed ISO `.asc` names two, and the pinned one is not always first.
+* `signature_packets` -- the issuer (sub)keys a signature names, without the signed data, plus
+  gpg's own word on whether there is any signature there at all. Used where the signature covers
+  the multi-GB ISO, which the build does not fetch (the caller checks an issuer is the pinned key
+  or one of its subkeys), and to explain *why* a full check failed. Returns *all* issuers, because
+  a dual-signed ISO `.asc` names two, and the pinned one is not always first.
 """
 
 from __future__ import annotations
@@ -32,6 +33,7 @@ import shutil
 import subprocess
 import tempfile
 from pathlib import Path
+from typing import NamedTuple
 
 # gpg verification needs no agent; `--no-autostart` stops 2.x spawning one per home.
 _BASE = ("--batch", "--no-tty", "--no-autostart", "--with-colons")
@@ -197,21 +199,65 @@ def verify_clearsigned(key_bytes: bytes, signed_bytes: bytes, *, pinned_fpr: str
         return out.read_text(encoding="utf-8", errors="replace") if out.exists() else None
 
 
-def sig_issuers(sig_bytes: bytes) -> list[str]:
-    """Every (sub)key a signature names: full fpr where present, else a 16-hex long key id.
+_CLEARSIGNED = b"-----BEGIN PGP SIGNED MESSAGE-----"
+_SIGNATURE_BLOCK = re.compile(
+    rb"-----BEGIN PGP SIGNATURE-----.*?-----END PGP SIGNATURE-----", re.DOTALL
+)
+_NODATA = re.compile(r"^\[GNUPG:\] NODATA\b", re.M)
 
-    Needs no signed data, so it works for the over-the-ISO sigs the build never downloads. A
-    dual-signed ISO `.asc` names two issuers and the pinned one is not always first, so the
-    caller must see them all. A packet carries both an `issuer fpr` and a redundant `keyid`
-    subpacket; the duplicate is harmless -- the keyid is a suffix of the same key's fpr.
+
+class Packets(NamedTuple):
+    """What `--list-packets` says about a signature file. All False/empty: gpg said nothing."""
+
+    issuers: list[str]  # every (sub)key a listed signature packet names
+    unsigned: bool  # no signature packet at all -- and gpg said so (NODATA) or parsed it cleanly
+    damaged: bool  # a signature packet is listed, but gpg could not parse the file (exit != 0)
+
+
+def signature_packets(sig_bytes: bytes) -> Packets:
+    """The signature packets alone -- no key, no signed data -- read from `gpg --list-packets`.
+
+    `issuers` is every (sub)key a signature names: full fpr where present, else a 16-hex long key
+    id. Needing no data, it works for the over-the-ISO sigs the build never downloads. A dual-signed
+    ISO `.asc` names two issuers and the pinned one is not always first, so the caller must see
+    them all. A packet carries both an `issuer fpr` and a redundant `keyid` subpacket; the
+    duplicate is harmless -- the keyid is a suffix of the same key's fpr.
+
+    A clearsigned doc is listed by its signature block alone. Over the whole doc, `--list-packets`
+    stops at the literal-data packet and never reaches the signature (0 signature packets on gnupg
+    2.4.4 and 2.5.24) -- which is why a clearsigned REJECTED could never name its signer.
+
+    `unsigned` needs positive evidence, a `NODATA` status or a clean parse with no signature
+    packet in it: Parrot's 7.4 `signed-hashes.txt` (plain text), an HTML page served where the
+    `.sig` should be. `damaged` is a signature packet gpg listed and then could not finish
+    parsing -- a truncated or bad-checksum armor. On gnupg 2.4.4 (the runner's) a truncated one
+    lists its packet AND reports `NODATA`, so neither flag is decided from the exit code or NODATA
+    alone. A gpg that did not run yields all-empty: no evidence either way, couldn't-check.
+    Status goes to fd 2, away from the stdout the issuer regexes read.
     """
-    r = _run(["gpg", "--list-packets"], stdin=sig_bytes)
-    if not r or r.returncode != 0:
-        return []
+    data = sig_bytes
+    if _CLEARSIGNED in data:
+        block = _SIGNATURE_BLOCK.search(data)
+        data = block.group(0) if block else b""
+    with tempfile.TemporaryDirectory() as home:
+        Path(home).chmod(0o700)
+        r = _run(
+            ["gpg", "--batch", "--no-tty", "--no-autostart", "--status-fd", "2", "--list-packets"],
+            home=home,
+            stdin=data,
+        )
+    if r is None:
+        return Packets([], False, False)
     text = r.stdout.decode("utf-8", "replace")
+    listed = text.count(":signature packet:")
     issuers = re.findall(r"issuer fpr v\d ([0-9A-Fa-f]{40})", text)
     issuers += re.findall(r"keyid ([0-9A-Fa-f]{16})", text)
-    return [i.upper() for i in issuers]
+    nodata = bool(_NODATA.search(r.stderr.decode("utf-8", "replace")))
+    return Packets(
+        issuers=[i.upper() for i in issuers],
+        unsigned=not listed and (nodata or r.returncode == 0),
+        damaged=bool(listed) and r.returncode != 0,
+    )
 
 
 def issuer_in_fingerprints(issuer: str, fingerprints: set[str]) -> bool:

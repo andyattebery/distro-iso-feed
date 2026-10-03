@@ -223,19 +223,29 @@ signature covers:
   the signature's *issuer* is the pinned key (primary **or a subkey** — Tails signs with a
   subkey). Full verification is the consumer's job once it has the ISO. (TrueNAS's key expired
   in 2023, which image-mode tolerates — it reads the issuer fingerprint, never `gpgv`s data.)
-- **`clearsigned`** (almalinux, parrot — the signature and the `CHECKSUM`/`signed-hashes.txt`
+- **`clearsigned`** (almalinux, gentoo, parrot — the signature and the `CHECKSUM`/`signed-hashes.txt`
   body are one inline-signed file, with no detached sig): read the checksum from **gpg's extracted
   payload** (the signed region only), never the raw file — text appended after the signature block
   leaves the inner signature Good, so a raw match would accept injected lines. Same guarantee as
   `checksums` delivered inline, so it publishes `signature_target: checksums`.
 
-A signature that fails its own pinned key **drops the gpg claim** (`signature_url`
-cleared, `verify` degrades to `checksum`) rather than publishing an unverifiable one;
-a network blip or a missing `gpg` binary defers (keeps the claim, adds no pin) so it
-never flaps. `distro-iso-feed-audit` re-runs the same gate; `--strict` fails on any
-bad pin. The RHEL rebuilds (Rocky, AlmaLinux) sign per **major** and track the newest one, so
-the day a new major ships signed by a new key the gate can't verify it and self-heals: that
-entry degrades to `checksum` and `--strict` flags it, rather than forwarding a stale pin.
+A signature that fails its own pinned key **drops the gpg claim** (`signature_url` cleared,
+`verify` degrades to `checksum`) rather than publishing an unverifiable one, and the gate says why
+it failed (`cause`):
+- `foreign-signer` — a signature by another key; the only cause that can be a rotation;
+- `bad-signature` — the pin's own signature no longer checks out: mirror skew, a damaged
+  signature file, or tampering;
+- `unsigned` — no signature at all. Parrot staged 7.4 with a plain-text, md5-only
+  `signed-hashes.txt`.
+- `key-url` — the key URL no longer serves the pin;
+- `checksum-absent` — the signed file doesn't list the artifact.
+
+A 4xx on the key, signature or signed file is evidence, exactly as a 4xx is for a resolve. A
+network blip, a missing `gpg` binary, or a gpg that can't read the signature defers (keeps the
+claim, adds no pin). `distro-iso-feed-audit` re-runs the same gate; `--strict` fails on any bad
+pin. The RHEL rebuilds (Rocky, AlmaLinux) sign per **major** and track the newest one, so the day a
+new major ships signed by a new key the gate can't verify it and self-heals: that entry degrades to
+`checksum` and `--strict` flags it, rather than forwarding a stale pin.
 
 **Three data facts this surfaced, all real.** Void's `sha256sum.sig` is **signify /
 minisign, not OpenPGP** — its `verify: gpg` was wrong, corrected to `checksum`. And

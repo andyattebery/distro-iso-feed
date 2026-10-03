@@ -37,6 +37,16 @@ LABEL_SIGNING = "refresh-signing-key"
 LABEL_PIN = "refresh-pin"
 LABEL_MASS = "refresh-mass-outage"
 
+# Why a pinned key did not verify: `SigningFailure.cause`, set by `signing.verify_signing_key`.
+# Defined once, here, because the gate matches on them: two files naming the set separately is how
+# they drift. Each needs a different fix, and only FOREIGN_SIGNER can be a key rotation -- reading
+# the others as one is how #17 sent the reader after a Parrot key that did not exist.
+CAUSE_UNSIGNED = "unsigned"  # no OpenPGP signature at all, or the sig URL answered 4xx
+CAUSE_FOREIGN_SIGNER = "foreign-signer"  # signed, by a key that is not the pin's
+CAUSE_BAD_SIGNATURE = "bad-signature"  # the pin's own signature no longer matches its bytes
+CAUSE_KEY_URL = "key-url"  # the key URL no longer serves the pin (another key, or a 4xx)
+CAUSE_CHECKSUM_ABSENT = "checksum-absent"  # the pin's signed file doesn't list this artifact
+
 
 def exc_class(exc: Exception) -> str:
     """Classify an exception that escaped a resolver.
@@ -112,10 +122,11 @@ class Pin:
 
 @dataclass(slots=True)
 class SigningFailure:
-    """A pinned GPG key that stopped verifying -- the entry silently dropped to `checksum`."""
+    """A pinned GPG key that stopped verifying. `cause` is one of the `CAUSE_*` tags above."""
 
     key: str
     reason: str
+    cause: str
     pinned_fpr: str | None = None
     actual_signer_fpr: str | None = None
     key_url: str | None = None
@@ -164,49 +175,101 @@ def _resolve_body(f: dict) -> str:
     )
 
 
+# What to do, per cause. Only FOREIGN_SIGNER sends the reader after a new key.
+_RESOLVE = {
+    CAUSE_FOREIGN_SIGNER: (
+        "A key rotation is the usual cause — but do **NOT** bump the fingerprint blindly. First"
+        " confirm the new signer is the project's *announced* new key (official channel, or chained"
+        " to its trust anchor); never bump a fingerprint to whatever signed the artifact, which"
+        " voids the pin's entire purpose. Only then update `signing_key.fingerprint` in"
+        " `config/sources.yaml`, and dry-run to prove it re-verifies."
+    ),
+    CAUSE_UNSIGNED: (
+        "This is not a key rotation: there is no signature to check, so there is no new key to"
+        " verify and the fingerprint must not change. Either the file carries none, or its URL"
+        " answered 4xx — the reason line says which. A missing signature usually means a release"
+        " published before its signing step finished (the hostile reading is a stripped"
+        " signature), and this closes itself on the first run that finds one by the pin again; if"
+        " it never comes back, find where upstream signs now and point `sig` at it. A 403 usually"
+        " means the host refuses this client (a bot filter): fetch the same file from a copy that"
+        " serves it."
+    ),
+    CAUSE_BAD_SIGNATURE: (
+        "This is not a key rotation: the pinned key made this signature, but it no longer checks"
+        " out — the bytes it signs changed since (a mirror serving the checksum file and its"
+        " signature out of sync), the signature file itself is damaged, or tampering. Leave the"
+        " fingerprint alone. Compare both files against the project's own host; a skewed or"
+        " half-synced mirror heals on its next sync, and this closes itself when it does."
+    ),
+    CAUSE_KEY_URL: (
+        "The key URL no longer serves the pinned key (a 403 usually means the host refuses this"
+        " client, not that the key moved). Find where the project publishes it now: if it is the"
+        " same key, update `signing_key.url`; if it is a different key, treat it as a rotation and"
+        " verify its provenance before changing `signing_key.fingerprint`."
+    ),
+    CAUSE_CHECKSUM_ABSENT: (
+        "This is not a key rotation: the file the signature covers does not list this artifact's"
+        " checksum, or could not be fetched (4xx; a 403 usually means the host refuses this"
+        " client). Usually a release whose checksum file has not caught up yet, and this closes"
+        " itself when it does. If it persists, check `sums`/`match` against what upstream lists."
+    ),
+}
+
+
 def _signing_body(s: dict) -> str:
+    cause = s["cause"]
+    signer = s.get("actual_signer_fpr")
+    lead = f"- **now signed by**: `{signer}`\n" if cause == CAUSE_FOREIGN_SIGNER else ""
     return (
-        f"The pinned GPG key for `{s['key']}` no longer verifies —"
-        f" the entry has dropped to `checksum`.\n\n"
-        f"- **reason**: {s['reason']}\n"
+        f"The pinned GPG key for `{s['key']}` no longer verifies — the gpg claim was dropped from"
+        f" this release.\n\n"
+        f"- **cause**: `{cause}` — {s['reason']}\n"
         f"- **pinned**: `{s.get('pinned_fpr')}`\n"
-        f"- **now signed by**: `{s.get('actual_signer_fpr')}`\n"
+        f"{lead}"
         f"- **key url**: {s.get('key_url')} (`covers: {s.get('covers')}`)\n\n"
         f"## To resolve\n"
-        f"A key rotation is the usual cause — but do **NOT** bump the fingerprint blindly. First"
-        f" confirm `{s.get('actual_signer_fpr')}` is the project's *announced* new key (official"
-        f" channel, or chained to its trust anchor). Only then update `signing_key.fingerprint` in"
-        f" `config/sources.yaml`, and dry-run to prove it re-verifies.\n"
+        f"{_RESOLVE[cause]}\n"
     )
+
+
+def _rotation_verdict(group: list[dict]) -> str:
+    """Among signatures by a key that is not the pin's, the distinct signer set is the tell: one
+    shared new signer reads as a rotation; N different ones read as something else."""
+    signers = sorted({fpr for s in group if (fpr := s.get("actual_signer_fpr"))})
+    if len(signers) == 1:
+        return (
+            f"All {len(group)} are now signed by **one** key, `{signers[0]}` — consistent with a"
+            f" single key rotation."
+        )
+    if signers:
+        listed = ", ".join(f"`{s}`" for s in signers)
+        return (
+            f"They are signed by **{len(signers)} different** keys ({listed}) — that is not a"
+            f" simple rotation. Investigate before trusting any of them."
+        )
+    return "No signer fingerprint was recovered from the signatures."
 
 
 def _signing_mass_body(signing: list[dict]) -> str:
-    """One rotation, not N breaks. A single key backs many variants -- 28 share Ubuntu's, 14
-    Debian's -- so a rotation trips every one of them in the same run. The distinct signer set is
-    the tell: one shared new signer reads as a rotation; N different ones read as something else.
-    """
-    keys = "\n".join(f"- `{s['key']}`" for s in sorted(signing, key=lambda s: s["key"]))
-    signers = sorted({fpr for s in signing if (fpr := s.get("actual_signer_fpr"))})
-    if len(signers) == 1:
-        verdict = f"All {len(signing)} are now signed by **one** key, `{signers[0]}` — consistent"
-        verdict += " with a single key rotation."
-    elif signers:
-        listed = ", ".join(f"`{s}`" for s in signers)
-        verdict = f"They are signed by **{len(signers)} different** keys ({listed}) — that is not"
-        verdict += " a simple rotation. Investigate before trusting any of them."
-    else:
-        verdict = "No signer fingerprint was recovered from the signatures."
-    return (
-        f"{len(signing)} pinned GPG keys stopped verifying in one run — likely a single upstream "
-        f"rotation, not {len(signing)} separate breaks. Investigate together.\n\n"
-        f"{verdict}\n\n"
-        f"## To resolve\n"
-        f"**Verify the new key's provenance first** (official channel, or chained to the project's "
-        f"trust anchor). Never bump a fingerprint to whatever signed the artifact — that voids the "
-        f"pin's entire purpose. Then update `signing_key.fingerprint` in `config/sources.yaml` and "
-        f"dry-run to prove it re-verifies.\n\n"
-        f"**Affected:**\n{keys}\n"
+    """One event, not N breaks. A single key backs many variants -- 28 share Ubuntu's, 14 Debian's
+    -- so one upstream event trips every one of them in the same run. Grouped by cause, because only
+    `foreign-signer` can be a rotation: #17's six unsigned Parrot files were headlined "likely a
+    single upstream rotation" and sent the reader after a key that did not exist."""
+    by_cause: dict[str, list[dict]] = {}
+    for s in sorted(signing, key=lambda s: s["key"]):
+        by_cause.setdefault(s["cause"], []).append(s)
+    sections = []
+    for cause, group in sorted(by_cause.items()):
+        verdict = _rotation_verdict(group) + "\n\n" if cause == CAUSE_FOREIGN_SIGNER else ""
+        keys = "\n".join(f"- `{s['key']}`" for s in group)
+        sections.append(
+            f"## `{cause}` ({len(group)})\n\n{verdict}{_RESOLVE[cause]}\n\n**Affected:**\n{keys}\n"
+        )
+    head = (
+        f"{len(signing)} pinned GPG keys stopped verifying in one run. Investigate them together,"
+        f" by cause — only `{CAUSE_FOREIGN_SIGNER}` can be a key rotation."
     )
+    return head + "\n\n" + "\n".join(sections)
 
 
 def _pin_body(p: dict) -> str:
@@ -235,10 +298,11 @@ def plan_escalation(report: dict, open_issues: list[dict]) -> dict:
       things and a merged ticket is unreadable); this flag is true if either tripped.
 
     `signing` is deliberately NOT filtered by failure_class the way `regressions` is, and carries
-    no such field. `verify_signing_key` already IS the classifier: it only returns REJECTED when
-    every *required* fetch arrived (2xx) -- the key and signature always, plus the signed body for
-    `covers: checksums`; `clearsigned` and `image` have no separate body -- *and* gpg produced
-    contrary evidence. Couldn't-check is DEFERRED and never reaches this report at all. A
+    no such field. `verify_signing_key` already IS the classifier: it only returns REJECTED on
+    evidence -- gpg read a signature that is not the pin's (or found none at all), or a required
+    fetch (the key, the signature, and for `covers: checksums` the signed body) was answered
+    structurally, a 4xx or an empty 200. A network failure, or a gpg that could not read the
+    signature, is couldn't-check: DEFERRED, and it never reaches this report at all. A
     `failure_class` here could only ever be the constant "structural", and a filter on it could
     only ever be a no-op whose one failure mode is silently swallowing a real key rotation.
     """

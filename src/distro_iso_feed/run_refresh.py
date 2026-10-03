@@ -348,6 +348,7 @@ def main(argv: list[str] | None = None) -> int:
                         SigningFailure(
                             key=variant.key,
                             reason=signing.reason or "pin no longer verifies",
+                            cause=signing.cause,
                             pinned_fpr=str(sk.get("fingerprint")),
                             actual_signer_fpr=signing.signer,
                             key_url=sk.get("url"),

@@ -48,7 +48,7 @@ the raw report JSON. Point Claude Code (or yourself) at one and it has what a fi
 | Issue (label) | Trigger | Fails job? | The resolving PR | Key fields the issue carries |
 |---|---|---|---|---|
 | **resolve regression** (`refresh-failure`) | A *tracked* source stopped resolving structurally: 404/moved, 200-but-empty (redesigned), candidates present but none match, matched-but-no-version-token, or the resolver returned None with candidates listed *and its own fetches having succeeded* (a listing that failed on the network is transient) | Yes | Usually `config/sources.yaml` for the key — bring `match`/`version_pattern`/`index`/`url` back in line with what upstream lists now; `--dry-run --only <key>` confirms. If upstream still publishes the right artifact, suspect the **lister** instead: a windowed listing can push it off the end with nothing changed upstream (`releases.atom` is 10 entries — that is how Bazzite's three variants broke on 2026-07-28). Third outcome: **upstream retired the edition** — then remove the variant from `config/sources.yaml` **and delete its `state.json` keys**, in one commit (see below) | `cause`, `endpoint`+`status`, `observed_candidates` (what it lists now), current `params`, `last_good` (+`last_resolved`), `page_url`, `repro` |
-| **rotated signing key** (`refresh-signing-key`) | The pinned GPG key no longer verifies — every required fetch landed (2xx) and gpg produced *contrary evidence* (verdict `REJECTED`); the entry dropped to `checksum`. > 5 at once collapse into one rotation issue | Yes | **Verify the rotation is the project's announced key first** (official channel / chained to trust anchor), *then* update `signing_key.fingerprint`; `--dry-run` proves it re-verifies | `pinned_fpr`, `actual_signer_fpr` (who signs now), `key_url`, `covers` |
+| **signing key** (`refresh-signing-key`) | The pinned GPG key no longer verifies and there is *evidence* (verdict `REJECTED`; a 4xx other than 429 on the key/signature/signed file counts). `cause` says why: `foreign-signer`, `bad-signature`, `unsigned`, `key-url`, `checksum-absent`. The entry drops to `checksum`. > 5 at once collapse into one issue, grouped by cause | Yes | Per `cause` — the issue's *To resolve* says which. Only `foreign-signer` can be a rotation: **verify it is the project's announced key first** (official channel / chained to trust anchor), *then* update `signing_key.fingerprint`; `--dry-run` proves it re-verifies. `unsigned`, `bad-signature` and `checksum-absent` close themselves once upstream fixes the file — never touch the fingerprint for them | `cause`, `pinned_fpr`, `actual_signer_fpr` (who signs now, `foreign-signer`), `key_url`, `covers` |
 | **pinned release** (`refresh-pin`) | A source frozen to a literal release (`audit.pins`) — resolves cleanly, serves stale forever, every check keeps passing | No (ticket only) | Replace the literal with `version_dir`/`version_page`/`probe_versions` if upstream lists; else add `pinned_ok: true` with a reason | `detail` (the literal + where), `page_url` |
 
 **Security note on rotated keys:** never bump the fingerprint to whatever signed the artifact — that
@@ -78,10 +78,10 @@ beside the surviving variants, or the next person re-adds them from an old filen
   remaining URLs are skipped and its entries left untouched. Expect a `skipping its remaining
   URLs` warning in the log and a cluster of transient rows in the summary. That is a sick mirror,
   not a break; it resolves itself by tomorrow.
-- **`DEFERRED`** signing — gpg absent on the runner, a key-server blip, no signature to check, or no
-  checksum to check it against. Kept as-is (no pin published, entry not dropped), retried next run;
-  summary only. The one worth a glance is "gpg unavailable on this runner" — a setup problem, not a
-  network one.
+- **`DEFERRED`** signing — gpg absent on the runner, a network blip on the key/signature/signed
+  file, gpg unable to read the signature, or no checksum to check it against. Kept as-is (no pin
+  published, entry not dropped), retried next run; summary only. The one worth a glance is "gpg
+  unavailable on this runner" — a setup problem, not a network one.
 - **All sources failed** — the run already fails (a broken runner/network/deploy); no per-source
   issue. A partial mass-regression (> 5 sources at once) opens a single `refresh-mass-outage` issue
   instead of flooding the tracker. Signing failures collapse the same way, into one
@@ -94,11 +94,20 @@ beside the surviving variants, or the next person re-adds them from an old filen
 `verify_signing_key` returns one of three verdicts, each with a reason:
 
 - **`VERIFIED`** — the signature chains to the pinned key → the pin is published.
-- **`REJECTED`** — a signature exists but does *not* chain to the pin (a rotation, or tampering) → the
-  gpg claim is dropped (the entry degrades to `checksum`), and this escalates.
-- **`DEFERRED`** — verification couldn't run (gpg absent, or a transient key/sig/SUMS fetch failure).
-  The entry is left exactly as resolved and retried next run. This is deliberate: an environmental
-  hiccup must never strip a valid pin or flap an entry's `verify` level.
+- **`REJECTED`** — evidence the pin did not sign this release; `cause` names it. Possible causes:
+  - a signature by another key (`foreign-signer`: a rotation, or tampering);
+  - the pin's signature no longer checking out — changed bytes or a damaged file
+    (`bad-signature`);
+  - no signature at all (`unsigned`);
+  - a key URL that no longer serves the pin (`key-url`);
+  - a signed file that doesn't list the artifact (`checksum-absent`).
+
+  A 4xx other than 429 on the key, signature or signed file counts. The gpg claim is dropped
+  (the entry degrades to `checksum`), and this escalates.
+- **`DEFERRED`** — verification couldn't run: gpg absent, gpg unable to read the signature, or a
+  network failure fetching the key/sig/SUMS. The entry is left exactly as resolved and retried
+  next run. This is deliberate: an environmental hiccup must never strip a valid pin or flap an
+  entry's `verify` level.
 
 ## Dependency freshness
 
