@@ -631,3 +631,18 @@ def test_gate_a_refused_signature_url_is_not_read_as_an_unsigned_release():
         )
     )
     assert "refuses this client" in body
+
+
+def test_a_held_respin_row_tells_the_two_releases_apart(tmp_path, monkeypatch):
+    """A same-version respin that fails verification is held -- and its Held row read
+    `| 7.3 | 7.3 |`, two identical cells. The unpublished release must be distinguishable."""
+    iso = "Parrot-home-7.3_amd64.iso"
+    _verified_73(tmp_path / "state.json", url=IDX + iso)
+    client = FakeClient(
+        {IDX: autoindex_html([iso]), IDX + "signed-hashes.txt": f"{'d' * 128}  {iso}\n"}
+    )
+    summary = tmp_path / "summary.md"
+    _run(tmp_path, monkeypatch, client, REJECTED, argv=("--summary", str(summary)))
+    row = next(ln for ln in summary.read_text().splitlines() if ln.startswith("| `parrot:home`"))
+    kept, not_published = (cell.strip() for cell in row.split("|")[2:4])
+    assert kept == "7.3" and not_published != kept and "7.3" in not_published

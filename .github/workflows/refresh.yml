@@ -32,8 +32,8 @@ jobs:
           fetch-depth: 0
 
       - uses: astral-sh/setup-uv@v10.2.0
-        # No floating `v8` tag exists for this action -- only exact `v8.x.y`.
-        # `@v8` fails to resolve. Pin the patch.
+        # No floating major tag exists for this action -- only exact `vX.Y.Z`
+        # (checked at v10.2.0: `@v10` and `@v10.2` both 404). Pin the patch.
         with:
           enable-cache: true
 

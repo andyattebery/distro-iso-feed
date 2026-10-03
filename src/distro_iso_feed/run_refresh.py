@@ -384,8 +384,8 @@ def main(argv: list[str] | None = None) -> int:
 
             # Prove the GPG chain before publishing the pinned key. A REJECTED signature
             # drops the claim from the release; a transient/gpg-absent run leaves it as
-            # resolved. Runs before the token, but cannot move it -- these sources all
-            # publish a checksum, so the token is that hash.
+            # resolved. Runs before the token, but cannot move it: the token is the checksum,
+            # infohash or URL digest (tails publishes no checksum), and the gate touches none.
             signing = None
             if params.get("signing_key"):
                 signing = verify_signing_key(client, release, params)
@@ -434,11 +434,15 @@ def main(argv: list[str] | None = None) -> int:
                 # The record stays exactly as it is. Only a *new* release left unpublished makes
                 # the feed stale on purpose, so only that is worth a line in the run's receipt.
                 if state.is_new(release, payload):
-                    held.append((variant.key, kept.version, release.version, signing.reason))
+                    # A respin keeps its version; only its hash tells the two releases apart.
+                    new = release.version
+                    if new == kept.version:
+                        new = f"{new} (new hash {payload[:12]})"
+                    held.append((variant.key, kept.version, new, signing.reason))
                     log.info("%s: kept %s; %s waits until it verifies", variant.key,
-                             kept.version, release.version)  # fmt: skip
+                             kept.version, new)  # fmt: skip
                     if args.dry_run:
-                        print(_row(variant.key, kept.release, "held"), f"(not {release.version})")
+                        print(_row(variant.key, kept.release, "held"), f"[not published: {new}]")
                 elif args.dry_run:
                     print(_row(variant.key, kept.release))
                 continue

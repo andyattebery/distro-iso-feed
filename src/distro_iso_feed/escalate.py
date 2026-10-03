@@ -238,20 +238,19 @@ def _signing_body(s: dict) -> str:
 
 def _rotation_verdict(group: list[dict]) -> str:
     """Among signatures by a key that is not the pin's, the distinct signer set is the tell: one
-    shared new signer reads as a rotation; N different ones read as something else."""
+    shared new signer reads as a rotation; N different ones read as something else. Never empty:
+    `signing` names the signer on every `foreign-signer` outcome (read off the signature packet)."""
     signers = sorted({fpr for s in group if (fpr := s.get("actual_signer_fpr"))})
     if len(signers) == 1:
         return (
             f"All {len(group)} are now signed by **one** key, `{signers[0]}` — consistent with a"
             f" single key rotation."
         )
-    if signers:
-        listed = ", ".join(f"`{s}`" for s in signers)
-        return (
-            f"They are signed by **{len(signers)} different** keys ({listed}) — that is not a"
-            f" simple rotation. Investigate before trusting any of them."
-        )
-    return "No signer fingerprint was recovered from the signatures."
+    listed = ", ".join(f"`{s}`" for s in signers)
+    return (
+        f"They are signed by **{len(signers)} different** keys ({listed}) — that is not a simple"
+        f" rotation. Investigate before trusting any of them."
+    )
 
 
 def _signing_mass_body(signing: list[dict]) -> str:
