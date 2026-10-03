@@ -87,7 +87,11 @@ class Client:
         # url -> Response, for `get_cached` only. Successes only, and never consulted by `get`.
         self._cache: dict[str, Response] = {}
         self._http = httpx.Client(
-            headers={"User-Agent": user_agent},
+            # `identity`, not httpx's default `gzip, deflate`: clonezilla.org's CDN has answered
+            # 403 to any request asking for compression since 2026-10-01 (curl reproduces it with
+            # the header added), which silently cost clonezilla its checksum and pin. Everything
+            # fetched here is a small listing or sidecar; the bandwidth is not worth a blocked host.
+            headers={"User-Agent": user_agent, "Accept-Encoding": "identity"},
             timeout=timeout,
             follow_redirects=True,
         )

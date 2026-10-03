@@ -146,6 +146,24 @@ def test_client_returns_none_on_404_without_retrying():
     assert len(calls) == 1  # a 404 is an answer, not a failure to retry
 
 
+def test_requests_ask_for_an_uncompressed_body(monkeypatch):
+    """clonezilla.org's CDN answers 403 to `Accept-Encoding: gzip, deflate` -- httpx's default --
+    and 200 to the same request without it (curl reproduces both; since 2026-10-01). That alone
+    cost `clonezilla:default` its checksum and pin and failed the refresh. The real constructor
+    builds the client here, so its own default headers are what the fake CDN sees."""
+
+    def cdn(request: httpx.Request) -> httpx.Response:
+        if "gzip" in request.headers.get("accept-encoding", ""):
+            return httpx.Response(403, content=b"<html>forbidden</html>")
+        return httpx.Response(200, content=b"sums")
+
+    real = httpx.Client
+    monkeypatch.setattr(httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(cdn), **kw))
+    with Client("ua", sleep=lambda _: None) as c:
+        r = c.get("https://clonezilla.example/CHECKSUMS.TXT")
+    assert r is not None and r.content == b"sums"
+
+
 def test_network_error_is_swallowed():
     def handler(request: httpx.Request) -> httpx.Response:
         raise httpx.ConnectError("dns")
