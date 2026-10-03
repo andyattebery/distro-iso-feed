@@ -9,6 +9,7 @@ observed-candidates are exercised together.
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 
 from conftest import FakeClient, autoindex_html
 from distro_iso_feed import run_refresh
@@ -21,6 +22,7 @@ from distro_iso_feed.escalate import (
     plan_escalation,
 )
 from distro_iso_feed.models import Release
+from distro_iso_feed.signing import DEFERRED, REJECTED, SigningOutcome
 from distro_iso_feed.state import State
 from test_torrents import benc
 
@@ -423,6 +425,198 @@ def test_a_transient_torrent_sums_failure_does_not_take_the_whole_run_down(tmp_p
     data = json.loads(report.read_text())
     assert data["resolved"] == 1 and data["failures"] == []  # the run survived; ISO still resolved
 
+
+# ------------------------------------------- never replace a gpg-verified record with less
+#
+# The signing gate's verdict is stubbed (gpg is covered in test_signing_key); what is under test is
+# the runner's rule. These run WITHOUT --dry-run: a dry run never saves state, so a hold could not
+# be observed there.
+
+PIN = "A" * 40
+IDX = "https://iso.example/7.4/"
+ISO_74 = "Parrot-home-7.4_amd64.iso"
+
+
+def _parrot_cfg(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "distros:\n  parrot:\n    strategy: directory_index\n"
+        "    discover: {enumerable: false, reason: fixture}\n"
+        "    params:\n"
+        f'      index: "{IDX}"\n'
+        "      match: '^Parrot-home-[0-9.]+_amd64\\.iso$'\n"
+        "      version_pattern: '-([0-9.]+)_amd64'\n"
+        '      sums: "signed-hashes.txt"\n'
+        '      sig: "signed-hashes.txt"\n'
+        "      signing_key:\n"
+        '        url: "https://keys.example/k"\n'
+        f"        fingerprint: {PIN}\n"
+        "        covers: clearsigned\n"
+        "    variants:\n      home: {label: Parrot Home}\n"
+    )
+    return cfg
+
+
+def _verified_73(state_path, *, pin=PIN, url="https://iso.example/7.3/Parrot-home-7.3_amd64.iso"):
+    """Yesterday's record: 7.3, sha512, pinned -- what a VERIFIED run left behind."""
+    s = State()
+    s.update(
+        Release(
+            distro="parrot", variant="home", version="7.3", title="t",
+            filename=url.rsplit("/", 1)[-1], download_url=url,
+            checksum="c" * 128, checksum_algo="sha512",
+            signature_url=url.rsplit("/", 1)[0] + "/signed-hashes.txt",
+            signing_key_url="https://keys.example/k", signing_key_fingerprint=pin,
+            signature_target="checksums",
+        ),  # fmt: skip
+        "c" * 128,
+    )
+    s.save(state_path)
+
+
+def _run(tmp_path, monkeypatch, client, verdict, *, argv=(), cause="unsigned"):
+    """Drive `main` over the parrot fixture with the signing verdict forced to `verdict`."""
+
+    def gate(_client, release, _params):
+        if verdict == REJECTED:
+            dropped = replace(
+                release, signature_url=None, signing_key_url=None,
+                signing_key_fingerprint=None, signature_target=None,
+            )  # fmt: skip
+            return SigningOutcome(dropped, REJECTED, "no OpenPGP signature", cause=cause)
+        return SigningOutcome(replace(release, signature_target="checksums"), DEFERRED, "blip")
+
+    monkeypatch.setattr(run_refresh, "CONFIG", _parrot_cfg(tmp_path))
+    monkeypatch.setattr(run_refresh, "STATE", tmp_path / "state.json")
+    monkeypatch.setattr(run_refresh, "FEED_DIR", tmp_path / "feed")
+    monkeypatch.setattr(run_refresh, "CATALOG", tmp_path / "catalog.md")
+    monkeypatch.setattr(run_refresh, "Client", lambda *a, **k: client)
+    monkeypatch.setattr(run_refresh, "verify_signing_key", gate)
+    report = tmp_path / "report.json"
+    run_refresh.main(["--report", str(report), "--only", "parrot", *argv])
+    return json.loads(report.read_text()), State.load(tmp_path / "state.json")
+
+
+def _staged_74():
+    """Parrot's staging dir: a 7.4 ISO and an md5-only hashes file."""
+    return FakeClient(
+        {
+            IDX: autoindex_html([ISO_74, "signed-hashes.txt"]),
+            IDX + "signed-hashes.txt": f"Parrot OS 7.4\n\nmd5\n{'6' * 32}  {ISO_74}\n",
+        }
+    )
+
+
+def test_a_rejected_new_release_is_held_at_the_verified_one(tmp_path, monkeypatch):
+    """Parrot 7.4: unsigned, md5-only. The feed must keep 7.3 (sha512 + pin) and say so in the
+    issue, rather than publish 7.4 as md5 with the claim dropped."""
+    _verified_73(tmp_path / "state.json")
+    data, state = _run(tmp_path, monkeypatch, _staged_74(), REJECTED)
+    kept = state.records["parrot:home"]
+    assert (kept.version, kept.release.checksum_algo) == ("7.3", "sha512")
+    assert kept.release.signing_key_fingerprint == PIN
+    [sf] = data["signing_key_failures"]
+    assert sf["cause"] == "unsigned" and sf["held_version"] == "7.3"
+
+
+def test_a_rejected_same_release_keeps_its_pin(tmp_path, monkeypatch):
+    """Same artifact, but its signature now fails: the issue opens, and the record keeps the pin
+    it earned -- `enrich` must not rewrite it with the claim stripped."""
+    _verified_73(tmp_path / "state.json", url=IDX + "Parrot-home-7.3_amd64.iso")
+    iso = "Parrot-home-7.3_amd64.iso"
+    client = FakeClient(
+        {IDX: autoindex_html([iso]), IDX + "signed-hashes.txt": f"{'c' * 128}  {iso}\n"}
+    )
+    data, state = _run(tmp_path, monkeypatch, client, REJECTED)
+    assert state.records["parrot:home"].release.signing_key_fingerprint == PIN
+    assert data["signing_key_failures"][0]["held_version"] == "7.3"
+
+
+def test_a_deferred_check_of_the_same_release_keeps_its_pin(tmp_path, monkeypatch):
+    """2026-09-21: a keyserver blip made 118 variants DEFERRED, and `enrich` rewrote each record
+    without its pin (142 pinned -> 24; back to 142 the next day). A hiccup must never strip a pin."""
+    _verified_73(tmp_path / "state.json", url=IDX + "Parrot-home-7.3_amd64.iso")
+    iso = "Parrot-home-7.3_amd64.iso"
+    client = FakeClient(
+        {IDX: autoindex_html([iso]), IDX + "signed-hashes.txt": f"{'c' * 128}  {iso}\n"}
+    )
+    data, state = _run(tmp_path, monkeypatch, client, DEFERRED)
+    assert state.records["parrot:home"].release.signing_key_fingerprint == PIN
+    assert data["signing_key_failures"] == []  # couldn't-check stays silent
+
+
+def test_a_deferred_new_release_waits_silently(tmp_path, monkeypatch):
+    """Couldn't check the new release (a blip): keep the verified one and retry next run -- no
+    issue, and nothing unverified published in the meantime."""
+    _verified_73(tmp_path / "state.json")
+    data, state = _run(tmp_path, monkeypatch, _staged_74(), DEFERRED)
+    assert state.records["parrot:home"].version == "7.3"
+    assert data["signing_key_failures"] == []
+
+
+def test_a_deferred_new_release_at_the_same_url_is_published(tmp_path, monkeypatch):
+    """A fixed URL whose bytes moved (a stable symlink, a respin): holding would pair the old
+    checksum with the new bytes and break every download, so a blip publishes as before."""
+    iso = "Parrot-home-7.3_amd64.iso"
+    _verified_73(tmp_path / "state.json", url=IDX + iso)
+    client = FakeClient(
+        {IDX: autoindex_html([iso]), IDX + "signed-hashes.txt": f"{'d' * 128}  {iso}\n"}
+    )
+    _, state = _run(tmp_path, monkeypatch, client, DEFERRED)
+    assert state.records["parrot:home"].release.checksum == "d" * 128
+
+
+def test_a_bumped_pin_does_not_hold_the_old_record(tmp_path, monkeypatch):
+    """The config pin moved (a verified rotation): the record was vouched for by the OLD key, so
+    there is nothing verified to protect and the new release flows as before."""
+    _verified_73(tmp_path / "state.json", pin="B" * 40)
+    data, state = _run(tmp_path, monkeypatch, _staged_74(), REJECTED)
+    assert state.records["parrot:home"].version == "7.4"
+    assert data["signing_key_failures"][0]["held_version"] is None
+
+
+def test_with_no_verified_record_a_rejected_release_degrades(tmp_path, monkeypatch):
+    data, state = _run(tmp_path, monkeypatch, _staged_74(), REJECTED)
+    rec = state.records["parrot:home"]
+    assert rec.version == "7.4" and rec.release.signature_url is None
+    assert data["signing_key_failures"][0]["held_version"] is None
+
+
+def test_a_hold_is_listed_in_the_run_summary(tmp_path, monkeypatch):
+    """A hold keeps the feed stale on purpose; the run's receipt must say so, not "nothing moved"."""
+    _verified_73(tmp_path / "state.json")
+    summary = tmp_path / "summary.md"
+    _run(tmp_path, monkeypatch, _staged_74(), DEFERRED, argv=("--summary", str(summary)))
+    text = summary.read_text()
+    assert "Held" in text and "`parrot:home`" in text and "7.4" in text
+    assert "Nothing moved upstream" not in text
+
+
+def test_a_dry_run_prints_the_held_row(tmp_path, monkeypatch, capsys):
+    _verified_73(tmp_path / "state.json")
+    _run(tmp_path, monkeypatch, _staged_74(), REJECTED, argv=("--dry-run",))
+    row = next(ln for ln in capsys.readouterr().out.splitlines() if ln.startswith("parrot:home"))
+    assert "7.3" in row and "held" in row
+
+
+def test_gate_names_the_release_the_feed_kept():
+    body = _body(
+        SigningFailure("parrot:home", "no signature", "unsigned", held_version="7.3")
+    )
+    assert "keeps `7.3`" in body
+
+
+def test_a_rejected_respin_at_the_same_url_is_held(tmp_path, monkeypatch):
+    """Same URL, new bytes, and the gate has evidence against them: fail closed. (Only a release
+    the gate could not check is published at an unchanged URL.)"""
+    iso = "Parrot-home-7.3_amd64.iso"
+    _verified_73(tmp_path / "state.json", url=IDX + iso)
+    client = FakeClient(
+        {IDX: autoindex_html([iso]), IDX + "signed-hashes.txt": f"{'d' * 128}  {iso}\n"}
+    )
+    data, state = _run(tmp_path, monkeypatch, client, REJECTED)
+    assert state.records["parrot:home"].release.checksum == "c" * 128
+    assert data["signing_key_failures"][0]["held_version"] == "7.3"
 
 
 def test_gate_a_refused_signature_url_is_not_read_as_an_unsigned_release():

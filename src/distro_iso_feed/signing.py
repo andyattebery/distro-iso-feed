@@ -140,7 +140,8 @@ def verify_signing_key(client: Client, release: Release, params: dict) -> Signin
                   signature that no longer matches its bytes, no signature at all, or a required
                   fetch answered 4xx. The returned release has `signature_url` cleared (a signed
                   checksum that fails its signature is not forwardable); `cause`/`reason`/`signer`
-                  say why and who signed instead -- the escalation lead.
+                  say why and who signed instead -- the escalation lead. Whether that degraded
+                  release is *published* is the runner's call: it keeps a gpg-verified record.
       DEFERRED -> couldn't check (a network blip, or no gpg): the entry is returned exactly as
                   resolved, no pin this run; `reason` says what was missing.
     """

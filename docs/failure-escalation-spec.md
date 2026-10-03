@@ -107,7 +107,13 @@ the host answered (4xx → evidence) or the network failed (→ DEFERRED). That 
 The invariant that keeps this honest: **an environmental hiccup must never strip a valid pin or
 flap an entry's `verify` level.** A `checksum=None` (the sums fetch did not land) is the case that
 once broke it — it fell into "the checksum is absent from the signed file" and was reported as a
-key rotation, on a key that had not rotated.
+key rotation, on a key that had not rotated. `enrich` broke it again on 2026-09-21: a keyserver
+blip deferred 118 variants, and each same-release record was rewritten without its pin (142
+pinned → 24, back the next day). The runner now enforces it (`run_refresh._verified_to_keep`).
+A gpg-verified record is kept against the same release short of VERIFIED, against a new release
+REJECTED, and against a new release DEFERRED at a new URL. The one exception is a new release
+DEFERRED at an *unchanged* URL (a stable symlink, a respin): it is published unpinned, because the
+kept checksum would no longer match the bytes behind that URL.
 
 ### 1b. A configured sidecar that did not arrive is TRANSIENT, not a checksum-less entry
 

@@ -132,6 +132,7 @@ class SigningFailure:
     key_url: str | None = None
     covers: str | None = None
     page_url: str | None = None
+    held_version: str | None = None  # the gpg-verified release the feed kept instead, if any
 
 
 @dataclass(slots=True)
@@ -220,9 +221,12 @@ def _signing_body(s: dict) -> str:
     cause = s["cause"]
     signer = s.get("actual_signer_fpr")
     lead = f"- **now signed by**: `{signer}`\n" if cause == CAUSE_FOREIGN_SIGNER else ""
+    if held := s.get("held_version"):
+        effect = f"the feed keeps `{held}` (gpg-verified) until this release verifies"
+    else:
+        effect = "the gpg claim was dropped from this release"
     return (
-        f"The pinned GPG key for `{s['key']}` no longer verifies — the gpg claim was dropped from"
-        f" this release.\n\n"
+        f"The pinned GPG key for `{s['key']}` no longer verifies — {effect}.\n\n"
         f"- **cause**: `{cause}` — {s['reason']}\n"
         f"- **pinned**: `{s.get('pinned_fpr')}`\n"
         f"{lead}"
@@ -261,7 +265,10 @@ def _signing_mass_body(signing: list[dict]) -> str:
     sections = []
     for cause, group in sorted(by_cause.items()):
         verdict = _rotation_verdict(group) + "\n\n" if cause == CAUSE_FOREIGN_SIGNER else ""
-        keys = "\n".join(f"- `{s['key']}`" for s in group)
+        keys = "\n".join(
+            f"- `{s['key']}`" + (f" — feed keeps `{h}`" if (h := s.get("held_version")) else "")
+            for s in group
+        )
         sections.append(
             f"## `{cause}` ({len(group)})\n\n{verdict}{_RESOLVE[cause]}\n\n**Affected:**\n{keys}\n"
         )

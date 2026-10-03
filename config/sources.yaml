@@ -876,9 +876,10 @@ distros:
   # tracks the newest point release, so version_dir on bare majors auto-adopts it. CHECKSUM
   # is plain BSD-format with a detached CHECKSUM.asc beside it -- the Debian/Kali gpg pattern.
   # Rocky signs per-MAJOR (RPM-GPG-KEY-Rocky-10); the pin is for 10. When 11 ships signed by a
-  # new key the gate can't verify it -> that entry degrades to `checksum` and audit --strict
-  # flags it (no silent wrong pin). The `-latest-` symlinks carry the same hashes and no
-  # point-release token; the anchored match (digits where they put `latest`) excludes them.
+  # new key the gate can't verify it -> the feed keeps the verified 10.x and opens an issue (no
+  # silent wrong pin) until the new key is checked and pinned. The `-latest-` symlinks carry the
+  # same hashes and no point-release token; the anchored match (digits where they put `latest`)
+  # excludes them.
   rocky:
     strategy: directory_index
     page_url: "https://rockylinux.org/download"
@@ -932,7 +933,7 @@ distros:
   # tracks the newest point release). The difference: AlmaLinux CLEARSIGNS its CHECKSUM inline
   # -- there is no detached `.asc` (it 404s) -- so `covers: clearsigned` (gpg --verify the whole
   # file under the pinned key, then read the checksum from the verified body). Per-MAJOR key
-  # (RPM-GPG-KEY-AlmaLinux-10); same self-healing degrade-and-flag as Rocky on a new major.
+  # (RPM-GPG-KEY-AlmaLinux-10); same hold-and-flag as Rocky on a new major.
   # AlmaLinux names the DVD `dvd` (no `1`), unlike Rocky. `-latest-` decoys excluded by the anchor.
   almalinux:
     strategy: directory_index
@@ -1485,7 +1486,8 @@ distros:
       torrent: "{filename}.torrent"             # no torrent checksum -> trust-on-first-use
       signing_key:
         # "Qubes OS Release 4.3 Signing Key" -- a NEW per-minor key signs R4.4/R5.0, so the gate
-        # will degrade that entry to `checksum` and --strict flag it (like the RHEL-rebuild majors).
+        # will hold the verified R4.3 and open an issue until the new key is checked and pinned
+        # (like the RHEL-rebuild majors).
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
         fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
         covers: checksums

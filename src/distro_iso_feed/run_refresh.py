@@ -12,6 +12,7 @@ import hashlib
 import json
 import logging
 import sys
+from collections.abc import Sequence
 from pathlib import Path
 
 from . import audit, docs, escalate, feed, select
@@ -19,9 +20,9 @@ from .client import Client
 from .config import load
 from .escalate import Failure, Pin, Report, SigningFailure
 from .gpgverify import gpg_available
-from .models import Variant
-from .signing import REJECTED, verify_signing_key
-from .state import State
+from .models import Release, Variant
+from .signing import REJECTED, VERIFIED, SigningOutcome, pinned_fingerprint, verify_signing_key
+from .state import Record, State
 from .strategies import REGISTRY
 from .strategies.integrity import SumsUnavailable
 from .strategies.torrent import attach_torrent
@@ -156,12 +157,49 @@ def _enrich(f: Failure, variant: Variant, state: State) -> Failure:
     return f
 
 
+def _verified_to_keep(
+    state: State, release: Release, payload: str, signing: SigningOutcome, key_conf: dict
+) -> Record | None:
+    """The gpg-verified record this run must not overwrite with something the pin did not vouch
+    for, or None. The rule: never replace a verified release with an unverified one.
+
+    * Same artifact, any verdict short of VERIFIED: keep the record. Rewriting it in place
+      (`enrich`) strips the pin it earned -- on 2026-09-21 a keyserver blip did that to 118
+      variants (142 pinned -> 24, back to 142 the next day).
+    * A new artifact the gate REJECTED -- evidence against it: keep the old one. This is what kept
+      Parrot's staged, unsigned, md5-only 7.4 from replacing a pinned sha512 7.3.
+    * A new artifact the gate could not check (DEFERRED, a blip): keep the old one and retry next
+      run -- unless it sits at the SAME URL (a stable symlink, a respin), where the old checksum
+      would no longer match the bytes behind it and holding would break every download.
+
+    Only a record pinned to the key the config pins *now* counts: after a deliberate fingerprint
+    bump the old record vouches for nothing this run checks, so it never holds.
+    """
+    if signing.verdict == VERIFIED:
+        return None
+    kept = state.records.get(release.state_key)
+    if kept is None or kept.release.signing_key_fingerprint != pinned_fingerprint(key_conf):
+        return None
+    if not state.is_new(release, payload) or signing.verdict == REJECTED:
+        return kept
+    return None if release.primary_url == kept.release.primary_url else kept
+
+
+def _row(key: str, release: Release, verify: str | None = None) -> str:
+    """One dry-run line: the artifact the feed carries, never a status code."""
+    return (
+        f"{key:38} {release.version:28} "
+        f"{verify or release.verify:8} {release.checksum_algo or '-':7} {release.filename}"
+    )
+
+
 def write_summary(
     path: Path,
     *,
     changed: list[str],
     failed: list[Failure],
     total: int,
+    held: Sequence[tuple[str, str, str, str | None]] = (),
     dry_run: bool = False,
 ) -> None:
     """A run that commits nothing must still leave evidence of what it saw.
@@ -202,9 +240,23 @@ def write_summary(
             )
         lines += [""]
 
+    if held:
+        lines += [
+            "### Held",
+            "",
+            "Kept at the last gpg-verified release: the new one did not verify this run. One the "
+            "gate REJECTED opened an issue; one it could not check is retried next run.",
+            "",
+            "| Variant | Kept | Not published | Why |",
+            "|---|---|---|---|",
+        ]
+        for key, kept, new, why in sorted(held):
+            lines.append(f"| `{key}` | {kept} | {new} | {why or '-'} |")
+        lines += [""]
+
     if dry_run:
         lines += ["_Dry run: nothing written, nothing committed._", ""]
-    elif not changed and not failed:
+    elif not changed and not failed and not held:
         lines += ["_Nothing moved upstream; no commit._", ""]
 
     with path.open("a", encoding="utf-8") as fh:
@@ -270,11 +322,12 @@ def main(argv: list[str] | None = None) -> int:
     failures: list[Failure] = []
     signing_failures: list[SigningFailure] = []
     changed: list[str] = []
+    held: list[tuple[str, str, str, str | None]] = []  # (key, kept, not published, why)
 
     if not gpg_available():
         log.warning(
-            "gpg/gpgv not on PATH -- signing-key verification skipped; "
-            "gpg entries keep their signature_url but publish no pinned key this run"
+            "gpg/gpgv not on PATH -- signing-key verification skipped; gpg-verified "
+            "entries stay as they are, and their new releases wait for a run that has gpg"
         )
 
     with Client(defaults["user_agent"]) as client:
@@ -330,32 +383,13 @@ def main(argv: list[str] | None = None) -> int:
                     log.warning("%s: torrent not attached: %s", variant.key, exc)
 
             # Prove the GPG chain before publishing the pinned key. A REJECTED signature
-            # drops the claim (verify degrades to checksum); a transient/gpg-absent
-            # run leaves the entry as resolved. Runs before the token, but cannot move
-            # it -- these sources all publish a checksum, so the token is that hash.
+            # drops the claim from the release; a transient/gpg-absent run leaves it as
+            # resolved. Runs before the token, but cannot move it -- these sources all
+            # publish a checksum, so the token is that hash.
+            signing = None
             if params.get("signing_key"):
                 signing = verify_signing_key(client, release, params)
                 release = signing.release
-                if signing.verdict == REJECTED:
-                    log.warning(
-                        "%s: %s -- dropped the gpg claim (verify now %s)",
-                        variant.key,
-                        signing.reason,
-                        release.verify,
-                    )
-                    sk = params["signing_key"]
-                    signing_failures.append(
-                        SigningFailure(
-                            key=variant.key,
-                            reason=signing.reason or "pin no longer verifies",
-                            cause=signing.cause,
-                            pinned_fpr=str(sk.get("fingerprint")),
-                            actual_signer_fpr=signing.signer,
-                            key_url=sk.get("url"),
-                            covers=sk.get("covers"),
-                            page_url=params.get("page_url"),
-                        )
-                    )
 
             # `hash` = the published checksum when there is one, else the infohash,
             # else a digest of the resolved artifact identity. Catches a respin whose
@@ -367,13 +401,52 @@ def main(argv: list[str] | None = None) -> int:
             url_digest = hashlib.sha256(release.primary_url.encode()).hexdigest()
             payload = release.checksum or release.info_hash or url_digest
 
+            kept = None
+            if signing is not None:
+                kept = _verified_to_keep(state, release, payload, signing, params["signing_key"])
+                if signing.verdict == REJECTED:
+                    if kept:
+                        log.warning(
+                            "%s: %s -- kept %s (gpg-verified); %s is not published",
+                            variant.key, signing.reason, kept.version, release.version,
+                        )  # fmt: skip
+                    else:
+                        log.warning(
+                            "%s: %s -- dropped the gpg claim (verify now %s)",
+                            variant.key, signing.reason, release.verify,
+                        )  # fmt: skip
+                    sk = params["signing_key"]
+                    signing_failures.append(
+                        SigningFailure(
+                            key=variant.key,
+                            reason=signing.reason or "pin no longer verifies",
+                            cause=signing.cause,
+                            pinned_fpr=str(sk.get("fingerprint")),
+                            actual_signer_fpr=signing.signer,
+                            key_url=sk.get("url"),
+                            covers=sk.get("covers"),
+                            page_url=params.get("page_url"),
+                            held_version=kept.version if kept else None,
+                        )
+                    )
+
+            if kept is not None:
+                # The record stays exactly as it is. Only a *new* release left unpublished makes
+                # the feed stale on purpose, so only that is worth a line in the run's receipt.
+                if state.is_new(release, payload):
+                    held.append((variant.key, kept.version, release.version, signing.reason))
+                    log.info("%s: kept %s; %s waits until it verifies", variant.key,
+                             kept.version, release.version)  # fmt: skip
+                    if args.dry_run:
+                        print(_row(variant.key, kept.release, "held"), f"(not {release.version})")
+                elif args.dry_run:
+                    print(_row(variant.key, kept.release))
+                continue
+
             if args.dry_run:
                 # Print the artifact, never a status code: a 200 is what misled the
                 # design of this project four separate times.
-                print(
-                    f"{variant.key:38} {release.version:28} "
-                    f"{release.verify:8} {release.checksum_algo or '-':7} {release.filename}"
-                )
+                print(_row(variant.key, release))
                 continue
 
             if state.update(release, payload):
@@ -405,6 +478,7 @@ def main(argv: list[str] | None = None) -> int:
                 changed=[],
                 failed=failures,
                 total=len(variants),
+                held=held,
                 dry_run=True,
             )
         return 1 if failures and len(failures) == len(variants) else 0
@@ -415,7 +489,9 @@ def main(argv: list[str] | None = None) -> int:
     log.info("%d changed, %d failed, %d entries", len(changed), len(failures), len(state.records))
 
     if args.summary:
-        write_summary(Path(args.summary), changed=changed, failed=failures, total=len(variants))
+        write_summary(
+            Path(args.summary), changed=changed, failed=failures, total=len(variants), held=held
+        )
 
     # Individual failures are normal and must never fail the run -- that is what
     # failure isolation is for. Every source failing is not a source problem; it is

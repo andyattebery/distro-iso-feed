@@ -229,9 +229,8 @@ signature covers:
   leaves the inner signature Good, so a raw match would accept injected lines. Same guarantee as
   `checksums` delivered inline, so it publishes `signature_target: checksums`.
 
-A signature that fails its own pinned key **drops the gpg claim** (`signature_url` cleared,
-`verify` degrades to `checksum`) rather than publishing an unverifiable one, and the gate says why
-it failed (`cause`):
+**A verified release is never replaced by one that fails verification.** The gate says why a
+pin failed (`cause`):
 - `foreign-signer` — a signature by another key; the only cause that can be a rotation;
 - `bad-signature` — the pin's own signature no longer checks out: mirror skew, a damaged
   signature file, or tampering;
@@ -241,11 +240,20 @@ it failed (`cause`):
 - `checksum-absent` — the signed file doesn't list the artifact.
 
 A 4xx on the key, signature or signed file is evidence, exactly as a 4xx is for a resolve. A
-network blip, a missing `gpg` binary, or a gpg that can't read the signature defers (keeps the
-claim, adds no pin). `distro-iso-feed-audit` re-runs the same gate; `--strict` fails on any bad
-pin. The RHEL rebuilds (Rocky, AlmaLinux) sign per **major** and track the newest one, so the day a
-new major ships signed by a new key the gate can't verify it and self-heals: that entry degrades to
-`checksum` and `--strict` flags it, rather than forwarding a stale pin.
+network blip, or a gpg that can't read the signature, is couldn't-check (DEFERRED). Either way the
+runner keeps the last gpg-verified record untouched, pin included. A keyserver blip once let
+`enrich` strip 118 pins in one run. The new release is adopted on the first run where it verifies,
+and a REJECTED one opens an issue meanwhile.
+
+One exception: couldn't-check at an **unchanged** URL (a stable symlink, a respin) publishes
+unpinned as before, because the kept checksum would no longer match the bytes behind it. A
+REJECTED release is held even there, on purpose: bytes nobody vouched for then fail the kept
+checksum, which is failing closed. With no verified record to keep, a REJECTED release degrades
+to `checksum` rather than publish a pin that doesn't verify. `distro-iso-feed-audit` re-runs the
+same gate; `--strict` fails on any bad pin. The RHEL rebuilds (Rocky, AlmaLinux) sign per
+**major** and track the newest one. So the day a new major ships signed by a new key, the feed
+keeps the previous major (still verified), and the issue asks for the new key's provenance; once
+the fingerprint is bumped, the new major flows.
 
 **Three data facts this surfaced, all real.** Void's `sha256sum.sig` is **signify /
 minisign, not OpenPGP** — its `verify: gpg` was wrong, corrected to `checksum`. And
