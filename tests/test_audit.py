@@ -147,8 +147,14 @@ def test_a_release_literal_in_a_location_param_is_a_pin(params):
         # A literal is fine when the release is discovered some other way.
         {"index": "https://x/{version}/", "version_dir": {"template": "https://x/"}},
         {"url": "https://x/builds/24.04/intel", "probe_versions": {"generator": "ubuntu_style"}},
+        # A literal the scan DOES flag (an unescaped `24.04`), in a param `version_page` allows,
+        # so dropping `version_page` from `_DYNAMIC` fails this case.
+        {"match": "^distro-24.04-amd64.iso$", "version_page": "https://x/download/"},
     ],
-    ids=["endeavouros", "batocera", "mint-64bit", "arch-date", "version_dir", "probe_versions"],
+    ids=[
+        "endeavouros", "batocera", "mint-64bit", "arch-date", "version_dir", "probe_versions",
+        "version_page",
+    ],  # fmt: skip
 )
 def test_a_token_extractor_or_a_dynamic_lookup_is_not_a_pin(params):
     assert pins(_source("d", **params)) == []

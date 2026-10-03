@@ -7,7 +7,8 @@ The BSDs and Parrot:
 - NetBSD: arch is a FILENAME token in one `images/` dir, and the version dir is prefixed
   (`NetBSD-10.1`), which `version_key` must still sort numerically.
 - Parrot: one clearsigned `signed-hashes.txt` lists md5+sha256+sha512 for each ISO; the parser
-  must publish the strongest (sha512).
+  must publish the strongest it lists (sha512). The release is the one the download page links
+  (`version_page`), never the newest `iso/` dir, which holds staged, unannounced releases.
 
 GhostBSD/XCP-ng/Qubes/Gentoo/ChimeraOS (resolve the shipped config's own expanded params):
 - XCP-ng: a two-group `version_pattern` so a re-hash refresh `…20250606.2` outsorts `…20250606`
@@ -23,8 +24,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from conftest import FakeClient, autoindex_html
-from distro_iso_feed.config import load
+from distro_iso_feed import config
+from distro_iso_feed.config import ConfigError, load
+from distro_iso_feed.models import Variant
+from distro_iso_feed.run_refresh import diagnose
 from distro_iso_feed.strategies import REGISTRY
 
 DI = REGISTRY["directory_index"]
@@ -158,6 +164,157 @@ def test_parrot_publishes_the_strongest_hash_from_the_multi_algo_file():
     r = DI().resolve("parrot", "home", params, client)
     assert r.filename == "Parrot-home-7.3_amd64.iso" and r.version == "7.3"
     assert (r.checksum, r.checksum_algo) == ("c" * 128, "sha512")  # md5/sha256 present but sha512 wins
+
+
+# Parrot's release is the one its download page links, never the newest dir under iso/ -----------
+
+PAGE = "https://parrot.example/download/"
+PARROT_PAGE_PARAMS = {
+    "version_page": PAGE, "sums": "signed-hashes.txt", "version_pattern": r"-([0-9.]+)_amd64",
+    "match": r"^Parrot-home-[0-9.]+_amd64\.iso$",
+}
+
+
+def _link(path: str) -> str:
+    return f'<a class="MuiButton" href="{PA}{path}">Download</a>'
+
+
+def _parrot_dirs() -> dict:
+    """iso/7.3/ (announced, clearsigned hashes) beside iso/7.4/ (staged: md5-only, unsigned) --
+    BOTH fully populated, so only the version source decides which one is published."""
+    return {
+        PA: autoindex_html(["7.2/", "7.3/", "7.4/"]),
+        PA + "7.3/": autoindex_html(
+            ["Parrot-home-7.3_amd64.iso", "Parrot-security-7.3_amd64.iso", "signed-hashes.txt"]
+        ),
+        PA + "7.3/signed-hashes.txt": PARROT_HASHES,
+        PA + "7.4/": autoindex_html(
+            ["Parrot-home-7.4_amd64.iso", "Parrot-security-7.4_amd64.iso", "signed-hashes.txt"]
+        ),
+        PA + "7.4/signed-hashes.txt": f"Parrot OS 7.4\n\nmd5\n{'6' * 32}  Parrot-home-7.4_amd64.iso\n",
+    }
+
+
+def test_parrot_takes_the_release_its_download_page_links_not_the_newest_dir():
+    """2026-10-02: Parrot staged 7.4 in iso/7.4/ -- an unsigned, md5-only hashes file -- while its
+    download page still offered 7.3, and the newest-dir listing published the staged release. The
+    page is the announcement. It links only the Security ISO; that ISO's directory holds them all."""
+    client = FakeClient({PAGE: _link("7.3/Parrot-security-7.3_amd64.iso"), **_parrot_dirs()})
+    r = DI().resolve("parrot", "home", dict(PARROT_PAGE_PARAMS), client)
+    assert (r.filename, r.version) == ("Parrot-home-7.3_amd64.iso", "7.3")
+    assert (r.checksum, r.checksum_algo) == ("c" * 128, "sha512")
+    assert r.download_url == PA + "7.3/Parrot-home-7.3_amd64.iso"
+    assert not any(u.startswith(PA + "7.4/") for u in client.requested)  # staging never read
+
+
+def test_version_page_linking_two_releases_takes_the_newest():
+    page = _link("7.3/Parrot-security-7.3_amd64.iso") + _link("7.4/Parrot-security-7.4_amd64.iso")
+    client = FakeClient({PAGE: page, **_parrot_dirs()})
+    assert DI().resolve("parrot", "home", dict(PARROT_PAGE_PARAMS), client).version == "7.4"
+
+
+def test_version_page_skips_a_linked_dir_that_lacks_the_edition():
+    """Same rule as `version_dir`: the newest LINKED dir that actually holds this edition."""
+    dirs = _parrot_dirs()
+    dirs[PA + "7.4/"] = autoindex_html(["Parrot-security-7.4_amd64.iso"])  # no Home in 7.4
+    page = _link("7.3/Parrot-security-7.3_amd64.iso") + _link("7.4/Parrot-security-7.4_amd64.iso")
+    client = FakeClient({PAGE: page, **dirs})
+    assert DI().resolve("parrot", "home", dict(PARROT_PAGE_PARAMS), client).version == "7.3"
+
+
+def test_version_page_reads_a_torrent_only_link():
+    """`page_index` matches the ISO name inside `….iso.torrent`; the directory is the same."""
+    client = FakeClient({PAGE: _link("7.3/Parrot-security-7.3_amd64.iso.torrent"), **_parrot_dirs()})
+    assert DI().resolve("parrot", "home", dict(PARROT_PAGE_PARAMS), client).version == "7.3"
+
+
+def test_version_page_with_no_release_link_resolves_nothing():
+    """A redesign that drops the link must fail loudly, never fall back to the staging dir."""
+    client = FakeClient({PAGE: "<html><body>Download Parrot</body></html>", **_parrot_dirs()})
+    assert DI().resolve("parrot", "home", dict(PARROT_PAGE_PARAMS), client) is None
+
+
+def test_discovery_reads_the_announced_dir_and_keeps_two_pages_apart():
+    """Discovery and audit list through the same lookup, so they see 7.3 and never the staged 7.4.
+    And two variants with different pages are two listings, not one."""
+    page2 = "https://parrot.example/download/next/"
+    client = FakeClient(
+        {
+            PAGE: _link("7.3/Parrot-security-7.3_amd64.iso"),
+            page2: _link("7.4/Parrot-security-7.4_amd64.iso"),
+            **_parrot_dirs(),
+        }
+    )
+    one = {c.name for c in DI().enumerate_all("parrot", [dict(PARROT_PAGE_PARAMS)], {}, client)}
+    assert "Parrot-home-7.3_amd64.iso" in one and "Parrot-home-7.4_amd64.iso" not in one
+    two = {
+        c.name
+        for c in DI().enumerate_all(
+            "parrot", [dict(PARROT_PAGE_PARAMS), {**PARROT_PAGE_PARAMS, "version_page": page2}],
+            {}, client,
+        )
+    }  # fmt: skip
+    assert "Parrot-home-7.4_amd64.iso" in two
+
+
+def test_diagnose_a_version_page_that_times_out_is_transient():
+    v = Variant(distro="parrot", name="home", strategy="directory_index", params={})
+    f = diagnose(DI(), v, dict(PARROT_PAGE_PARAMS), FakeClient(fail={PAGE: "ConnectTimeout"}))
+    assert f.failure_class == "transient"
+
+
+def test_diagnose_a_version_page_without_a_release_link_is_structural_at_the_page():
+    v = Variant(distro="parrot", name="home", strategy="directory_index", params={})
+    client = FakeClient({PAGE: "<html><body>redesigned</body></html>", **_parrot_dirs()})
+    f = diagnose(DI(), v, dict(PARROT_PAGE_PARAMS), client)
+    assert f.failure_class == "structural" and f.endpoint == PAGE  # where a human looks first
+
+
+def test_version_page_misconfig_is_a_load_error():
+    ok = {"version_page": PAGE, "version_pattern": r"-([0-9.]+)_amd64"}
+    config._validate_version_page("d", "v", ok)
+    config._validate_version_page("d", "v", {})  # most sources have no version_page
+    with pytest.raises(ConfigError, match="version_pattern"):
+        config._validate_version_page("d", "v", {"version_page": PAGE})
+    for leftover in ("version_dir", "version_dir_match", "index"):
+        with pytest.raises(ConfigError, match=leftover):
+            config._validate_version_page("d", "v", {**ok, leftover: "x"})
+
+
+def test_a_version_page_block_without_a_pattern_fails_the_load(tmp_path):
+    """The validator runs inside `load`, not only when called by hand: a block that forgets its
+    `version_pattern` never reaches a run."""
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "distros:\n  parrot:\n    strategy: directory_index\n"
+        "    discover: {enumerable: false, reason: fixture}\n"
+        "    params:\n"
+        '      version_page: "https://parrot.example/download/"\n'
+        "      match: '^Parrot-home-[0-9.]+_amd64\\.iso$'\n"
+        "    variants:\n      home: {label: Parrot Home}\n"
+    )
+    with pytest.raises(ConfigError, match="version_pattern"):
+        load(cfg, set(REGISTRY))
+
+
+def test_shipped_parrot_config_resolves_the_announced_release():
+    """The shipped block's own params, at the real URLs: the download page links 7.3, the iso/
+    listing offers a newer staged dir, and 7.3 is what resolves."""
+    real = "https://deb.parrot.sh/parrot/iso/"
+    page = '<a href="https://deb.parrot.sh/parrot/iso/7.3/Parrot-security-7.3_amd64.iso">Download</a>'
+    client = FakeClient(
+        {
+            "https://www.parrotsec.org/download/": page,
+            real: autoindex_html(["7.3/", "7.4/"]),
+            real + "7.3/": autoindex_html(["Parrot-home-7.3_amd64.iso", "signed-hashes.txt"]),
+            real + "7.3/signed-hashes.txt": PARROT_HASHES,
+            real + "7.4/": autoindex_html(["Parrot-home-7.4_amd64.iso", "signed-hashes.txt"]),
+        }
+    )
+    params = dict(_variants("parrot")["parrot:home"].params)
+    r = DI().resolve("parrot", "home", params, client)
+    assert r.version == "7.3" and r.checksum_algo == "sha512"
+    assert not any(u.startswith(real + "7.4/") for u in client.requested)
 
 
 # ------------------------------------------------- GhostBSD / XCP-ng / Qubes / Gentoo / ChimeraOS

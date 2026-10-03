@@ -212,6 +212,29 @@ def _validate_channel(distro: str, variant: str, params: dict) -> None:
         )
 
 
+def _validate_version_page(distro: str, variant: str, params: dict) -> None:
+    """`version_page` takes a `directory_index` release from the ISO a product page links (Parrot).
+
+    It reads the release out of the linked filename, so it needs `version_pattern`; and it replaces
+    the version-dir listing and the index template outright, so a `version_dir`,
+    `version_dir_match` or `index` beside it would be dead config that reads as if it still
+    decided something. Both are load errors here rather than a resolve-time `KeyError` or a silent
+    no-op.
+    """
+    if not params.get("version_page"):
+        return
+    if not params.get("version_pattern"):
+        raise ConfigError(
+            f"{distro}:{variant}: `version_page` needs a `version_pattern` -- the release is read "
+            f"from the filename of the ISO the page links"
+        )
+    if leftover := [k for k in ("version_dir", "version_dir_match", "index") if k in params]:
+        raise ConfigError(
+            f"{distro}:{variant}: `version_page` replaces "
+            f"{', '.join(f'`{k}`' for k in leftover)} -- remove them"
+        )
+
+
 def _validate_signing_surface(distro: str, variant: str, params: dict) -> None:
     """A `signing_key` with nothing to verify is a lie the feed tells about itself.
 
@@ -388,6 +411,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             _validate_torrent_only(distro, name, params)
             _validate_token(distro, name, params)
             _validate_channel(distro, name, params)
+            _validate_version_page(distro, name, params)
             _validate_signing_surface(distro, name, params)
 
             if arches is not None:

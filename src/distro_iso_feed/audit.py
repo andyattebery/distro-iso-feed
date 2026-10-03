@@ -52,7 +52,7 @@ _RELEASE_LITERAL = re.compile(
 )
 
 # The variant discovers its release some other way, so a literal cannot freeze it.
-_DYNAMIC = ("version_dir", "probe_versions")
+_DYNAMIC = ("version_dir", "version_page", "probe_versions")
 
 
 class Reason(StrEnum):

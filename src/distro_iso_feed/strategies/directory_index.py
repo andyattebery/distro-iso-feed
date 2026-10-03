@@ -1,8 +1,10 @@
 """Autoindex-backed sources: the largest family.
 
-Three capabilities §7 never mentions, all forced by real upstreams:
+Four capabilities §7 never mentions, all forced by real upstreams:
 
 * a **version-dir listing** (FreeBSD, Leap, Tails, Batocera, Ubuntu, Mint)
+* an **announced release** instead (`version_page`, Parrot): the release the project's own
+  download page links, because the newest version dir can be a staged, unannounced one
 * a **templated `sums`** -- FreeBSD's is ``CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-amd64``
 * **torrent-only artifacts** -- Kali's `live` images are in its signed `SHA256SUMS`
   but 404 as direct downloads; the index offers only the `.torrent`
@@ -14,7 +16,7 @@ import re
 from urllib.parse import urljoin
 
 from ..client import Client
-from ..listers import Candidate, autoindex, version_dir
+from ..listers import Candidate, autoindex, page_index, version_dir
 from ..models import Release
 from ..select import by_channel, matching, version_key
 from ..tokens import from_filename
@@ -29,6 +31,8 @@ class DirectoryIndex(Strategy):
 
     def _index_url(self, params: dict, client: Client) -> tuple[str, str]:
         """Resolve ``(index_url, version)``, probing version dirs when configured."""
+        if page := params.get("version_page"):
+            return self._announced_index(page, params, client)
         parent = params.get("version_dir")
         if not parent:
             return params["index"], params.get("version", "")
@@ -53,6 +57,31 @@ class DirectoryIndex(Strategy):
             if match and not matching(names, match):
                 continue
             return url, version
+        return "", ""
+
+    def _announced_index(self, page: str, params: dict, client: Client) -> tuple[str, str]:
+        """The directory of the newest release a product page links: the release the project has
+        *announced*, which the newest version dir need not be. Parrot staged 7.4 in `iso/7.4/` with
+        an unsigned, md5-only hashes file while its download page still offered 7.3, and a
+        `version_dir` listing published the staged release.
+
+        Reuses `listers.page_index`. The page may link one edition only (Parrot links just its
+        Security ISO), which is enough: that ISO's directory holds every edition, and each variant
+        then selects its own there exactly as from a plain `index`. The link's *own* directory is
+        used, so the dir name never has to equal the filename's version token. Unlike
+        `version_dir` there is no fall-back to an older, unlinked dir -- a release the page doesn't
+        offer is not announced.
+        """
+        pattern = params["version_pattern"]
+        dirs: dict[str, str] = {}  # the dir of each linked release -> its version token
+        for link in page_index(client, page):
+            if link.url and (token := from_filename(link.name, pattern)):
+                dirs.setdefault(link.url.rsplit("/", 1)[0] + "/", token)
+        match = params.get("match")
+        for url, _ in sorted(dirs.items(), key=lambda d: version_key(d[1]), reverse=True):
+            names = [c.name for c in autoindex(client, url)]
+            if names and (not match or matching(names, match)):
+                return url, url.rstrip("/").rsplit("/", 1)[-1]
         return "", ""
 
     def candidates(self, distro: str, params: dict, client: Client) -> list[Candidate]:

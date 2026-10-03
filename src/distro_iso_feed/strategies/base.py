@@ -31,7 +31,7 @@ from ..select import is_prerelease, version_key
 
 # Params that determine *what gets fetched*. Two variants sharing these share a
 # listing, so it is fetched once. Debian has nine variants across two indexes.
-_LISTING_KEYS = ("url", "index", "version_dir", "repo", "project", "path", "attr")
+_LISTING_KEYS = ("url", "index", "version_dir", "version_page", "repo", "project", "path", "attr")
 
 
 def listing_key(params: dict) -> tuple:

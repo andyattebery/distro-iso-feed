@@ -565,3 +565,5 @@ def test_endpoint_of_prefers_the_parent_over_a_template():
     )
     assert endpoint_of({"index": "https://flat/"}) == "https://flat/"
     assert endpoint_of({"url": "https://fixed/x.iso"}) == "https://fixed/x.iso"
+    # A release taken from a product page breaks at that page first (Parrot's download page).
+    assert endpoint_of({"version_page": "https://page/download/"}) == "https://page/download/"

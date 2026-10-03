@@ -208,15 +208,17 @@ distros:
 
   # Parrot OS -- a security distro like Kali. Integrity is a single CLEARSIGNED `signed-hashes.txt`
   # (the AlmaLinux shape): it lists md5/sha256/sha512 for every ISO, and the checksum parser keeps
-  # the strongest (sha512). `sums` and `sig` are the same file; the clearsigned gate reads the
-  # published checksum out of the region it just verified. amd64 only.
+  # the strongest it lists (sha512). `sums` and `sig` are the same file; the clearsigned gate reads
+  # the published checksum out of the region it just verified. amd64 only.
+  # The release is the one the download page links (`version_page`), NOT the newest dir under
+  # iso/: Parrot stages a release there before announcing it -- 7.4 sat in iso/7.4/ with an
+  # unsigned, md5-only signed-hashes.txt while the page still offered 7.3. The page links only the
+  # Security ISO; that ISO's directory holds every edition.
   parrot:
     strategy: directory_index
     page_url: "https://www.parrotsec.org/download/"
     params:
-      version_dir: "https://deb.parrot.sh/parrot/iso/"
-      version_dir_match: '^[0-9.]+$'
-      index: "{version}/"
+      version_page: "https://www.parrotsec.org/download/"
       sums: "signed-hashes.txt"
       sig: "signed-hashes.txt"
       version_pattern: '-([0-9.]+)_amd64'

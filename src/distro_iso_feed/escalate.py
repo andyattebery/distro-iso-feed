@@ -58,12 +58,13 @@ def endpoint_of(params: dict) -> str:
     """The URL a human should open first when a source breaks.
 
     `version_dir` comes before `index`, because for those sources `index` is a
-    template like ``{version}/`` -- printing it tells the reader nothing.
+    template like ``{version}/`` -- printing it tells the reader nothing. `version_page` comes
+    first of all: where a product page names the release, that page is what broke first.
 
     Lives here rather than in `run_refresh` because it fills `Failure.endpoint`, and because
     `audit` needs it too -- and `run_refresh` imports `audit`, so the other direction would cycle.
     """
-    for key in ("version_dir", "index", "url", "repo", "project"):
+    for key in ("version_page", "version_dir", "index", "url", "repo", "project"):
         if value := params.get(key):
             return str(value)
     return "?"
@@ -216,7 +217,7 @@ def _pin_body(p: dict) -> str:
         f"- **page**: {p.get('page_url')}\n\n"
         f"## To resolve\n"
         f"Check the upstream root for a listable index; replace the literal with"
-        f" `version_dir`/`probe_versions`. If the pin is genuinely intentional, add"
+        f" `version_dir`/`version_page`/`probe_versions`. If the pin is genuinely intentional, add"
         f" `pinned_ok: true` with a reason instead.\n"
     )
 

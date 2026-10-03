@@ -127,8 +127,9 @@ checksum, and serves a stale release forever while every check in this repo keep
 passing. Two shipped that way, `builds/24.04/intel` and `antiX-26`, and nothing here
 could see either. So a release-shaped literal in `url`, `index`, `path` or `match`
 is a finding: `audit.pins()` flags it, and a test asserts the real config is clean.
-A variant that finds its release another way — `version_dir`, `probe_versions` — is
-exempt, because that lookup is the mechanism, not an excuse for the literal.
+A variant that finds its release another way — `version_dir`, `version_page`,
+`probe_versions` — is exempt, because that lookup is the mechanism, not an excuse for
+the literal.
 
 These are two independent questions, and conflating them is what let Pop's pin hide:
 
