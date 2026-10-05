@@ -233,6 +233,12 @@ distros:
       spin-mate: {label: "Parrot MATE", params: {match: '^Parrot-spin-mate-[0-9.]+_amd64\.iso$'}}
       spin-lxqt: {label: "Parrot LXQt", params: {match: '^Parrot-spin-lxqt-[0-9.]+_amd64\.iso$'}}
       spin-enlightenment: {label: "Parrot Enlightenment", params: {match: '^Parrot-spin-enlightenment-[0-9.]+_amd64\.iso$'}}
+      home-tuned:
+        label: Parrot Home Tuned
+        params: {match: 'Parrot\-home\-tuned\-[0-9.]+_amd[0-9.]+\.iso$'}
+      security-tuned:
+        label: Parrot Security Tuned
+        params: {match: 'Parrot\-security\-tuned\-[0-9.]+_amd[0-9.]+\.iso$'}
     discover:
       match: '\.iso$'
       group: '^Parrot-(.+)-[0-9.]+_amd64\.iso$'
