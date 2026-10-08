@@ -4,61 +4,61 @@
   <title>Distro ISO Feed — nixos</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/nixos.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-10-06T13:24:12+00:00</updated>
+  <updated>2026-10-08T13:38:00+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.11275.b25309931cfd</id>
-    <title>NixOS Minimal 26.05.11275.b25309931cfd (aarch64)</title>
-    <updated>2026-10-06T13:24:12+00:00</updated>
-    <published>2026-10-06T13:24:12+00:00</published>
-    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="nixos" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.11275.b25309931cfd (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 19ac2b217eb2a2994ebe1567c3a6de4cfe71a2cbb57818e21fff9aa2053be729
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.11275.b25309931cfd</id>
-    <title>NixOS Graphical 26.05.11275.b25309931cfd (aarch64)</title>
-    <updated>2026-10-06T13:24:12+00:00</updated>
-    <published>2026-10-06T13:24:12+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.11576.7c8764b7c7b0</id>
+    <title>NixOS Graphical 26.05.11576.7c8764b7c7b0 (aarch64)</title>
+    <updated>2026-10-08T13:38:00+00:00</updated>
+    <published>2026-10-08T13:38:00+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.11275.b25309931cfd (aarch64)
+    <summary type="text">NixOS Graphical 26.05.11576.7c8764b7c7b0 (aarch64)
 Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 77ba5fca4024b21eb92e43c128490b798f6df92ae5e8317cb29fc8c23b9cafdf
+sha256: 29394b04e04b6828ed848d5c161b1b8d06313e7e870f368d22e5417c9ea003fa
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.11275.b25309931cfd</id>
-    <title>NixOS Graphical 26.05.11275.b25309931cfd (x86_64)</title>
-    <updated>2026-10-06T13:24:12+00:00</updated>
-    <published>2026-10-06T13:24:12+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal:aarch64/26.05.11576.7c8764b7c7b0</id>
+    <title>NixOS Minimal 26.05.11576.7c8764b7c7b0 (aarch64)</title>
+    <updated>2026-10-08T13:37:59+00:00</updated>
+    <published>2026-10-08T13:37:59+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
-    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
-    <category term="graphical" label="variant" />
-    <summary type="text">NixOS Graphical 26.05.11275.b25309931cfd (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 8eae23261927b6738849e2f46c1d488b9386e01cae8340097b74e0cb5d00fcf7
+    <category term="minimal" label="variant" />
+    <summary type="text">NixOS Minimal 26.05.11576.7c8764b7c7b0 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 6f9875a5c456a6c186d8051074bd588be2df76bfc66e93d5bfb91dad45b4263b
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.11275.b25309931cfd</id>
-    <title>NixOS Minimal 26.05.11275.b25309931cfd (x86_64)</title>
-    <updated>2026-10-06T13:24:11+00:00</updated>
-    <published>2026-10-06T13:24:11+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/minimal/26.05.11576.7c8764b7c7b0</id>
+    <title>NixOS Minimal 26.05.11576.7c8764b7c7b0 (x86_64)</title>
+    <updated>2026-10-08T13:37:59+00:00</updated>
+    <published>2026-10-08T13:37:59+00:00</published>
     <link href="https://nixos.org/download" rel="alternate" type="text/html" />
     <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="nixos" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">NixOS Minimal 26.05.11275.b25309931cfd (x86_64)
+    <summary type="text">NixOS Minimal 26.05.11576.7c8764b7c7b0 (x86_64)
 Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 00f0a94ba0269e48e4b62d13ea9b67a6c078b178110405f82aac603e907810f9
+sha256: 164e0cc603ce61a603672a9ea93efff9b47bc8711c902f6036d208d5e9fee9a0
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical/26.05.11576.7c8764b7c7b0</id>
+    <title>NixOS Graphical 26.05.11576.7c8764b7c7b0 (x86_64)</title>
+    <updated>2026-10-08T13:37:59+00:00</updated>
+    <published>2026-10-08T13:37:59+00:00</published>
+    <link href="https://nixos.org/download" rel="alternate" type="text/html" />
+    <link href="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="nixos" label="distro" />
+    <category term="graphical" label="variant" />
+    <summary type="text">NixOS Graphical 26.05.11576.7c8764b7c7b0 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 8c39c59fb6a83cf5451e02934ccf06c7a9f62addf409a8bb9e02efbb2d994d0c
 Verify: checksum</summary>
   </entry>
 </feed>
