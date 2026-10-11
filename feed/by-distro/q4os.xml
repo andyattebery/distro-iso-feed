@@ -4,7 +4,21 @@
   <title>Distro ISO Feed — q4os</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/q4os.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-10-09T09:49:17+00:00</updated>
+  <updated>2026-10-10T17:08:01+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/q4os/tde/6.10</id>
+    <title>Q4OS Trinity 6.10 (x86_64)</title>
+    <updated>2026-10-10T17:08:01+00:00</updated>
+    <published>2026-10-10T17:08:01+00:00</published>
+    <link href="https://q4os.org/" rel="alternate" type="text/html" />
+    <link href="https://sourceforge.net/projects/q4os/files/stable/q4os-6.10-x64-tde.r2.iso/download" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="q4os" label="distro" />
+    <category term="tde" label="variant" />
+    <summary type="text">Q4OS Trinity 6.10 (x86_64)
+Filename: q4os-6.10-x64-tde.r2.iso
+md5: cc7f61108c5c1f35f6efb8aa65ba806f
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/q4os/plasma/6.10</id>
     <title>Q4OS Plasma 6.10 (x86_64)</title>
@@ -17,20 +31,6 @@
     <summary type="text">Q4OS Plasma 6.10 (x86_64)
 Filename: q4os-6.10-x64.r2.iso
 md5: 37504e9def0bba954027870c1eea41dd
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/q4os/tde/6.10</id>
-    <title>Q4OS Trinity 6.10 (x86_64)</title>
-    <updated>2026-10-08T10:06:56+00:00</updated>
-    <published>2026-10-08T10:06:56+00:00</published>
-    <link href="https://q4os.org/" rel="alternate" type="text/html" />
-    <link href="https://sourceforge.net/projects/q4os/files/stable/q4os-6.10-x64-tde.r1.iso/download" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="q4os" label="distro" />
-    <category term="tde" label="variant" />
-    <summary type="text">Q4OS Trinity 6.10 (x86_64)
-Filename: q4os-6.10-x64-tde.r1.iso
-md5: 1d3aa4cdae57485179ea8335c8b8f59c
 Verify: checksum</summary>
   </entry>
 </feed>
