@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck 44.20261012.1 (x86_64)",
+      "title": "Bazzite Deck unstable-45.20261015.2 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "44.20261012.1"
+      "version": "unstable-45.20261015.2"
     },
-    "seen": "2026-10-13T14:19:29+00:00",
-    "version": "44.20261012.1"
+    "seen": "2026-10-15T11:38:28+00:00",
+    "version": "unstable-45.20261015.2"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop 44.20261012.1 (x86_64)",
+      "title": "Bazzite Desktop unstable-45.20261015.2 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "44.20261012.1"
+      "version": "unstable-45.20261015.2"
     },
-    "seen": "2026-10-13T14:19:29+00:00",
-    "version": "44.20261012.1"
+    "seen": "2026-10-15T11:38:28+00:00",
+    "version": "unstable-45.20261015.2"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open 44.20261012.1 (x86_64)",
+      "title": "Bazzite NVIDIA Open unstable-45.20261015.2 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "44.20261012.1"
+      "version": "unstable-45.20261015.2"
     },
-    "seen": "2026-10-13T14:19:29+00:00",
-    "version": "44.20261012.1"
+    "seen": "2026-10-15T11:38:29+00:00",
+    "version": "unstable-45.20261015.2"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -1590,34 +1590,34 @@
     "version": "13.7.0"
   },
   "edubuntu:desktop-latest": {
-    "hash": "1bd6aa9285b4b0f15af69b281c35513305506a7743a6cb32bc22528856b694e2",
+    "hash": "7e594a5f5dd9d55c34b90baa1069e1c3b633feaac51476733acd50f1953b650d",
     "release": {
       "arch": "x86_64",
-      "checksum": "1bd6aa9285b4b0f15af69b281c35513305506a7743a6cb32bc22528856b694e2",
+      "checksum": "7e594a5f5dd9d55c34b90baa1069e1c3b633feaac51476733acd50f1953b650d",
       "checksum_algo": "sha256",
       "distro": "edubuntu",
-      "download_url": "https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/edubuntu-26.04.1-desktop-amd64.iso",
-      "filename": "edubuntu-26.04.1-desktop-amd64.iso",
-      "info_hash": "698ebaa67b0b025bc02ba7d164ed2ffdc6e4c0be",
-      "magnet_uri": "magnet:?xt=urn:btih:698ebaa67b0b025bc02ba7d164ed2ffdc6e4c0be&dn=edubuntu-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/edubuntu/releases/26.10/release/edubuntu-26.10-desktop-amd64.iso",
+      "filename": "edubuntu-26.10-desktop-amd64.iso",
+      "info_hash": "3b83441d974d4a6b4ea041b785a57143ec61ce5c",
+      "magnet_uri": "magnet:?xt=urn:btih:3b83441d974d4a6b4ea041b785a57143ec61ce5c&dn=edubuntu-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://www.edubuntu.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/edubuntu/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Edubuntu latest 26.04.1 (x86_64)",
+      "title": "Edubuntu latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 606338,
-      "torrent_url": "https://cdimage.ubuntu.com/edubuntu/releases/26.04.1/release/edubuntu-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 548416,
+      "torrent_url": "https://cdimage.ubuntu.com/edubuntu/releases/26.10/release/edubuntu-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:49:09+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:36:04+00:00",
+    "version": "26.10"
   },
   "edubuntu:desktop-lts": {
     "hash": "1bd6aa9285b4b0f15af69b281c35513305506a7743a6cb32bc22528856b694e2",
@@ -3750,34 +3750,34 @@
     "version": "20260706-1142"
   },
   "kubuntu:desktop-latest": {
-    "hash": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+    "hash": "8160b1d6266dfe1998d183b19713680263c09669f101e0e41cbcf11f50b6f785",
     "release": {
       "arch": "x86_64",
-      "checksum": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+      "checksum": "8160b1d6266dfe1998d183b19713680263c09669f101e0e41cbcf11f50b6f785",
       "checksum_algo": "sha256",
       "distro": "kubuntu",
-      "download_url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso",
-      "filename": "kubuntu-26.04.1-desktop-amd64.iso",
-      "info_hash": "7751f52345b9a0b4bc03782611b9e676d63ce294",
-      "magnet_uri": "magnet:?xt=urn:btih:7751f52345b9a0b4bc03782611b9e676d63ce294&dn=kubuntu-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/kubuntu/releases/26.10/release/kubuntu-26.10-desktop-amd64.iso",
+      "filename": "kubuntu-26.10-desktop-amd64.iso",
+      "info_hash": "51ebf7e13fcc32b10ea27f64d3bfa98283b26d5f",
+      "magnet_uri": "magnet:?xt=urn:btih:51ebf7e13fcc32b10ea27f64d3bfa98283b26d5f&dn=kubuntu-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://kubuntu.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/kubuntu/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Kubuntu latest 26.04.1 (x86_64)",
+      "title": "Kubuntu latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 387296,
-      "torrent_url": "https://cdimage.ubuntu.com/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 392574,
+      "torrent_url": "https://cdimage.ubuntu.com/kubuntu/releases/26.10/release/kubuntu-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:48:51+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:35:49+00:00",
+    "version": "26.10"
   },
   "kubuntu:desktop-lts": {
     "hash": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
@@ -3810,34 +3810,34 @@
     "version": "26.04.1"
   },
   "lubuntu:desktop-latest": {
-    "hash": "a8038585420f2270845549c6f493e0ec98e68d4b2c49571cbe500a4b5fab3062",
+    "hash": "fd71fb468451ff2a14914aeb344b530e7eb1d4f7c810f35d855ecbe68330b7eb",
     "release": {
       "arch": "x86_64",
-      "checksum": "a8038585420f2270845549c6f493e0ec98e68d4b2c49571cbe500a4b5fab3062",
+      "checksum": "fd71fb468451ff2a14914aeb344b530e7eb1d4f7c810f35d855ecbe68330b7eb",
       "checksum_algo": "sha256",
       "distro": "lubuntu",
-      "download_url": "https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/lubuntu-26.04.1-desktop-amd64.iso",
-      "filename": "lubuntu-26.04.1-desktop-amd64.iso",
-      "info_hash": "aabb2304138444112c2189a5916067b8791d37d5",
-      "magnet_uri": "magnet:?xt=urn:btih:aabb2304138444112c2189a5916067b8791d37d5&dn=lubuntu-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/lubuntu/releases/26.10/release/lubuntu-26.10-desktop-amd64.iso",
+      "filename": "lubuntu-26.10-desktop-amd64.iso",
+      "info_hash": "0b2052eba244f5bdc9086d0f519eb169b1e32e13",
+      "magnet_uri": "magnet:?xt=urn:btih:0b2052eba244f5bdc9086d0f519eb169b1e32e13&dn=lubuntu-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://lubuntu.me/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/lubuntu/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Lubuntu latest 26.04.1 (x86_64)",
+      "title": "Lubuntu latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 299916,
-      "torrent_url": "https://cdimage.ubuntu.com/lubuntu/releases/26.04.1/release/lubuntu-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 305174,
+      "torrent_url": "https://cdimage.ubuntu.com/lubuntu/releases/26.10/release/lubuntu-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:48:55+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:35:53+00:00",
+    "version": "26.10"
   },
   "lubuntu:desktop-lts": {
     "hash": "a8038585420f2270845549c6f493e0ec98e68d4b2c49571cbe500a4b5fab3062",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "1472cb770f8f402c4c9fe535c43f05a5b18c13dd89b4100fb12ed974c0f0c5ec",
+    "hash": "81ec93d823a7ad40f58b14dfcf43de5d794a3aa956564301fa5fcdbe68459f88",
     "release": {
       "arch": "x86_64",
-      "checksum": "1472cb770f8f402c4c9fe535c43f05a5b18c13dd89b4100fb12ed974c0f0c5ec",
+      "checksum": "81ec93d823a7ad40f58b14dfcf43de5d794a3aa956564301fa5fcdbe68459f88",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.11767.7993f34ee47e (x86_64)",
+      "title": "NixOS Graphical 26.05.11829.a033e66ab94a (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.11767.7993f34ee47e"
+      "version": "26.05.11829.a033e66ab94a"
     },
-    "seen": "2026-10-13T14:19:28+00:00",
-    "version": "26.05.11767.7993f34ee47e"
+    "seen": "2026-10-15T11:38:27+00:00",
+    "version": "26.05.11829.a033e66ab94a"
   },
   "nixos:graphical:aarch64": {
-    "hash": "e3e25a13e5681211eea5f30c30e247bdf45460a343f3d149a2d3e3515def4d65",
+    "hash": "43210837c21b49ebadfafeacbd7c003572826c063f90f7e700ae8211823f801d",
     "release": {
       "arch": "aarch64",
-      "checksum": "e3e25a13e5681211eea5f30c30e247bdf45460a343f3d149a2d3e3515def4d65",
+      "checksum": "43210837c21b49ebadfafeacbd7c003572826c063f90f7e700ae8211823f801d",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.11767.7993f34ee47e (aarch64)",
+      "title": "NixOS Graphical 26.05.11829.a033e66ab94a (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.11767.7993f34ee47e"
+      "version": "26.05.11829.a033e66ab94a"
     },
-    "seen": "2026-10-13T14:19:28+00:00",
-    "version": "26.05.11767.7993f34ee47e"
+    "seen": "2026-10-15T11:38:27+00:00",
+    "version": "26.05.11829.a033e66ab94a"
   },
   "nixos:minimal": {
-    "hash": "9d29b516f47eabf28ce6d17356a00f15daf3c1a267bbe1357d11a6d82dbe1090",
+    "hash": "33fde106059ca2f32b7324618c9f94ba9ca102d65644c0375bd4523c3917db7b",
     "release": {
       "arch": "x86_64",
-      "checksum": "9d29b516f47eabf28ce6d17356a00f15daf3c1a267bbe1357d11a6d82dbe1090",
+      "checksum": "33fde106059ca2f32b7324618c9f94ba9ca102d65644c0375bd4523c3917db7b",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.11767.7993f34ee47e (x86_64)",
+      "title": "NixOS Minimal 26.05.11829.a033e66ab94a (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.11767.7993f34ee47e"
+      "version": "26.05.11829.a033e66ab94a"
     },
-    "seen": "2026-10-13T14:19:27+00:00",
-    "version": "26.05.11767.7993f34ee47e"
+    "seen": "2026-10-15T11:38:26+00:00",
+    "version": "26.05.11829.a033e66ab94a"
   },
   "nixos:minimal:aarch64": {
-    "hash": "978df3c3266ad4c43a65b2d25b728d8f2747ef482ba62b866c2f8026704bd01d",
+    "hash": "dc9593a1db5b1db8e8dc1a7f1b379411b6e9d036f01cec563b3eda677886ddfa",
     "release": {
       "arch": "aarch64",
-      "checksum": "978df3c3266ad4c43a65b2d25b728d8f2747ef482ba62b866c2f8026704bd01d",
+      "checksum": "dc9593a1db5b1db8e8dc1a7f1b379411b6e9d036f01cec563b3eda677886ddfa",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.11767.7993f34ee47e (aarch64)",
+      "title": "NixOS Minimal 26.05.11829.a033e66ab94a (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.11767.7993f34ee47e"
+      "version": "26.05.11829.a033e66ab94a"
     },
-    "seen": "2026-10-13T14:19:27+00:00",
-    "version": "26.05.11767.7993f34ee47e"
+    "seen": "2026-10-15T11:38:26+00:00",
+    "version": "26.05.11829.a033e66ab94a"
   },
   "nobara:gnome": {
     "hash": "47087299d03ecedd67fd3fc6d69803118991caeb26faace9f39429f14ffdb2fd",
@@ -5070,10 +5070,10 @@
     "version": "15.6-710.3"
   },
   "opensuse:microos-dvd": {
-    "hash": "d3d2f5f8256b406565e5512a0e892968b92f403b829038732b468fd528b81c41",
+    "hash": "281c6256af0415f65a1b6bdfd783580d2b780aca35fb32e3fa3391b96efab76f",
     "release": {
       "arch": "x86_64",
-      "checksum": "d3d2f5f8256b406565e5512a0e892968b92f403b829038732b468fd528b81c41",
+      "checksum": "281c6256af0415f65a1b6bdfd783580d2b780aca35fb32e3fa3391b96efab76f",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso",
@@ -5088,16 +5088,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE MicroOS DVD Snapshot20261012 (x86_64)",
+      "title": "openSUSE MicroOS DVD Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "microos-dvd",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:50+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:23+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:microos-dvd:aarch64": {
     "hash": "a42b8b243b42b5799f042eb90840e6a8da74db9b4cd786aeb1f3f61caee1b04e",
@@ -5130,16 +5130,16 @@
     "version": "Snapshot20261011"
   },
   "opensuse:tumbleweed-dvd": {
-    "hash": "288c7cf1c2a8b3257310912c54dc90a7b27f37a09494841006358ae443ab4247",
+    "hash": "dcae88650d8c552b10221839819b477b1dc86e6e14aa138d4e19859f9dcd9c90",
     "release": {
       "arch": "x86_64",
-      "checksum": "288c7cf1c2a8b3257310912c54dc90a7b27f37a09494841006358ae443ab4247",
+      "checksum": "dcae88650d8c552b10221839819b477b1dc86e6e14aa138d4e19859f9dcd9c90",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
       "filename": "openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
-      "info_hash": "fa3c84b4fa397b752a2af871e5ae735c9f762fbc",
-      "magnet_uri": "magnet:?xt=urn:btih:fa3c84b4fa397b752a2af871e5ae735c9f762fbc&dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261012-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
+      "info_hash": "2b36c22412f09b89b93b05eab75bf2a9071def9c",
+      "magnet_uri": "magnet:?xt=urn:btih:2b36c22412f09b89b93b05eab75bf2a9071def9c&dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261013-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5148,16 +5148,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed DVD Snapshot20261012 (x86_64)",
+      "title": "openSUSE Tumbleweed DVD Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": 22990,
       "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent",
       "variant": "tumbleweed-dvd",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:47+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:20+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:tumbleweed-dvd:aarch64": {
     "hash": "3b3f1e57ce1ad2bcfa9406bb546ad1a3bf9b1400c492b02cb49e578dedc3ef06",
@@ -5190,10 +5190,10 @@
     "version": "Snapshot20261011"
   },
   "opensuse:tumbleweed-gnome-live": {
-    "hash": "c73484933a222cdb2cc02111d4e6fa202fa0ea38a6af441c6c3f0031417f99ef",
+    "hash": "f34dfa1ef3882e59bbaaf86a414606d2e6e0ae654e39c0ff85bc0dbbce7ff978",
     "release": {
       "arch": "x86_64",
-      "checksum": "c73484933a222cdb2cc02111d4e6fa202fa0ea38a6af441c6c3f0031417f99ef",
+      "checksum": "f34dfa1ef3882e59bbaaf86a414606d2e6e0ae654e39c0ff85bc0dbbce7ff978",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso",
@@ -5208,16 +5208,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed GNOME Live Snapshot20261012 (x86_64)",
+      "title": "openSUSE Tumbleweed GNOME Live Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-gnome-live",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:51+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:24+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:tumbleweed-gnome-live:aarch64": {
     "hash": "45a222ae075fbcd25b8281073ecb06fc37528267a96209ce66a8ff61139dada0",
@@ -5250,10 +5250,10 @@
     "version": "Snapshot20261011"
   },
   "opensuse:tumbleweed-kde-live": {
-    "hash": "c918e01dbb768c3bf43b81628d54f10eb6f1e735062735cc97619152c5d84761",
+    "hash": "44f1e4a886dd27104aabc0344bb2af36414b866d771ded5eee0a74ee0db2ace4",
     "release": {
       "arch": "x86_64",
-      "checksum": "c918e01dbb768c3bf43b81628d54f10eb6f1e735062735cc97619152c5d84761",
+      "checksum": "44f1e4a886dd27104aabc0344bb2af36414b866d771ded5eee0a74ee0db2ace4",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso",
@@ -5268,16 +5268,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed KDE Live Snapshot20261012 (x86_64)",
+      "title": "openSUSE Tumbleweed KDE Live Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-kde-live",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:52+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:25+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:tumbleweed-kde-live:aarch64": {
     "hash": "d6de28a35f9d7457c9c2e6a897e5a2889d0526983d26cd90db4fa52de0a9eb23",
@@ -5310,16 +5310,16 @@
     "version": "Snapshot20261011"
   },
   "opensuse:tumbleweed-net": {
-    "hash": "c7f4ac0c0efb41d1c928cc3958e3e377b1acca159518aa28e11fd85388fbe601",
+    "hash": "0f56ceed34d63c3ebaa36fa78e32cfb4c08d60ca6de09b1d2982e3a3c3164ec2",
     "release": {
       "arch": "x86_64",
-      "checksum": "c7f4ac0c0efb41d1c928cc3958e3e377b1acca159518aa28e11fd85388fbe601",
+      "checksum": "0f56ceed34d63c3ebaa36fa78e32cfb4c08d60ca6de09b1d2982e3a3c3164ec2",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
       "filename": "openSUSE-Tumbleweed-NET-x86_64-Current.iso",
-      "info_hash": "2dca00149d8a53a6d62617629aa4a6e5f4916378",
-      "magnet_uri": "magnet:?xt=urn:btih:2dca00149d8a53a6d62617629aa4a6e5f4916378&dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261012-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
+      "info_hash": "4652bf0510425ed350aeb12aa87cba72e1270ce0",
+      "magnet_uri": "magnet:?xt=urn:btih:4652bf0510425ed350aeb12aa87cba72e1270ce0&dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261013-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5328,16 +5328,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed NET Snapshot20261012 (x86_64)",
+      "title": "openSUSE Tumbleweed NET Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": 2628,
       "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent",
       "variant": "tumbleweed-net",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:48+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:22+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:tumbleweed-net:aarch64": {
     "hash": "4e133e6d652882ed13f2dd8eff27e2ed8527ca225960e6089b6d9adc4e22e215",
@@ -5370,10 +5370,10 @@
     "version": "Snapshot20261011"
   },
   "opensuse:tumbleweed-rescue-cd": {
-    "hash": "308b7826b665ebe21e1585b01a5c4c7b43205182c0d012a1999ab41083ee1d8c",
+    "hash": "c2caa1687708a07bf717eceed979468ccdad566e89b039b77c3f415885289bc7",
     "release": {
       "arch": "x86_64",
-      "checksum": "308b7826b665ebe21e1585b01a5c4c7b43205182c0d012a1999ab41083ee1d8c",
+      "checksum": "c2caa1687708a07bf717eceed979468ccdad566e89b039b77c3f415885289bc7",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso",
@@ -5388,16 +5388,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed Rescue CD Snapshot20261012 (x86_64)",
+      "title": "openSUSE Tumbleweed Rescue CD Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-rescue-cd",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:54+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:27+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:tumbleweed-rescue-cd:aarch64": {
     "hash": "255351970f6a460d8c59582f88cf29178864b6b5c9c4c27b493f6b723828858f",
@@ -5430,10 +5430,10 @@
     "version": "Snapshot20261011"
   },
   "opensuse:tumbleweed-xfce-live": {
-    "hash": "2a48b0ed58fc66965026d83ec384461ddd79163829b781c4bd891db1c80000a0",
+    "hash": "8ce28611fb36932381882ea17cfa05c7272f26457a27d722f086ebaf513de280",
     "release": {
       "arch": "x86_64",
-      "checksum": "2a48b0ed58fc66965026d83ec384461ddd79163829b781c4bd891db1c80000a0",
+      "checksum": "8ce28611fb36932381882ea17cfa05c7272f26457a27d722f086ebaf513de280",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso",
@@ -5448,16 +5448,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed XFCE Live Snapshot20261012 (x86_64)",
+      "title": "openSUSE Tumbleweed XFCE Live Snapshot20261013 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-xfce-live",
-      "version": "Snapshot20261012"
+      "version": "Snapshot20261013"
     },
-    "seen": "2026-10-14T12:00:53+00:00",
-    "version": "Snapshot20261012"
+    "seen": "2026-10-15T11:36:26+00:00",
+    "version": "Snapshot20261013"
   },
   "opensuse:tumbleweed-xfce-live:aarch64": {
     "hash": "48f3a03b44d64bc40944542018a10bb41e013522c4f99cb201c83679035c072d",
@@ -6480,34 +6480,34 @@
     "version": "25.10.7"
   },
   "ubuntu-budgie:desktop-latest": {
-    "hash": "a0a712266e536246786a4e29f6d0d7328326b9b4b54f746202a8575208c23921",
+    "hash": "b9b278b0bd6afe65ceaf75c0e9af44aaab2682bb01513dbae4ec0661fb3a992d",
     "release": {
       "arch": "x86_64",
-      "checksum": "a0a712266e536246786a4e29f6d0d7328326b9b4b54f746202a8575208c23921",
+      "checksum": "b9b278b0bd6afe65ceaf75c0e9af44aaab2682bb01513dbae4ec0661fb3a992d",
       "checksum_algo": "sha256",
       "distro": "ubuntu-budgie",
-      "download_url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/ubuntu-budgie-26.04.1-desktop-amd64.iso",
-      "filename": "ubuntu-budgie-26.04.1-desktop-amd64.iso",
-      "info_hash": "5a3971c963393a0d6a93106fa16c645843fc554d",
-      "magnet_uri": "magnet:?xt=urn:btih:5a3971c963393a0d6a93106fa16c645843fc554d&dn=ubuntu-budgie-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.10/release/ubuntu-budgie-26.10-desktop-amd64.iso",
+      "filename": "ubuntu-budgie-26.10-desktop-amd64.iso",
+      "info_hash": "8f5425cc22bfa39a0e20d4812717a688f8762534",
+      "magnet_uri": "magnet:?xt=urn:btih:8f5425cc22bfa39a0e20d4812717a688f8762534&dn=ubuntu-budgie-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntubudgie.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Budgie latest 26.04.1 (x86_64)",
+      "title": "Ubuntu Budgie latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 315208,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.04.1/release/ubuntu-budgie-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 319806,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-budgie/releases/26.10/release/ubuntu-budgie-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:49:00+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:35:58+00:00",
+    "version": "26.10"
   },
   "ubuntu-budgie:desktop-lts": {
     "hash": "a0a712266e536246786a4e29f6d0d7328326b9b4b54f746202a8575208c23921",
@@ -6540,34 +6540,34 @@
     "version": "26.04.1"
   },
   "ubuntu-mate:desktop-latest": {
-    "hash": "f9e441110886e79a2dfce9f7596f4e0d6479f115dd8792670681743e5917694f",
+    "hash": "383a61f97daa07bcc4f0081c99e39c6cfd2d5d4ddaceaa27330c2144b128044e",
     "release": {
       "arch": "x86_64",
-      "checksum": "f9e441110886e79a2dfce9f7596f4e0d6479f115dd8792670681743e5917694f",
+      "checksum": "383a61f97daa07bcc4f0081c99e39c6cfd2d5d4ddaceaa27330c2144b128044e",
       "checksum_algo": "sha256",
       "distro": "ubuntu-mate",
-      "download_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso",
-      "filename": "ubuntu-mate-25.10-desktop-amd64.iso",
-      "info_hash": "b91d49b1313f5aa27f2b3a9dc48af8248f40908e",
-      "magnet_uri": "magnet:?xt=urn:btih:b91d49b1313f5aa27f2b3a9dc48af8248f40908e&dn=ubuntu-mate-25.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/ubuntu-mate-26.10-desktop-amd64.iso",
+      "filename": "ubuntu-mate-26.10-desktop-amd64.iso",
+      "info_hash": "c7df73292f59039396f6e52bac9400723c54f09e",
+      "magnet_uri": "magnet:?xt=urn:btih:c7df73292f59039396f6e52bac9400723c54f09e&dn=ubuntu-mate-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntu-mate.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu MATE latest 25.10 (x86_64)",
+      "title": "Ubuntu MATE latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 291842,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/release/ubuntu-mate-25.10-desktop-amd64.iso.torrent",
+      "torrent_size": 333002,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-mate/releases/26.10/release/ubuntu-mate-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "25.10"
+      "version": "26.10"
     },
-    "seen": "2026-07-17T04:10:38+00:00",
-    "version": "25.10"
+    "seen": "2026-10-15T11:35:56+00:00",
+    "version": "26.10"
   },
   "ubuntu-mate:desktop-lts": {
     "hash": "60430d35da5c0bdb3d84a2fdf4052495256fc26ec300d7cd5a9933a534f0422c",
@@ -6600,34 +6600,34 @@
     "version": "24.04.5"
   },
   "ubuntu-unity:desktop-latest": {
-    "hash": "b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0",
+    "hash": "9c0b16093b2a77e0f6927bcaea2dbb3455f1b803e604156f9c393e2daf32cdf3",
     "release": {
       "arch": "x86_64",
-      "checksum": "b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0",
+      "checksum": "9c0b16093b2a77e0f6927bcaea2dbb3455f1b803e604156f9c393e2daf32cdf3",
       "checksum_algo": "sha256",
       "distro": "ubuntu-unity",
-      "download_url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso",
-      "filename": "ubuntu-unity-26.04-desktop-amd64.iso",
-      "info_hash": "a5283cf4e0f3aa287ed45e4945e67d28eac07de8",
-      "magnet_uri": "magnet:?xt=urn:btih:a5283cf4e0f3aa287ed45e4945e67d28eac07de8&dn=ubuntu-unity-26.04-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.10/release/ubuntu-unity-26.10-desktop-amd64.iso",
+      "filename": "ubuntu-unity-26.10-desktop-amd64.iso",
+      "info_hash": "6658692b845d7c1ba695ee658131d8060b3f7ddc",
+      "magnet_uri": "magnet:?xt=urn:btih:6658692b845d7c1ba695ee658131d8060b3f7ddc&dn=ubuntu-unity-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntuunity.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Unity latest 26.04 (x86_64)",
+      "title": "Ubuntu Unity latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 319924,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.04/release/ubuntu-unity-26.04-desktop-amd64.iso.torrent",
+      "torrent_size": 357344,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntu-unity/releases/26.10/release/ubuntu-unity-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04"
+      "version": "26.10"
     },
-    "seen": "2026-07-17T04:10:49+00:00",
-    "version": "26.04"
+    "seen": "2026-10-15T11:36:06+00:00",
+    "version": "26.10"
   },
   "ubuntu-unity:desktop-lts": {
     "hash": "b3c58a21a6936f709b7698d0fbd279489c174488dbba64ad837832d28d8bd5b0",
@@ -6660,34 +6660,34 @@
     "version": "26.04"
   },
   "ubuntu:desktop-latest": {
-    "hash": "601e30fbf5d97759367c632e2c33630665039b7e2158fd068403da3ccf1bda1f",
+    "hash": "19efc38dde60055b192526bfbba075ac1da23992f1b006ddd41cbd30db0d9b0c",
     "release": {
       "arch": "x86_64",
-      "checksum": "601e30fbf5d97759367c632e2c33630665039b7e2158fd068403da3ccf1bda1f",
+      "checksum": "19efc38dde60055b192526bfbba075ac1da23992f1b006ddd41cbd30db0d9b0c",
       "checksum_algo": "sha256",
       "distro": "ubuntu",
-      "download_url": "https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-desktop-amd64.iso",
-      "filename": "ubuntu-26.04.1-desktop-amd64.iso",
-      "info_hash": "5b1e0d988fc7a0c9e99bd852071681a59974b39f",
-      "magnet_uri": "magnet:?xt=urn:btih:5b1e0d988fc7a0c9e99bd852071681a59974b39f&dn=ubuntu-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce",
+      "download_url": "https://releases.ubuntu.com/26.10/ubuntu-26.10-desktop-amd64.iso",
+      "filename": "ubuntu-26.10-desktop-amd64.iso",
+      "info_hash": "def7006974f228ca39c44c806a0fb839a0469c97",
+      "magnet_uri": "magnet:?xt=urn:btih:def7006974f228ca39c44c806a0fb839a0469c97&dn=ubuntu-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntu.com/download",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg",
+      "signature_url": "https://releases.ubuntu.com/26.10/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Desktop latest 26.04.1 (x86_64)",
+      "title": "Ubuntu Desktop latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 494938,
-      "torrent_url": "https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 505076,
+      "torrent_url": "https://releases.ubuntu.com/26.10/ubuntu-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:48:44+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:35:48+00:00",
+    "version": "26.10"
   },
   "ubuntu:desktop-latest:aarch64": {
     "hash": "c54d196489d3c867975fb3bbb72ca52ec2e137456e305481f81096304e4d2517",
@@ -6780,34 +6780,34 @@
     "version": "26.04.1"
   },
   "ubuntu:live-server-latest": {
-    "hash": "cc8a95cde20f6ced61a322420de00f10cc3c90ced545daa46cb9c1a117f1d927",
+    "hash": "c8e9d797f718404bdb1e282f8466fe6f5f2e9f03c814bdf11b31326d45200929",
     "release": {
       "arch": "x86_64",
-      "checksum": "cc8a95cde20f6ced61a322420de00f10cc3c90ced545daa46cb9c1a117f1d927",
+      "checksum": "c8e9d797f718404bdb1e282f8466fe6f5f2e9f03c814bdf11b31326d45200929",
       "checksum_algo": "sha256",
       "distro": "ubuntu",
-      "download_url": "https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-live-server-amd64.iso",
-      "filename": "ubuntu-26.04.1-live-server-amd64.iso",
-      "info_hash": "e4f19cf636409b72571766c2ae89c98fc21a109d",
-      "magnet_uri": "magnet:?xt=urn:btih:e4f19cf636409b72571766c2ae89c98fc21a109d&dn=ubuntu-26.04.1-live-server-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce",
+      "download_url": "https://releases.ubuntu.com/26.10/ubuntu-26.10-live-server-amd64.iso",
+      "filename": "ubuntu-26.10-live-server-amd64.iso",
+      "info_hash": "d38bff48ae4427cc596c56ceb713947e1e502220",
+      "magnet_uri": "magnet:?xt=urn:btih:d38bff48ae4427cc596c56ceb713947e1e502220&dn=ubuntu-26.10-live-server-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntu.com/download",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg",
+      "signature_url": "https://releases.ubuntu.com/26.10/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Server latest 26.04.1 (x86_64)",
+      "title": "Ubuntu Server latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 223742,
-      "torrent_url": "https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-live-server-amd64.iso.torrent",
+      "torrent_size": 221420,
+      "torrent_url": "https://releases.ubuntu.com/26.10/ubuntu-26.10-live-server-amd64.iso.torrent",
       "variant": "live-server-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:48:48+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:35:48+00:00",
+    "version": "26.10"
   },
   "ubuntu:live-server-latest:aarch64": {
     "hash": "af78753c94b924c85c4964c670692a853f7c80299a4064e317edad95462e3168",
@@ -6900,34 +6900,34 @@
     "version": "26.04.1"
   },
   "ubuntucinnamon:desktop-latest": {
-    "hash": "ceb8156f6aabf597da4a98a9794a319d765b39c888a5200ae88f3915d22c8371",
+    "hash": "e0fe999fa11f666df7e9da38c4f90eae85cc8a01416af13e81ad81a22cbc6044",
     "release": {
       "arch": "x86_64",
-      "checksum": "ceb8156f6aabf597da4a98a9794a319d765b39c888a5200ae88f3915d22c8371",
+      "checksum": "e0fe999fa11f666df7e9da38c4f90eae85cc8a01416af13e81ad81a22cbc6044",
       "checksum_algo": "sha256",
       "distro": "ubuntucinnamon",
-      "download_url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/ubuntucinnamon-26.04.1-desktop-amd64.iso",
-      "filename": "ubuntucinnamon-26.04.1-desktop-amd64.iso",
-      "info_hash": "7e0571a502b7f2f78cdb506715a18b4e5c9ca7c7",
-      "magnet_uri": "magnet:?xt=urn:btih:7e0571a502b7f2f78cdb506715a18b4e5c9ca7c7&dn=ubuntucinnamon-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.10/release/ubuntucinnamon-26.10-desktop-amd64.iso",
+      "filename": "ubuntucinnamon-26.10-desktop-amd64.iso",
+      "info_hash": "8afbef2b07f25e2bfd0fc15f0368cb32f8851c22",
+      "magnet_uri": "magnet:?xt=urn:btih:8afbef2b07f25e2bfd0fc15f0368cb32f8851c22&dn=ubuntucinnamon-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntucinnamon.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Cinnamon latest 26.04.1 (x86_64)",
+      "title": "Ubuntu Cinnamon latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 432651,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.04.1/release/ubuntucinnamon-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 373949,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntucinnamon/releases/26.10/release/ubuntucinnamon-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:49:15+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:36:07+00:00",
+    "version": "26.10"
   },
   "ubuntucinnamon:desktop-lts": {
     "hash": "ceb8156f6aabf597da4a98a9794a319d765b39c888a5200ae88f3915d22c8371",
@@ -6960,34 +6960,34 @@
     "version": "26.04.1"
   },
   "ubuntukylin:desktop-latest": {
-    "hash": "53d34c1255a9ba3e83c1e6e69619e494de2ac10e7d01559fd61fb822a25c645e",
+    "hash": "f86a243f71a23a37baa4e5372119ab6fc0adc264db77378ddeef4337ac3e6f0c",
     "release": {
       "arch": "x86_64",
-      "checksum": "53d34c1255a9ba3e83c1e6e69619e494de2ac10e7d01559fd61fb822a25c645e",
+      "checksum": "f86a243f71a23a37baa4e5372119ab6fc0adc264db77378ddeef4337ac3e6f0c",
       "checksum_algo": "sha256",
       "distro": "ubuntukylin",
-      "download_url": "https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/ubuntukylin-26.04.1-desktop-amd64.iso",
-      "filename": "ubuntukylin-26.04.1-desktop-amd64.iso",
-      "info_hash": "772efd8d8b6add315d9271baaa253cf695ff7288",
-      "magnet_uri": "magnet:?xt=urn:btih:772efd8d8b6add315d9271baaa253cf695ff7288&dn=ubuntukylin-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntukylin/releases/26.10/release/ubuntukylin-26.10-desktop-amd64.iso",
+      "filename": "ubuntukylin-26.10-desktop-amd64.iso",
+      "info_hash": "73e9934b711ce5ed6426d54f505f89f0613e63d1",
+      "magnet_uri": "magnet:?xt=urn:btih:73e9934b711ce5ed6426d54f505f89f0613e63d1&dn=ubuntukylin-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://www.ubuntukylin.com/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntukylin/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Kylin latest 26.04.1 (x86_64)",
+      "title": "Ubuntu Kylin latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 434705,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntukylin/releases/26.04.1/release/ubuntukylin-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 427503,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntukylin/releases/26.10/release/ubuntukylin-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:49:06+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:36:02+00:00",
+    "version": "26.10"
   },
   "ubuntukylin:desktop-lts": {
     "hash": "53d34c1255a9ba3e83c1e6e69619e494de2ac10e7d01559fd61fb822a25c645e",
@@ -7020,34 +7020,34 @@
     "version": "26.04.1"
   },
   "ubuntustudio:desktop-latest": {
-    "hash": "2b25d06203c8a2f60da23e20e3afd1fa400f8ff8104fd074c1b7e49fc3768084",
+    "hash": "00d1fb881501101b9f7e9fe5b22c5473f6c96fa4bb2b69f9c00e9ee69f537fe7",
     "release": {
       "arch": "x86_64",
-      "checksum": "2b25d06203c8a2f60da23e20e3afd1fa400f8ff8104fd074c1b7e49fc3768084",
+      "checksum": "00d1fb881501101b9f7e9fe5b22c5473f6c96fa4bb2b69f9c00e9ee69f537fe7",
       "checksum_algo": "sha256",
       "distro": "ubuntustudio",
-      "download_url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/ubuntustudio-26.04.1-desktop-amd64.iso",
-      "filename": "ubuntustudio-26.04.1-desktop-amd64.iso",
-      "info_hash": "d738c3042effc632f5dc224c1c319d753ab8fee1",
-      "magnet_uri": "magnet:?xt=urn:btih:d738c3042effc632f5dc224c1c319d753ab8fee1&dn=ubuntustudio-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.10/release/ubuntustudio-26.10-desktop-amd64.iso",
+      "filename": "ubuntustudio-26.10-desktop-amd64.iso",
+      "info_hash": "f3cd8b82a4f96c36da018a503ea1f09fd9bdb7a1",
+      "magnet_uri": "magnet:?xt=urn:btih:f3cd8b82a4f96c36da018a503ea1f09fd9bdb7a1&dn=ubuntustudio-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://ubuntustudio.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Ubuntu Studio latest 26.04.1 (x86_64)",
+      "title": "Ubuntu Studio latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 544047,
-      "torrent_url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.04.1/release/ubuntustudio-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 527125,
+      "torrent_url": "https://cdimage.ubuntu.com/ubuntustudio/releases/26.10/release/ubuntustudio-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:49:03+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:36:00+00:00",
+    "version": "26.10"
   },
   "ubuntustudio:desktop-lts": {
     "hash": "2b25d06203c8a2f60da23e20e3afd1fa400f8ff8104fd074c1b7e49fc3768084",
@@ -7380,34 +7380,34 @@
     "version": "8.3.0-20260806"
   },
   "xubuntu:desktop-latest": {
-    "hash": "0cd5160f72ae6b7a26be7a29248b60cbd579b9e6aa8fbd274e95264da0ade43d",
+    "hash": "8f5662cf26f320a8a2cda807f16b4ba66449cf9846946a47fc2e9aa6d1a56690",
     "release": {
       "arch": "x86_64",
-      "checksum": "0cd5160f72ae6b7a26be7a29248b60cbd579b9e6aa8fbd274e95264da0ade43d",
+      "checksum": "8f5662cf26f320a8a2cda807f16b4ba66449cf9846946a47fc2e9aa6d1a56690",
       "checksum_algo": "sha256",
       "distro": "xubuntu",
-      "download_url": "https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/xubuntu-26.04.1-desktop-amd64.iso",
-      "filename": "xubuntu-26.04.1-desktop-amd64.iso",
-      "info_hash": "f27a4e4455123e71d411b3941a7d68dfb098354f",
-      "magnet_uri": "magnet:?xt=urn:btih:f27a4e4455123e71d411b3941a7d68dfb098354f&dn=xubuntu-26.04.1-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
+      "download_url": "https://cdimage.ubuntu.com/xubuntu/releases/26.10/release/xubuntu-26.10-desktop-amd64.iso",
+      "filename": "xubuntu-26.10-desktop-amd64.iso",
+      "info_hash": "543c7712b8188b06bffa72f780307f5a3cb4e200",
+      "magnet_uri": "magnet:?xt=urn:btih:543c7712b8188b06bffa72f780307f5a3cb4e200&dn=xubuntu-26.10-desktop-amd64.iso&tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce",
       "notes": null,
       "page_url": "https://xubuntu.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.ubuntu.com/xubuntu/releases/26.10/release/SHA256SUMS.gpg",
       "signing_key_fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092",
       "size": null,
-      "title": "Xubuntu latest 26.04.1 (x86_64)",
+      "title": "Xubuntu latest 26.10 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 395956,
-      "torrent_url": "https://cdimage.ubuntu.com/xubuntu/releases/26.04.1/release/xubuntu-26.04.1-desktop-amd64.iso.torrent",
+      "torrent_size": 403254,
+      "torrent_url": "https://cdimage.ubuntu.com/xubuntu/releases/26.10/release/xubuntu-26.10-desktop-amd64.iso.torrent",
       "variant": "desktop-latest",
-      "version": "26.04.1"
+      "version": "26.10"
     },
-    "seen": "2026-08-28T18:48:53+00:00",
-    "version": "26.04.1"
+    "seen": "2026-10-15T11:35:51+00:00",
+    "version": "26.10"
   },
   "xubuntu:desktop-lts": {
     "hash": "0cd5160f72ae6b7a26be7a29248b60cbd579b9e6aa8fbd274e95264da0ade43d",
