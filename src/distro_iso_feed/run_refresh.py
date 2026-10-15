@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import logging
+import re
 import sys
 from collections.abc import Sequence
 from pathlib import Path
@@ -20,6 +21,7 @@ from .client import Client
 from .config import load
 from .escalate import Failure, Pin, Report, SigningFailure
 from .gpgverify import gpg_available
+from .listers import _HREF
 from .models import Release, Variant
 from .signing import REJECTED, VERIFIED, SigningOutcome, pinned_fingerprint, verify_signing_key
 from .state import Record, State
@@ -55,6 +57,25 @@ endpoint_of = escalate.endpoint_of
 # "did this exception mean the mirror or the config?" is exactly how they drift.
 _exc_class = escalate.exc_class
 
+_TITLE = re.compile(r"<title[^>]*>(.*?)</title>", re.IGNORECASE | re.DOTALL)
+
+
+def _served(r) -> str:
+    """Name the page a listing that came back empty was actually served.
+
+    A 200 alone cannot tell an autoindex that lost its entries from a placeholder, an interstitial,
+    or a redirect that landed somewhere unexpected -- and those have opposite fixes. Where the fetch
+    landed, its size, its title and the first hrefs the listers would have read can. Without this,
+    `ubuntu:*:aarch64`'s 2026-10-14 failure at `cdimage.ubuntu.com/releases/` stayed undiagnosable:
+    it resolved from a laptop hours later, and nothing recorded what the runner had been given.
+    """
+    parts = [f"{len(r.content)} bytes"]
+    if (m := _TITLE.search(r.text)) and (title := " ".join(m.group(1).split())[:80]):
+        parts.append(f'title "{title}"')
+    links = _HREF.findall(r.text)[:5]
+    parts.append("links: " + (", ".join(links) if links else "none"))
+    return f"served {r.url} ({'; '.join(parts)})"
+
 
 def diagnose(
     strategy,
@@ -88,6 +109,7 @@ def diagnose(
         )  # fmt: skip
 
     mark = len(client.trace)  # only the outcomes of THIS diagnose's fetch, not the whole run
+    before = client.last  # likewise: a page an earlier fetch was served is not this endpoint's
     try:
         candidates = strategy.candidates(variant.distro, params, client)
     except Exception as exc:
@@ -101,8 +123,9 @@ def diagnose(
     if not candidates:
         if fclass == escalate.TRANSIENT:
             return mk(f"listing unreachable ({status}): {endpoint}", "unreachable", fclass, status)
+        served = f"; {_served(client.last)}" if client.last is not before else ""
         return mk(
-            f"listing empty, endpoint reachable ({status}): {endpoint}",
+            f"listing empty, endpoint reachable ({status}): {endpoint}{served}",
             "reachable-empty", escalate.STRUCTURAL, status, names,
         )  # fmt: skip
 

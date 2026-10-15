@@ -80,6 +80,10 @@ class Client:
         # survives -- `run_refresh.diagnose` reads it to tell a structural break (reachable, wrong
         # content) from a transient one (unreachable). In-memory only; never persisted.
         self.trace: list[tuple[str, int | str]] = []
+        # The most recent successful response. `trace` keeps only the status, which cannot tell an
+        # autoindex from a placeholder page; `diagnose` reads this to say what a 200 that listed
+        # nothing actually *was*. Overwritten on every success; never cleared.
+        self.last: Response | None = None
         # netloc -> fully-failed (transient) fetches this run. Cumulative, NOT consecutive: during
         # the incident, successes were interleaved among the failures (an index here, a torrent
         # there), so a consecutive counter would have reset constantly and never tripped.
@@ -142,7 +146,8 @@ class Client:
                 log.info("GET %s -> %s", url, r.status_code)
                 return None
 
-            return Response(str(r.url), r.status_code, r.content)
+            self.last = Response(str(r.url), r.status_code, r.content)
+            return self.last
 
         # Every attempt failed transiently (network error, or a retry-status that never cleared).
         self._host_failures[host] += 1

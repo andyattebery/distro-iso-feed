@@ -39,7 +39,7 @@ class FakeClient:
 
     NOT a `Client` subclass -- an independent duck-type, so anything added to the real client has
     to be mirrored here or every strategy test dies on AttributeError. Mirrored so far: the
-    per-host failure budget and `get_cached`.
+    per-host failure budget, `get_cached` and `last`.
     """
 
     def __init__(
@@ -56,6 +56,7 @@ class FakeClient:
         self.requested: list[str] = []
         self.headers_seen: list[dict[str, str] | None] = []
         self.trace: list[tuple[str, int | str]] = []
+        self.last: FakeResponse | None = None
         self._host_failures: Counter[str] = Counter()
         self._cache: dict[str, FakeResponse] = {}
 
@@ -78,7 +79,8 @@ class FakeClient:
             return None
         if url in self.pages:
             self.trace.append((url, 200))
-            return FakeResponse(url, self.pages[url])
+            self.last = FakeResponse(url, self.pages[url])
+            return self.last
         self.trace.append((url, 404))  # unmapped -> 404, like the real world
         return None
 

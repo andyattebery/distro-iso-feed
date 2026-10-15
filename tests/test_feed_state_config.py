@@ -487,6 +487,55 @@ def test_diagnose_classifies_and_shows_what_upstream_lists_now():
     assert bad_token.failure_class == "structural" and "extracted no token" in bad_token.reason
 
 
+def test_reachable_empty_names_the_page_it_was_served():
+    """On 2026-10-14 and -15 every `ubuntu:*:aarch64` variant failed `reachable-empty` (200) at
+    `cdimage.ubuntu.com/releases/` from the runner, and all of them resolved from a laptop hours
+    later. The issue said only "endpoint listed nothing", so what the runner was actually served --
+    the one fact that tells an upstream blip from a page only the runner gets -- was never recorded.
+    """
+    from conftest import FakeClient
+    from distro_iso_feed.models import Variant
+    from distro_iso_feed.run_refresh import diagnose
+
+    s = REGISTRY["directory_index"]()
+    v = Variant(distro="x", name="y", strategy="directory_index", params={})
+    parent = "https://cdimage.example/releases/"
+    final = "https://cdimage.example/ubuntu/releases/"
+    params = {
+        "version_dir": parent,
+        "index": "{version}/release/",
+        "match": r"^ubuntu-[0-9.]+-desktop-arm64\.iso$",
+    }
+    page = (
+        "<html><head><title>\n  Please wait\n</title></head>"
+        '<body><a href="?C=N;O=D">n</a><a href="/ubuntu/">u</a><a href="README">r</a></body></html>'
+    )
+
+    class Redirected(FakeClient):
+        """The real client follows the 301; `Response.url` is where it landed."""
+
+        def get(self, url, headers=None):
+            r = super().get(url, headers)
+            if r is not None and url == parent:
+                r.url = final
+            return r
+
+    f = diagnose(s, v, params, Redirected({parent: page}))
+    assert f.cause == "reachable-empty" and f.status == 200
+    assert final in f.reason  # where the redirect landed, not just the configured endpoint
+    assert f"{len(page)} bytes" in f.reason
+    assert '"Please wait"' in f.reason  # title, whitespace collapsed
+    assert "/ubuntu/, README" in f.reason  # the hrefs the lister saw (`?`-links never are)
+
+    # A 404 serves no page, so there is nothing to name -- and a page some *earlier* fetch on the
+    # same client was served must not be passed off as this endpoint's.
+    client = FakeClient({"https://elsewhere.example/": "<title>Unrelated</title>"})
+    client.get("https://elsewhere.example/")
+    gone = diagnose(s, v, params, client)
+    assert gone.cause == "reachable-empty" and gone.status == 404
+    assert "served" not in gone.reason and "Unrelated" not in gone.reason
+
+
 def test_diagnose_does_not_escalate_a_blip_the_re_listing_already_healed():
     """`diagnose` re-fetches, so its own trace is the *retry's*, not the failure's. On 2026-08-28
     `debian:netinst` lost three tries to `Network is unreachable`, re-listed cleanly 3s later, and
