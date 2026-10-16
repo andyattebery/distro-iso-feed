@@ -4,14 +4,26 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Thu, 15 Oct 2026 11:38:29 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 11:32:14 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
     <item>
-      <title>Bazzite NVIDIA Open unstable-45.20261015.2 (x86_64)</title>
+      <title>Memtest86+ 9.00 (x86_64)</title>
+      <link>https://www.memtest.org/download/v9.00/mt86plus_9.00_x86_64.iso.zip</link>
+      <guid isPermaLink="false">memtest:iso:9.00</guid>
+      <pubDate>Fri, 16 Oct 2026 11:32:14 +0000</pubDate>
+      <description>Memtest86+ 9.00 (x86_64)
+Filename: mt86plus_9.00_x86_64.iso.zip
+sha256: 55d378c0d7d2e1a99edb6a1ff4bd5c78c179801b1f7cfe5893786c397bc19702
+Verify: checksum</description>
+      <enclosure url="https://www.memtest.org/download/v9.00/mt86plus_9.00_x86_64.iso.zip" type="application/zip" length="0" />
+      <category>memtest</category>
+    </item>
+    <item>
+      <title>Bazzite NVIDIA Open unstable-45.20261016 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:unstable-45.20261015.2</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:29 +0000</pubDate>
-      <description>Bazzite NVIDIA Open unstable-45.20261015.2 (x86_64)
+      <guid isPermaLink="false">bazzite:nvidia-open:unstable-45.20261016</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:44 +0000</pubDate>
+      <description>Bazzite NVIDIA Open unstable-45.20261016 (x86_64)
 Filename: bazzite-nvidia-open-stable-amd64.iso
 sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
 Verify: checksum</description>
@@ -19,11 +31,11 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>Bazzite Desktop unstable-45.20261015.2 (x86_64)</title>
+      <title>Bazzite Desktop unstable-45.20261016 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:unstable-45.20261015.2</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:28 +0000</pubDate>
-      <description>Bazzite Desktop unstable-45.20261015.2 (x86_64)
+      <guid isPermaLink="false">bazzite:desktop:unstable-45.20261016</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:43 +0000</pubDate>
+      <description>Bazzite Desktop unstable-45.20261016 (x86_64)
 Filename: bazzite-stable-amd64.iso
 sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
 Verify: checksum</description>
@@ -31,11 +43,11 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>Bazzite Deck unstable-45.20261015.2 (x86_64)</title>
+      <title>Bazzite Deck unstable-45.20261016 (x86_64)</title>
       <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:unstable-45.20261015.2</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:28 +0000</pubDate>
-      <description>Bazzite Deck unstable-45.20261015.2 (x86_64)
+      <guid isPermaLink="false">bazzite:deck:unstable-45.20261016</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:43 +0000</pubDate>
+      <description>Bazzite Deck unstable-45.20261016 (x86_64)
 Filename: bazzite-deck-stable-amd64.iso
 sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
 Verify: checksum</description>
@@ -43,61 +55,61 @@ Verify: checksum</description>
       <category>bazzite</category>
     </item>
     <item>
-      <title>NixOS Graphical 26.05.11829.a033e66ab94a (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.11829.a033e66ab94a</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:27 +0000</pubDate>
-      <description>NixOS Graphical 26.05.11829.a033e66ab94a (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 43210837c21b49ebadfafeacbd7c003572826c063f90f7e700ae8211823f801d
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.11829.a033e66ab94a (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.11829.a033e66ab94a</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:27 +0000</pubDate>
-      <description>NixOS Graphical 26.05.11829.a033e66ab94a (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: 81ec93d823a7ad40f58b14dfcf43de5d794a3aa956564301fa5fcdbe68459f88
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.11829.a033e66ab94a (aarch64)</title>
+      <title>NixOS Minimal 26.05.11985.26f4107e47e3 (aarch64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.11829.a033e66ab94a</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:26 +0000</pubDate>
-      <description>NixOS Minimal 26.05.11829.a033e66ab94a (aarch64)
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.11985.26f4107e47e3</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:42 +0000</pubDate>
+      <description>NixOS Minimal 26.05.11985.26f4107e47e3 (aarch64)
 Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: dc9593a1db5b1db8e8dc1a7f1b379411b6e9d036f01cec563b3eda677886ddfa
+sha256: 0d599f903f438a2e3269afa53b3712c18da4f8dd806092a23414962a8db6ac28
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
     </item>
     <item>
-      <title>NixOS Minimal 26.05.11829.a033e66ab94a (x86_64)</title>
+      <title>NixOS Minimal 26.05.11985.26f4107e47e3 (x86_64)</title>
       <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.11829.a033e66ab94a</guid>
-      <pubDate>Thu, 15 Oct 2026 11:38:26 +0000</pubDate>
-      <description>NixOS Minimal 26.05.11829.a033e66ab94a (x86_64)
+      <guid isPermaLink="false">nixos:minimal:26.05.11985.26f4107e47e3</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:42 +0000</pubDate>
+      <description>NixOS Minimal 26.05.11985.26f4107e47e3 (x86_64)
 Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 33fde106059ca2f32b7324618c9f94ba9ca102d65644c0375bd4523c3917db7b
+sha256: 691ce212d0803d9341ed28c11cdfd46083c19bac063dc553bb6d1aa2736e918f
 Verify: checksum</description>
       <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
       <category>nixos</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20261013 (x86_64)</title>
+      <title>NixOS Graphical 26.05.11985.26f4107e47e3 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.11985.26f4107e47e3</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:42 +0000</pubDate>
+      <description>NixOS Graphical 26.05.11985.26f4107e47e3 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 2dc318b6d4c45eb89c2e17b4058a750fa960a6d885d29ad0b4ba090eeb9f3a92
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.11985.26f4107e47e3 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.11985.26f4107e47e3</guid>
+      <pubDate>Fri, 16 Oct 2026 11:31:42 +0000</pubDate>
+      <description>NixOS Graphical 26.05.11985.26f4107e47e3 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 844f0918a08a7ba24d4ebfdcac386fe6baa2108eb8ad89a5d4ad5465c7c896c8
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:27 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:53 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20261014 (x86_64)
 Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: c2caa1687708a07bf717eceed979468ccdad566e89b039b77c3f415885289bc7
+sha256: 1803c72d95eaa011ca2c197421302ae42066f5c43c9e0e319aba66951819e7ac
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -106,13 +118,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20261013 (x86_64)</title>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:26 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:52 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20261014 (x86_64)
 Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 8ce28611fb36932381882ea17cfa05c7272f26457a27d722f086ebaf513de280
+sha256: 6c3f42bdc1d14ddda11915ba4f40be7fa7a4393ffd848c191fb5a808c5c401f7
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -121,13 +133,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20261013 (x86_64)</title>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:25 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:51 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20261014 (x86_64)
 Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 44f1e4a886dd27104aabc0344bb2af36414b866d771ded5eee0a74ee0db2ace4
+sha256: f1d97ba009492965b861f2613e21cba771acbb19df7407c3193accf189eea4da
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -136,13 +148,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20261013 (x86_64)</title>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:24 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:50 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20261014 (x86_64)
 Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: f34dfa1ef3882e59bbaaf86a414606d2e6e0ae654e39c0ff85bc0dbbce7ff978
+sha256: 5c763995665f3fb1d812162b5f637f8cb70e23dcc951a9641706188a620451f5
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -151,13 +163,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE MicroOS DVD Snapshot20261013 (x86_64)</title>
+      <title>openSUSE MicroOS DVD Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:23 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:49 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20261014 (x86_64)
 Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: 281c6256af0415f65a1b6bdfd783580d2b780aca35fb32e3fa3391b96efab76f
+sha256: 5c62332e7d19332ff4bde4076dab6adb63b40667ee36d440951253f78b9a641c
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -166,40 +178,106 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed NET Snapshot20261013 (x86_64)</title>
+      <title>openSUSE Tumbleweed NET Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:22 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:48 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20261014 (x86_64)
 Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 0f56ceed34d63c3ebaa36fa78e32cfb4c08d60ca6de09b1d2982e3a3c3164ec2
+sha256: cc22ee9532afa3bd73c50300b3f9b3b645c4190927e6603f59a4ac9e33e5608a
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 4652bf0510425ed350aeb12aa87cba72e1270ce0
-Magnet: magnet:?xt=urn:btih:4652bf0510425ed350aeb12aa87cba72e1270ce0&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261013-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Infohash: d39b5c7da8be4680135893d5eb276a5b0b1d9f8a
+Magnet: magnet:?xt=urn:btih:d39b5c7da8be4680135893d5eb276a5b0b1d9f8a&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261014-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20261013 (x86_64)</title>
+      <title>openSUSE Tumbleweed DVD Snapshot20261014 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261013</guid>
-      <pubDate>Thu, 15 Oct 2026 11:36:20 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20261013 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261014</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:47 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20261014 (x86_64)
 Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: dcae88650d8c552b10221839819b477b1dc86e6e14aa138d4e19859f9dcd9c90
+sha256: f07e5a0d0bdee43a5e4f3409e9561dd0f15f7b7ae1d1f09a61ea718ff792ed84
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: 2b36c22412f09b89b93b05eab75bf2a9071def9c
-Magnet: magnet:?xt=urn:btih:2b36c22412f09b89b93b05eab75bf2a9071def9c&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261013-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Infohash: a7065a07ca8050b29fc0d9fb0a0ff2d26d6cd01c
+Magnet: magnet:?xt=urn:btih:a7065a07ca8050b29fc0d9fb0a0ff2d26d6cd01c&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261014-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
+    </item>
+    <item>
+      <title>Ubuntu Server latest 26.10 (aarch64)</title>
+      <link>https://cdimage.ubuntu.com/releases/26.10/release/ubuntu-26.10-live-server-arm64.iso</link>
+      <guid isPermaLink="false">ubuntu:live-server-latest:aarch64:26.10</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:22 +0000</pubDate>
+      <description>Ubuntu Server latest 26.10 (aarch64)
+Filename: ubuntu-26.10-live-server-arm64.iso
+sha256: 45fec674fbce001b46447747a6d36964de3d2da2a5fbe2ece111b72dd769b4de
+Signature: https://cdimage.ubuntu.com/releases/26.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/26.10/release/ubuntu-26.10-live-server-arm64.iso.torrent
+Infohash: dce636094b3d90190679d9170dfeeb6e48ae9f4e
+Magnet: magnet:?xt=urn:btih:dce636094b3d90190679d9170dfeeb6e48ae9f4e&amp;dn=ubuntu-26.10-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/releases/26.10/release/ubuntu-26.10-live-server-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu</category>
+    </item>
+    <item>
+      <title>Ubuntu Desktop latest 26.10 (aarch64)</title>
+      <link>https://cdimage.ubuntu.com/releases/26.10/release/ubuntu-26.10-desktop-arm64.iso</link>
+      <guid isPermaLink="false">ubuntu:desktop-latest:aarch64:26.10</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:21 +0000</pubDate>
+      <description>Ubuntu Desktop latest 26.10 (aarch64)
+Filename: ubuntu-26.10-desktop-arm64.iso
+sha256: 9242a38c47eb53a5beb153c249d4843e4366f8955e9b972663e4ab7989311e9f
+Signature: https://cdimage.ubuntu.com/releases/26.10/release/SHA256SUMS.gpg
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
+Torrent: https://cdimage.ubuntu.com/releases/26.10/release/ubuntu-26.10-desktop-arm64.iso.torrent
+Infohash: 355f540e71f35a81d844a6b25415650a489e18b7
+Magnet: magnet:?xt=urn:btih:355f540e71f35a81d844a6b25415650a489e18b7&amp;dn=ubuntu-26.10-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://cdimage.ubuntu.com/releases/26.10/release/ubuntu-26.10-desktop-arm64.iso" type="application/x-iso9660-image" length="0" />
+      <category>ubuntu</category>
+    </item>
+    <item>
+      <title>Parrot Security Tuned 7.4 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.4/Parrot-security-tuned-7.4_amd64.iso</link>
+      <guid isPermaLink="false">parrot:security-tuned:7.4</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:11 +0000</pubDate>
+      <description>Parrot Security Tuned 7.4 (x86_64)
+Filename: Parrot-security-tuned-7.4_amd64.iso
+sha512: ad2a0db6ebd588664895f7aa246e729233ed39dbacdb7bd67db9f4e39a281d7e574a14ded8e0cf7fc09c380704a6516030f5238693fdf885ba72ce431e21c42d
+Signature: https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.4/Parrot-security-tuned-7.4_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
+    </item>
+    <item>
+      <title>Parrot Home Tuned 7.4 (x86_64)</title>
+      <link>https://deb.parrot.sh/parrot/iso/7.4/Parrot-home-tuned-7.4_amd64.iso</link>
+      <guid isPermaLink="false">parrot:home-tuned:7.4</guid>
+      <pubDate>Fri, 16 Oct 2026 11:30:11 +0000</pubDate>
+      <description>Parrot Home Tuned 7.4 (x86_64)
+Filename: Parrot-home-tuned-7.4_amd64.iso
+sha512: 279bbbd291b59f4aa86d979e5ecb57de7d72f69527d4d5336bb04a9a398a4b2feb07e95eebada003aae2c538c0bedd8202e25779d6886c8d32a162796a1e7456
+Signature: https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</description>
+      <enclosure url="https://deb.parrot.sh/parrot/iso/7.4/Parrot-home-tuned-7.4_amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>parrot</category>
     </item>
     <item>
       <title>Ubuntu Cinnamon latest 26.10 (x86_64)</title>
@@ -1523,42 +1601,6 @@ Verify: gpg</description>
       <category>kubuntu</category>
     </item>
     <item>
-      <title>Ubuntu Server latest 26.04.1 (aarch64)</title>
-      <link>https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-live-server-arm64.iso</link>
-      <guid isPermaLink="false">ubuntu:live-server-latest:aarch64:26.04.1</guid>
-      <pubDate>Fri, 28 Aug 2026 18:48:49 +0000</pubDate>
-      <description>Ubuntu Server latest 26.04.1 (aarch64)
-Filename: ubuntu-26.04.1-live-server-arm64.iso
-sha256: af78753c94b924c85c4964c670692a853f7c80299a4064e317edad95462e3168
-Signature: https://cdimage.ubuntu.com/releases/26.04.1/release/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-live-server-arm64.iso.torrent
-Infohash: 183f3a78d9d7766f584edc0de8a1d197efa42dc1
-Magnet: magnet:?xt=urn:btih:183f3a78d9d7766f584edc0de8a1d197efa42dc1&amp;dn=ubuntu-26.04.1-live-server-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-live-server-arm64.iso" type="application/x-iso9660-image" length="0" />
-      <category>ubuntu</category>
-    </item>
-    <item>
-      <title>Ubuntu Desktop latest 26.04.1 (aarch64)</title>
-      <link>https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-desktop-arm64.iso</link>
-      <guid isPermaLink="false">ubuntu:desktop-latest:aarch64:26.04.1</guid>
-      <pubDate>Fri, 28 Aug 2026 18:48:46 +0000</pubDate>
-      <description>Ubuntu Desktop latest 26.04.1 (aarch64)
-Filename: ubuntu-26.04.1-desktop-arm64.iso
-sha256: c54d196489d3c867975fb3bbb72ca52ec2e137456e305481f81096304e4d2517
-Signature: https://cdimage.ubuntu.com/releases/26.04.1/release/SHA256SUMS.gpg
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
-Torrent: https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-desktop-arm64.iso.torrent
-Infohash: be5cfaffdaea1a5545944155fb496136923babda
-Magnet: magnet:?xt=urn:btih:be5cfaffdaea1a5545944155fb496136923babda&amp;dn=ubuntu-26.04.1-desktop-arm64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-desktop-arm64.iso" type="application/x-iso9660-image" length="0" />
-      <category>ubuntu</category>
-    </item>
-    <item>
       <title>Ubuntu Server LTS 26.04.1 (aarch64)</title>
       <link>https://cdimage.ubuntu.com/releases/26.04.1/release/ubuntu-26.04.1-live-server-arm64.iso</link>
       <guid isPermaLink="false">ubuntu:live-server-lts:aarch64:26.04.1</guid>
@@ -2879,18 +2921,6 @@ sha256: 359136c2af73e03da6f15ad59f0c67bc561ca8b69631d78bfb8f2225e2c9a5ef
 Verify: checksum</description>
       <enclosure url="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso" type="application/x-iso9660-image" length="0" />
       <category>freebsd</category>
-    </item>
-    <item>
-      <title>Memtest86+ 8.10 (x86_64)</title>
-      <link>https://www.memtest.org/download/v8.10/mt86plus_8.10_x86_64.iso.zip</link>
-      <guid isPermaLink="false">memtest:iso:8.10</guid>
-      <pubDate>Sun, 12 Jul 2026 17:03:33 +0000</pubDate>
-      <description>Memtest86+ 8.10 (x86_64)
-Filename: mt86plus_8.10_x86_64.iso.zip
-sha256: 93530005d6ac6a85aa2a49c68604a43c25794ecccf796c4f8849a73a8001be9a
-Verify: checksum</description>
-      <enclosure url="https://www.memtest.org/download/v8.10/mt86plus_8.10_x86_64.iso.zip" type="application/zip" length="0" />
-      <category>memtest</category>
     </item>
     <item>
       <title>AlmaLinux minimal 10.2 (x86_64)</title>

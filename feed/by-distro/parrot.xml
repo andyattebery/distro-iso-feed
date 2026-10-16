@@ -4,7 +4,41 @@
   <title>Distro ISO Feed — parrot</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/parrot.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-10-07T13:30:21+00:00</updated>
+  <updated>2026-10-16T11:30:11+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/security-tuned/7.4</id>
+    <title>Parrot Security Tuned 7.4 (x86_64)</title>
+    <updated>2026-10-16T11:30:11+00:00</updated>
+    <published>2026-10-16T11:30:11+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.4/Parrot-security-tuned-7.4_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="security-tuned" label="variant" />
+    <summary type="text">Parrot Security Tuned 7.4 (x86_64)
+Filename: Parrot-security-tuned-7.4_amd64.iso
+sha512: ad2a0db6ebd588664895f7aa246e729233ed39dbacdb7bd67db9f4e39a281d7e574a14ded8e0cf7fc09c380704a6516030f5238693fdf885ba72ce431e21c42d
+Signature: https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/home-tuned/7.4</id>
+    <title>Parrot Home Tuned 7.4 (x86_64)</title>
+    <updated>2026-10-16T11:30:11+00:00</updated>
+    <published>2026-10-16T11:30:11+00:00</published>
+    <link href="https://www.parrotsec.org/download/" rel="alternate" type="text/html" />
+    <link href="https://deb.parrot.sh/parrot/iso/7.4/Parrot-home-tuned-7.4_amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="parrot" label="distro" />
+    <category term="home-tuned" label="variant" />
+    <summary type="text">Parrot Home Tuned 7.4 (x86_64)
+Filename: Parrot-home-tuned-7.4_amd64.iso
+sha512: 279bbbd291b59f4aa86d979e5ecb57de7d72f69527d4d5336bb04a9a398a4b2feb07e95eebada003aae2c538c0bedd8202e25779d6886c8d32a162796a1e7456
+Signature: https://deb.parrot.sh/parrot/iso/7.4/signed-hashes.txt
+Signing-key: https://deb.parrot.sh/parrot/misc/parrotsec.gpg
+Key-fingerprint: B711822346552E4D92DA02DF7A8286AF0E81EE4A
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/parrot/spin-mate/7.4</id>
     <title>Parrot MATE 7.4 (x86_64)</title>
