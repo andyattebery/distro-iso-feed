@@ -30,9 +30,9 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | aurora | nvidia-open | x86_64 | stable-20261013.1 | checksum | — |
 | aurora | stable | x86_64 | stable-20261013.1 | checksum | — |
 | batocera | x86_64 | x86_64 | 43.1-20260529 | checksum | — |
-| bazzite | deck | x86_64 | unstable-45.20261016 | checksum | — |
-| bazzite | desktop | x86_64 | unstable-45.20261016 | checksum | — |
-| bazzite | nvidia-open | x86_64 | unstable-45.20261016 | checksum | — |
+| bazzite | deck | x86_64 | unstable-45.20261017.2 | checksum | — |
+| bazzite | desktop | x86_64 | unstable-45.20261017.2 | checksum | — |
+| bazzite | nvidia-open | x86_64 | unstable-45.20261017.2 | checksum | — |
 | bluefin | stable | x86_64 | stable-20261013 | checksum | — |
 | bluestar | default | x86_64 | 7.2.3-1-2026.09.04 | checksum | — |
 | cachyos | desktop | x86_64 | 260809 | gpg | — |

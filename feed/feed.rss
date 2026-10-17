@@ -4,8 +4,44 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Fri, 16 Oct 2026 11:32:14 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 10:51:43 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Bazzite NVIDIA Open unstable-45.20261017.2 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:nvidia-open:unstable-45.20261017.2</guid>
+      <pubDate>Sat, 17 Oct 2026 10:51:43 +0000</pubDate>
+      <description>Bazzite NVIDIA Open unstable-45.20261017.2 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Deck unstable-45.20261017.2 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:deck:unstable-45.20261017.2</guid>
+      <pubDate>Sat, 17 Oct 2026 10:51:43 +0000</pubDate>
+      <description>Bazzite Deck unstable-45.20261017.2 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Desktop unstable-45.20261017.2 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:desktop:unstable-45.20261017.2</guid>
+      <pubDate>Sat, 17 Oct 2026 10:51:42 +0000</pubDate>
+      <description>Bazzite Desktop unstable-45.20261017.2 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
     <item>
       <title>Memtest86+ 9.00 (x86_64)</title>
       <link>https://www.memtest.org/download/v9.00/mt86plus_9.00_x86_64.iso.zip</link>
@@ -17,42 +53,6 @@ sha256: 55d378c0d7d2e1a99edb6a1ff4bd5c78c179801b1f7cfe5893786c397bc19702
 Verify: checksum</description>
       <enclosure url="https://www.memtest.org/download/v9.00/mt86plus_9.00_x86_64.iso.zip" type="application/zip" length="0" />
       <category>memtest</category>
-    </item>
-    <item>
-      <title>Bazzite NVIDIA Open unstable-45.20261016 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:unstable-45.20261016</guid>
-      <pubDate>Fri, 16 Oct 2026 11:31:44 +0000</pubDate>
-      <description>Bazzite NVIDIA Open unstable-45.20261016 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Desktop unstable-45.20261016 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:unstable-45.20261016</guid>
-      <pubDate>Fri, 16 Oct 2026 11:31:43 +0000</pubDate>
-      <description>Bazzite Desktop unstable-45.20261016 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Deck unstable-45.20261016 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:unstable-45.20261016</guid>
-      <pubDate>Fri, 16 Oct 2026 11:31:43 +0000</pubDate>
-      <description>Bazzite Deck unstable-45.20261016 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
     </item>
     <item>
       <title>NixOS Minimal 26.05.11985.26f4107e47e3 (aarch64)</title>
