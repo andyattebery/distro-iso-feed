@@ -89,8 +89,8 @@ def sole(text: str, filename: str) -> tuple[str, str] | None:
     """Take the one entry in a single-artifact sidecar, whatever it is named.
 
     The filename column deliberately does NOT equal the download filename for
-    `stable_symlink` sources: neon's sidecar names `neon-desktop-20260707-0147.iso`
-    while you fetch `neon-desktop-current.iso`. That mismatch is where the
+    `stable_symlink` sources: neon's sidecar names `neon-user-desk-20261018-1825.iso`
+    while you fetch `neon-user-desk-current.iso`. That mismatch is where the
     change-token comes from, so matching on name here would discard the checksum.
 
     Falls back to a name lookup when the file lists many artifacts.

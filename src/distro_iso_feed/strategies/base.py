@@ -109,7 +109,7 @@ class Strategy(ABC):
         """Every artifact the distro publishes, across all its variants' listings."""
         if index := discover.get("index"):
             # A `discover.index` is a human page, not a machine listing: neon's
-            # `images/` carries forty links of KDE site navigation alongside its six
+            # `images/` carries forty links of KDE site navigation alongside its five
             # image directories. Keep only what lives *under* the index. That is
             # structural -- an `ignore` list would need editing whenever KDE adds a
             # footer link, and would silently swallow a real new edition the day one

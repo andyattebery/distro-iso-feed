@@ -118,3 +118,52 @@ def test_dry_run_writes_nothing_but_still_reports(discover_env, tmp_path):
     assert run_discover.main(["--dry-run", "--config", str(discover_env), "--pr-body", str(pr)]) == 0
     assert discover_env.read_text() == before  # config untouched under --dry-run
     assert "newmember" in pr.read_text()  # but the evidence is still produced
+
+
+RENAMED = """\
+distros:
+  nd:
+    strategy: stable_symlink
+    params:
+      sums: "{stem}.sha256sum"
+      token: {from: sidecar_filename, pattern: '([0-9]{8}-[0-9]{4})'}
+    variants:
+      desktop: {label: "ND", params: {url: "https://nd/images/desk/user/current/nd-user-desk-current.iso"}}
+      dev: {label: "ND Dev", params: {url: "https://nd/images/dev/unstable/current/nd-unstable-dev-current.iso"}}
+    discover:
+      index: "https://nd/images/"
+      match: '^[a-z]+$'
+      group: '^([a-z]+)$'
+"""
+
+
+def test_an_edition_already_tracked_under_another_name_is_not_proposed(tmp_path, monkeypatch):
+    """neon moved `images/desktop/` to `images/desk/user/`. The `desktop` variant selects the `desk`
+    row, so `desk` is tracked; checking the key against variant *names* alone proposed it again --
+    synthesized from `dev`, as the unstable channel, under the upstream directory name. `big` is
+    selected by nothing and must still be proposed."""
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(RENAMED)
+    pages = {"https://nd/images/": autoindex_html(["big/", "desk/", "dev/"])}
+    for ed in ("big", "desk"):
+        for ch in ("user", "unstable"):
+            base = f"https://nd/images/{ed}/{ch}/current/nd-{ch}-{ed}"
+            pages[f"{base}-current.sha256sum"] = _sums(f"nd-{ch}-{ed}-20261018-0322.iso")
+
+    class OneShot(FakeClient):
+        def __init__(self, *a, **k):
+            super().__init__(pages)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return None
+
+    monkeypatch.setattr(run_discover, "Client", OneShot)
+    pr = tmp_path / "pr.md"
+    assert run_discover.main(["--dry-run", "--config", str(cfg), "--pr-body", str(pr)]) == 0
+
+    body = pr.read_text()
+    assert "nd:big" in body
+    assert "nd:desk" not in body

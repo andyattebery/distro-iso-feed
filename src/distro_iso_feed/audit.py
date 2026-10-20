@@ -19,7 +19,10 @@ by the `group` regex that discovery uses. None of them produce a variant key.
 
 So the audit asks the question discovery already answers: which keys does this
 upstream yield that the config does not have? Same finding, no classifier, and the
-audit cannot drift from the discovery it explains.
+audit cannot drift from the discovery it explains. A key is "had" when a variant is
+named for it or already selects its artifact (`propose_variants.selected`) -- the
+same test discovery applies, so a variant whose name predates an upstream rename
+is neither proposed again nor reported here.
 """
 
 from __future__ import annotations
@@ -32,6 +35,7 @@ from . import escalate
 from .client import Client
 from .escalate import endpoint_of
 from .models import Source
+from .propose_variants import selected
 from .strategies import REGISTRY
 
 # Params that name *what gets fetched*. A release literal here freezes the source.
@@ -170,6 +174,7 @@ def audit_source(source: Source, client: Client) -> list[Finding]:
 
     try:
         found = strategy.discover_all(source.name, variant_params, discover, client)
+        candidates = strategy.enumerate_all(source.name, variant_params, discover, client)
     except Exception as exc:  # a broken lister must not abort the audit
         findings.append(
             Finding(source.name, Reason.LISTER_FAILED, "-", f"{type(exc).__name__}: {exc}")
@@ -177,8 +182,9 @@ def audit_source(source: Source, client: Client) -> list[Finding]:
         return findings
 
     configured = {v.name for v in source.variants}
+    tracked = selected(source, candidates)
     for spec in found:
-        if spec.variant not in configured:
+        if spec.variant not in configured and spec.params.get("sample") not in tracked:
             findings.append(
                 Finding(
                     source.name,

@@ -115,7 +115,7 @@ def _confirms(release: Release, candidate: Candidate) -> str | None:
       release points at *that torrent*. Comparing `filename` here would compare `x.iso` to
       `x.iso.torrent` and reject every torrent-only variant.
     * Aurora's rows are ISOs and SourceForge's are paths ending in one, so the filename must match.
-    * Neon's rows are *directories* -- the ISO sits two segments below one -- so the resolved
+    * Neon's rows are *directories* -- the ISO sits three segments below one -- so the resolved
       download must live under the directory the key came from. Comparing a filename to a directory
       name would reject every neon edition forever, on a technicality, in a message no reader could
       act on.

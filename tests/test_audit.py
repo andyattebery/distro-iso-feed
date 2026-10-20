@@ -108,6 +108,26 @@ def test_unresolvable_is_signal_so_it_escapes_the_collapsed_fold():
     assert not Reason.NOT_ENUMERABLE.is_signal
 
 
+def test_an_edition_tracked_under_another_name_is_not_unexplained():
+    """neon moved `images/desktop/` to `images/desk/user/`. The `desktop` variant selects the
+    `desk` row, so `desk` is tracked; only `big` is unexplained. Same test discovery applies, or
+    `--strict` on the config push fails over a variant that resolves."""
+    url = "https://nd/images/desk/user/current/nd-user-desk-current.iso"
+    params = {"url": url, "sums": "{stem}.sha256sum",
+              "token": {"from": "sidecar_filename", "pattern": r"(\d{8}-\d{4})"}}
+    src = Source(
+        name="nd",
+        variants=(Variant(distro="nd", name="desktop", strategy="stable_symlink", params=params),),
+        discover={"index": "https://nd/images/", "match": "^[a-z]+$", "group": "^([a-z]+)$"},
+    )  # fmt: skip
+    client = FakeClient({
+        "https://nd/images/": autoindex_html(["big/", "desk/"]),
+        url.replace(".iso", ".sha256sum"): "e" * 64 + "  nd-user-desk-20261018-1825.iso\n",
+    })  # fmt: skip
+    found = [f for f in audit_source(src, client) if f.reason is Reason.UNEXPLAINED]
+    assert [f.subject for f in found] == ["big"]
+
+
 # --------------------------------------------------------------------------- pins
 
 

@@ -82,7 +82,7 @@ def test_nodes_for_offers_the_observed_url_when_substitution_declines():
 
 
 def test_nodes_for_never_copies_a_directory_url_into_an_artifact_url():
-    """neon's rows are directories; its ISO is two segments below one. Copying the
+    """neon's rows are directories; its ISO sits below one. Copying the
     row's URL verbatim would point the variant at a listing. Substitution still
     applies -- that is how a real new neon edition gets proposed."""
     node = {"params": {"url": "https://files.example/images/desktop/current/neon-desktop.iso"}}

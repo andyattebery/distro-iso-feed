@@ -41,8 +41,8 @@ def from_filename(filename: str, pattern: str) -> str | None:
 def from_sidecar_filename(sidecar_text: str, pattern: str) -> str | None:
     """The `stable_symlink` token source.
 
-    The download URL is version-less by definition (``neon-desktop-current.iso``),
-    but the sidecar names the dated artifact (``neon-desktop-20260707-0147.iso``).
+    The download URL is version-less by definition (``neon-user-desk-current.iso``),
+    but the sidecar names the dated artifact (``neon-user-desk-20261018-1825.iso``).
     That mismatch is the mechanism, not a bug.
     """
     table = checksums.parse(sidecar_text)

@@ -94,6 +94,21 @@ def _claimed(strategy: Strategy, params: dict, candidates: list[Candidate]) -> C
     return max(mine, key=lambda c: version_key(c.name))
 
 
+def selected(source: Source, candidates: list[Candidate]) -> set[str]:
+    """The enumerated artifacts some configured variant already selects, whatever it is named.
+
+    A discovered key is what upstream calls the edition *now*; a variant key is what it was called
+    when the variant was added. neon moved `images/desktop/` to `images/desk/user/`, so the
+    `desktop` variant selects the `desk` row -- and a check on variant names alone proposes `desk`
+    as new, synthesized from whichever sibling substitutes cleanly into a URL that resolves.
+    """
+    out: set[str] = set()
+    for variant in source.variants:
+        if claimed := _claimed(REGISTRY[variant.strategy](), variant.params, candidates):
+            out.add(claimed.name)
+    return out
+
+
 def _pretty(distro: str, variant: str) -> str:
     return f"{distro.replace('-', ' ').title()} {variant.replace('-', ' ').title()}"
 
@@ -162,7 +177,7 @@ def _nodes_for(node: dict, sibling_sample: str, candidate: Candidate) -> list[di
 
        Guarded on the file extension matching the sibling's URL, because a candidate
        is not always the artifact: neon's rows are *directories*, and the ISO lives
-       two segments below one. There, (1) is the only sound path.
+       three segments below one. There, (1) is the only sound path.
 
     3. **A match generalized from the artifact.** Q4OS publishes `q4os-6.7-x64.r1.iso`
        and `q4os-6.7-x64-tde.r1.iso` -- an insertion again, on a strategy with no URL

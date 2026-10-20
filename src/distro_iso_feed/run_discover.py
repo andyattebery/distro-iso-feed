@@ -24,7 +24,7 @@ from .config import load, load_raw, yaml_rt
 from .propose_arches import propose_arches
 from .propose_common import ArchProposal, FamilyProposal, Proposal, Rejected, pr_body
 from .propose_families import propose_families
-from .propose_variants import propose_for
+from .propose_variants import propose_for, selected
 from .strategies import REGISTRY
 
 log = logging.getLogger("distro-iso-feed-discover")
@@ -86,7 +86,12 @@ def main(argv: list[str] | None = None) -> int:
                 continue
 
             configured = {v.name for v in source.variants}
-            specs = [s for s in found if s.variant not in configured]
+            tracked = selected(source, candidates)
+            specs = [
+                s
+                for s in found
+                if s.variant not in configured and s.params.get("sample") not in tracked
+            ]
             if not specs:
                 continue
 

@@ -1001,32 +1001,33 @@ distros:
     strategy: stable_symlink
     page_url: "https://neon.kde.org/"
     params:
-      sums: "{stem}.sha256sum"    # drops the `.iso`: neon-desktop-current.sha256sum
+      sums: "{stem}.sha256sum"    # drops the `.iso`: neon-user-desk-current.sha256sum
       sig: "{filename}.sig"
-      # The sidecar names `neon-desktop-20260707-0147.iso` while you download
-      # `neon-desktop-current.iso`. That mismatch IS the change-token mechanism.
+      # The sidecar names `neon-user-desk-20261018-1825.iso` while you download
+      # `neon-user-desk-current.iso`. That mismatch IS the change-token mechanism.
       token: {from: sidecar_filename, pattern: '(\d{8}-\d{4})'}
       signing_key:
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xB74EA2162376765BEAC3AE4345F4C354638D1F29
         fingerprint: B74EA2162376765BEAC3AE4345F4C354638D1F29
         covers: image
     variants:
-      desktop: {label: "KDE neon User", params: {url: "https://files.kde.org/neon/images/desktop/current/neon-desktop-current.iso"}}
-      dev: {label: "KDE neon Testing", params: {url: "https://files.kde.org/neon/images/dev/current/neon-dev-current.iso"}}
+      # Variant keys predate the 2026 move to `images/<edition>/<channel>/`. Discovery
+      # knows `desk` is tracked because `desktop` selects that row (`/desk/` in its URL).
+      desktop: {label: "KDE neon User", params: {url: "https://files.kde.org/neon/images/desk/user/current/neon-user-desk-current.iso"}}
+      dev: {label: "KDE neon Developer", params: {url: "https://files.kde.org/neon/images/dev/unstable/current/neon-unstable-dev-current.iso"}}
     discover:
-      # Resolve URL is `images/<ed>/current/neon-<ed>-current.iso`; the EDITIONS are
-      # listed one level up. Discovery surface is not the resolve surface.
-      # Only children of the index survive enumeration, so KDE's forty site-nav links
-      # never reach `group`. What is left is six directories; two are configured.
+      # Resolve URL is `images/<ed>/<channel>/current/neon-<channel>-<ed>-current.iso`;
+      # the EDITIONS are listed three levels up. Discovery surface is not the resolve
+      # surface. Only children of the index survive enumeration, so KDE's site-nav
+      # links never reach `group`. What is left is five directories; two are configured.
       #
-      #   desk       an unadvertised build dir -- neon.kde.org/download never links it
-      #   bigscreen  TV and phone editions. Advertised, but neither publishes a
-      #   mobile     `current/` ISO, and neither is x86_64 desktop.
-      #   ko         no `current/` ISO
+      #   big     Bigscreen (TV) and Mobile editions. Both publish `current/` ISOs,
+      #   mobile  but neither is a desktop.
+      #   ko      Korean-language build of the desktop edition
       index: "https://files.kde.org/neon/images/"
       match: '^[a-z]+$'
       group: '^([a-z]+)$'
-      ignore: ['^ko$', '^desk$', '^bigscreen$', '^mobile$']
+      ignore: ['^ko$', '^big$', '^mobile$']
 
   nixos:
     strategy: stable_symlink

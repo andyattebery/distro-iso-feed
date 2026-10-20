@@ -40,7 +40,7 @@ class SumsUnavailable(Exception):
 def _expand(template: str, *, filename: str, version: str) -> str:
     """`{stem}` is the filename without its extension.
 
-    KDE neon's sidecar is `neon-desktop-current.sha256sum` and Bluestar's is
+    KDE neon's sidecar is `neon-user-desk-current.sha256sum` and Bluestar's is
     `bslx-....md5` -- both drop the artifact's extension rather than appending to it.
     """
     stem = filename.rsplit(".", 1)[0]

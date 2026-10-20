@@ -157,9 +157,9 @@ sat open, accurately saying something was there.
 
 **The discovery surface is not always the resolve surface.** Aurora resolves a fixed
 URL while `dl.getaurora.dev/` is a plain index; neon resolves
-`images/<edition>/current/` while `images/` lists the editions. `discover.index`
+`images/<edition>/<channel>/current/` while `images/` lists the editions. `discover.index`
 points enumeration at the right URL, and only rows *under* that URL survive — neon's
-listing carries forty links of KDE site navigation beside its six image directories.
+listing carries forty links of KDE site navigation beside its five image directories.
 `discover.extra_index` unions in a *second* static listing where a distro has two
 enumeration surfaces at once: openSUSE reads Leap editions from its version-dir
 variant listings and Tumbleweed/MicroOS editions from `/tumbleweed/iso/`, which the
@@ -315,8 +315,8 @@ so "the first hash" would attach an i386 checksum to an x64 ISO.
 
 And the one that looks like a bug but is the mechanism: for `stable_symlink`, the
 sidecar's filename column **deliberately differs** from the download filename. neon
-serves `neon-desktop-current.iso` while its sidecar names
-`neon-desktop-20260707-0147.iso`. That mismatch is where the change-token comes
+serves `neon-user-desk-current.iso` while its sidecar names
+`neon-user-desk-20261018-1825.iso`. That mismatch is where the change-token comes
 from, so `checksums.sole()` accepts a single-entry sidecar regardless of its name.
 
 `verify` is derived, never configured: signature ⇒ `gpg`, else checksum ⇒
