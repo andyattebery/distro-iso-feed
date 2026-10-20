@@ -588,16 +588,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Aurora NVIDIA Open stable-20261013.1 (x86_64)",
+      "title": "Aurora NVIDIA Open stable-20261020.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "stable-20261013.1"
+      "version": "stable-20261020.1"
     },
-    "seen": "2026-10-13T14:19:32+00:00",
-    "version": "stable-20261013.1"
+    "seen": "2026-10-20T11:46:54+00:00",
+    "version": "stable-20261020.1"
   },
   "aurora:stable": {
     "hash": "99c092a008a6a38f4876a389dd697aac09e95de1867766106f1cea5f3821ff96",
@@ -618,16 +618,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Aurora stable-20261013.1 (x86_64)",
+      "title": "Aurora stable-20261020.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "stable",
-      "version": "stable-20261013.1"
+      "version": "stable-20261020.1"
     },
-    "seen": "2026-10-13T14:19:31+00:00",
-    "version": "stable-20261013.1"
+    "seen": "2026-10-20T11:46:54+00:00",
+    "version": "stable-20261020.1"
   },
   "batocera:x86_64": {
     "hash": "0c365dc3c17b05a4b276c579168b01da",
@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck unstable-45.20261019.4 (x86_64)",
+      "title": "Bazzite Deck unstable-45.20261020.4 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "unstable-45.20261019.4"
+      "version": "unstable-45.20261020.4"
     },
-    "seen": "2026-10-19T13:27:45+00:00",
-    "version": "unstable-45.20261019.4"
+    "seen": "2026-10-20T11:46:52+00:00",
+    "version": "unstable-45.20261020.4"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop unstable-45.20261019.4 (x86_64)",
+      "title": "Bazzite Desktop unstable-45.20261020.4 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "unstable-45.20261019.4"
+      "version": "unstable-45.20261020.4"
     },
-    "seen": "2026-10-19T13:27:45+00:00",
-    "version": "unstable-45.20261019.4"
+    "seen": "2026-10-20T11:46:52+00:00",
+    "version": "unstable-45.20261020.4"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open unstable-45.20261019.4 (x86_64)",
+      "title": "Bazzite NVIDIA Open unstable-45.20261020.4 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "unstable-45.20261019.4"
+      "version": "unstable-45.20261020.4"
     },
-    "seen": "2026-10-19T13:27:46+00:00",
-    "version": "unstable-45.20261019.4"
+    "seen": "2026-10-20T11:46:52+00:00",
+    "version": "unstable-45.20261020.4"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -870,14 +870,14 @@
     "version": "260628"
   },
   "centos:boot": {
-    "hash": "c07fb80f942051447a5b257fd28eca34e5d27e57dec9be1bb81cc5bee4387b29",
+    "hash": "758b5fe0a5bc1f8c84c9e8ab0945a89a375ab12acbf3f30973a6e1dcb2af0c40",
     "release": {
       "arch": "x86_64",
-      "checksum": "c07fb80f942051447a5b257fd28eca34e5d27e57dec9be1bb81cc5bee4387b29",
+      "checksum": "758b5fe0a5bc1f8c84c9e8ab0945a89a375ab12acbf3f30973a6e1dcb2af0c40",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261013.0-x86_64-boot.iso",
-      "filename": "CentOS-Stream-10-20261013.0-x86_64-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261019.0-x86_64-boot.iso",
+      "filename": "CentOS-Stream-10-20261019.0-x86_64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -888,26 +888,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20261013.0 (x86_64)",
+      "title": "CentOS Stream boot 20261019.0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:01+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:47+00:00",
+    "version": "20261019.0"
   },
   "centos:boot:aarch64": {
-    "hash": "e154e1632b4b5e7f467af8ab259265e8f63c8b9a33505f9d6c32fc9a58cdd6a4",
+    "hash": "5ac47d11e9b4deb578f6c9fb0ba9b43f3ee19b3c3f8ce9c0b7b459ee4531c530",
     "release": {
       "arch": "aarch64",
-      "checksum": "e154e1632b4b5e7f467af8ab259265e8f63c8b9a33505f9d6c32fc9a58cdd6a4",
+      "checksum": "5ac47d11e9b4deb578f6c9fb0ba9b43f3ee19b3c3f8ce9c0b7b459ee4531c530",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261013.0-aarch64-boot.iso",
-      "filename": "CentOS-Stream-10-20261013.0-aarch64-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261019.0-aarch64-boot.iso",
+      "filename": "CentOS-Stream-10-20261019.0-aarch64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -918,26 +918,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20261013.0 (aarch64)",
+      "title": "CentOS Stream boot 20261019.0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:01+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:47+00:00",
+    "version": "20261019.0"
   },
   "centos:boot:ppc64le": {
-    "hash": "2d7dc1161e3b8d1d4dd25263c468fbc2c162ec4fdf42b58ddfe178b35a028daa",
+    "hash": "e27e1e64a2f2a9291941cbf53260b23e3424dfdac6226d235d660a9a8638f8b3",
     "release": {
       "arch": "ppc64le",
-      "checksum": "2d7dc1161e3b8d1d4dd25263c468fbc2c162ec4fdf42b58ddfe178b35a028daa",
+      "checksum": "e27e1e64a2f2a9291941cbf53260b23e3424dfdac6226d235d660a9a8638f8b3",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261013.0-ppc64le-boot.iso",
-      "filename": "CentOS-Stream-10-20261013.0-ppc64le-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261019.0-ppc64le-boot.iso",
+      "filename": "CentOS-Stream-10-20261019.0-ppc64le-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -948,26 +948,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20261013.0 (ppc64le)",
+      "title": "CentOS Stream boot 20261019.0 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:02+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:47+00:00",
+    "version": "20261019.0"
   },
   "centos:boot:s390x": {
-    "hash": "658bb9ae35c38a10350d0380406e3e6b11b04f569239da4aa70963c4d982ea83",
+    "hash": "aa6dc3ccce1b0b0d492d2dbca2b914994d0ee2fe7f2222bb7c60d03ae147c08e",
     "release": {
       "arch": "s390x",
-      "checksum": "658bb9ae35c38a10350d0380406e3e6b11b04f569239da4aa70963c4d982ea83",
+      "checksum": "aa6dc3ccce1b0b0d492d2dbca2b914994d0ee2fe7f2222bb7c60d03ae147c08e",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261013.0-s390x-boot.iso",
-      "filename": "CentOS-Stream-10-20261013.0-s390x-boot.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261019.0-s390x-boot.iso",
+      "filename": "CentOS-Stream-10-20261019.0-s390x-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -978,26 +978,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream boot 20261013.0 (s390x)",
+      "title": "CentOS Stream boot 20261019.0 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:02+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:48+00:00",
+    "version": "20261019.0"
   },
   "centos:dvd": {
-    "hash": "746efd3324556a4936e522078664e5814a750901cd5abb00ba403c9d9240d9ac",
+    "hash": "90375de4b23feff02abe23b9c01f9876b7b1d4b9f3651beb6bb8054378a5d15e",
     "release": {
       "arch": "x86_64",
-      "checksum": "746efd3324556a4936e522078664e5814a750901cd5abb00ba403c9d9240d9ac",
+      "checksum": "90375de4b23feff02abe23b9c01f9876b7b1d4b9f3651beb6bb8054378a5d15e",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261013.0-x86_64-dvd1.iso",
-      "filename": "CentOS-Stream-10-20261013.0-x86_64-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261019.0-x86_64-dvd1.iso",
+      "filename": "CentOS-Stream-10-20261019.0-x86_64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1008,26 +1008,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20261013.0 (x86_64)",
+      "title": "CentOS Stream DVD 20261019.0 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:02+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:48+00:00",
+    "version": "20261019.0"
   },
   "centos:dvd:aarch64": {
-    "hash": "418c75a8fe181959cd5adf6eb3d4ebdb514f1cdcb96b85967ad3f0eece1e8780",
+    "hash": "c86422907c1f4731f67f99ee96a8c3b2d168b65d31394ef13c4079fac7bd8b1e",
     "release": {
       "arch": "aarch64",
-      "checksum": "418c75a8fe181959cd5adf6eb3d4ebdb514f1cdcb96b85967ad3f0eece1e8780",
+      "checksum": "c86422907c1f4731f67f99ee96a8c3b2d168b65d31394ef13c4079fac7bd8b1e",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261013.0-aarch64-dvd1.iso",
-      "filename": "CentOS-Stream-10-20261013.0-aarch64-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261019.0-aarch64-dvd1.iso",
+      "filename": "CentOS-Stream-10-20261019.0-aarch64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1038,26 +1038,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20261013.0 (aarch64)",
+      "title": "CentOS Stream DVD 20261019.0 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:02+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:48+00:00",
+    "version": "20261019.0"
   },
   "centos:dvd:ppc64le": {
-    "hash": "5dbf4d3bd7e2a28a04548a9f5ead0581913e8627b6ef7cbd845d169fda5fe30c",
+    "hash": "4e2819b926f88c0f5c7d50cb66044e158eb6ea20132c8635d61bc9214bc9abff",
     "release": {
       "arch": "ppc64le",
-      "checksum": "5dbf4d3bd7e2a28a04548a9f5ead0581913e8627b6ef7cbd845d169fda5fe30c",
+      "checksum": "4e2819b926f88c0f5c7d50cb66044e158eb6ea20132c8635d61bc9214bc9abff",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261013.0-ppc64le-dvd1.iso",
-      "filename": "CentOS-Stream-10-20261013.0-ppc64le-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261019.0-ppc64le-dvd1.iso",
+      "filename": "CentOS-Stream-10-20261019.0-ppc64le-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1068,26 +1068,26 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20261013.0 (ppc64le)",
+      "title": "CentOS Stream DVD 20261019.0 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:02+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:48+00:00",
+    "version": "20261019.0"
   },
   "centos:dvd:s390x": {
-    "hash": "c437f3a2e0fea728a09341c91d8d96ec246cc54ebd62439bd43f7659f4a7a4b6",
+    "hash": "dbb787de9aff82d61ce31f2198ad7c57a36f14ccd05dea2e4782f1e3d3d31d7b",
     "release": {
       "arch": "s390x",
-      "checksum": "c437f3a2e0fea728a09341c91d8d96ec246cc54ebd62439bd43f7659f4a7a4b6",
+      "checksum": "dbb787de9aff82d61ce31f2198ad7c57a36f14ccd05dea2e4782f1e3d3d31d7b",
       "checksum_algo": "sha256",
       "distro": "centos",
-      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261013.0-s390x-dvd1.iso",
-      "filename": "CentOS-Stream-10-20261013.0-s390x-dvd1.iso",
+      "download_url": "https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261019.0-s390x-dvd1.iso",
+      "filename": "CentOS-Stream-10-20261019.0-s390x-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -1098,16 +1098,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "CentOS Stream DVD 20261013.0 (s390x)",
+      "title": "CentOS Stream DVD 20261019.0 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "20261013.0"
+      "version": "20261019.0"
     },
-    "seen": "2026-10-14T12:02:02+00:00",
-    "version": "20261013.0"
+    "seen": "2026-10-20T11:46:48+00:00",
+    "version": "20261019.0"
   },
   "chimeraos:iso": {
     "hash": "e9914e59f6cd817548742d5934c85fc85f53822261e3d478d2c690e10ce2689a",
@@ -3420,274 +3420,274 @@
     "version": "26.1-R15.0p2"
   },
   "kali:installer": {
-    "hash": "6dbefacc95e3b556c19c48e8bae39b8b505e2d3a1aba0bfb7ab62b036c3d2ba3",
+    "hash": "db9cbed33edb45727d16911813c2434fcd1419585007884153be22a03b30ec2f",
     "release": {
       "arch": "x86_64",
-      "checksum": "6dbefacc95e3b556c19c48e8bae39b8b505e2d3a1aba0bfb7ab62b036c3d2ba3",
+      "checksum": "db9cbed33edb45727d16911813c2434fcd1419585007884153be22a03b30ec2f",
       "checksum_algo": "sha256",
       "distro": "kali",
-      "download_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-amd64.iso",
-      "filename": "kali-linux-2026.2-installer-amd64.iso",
+      "download_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-installer-amd64.iso",
+      "filename": "kali-linux-2026.3-installer-amd64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "size": null,
-      "title": "Kali Installer 2026.2 (x86_64)",
+      "title": "Kali Installer 2026.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "installer",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-09T23:40:11+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kali:installer-everything": {
-    "hash": "ccedeb4e72fdaf7e5ba676ccf361cabe0e6e37174d83e38df0efcb6734b0f20d",
+    "hash": "21c449d46873dd74d644c32d7752230475f39315084f1ee7e8e38f375a4724a1",
     "release": {
       "arch": "x86_64",
-      "checksum": "ccedeb4e72fdaf7e5ba676ccf361cabe0e6e37174d83e38df0efcb6734b0f20d",
+      "checksum": "21c449d46873dd74d644c32d7752230475f39315084f1ee7e8e38f375a4724a1",
       "checksum_algo": "sha256",
       "distro": "kali",
       "download_url": null,
-      "filename": "kali-linux-2026.2-installer-everything-amd64.iso",
-      "info_hash": "1f7482c9dad2653af474a806a93e6c266e1a1b3c",
-      "magnet_uri": "magnet:?xt=urn:btih:1f7482c9dad2653af474a806a93e6c266e1a1b3c&dn=kali-linux-2026.2-installer-everything-amd64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
+      "filename": "kali-linux-2026.3-installer-everything-amd64.iso",
+      "info_hash": "15f5b2b696b6ca346babc6baed95c5b4ff844f1b",
+      "magnet_uri": "magnet:?xt=urn:btih:15f5b2b696b6ca346babc6baed95c5b4ff844f1b&dn=kali-linux-2026.3-installer-everything-amd64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
-      "size": 14522228736,
-      "title": "Kali Installer (everything) 2026.2 (x86_64)",
-      "torrent_checksum": "6f88e1f3704d560b7e468ada37ea02ded4a7b60989cbd6b9aa6554bc83b0eaf3",
+      "size": 14825484288,
+      "title": "Kali Installer (everything) 2026.3 (x86_64)",
+      "torrent_checksum": "a14d70840f0058cc14a112f0ff8c4dd21d56637f69172cc9f6a755f21e1756c8",
       "torrent_checksum_algo": "sha256",
-      "torrent_size": 1108454,
-      "torrent_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-everything-amd64.iso.torrent",
+      "torrent_size": 1131594,
+      "torrent_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-installer-everything-amd64.iso.torrent",
       "variant": "installer-everything",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-10T15:06:07+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:47+00:00",
+    "version": "2026.3"
   },
   "kali:installer-netinst": {
-    "hash": "d32f929dacc48134a31461a09f2160d13ad1d26b820cee920446813ca979b39b",
+    "hash": "0dd3e70f2e0b092286b29355450bc79a034a13fb1d5b4bf83c297149115258cd",
     "release": {
       "arch": "x86_64",
-      "checksum": "d32f929dacc48134a31461a09f2160d13ad1d26b820cee920446813ca979b39b",
+      "checksum": "0dd3e70f2e0b092286b29355450bc79a034a13fb1d5b4bf83c297149115258cd",
       "checksum_algo": "sha256",
       "distro": "kali",
-      "download_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-amd64.iso",
-      "filename": "kali-linux-2026.2-installer-netinst-amd64.iso",
+      "download_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-installer-netinst-amd64.iso",
+      "filename": "kali-linux-2026.3-installer-netinst-amd64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "size": null,
-      "title": "Kali NetInstaller 2026.2 (x86_64)",
+      "title": "Kali NetInstaller 2026.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "installer-netinst",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-09T23:40:11+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kali:installer-netinst:aarch64": {
-    "hash": "8ca1bdd6a85f37e380eca84c780256b6e634fc768426396f51967ec3be006ed1",
+    "hash": "a986c7fe0f8e887a77e7ea9f868da88eae04e7ac780ae75e6b702f243b63bf8d",
     "release": {
       "arch": "aarch64",
-      "checksum": "8ca1bdd6a85f37e380eca84c780256b6e634fc768426396f51967ec3be006ed1",
+      "checksum": "a986c7fe0f8e887a77e7ea9f868da88eae04e7ac780ae75e6b702f243b63bf8d",
       "checksum_algo": "sha256",
       "distro": "kali",
-      "download_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-netinst-arm64.iso",
-      "filename": "kali-linux-2026.2-installer-netinst-arm64.iso",
+      "download_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-installer-netinst-arm64.iso",
+      "filename": "kali-linux-2026.3-installer-netinst-arm64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "size": null,
-      "title": "Kali NetInstaller 2026.2 (aarch64)",
+      "title": "Kali NetInstaller 2026.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "installer-netinst",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-12T21:46:33+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kali:installer-purple": {
-    "hash": "bbde629937a9eabc110062989d49947fae7fd4c0fef19f590f990b1cb97a497c",
+    "hash": "9b2b39174d9ed447c36ee1d7dd09b6efc2453e99dec8d239b4f69b263b0d5ecb",
     "release": {
       "arch": "x86_64",
-      "checksum": "bbde629937a9eabc110062989d49947fae7fd4c0fef19f590f990b1cb97a497c",
+      "checksum": "9b2b39174d9ed447c36ee1d7dd09b6efc2453e99dec8d239b4f69b263b0d5ecb",
       "checksum_algo": "sha256",
       "distro": "kali",
-      "download_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-purple-amd64.iso",
-      "filename": "kali-linux-2026.2-installer-purple-amd64.iso",
+      "download_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-installer-purple-amd64.iso",
+      "filename": "kali-linux-2026.3-installer-purple-amd64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "size": null,
-      "title": "Kali Purple 2026.2 (x86_64)",
+      "title": "Kali Purple 2026.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "installer-purple",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-09T23:40:11+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kali:installer:aarch64": {
-    "hash": "b9a08050ee522fbee7cac703b1bc48178f79eb974c962d4ed9dc1ccfdfa77fb6",
+    "hash": "c4a7f9bf3a0ff07c8263fe9e9b0edba0cc3d9b408f1d8f06c066df0afce23072",
     "release": {
       "arch": "aarch64",
-      "checksum": "b9a08050ee522fbee7cac703b1bc48178f79eb974c962d4ed9dc1ccfdfa77fb6",
+      "checksum": "c4a7f9bf3a0ff07c8263fe9e9b0edba0cc3d9b408f1d8f06c066df0afce23072",
       "checksum_algo": "sha256",
       "distro": "kali",
-      "download_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-installer-arm64.iso",
-      "filename": "kali-linux-2026.2-installer-arm64.iso",
+      "download_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-installer-arm64.iso",
+      "filename": "kali-linux-2026.3-installer-arm64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "size": null,
-      "title": "Kali Installer 2026.2 (aarch64)",
+      "title": "Kali Installer 2026.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "installer",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-12T21:46:32+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kali:live": {
-    "hash": "49e90e694d1b3dedd47f94afbe99dfdd5afb41c8462b638bbd332929769c773a",
+    "hash": "93a40ef53936719119824c3f0f0742ab50a045e2e082b95e382cf9f2f1f8acbb",
     "release": {
       "arch": "x86_64",
-      "checksum": "49e90e694d1b3dedd47f94afbe99dfdd5afb41c8462b638bbd332929769c773a",
+      "checksum": "93a40ef53936719119824c3f0f0742ab50a045e2e082b95e382cf9f2f1f8acbb",
       "checksum_algo": "sha256",
       "distro": "kali",
       "download_url": null,
-      "filename": "kali-linux-2026.2-live-amd64.iso",
-      "info_hash": "a7c8026d2ca26f336f1df40defdc10a2d36b7b07",
-      "magnet_uri": "magnet:?xt=urn:btih:a7c8026d2ca26f336f1df40defdc10a2d36b7b07&dn=kali-linux-2026.2-live-amd64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
+      "filename": "kali-linux-2026.3-live-amd64.iso",
+      "info_hash": "32765844ad2436f2ad5574f2a36885489d35a983",
+      "magnet_uri": "magnet:?xt=urn:btih:32765844ad2436f2ad5574f2a36885489d35a983&dn=kali-linux-2026.3-live-amd64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
-      "size": 5531987968,
-      "title": "Kali Live 2026.2 (x86_64)",
-      "torrent_checksum": "6ef7d1bdb2d2c9dd59a5be72c0fc464935e6124c6e3d12bb11a0c34323644942",
+      "size": 5938610176,
+      "title": "Kali Live 2026.3 (x86_64)",
+      "torrent_checksum": "6afcd708b7f1c56fa1d2a751f2868295fc9bcc1b141efc8e5c97e5b76849be6d",
       "torrent_checksum_algo": "sha256",
-      "torrent_size": 422520,
-      "torrent_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-amd64.iso.torrent",
+      "torrent_size": 453540,
+      "torrent_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-live-amd64.iso.torrent",
       "variant": "live",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-10T15:06:07+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kali:live-everything": {
-    "hash": "89ba86d14e0287b28ba25a185a32ce2ca68ef2233c628e8995c26311c09ebae4",
+    "hash": "2bb56c92380945ce3e7c2b2706886bb323d1f7123028839dc818e0a83afb8ddf",
     "release": {
       "arch": "x86_64",
-      "checksum": "89ba86d14e0287b28ba25a185a32ce2ca68ef2233c628e8995c26311c09ebae4",
+      "checksum": "2bb56c92380945ce3e7c2b2706886bb323d1f7123028839dc818e0a83afb8ddf",
       "checksum_algo": "sha256",
       "distro": "kali",
       "download_url": null,
-      "filename": "kali-linux-2026.2-live-everything-amd64.iso",
-      "info_hash": "5863bb444d27e8863eb44d7d8834a3f37ecf46f2",
-      "magnet_uri": "magnet:?xt=urn:btih:5863bb444d27e8863eb44d7d8834a3f37ecf46f2&dn=kali-linux-2026.2-live-everything-amd64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
+      "filename": "kali-linux-2026.3-live-everything-amd64.iso",
+      "info_hash": "1f5dcaea18196d3937c434a2c5b789b63358e54b",
+      "magnet_uri": "magnet:?xt=urn:btih:1f5dcaea18196d3937c434a2c5b789b63358e54b&dn=kali-linux-2026.3-live-everything-amd64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
-      "size": 16456388608,
-      "title": "Kali Live (everything) 2026.2 (x86_64)",
-      "torrent_checksum": "303cef4851062b800457d22f17ec69e2eb4b952f1105297978f3cf4d2ca648eb",
+      "size": 16845643776,
+      "title": "Kali Live (everything) 2026.3 (x86_64)",
+      "torrent_checksum": "127b4c1cec00de135ec612a7f73a93f68bce35a92d6ad41fa9fc84fca3a29c64",
       "torrent_checksum_algo": "sha256",
-      "torrent_size": 1256024,
-      "torrent_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-everything-amd64.iso.torrent",
+      "torrent_size": 1285724,
+      "torrent_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-live-everything-amd64.iso.torrent",
       "variant": "live-everything",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-10T15:06:07+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:47+00:00",
+    "version": "2026.3"
   },
   "kali:live:aarch64": {
-    "hash": "e9b41bfa21eea4e1a4ea941f0170aad5d1bdbbec6425254c5fc6304927245493",
+    "hash": "4206885a661ed8a55d6bea660506f5d67c1f84e6ece52d8079e338993b20813f",
     "release": {
       "arch": "aarch64",
-      "checksum": "e9b41bfa21eea4e1a4ea941f0170aad5d1bdbbec6425254c5fc6304927245493",
+      "checksum": "4206885a661ed8a55d6bea660506f5d67c1f84e6ece52d8079e338993b20813f",
       "checksum_algo": "sha256",
       "distro": "kali",
       "download_url": null,
-      "filename": "kali-linux-2026.2-live-arm64.iso",
-      "info_hash": "4bcb5d5346f20cc05134a9e6b0439c93af55cf72",
-      "magnet_uri": "magnet:?xt=urn:btih:4bcb5d5346f20cc05134a9e6b0439c93af55cf72&dn=kali-linux-2026.2-live-arm64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
+      "filename": "kali-linux-2026.3-live-arm64.iso",
+      "info_hash": "ee5334aa99ae373da86bac7bf37317ef3a71fab8",
+      "magnet_uri": "magnet:?xt=urn:btih:ee5334aa99ae373da86bac7bf37317ef3a71fab8&dn=kali-linux-2026.3-live-arm64.iso&tr=http%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=https%3A%2F%2Fbittorrent.kali.org%2Fannounce&tr=http%3A%2F%2Fbittorrent.kali.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbittorrent.kali.org%3A6969",
       "notes": null,
       "page_url": "https://www.kali.org/get-kali/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://cdimage.kali.org/kali-2026.2/SHA256SUMS.gpg",
+      "signature_url": "https://cdimage.kali.org/kali-2026.3/SHA256SUMS.gpg",
       "signing_key_fingerprint": "827C8569F2518CC677FECA1AED65462EC8D5E4C5",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x827C8569F2518CC677FECA1AED65462EC8D5E4C5",
-      "size": 4109303808,
-      "title": "Kali Live 2026.2 (aarch64)",
-      "torrent_checksum": "83017ce9cf7499d1a3d43499fe6809cf1d5dec753e7f304b12b2348dba39b66e",
+      "size": 4450045952,
+      "title": "Kali Live 2026.3 (aarch64)",
+      "torrent_checksum": "24e175cbf9f03145c0610ecc4e632faef7cef58a6f79bb3cc937703d77936621",
       "torrent_checksum_algo": "sha256",
-      "torrent_size": 313980,
-      "torrent_url": "https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-live-arm64.iso.torrent",
+      "torrent_size": 339980,
+      "torrent_url": "https://cdimage.kali.org/kali-2026.3/kali-linux-2026.3-live-arm64.iso.torrent",
       "variant": "live",
-      "version": "2026.2"
+      "version": "2026.3"
     },
-    "seen": "2026-07-12T21:46:35+00:00",
-    "version": "2026.2"
+    "seen": "2026-10-20T11:44:46+00:00",
+    "version": "2026.3"
   },
   "kde-neon:desktop": {
     "hash": "ce5a614082c19bb084d411dbc98ead1ba33af88490568ec97dabaffc761ff205",
@@ -4410,10 +4410,10 @@
     "version": "11.0"
   },
   "nixos:graphical": {
-    "hash": "d10e06f2388d16a2928be19fc512b13b7a967fa4555464447e0ca51434efeca1",
+    "hash": "82476413968c25fa25f619475e610f535b6bad50f1bc6c842c20ac859d2864d1",
     "release": {
       "arch": "x86_64",
-      "checksum": "d10e06f2388d16a2928be19fc512b13b7a967fa4555464447e0ca51434efeca1",
+      "checksum": "82476413968c25fa25f619475e610f535b6bad50f1bc6c842c20ac859d2864d1",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4428,22 +4428,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.12192.8ce73368d1ef (x86_64)",
+      "title": "NixOS Graphical 26.05.12250.f3a73bcf5d1c (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.12192.8ce73368d1ef"
+      "version": "26.05.12250.f3a73bcf5d1c"
     },
-    "seen": "2026-10-19T13:27:44+00:00",
-    "version": "26.05.12192.8ce73368d1ef"
+    "seen": "2026-10-20T11:46:51+00:00",
+    "version": "26.05.12250.f3a73bcf5d1c"
   },
   "nixos:graphical:aarch64": {
-    "hash": "f50c9c3a23f71291d375b7a169fda34f1172c780f7195e1573358c254ec7d6f4",
+    "hash": "633a17cfd44169891ec6d06a8810231083c66a19c7ecd18e50e1846e649b4165",
     "release": {
       "arch": "aarch64",
-      "checksum": "f50c9c3a23f71291d375b7a169fda34f1172c780f7195e1573358c254ec7d6f4",
+      "checksum": "633a17cfd44169891ec6d06a8810231083c66a19c7ecd18e50e1846e649b4165",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.12192.8ce73368d1ef (aarch64)",
+      "title": "NixOS Graphical 26.05.12250.f3a73bcf5d1c (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.12192.8ce73368d1ef"
+      "version": "26.05.12250.f3a73bcf5d1c"
     },
-    "seen": "2026-10-19T13:27:44+00:00",
-    "version": "26.05.12192.8ce73368d1ef"
+    "seen": "2026-10-20T11:46:51+00:00",
+    "version": "26.05.12250.f3a73bcf5d1c"
   },
   "nixos:minimal": {
-    "hash": "7a0a16a5cc1c59653da4076d915f25eb2f2db0aa146fd281795f3d21cb00a5cf",
+    "hash": "9dc4b2a187871b2cbef9be5ad46a0be165238d5f3c2894287e208812529384f0",
     "release": {
       "arch": "x86_64",
-      "checksum": "7a0a16a5cc1c59653da4076d915f25eb2f2db0aa146fd281795f3d21cb00a5cf",
+      "checksum": "9dc4b2a187871b2cbef9be5ad46a0be165238d5f3c2894287e208812529384f0",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.12192.8ce73368d1ef (x86_64)",
+      "title": "NixOS Minimal 26.05.12250.f3a73bcf5d1c (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.12192.8ce73368d1ef"
+      "version": "26.05.12250.f3a73bcf5d1c"
     },
-    "seen": "2026-10-19T13:27:43+00:00",
-    "version": "26.05.12192.8ce73368d1ef"
+    "seen": "2026-10-20T11:46:51+00:00",
+    "version": "26.05.12250.f3a73bcf5d1c"
   },
   "nixos:minimal:aarch64": {
-    "hash": "2d75e8ae9012b7b96ff06068adb84e342171bbb392f59a8f215b80bcb9dbfa55",
+    "hash": "8a005038e000cfe6db29cf446cb05d332b033cc532ab598bc2636b7358c99f89",
     "release": {
       "arch": "aarch64",
-      "checksum": "2d75e8ae9012b7b96ff06068adb84e342171bbb392f59a8f215b80bcb9dbfa55",
+      "checksum": "8a005038e000cfe6db29cf446cb05d332b033cc532ab598bc2636b7358c99f89",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4518,16 +4518,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.12192.8ce73368d1ef (aarch64)",
+      "title": "NixOS Minimal 26.05.12250.f3a73bcf5d1c (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.12192.8ce73368d1ef"
+      "version": "26.05.12250.f3a73bcf5d1c"
     },
-    "seen": "2026-10-19T13:27:44+00:00",
-    "version": "26.05.12192.8ce73368d1ef"
+    "seen": "2026-10-20T11:46:51+00:00",
+    "version": "26.05.12250.f3a73bcf5d1c"
   },
   "nobara:gnome": {
     "hash": "47087299d03ecedd67fd3fc6d69803118991caeb26faace9f39429f14ffdb2fd",
@@ -5100,10 +5100,10 @@
     "version": "Snapshot20261017"
   },
   "opensuse:microos-dvd:aarch64": {
-    "hash": "a42b8b243b42b5799f042eb90840e6a8da74db9b4cd786aeb1f3f61caee1b04e",
+    "hash": "05cc517653fedf8a8bf7ec365173c1f7b859fec5a57f77b2de341c51d2cc385b",
     "release": {
       "arch": "aarch64",
-      "checksum": "a42b8b243b42b5799f042eb90840e6a8da74db9b4cd786aeb1f3f61caee1b04e",
+      "checksum": "05cc517653fedf8a8bf7ec365173c1f7b859fec5a57f77b2de341c51d2cc385b",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso",
@@ -5118,16 +5118,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE MicroOS DVD Snapshot20261011 (aarch64)",
+      "title": "openSUSE MicroOS DVD Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "microos-dvd",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:21+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:23+00:00",
+    "version": "Snapshot20261018"
   },
   "opensuse:tumbleweed-dvd": {
     "hash": "c251617e48346b6819a396d63d7efe3472c69d63b695e091b138b26b68f51164",
@@ -5160,16 +5160,16 @@
     "version": "Snapshot20261017"
   },
   "opensuse:tumbleweed-dvd:aarch64": {
-    "hash": "3b3f1e57ce1ad2bcfa9406bb546ad1a3bf9b1400c492b02cb49e578dedc3ef06",
+    "hash": "02c661256c2f7e4a17d4a7282d40e189ae5fad37d292b5591aaa02563693cb87",
     "release": {
       "arch": "aarch64",
-      "checksum": "3b3f1e57ce1ad2bcfa9406bb546ad1a3bf9b1400c492b02cb49e578dedc3ef06",
+      "checksum": "02c661256c2f7e4a17d4a7282d40e189ae5fad37d292b5591aaa02563693cb87",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso",
       "filename": "openSUSE-Tumbleweed-DVD-aarch64-Current.iso",
-      "info_hash": "3d8a6aec1224d3d3d0e31174f0d397fef3a3dadb",
-      "magnet_uri": "magnet:?xt=urn:btih:3d8a6aec1224d3d3d0e31174f0d397fef3a3dadb&dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261011-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
+      "info_hash": "cd1d4207a7ff4cdd7aaa9c99ba3fd9dee3ad0678",
+      "magnet_uri": "magnet:?xt=urn:btih:cd1d4207a7ff4cdd7aaa9c99ba3fd9dee3ad0678&dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261018-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5178,16 +5178,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed DVD Snapshot20261011 (aarch64)",
+      "title": "openSUSE Tumbleweed DVD Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 21047,
+      "torrent_size": 20834,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-dvd",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:18+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:21+00:00",
+    "version": "Snapshot20261018"
   },
   "opensuse:tumbleweed-gnome-live": {
     "hash": "8e3210559d54b32f97382e9b875a480080f8581018d153158dbdf3c6bee2c74c",
@@ -5220,10 +5220,10 @@
     "version": "Snapshot20261017"
   },
   "opensuse:tumbleweed-gnome-live:aarch64": {
-    "hash": "45a222ae075fbcd25b8281073ecb06fc37528267a96209ce66a8ff61139dada0",
+    "hash": "47fd6c80e8a88487ba545d67ce19372eb7a336f027a92e279e3099fdfafdd2f4",
     "release": {
       "arch": "aarch64",
-      "checksum": "45a222ae075fbcd25b8281073ecb06fc37528267a96209ce66a8ff61139dada0",
+      "checksum": "47fd6c80e8a88487ba545d67ce19372eb7a336f027a92e279e3099fdfafdd2f4",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso",
@@ -5238,16 +5238,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed GNOME Live Snapshot20261011 (aarch64)",
+      "title": "openSUSE Tumbleweed GNOME Live Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-gnome-live",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:22+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:24+00:00",
+    "version": "Snapshot20261018"
   },
   "opensuse:tumbleweed-kde-live": {
     "hash": "b37fa832e11268a4a55688c53496f6b4e0b842357a52f0d28336f074c9ae87b2",
@@ -5280,10 +5280,10 @@
     "version": "Snapshot20261017"
   },
   "opensuse:tumbleweed-kde-live:aarch64": {
-    "hash": "d6de28a35f9d7457c9c2e6a897e5a2889d0526983d26cd90db4fa52de0a9eb23",
+    "hash": "e339a527cc304c681f600c4784d6d5934cd2807cd6cc316329e248b095eba477",
     "release": {
       "arch": "aarch64",
-      "checksum": "d6de28a35f9d7457c9c2e6a897e5a2889d0526983d26cd90db4fa52de0a9eb23",
+      "checksum": "e339a527cc304c681f600c4784d6d5934cd2807cd6cc316329e248b095eba477",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso",
@@ -5298,16 +5298,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed KDE Live Snapshot20261011 (aarch64)",
+      "title": "openSUSE Tumbleweed KDE Live Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-kde-live",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:23+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:25+00:00",
+    "version": "Snapshot20261018"
   },
   "opensuse:tumbleweed-net": {
     "hash": "73ae96f6a0ed7dc9b92d4b1c920e88afa10ffd5485c088cdcdb70b729e71e556",
@@ -5340,16 +5340,16 @@
     "version": "Snapshot20261017"
   },
   "opensuse:tumbleweed-net:aarch64": {
-    "hash": "4e133e6d652882ed13f2dd8eff27e2ed8527ca225960e6089b6d9adc4e22e215",
+    "hash": "536a2a89bbcdc3edaea0167cb09d5e92bbc60cefe13208ae03de4a9cb92adcc9",
     "release": {
       "arch": "aarch64",
-      "checksum": "4e133e6d652882ed13f2dd8eff27e2ed8527ca225960e6089b6d9adc4e22e215",
+      "checksum": "536a2a89bbcdc3edaea0167cb09d5e92bbc60cefe13208ae03de4a9cb92adcc9",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso",
       "filename": "openSUSE-Tumbleweed-NET-aarch64-Current.iso",
-      "info_hash": "0a74cab10ede9ccc27761408620c9fdc1e3aed81",
-      "magnet_uri": "magnet:?xt=urn:btih:0a74cab10ede9ccc27761408620c9fdc1e3aed81&dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261011-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
+      "info_hash": "5afc38f929371d3166634b57ddfa88046ce4f4ce",
+      "magnet_uri": "magnet:?xt=urn:btih:5afc38f929371d3166634b57ddfa88046ce4f4ce&dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261018-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5358,16 +5358,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed NET Snapshot20261011 (aarch64)",
+      "title": "openSUSE Tumbleweed NET Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 2825,
+      "torrent_size": 2792,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-net",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:20+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:22+00:00",
+    "version": "Snapshot20261018"
   },
   "opensuse:tumbleweed-rescue-cd": {
     "hash": "d51bd2018d7e56f28bcd36b02ca78fc2aa83d1059bd16c5546e1f51d14424b3f",
@@ -5400,10 +5400,10 @@
     "version": "Snapshot20261017"
   },
   "opensuse:tumbleweed-rescue-cd:aarch64": {
-    "hash": "255351970f6a460d8c59582f88cf29178864b6b5c9c4c27b493f6b723828858f",
+    "hash": "cb98dc35cb9ca98848eab17c9e8f94c92a1f83605001f9da275b4a6aa8990529",
     "release": {
       "arch": "aarch64",
-      "checksum": "255351970f6a460d8c59582f88cf29178864b6b5c9c4c27b493f6b723828858f",
+      "checksum": "cb98dc35cb9ca98848eab17c9e8f94c92a1f83605001f9da275b4a6aa8990529",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso",
@@ -5418,16 +5418,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed Rescue CD Snapshot20261011 (aarch64)",
+      "title": "openSUSE Tumbleweed Rescue CD Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-rescue-cd",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:26+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:26+00:00",
+    "version": "Snapshot20261018"
   },
   "opensuse:tumbleweed-xfce-live": {
     "hash": "e875aa1dca915026a7fc54bc1a9b09deaffbd563e17a8db0d59108040c011b73",
@@ -5460,10 +5460,10 @@
     "version": "Snapshot20261017"
   },
   "opensuse:tumbleweed-xfce-live:aarch64": {
-    "hash": "48f3a03b44d64bc40944542018a10bb41e013522c4f99cb201c83679035c072d",
+    "hash": "07d4ffdf7e97554c789520a466ea9b93176730b10a38933c5cc8123690fde928",
     "release": {
       "arch": "aarch64",
-      "checksum": "48f3a03b44d64bc40944542018a10bb41e013522c4f99cb201c83679035c072d",
+      "checksum": "07d4ffdf7e97554c789520a466ea9b93176730b10a38933c5cc8123690fde928",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso",
@@ -5478,16 +5478,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed XFCE Live Snapshot20261011 (aarch64)",
+      "title": "openSUSE Tumbleweed XFCE Live Snapshot20261018 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-xfce-live",
-      "version": "Snapshot20261011"
+      "version": "Snapshot20261018"
     },
-    "seen": "2026-10-13T14:18:25+00:00",
-    "version": "Snapshot20261011"
+    "seen": "2026-10-20T11:45:26+00:00",
+    "version": "Snapshot20261018"
   },
   "opnsense:dvd": {
     "hash": "95cafedda6d5b22ce832e249dc2309110fbee19f813ad78cf28bb3d387186bfb",
