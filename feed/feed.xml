@@ -4,7 +4,49 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-10-20T20:55:52+00:00</updated>
+  <updated>2026-10-21T11:58:35+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/unstable-45.20261021.3</id>
+    <title>Bazzite NVIDIA Open unstable-45.20261021.3 (x86_64)</title>
+    <updated>2026-10-21T11:58:35+00:00</updated>
+    <published>2026-10-21T11:58:35+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="nvidia-open" label="variant" />
+    <summary type="text">Bazzite NVIDIA Open unstable-45.20261021.3 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/unstable-45.20261021.3</id>
+    <title>Bazzite Deck unstable-45.20261021.3 (x86_64)</title>
+    <updated>2026-10-21T11:58:35+00:00</updated>
+    <published>2026-10-21T11:58:35+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="deck" label="variant" />
+    <summary type="text">Bazzite Deck unstable-45.20261021.3 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/unstable-45.20261021.3</id>
+    <title>Bazzite Desktop unstable-45.20261021.3 (x86_64)</title>
+    <updated>2026-10-21T11:58:34+00:00</updated>
+    <published>2026-10-21T11:58:34+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">Bazzite Desktop unstable-45.20261021.3 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:x86/20261020T160054Z</id>
     <title>Gentoo Minimal Install CD 20261020T160054Z (x86)</title>
@@ -23,34 +65,6 @@ Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/unstable-45.20261020.8</id>
-    <title>Bazzite NVIDIA Open unstable-45.20261020.8 (x86_64)</title>
-    <updated>2026-10-20T20:54:56+00:00</updated>
-    <published>2026-10-20T20:54:56+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="nvidia-open" label="variant" />
-    <summary type="text">Bazzite NVIDIA Open unstable-45.20261020.8 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/unstable-45.20261020.8</id>
-    <title>Bazzite Deck unstable-45.20261020.8 (x86_64)</title>
-    <updated>2026-10-20T20:54:56+00:00</updated>
-    <published>2026-10-20T20:54:56+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="deck" label="variant" />
-    <summary type="text">Bazzite Deck unstable-45.20261020.8 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/nixos/graphical:aarch64/26.05.12297.cd4ea8d57de1</id>
     <title>NixOS Graphical 26.05.12297.cd4ea8d57de1 (aarch64)</title>
     <updated>2026-10-20T20:54:55+00:00</updated>
@@ -62,20 +76,6 @@ Verify: checksum</summary>
     <summary type="text">NixOS Graphical 26.05.12297.cd4ea8d57de1 (aarch64)
 Filename: latest-nixos-graphical-aarch64-linux.iso
 sha256: 01f9badeb6b46e9b296ab335c79bd2689c886ad801472ed0b8cef7c20d690cfa
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/unstable-45.20261020.8</id>
-    <title>Bazzite Desktop unstable-45.20261020.8 (x86_64)</title>
-    <updated>2026-10-20T20:54:55+00:00</updated>
-    <published>2026-10-20T20:54:55+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="desktop" label="variant" />
-    <summary type="text">Bazzite Desktop unstable-45.20261020.8 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
 Verify: checksum</summary>
   </entry>
   <entry>
