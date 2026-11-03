@@ -4,42 +4,42 @@
   <title>Distro ISO Feed — netbsd</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/netbsd.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-08-01T08:35:49+00:00</updated>
+  <updated>2026-11-03T14:26:28+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install:aarch64/11.0</id>
-    <title>NetBSD install 11.0 (aarch64)</title>
-    <updated>2026-08-01T08:35:49+00:00</updated>
-    <published>2026-08-01T08:35:49+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install:aarch64/11.1</id>
+    <title>NetBSD install 11.1 (aarch64)</title>
+    <updated>2026-11-03T14:26:28+00:00</updated>
+    <published>2026-11-03T14:26:28+00:00</published>
     <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="45349" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.1/images/NetBSD-11.1-evbarm-aarch64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.1/images/NetBSD-11.1-evbarm-aarch64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="45369" />
     <category term="netbsd" label="distro" />
     <category term="install" label="variant" />
-    <summary type="text">NetBSD install 11.0 (aarch64)
-Filename: NetBSD-11.0-evbarm-aarch64.iso
-sha512: 4d7aa6414549da4453e09fa94758b59d601133cbeaa01ac6c55a819384dd4aea3a1019514f011c4d50ffa4ecf60e3eb21c092017de353c3d3525ce69976270c0
-Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-evbarm-aarch64.iso.torrent
-Infohash: d0b11f5ce09463faa2bbcbfcb196985a65e17990
-Magnet: magnet:?xt=urn:btih:d0b11f5ce09463faa2bbcbfcb196985a65e17990&amp;dn=NetBSD-11.0-evbarm-aarch64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+    <summary type="text">NetBSD install 11.1 (aarch64)
+Filename: NetBSD-11.1-evbarm-aarch64.iso
+sha512: f049cbf2a8a706ee3d975037bd44d65720de215681020eacaa7696ddd53cc3373952a2a003d3571effc859dcb65918dd7020d16fcff4fa959b34555a0ba5d642
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.1/images/NetBSD-11.1-evbarm-aarch64.iso.torrent
+Infohash: 4a16bcb514d3d5c6ffcc874673dc0f3d78b0aeb5
+Magnet: magnet:?xt=urn:btih:4a16bcb514d3d5c6ffcc874673dc0f3d78b0aeb5&amp;dn=NetBSD-11.1-evbarm-aarch64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
 Verify: checksum
 NOTE: infohash is unsigned — trust on first use</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install/11.0</id>
-    <title>NetBSD install 11.0 (x86_64)</title>
-    <updated>2026-08-01T08:35:49+00:00</updated>
-    <published>2026-08-01T08:35:49+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/netbsd/install/11.1</id>
+    <title>NetBSD install 11.1 (x86_64)</title>
+    <updated>2026-11-03T14:26:28+00:00</updated>
+    <published>2026-11-03T14:26:28+00:00</published>
     <link href="https://www.netbsd.org/releases/formal.html" rel="alternate" type="text/html" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="26660" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.1/images/NetBSD-11.1-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.1/images/NetBSD-11.1-amd64.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="26680" />
     <category term="netbsd" label="distro" />
     <category term="install" label="variant" />
-    <summary type="text">NetBSD install 11.0 (x86_64)
-Filename: NetBSD-11.0-amd64.iso
-sha512: 2b8f15ea6f4012ef962ffd054bead5dcb1c2233ebdf6d41d23be066b2a9e19978378b0f7f588ed6ab9cde8a5ec618ea560e800fe762309aa28bc36b6480e2734
-Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.0/images/NetBSD-11.0-amd64.iso.torrent
-Infohash: 8479d2900438481594bbeef0960287f86e5a3cdf
-Magnet: magnet:?xt=urn:btih:8479d2900438481594bbeef0960287f86e5a3cdf&amp;dn=NetBSD-11.0-amd64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
+    <summary type="text">NetBSD install 11.1 (x86_64)
+Filename: NetBSD-11.1-amd64.iso
+sha512: 1253d45638afe243b09718a3573597693d5c1bc086ae5618f863148dd2b2b9afdf57557231fd8404e34d17612d1d3a1e4be17d2adb426dfb70e98ebf0bbfcc0c
+Torrent: https://cdn.netbsd.org/pub/NetBSD/NetBSD-11.1/images/NetBSD-11.1-amd64.iso.torrent
+Infohash: 312f3b000d493d39f66ab613810613f895e34d74
+Magnet: magnet:?xt=urn:btih:312f3b000d493d39f66ab613810613f895e34d74&amp;dn=NetBSD-11.1-amd64.iso&amp;tr=http%3A%2F%2Ftracker.NetBSD.org%3A6969%2Fannounce
 Verify: checksum
 NOTE: infohash is unsigned — trust on first use</summary>
   </entry>

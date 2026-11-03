@@ -4,20 +4,365 @@
   <title>Distro ISO Feed — fedora</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/fedora.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T21:46:11+00:00</updated>
+  <updated>2026-11-03T14:22:52+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/xfce:aarch64/44-1.7</id>
-    <title>Fedora Xfce 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:11+00:00</updated>
-    <published>2026-07-12T21:46:11+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/xfce:aarch64/45-1.4</id>
+    <title>Fedora Xfce 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
     <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-Xfce-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2666934272" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/aarch64/iso/Fedora-Xfce-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2977312768" />
     <category term="fedora" label="distro" />
     <category term="xfce" label="variant" />
-    <summary type="text">Fedora Xfce 44-1.7 (aarch64)
-Filename: Fedora-Xfce-Live-44-1.7.aarch64.iso
-Size: 2666934272
-sha256: c707af264df01b70fdf7abfd4fea44ee2942a6080d4353f4e61b23fe951c049e
+    <summary type="text">Fedora Xfce 45-1.4 (aarch64)
+Filename: Fedora-Xfce-Live-45-1.4.aarch64.iso
+Size: 2977312768
+sha256: 29e5ba7c122b8ae819906e8982898056dc8fc8e5d94d4d9a25a1622a5adbe700
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/xfce/45-1.4</id>
+    <title>Fedora Xfce 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-Xfce-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3002775552" />
+    <category term="fedora" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">Fedora Xfce 45-1.4 (x86_64)
+Filename: Fedora-Xfce-Live-45-1.4.x86_64.iso
+Size: 3002775552
+sha256: 66e695a5b1f4203822af220e30152c1e4837d640a3aabd51ac41c6ef2cb9180c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/sway/45-1.4</id>
+    <title>Fedora Sway 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-Sway-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2442932224" />
+    <category term="fedora" label="distro" />
+    <category term="sway" label="variant" />
+    <summary type="text">Fedora Sway 45-1.4 (x86_64)
+Filename: Fedora-Sway-Live-45-1.4.x86_64.iso
+Size: 2442932224
+sha256: 41b26951ea25552ec68bc4c5b730da6d20d0803db31974cffc3b9424ab717351
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/miraclewm:aarch64/45-1.4</id>
+    <title>Fedora MiracleWM 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/aarch64/iso/Fedora-MiracleWM-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2598387712" />
+    <category term="fedora" label="distro" />
+    <category term="miraclewm" label="variant" />
+    <summary type="text">Fedora MiracleWM 45-1.4 (aarch64)
+Filename: Fedora-MiracleWM-Live-45-1.4.aarch64.iso
+Size: 2598387712
+sha256: 0736a6bcbc7b274c676810bef27bd38d148fa164f2d573f87ca82c76c05fee92
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/miraclewm/45-1.4</id>
+    <title>Fedora MiracleWM 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-MiracleWM-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2568001536" />
+    <category term="fedora" label="distro" />
+    <category term="miraclewm" label="variant" />
+    <summary type="text">Fedora MiracleWM 45-1.4 (x86_64)
+Filename: Fedora-MiracleWM-Live-45-1.4.x86_64.iso
+Size: 2568001536
+sha256: f059aa2878618643fe51f09de53cffd81f8797b5ea7bd4aae265bafc541ba344
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/mate/45-1.4</id>
+    <title>Fedora MATE 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-MATE_Compiz-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3361978368" />
+    <category term="fedora" label="distro" />
+    <category term="mate" label="variant" />
+    <summary type="text">Fedora MATE 45-1.4 (x86_64)
+Filename: Fedora-MATE_Compiz-Live-45-1.4.x86_64.iso
+Size: 3361978368
+sha256: f7526aca2874e32783f83bca839c37d591f6f216a3101964a6dc416fa5eb2193
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/lxqt:aarch64/45-1.4</id>
+    <title>Fedora LXQt 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/aarch64/iso/Fedora-LXQt-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2550689792" />
+    <category term="fedora" label="distro" />
+    <category term="lxqt" label="variant" />
+    <summary type="text">Fedora LXQt 45-1.4 (aarch64)
+Filename: Fedora-LXQt-Live-45-1.4.aarch64.iso
+Size: 2550689792
+sha256: 0b2d0fa93ed8a21a0d7c0105ba23913f2713887dde7c7811a06fecca3c0504ac
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/lxqt/45-1.4</id>
+    <title>Fedora LXQt 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-LXQt-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2544365568" />
+    <category term="fedora" label="distro" />
+    <category term="lxqt" label="variant" />
+    <summary type="text">Fedora LXQt 45-1.4 (x86_64)
+Filename: Fedora-LXQt-Live-45-1.4.x86_64.iso
+Size: 2544365568
+sha256: 132d8519235fdc8e8d95aeb0b1a04fd329dc26ba49fae5d88ca393838d40b6cc
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/lxde/45-1.4</id>
+    <title>Fedora LXDE 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-LXDE-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2655266816" />
+    <category term="fedora" label="distro" />
+    <category term="lxde" label="variant" />
+    <summary type="text">Fedora LXDE 45-1.4 (x86_64)
+Filename: Fedora-LXDE-Live-45-1.4.x86_64.iso
+Size: 2655266816
+sha256: bbedd8f300f566f15805b0ef4209272a1a1c88327da65355d28a6e81381db834
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/i3:aarch64/45-1.4</id>
+    <title>Fedora i3 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/aarch64/iso/Fedora-i3-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2495096832" />
+    <category term="fedora" label="distro" />
+    <category term="i3" label="variant" />
+    <summary type="text">Fedora i3 45-1.4 (aarch64)
+Filename: Fedora-i3-Live-45-1.4.aarch64.iso
+Size: 2495096832
+sha256: 36a621ee2fe0a72604f4ea51f898d9daf18efa7ff7fb89f97221a8d7c612d7f6
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/i3/45-1.4</id>
+    <title>Fedora i3 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-i3-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2488913920" />
+    <category term="fedora" label="distro" />
+    <category term="i3" label="variant" />
+    <summary type="text">Fedora i3 45-1.4 (x86_64)
+Filename: Fedora-i3-Live-45-1.4.x86_64.iso
+Size: 2488913920
+sha256: 1eb553e22dc4c92f72d7d5ecebd213a80adbe400c5c4713a425f0a0a6e79b0e9
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/cosmic:aarch64/45-1.4</id>
+    <title>Fedora COSMIC 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/aarch64/iso/Fedora-COSMIC-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="3233591296" />
+    <category term="fedora" label="distro" />
+    <category term="cosmic" label="variant" />
+    <summary type="text">Fedora COSMIC 45-1.4 (aarch64)
+Filename: Fedora-COSMIC-Live-45-1.4.aarch64.iso
+Size: 3233591296
+sha256: 47fc6c62e634910e1fcabd9edb36cd7327c875d1bf0f156ebdb2bc78e0e9d589
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/cosmic/45-1.4</id>
+    <title>Fedora COSMIC 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-COSMIC-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3256915968" />
+    <category term="fedora" label="distro" />
+    <category term="cosmic" label="variant" />
+    <summary type="text">Fedora COSMIC 45-1.4 (x86_64)
+Filename: Fedora-COSMIC-Live-45-1.4.x86_64.iso
+Size: 3256915968
+sha256: 3b3a9d4537b089b9c5f56e9691b65cf1a32398d38366e58499e45d1f50719f84
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/cinnamon/45-1.4</id>
+    <title>Fedora Cinnamon 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-Cinnamon-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3339063296" />
+    <category term="fedora" label="distro" />
+    <category term="cinnamon" label="variant" />
+    <summary type="text">Fedora Cinnamon 45-1.4 (x86_64)
+Filename: Fedora-Cinnamon-Live-45-1.4.x86_64.iso
+Size: 3339063296
+sha256: 3916445a58bcc66f82851acbd6a689708c3be5fad7120183e94b864f838ffdd5
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/budgie/45-1.4</id>
+    <title>Fedora Budgie 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:52+00:00</updated>
+    <published>2026-11-03T14:22:52+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Spins/x86_64/iso/Fedora-Budgie-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3139418112" />
+    <category term="fedora" label="distro" />
+    <category term="budgie" label="variant" />
+    <summary type="text">Fedora Budgie 45-1.4 (x86_64)
+Filename: Fedora-Budgie-Live-45-1.4.x86_64.iso
+Size: 3139418112
+sha256: c91160f7d0d6ccd82faa6b8d96bd2e2dbc3ceec9ceabeee1a86ed1e243089375
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server:s390x/45-1.4</id>
+    <title>Fedora Server 45-1.4 (s390x)</title>
+    <updated>2026-11-03T14:22:49+00:00</updated>
+    <published>2026-11-03T14:22:49+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora-secondary/releases/45/Server/s390x/iso/Fedora-Server-netinst-s390x-45-1.4.iso" rel="enclosure" type="application/x-iso9660-image" length="659118080" />
+    <category term="fedora" label="distro" />
+    <category term="server" label="variant" />
+    <summary type="text">Fedora Server 45-1.4 (s390x)
+Filename: Fedora-Server-netinst-s390x-45-1.4.iso
+Size: 659118080
+sha256: 04111076beab434cef29823926159e33db4235aaf385a448db7ca219497b70a1
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kde:ppc64le/45-1.4</id>
+    <title>Fedora KDE Plasma 45-1.4 (ppc64le)</title>
+    <updated>2026-11-03T14:22:49+00:00</updated>
+    <published>2026-11-03T14:22:49+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora-secondary/releases/45/KDE/ppc64le/iso/Fedora-KDE-Desktop-Live-45-1.4.ppc64le.iso" rel="enclosure" type="application/x-iso9660-image" length="3317891072" />
+    <category term="fedora" label="distro" />
+    <category term="kde" label="variant" />
+    <summary type="text">Fedora KDE Plasma 45-1.4 (ppc64le)
+Filename: Fedora-KDE-Desktop-Live-45-1.4.ppc64le.iso
+Size: 3317891072
+sha256: 72eb46b7a4d2e870519baeb4e1db9950db1fd83becfec2eb76d7d415c69edb0f
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kde:aarch64/45-1.4</id>
+    <title>Fedora KDE Plasma 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:49+00:00</updated>
+    <published>2026-11-03T14:22:49+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/KDE/aarch64/iso/Fedora-KDE-Desktop-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="3539886080" />
+    <category term="fedora" label="distro" />
+    <category term="kde" label="variant" />
+    <summary type="text">Fedora KDE Plasma 45-1.4 (aarch64)
+Filename: Fedora-KDE-Desktop-Live-45-1.4.aarch64.iso
+Size: 3539886080
+sha256: 46a73d4c0a82a77551311ab1589255ecac51b5ce311b4fc84577f5ede5a44f5c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kde/45-1.4</id>
+    <title>Fedora KDE Plasma 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:49+00:00</updated>
+    <published>2026-11-03T14:22:49+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/KDE/x86_64/iso/Fedora-KDE-Desktop-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3543603200" />
+    <category term="fedora" label="distro" />
+    <category term="kde" label="variant" />
+    <summary type="text">Fedora KDE Plasma 45-1.4 (x86_64)
+Filename: Fedora-KDE-Desktop-Live-45-1.4.x86_64.iso
+Size: 3543603200
+sha256: 79703d9f3b21a4f7873f2874ec129d6511cb00a08532d8f9b36daacaa96e97a5
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/workstation:aarch64/45-1.4</id>
+    <title>Fedora Workstation 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:47+00:00</updated>
+    <published>2026-11-03T14:22:47+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Workstation/aarch64/iso/Fedora-Workstation-Live-45-1.4.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2987100160" />
+    <category term="fedora" label="distro" />
+    <category term="workstation" label="variant" />
+    <summary type="text">Fedora Workstation 45-1.4 (aarch64)
+Filename: Fedora-Workstation-Live-45-1.4.aarch64.iso
+Size: 2987100160
+sha256: ad73a977709d417f5b7dda4147fc071396b9d8d2bdcca2df615aa3aab7673710
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/workstation/45-1.4</id>
+    <title>Fedora Workstation 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:47+00:00</updated>
+    <published>2026-11-03T14:22:47+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Workstation/x86_64/iso/Fedora-Workstation-Live-45-1.4.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2925092864" />
+    <category term="fedora" label="distro" />
+    <category term="workstation" label="variant" />
+    <summary type="text">Fedora Workstation 45-1.4 (x86_64)
+Filename: Fedora-Workstation-Live-45-1.4.x86_64.iso
+Size: 2925092864
+sha256: 68338c6bfe4f0d64151f2e47efe9f44a8855ad05b460e56b844fb3fa2c9a3beb
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server:ppc64le/45-1.4</id>
+    <title>Fedora Server 45-1.4 (ppc64le)</title>
+    <updated>2026-11-03T14:22:47+00:00</updated>
+    <published>2026-11-03T14:22:47+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora-secondary/releases/45/Server/ppc64le/iso/Fedora-Server-netinst-ppc64le-45-1.4.iso" rel="enclosure" type="application/x-iso9660-image" length="1260072960" />
+    <category term="fedora" label="distro" />
+    <category term="server" label="variant" />
+    <summary type="text">Fedora Server 45-1.4 (ppc64le)
+Filename: Fedora-Server-netinst-ppc64le-45-1.4.iso
+Size: 1260072960
+sha256: 532dde51f1b69fae11d69e8e136ac2b8dac5ae281af03f2af36fbec2b572afbe
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server:aarch64/45-1.4</id>
+    <title>Fedora Server 45-1.4 (aarch64)</title>
+    <updated>2026-11-03T14:22:47+00:00</updated>
+    <published>2026-11-03T14:22:47+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Server/aarch64/iso/Fedora-Server-netinst-aarch64-45-1.4.iso" rel="enclosure" type="application/x-iso9660-image" length="1436913664" />
+    <category term="fedora" label="distro" />
+    <category term="server" label="variant" />
+    <summary type="text">Fedora Server 45-1.4 (aarch64)
+Filename: Fedora-Server-netinst-aarch64-45-1.4.iso
+Size: 1436913664
+sha256: 311cb9fb35aa39b7df5768c0ccfef571a515d471e824af0d8cbe96de645ddfe8
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server/45-1.4</id>
+    <title>Fedora Server 45-1.4 (x86_64)</title>
+    <updated>2026-11-03T14:22:47+00:00</updated>
+    <published>2026-11-03T14:22:47+00:00</published>
+    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
+    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Server/x86_64/iso/Fedora-Server-netinst-x86_64-45-1.4.iso" rel="enclosure" type="application/x-iso9660-image" length="1272281088" />
+    <category term="fedora" label="distro" />
+    <category term="server" label="variant" />
+    <summary type="text">Fedora Server 45-1.4 (x86_64)
+Filename: Fedora-Server-netinst-x86_64-45-1.4.iso
+Size: 1272281088
+sha256: a1e916f139a05955b943cf183b020780cca9c399b02b8f5ec4354c9e5c1dff1a
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -36,36 +381,6 @@ sha256: 0793b987858dba46cb9e0727ad5fa8e819caff055d6d8ca703dff355fb4383cc
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/miraclewm:aarch64/44-1.7</id>
-    <title>Fedora MiracleWM 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:10+00:00</updated>
-    <published>2026-07-12T21:46:10+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-MiracleWM-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2282393600" />
-    <category term="fedora" label="distro" />
-    <category term="miraclewm" label="variant" />
-    <summary type="text">Fedora MiracleWM 44-1.7 (aarch64)
-Filename: Fedora-MiracleWM-Live-44-1.7.aarch64.iso
-Size: 2282393600
-sha256: 4672e29693e975151e34bd99907cd92dfedbbefc919d0c826d9df912ae9125c1
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/lxqt:aarch64/44-1.7</id>
-    <title>Fedora LXQt 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:10+00:00</updated>
-    <published>2026-07-12T21:46:10+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-LXQt-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2206396416" />
-    <category term="fedora" label="distro" />
-    <category term="lxqt" label="variant" />
-    <summary type="text">Fedora LXQt 44-1.7 (aarch64)
-Filename: Fedora-LXQt-Live-44-1.7.aarch64.iso
-Size: 2206396416
-sha256: 1325c70ce55ab699686084b30cb910f54080766dc1d10a2704045ab6979ad247
-Verify: checksum</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kinoite:aarch64/44-1.7</id>
     <title>Fedora Kinoite 44-1.7 (aarch64)</title>
     <updated>2026-07-12T21:46:10+00:00</updated>
@@ -78,36 +393,6 @@ Verify: checksum</summary>
 Filename: Fedora-Kinoite-ostree-aarch64-44-1.7.iso
 Size: 3884711936
 sha256: 37a8476c947ec3c0a0ce5cde65a8462c71488715b09ab5196714dddf42708c4a
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/i3:aarch64/44-1.7</id>
-    <title>Fedora i3 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:10+00:00</updated>
-    <published>2026-07-12T21:46:10+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-i3-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2208172032" />
-    <category term="fedora" label="distro" />
-    <category term="i3" label="variant" />
-    <summary type="text">Fedora i3 44-1.7 (aarch64)
-Filename: Fedora-i3-Live-44-1.7.aarch64.iso
-Size: 2208172032
-sha256: 8e69c5a688260f8e0e782dd414973f6c090dbb4fdbe31cf7b87434ccb80b89f1
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/cosmic:aarch64/44-1.7</id>
-    <title>Fedora COSMIC 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:10+00:00</updated>
-    <published>2026-07-12T21:46:10+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/aarch64/iso/Fedora-COSMIC-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2899554304" />
-    <category term="fedora" label="distro" />
-    <category term="cosmic" label="variant" />
-    <summary type="text">Fedora COSMIC 44-1.7 (aarch64)
-Filename: Fedora-COSMIC-Live-44-1.7.aarch64.iso
-Size: 2899554304
-sha256: 2ac66a7231d05acc5c52a4a83f2f9b8a37240fa68f4bc4e614d4e64c50daa912
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -138,246 +423,6 @@ Verify: checksum</summary>
 Filename: Fedora-Workstation-Live-44-1.7.ppc64le.iso
 Size: 2488926208
 sha256: 461587a61e75f6012118d3e62f0f2439022e8b9c09071a73a7e57b580ec16e36
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/workstation:aarch64/44-1.7</id>
-    <title>Fedora Workstation 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:09+00:00</updated>
-    <published>2026-07-12T21:46:09+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/aarch64/iso/Fedora-Workstation-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="2689781760" />
-    <category term="fedora" label="distro" />
-    <category term="workstation" label="variant" />
-    <summary type="text">Fedora Workstation 44-1.7 (aarch64)
-Filename: Fedora-Workstation-Live-44-1.7.aarch64.iso
-Size: 2689781760
-sha256: 162ba3c552a2d241c7c63ec26777af0255ee1b5a135adc0be986ceed999933ef
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server:s390x/44-1.7</id>
-    <title>Fedora Server 44-1.7 (s390x)</title>
-    <updated>2026-07-12T21:46:09+00:00</updated>
-    <published>2026-07-12T21:46:09+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Server/s390x/iso/Fedora-Server-netinst-s390x-44-1.7.iso" rel="enclosure" type="application/x-iso9660-image" length="588064768" />
-    <category term="fedora" label="distro" />
-    <category term="server" label="variant" />
-    <summary type="text">Fedora Server 44-1.7 (s390x)
-Filename: Fedora-Server-netinst-s390x-44-1.7.iso
-Size: 588064768
-sha256: 313ea37cdd9fbacb4ff501a0233adebb3b55c623651e98ad784a60a49126b4c9
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server:ppc64le/44-1.7</id>
-    <title>Fedora Server 44-1.7 (ppc64le)</title>
-    <updated>2026-07-12T21:46:09+00:00</updated>
-    <published>2026-07-12T21:46:09+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/Server/ppc64le/iso/Fedora-Server-netinst-ppc64le-44-1.7.iso" rel="enclosure" type="application/x-iso9660-image" length="1160095744" />
-    <category term="fedora" label="distro" />
-    <category term="server" label="variant" />
-    <summary type="text">Fedora Server 44-1.7 (ppc64le)
-Filename: Fedora-Server-netinst-ppc64le-44-1.7.iso
-Size: 1160095744
-sha256: db84e9e9e2ca979f322c877a96584633226d0c4d8052b97ec5cdcdfcc4c7c17f
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server:aarch64/44-1.7</id>
-    <title>Fedora Server 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:09+00:00</updated>
-    <published>2026-07-12T21:46:09+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/aarch64/iso/Fedora-Server-netinst-aarch64-44-1.7.iso" rel="enclosure" type="application/x-iso9660-image" length="1257783296" />
-    <category term="fedora" label="distro" />
-    <category term="server" label="variant" />
-    <summary type="text">Fedora Server 44-1.7 (aarch64)
-Filename: Fedora-Server-netinst-aarch64-44-1.7.iso
-Size: 1257783296
-sha256: a93ebd0322cda5a439039710b727ac1899a06e1c11876cfdf7f27c25b8262cc3
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kde:ppc64le/44-1.7</id>
-    <title>Fedora KDE Plasma 44-1.7 (ppc64le)</title>
-    <updated>2026-07-12T21:46:09+00:00</updated>
-    <published>2026-07-12T21:46:09+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora-secondary/releases/44/KDE/ppc64le/iso/Fedora-KDE-Desktop-Live-44-1.7.ppc64le.iso" rel="enclosure" type="application/x-iso9660-image" length="3033858048" />
-    <category term="fedora" label="distro" />
-    <category term="kde" label="variant" />
-    <summary type="text">Fedora KDE Plasma 44-1.7 (ppc64le)
-Filename: Fedora-KDE-Desktop-Live-44-1.7.ppc64le.iso
-Size: 3033858048
-sha256: 22468ad32c329db7c95a3b90e681043ffac0e3ae472418a39493ecac4b566e16
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kde:aarch64/44-1.7</id>
-    <title>Fedora KDE Plasma 44-1.7 (aarch64)</title>
-    <updated>2026-07-12T21:46:09+00:00</updated>
-    <published>2026-07-12T21:46:09+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/KDE/aarch64/iso/Fedora-KDE-Desktop-Live-44-1.7.aarch64.iso" rel="enclosure" type="application/x-iso9660-image" length="3119904768" />
-    <category term="fedora" label="distro" />
-    <category term="kde" label="variant" />
-    <summary type="text">Fedora KDE Plasma 44-1.7 (aarch64)
-Filename: Fedora-KDE-Desktop-Live-44-1.7.aarch64.iso
-Size: 3119904768
-sha256: 61b39df9bb19aff38b7b7c81d7b2a647aa43948b6683c8467091e0edce833a94
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/xfce/44-1.7</id>
-    <title>Fedora Xfce 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Xfce-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2928986112" />
-    <category term="fedora" label="distro" />
-    <category term="xfce" label="variant" />
-    <summary type="text">Fedora Xfce 44-1.7 (x86_64)
-Filename: Fedora-Xfce-Live-44-1.7.x86_64.iso
-Size: 2928986112
-sha256: 55ea8cb52ac16e62f436e37f9fdb4e978d7b9f75814a9d42e8b69d05e3b496ad
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/sway/44-1.7</id>
-    <title>Fedora Sway 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Sway-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2397937664" />
-    <category term="fedora" label="distro" />
-    <category term="sway" label="variant" />
-    <summary type="text">Fedora Sway 44-1.7 (x86_64)
-Filename: Fedora-Sway-Live-44-1.7.x86_64.iso
-Size: 2397937664
-sha256: d18c6e88661ebf86f99cf939b804c7ad51fdcb4f591f6c732e027d2a418b1f05
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/miraclewm/44-1.7</id>
-    <title>Fedora MiracleWM 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-MiracleWM-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2496849920" />
-    <category term="fedora" label="distro" />
-    <category term="miraclewm" label="variant" />
-    <summary type="text">Fedora MiracleWM 44-1.7 (x86_64)
-Filename: Fedora-MiracleWM-Live-44-1.7.x86_64.iso
-Size: 2496849920
-sha256: 639bcd27619b79b10eef689956d084129af1650055b2fa9a003609a134801349
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/mate/44-1.7</id>
-    <title>Fedora MATE 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3252639744" />
-    <category term="fedora" label="distro" />
-    <category term="mate" label="variant" />
-    <summary type="text">Fedora MATE 44-1.7 (x86_64)
-Filename: Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso
-Size: 3252639744
-sha256: fe868ae4e85494c9d6c1be0dca69fb4d8b8b4fce657563731ecea21c6ff909bf
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/lxqt/44-1.7</id>
-    <title>Fedora LXQt 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-LXQt-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2443081728" />
-    <category term="fedora" label="distro" />
-    <category term="lxqt" label="variant" />
-    <summary type="text">Fedora LXQt 44-1.7 (x86_64)
-Filename: Fedora-LXQt-Live-44-1.7.x86_64.iso
-Size: 2443081728
-sha256: 019c11c72df9f4fb47b1524c9d55541c09f7658d54507bc30197729bcd5f7245
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/lxde/44-1.7</id>
-    <title>Fedora LXDE 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-LXDE-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2574581760" />
-    <category term="fedora" label="distro" />
-    <category term="lxde" label="variant" />
-    <summary type="text">Fedora LXDE 44-1.7 (x86_64)
-Filename: Fedora-LXDE-Live-44-1.7.x86_64.iso
-Size: 2574581760
-sha256: b30d73a6f687790cd4b43c8910db99d5c93f557d45b91306b356d633f77a1c4a
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/i3/44-1.7</id>
-    <title>Fedora i3 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-i3-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2450966528" />
-    <category term="fedora" label="distro" />
-    <category term="i3" label="variant" />
-    <summary type="text">Fedora i3 44-1.7 (x86_64)
-Filename: Fedora-i3-Live-44-1.7.x86_64.iso
-Size: 2450966528
-sha256: f2647f8604e0be0cacc70a2725a99764bd4af4f22fabe4304f6817e246e80964
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/cosmic/44-1.7</id>
-    <title>Fedora COSMIC 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-COSMIC-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3166636032" />
-    <category term="fedora" label="distro" />
-    <category term="cosmic" label="variant" />
-    <summary type="text">Fedora COSMIC 44-1.7 (x86_64)
-Filename: Fedora-COSMIC-Live-44-1.7.x86_64.iso
-Size: 3166636032
-sha256: 86ed49a1f0c32ab3e19846b692b0a1b35fa827154069f32b1ec0e08d42bb20e6
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/cinnamon/44-1.7</id>
-    <title>Fedora Cinnamon 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Cinnamon-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3263983616" />
-    <category term="fedora" label="distro" />
-    <category term="cinnamon" label="variant" />
-    <summary type="text">Fedora Cinnamon 44-1.7 (x86_64)
-Filename: Fedora-Cinnamon-Live-44-1.7.x86_64.iso
-Size: 3263983616
-sha256: fa2dc8d20357d0bd4443b724617498802d3ed772e2f154d3d3690e711595a74b
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/budgie/44-1.7</id>
-    <title>Fedora Budgie 44-1.7 (x86_64)</title>
-    <updated>2026-07-10T12:40:39+00:00</updated>
-    <published>2026-07-10T12:40:39+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Spins/x86_64/iso/Fedora-Budgie-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3084500992" />
-    <category term="fedora" label="distro" />
-    <category term="budgie" label="variant" />
-    <summary type="text">Fedora Budgie 44-1.7 (x86_64)
-Filename: Fedora-Budgie-Live-44-1.7.x86_64.iso
-Size: 3084500992
-sha256: b6298c8a99530b8a923f43b2bf6fa89065465dee9a00cb6952b10eea45f43592
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -441,21 +486,6 @@ sha256: c1404826dc878708870c9d7aeb2071fc197793cb03f83f4cfeb6b0baaf875f17
 Verify: checksum</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/workstation/44-1.7</id>
-    <title>Fedora Workstation 44-1.7 (x86_64)</title>
-    <updated>2026-07-09T23:40:06+00:00</updated>
-    <published>2026-07-09T23:40:06+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Workstation/x86_64/iso/Fedora-Workstation-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="2851612672" />
-    <category term="fedora" label="distro" />
-    <category term="workstation" label="variant" />
-    <summary type="text">Fedora Workstation 44-1.7 (x86_64)
-Filename: Fedora-Workstation-Live-44-1.7.x86_64.iso
-Size: 2851612672
-sha256: 1620295f6a00c27c3208f0c00b8ece4eab1ec69b9002152d97488bf26a426ddf
-Verify: checksum</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/silverblue/44-1.7</id>
     <title>Fedora Silverblue 44-1.7 (x86_64)</title>
     <updated>2026-07-09T23:40:06+00:00</updated>
@@ -468,36 +498,6 @@ Verify: checksum</summary>
 Filename: Fedora-Silverblue-ostree-x86_64-44-1.7.iso
 Size: 3331284992
 sha256: 9ccec9b075a0a4358a7209b2667156aaeeec3a6a3c8d71cada45b57fca9b4682
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/server/44-1.7</id>
-    <title>Fedora Server 44-1.7 (x86_64)</title>
-    <updated>2026-07-09T23:40:06+00:00</updated>
-    <published>2026-07-09T23:40:06+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Server/x86_64/iso/Fedora-Server-netinst-x86_64-44-1.7.iso" rel="enclosure" type="application/x-iso9660-image" length="1228384256" />
-    <category term="fedora" label="distro" />
-    <category term="server" label="variant" />
-    <summary type="text">Fedora Server 44-1.7 (x86_64)
-Filename: Fedora-Server-netinst-x86_64-44-1.7.iso
-Size: 1228384256
-sha256: ae20c06bea746913cadea7d80463e13f4bf55bee4df2918111c921c674b70283
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/fedora/kde/44-1.7</id>
-    <title>Fedora KDE Plasma 44-1.7 (x86_64)</title>
-    <updated>2026-07-09T23:40:06+00:00</updated>
-    <published>2026-07-09T23:40:06+00:00</published>
-    <link href="https://fedoraproject.org/" rel="alternate" type="text/html" />
-    <link href="https://download.fedoraproject.org/pub/fedora/linux/releases/44/KDE/x86_64/iso/Fedora-KDE-Desktop-Live-44-1.7.x86_64.iso" rel="enclosure" type="application/x-iso9660-image" length="3368683520" />
-    <category term="fedora" label="distro" />
-    <category term="kde" label="variant" />
-    <summary type="text">Fedora KDE Plasma 44-1.7 (x86_64)
-Filename: Fedora-KDE-Desktop-Live-44-1.7.x86_64.iso
-Size: 3368683520
-sha256: c8295961d4c41adbf785a31a17c21a971d3b7415fda72dcad0c11c49577bf03a
 Verify: checksum</summary>
   </entry>
 </feed>
