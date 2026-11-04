@@ -4,7 +4,305 @@
   <title>Distro ISO Feed</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-11-03T14:31:18+00:00</updated>
+  <updated>2026-11-04T14:41:44+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:x86/20261103T164556Z</id>
+    <title>Gentoo Minimal Install CD 20261103T164556Z (x86)</title>
+    <updated>2026-11-04T14:41:44+00:00</updated>
+    <published>2026-11-04T14:41:44+00:00</published>
+    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20261103T164556Z.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="gentoo" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Gentoo Minimal Install CD 20261103T164556Z (x86)
+Filename: install-x86-minimal-20261103T164556Z.iso
+sha256: 2f572b18c8231c9043d6787d29d3f678e280104b93eed31c562c3fdd62f79c43
+Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20261103T164556Z.iso.sha256
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/45.20261104</id>
+    <title>Bazzite NVIDIA Open 45.20261104 (x86_64)</title>
+    <updated>2026-11-04T14:40:41+00:00</updated>
+    <published>2026-11-04T14:40:41+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="nvidia-open" label="variant" />
+    <summary type="text">Bazzite NVIDIA Open 45.20261104 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/45.20261104</id>
+    <title>Bazzite Desktop 45.20261104 (x86_64)</title>
+    <updated>2026-11-04T14:40:41+00:00</updated>
+    <published>2026-11-04T14:40:41+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="desktop" label="variant" />
+    <summary type="text">Bazzite Desktop 45.20261104 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/45.20261104</id>
+    <title>Bazzite Deck 45.20261104 (x86_64)</title>
+    <updated>2026-11-04T14:40:41+00:00</updated>
+    <published>2026-11-04T14:40:41+00:00</published>
+    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
+    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="bazzite" label="distro" />
+    <category term="deck" label="variant" />
+    <summary type="text">Bazzite Deck 45.20261104 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd:s390x/20261103.0</id>
+    <title>CentOS Stream DVD 20261103.0 (s390x)</title>
+    <updated>2026-11-04T14:40:35+00:00</updated>
+    <published>2026-11-04T14:40:35+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261103.0-s390x-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">CentOS Stream DVD 20261103.0 (s390x)
+Filename: CentOS-Stream-10-20261103.0-s390x-dvd1.iso
+sha256: a0188b629f2566f91c7df9101d8094409b5747b7b60f593d0cf09bc97a6357ec
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd:ppc64le/20261103.0</id>
+    <title>CentOS Stream DVD 20261103.0 (ppc64le)</title>
+    <updated>2026-11-04T14:40:35+00:00</updated>
+    <published>2026-11-04T14:40:35+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261103.0-ppc64le-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">CentOS Stream DVD 20261103.0 (ppc64le)
+Filename: CentOS-Stream-10-20261103.0-ppc64le-dvd1.iso
+sha256: f1d54bcc6517dcb1645d2533046043c593e278ddbb595d702497d31129a68538
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd:aarch64/20261103.0</id>
+    <title>CentOS Stream DVD 20261103.0 (aarch64)</title>
+    <updated>2026-11-04T14:40:35+00:00</updated>
+    <published>2026-11-04T14:40:35+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261103.0-aarch64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">CentOS Stream DVD 20261103.0 (aarch64)
+Filename: CentOS-Stream-10-20261103.0-aarch64-dvd1.iso
+sha256: 2784afdaea8d83dfb77e98435e7c298993fe9901d4d3608f6ab893a1cb89f4ae
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd/20261103.0</id>
+    <title>CentOS Stream DVD 20261103.0 (x86_64)</title>
+    <updated>2026-11-04T14:40:35+00:00</updated>
+    <published>2026-11-04T14:40:35+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261103.0-x86_64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">CentOS Stream DVD 20261103.0 (x86_64)
+Filename: CentOS-Stream-10-20261103.0-x86_64-dvd1.iso
+sha256: ffc31d9e9b12117e78b485e9fc1bd3bfd20f285ee299bc4b6e02035aee33e719
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot:s390x/20261103.0</id>
+    <title>CentOS Stream boot 20261103.0 (s390x)</title>
+    <updated>2026-11-04T14:40:34+00:00</updated>
+    <published>2026-11-04T14:40:34+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261103.0-s390x-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">CentOS Stream boot 20261103.0 (s390x)
+Filename: CentOS-Stream-10-20261103.0-s390x-boot.iso
+sha256: f3d3a9aac89e52d5eca8b4da99a8824757a62532ea194fa6f59990b209b14b4e
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot:ppc64le/20261103.0</id>
+    <title>CentOS Stream boot 20261103.0 (ppc64le)</title>
+    <updated>2026-11-04T14:40:34+00:00</updated>
+    <published>2026-11-04T14:40:34+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261103.0-ppc64le-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">CentOS Stream boot 20261103.0 (ppc64le)
+Filename: CentOS-Stream-10-20261103.0-ppc64le-boot.iso
+sha256: 2de2019bd93880fb4522b674c22243cc862fb5d84510ce6e74e52f188e4aa58c
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot:aarch64/20261103.0</id>
+    <title>CentOS Stream boot 20261103.0 (aarch64)</title>
+    <updated>2026-11-04T14:40:34+00:00</updated>
+    <published>2026-11-04T14:40:34+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261103.0-aarch64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">CentOS Stream boot 20261103.0 (aarch64)
+Filename: CentOS-Stream-10-20261103.0-aarch64-boot.iso
+sha256: d05079163bbe36b5af3ad14dd5eacde0cecfed191ebc3d157050b2a4cf7f4e04
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot/20261103.0</id>
+    <title>CentOS Stream boot 20261103.0 (x86_64)</title>
+    <updated>2026-11-04T14:40:34+00:00</updated>
+    <published>2026-11-04T14:40:34+00:00</published>
+    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
+    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261103.0-x86_64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="centos" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">CentOS Stream boot 20261103.0 (x86_64)
+Filename: CentOS-Stream-10-20261103.0-x86_64-boot.iso
+sha256: db8a1dc480628df954e154d6a6689cfe5618cbb38a84fbc6178bb073eb77a046
+Verify: checksum</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20261102</id>
+    <title>openSUSE Tumbleweed Rescue CD Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:45+00:00</updated>
+    <published>2026-11-04T14:39:45+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-rescue-cd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20261102 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: ad5673d10961bcf2448d5d475b18efc5d856d3f573f16832aad96269c35cf52d
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live/Snapshot20261102</id>
+    <title>openSUSE Tumbleweed XFCE Live Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:44+00:00</updated>
+    <published>2026-11-04T14:39:44+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-xfce-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20261102 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: 59df4c3c58d08e8aae6e1cb7b6c9ba4eeced84de585227bbce61c31cf8bc3475
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live/Snapshot20261102</id>
+    <title>openSUSE Tumbleweed KDE Live Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:43+00:00</updated>
+    <published>2026-11-04T14:39:43+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-kde-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20261102 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: e6ccd544d1e6933c5d571c7f887e3c5df8756db5230b19e7ba49023c65bf320e
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live/Snapshot20261102</id>
+    <title>openSUSE Tumbleweed GNOME Live Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:42+00:00</updated>
+    <published>2026-11-04T14:39:42+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-gnome-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20261102 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: 1acdfe527c9193b953663e5f6e8e07c022ebe211f5e757e6b18a721cf2f04f8e
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd/Snapshot20261102</id>
+    <title>openSUSE MicroOS DVD Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:41+00:00</updated>
+    <published>2026-11-04T14:39:41+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="microos-dvd" label="variant" />
+    <summary type="text">openSUSE MicroOS DVD Snapshot20261102 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: 36d8db5f0195ad00faf4cfdd491b1ef783b267bd811825e23ca0ac1f589c4d18
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261102</id>
+    <title>openSUSE Tumbleweed NET Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:40+00:00</updated>
+    <published>2026-11-04T14:39:40+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2608" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20261102 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: 213a5e81a2e3fdf24519ad68bb15036e35d6a31c646bf385e335ea9045587b13
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: c3ae299c292305ed990b643aa79725a712c95f6f
+Magnet: magnet:?xt=urn:btih:c3ae299c292305ed990b643aa79725a712c95f6f&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261102-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20261102</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20261102 (x86_64)</title>
+    <updated>2026-11-04T14:39:39+00:00</updated>
+    <published>2026-11-04T14:39:39+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22710" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20261102 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
+sha256: 9f502cc47c1eb44ad9af18d50d3ba85a87b598c956d11ee15e835b301d0e062d
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
+Infohash: 7583ae9b0dbf4453c1d1dd50284e8820939ce83e
+Magnet: magnet:?xt=urn:btih:7583ae9b0dbf4453c1d1dd50284e8820939ce83e&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261102-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/aurora/stable/stable-20261103.1</id>
     <title>Aurora stable-20261103.1 (x86_64)</title>
@@ -45,48 +343,6 @@ Verify: checksum</summary>
     <summary type="text">Bluefin stable-20261103 (x86_64)
 Filename: bluefin-stable-x86_64.iso
 sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/nvidia-open/unstable-45.20261103.3</id>
-    <title>Bazzite NVIDIA Open unstable-45.20261103.3 (x86_64)</title>
-    <updated>2026-11-03T14:31:16+00:00</updated>
-    <published>2026-11-03T14:31:16+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="nvidia-open" label="variant" />
-    <summary type="text">Bazzite NVIDIA Open unstable-45.20261103.3 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/desktop/unstable-45.20261103.3</id>
-    <title>Bazzite Desktop unstable-45.20261103.3 (x86_64)</title>
-    <updated>2026-11-03T14:31:16+00:00</updated>
-    <published>2026-11-03T14:31:16+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="desktop" label="variant" />
-    <summary type="text">Bazzite Desktop unstable-45.20261103.3 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/bazzite/deck/unstable-45.20261103.3</id>
-    <title>Bazzite Deck unstable-45.20261103.3 (x86_64)</title>
-    <updated>2026-11-03T14:31:16+00:00</updated>
-    <published>2026-11-03T14:31:16+00:00</published>
-    <link href="https://bazzite.gg/" rel="alternate" type="text/html" />
-    <link href="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="bazzite" label="distro" />
-    <category term="deck" label="variant" />
-    <summary type="text">Bazzite Deck unstable-45.20261103.3 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
 Verify: checksum</summary>
   </entry>
   <entry>
@@ -578,133 +834,6 @@ Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd/Snapshot20261031</id>
-    <title>openSUSE Tumbleweed Rescue CD Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:22+00:00</updated>
-    <published>2026-11-02T16:04:22+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-rescue-cd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20261031 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: 75d91a5e99421bfed906c65f88822fe941bec9ca673795995674be6c0ce19a22
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live/Snapshot20261031</id>
-    <title>openSUSE Tumbleweed XFCE Live Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:21+00:00</updated>
-    <published>2026-11-02T16:04:21+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-xfce-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20261031 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 54ad43cc2ee69b074798e047c9d0aefb6e2c6a1d8bb26918e1e9335278d388a7
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live/Snapshot20261031</id>
-    <title>openSUSE Tumbleweed KDE Live Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:20+00:00</updated>
-    <published>2026-11-02T16:04:20+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-kde-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20261031 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 835d32130213a6f5b59457019260c68bb204fe17b13c9251bb6d5088ae8a31ed
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live/Snapshot20261031</id>
-    <title>openSUSE Tumbleweed GNOME Live Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:19+00:00</updated>
-    <published>2026-11-02T16:04:19+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-gnome-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20261031 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: e56e18a4d846910920f631448a9bd068a00cab502cfb66027ec72ef124c93583
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd/Snapshot20261031</id>
-    <title>openSUSE MicroOS DVD Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:18+00:00</updated>
-    <published>2026-11-02T16:04:18+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="microos-dvd" label="variant" />
-    <summary type="text">openSUSE MicroOS DVD Snapshot20261031 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: 8c2de4e4d9219337827445ab7cde5f728743a29d9a492e8c69abfcd9a34399e2
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261031</id>
-    <title>openSUSE Tumbleweed NET Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:17+00:00</updated>
-    <published>2026-11-02T16:04:17+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2620" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20261031 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: ced0fc1e85840c0d174b8bc31bd337a6190ec7227c1a78d56e301a74491d0f82
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 026cfe3fbb3c73c321f6969674e9845ea0da4013
-Magnet: magnet:?xt=urn:btih:026cfe3fbb3c73c321f6969674e9845ea0da4013&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261031-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20261031</id>
-    <title>openSUSE Tumbleweed DVD Snapshot20261031 (x86_64)</title>
-    <updated>2026-11-02T16:04:16+00:00</updated>
-    <published>2026-11-02T16:04:16+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22621" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-dvd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed DVD Snapshot20261031 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: 993f6a07ac3f35b113de698975bd43ec6e8da5ad6dac3ddcdaddbc71a928f440
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: 243595d73aba27c553f368d2dd9a852b106df80c
-Magnet: magnet:?xt=urn:btih:243595d73aba27c553f368d2dd9a852b106df80c&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261031-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/arch/iso/2026.11.01</id>
     <title>Arch Linux 2026.11.01 (x86_64)</title>
     <updated>2026-11-01T13:30:55+00:00</updated>
@@ -743,23 +872,6 @@ Verify: gpg
 WARNING: no published checksum — integrity unverifiable</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/gentoo/minimal:x86/20261027T170059Z</id>
-    <title>Gentoo Minimal Install CD 20261027T170059Z (x86)</title>
-    <updated>2026-10-28T13:04:10+00:00</updated>
-    <published>2026-10-28T13:04:10+00:00</published>
-    <link href="https://www.gentoo.org/downloads/" rel="alternate" type="text/html" />
-    <link href="https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20261027T170059Z.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="gentoo" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Gentoo Minimal Install CD 20261027T170059Z (x86)
-Filename: install-x86-minimal-20261027T170059Z.iso
-sha256: 5a2ef2f311020822a9be9b002f13cabb92beda6b395a5adcd2308abcbd8f1cb6
-Signature: https://distfiles.gentoo.org/releases/x86/autobuilds/current-install-x86-minimal/install-x86-minimal-20261027T170059Z.iso.sha256
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/ghostbsd/xfce/26.2-R15.1p6</id>
     <title>GhostBSD XFCE 26.2-R15.1p6 (x86_64)</title>
     <updated>2026-10-28T13:04:01+00:00</updated>
@@ -796,118 +908,6 @@ Infohash: 824c1dfaed9b1fdad0bf2bccba41aa23c35dd350
 Magnet: magnet:?xt=urn:btih:824c1dfaed9b1fdad0bf2bccba41aa23c35dd350&amp;dn=GhostBSD-26.2-R15.1p6.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
 Verify: checksum
 NOTE: infohash is unsigned — trust on first use</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd:s390x/20261026.0</id>
-    <title>CentOS Stream DVD 20261026.0 (s390x)</title>
-    <updated>2026-10-27T12:19:58+00:00</updated>
-    <published>2026-10-27T12:19:58+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261026.0-s390x-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">CentOS Stream DVD 20261026.0 (s390x)
-Filename: CentOS-Stream-10-20261026.0-s390x-dvd1.iso
-sha256: 65ce0828f43bb94e88547ecd0d5272fd038fc3cc02ea1be9bbaa0c2d47394a3e
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd:ppc64le/20261026.0</id>
-    <title>CentOS Stream DVD 20261026.0 (ppc64le)</title>
-    <updated>2026-10-27T12:19:58+00:00</updated>
-    <published>2026-10-27T12:19:58+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261026.0-ppc64le-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">CentOS Stream DVD 20261026.0 (ppc64le)
-Filename: CentOS-Stream-10-20261026.0-ppc64le-dvd1.iso
-sha256: 52d54771fda2e54c69cc47c47439cf2d7523207bb5a8a9297d1a055823a21799
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd:aarch64/20261026.0</id>
-    <title>CentOS Stream DVD 20261026.0 (aarch64)</title>
-    <updated>2026-10-27T12:19:58+00:00</updated>
-    <published>2026-10-27T12:19:58+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261026.0-aarch64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">CentOS Stream DVD 20261026.0 (aarch64)
-Filename: CentOS-Stream-10-20261026.0-aarch64-dvd1.iso
-sha256: 78d0f522e2c98eda53ea609bc55253f7b593c6b81ce9414d03a53955fa1b1268
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/dvd/20261026.0</id>
-    <title>CentOS Stream DVD 20261026.0 (x86_64)</title>
-    <updated>2026-10-27T12:19:58+00:00</updated>
-    <published>2026-10-27T12:19:58+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261026.0-x86_64-dvd1.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">CentOS Stream DVD 20261026.0 (x86_64)
-Filename: CentOS-Stream-10-20261026.0-x86_64-dvd1.iso
-sha256: ecd839c84b958fd803edc89e547c9974f604f328be06bcf935709712bc6f7ffc
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot:s390x/20261026.0</id>
-    <title>CentOS Stream boot 20261026.0 (s390x)</title>
-    <updated>2026-10-27T12:19:58+00:00</updated>
-    <published>2026-10-27T12:19:58+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/s390x/iso/CentOS-Stream-10-20261026.0-s390x-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">CentOS Stream boot 20261026.0 (s390x)
-Filename: CentOS-Stream-10-20261026.0-s390x-boot.iso
-sha256: 2a893fc675e74fc2613525da46707733383dd54b8227a6dce57fa7d8de52a913
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot:ppc64le/20261026.0</id>
-    <title>CentOS Stream boot 20261026.0 (ppc64le)</title>
-    <updated>2026-10-27T12:19:58+00:00</updated>
-    <published>2026-10-27T12:19:58+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/ppc64le/iso/CentOS-Stream-10-20261026.0-ppc64le-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">CentOS Stream boot 20261026.0 (ppc64le)
-Filename: CentOS-Stream-10-20261026.0-ppc64le-boot.iso
-sha256: d136e86748b8461532a53c4fd0e5b64ce53857695461de3d7968ed79efc839e9
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot:aarch64/20261026.0</id>
-    <title>CentOS Stream boot 20261026.0 (aarch64)</title>
-    <updated>2026-10-27T12:19:57+00:00</updated>
-    <published>2026-10-27T12:19:57+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/aarch64/iso/CentOS-Stream-10-20261026.0-aarch64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">CentOS Stream boot 20261026.0 (aarch64)
-Filename: CentOS-Stream-10-20261026.0-aarch64-boot.iso
-sha256: ad7a6889cb7085a93ba9c4059e5fce3164df6648a1888571a3c56625ddec7c38
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/centos/boot/20261026.0</id>
-    <title>CentOS Stream boot 20261026.0 (x86_64)</title>
-    <updated>2026-10-27T12:19:57+00:00</updated>
-    <published>2026-10-27T12:19:57+00:00</published>
-    <link href="https://www.centos.org/download/" rel="alternate" type="text/html" />
-    <link href="https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/iso/CentOS-Stream-10-20261026.0-x86_64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="centos" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">CentOS Stream boot 20261026.0 (x86_64)
-Filename: CentOS-Stream-10-20261026.0-x86_64-boot.iso
-sha256: 8cfb13c9b25b1d034a5b2216bc77a638688dd7daba3e511dbd3d5036888c8efe
-Verify: checksum</summary>
   </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/kde-neon/desktop/20261025-1825</id>
