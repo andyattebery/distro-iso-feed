@@ -1514,7 +1514,7 @@ distros:
       match: '^Qubes-R[0-9.]+-x86_64\.iso$'     # `[0-9.]+` can't span `4.3.1-rc1`, so RCs are excluded
       version_pattern: 'Qubes-R([0-9.]+)-x86_64'
       ignore: ['-rc']                           # belt; the anchor already drops the co-located -rcN images
-      torrent: "{filename}.torrent"             # no torrent checksum -> trust-on-first-use
+      torrent: "{stem}.torrent"                 # drops the `.iso`; no checksum -> trust-on-first-use
       signing_key:
         # "Qubes OS Release 4.3 Signing Key" -- a NEW per-minor key signs R4.4/R5.0, so the gate
         # will hold the verified R4.3 and open an issue until the new key is checked and pinned

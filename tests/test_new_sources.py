@@ -31,10 +31,12 @@ from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
 from distro_iso_feed import config
 from distro_iso_feed.audit import skipped_releases
 from distro_iso_feed.config import ConfigError, load, load_raw
-from distro_iso_feed.models import Variant
+from distro_iso_feed.models import Release, Variant
 from distro_iso_feed.propose_variants import propose_for
 from distro_iso_feed.run_refresh import diagnose
 from distro_iso_feed.strategies import REGISTRY
+from distro_iso_feed.strategies.torrent import attach_torrent
+from test_torrents import benc
 
 DI = REGISTRY["directory_index"]
 
@@ -430,6 +432,28 @@ def test_opnsense_rc_dir_is_not_skipped_release():
         }
     )
     assert skipped_releases(source, client) == []
+
+
+def test_qubes_torrent_is_named_after_the_stem():
+    """Qubes drops the `.iso`: `Qubes-R4.3.2-x86_64.torrent`. The config asked for `….iso.torrent`
+    from the day it was added, so the torrent never reached the feed and nothing said so."""
+    v = _variants("qubes")["qubes:iso"]
+    base = "https://ftp.qubes-os.org/iso/"
+    iso = "Qubes-R4.3.2-x86_64.iso"
+    torrent = benc(
+        {
+            "announce": "http://bt.example/a",
+            "info": {"name": iso, "length": 700, "piece length": 1, "pieces": b"\0" * 20},
+        }
+    )
+    release = Release(
+        distro="qubes", variant="iso", version="4.3.2", title="Qubes 4.3.2 (x86_64)",
+        filename=iso, download_url=base + iso, checksum="a" * 128, checksum_algo="sha512",
+    )  # fmt: skip
+    client = FakeClient({f"{base}Qubes-R4.3.2-x86_64.torrent": torrent})
+    assert attach_torrent(client, release, dict(v.params)).torrent_url == (
+        f"{base}Qubes-R4.3.2-x86_64.torrent"
+    )
 
 
 # ------------------------------------------------------------------------------------- Tails
