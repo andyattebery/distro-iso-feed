@@ -60,7 +60,7 @@ class FakeClient:
         self._host_failures: Counter[str] = Counter()
         self._cache: dict[str, FakeResponse] = {}
 
-    def get(self, url: str, headers: dict[str, str] | None = None):
+    def get(self, url: str, headers: dict[str, str] | None = None, probe: bool = False):
         host = urlsplit(url).netloc
         if self._host_failures[host] >= self.host_budget:
             # Skipped without asking -- deliberately not appended to `requested`, so a test can
@@ -92,8 +92,10 @@ class FakeClient:
             self._cache[url] = r
         return r
 
-    def text(self, url: str, headers: dict[str, str] | None = None) -> str | None:
-        r = self.get(url, headers=headers)
+    def text(
+        self, url: str, headers: dict[str, str] | None = None, probe: bool = False
+    ) -> str | None:
+        r = self.get(url, headers=headers, probe=probe)
         return r.text if r else None
 
     def exists(self, url: str) -> bool:

@@ -11,7 +11,7 @@ import pytest
 
 from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
 from distro_iso_feed.config import ConfigError, _validate_token
-from distro_iso_feed.listers import ATOM_MAX_PAGES, atom_until_stable
+from distro_iso_feed.listers import ATOM_MAX_PAGES, atom_until_stable, page_index
 from distro_iso_feed.strategies import REGISTRY, Strategy
 from distro_iso_feed.strategies.integrity import SumsUnavailable
 from distro_iso_feed.strategies.stable_symlink import StableSymlink
@@ -649,6 +649,41 @@ def test_page_index_reads_data_attribute_and_sha256sum_suffix():
     )
     assert rel.version == "43-2026-04-19"  # release number AND date
     assert rel.checksum == SHA256  # `./` prefix normalized away
+
+
+def test_page_index_does_not_truncate_a_sidecar_url_into_an_iso():
+    """The match stopped at the `.iso` of `x.iso.sig`, inventing an ISO at that URL. Tails links its
+    signature from another host, and `by_name` keeps the last duplicate, so link order decided
+    whether the feed published the real download or a 404."""
+    page = "https://example.org/download/"
+    html = (
+        '<a href="https://dl.example/x-1.iso">iso</a>'
+        '<a href="https://sig.example/x-1.iso.sig">signature</a>'
+    )
+    links = page_index(FakeClient({page: html}), page)
+    assert [c.url for c in links] == ["https://dl.example/x-1.iso"]
+
+
+def test_page_index_reads_a_torrent_link_only_when_no_iso_is_linked():
+    page = "https://example.org/download/"
+    torrent_only = '<a href="https://dl.example/x-1.iso.torrent">torrent</a>'
+    links = page_index(FakeClient({page: torrent_only}), page)
+    assert [c.url for c in links] == ["https://dl.example/x-1.iso"]
+
+    both = '<a href="https://a.example/x-1.iso">iso</a><a href="https://b.example/x-1.iso.torrent">t</a>'
+    assert [c.url for c in page_index(FakeClient({page: both}), page)] == ["https://a.example/x-1.iso"]
+
+
+def test_page_index_finds_nothing_on_a_page_left_with_only_a_signature():
+    page = "https://example.org/download/"
+    assert page_index(FakeClient({page: '<a href="https://b.example/x-1.iso.sig">sig</a>'}), page) == []
+
+
+@pytest.mark.parametrize("after", ['"', "'", " ", "<", "?dl=1", "#top", "&x=1", ")", ",", ". "])
+def test_page_index_still_ends_a_url_at_whatever_follows_it(after):
+    page = "https://example.org/download/"
+    links = page_index(FakeClient({page: f"see https://dl.example/x-1.iso{after}more"}), page)
+    assert [c.url for c in links] == ["https://dl.example/x-1.iso"]
 
 
 def test_page_index_resolves_relative_hrefs_against_the_page_url():

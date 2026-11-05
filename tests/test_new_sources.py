@@ -340,6 +340,71 @@ def test_endeavouros_takes_either_sidecar_name(suffix):
     assert rel.checksum_algo == "sha512"
 
 
+# ----------------------------------------------------------------------------- openSUSE Leap
+#
+# 16.x replaced `iso/` with `offline/`, holding both installers. `leap-dvd` and `leap-net` keep their
+# keys and follow them. The name without a build number carries no change-token, so it must lose.
+
+LEAP = "https://download.opensuse.org/distribution/leap/"
+LEAP_DIR = f"{LEAP}16.1/offline/"
+
+
+def _leap_client() -> FakeClient:
+    isos = [
+        f"Leap-16.1-{kind}-installer-{arch}-Build60.2.install.iso"
+        for kind in ("offline", "online")
+        for arch in ("x86_64", "aarch64")
+    ]
+    decoys = ["Leap-16.1-offline-installer-x86_64.install.iso", f"{isos[0]}.mirrorlist"]
+    return FakeClient(
+        {
+            LEAP: autoindex_html(["15.6/", "16.0/", "16.1/"]),
+            LEAP_DIR: autoindex_html(decoys + isos),
+            **{f"{LEAP_DIR}{i}.sha512": f"{'a' * 128}  {i}" for i in isos},
+        }
+    )
+
+
+@pytest.mark.parametrize(
+    ("key", "filename"),
+    [
+        ("opensuse:leap-dvd", "Leap-16.1-offline-installer-x86_64-Build60.2.install.iso"),
+        ("opensuse:leap-net", "Leap-16.1-online-installer-x86_64-Build60.2.install.iso"),
+        ("opensuse:leap-dvd:aarch64", "Leap-16.1-offline-installer-aarch64-Build60.2.install.iso"),
+    ],
+)
+def test_leap_follows_the_16_installer_layout(key, filename):
+    v = _variants("opensuse")[key]
+    rel = DI().resolve("opensuse", v.name, dict(v.params), _leap_client())
+    assert rel.filename == filename
+    assert rel.version == "16.1-60.2"
+    assert rel.checksum_algo == "sha512"
+    assert rel.signature_url == f"{LEAP_DIR}{filename}.sha512.asc"
+
+
+# ------------------------------------------------------------------------------------- Tails
+
+TAILS_PAGE = "https://tails.net/install/download/index.en.html"
+TAILS_ISO = "https://download.tails.net/tails/stable/tails-amd64-7.16/tails-amd64-7.16.iso"
+
+
+def test_tails_follows_the_announced_release():
+    """`/tails/stable/` listed 7.14 and a dead 7.15.1 while this page offered 7.16, and the feed
+    quietly walked back from 7.15.1 to 7.14. The signature link comes after the ISO on purpose:
+    its URL must not be read as a second, wrong ISO."""
+    v = _variants("tails")["tails:iso"]
+    page = (
+        f'<a href="{TAILS_ISO}">Download</a>'
+        '<a href="https://tails.net/torrents/files/tails-amd64-7.16.iso.sig">signature</a>'
+    )
+    rel = REGISTRY[v.strategy]().resolve("tails", v.name, dict(v.params), FakeClient({TAILS_PAGE: page}))
+    assert rel.version == "7.16"
+    assert rel.download_url == TAILS_ISO
+    assert rel.checksum is None  # Tails publishes a signature and no checksum file
+    # Where the page links it: the mirror pool can lack a `.sig`, which would read as REJECTED.
+    assert rel.signature_url == "https://tails.net/torrents/files/tails-amd64-7.16.iso.sig"
+
+
 # ------------------------------------------------------------------------------ Fedora Atomic
 #
 # A captured shape of releases.json after Fedora 45: `-ostree-` ISOs became `-Installer-` ones,

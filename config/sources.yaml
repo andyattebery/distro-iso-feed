@@ -656,29 +656,29 @@ distros:
       # `leap/` also lists a legacy `42.3`, which outsorts `16.1` numerically.
       version_dir: "https://download.opensuse.org/distribution/leap/"
       version_dir_match: '^1[5-9]\.\d+$'
-      # Only 15.6 exposes an `iso/` subdir today; 16.x has none. The probe takes the
-      # highest dir that actually *contains* an artifact, so 16.x is picked up free
-      # whenever it appears.
-      index: "{version}/iso/"
-      # `-Current.iso` exists but is NOT linked in the index, so directory_index
-      # cannot see it. The listed `Build710.3-Media.iso` is the real artifact, and
-      # its build number is a genuine change-token.
-      sums: "{filename}.sha256"
-      # Every openSUSE artifact ships `.sha256` + `.sha256.asc` side by side, so the signature
+      # 16.x replaced `iso/` with `offline/`, which holds both installers. The probe takes the
+      # highest dir that actually *contains* an artifact.
+      index: "{version}/offline/"
+      # The `-Build60.2` name is the real artifact, and its build number a genuine change-token.
+      # The same name without a build sits beside it and carries no token, so `match` refuses it.
+      sums: "{filename}.sha512"
+      # Every Leap artifact ships `.sha512` + `.sha512.asc` side by side, so the signature
       # belongs here beside `sums` rather than per-variant. Leap had the `signing_key` but no
       # `sig`, which made the pin inert -- `verify_signing_key` bails without a signature_url,
       # so all 8 leap variants served `verify: checksum` while the config implied `gpg`.
-      sig: "{filename}.sha256.asc"
-      version_pattern: 'Leap-([0-9.]+)-\w+-{token}-Build([0-9.]+)-Media'
+      sig: "{filename}.sha512.asc"
+      version_pattern: 'Leap-([0-9.]+)-\w+-installer-{token}-Build([0-9.]+)\.install'
       signing_key:
         url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4
         fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
         covers: checksums
     variants:
-      # Multi-arch: filename token (Leap ships x86_64/aarch64/ppc64le/s390x in one `iso/` dir).
+      # Keys predate 16.x, which replaced DVD and NET with offline and online installers. A variant
+      # key is permanent, so these two follow the installers.
+      # Multi-arch: filename token (Leap ships x86_64/aarch64/ppc64le/s390x in one `offline/` dir).
       # `arches` seeds x86_64; discovery fills the rest -- trim ppc64le/s390x in review if unwanted.
-      leap-dvd: {label: "openSUSE Leap DVD", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^openSUSE-Leap-[0-9.]+-DVD-{token}-Build[0-9.]+-Media\.iso$'}}
-      leap-net: {label: "openSUSE Leap NET", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^openSUSE-Leap-[0-9.]+-NET-{token}-Build[0-9.]+-Media\.iso$'}}
+      leap-dvd: {label: "openSUSE Leap Offline Installer", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^Leap-[0-9.]+-offline-installer-{token}-Build[0-9.]+\.install\.iso$'}}
+      leap-net: {label: "openSUSE Leap Online Installer", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^Leap-[0-9.]+-online-installer-{token}-Build[0-9.]+\.install\.iso$'}}
       tumbleweed-dvd:
         label: "openSUSE Tumbleweed DVD"
         strategy: stable_symlink
@@ -760,11 +760,12 @@ distros:
       # Two enumeration surfaces: the Leap version-dir listing (via the leap variants) AND the
       # static Tumbleweed/MicroOS `/tumbleweed/iso/` index (via `extra_index`, since the fixed-URL
       # stable_symlink variants list nothing). The group captures family + edition across both --
-      # `Leap`+`DVD` -> leap-dvd, `Tumbleweed`+`GNOME-Live` -> tumbleweed-gnome-live -- so a new
-      # spin in either surface is proposed. The `Snapshot`-dated and non-x86_64 files never match.
+      # `Leap`+`offline` -> leap-offline, which `leap-dvd` selects, and `Tumbleweed`+`GNOME-Live`
+      # -> tumbleweed-gnome-live -- so a new spin in either surface is proposed. The
+      # `Snapshot`-dated, build-less Leap and non-x86_64 files never match.
       extra_index: "https://download.opensuse.org/tumbleweed/iso/"
       match: '\.iso$'
-      group: '^openSUSE-(Leap|Tumbleweed|MicroOS)-(?:[0-9.]+-)?(.+?)-x86_64-(?:Build[0-9.]+-Media|Current)\.iso$'
+      group: '^(?:openSUSE-)?(Leap|Tumbleweed|MicroOS)-(?:[0-9.]+-)?(.+?)-(?:installer-)?x86_64-(?:Build[0-9.]+(?:-Media|\.install)|Current)\.iso$'
       ignore: [aarch64, ppc64le, s390x]
 
   endeavouros:
@@ -795,15 +796,19 @@ distros:
       group: '^EndeavourOS_[A-Za-z_-]+-\d{4}\.\d{2}\.\d{2}-([a-z]+)\.iso$'
 
   tails:
-    strategy: directory_index
+    strategy: page_index
     page_url: "https://tails.net/"
     params:
-      version_dir: "https://download.tails.net/tails/stable/"
-      version_dir_match: '^tails-amd64-[0-9.]+$'
-      index: "{version}/"
+      # The download page, not `/tails/stable/`: that listing lags the announced release and can
+      # list a dead dir, which walked the feed back from 7.15.1 to 7.14 while 7.16 was current.
+      # `version_page` cannot help: it lists the release's dir, and the mirror behind the redirect
+      # served none for 7.16.
+      url: "https://tails.net/install/download/index.en.html"
       # Tails publishes a detached signature and NO checksum file. `verify: gpg`
-      # with checksum None -- a signature does not imply a checksum.
-      sig: "{filename}.sig"
+      # with checksum None -- a signature does not imply a checksum. Absolute, because that is
+      # where the page links it: `download.tails.net` redirects to a mirror pool, and a mirror
+      # missing the `.sig` would read as REJECTED.
+      sig: "https://tails.net/torrents/files/{filename}.sig"
       match: '^tails-amd64-[0-9.]+\.iso$'
       version_pattern: 'tails-amd64-([0-9.]+)\.iso'
       signing_key:

@@ -6,6 +6,7 @@ discovery write-back that edits `sources.yaml` in place.
 from __future__ import annotations
 
 import json
+import logging
 
 import httpx
 import pytest
@@ -133,6 +134,23 @@ def test_retries_on_429_and_honours_retry_after():
 def test_gives_up_after_retries_and_returns_none_never_raises():
     handler = lambda r: httpx.Response(503)  # noqa: E731
     assert _client_with(handler, retries=2).get("https://x/") is None
+
+
+def test_a_probe_miss_logs_at_debug_and_a_plain_miss_at_info(caplog):
+    c = _client_with(lambda request: httpx.Response(404))
+    with caplog.at_level(logging.DEBUG, logger="distro_iso_feed.client"):
+        assert c.text("https://x/plain") is None
+        assert c.text("https://x/probe", probe=True) is None
+    misses = {r.getMessage().split()[1]: r.levelno for r in caplog.records if " -> 404" in r.getMessage()}
+    assert misses == {"https://x/plain": logging.INFO, "https://x/probe": logging.DEBUG}
+
+
+def test_candidate_probe_misses_stay_out_of_the_log(caplog):
+    """Pop!_OS probes versions that do not exist on purpose: 14 lines a run, hiding the real ones."""
+    c = _client_with(lambda r: httpx.Response(404 if "/2" in str(r.url) else 200, text="ok"))
+    with caplog.at_level(logging.INFO, logger="distro_iso_feed.client"):
+        assert listers.candidate_probe(c, ["2", "1"], "https://x/{version}", lambda _: True) == "1"
+    assert " -> 404" not in caplog.text
 
 
 def test_client_returns_none_on_404_without_retrying():

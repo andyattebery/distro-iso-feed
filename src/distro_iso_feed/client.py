@@ -109,11 +109,15 @@ class Client:
     def __exit__(self, *exc) -> None:
         self.close()
 
-    def get(self, url: str, headers: dict[str, str] | None = None) -> Response | None:
+    def get(
+        self, url: str, headers: dict[str, str] | None = None, probe: bool = False
+    ) -> Response | None:
         """Return the response, or None if it never succeeded. Never raises.
 
         Not cached -- `diagnose` depends on this hitting the wire (it reads `trace` for the
         *current* outcome). Use `get_cached` for a sidecar read more than once per variant.
+
+        `probe` marks a URL expected to miss, so its 4xx does not bury a real one in the log.
         """
         host = urlsplit(url).netloc
         if self._host_failures[host] >= self.host_budget:
@@ -143,7 +147,8 @@ class Client:
                 # STRUCTURAL: the host answered, the file is gone. Deliberately does NOT count
                 # against the budget -- several sources carry optional per-file sidecars that
                 # legitimately 404, and charging those would skip a perfectly healthy mirror.
-                log.info("GET %s -> %s", url, r.status_code)
+                level = logging.DEBUG if probe else logging.INFO
+                log.log(level, "GET %s -> %s", url, r.status_code)
                 return None
 
             self.last = Response(str(r.url), r.status_code, r.content)
@@ -191,8 +196,10 @@ class Client:
         except httpx.HTTPError:
             return False
 
-    def text(self, url: str, headers: dict[str, str] | None = None) -> str | None:
-        r = self.get(url, headers=headers)
+    def text(
+        self, url: str, headers: dict[str, str] | None = None, probe: bool = False
+    ) -> str | None:
+        r = self.get(url, headers=headers, probe=probe)
         return r.text if r else None
 
     def _wait(self, attempt: int, retry_after: str | None) -> None:

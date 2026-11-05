@@ -24,7 +24,16 @@ from .client import Client
 from .select import is_prerelease
 
 _HREF = re.compile(r'href=["\']([^"\'?#]+)["\']', re.IGNORECASE)
-_ABS_ISO = re.compile(r'https?://[^\s"\'<>]+?\.(?:iso|img\.gz|img\.xz|raw\.xz)', re.IGNORECASE)
+# The lookahead is "the filename does not continue", not a list of what may follow: without it
+# `x.iso.sig` reads as `x.iso`, a URL nothing serves. `\.\w` rather than `\.` so a URL that ends a
+# sentence still matches.
+_ABS_ISO = re.compile(
+    r'https?://[^\s"\'<>]+?\.(?:iso|img\.gz|img\.xz|raw\.xz)(?![\w-]|\.\w)', re.IGNORECASE
+)
+# A page may link only the torrent, and that still names the release: Parrot's `version_page` needs
+# just the ISO's directory. Read only when no ISO is linked, and `.torrent` only, so a page left
+# with nothing but a `.sig` resolves to nothing rather than to an ISO URL nobody serves.
+_ISO_BEHIND_TORRENT = re.compile(r'https?://[^\s"\'<>]+?\.iso(?=\.torrent)', re.IGNORECASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -57,7 +66,7 @@ def autoindex(client: Client, url: str) -> list[Candidate]:
 def version_dir(client: Client, url: str, pattern: str = r"^\d+(\.\d+)*$") -> list[str]:
     """List the *version directories* under a parent index.
 
-    FreeBSD, Leap, Tails, Batocera, Ubuntu and Mint all publish one. Hardcoding a
+    FreeBSD, Leap, Batocera, Ubuntu and Mint all publish one. Hardcoding a
     version instead is how a feed silently pins itself to a stale release.
     """
     text = client.text(url)
@@ -91,7 +100,7 @@ def candidate_probe(
             if client.exists(url):
                 return value
             continue
-        text = client.text(url)
+        text = client.text(url, probe=True)
         if text and validate(text):
             return value
     return None
@@ -340,7 +349,7 @@ def page_index(client: Client, url: str, attr: str | None = None) -> list[Candid
     if attr:
         urls = re.findall(rf'{re.escape(attr)}=["\']([^"\']+)["\']', text)
     if not urls:
-        urls = _ABS_ISO.findall(text)
+        urls = _ABS_ISO.findall(text) or _ISO_BEHIND_TORRENT.findall(text)
 
     out = []
     for u in urls:

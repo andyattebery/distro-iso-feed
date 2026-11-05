@@ -129,12 +129,11 @@ def test_enumerate_all_extra_index_unions_and_dedupes_by_name():
 # ------------------------------------------------------------------ openSUSE group keys
 
 def test_opensuse_group_keys_family_and_edition_across_both_surfaces():
-    group = re.compile(
-        r"^openSUSE-(Leap|Tumbleweed|MicroOS)-(?:[0-9.]+-)?(.+?)-x86_64-(?:Build[0-9.]+-Media|Current)\.iso$"
-    )
+    _, sources = load(REAL_CONFIG, set(REGISTRY))
+    group = re.compile(next(s for s in sources if s.name == "opensuse").discover["group"])
     cases = {
-        "openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso": "leap-dvd",
-        "openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso": "leap-net",
+        "Leap-16.1-offline-installer-x86_64-Build60.2.install.iso": "leap-offline",
+        "Leap-16.1-online-installer-x86_64-Build60.2.install.iso": "leap-online",
         "openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso": "tumbleweed-gnome-live",
         "openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso": "tumbleweed-rescue-cd",
         "openSUSE-MicroOS-DVD-x86_64-Current.iso": "microos-dvd",
@@ -144,6 +143,8 @@ def test_opensuse_group_keys_family_and_edition_across_both_surfaces():
         assert m and variant_key(m) == key, filename
     # A Snapshot-dated (non-Current) file is not an edition and must not match.
     assert not group.search("openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260710-Media.iso")
+    # Nor is Leap's name without a build number: it sits beside the real artifact.
+    assert not group.search("Leap-16.1-offline-installer-x86_64.install.iso")
 
 
 def test_opensuse_config_carries_the_four_backfilled_spins():
