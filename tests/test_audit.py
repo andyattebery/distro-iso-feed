@@ -254,10 +254,70 @@ def test_a_newer_dir_holding_only_milestones_is_not_reported():
     assert skipped_releases(_vd_source(index="{version}/release/"), FakeClient(pages)) == []
 
 
-def test_a_newer_dir_with_only_non_matching_files_is_not_reported():
-    """The OPNsense shape: `26.7/` holds only `-26.7.r1-` files while 26.7 is in RC."""
-    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["thing-2.0.r1-amd64-rc.iso"])})
+def test_a_skipped_release_names_its_arch():
+    """Same-dir `{token}` sources can lose one arch, and the finding carries only the variant."""
+    params = _vd_source().variants[0].params
+    source = Source(name="d", variants=(Variant("d", "v", _DI, params, arch="aarch64"),))
+    found = skipped_releases(source, FakeClient(_vd_pages()))
+    assert "aarch64" in found[0].detail
+
+
+def test_a_newer_dir_with_renamed_files_is_skipped_release():
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["newname-2.0-amd64.iso"])})
+    found = skipped_releases(_vd_source(), FakeClient(pages))
+    assert [f.reason for f in found] == [Reason.SKIPPED_RELEASE]
+    assert "2.0" in found[0].detail
+
+
+def test_an_edition_dropped_from_a_newer_dir_is_skipped_release():
+    """Gershwin's failure on a `version_dir` source: siblings move on, this one stays frozen."""
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["thing-2.0-other.iso"])})
+    found = skipped_releases(_vd_source(), FakeClient(pages))
+    assert [f.reason for f in found] == [Reason.SKIPPED_RELEASE]
+
+
+def test_each_match_is_walked_separately():
+    """Whether a dir was skipped depends on `match`, so sharing a listing is not enough to share a
+    walk: here `amd` is fine and only `arm` is frozen."""
+    base = _vd_source().variants[0].params
+    pages = {
+        _VD: autoindex_html(["1.0/", "2.0/"]),
+        f"{_VD}1.0/": autoindex_html(["thing-1.0-amd64.iso", "thing-1.0-arm64.iso"]),
+        f"{_VD}2.0/": autoindex_html(["thing-2.0-amd64.iso"]),
+    }
+    source = Source(
+        name="d",
+        variants=(
+            Variant("d", "amd", _DI, {**base, "match": r"^thing-[0-9.]+-amd64\.iso$"}),
+            Variant("d", "arm", _DI, {**base, "match": r"^thing-[0-9.]+-arm64\.iso$"}),
+        ),
+    )
+    assert [f.subject for f in skipped_releases(source, FakeClient(pages))] == ["arm"]
+
+
+def test_a_newer_dir_with_only_prerelease_artifacts_is_not_reported():
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["thing-2.0-beta-amd64.iso"])})
     assert skipped_releases(_vd_source(), FakeClient(pages)) == []
+
+
+def test_a_newer_dir_with_only_ignored_artifacts_is_not_reported():
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["thing-2.0.r1-amd64.iso"])})
+    source = _vd_source(ignore=[r"\.r\d+-"])
+    assert skipped_releases(source, FakeClient(pages)) == []
+
+
+def test_a_newer_dir_with_no_artifacts_at_all_is_not_reported():
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["README", "SHA256SUMS", "x.iso.torrent"])})
+    assert skipped_releases(_vd_source(), FakeClient(pages)) == []
+
+
+def test_the_refresh_walk_fetches_nothing_extra():
+    """The parent check costs a fetch, and belongs to the audit, never the daily walk."""
+    pages = _vd_pages(index="1.0/release/")
+    client = FakeClient(pages)
+    params = dict(_vd_source(index="{version}/release/").variants[0].params)
+    REGISTRY[_DI]()._index_url(params, client)
+    assert client.requested == [_VD, f"{_VD}2.0/release/", f"{_VD}1.0/release/"]
 
 
 def test_a_timed_out_newer_dir_is_not_skipped_release():

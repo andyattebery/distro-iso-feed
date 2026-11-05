@@ -190,7 +190,7 @@ def resolve_findings(source: Source, client: Client) -> list[Finding]:
 
 def skipped_releases(source: Source, client: Client) -> list[Finding]:
     """Newer version dirs a variant fell back past. Resolving succeeds, so nothing else sees this:
-    Leap sat on 15.6 for months beneath a `16.1/` with no `iso/`. Variants sharing a listing are
+    Leap sat on 15.6 for months beneath a `16.1/` with no `iso/`. Variants that would walk alike are
     walked once. Transient failures are left out, by the same rule `resolve_findings` applies.
     """
     out: list[Finding] = []
@@ -198,14 +198,15 @@ def skipped_releases(source: Source, client: Client) -> list[Finding]:
     for variant in source.variants:
         params = variant.params
         parent = params.get("version_dir")
-        # `channel` too: Ubuntu's `-lts` and `-latest` share a listing, and read different dirs.
-        listing = (str(parent), str(params.get("index")), str(params.get("channel")))
+        # What decides the walk's result. `channel`: Ubuntu's `-lts` and `-latest` share a listing,
+        # and read different dirs. `match`: whether a dir counts as skipped depends on it.
+        listing = tuple(str(params.get(k)) for k in ("version_dir", "index", "channel", "match"))
         if not parent or listing in walked:
             continue
         walked.add(listing)
         if skipped := REGISTRY[variant.strategy]().skipped_releases(dict(params), client):
             dirs = ", ".join(f"`{name}`" for name in skipped)
-            detail = f"{dirs} under {parent} serve nothing this variant can use"
+            detail = f"{dirs} under {parent} serve nothing this variant can use ({variant.arch})"
             out.append(Finding(source.name, Reason.SKIPPED_RELEASE, variant.name, detail))
     return out
 

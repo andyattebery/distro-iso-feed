@@ -995,6 +995,9 @@ distros:
       sums: "OPNsense-{version}-checksums-amd64.sha256"
       sums_from_filename: true   # {version} = the FILENAME token (26.1.6), not the dir (26.1)
       match: '^OPNsense-[0-9.]+-dvd-amd64\.iso\.bz2$'
+      # `match` already refuses these. This tells the audit that a dir holding only them is an RC
+      # window, not a rename. `.r1` cannot be a global marker: it is Q4OS's revision.
+      ignore: ['\.r\d+-']
       version_pattern: 'OPNsense-([0-9.]+)-dvd-amd64'
     variants:
       dvd: {label: "OPNsense DVD"}

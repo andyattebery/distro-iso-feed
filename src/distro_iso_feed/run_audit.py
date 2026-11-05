@@ -17,6 +17,7 @@ import argparse
 import json
 import logging
 import sys
+from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
@@ -109,15 +110,9 @@ def main(argv: list[str] | None = None) -> int:
         Path(args.report).write_text(payload + "\n", encoding="utf-8")
 
     signal = [f for f in findings if f.reason.is_signal]
-    unexplained = sum(1 for f in signal if f.reason is Reason.UNEXPLAINED)
-    pinned = sum(1 for f in signal if f.reason is Reason.PINNED)
-    log.info(
-        "%d unexplained, %d pinned, %d signing-key failures, %d sources",
-        unexplained,
-        pinned,
-        len(key_failures),
-        len(sources),
-    )
+    tally = Counter(f.reason for f in signal)
+    counts = ", ".join(f"{tally[r]} {r.value.lower()}" for r in Reason if r.is_signal)
+    log.info("%s, %d signing-key failures, %d sources", counts, len(key_failures), len(sources))
 
     return 1 if (args.strict and (signal or key_failures)) else 0
 

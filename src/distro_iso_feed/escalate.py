@@ -307,7 +307,8 @@ _AUDIT_RESOLVE = {
         "Upstream lists a newer release this variant fell back past, so the feed is serving an"
         " older one with no failure. Find where upstream put it. A moved layout needs"
         " `index`/`match`/`version_pattern`; a listing that lags needs the announced release"
-        " (`page_index` or `version_page`). If upstream pulled the release, this clears by itself."
+        " (`page_index` or `version_page`). If that release dropped this edition or arch, remove"
+        " only what the finding names. If upstream pulled the release, this clears by itself."
     ),
 }
 
@@ -316,9 +317,12 @@ def _audit_title(f: dict) -> str:
     return f"audit {f['reason']}: {f['distro']}:{f['subject']}"
 
 
-def _audit_body(f: dict) -> str:
+def _audit_body(group: list[dict]) -> str:
+    """One issue, possibly several arches: a finding names a variant, so each keeps its detail."""
+    f = group[0]
+    details = "".join(f"- {d}\n" for d in dict.fromkeys(g["detail"] for g in group))
     return (
-        f"`{f['distro']}:{f['subject']}`: {f['detail']}\n\n"
+        f"`{f['distro']}:{f['subject']}`:\n\n{details}\n"
         f"## To resolve\n"
         f"{_AUDIT_RESOLVE[f['reason']]}\n\n"
         f"Reproduce: `uv run distro-iso-feed-audit --only {f['distro']}`\n"
@@ -347,7 +351,10 @@ def plan_audit_issues(findings: list[dict], open_issues: list[dict]) -> dict:
     issue with the count in its title, so a new finding replaces it and pings rather than leaving a
     stale list open.
     """
-    desired = {_audit_title(f): _audit_body(f) for f in findings}
+    groups: dict[str, list[dict]] = {}
+    for f in findings:
+        groups.setdefault(_audit_title(f), []).append(f)
+    desired = {title: _audit_body(group) for title, group in groups.items()}
     if len(desired) > MASS_OUTAGE_THRESHOLD:
         desired = {f"audit: {len(desired)} findings": _audit_mass_body(findings)}
 

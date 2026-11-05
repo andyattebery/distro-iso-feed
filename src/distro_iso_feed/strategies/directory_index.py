@@ -19,12 +19,23 @@ from .. import escalate
 from ..client import Client
 from ..listers import Candidate, autoindex, page_index, version_dir
 from ..models import Release
-from ..select import by_channel, is_prerelease, matching, version_key
+from ..select import (
+    by_channel,
+    excluding,
+    is_prerelease,
+    matching,
+    reject_prereleases,
+    version_key,
+)
 from ..tokens import from_filename
 from .base import Strategy
 from .build import build_release, choose_artifact
 from .integrity import fetch_integrity
 from .torrent import resolve_torrent_only
+
+# What counts as a release's artifact when deciding whether a dir was really skipped. Deliberately
+# not `.torrent`: Kali's torrent-only variants look past dirs of those without anything being wrong.
+_ARTIFACT = re.compile(r"\.(?:iso|img)(?:\.(?:gz|xz|bz2|zip|zst))?$", re.IGNORECASE)
 
 
 class DirectoryIndex(Strategy):
@@ -43,8 +54,8 @@ class DirectoryIndex(Strategy):
 
     def _walk_versions(
         self, parent: str, params: dict, client: Client
-    ) -> tuple[str, str, list[str]]:
-        """The ``(index_url, version)`` to use, plus the newer dirs that served nothing."""
+    ) -> tuple[str, str, list[tuple[str, list[str]]]]:
+        """The ``(index_url, version)`` to use, plus each newer dir passed over, with its names."""
         versions = version_dir(client, parent, params.get("version_dir_match", r"^\d+(\.\d+)*$"))
         if channel := params.get("channel"):
             versions = by_channel(versions, channel)
@@ -52,12 +63,13 @@ class DirectoryIndex(Strategy):
             return "", "", []
 
         # Highest dir that actually contains a *matching* artifact, not merely the highest
-        # number. A dir with content but nothing matching `match` is a release-candidate-only
-        # dir -- OPNsense ships `26.7/` holding only `-26.7.r1-` files while 26.7 is in RC;
-        # skipping it falls through to the newest stable dir (26.1.6).
+        # number. A dir with content but nothing matching `match` is usually a release-candidate
+        # dir -- OPNsense ships `26.7/` holding only `-26.7.r1-` files while 26.7 is in RC --
+        # and passing it falls through to the newest stable dir (26.1.6). When it is not, that
+        # is what `skipped_releases` reports.
         template = params.get("index", "{version}/")
         match = params.get("match")
-        empty: list[str] = []
+        passed: list[tuple[str, list[str]]] = []
         for version in sorted(versions, key=version_key, reverse=True):
             url = urljoin(parent, template.format(version=version))
             mark = len(client.trace)
@@ -65,27 +77,42 @@ class DirectoryIndex(Strategy):
             if not names:
                 outcomes = [o for _, o in client.trace[mark:]]
                 if escalate.classify_outcomes(outcomes) == escalate.STRUCTURAL:
-                    empty.append(version)
+                    passed.append((version, []))
                 continue
             if match and not matching(names, match):
+                passed.append((version, names))
                 continue
-            return url, version, empty
-        return "", "", empty
+            return url, version, passed
+        return "", "", passed
 
     def skipped_releases(self, params: dict, client: Client) -> list[str]:
-        """Newer version dirs that serve nothing, so the feed fell back past them without a word.
+        """Newer version dirs this variant fell back past, so the feed went stale without a word.
 
-        A dir with content but no match is not one: that is OPNsense's RC-only `26.7/`. Nor is a dir
-        holding only milestones, which is Ubuntu's `27.04/` while `27.04/release/` 404s for weeks.
-        That second check costs a fetch, so it lives here and not in the walk the refresh runs.
+        Two shapes. A dir that serves nothing, unless it is expected to: Ubuntu's `27.04/` holds
+        only milestones while `27.04/release/` 404s for weeks. And a dir with real artifacts, none
+        of them ours: a rename, or an edition dropped from that release. An RC-only dir is not that,
+        so `ignore` must cover a marker `is_prerelease` cannot, as OPNsense's does. Telling the two
+        apart costs a fetch, so it lives here and not in the walk the refresh runs.
         """
         parent = params.get("version_dir")
         if not parent or params.get("version_page"):
             return []
-        _, version, empty = self._walk_versions(parent, params, client)
+        _, version, passed = self._walk_versions(parent, params, client)
         if not version:
             return []  # nothing resolved at all, which `UNRESOLVABLE` reports
-        return [v for v in empty if not self._expected_gap(urljoin(parent, f"{v}/"), client)]
+        return [
+            name
+            for name, listed in passed
+            if (
+                self._real_artifacts(listed, params)
+                if listed
+                else not self._expected_gap(urljoin(parent, f"{name}/"), client)
+            )
+        ]
+
+    def _real_artifacts(self, names: list[str], params: dict) -> list[str]:
+        artifacts = [name for name in names if _ARTIFACT.search(name)]
+        return reject_prereleases(excluding(artifacts, params.get("ignore", ())))
 
     def _expected_gap(self, url: str, client: Client) -> bool:
         """Does this version dir hold only milestones, or fail to answer at all? A dir that timed

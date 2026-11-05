@@ -11,6 +11,7 @@ test fails.
 from __future__ import annotations
 
 import json
+import logging
 
 import pytest
 
@@ -98,6 +99,19 @@ def test_audit_report_keeps_only_findings_that_open_issues():
     findings = [Finding("a", reason, "x", "detail") for reason in Reason]
     kept = {f["reason"] for f in run_audit.issue_findings(findings)}
     assert kept == {"UNEXPLAINED", "NO_CHECKSUM", "SKIPPED_RELEASE"}
+
+
+def test_the_count_line_covers_every_signal_finding(audit_env, monkeypatch, caplog):
+    """`--strict` can exit 1 on any of these, so a line that leaves some out reads as all zeros."""
+    findings = [Finding("a", reason, "x", "detail") for reason in Reason]
+    monkeypatch.setattr(run_audit, "audit_source", lambda *_: findings)
+    with caplog.at_level(logging.INFO, logger="distro-iso-feed-audit"):
+        run_audit.main(["--config", str(audit_env)])
+    line = next(r.getMessage() for r in caplog.records if "sources" in r.getMessage())
+    for reason in Reason:
+        if reason.is_signal:
+            assert reason.value.lower() in line
+            assert f"0 {reason.value.lower()}" not in line
 
 
 def test_audit_writes_a_report_for_the_gate(audit_env, tmp_path):

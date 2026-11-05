@@ -27,8 +27,9 @@ from pathlib import Path
 
 import pytest
 
-from conftest import FakeClient, autoindex_html, sf_rss
+from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
 from distro_iso_feed import config
+from distro_iso_feed.audit import skipped_releases
 from distro_iso_feed.config import ConfigError, load, load_raw
 from distro_iso_feed.models import Variant
 from distro_iso_feed.propose_variants import propose_for
@@ -380,6 +381,55 @@ def test_leap_follows_the_16_installer_layout(key, filename):
     assert rel.version == "16.1-60.2"
     assert rel.checksum_algo == "sha512"
     assert rel.signature_url == f"{LEAP_DIR}{filename}.sha512.asc"
+
+
+# ------------------------------------------------------------------- "unstable" as a prerelease
+
+
+def test_bazzite_token_skips_unstable_tags():
+    """The ISO is the stable one, so the token must be too. `unstable-` builds land several times a
+    day, and each one republished a stable ISO that had not changed under a version it never was."""
+    v = _variants("bazzite")["bazzite:desktop"]
+    client = FakeClient(
+        {
+            "https://github.com/ublue-os/bazzite/releases.atom": atom_feed(
+                [
+                    "unstable-45.20261105.4: Unstable (F45.20261105, #fa3f615)",
+                    "testing-45.20261105: Testing (F45.20261105, #91f8041)",
+                    "45.20261104: Stable (F45.20261104)",
+                ]
+            ),
+            v.params["url"] + "-CHECKSUM": f"{'a' * 64}  bazzite-stable-amd64.iso",
+        }
+    )
+    rel = REGISTRY[v.strategy]().resolve("bazzite", v.name, dict(v.params), client)
+    assert rel.version == "45.20261104"
+
+
+def test_neon_unstable_channel_still_resolves():
+    """The one tracked variant with `unstable` in its name. It is a fixed URL, so the filter never
+    sees it, and this pins that: if it ever goes through `choose`, it would vanish."""
+    v = _variants("kde-neon")["kde-neon:dev"]
+    assert "neon-unstable-dev-current.iso" in v.params["url"]
+    sidecar = v.params["url"].removesuffix(".iso") + ".sha256sum"
+    client = FakeClient({sidecar: f"{'a' * 64}  neon-unstable-dev-20260831-1139.iso"})
+    rel = REGISTRY[v.strategy]().resolve("kde-neon", v.name, dict(v.params), client)
+    assert rel.version == "20260831-1139"
+
+
+def test_opnsense_rc_dir_is_not_skipped_release():
+    """`26.7/` holds only `-26.7.r1-` files while 26.7 is in RC, for weeks, twice a year. `.r1` is no
+    global prerelease marker, since it is Q4OS's revision, so the shipped config has to say so."""
+    source = _source("opnsense")
+    root = source.variants[0].params["version_dir"]
+    client = FakeClient(
+        {
+            root: autoindex_html(["26.1/", "26.7/"]),
+            f"{root}26.1/": autoindex_html(["OPNsense-26.1.6-dvd-amd64.iso.bz2"]),
+            f"{root}26.7/": autoindex_html(["OPNsense-26.7.r1-dvd-amd64.iso.bz2"]),
+        }
+    )
+    assert skipped_releases(source, client) == []
 
 
 # ------------------------------------------------------------------------------------- Tails

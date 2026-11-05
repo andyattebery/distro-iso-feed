@@ -123,6 +123,17 @@ def test_audit_issues_count_issues_not_arches():
     assert len(plan["to_open"]) == 3
 
 
+def test_audit_issues_keep_every_arch_in_one_issue():
+    """A finding names a variant, not an arch. Taking only the last detail would hide which arch is
+    affected, and "remove the variant" could then delete an arch that is fine."""
+    plan = escalate.plan_audit_issues(
+        [_finding(detail="`2.0` nothing (x86_64)"), _finding(detail="`2.0` nothing (aarch64)")], []
+    )
+    assert len(plan["to_open"]) == 1
+    body = plan["to_open"][0]["body"]
+    assert "(x86_64)" in body and "(aarch64)" in body
+
+
 def test_every_finding_that_opens_an_issue_says_what_to_do():
     assert {r.value for r in Reason if r.opens_issue} == set(escalate._AUDIT_RESOLVE)
 
