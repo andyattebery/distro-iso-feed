@@ -290,7 +290,8 @@ def render(state: State, out_dir: Path) -> None:
 
     by_distro = out_dir / "by-distro"
     by_distro.mkdir(exist_ok=True)
-    for distro in sorted({r.release.distro for r in records}):
+    distros = sorted({r.release.distro for r in records})
+    for distro in distros:
         subset = [r for r in records if r.release.distro == distro]
         (by_distro / f"{distro}.xml").write_bytes(
             _atom(
@@ -300,3 +301,7 @@ def render(state: State, out_dir: Path) -> None:
                 feed_id=f"{REPO_URL}/id/{distro}",
             )
         )
+    # A distro whose last variant retired renders nothing here, so nothing would overwrite this.
+    for path in by_distro.glob("*.xml"):
+        if path.stem not in distros:
+            path.unlink()

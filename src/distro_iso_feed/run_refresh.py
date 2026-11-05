@@ -342,6 +342,10 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     state = State.load(STATE)
+    # Against every configured variant, not the `--only` selection: narrowing what resolves must
+    # not read as retiring everything else.
+    if retired := state.prune({v.key for v in all_variants}):
+        log.info("retired, no longer configured: %s", ", ".join(retired))
     failures: list[Failure] = []
     signing_failures: list[SigningFailure] = []
     changed: list[str] = []

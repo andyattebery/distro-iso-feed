@@ -295,6 +295,54 @@ def test_one_dead_source_never_removes_an_entry_or_fails_the_run(project):
     assert (tmp_path / "feed" / "feed.xml").read_bytes() == good_feed
 
 
+def _add_orphan(tmp_path) -> None:
+    """Leave the record a variant removed from the config leaves behind."""
+    path = tmp_path / "state" / "state.json"
+    records = json.loads(path.read_text())
+    orphan = json.loads(json.dumps(records["fedora:workstation"]))
+    orphan["release"].update(distro="retired-distro", variant="edition")
+    records["retired-distro:edition"] = orphan
+    path.write_text(json.dumps(records))
+
+
+def test_refresh_prunes_orphans_even_under_only(project):
+    """`--only` narrows what resolves; what is retired is decided by the whole config."""
+    tmp_path, _ = project
+    run_refresh.main([])
+    _add_orphan(tmp_path)
+
+    assert run_refresh.main(["--only", "fedora:workstation"]) == 0
+
+    records = json.loads((tmp_path / "state" / "state.json").read_text())
+    assert "retired-distro:edition" not in records
+    assert "debian:netinst" in records  # configured, just not selected
+    assert "retired-distro" not in (tmp_path / "feed" / "latest.json").read_text()
+
+
+def test_dry_run_does_not_persist_a_prune(project):
+    tmp_path, _ = project
+    run_refresh.main([])
+    _add_orphan(tmp_path)
+    before = (tmp_path / "state" / "state.json").read_bytes()
+
+    assert run_refresh.main(["--dry-run"]) == 0
+
+    assert (tmp_path / "state" / "state.json").read_bytes() == before
+
+
+def test_a_fully_retired_distro_loses_its_per_distro_feed(project):
+    """Nothing else removes this file: it would stay published, at its last version, forever."""
+    tmp_path, _ = project
+    run_refresh.main([])
+    stale = tmp_path / "feed" / "by-distro" / "retired-distro.xml"
+    stale.write_text("<feed/>")
+
+    run_refresh.main([])
+
+    assert not stale.exists()
+    assert (tmp_path / "feed" / "by-distro" / "fedora.xml").exists()
+
+
 def test_every_source_failing_is_loud(project):
     """Individual failures are normal; total failure is a broken runner."""
     tmp_path, pages = project

@@ -47,21 +47,24 @@ the raw report JSON. Point Claude Code (or yourself) at one and it has what a fi
 
 | Issue (label) | Trigger | Fails job? | The resolving PR | Key fields the issue carries |
 |---|---|---|---|---|
-| **resolve regression** (`refresh-failure`) | A *tracked* source stopped resolving structurally: 404/moved, 200-but-empty (redesigned), candidates present but none match, matched-but-no-version-token, or the resolver returned None with candidates listed *and its own fetches having succeeded* (a listing that failed on the network is transient) | Yes | Usually `config/sources.yaml` for the key — bring `match`/`version_pattern`/`index`/`url` back in line with what upstream lists now; `--dry-run --only <key>` confirms. If upstream still publishes the right artifact, suspect the **lister** instead: a windowed listing can push it off the end with nothing changed upstream (`releases.atom` is 10 entries — that is how Bazzite's three variants broke on 2026-07-28). Third outcome: **upstream retired the edition** — then remove the variant from `config/sources.yaml` **and delete its `state.json` keys**, in one commit (see below) | `cause`, `endpoint`+`status`, `observed_candidates` (what it lists now), current `params`, `last_good` (+`last_resolved`), `page_url`, `repro` |
+| **resolve regression** (`refresh-failure`) | A *tracked* source stopped resolving structurally: 404/moved, 200-but-empty (redesigned), candidates present but none match, matched-but-no-version-token, or the resolver returned None with candidates listed *and its own fetches having succeeded* (a listing that failed on the network is transient) | Yes | Usually `config/sources.yaml` for the key — bring `match`/`version_pattern`/`index`/`url` back in line with what upstream lists now; `--dry-run --only <key>` confirms. If upstream still publishes the right artifact, suspect the **lister** instead: a windowed listing can push it off the end with nothing changed upstream (`releases.atom` is 10 entries — that is how Bazzite's three variants broke on 2026-07-28). Third outcome: **upstream retired the edition** — then remove the variant from `config/sources.yaml`; the next refresh drops it from the feed (see below) | `cause`, `endpoint`+`status`, `observed_candidates` (what it lists now), current `params`, `last_good` (+`last_resolved`), `page_url`, `repro` |
 | **signing key** (`refresh-signing-key`) | The pinned GPG key no longer verifies and there is *evidence* (verdict `REJECTED`; a 4xx other than 429 on the key/signature/signed file counts). `cause` says why: `foreign-signer`, `bad-signature`, `unsigned`, `key-url`, `checksum-absent`. A gpg-verified entry keeps its release (`held_version`); one never verified drops to `checksum`. > 5 at once collapse into one issue, grouped by cause | Yes | Per `cause` — the issue's *To resolve* says which. Only `foreign-signer` can be a rotation: **verify it is the project's announced key first** (official channel / chained to trust anchor), *then* update `signing_key.fingerprint`; `--dry-run` proves it re-verifies. `unsigned`, `bad-signature` and `checksum-absent` close themselves once upstream fixes the file — never touch the fingerprint for them | `cause`, `pinned_fpr`, `actual_signer_fpr` (who signs now, `foreign-signer`), `key_url`, `covers`, `held_version` |
 | **pinned release** (`refresh-pin`) | A source frozen to a literal release (`audit.pins`) — resolves cleanly, serves stale forever, every check keeps passing | No (ticket only) | Replace the literal with `version_dir`/`version_page`/`probe_versions` if upstream lists; else add `pinned_ok: true` with a reason | `detail` (the literal + where), `page_url` |
 
 **Security note on rotated keys:** never bump the fingerprint to whatever signed the artifact — that
 voids the pin's entire purpose. Confirm the new key's provenance first; the ticket says so.
 
-**Retiring a variant upstream dropped.** Removing it from `config/sources.yaml` is only half the fix, and
-the half that is not enforced. `state/state.json` is loaded and saved whole and *is* what the feed renders
-from, so a key whose config variant disappeared is never pruned — it keeps being republished, at whatever
-version it last resolved, with no failure and no issue to catch it. **Delete the state keys in the same
-commit**, then regenerate with `--only <distro>` (`--only` narrows resolution; the render still writes the
-whole feed). Nobara's four `-nv` variants went this way on 2026-08-29 — Nobara 44 unified its images and
-stopped building a separate NVIDIA ISO — as the 13 `*-interim` keys did in 8c0cd15. Say *why* in a comment
-beside the surviving variants, or the next person re-adds them from an old filename that still 200s.
+**Retiring a variant upstream dropped.** Remove it from `config/sources.yaml`; that is the whole fix.
+`state/state.json` *is* what the feed renders from, so every refresh drops the records of variants that
+are no longer configured, and the variant leaves the feed on the next run. Do not hand-edit `state.json`
+or regenerate locally for this. The prune reads the whole config, so an `--only` run retires what left the
+config but never a configured variant it did not select. It never reads a resolve result, so a variant that
+merely failed keeps its record. Say *why* in a comment
+beside the surviving variants, or the next person re-adds them from an old filename that still 200s: Nobara
+44 unified its images and stopped building a separate NVIDIA ISO, so its four `-nv` variants went on
+2026-08-29. Where upstream stopped publishing without saying so, say that instead. If `discover.group` still
+matches the old name, an edition that returns comes back as a discovery proposal; on an `enumerable: false`
+distro nothing will, so the comment is all that is left.
 
 ### What deliberately does *not* open an issue
 

@@ -101,6 +101,18 @@ class State:
         )
         return True
 
+    def prune(self, configured: set[str]) -> list[str]:
+        """Drop records whose variant left the config; return their keys, sorted.
+
+        The feed renders from state, so without this a retired variant keeps being published at
+        the version it last resolved, with no failure and no issue to catch it. This reads the
+        config and never a resolve result: a variant that merely failed today keeps its record.
+        """
+        retired = sorted(set(self.records) - configured)
+        for key in retired:
+            del self.records[key]
+        return retired
+
     def entries(self) -> list[Record]:
         """Newest first, ties broken by guid so ordering is total and stable."""
         return sorted(

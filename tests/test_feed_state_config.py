@@ -101,6 +101,14 @@ def test_failed_resolve_leaves_state_byte_identical(tmp_path):
     assert p.read_bytes() == before
 
 
+def test_prune_drops_only_keys_outside_the_config():
+    kept, gone = make_release(), make_release(distro="debian", variant="netinst")
+    s = state_with(kept, gone)
+
+    assert s.prune({kept.state_key}) == [gone.state_key]
+    assert list(s.records) == [kept.state_key]
+
+
 def test_enrich_adds_metadata_without_moving_seen_or_version():
     """The migration: a torrent attached to a known ISO must rewrite the record while
     keeping `version`, `hash`, and `seen` -- so no feed timestamp moves and no reader
