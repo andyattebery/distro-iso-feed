@@ -34,7 +34,9 @@ refresh leaves it to the audit's `UNRESOLVABLE` check, which runs on every commi
 `config/sources.yaml` (`config-audit`) and again weekly. That handoff used to name a check that did
 not exist, which is how `ubuntu-unity:desktop-interim` sat dead from the day it was added: it asked
 for a non-LTS Ubuntu Unity, and Unity ships LTS only. `UNRESOLVABLE` reports **structural** failures
-only — a mirror that timed out is stale, not wrong.
+only — a mirror that timed out is stale, not wrong. `NO_CHECKSUM` comes from the same resolve and draws
+the same line: the variant resolves, but the checksum its config asks for never arrived, because the
+sidecar 404s or does not list the artifact.
 
 **Issues are the state.** There is no committed health file. An open `refresh-*` issue *is* the record
 that something is broken; the gate auto-closes it when the source recovers. The report lives in
@@ -77,6 +79,11 @@ distro nothing will, so the comment is all that is left.
   branch that has no evidence of its own. It also includes a
   **configured checksum sidecar that timed out**: the entry is left exactly as it was rather than
   republished without a checksum, and it retries next run.
+- **A missing checksum sidecar** — the entry publishes without a checksum, because failing the
+  resolve would freeze it. The audit reports `NO_CHECKSUM`, which fails `config-audit` on a push that
+  touches `config/sources.yaml` and otherwise only shows in the weekly `discover` job summary. Nothing
+  pings you between those. `sums` can list alternative names (`directory_index` and `page_index` only)
+  for an upstream that renames its sidecar between releases, as EndeavourOS does.
 - **A host over its failure budget** — after 3 transient failures to one host in a run, its
   remaining URLs are skipped and its entries left untouched. Expect a `skipping its remaining
   URLs` warning in the log and a cluster of transient rows in the summary. That is a sick mirror,

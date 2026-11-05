@@ -61,7 +61,7 @@ design and handed to `distro-iso-feed-audit`. For a long time that handoff had n
 audit only asked which keys *upstream* yields that the config lacks, never whether a configured key
 names anything real. `ubuntu-unity:desktop-interim` lived in that gap from the day it was added.
 
-`audit.unresolvable` closes it, and three properties are load-bearing:
+`audit.resolve_findings` closes it, and three properties are load-bearing:
 
 - It runs **before** the `enumerable: false` short-circuit, beside `pins()`. That exemption is
   precisely where the dead variant hid, and its declared reason was the channel mechanic that broke
@@ -165,7 +165,7 @@ classification to `diagnose` as `attempt_class`. It is applied in exactly one pl
   contradicts the attempt's failed fetch, which is why it is the only branch the attempt decides.
 
 Same shape as `SumsUnavailable` (§1b) — a transient sub-fetch must not reach `diagnose` as a bare
-`None` — and the same discipline `audit.unresolvable` already used, which is why the audit never had
+`None` — and the same discipline `audit.resolve_findings` already used, which is why the audit never had
 this bug.
 
 ---

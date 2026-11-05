@@ -4,8 +4,8 @@ Runs live against every source. Not a test: an upstream adding a spin must not t
 an unrelated pull request red. `discover.yml` runs it weekly and posts the report to
 the job summary, where it is read alongside the proposals it explains.
 
-`--strict` exits 1 on UNEXPLAINED **or** PINNED. Both are signal; a strict mode that
-ignored half its findings would be theatre.
+`--strict` exits 1 on any signal finding (`Reason.is_signal`); a strict mode that ignored
+some of them would be theatre.
 """
 
 from __future__ import annotations

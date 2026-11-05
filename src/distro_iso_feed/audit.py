@@ -1,9 +1,11 @@
 """What does each upstream publish that we don't track, and why don't we?
 
-Two findings are signal:
+Four findings are signal:
 
-  UNEXPLAINED  an edition upstream publishes that no variant tracks
-  PINNED       a source frozen to a literal release
+  UNEXPLAINED   an edition upstream publishes that no variant tracks
+  PINNED        a source frozen to a literal release
+  UNRESOLVABLE  a configured variant that names nothing real
+  NO_CHECKSUM   a variant that resolves, but without the checksum its config asks for
 
 `PINNED` is the more dangerous, and the one no other check in this repo can see.
 A missing variant is visible -- nothing appears in the feed. A pinned one resolves
@@ -58,17 +60,27 @@ _RELEASE_LITERAL = re.compile(
 # The variant discovers its release some other way, so a literal cannot freeze it.
 _DYNAMIC = ("version_dir", "version_page", "probe_versions")
 
+# Params saying the variant's ISO has a published checksum. `torrent_sums` is not one of them: it
+# describes the `.torrent` file, not the ISO.
+_CHECKSUM_PARAMS = ("sums", "sums_suffix", "sums_asset")
+
 
 class Reason(StrEnum):
     UNEXPLAINED = "UNEXPLAINED"
     PINNED = "PINNED"
     UNRESOLVABLE = "UNRESOLVABLE"
+    NO_CHECKSUM = "NO_CHECKSUM"
     NOT_ENUMERABLE = "NOT_ENUMERABLE"
     LISTER_FAILED = "LISTER_FAILED"
 
     @property
     def is_signal(self) -> bool:
-        return self in (Reason.UNEXPLAINED, Reason.PINNED, Reason.UNRESOLVABLE)
+        return self in (
+            Reason.UNEXPLAINED,
+            Reason.PINNED,
+            Reason.UNRESOLVABLE,
+            Reason.NO_CHECKSUM,
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -99,8 +111,8 @@ def pins(source: Source) -> list[Finding]:
     return out
 
 
-def unresolvable(source: Source, client: Client) -> list[Finding]:
-    """Configured variants that produce no artifact at all.
+def resolve_findings(source: Source, client: Client) -> list[Finding]:
+    """Resolve each configured variant once: what names no artifact, and what lost its checksum.
 
     The config->upstream direction, and the one the rest of this module does not cover: everything
     else here asks which keys upstream yields that the config lacks. Nothing asked the reverse --
@@ -115,6 +127,12 @@ def unresolvable(source: Source, client: Client) -> list[Finding]:
     **Structural only.** A variant that fails to resolve because a mirror timed out is stale, not
     wrong -- reporting it would turn a bad night at cdimage into a wall of false findings. The
     `trace` slice is marked per variant, exactly as `run_refresh.diagnose` does it.
+
+    **NO_CHECKSUM comes from the same resolve**, because a second pass would fetch everything twice.
+    A sidecar that 404s or does not list the artifact resolves on purpose (see `SumsUnavailable`:
+    failing it would freeze the entry), so the entry publishes without a checksum and nothing else
+    notices. `endeavouros:default` sat like that from 2026-08-28. A timed-out sidecar never reaches
+    this check: it raises `SumsUnavailable`, which the transient branch below skips.
     """
     out: list[Finding] = []
     for variant in source.variants:
@@ -136,6 +154,15 @@ def unresolvable(source: Source, client: Client) -> list[Finding]:
             )
             continue
         if release is not None:
+            if not release.checksum and any(params.get(k) for k in _CHECKSUM_PARAMS):
+                out.append(
+                    Finding(
+                        source.name,
+                        Reason.NO_CHECKSUM,
+                        variant.name,
+                        f"`{release.filename}` resolved without its configured checksum",
+                    )
+                )
             continue
         outcomes = [o for _, o in client.trace[mark:]]
         if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
@@ -152,8 +179,8 @@ def unresolvable(source: Source, client: Client) -> list[Finding]:
 
 
 def audit_source(source: Source, client: Client) -> list[Finding]:
-    """Pins, unresolvable variants, plus every edition upstream publishes that no variant tracks."""
-    findings = pins(source) + unresolvable(source, client)
+    """Pins, what resolving each variant turns up, and every edition no variant tracks."""
+    findings = pins(source) + resolve_findings(source, client)
     discover = source.discover or {}
 
     # A source that cannot be enumerated has nothing to diff. Its variants are still

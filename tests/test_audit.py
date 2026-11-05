@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 from conftest import FakeClient, autoindex_html
-from distro_iso_feed.audit import Reason, audit_source, pins, report, unresolvable
+from distro_iso_feed.audit import Finding, Reason, audit_source, pins, report, resolve_findings
 from distro_iso_feed.config import (
     ConfigError,
     _validate_discover,
@@ -60,21 +60,21 @@ def _di_source(name: str = "d", **over) -> Source:
 def test_a_variant_that_names_nothing_real_is_unresolvable():
     """200 from the endpoint, but nothing it lists matches -- the config is wrong, not the mirror."""
     client = FakeClient({_IDX: autoindex_html(["other-9.9-amd64.iso"])})
-    found = unresolvable(_di_source(), client)
+    found = resolve_findings(_di_source(), client)
     assert [f.reason for f in found] == [Reason.UNRESOLVABLE]
     assert _IDX in found[0].detail
 
 
 def test_a_resolving_variant_is_not_reported():
     client = FakeClient({_IDX: autoindex_html(["thing-1.2-amd64.iso"])})
-    assert unresolvable(_di_source(), client) == []
+    assert resolve_findings(_di_source(), client) == []
 
 
 def test_a_timed_out_mirror_is_not_reported_as_unresolvable():
     """The guard that keeps a bad night at cdimage from becoming a wall of false findings.
     A transient failure means stale, not wrong -- it will be back tomorrow."""
     client = FakeClient(fail={_IDX: "ReadTimeout"})
-    assert unresolvable(_di_source(), client) == []
+    assert resolve_findings(_di_source(), client) == []
 
 
 def test_a_host_over_its_failure_budget_is_not_reported_either():
@@ -82,7 +82,7 @@ def test_a_host_over_its_failure_budget_is_not_reported_either():
     here too, or a sick host would file a finding per variant it skipped."""
     client = FakeClient(fail={_IDX: "ReadTimeout"}, host_budget=1)
     client.get(_IDX)  # burn the budget
-    assert unresolvable(_di_source(), client) == []
+    assert resolve_findings(_di_source(), client) == []
 
 
 def test_unresolvable_still_runs_for_a_source_that_cannot_be_enumerated():
@@ -106,6 +106,53 @@ def test_unresolvable_still_runs_for_a_source_that_cannot_be_enumerated():
 def test_unresolvable_is_signal_so_it_escapes_the_collapsed_fold():
     assert Reason.UNRESOLVABLE.is_signal
     assert not Reason.NOT_ENUMERABLE.is_signal
+
+
+# ---------------------------------------------------------------------------- no checksum
+#
+# A sidecar that 404s deliberately still resolves (see `SumsUnavailable`), so the entry publishes
+# with no checksum and every other check passes. `endeavouros:default` sat like that from
+# 2026-08-28, because the config asked for `.sha512` and that release shipped `.sha512sum`.
+
+_ISO = "thing-1.2-amd64.iso"
+_SIDECAR = f"{_IDX}{_ISO}.sha256"
+
+
+@pytest.mark.parametrize("param", ["sums", "sums_suffix", "sums_asset"])
+def test_a_configured_sidecar_that_404s_is_no_checksum(param):
+    client = FakeClient({_IDX: autoindex_html([_ISO])})
+    found = resolve_findings(_di_source(**{param: "{filename}.sha256"}), client)
+    assert [(f.reason, f.subject) for f in found] == [(Reason.NO_CHECKSUM, "v")]
+    assert _ISO in found[0].detail
+
+
+def test_a_sidecar_that_omits_the_artifact_is_no_checksum():
+    client = FakeClient({_IDX: autoindex_html([_ISO]), _SIDECAR: f"{'a' * 64}  other.iso"})
+    found = resolve_findings(_di_source(sums="{filename}.sha256"), client)
+    assert [f.reason for f in found] == [Reason.NO_CHECKSUM]
+
+
+def test_a_sidecar_that_lists_the_artifact_is_not_reported():
+    client = FakeClient({_IDX: autoindex_html([_ISO]), _SIDECAR: f"{'a' * 64}  {_ISO}"})
+    assert resolve_findings(_di_source(sums="{filename}.sha256"), client) == []
+
+
+def test_a_variant_configuring_no_checksum_is_not_reported():
+    """The Tails shape: upstream ships a signature and no sidecar, and the config says so."""
+    client = FakeClient({_IDX: autoindex_html([_ISO])})
+    assert resolve_findings(_di_source(), client) == []
+
+
+def test_a_timed_out_sidecar_is_not_no_checksum():
+    """Stale, not wrong: the same line `UNRESOLVABLE` draws, and the refresh leaves it untouched."""
+    client = FakeClient({_IDX: autoindex_html([_ISO])}, fail={_SIDECAR: "ReadTimeout"})
+    assert resolve_findings(_di_source(sums="{filename}.sha256"), client) == []
+
+
+def test_no_checksum_is_signal_and_reaches_the_report():
+    assert Reason.NO_CHECKSUM.is_signal
+    body = report([Finding("d", Reason.NO_CHECKSUM, "v", "`x.iso`")])
+    assert "**NO_CHECKSUM**" in body
 
 
 def test_an_edition_tracked_under_another_name_is_not_unexplained():
@@ -304,8 +351,6 @@ def test_the_real_config_has_no_inert_signing_key():
 
 
 def test_report_leads_with_signal_and_collapses_the_rest():
-    from distro_iso_feed.audit import Finding
-
     text = report(
         [
             Finding("nobara", Reason.UNEXPLAINED, "steam-htpc", "`Nobara-43-Steam-HTPC.iso`"),
