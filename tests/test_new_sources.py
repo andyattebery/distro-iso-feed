@@ -22,14 +22,16 @@ GhostBSD/XCP-ng/Qubes/Gentoo/ChimeraOS (resolve the shipped config's own expande
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
 
-from conftest import FakeClient, autoindex_html
+from conftest import FakeClient, autoindex_html, sf_rss
 from distro_iso_feed import config
-from distro_iso_feed.config import ConfigError, load
+from distro_iso_feed.config import ConfigError, load, load_raw
 from distro_iso_feed.models import Variant
+from distro_iso_feed.propose_variants import propose_for
 from distro_iso_feed.run_refresh import diagnose
 from distro_iso_feed.strategies import REGISTRY
 
@@ -317,15 +319,182 @@ def test_shipped_parrot_config_resolves_the_announced_release():
     assert not any(u.startswith(real + "7.4/") for u in client.requested)
 
 
+# ------------------------------------------------------------------------------ Fedora Atomic
+#
+# A captured shape of releases.json after Fedora 45: `-ostree-` ISOs became `-Installer-` ones,
+# two subvariants were renamed, and the older rows stay listed, so a selector left behind keeps
+# resolving the old release with no failure to notice.
+
+FEDORA = "https://fedoraproject.org/releases.json"
+
+
+def _fedora_row(version: str, arch: str, subvariant: str, filename: str) -> dict:
+    return {
+        "version": version,
+        "arch": arch,
+        "link": f"https://dl.example/{filename}",
+        "variant": subvariant,
+        "subvariant": subvariant,
+        "sha256": "a" * 64,
+        "size": "1",
+    }
+
+
+FEDORA_ROWS = [
+    _fedora_row(ver, arch, sub, name)
+    for ver, arch, sub, name in [
+        ("44", "x86_64", "Silverblue", "Fedora-Silverblue-ostree-x86_64-44-1.7.iso"),
+        ("44", "aarch64", "Silverblue", "Fedora-Silverblue-ostree-aarch64-44-1.7.iso"),
+        ("44", "x86_64", "Kinoite", "Fedora-Kinoite-ostree-x86_64-44-1.7.iso"),
+        ("44", "x86_64", "COSMIC-Atomic", "Fedora-COSMIC-Atomic-ostree-x86_64-44-1.7.iso"),
+        ("44", "x86_64", "Sericea", "Fedora-Sericea-ostree-x86_64-44-1.7.iso"),
+        ("44", "x86_64", "Onyx", "Fedora-Onyx-ostree-x86_64-44-1.7.iso"),
+        ("45 Beta", "x86_64", "Silverblue", "Fedora-Silverblue-Installer-45-1.3.x86_64.iso"),
+        ("45", "x86_64", "Silverblue", "Fedora-Silverblue-QCOW-45-1.4.x86_64.qcow2"),
+        ("45", "x86_64", "Silverblue", "Fedora-Silverblue-x86_64-45.1.4.ociarchive"),
+        ("45", "x86_64", "Silverblue", "Fedora-Silverblue-Installer-45-1.4.x86_64.iso"),
+        ("45", "aarch64", "Silverblue", "Fedora-Silverblue-Installer-45-1.4.aarch64.iso"),
+        ("45", "x86_64", "Kinoite", "Fedora-Kinoite-Installer-45-1.4.x86_64.iso"),
+        ("45", "x86_64", "COSMIC-Atomic", "Fedora-CosmicAtomic-Installer-45-1.4.x86_64.iso"),
+        ("45", "x86_64", "Sway-Atomic", "Fedora-Sway-Atomic-x86_64-45.1.4.ociarchive"),
+        ("45", "x86_64", "Sway-Atomic", "Fedora-SwayAtomic-Installer-45-1.4.x86_64.iso"),
+        ("45", "x86_64", "Budgie-Atomic", "Fedora-BudgieAtomic-Installer-45-1.4.x86_64.iso"),
+    ]
+]
+
+
+@pytest.mark.parametrize(
+    ("key", "filename"),
+    [
+        ("fedora:silverblue", "Fedora-Silverblue-Installer-45-1.4.x86_64.iso"),
+        ("fedora:silverblue:aarch64", "Fedora-Silverblue-Installer-45-1.4.aarch64.iso"),
+        ("fedora:kinoite", "Fedora-Kinoite-Installer-45-1.4.x86_64.iso"),
+        ("fedora:cosmic-atomic", "Fedora-CosmicAtomic-Installer-45-1.4.x86_64.iso"),
+        ("fedora:sericea", "Fedora-SwayAtomic-Installer-45-1.4.x86_64.iso"),
+        ("fedora:onyx", "Fedora-BudgieAtomic-Installer-45-1.4.x86_64.iso"),
+    ],
+)
+def test_fedora_atomic_variants_follow_the_45_installer_rename(key, filename):
+    v = _variants("fedora")[key]
+    client = FakeClient({FEDORA: json.dumps(FEDORA_ROWS)})
+    rel = REGISTRY["json_api"]().resolve("fedora", v.name, dict(v.params), client)
+    assert rel.filename == filename
+    assert rel.version == "45-1.4"
+
+
+# ---------------------------------------------------------------------------------- Bluestar
+#
+# A captured shape of the 2026-11 feed: upstream split into editions, one of them runs an older
+# base, and two names in it belong to nobody.
+
+BS_FEED = "https://sourceforge.net/projects/bluestarlinux/rss?path=/distro"
+BS_MD5 = "0c365dc3c17b05a4b276c579168b01da"
+BS_ISOS = [
+    "/distro/bslx-plasma-7.2.14-1-2026.11.01-x86_64.iso",
+    "/distro/bslx-sonicde-7.2.14-1-2026.11.01-x86_64.iso",
+    "/distro/bslx-sonicde-7.2.11-12-2026.11.01-x86_64.iso",
+    "/distro/bslx-sonicde-580xx-7.2.11-4-2026.10.26-x86_64.iso",
+    "/distro/bslx-sonicde-7.2.11-580xx-2026.10.22-x86_64.iso",  # a one-off spelling
+    "/distro/bslx-7.2.3-1-2026.09.04-x86_64.iso",  # the pre-split name
+]
+
+
+def _bluestar_client() -> FakeClient:
+    sums = {
+        f"https://sourceforge.net/projects/bluestarlinux/files{p.removesuffix('.iso')}.md5/download": BS_MD5
+        for p in BS_ISOS
+    }
+    return FakeClient({BS_FEED: sf_rss(BS_ISOS), **sums})
+
+
+def _source(distro: str):
+    _, sources = load(CONFIG, set(REGISTRY))
+    return next(s for s in sources if s.name == distro)
+
+
+@pytest.mark.parametrize(
+    ("key", "filename", "version"),
+    [
+        ("bluestar:default", "bslx-plasma-7.2.14-1-2026.11.01-x86_64.iso", "7.2.14-1-2026.11.01"),
+        ("bluestar:sonicde", "bslx-sonicde-7.2.14-1-2026.11.01-x86_64.iso", "7.2.14-1-2026.11.01"),
+        (
+            "bluestar:sonicde-580xx",
+            "bslx-sonicde-580xx-7.2.11-4-2026.10.26-x86_64.iso",
+            "7.2.11-4-2026.10.26",
+        ),
+    ],
+)
+def test_bluestar_resolves_each_edition_from_a_mixed_feed(key, filename, version):
+    v = _variants("bluestar")[key]
+    rel = REGISTRY["sourceforge"]().resolve("bluestar", v.name, dict(v.params), _bluestar_client())
+    assert rel.filename == filename
+    assert rel.version == version
+    assert rel.checksum_algo == "md5"
+
+
+def test_bluestar_discovery_sees_every_edition():
+    """Neither the pre-split name nor the one-off spelling is an edition."""
+    source = _source("bluestar")
+    found = REGISTRY["sourceforge"]().discover_all(
+        "bluestar", [dict(v.params) for v in source.variants], source.discover, _bluestar_client()
+    )
+    assert {s.variant for s in found} == {"plasma", "sonicde", "sonicde-580xx"}
+
+
+def test_sourceforge_groups_can_match_a_full_path():
+    """Candidates here are paths (`/distro/bslx-...`), so a `^bslx` group matches nothing, ever.
+
+    Discovery then reports "no new variants" instead of an error, which is how Bluestar's split
+    into editions went unproposed for two months while the feed served the last pre-split ISO.
+    """
+    _, sources = load(CONFIG, set(REGISTRY))
+    groups = {
+        s.name: s.discover["group"]
+        for s in sources
+        if s.variants[0].strategy == "sourceforge" and s.discover.get("group")
+    }
+    assert groups
+    assert not {n: g for n, g in groups.items() if g.startswith("^") and not g.startswith("^/")}
+
+
 # ------------------------------------------------- GhostBSD / XCP-ng / Qubes / Gentoo / ChimeraOS
 #
 # Resolve tests drive the SHIPPED config's own expanded params against fixture bytes at the real
 # URLs, so a regression in the block itself (not just a hand-built dict) fails here.
 
 
+def test_ghostbsd_gershwin_is_reproposed_if_upstream_publishes_it():
+    """Upstream never said Gershwin was dropped; 26.2 just shipped without it. Retiring it on that
+    evidence is only safe because a returning ISO reaches the weekly PR on its own."""
+    source = _source("ghostbsd")
+    idx = "https://download.ghostbsd.org/releases/amd64/latest/"
+    isos = [
+        "GhostBSD-26.3-R15.2p1.iso",
+        "GhostBSD-26.3-R15.2p1-XFCE.iso",
+        "GhostBSD-26.3-R15.2p1-GERSHWIN.iso",
+    ]
+    client = FakeClient(
+        {
+            idx: autoindex_html(isos),
+            **{f"{idx}{i}.sha256": f"SHA256 ({i}) = {'f' * 64}" for i in isos},
+        }
+    )
+    strategy = REGISTRY["directory_index"]()
+    params = [dict(v.params) for v in source.variants]
+    specs = strategy.discover_all("ghostbsd", params, source.discover, client)
+    specs = [s for s in specs if s.variant not in {v.name for v in source.variants}]
+    candidates = strategy.enumerate_all("ghostbsd", params, source.discover, client)
+
+    good, bad = propose_for(source, specs, candidates, load_raw(CONFIG), client)
+
+    assert [p.variant for p in good] == ["gershwin"]
+    assert "GERSHWIN" in good[0].node["params"]["match"]
+    assert not bad
+
+
 def test_ghostbsd_config_and_resolve_bare_iso_bsd_sidecar_no_signature():
     v = _variants("ghostbsd")
-    assert {"ghostbsd:mate", "ghostbsd:xfce", "ghostbsd:gershwin"} <= set(v)
+    assert set(v) == {"ghostbsd:mate", "ghostbsd:xfce"}
     idx = "https://download.ghostbsd.org/releases/amd64/latest/"
     iso = "GhostBSD-26.1-R15.0p2.iso"
     client = FakeClient(

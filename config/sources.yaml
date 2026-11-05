@@ -38,18 +38,22 @@ distros:
       # releases.json lists v42/43/44 side by side; json_api takes the max version.
       # The respin suffix (`-1.7`) lives only in the filename, and a respin ships a
       # new sha256 -- so the token comes from the filename, not the `version` field.
-      # Two filename shapes: `...-44-1.7.x86_64.iso` (Live) and
-      # `...-ostree-x86_64-44-1.7.iso` (Atomic). One pattern must serve both.
+      # Two filename shapes: `...-44-1.7.x86_64.iso` (Live, Atomic Installer) and
+      # `...-netinst-x86_64-44-1.7.iso` (Server). One pattern must serve both.
       version_pattern: '(\d+-\d+\.\d+)(?:\.[a-z0-9_]+)?\.iso$'
     variants:
       workstation: {label: "Fedora Workstation", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le}, select: {subvariant: Workstation, link_contains: "Workstation-Live"}}
       server: {label: "Fedora Server", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, select: {subvariant: Server, link_contains: "Server-netinst"}}
       kde: {label: "Fedora KDE Plasma", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le}, select: {subvariant: KDE, link_contains: "KDE-Desktop-Live"}}
-      silverblue: {label: "Fedora Silverblue", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Silverblue, link_contains: "ostree"}}
-      kinoite: {label: "Fedora Kinoite", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Kinoite, link_contains: "ostree"}}
-      sericea: {label: "Fedora Sway Atomic", arches: {x86_64: x86_64}, select: {subvariant: Sericea, link_contains: "ostree"}}
-      onyx: {label: "Fedora Budgie Atomic", arches: {x86_64: x86_64}, select: {subvariant: Onyx, link_contains: "ostree"}}
-      cosmic-atomic: {label: "Fedora COSMIC Atomic", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: COSMIC-Atomic, link_contains: "ostree"}}
+      # Atomic ISOs sit beside qcow2, raw.xz and ociarchive rows. Select on the extension, not a
+      # word in the name: old releases stay listed, so a word Fedora stops using leaves the variant
+      # on the last release that had it, with no failure. 45 did that with `-ostree-` -> `-Installer-`.
+      # Keys `sericea` and `onyx` predate 45 renaming those subvariants.
+      silverblue: {label: "Fedora Silverblue", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Silverblue, link_contains: ".iso"}}
+      kinoite: {label: "Fedora Kinoite", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: Kinoite, link_contains: ".iso"}}
+      sericea: {label: "Fedora Sway Atomic", arches: {x86_64: x86_64}, select: {subvariant: Sway-Atomic, link_contains: ".iso"}}
+      onyx: {label: "Fedora Budgie Atomic", arches: {x86_64: x86_64}, select: {subvariant: Budgie-Atomic, link_contains: ".iso"}}
+      cosmic-atomic: {label: "Fedora COSMIC Atomic", arches: {x86_64: x86_64, aarch64: aarch64}, select: {subvariant: COSMIC-Atomic, link_contains: ".iso"}}
       # Desktop spins. `Mate` is the one whose subvariant never appears in its own
       # filename -- the artifact is `Fedora-MATE_Compiz-Live-...`.
       budgie: {label: "Fedora Budgie", arches: {x86_64: x86_64}, select: {subvariant: Budgie, link_contains: "Budgie-Live"}}
@@ -1019,15 +1023,17 @@ distros:
       # Resolve URL is `images/<ed>/<channel>/current/neon-<channel>-<ed>-current.iso`;
       # the EDITIONS are listed three levels up. Discovery surface is not the resolve
       # surface. Only children of the index survive enumeration, so KDE's site-nav
-      # links never reach `group`. What is left is five directories; two are configured.
+      # links never reach `group`. What is left is the edition directories, of which
+      # these are declined:
       #
-      #   big     Bigscreen (TV) and Mobile editions. Both publish `current/` ISOs,
-      #   mobile  but neither is a desktop.
-      #   ko      Korean-language build of the desktop edition
+      #   big        Bigscreen (TV) and Mobile editions. Both publish `current/` ISOs,
+      #   mobile     but neither is a desktop.
+      #   bigscreen  The same edition as `big` under a second name: its ISOs are `neon-user-big-*`
+      #   ko         Korean-language build of the desktop edition
       index: "https://files.kde.org/neon/images/"
       match: '^[a-z]+$'
       group: '^([a-z]+)$'
-      ignore: ['^ko$', '^big$', '^mobile$']
+      ignore: ['^ko$', '^big$', '^bigscreen$', '^mobile$']
 
   nixos:
     strategy: stable_symlink
@@ -1173,13 +1179,19 @@ distros:
       project: "bluestarlinux"
       path: "/distro"
       sums: "{stem}.md5"      # note: drops the `.iso` -- it is NOT `<name>.iso.md5`
-      match: '/bslx-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'
-      version_pattern: 'bslx-([0-9.-]+-\d{4}\.\d{2}\.\d{2})-x86_64'
+      version_pattern: '-(\d+\.\d+\.\d+-\d+-\d{4}\.\d{2}\.\d{2})-x86_64'
     variants:
-      default: {label: "Bluestar Linux"}
+      # The key predates the 2026-09 split into editions, when `bslx-<ver>` became
+      # `bslx-plasma-<ver>`. A variant key is permanent; `plasma` is this variant.
+      default: {label: "Bluestar Linux Plasma", params: {match: '/bslx-plasma-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'}}
+      sonicde: {label: "Bluestar Linux SonicDE", params: {match: '/bslx-sonicde-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'}}
+      sonicde-580xx: {label: "Bluestar Linux SonicDE 580xx", params: {match: '/bslx-sonicde-580xx-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'}}
     discover:
+      # Candidates are full paths (`/distro/bslx-...`), so this cannot be anchored on `^bslx`:
+      # that matches nothing and reads as "no new editions". The RSS feed is a fixed 100-item
+      # window across every edition's four files, and `limit=` is rejected.
       match: '\.iso$'
-      group: '^bslx-([a-z]+)-[0-9.-]+-x86_64\.iso$'
+      group: '/bslx-([a-z][a-z0-9-]*?)-\d+\.\d+\.\d+-\d+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'
 
   garuda:
     strategy: sourceforge
@@ -1444,9 +1456,11 @@ distros:
       version_pattern: 'GhostBSD-([0-9.]+-R[0-9.]+(?:p[0-9]+)?)'
     variants:
       # The bare .iso is the MATE (default) flavor; its name carries no DE token.
+      # Gershwin stopped at 26.1: 26.2 shipped only these two. Upstream said nothing either
+      # way, so this records what was published, not a decision. `discover.group` still
+      # matches `-GERSHWIN.iso`, so if it returns the weekly PR proposes it.
       mate: {label: "GhostBSD MATE", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?\.iso$'}}
       xfce: {label: "GhostBSD XFCE", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-XFCE\.iso$'}}
-      gershwin: {label: "GhostBSD Gershwin", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-GERSHWIN\.iso$'}}
     discover:
       match: '\.iso$'
       group: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-([A-Za-z]+)\.iso$'
