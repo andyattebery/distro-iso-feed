@@ -24,16 +24,19 @@ from .client import Client
 from .select import is_prerelease
 
 _HREF = re.compile(r'href=["\']([^"\'?#]+)["\']', re.IGNORECASE)
+# One URL, up to a quote, escaped or not. A page embedding JSON escapes its quotes, and without
+# the refusal `x.iso.sig&quot;,&quot;https://b/y.iso` reads as one address. A plain `&` stays legal.
+_URL_BODY = r"""https?://(?:(?!&quot;|&#34;|&#39;)[^\s"'<>\\])+?"""
 # The lookahead is "the filename does not continue", not a list of what may follow: without it
 # `x.iso.sig` reads as `x.iso`, a URL nothing serves. `\.\w` rather than `\.` so a URL that ends a
 # sentence still matches.
 _ABS_ISO = re.compile(
-    r'https?://[^\s"\'<>]+?\.(?:iso|img\.gz|img\.xz|raw\.xz)(?![\w-]|\.\w)', re.IGNORECASE
+    _URL_BODY + r"\.(?:iso|img\.gz|img\.xz|raw\.xz)(?![\w-]|\.\w)", re.IGNORECASE
 )
 # A page may link only the torrent, and that still names the release: Parrot's `version_page` needs
 # just the ISO's directory. Read only when no ISO is linked, and `.torrent` only, so a page left
 # with nothing but a `.sig` resolves to nothing rather than to an ISO URL nobody serves.
-_ISO_BEHIND_TORRENT = re.compile(r'https?://[^\s"\'<>]+?\.iso(?=\.torrent)', re.IGNORECASE)
+_ISO_BEHIND_TORRENT = re.compile(_URL_BODY + r"\.iso(?=\.torrent)", re.IGNORECASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -149,10 +152,12 @@ def rss(client: Client, url: str) -> list[Candidate]:
     return out
 
 
-# How many `releases.atom` pages `atom_until_stable` will walk before giving up. 100 entries is
-# ~40 days of Bazzite's churn, and the walk short-circuits the moment a stable tag appears, so the
-# bound is only ever reached by a repo that genuinely publishes no release at all.
-ATOM_MAX_PAGES = 10
+# How many `releases.atom` pages `atom_until_stable` will walk before giving up. Bazzite's largest
+# stable gap so far spans 61 entries, but it has run about 7 tags a day and gone 21 days between
+# stable tags, which together would be some 150. Running out yields no token and fails every
+# variant on the repo, so this is generous: the walk stops at the first stable tag, so only a repo
+# with no release at all pays for it.
+ATOM_MAX_PAGES = 30
 
 
 def atom(client: Client, repo: str, after: str | None = None) -> list[Candidate]:

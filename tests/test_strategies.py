@@ -380,6 +380,20 @@ def test_stable_symlink_token_from_atom_tag_ublue():
     assert rel.version == "44.20260721"
 
 
+def test_atom_walk_reaches_a_stable_tag_past_a_long_prerelease_run():
+    """Bazzite has run about 7 tags a day and gone 21 days between stable tags: together some 150
+    tags, 15 pages. Stopping short yields no token, which fails every variant on the repo."""
+    repo = "ublue-os/bazzite"
+    base = f"https://github.com/{repo}/releases.atom"
+    pages = {}
+    for n in range(15):
+        key = base if n == 0 else f"{base}?after=unstable-45.{n - 1}.9"
+        pages[key] = atom_feed([f"unstable-45.{n}.{i}: Unstable" for i in range(10)])
+    pages[f"{base}?after=unstable-45.14.9"] = atom_feed(["45.20261104: Stable (F45.20261104)"])
+    tags = [e.name for e in atom_until_stable(FakeClient(pages), repo)]
+    assert tags[-1].startswith("45.20261104")
+
+
 def test_atom_feed_with_zero_entries_yields_none():
     """Nobara's releases.atom is 200 with no <entry>. A 200 is not a release."""
     url = "https://example/x.iso"
@@ -684,6 +698,22 @@ def test_page_index_still_ends_a_url_at_whatever_follows_it(after):
     page = "https://example.org/download/"
     links = page_index(FakeClient({page: f"see https://dl.example/x-1.iso{after}more"}), page)
     assert [c.url for c in links] == ["https://dl.example/x-1.iso"]
+
+
+@pytest.mark.parametrize("quote", ["&quot;", "&#34;", "&#39;", '\\"'])
+def test_page_index_stops_at_an_escaped_quote(quote):
+    """A page embedding JSON escapes its quotes, and the URL pattern stops only at real ones. Past a
+    `.iso.sig` it would run on through the quote and swallow the next URL as one long address."""
+    page = "https://example.org/download/"
+    sig, iso = "https://s.example/x-1.iso.sig", "https://dl.example/x-1.iso"
+    html = f"{{{quote}sig{quote}:{quote}{sig}{quote},{quote}iso{quote}:{quote}{iso}{quote}}}"
+    assert [c.url for c in page_index(FakeClient({page: html}), page)] == [iso]
+
+
+def test_page_index_keeps_a_query_string_before_the_extension():
+    page = "https://example.org/download/"
+    url = "https://dl.example/get?a=1&f=x-1.iso"
+    assert [c.url for c in page_index(FakeClient({page: f'"{url}"'}), page)] == [url]
 
 
 def test_page_index_resolves_relative_hrefs_against_the_page_url():

@@ -75,6 +75,19 @@ def test_dedupe_sourceforge_doubled_items():
     assert select.dedupe(["a.iso", "a.iso", "b.iso"]) == ["a.iso", "b.iso"]
 
 
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [
+        ("unstable-45.20261105.4", True),  # Bazzite's nightly channel
+        ("unstable-45.20261105.4: Unstable (F45.20261105, #fa3f615)", True),
+        ("45.20261104", False),
+        ("nonunstable-1.0", False),  # inside a word is not the marker
+    ],
+)
+def test_unstable_is_a_prerelease(name, expected):
+    assert select.is_prerelease(name) is expected
+
+
 def test_max_version_keys_on_token_not_name_endeavouros():
     """Codenames do not sort. Key on the embedded date, or publish Gemini forever."""
     names = [

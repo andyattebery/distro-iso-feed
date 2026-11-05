@@ -13,7 +13,7 @@ from collections.abc import Iterable
 from packaging.version import InvalidVersion, Version
 
 # Every prerelease marker present in the seeded catalog: Manjaro's `-pre`, MX's
-# `_beta1_`, Aurora's `-beta-`, elementary's `-rc3`, Zorin's `Beta`.
+# `_beta1_`, Aurora's `-beta-`, elementary's `-rc3`, Zorin's `Beta`, Bazzite's `unstable-`.
 #
 # Boundaries are "not alphanumeric" rather than a fixed `[-_.]` set, because atom
 # titles carry trailing punctuation: elementary's is `8.1.0-rc3: RC`, and a `[-_.]`
@@ -25,7 +25,7 @@ from packaging.version import InvalidVersion, Version
 # is a *version* read from a sidecar, never a name this filter sees.
 PRERELEASE = re.compile(
     r"(?<![A-Za-z0-9])"
-    r"(?:pre|alpha\d*|beta\d*|rc\d*|nightly|daily|testing|snapshot\d*)"
+    r"(?:pre|alpha\d*|beta\d*|rc\d*|nightly|daily|testing|unstable|snapshot\d*)"
     r"(?![A-Za-z0-9])",
     re.IGNORECASE,
 )
