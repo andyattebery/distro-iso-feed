@@ -26,8 +26,8 @@ from .models import Release, Variant
 from .signing import REJECTED, VERIFIED, SigningOutcome, pinned_fingerprint, verify_signing_key
 from .state import Record, State
 from .strategies import REGISTRY
-from .strategies.integrity import SumsUnavailable
-from .strategies.torrent import attach_torrent
+from .strategies.integrity import SumsUnavailable, expects_checksum
+from .strategies.torrent import TorrentMissing, attach_torrent
 from .tokens import from_filename
 
 log = logging.getLogger("distro-iso-feed")
@@ -170,6 +170,72 @@ def diagnose(
     )  # fmt: skip
 
 
+def _beside(strategy, variant: Variant, params: dict, client: Client, filename: str) -> list[str]:
+    """What upstream lists beside the artifact, so a rename shows at a glance. Costs one listing,
+    only for a variant already short of something."""
+    stem = filename.rsplit(".", 1)[0]
+    try:
+        listed = strategy.candidates(variant.distro, params, client)
+    except Exception:  # a courtesy for the issue body; never a reason to lose the failure itself
+        return []
+    names = {c.name.rsplit("/", 1)[-1] for c in listed}
+    return sorted({n for n in names if stem in n} - {filename})
+
+
+def _sidecar_failure(
+    strategy,
+    variant: Variant,
+    params: dict,
+    client: Client,
+    release: Release,
+    reason: str,
+    url: str | None,
+    status: int | str | None,
+    cause: str = escalate.CAUSE_SIDECAR_MISSING,
+) -> Failure:
+    """A file the config names did not arrive. Always structural: a transient miss never gets here,
+    and a timeout on some other file in this attempt says nothing about this one."""
+    return Failure(
+        key=variant.key,
+        reason=f"`{release.filename}`: {reason}",
+        failure_class=escalate.STRUCTURAL,
+        cause=cause,
+        endpoint=url or endpoint_of(params),
+        status=status,
+        observed_candidates=_beside(strategy, variant, params, client, release.filename),
+        repro=f"uv run distro-iso-feed-refresh --dry-run --only {variant.key} -v",
+    )
+
+
+def _missing_proof(
+    client: Client, release: Release, params: dict, signing, resolved: list
+) -> tuple[str, str | None, int | str | None] | None:
+    """`(reason, url, status)` for what the config names that this release arrived without.
+
+    `resolved` is the trace of the resolve, whose last fetch is the checksum file. A signing
+    `REJECTED` has already said so, with its own issue. An unpinned `sig` is the one file nothing
+    else fetches, so without this the feed publishes a URL nobody has looked at.
+    """
+    if signing is not None and signing.verdict == REJECTED:
+        return None
+    if expects_checksum(params) and not release.checksum:
+        url, status = resolved[-1] if resolved else (None, None)
+        if status == 200:
+            return "configured checksum file does not list it", url, status
+        return "configured checksum did not arrive", url, status
+    if params.get("sig") and not params.get("signing_key") and release.signature_url:
+        url = release.signature_url
+        mark = len(client.trace)
+        r = client.get_cached(url)
+        if r is not None and r.content:
+            return None
+        outcomes = [o for _, o in client.trace[mark:]]
+        if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
+            return None  # a sick mirror says nothing about the config; retried next run
+        return "configured signature did not arrive", url, outcomes[-1] if outcomes else 200
+    return None
+
+
 def _enrich(f: Failure, variant: Variant, state: State) -> Failure:
     """Add the 'was it resolving before' facts from state -- the regression flag + how stale."""
     rec = state.records.get(variant.key)
@@ -255,8 +321,9 @@ def write_summary(
         lines += [
             "### Unresolved",
             "",
-            "Entries are left untouched, so the feed is stale for these, not empty. A structural "
-            "failure that was resolving opens an issue; a transient one just retries.",
+            "Entries are left untouched, so the feed is stale for these, not empty, unless the row "
+            "says a file is missing, which publishes anyway. A structural failure that was "
+            "resolving opens an issue; a transient one just retries.",
             "",
             "| Variant | Class | Was resolving | Why | Reproduce |",
             "|---|---|---|---|---|",
@@ -400,6 +467,8 @@ def main(argv: list[str] | None = None) -> int:
                 failures.append(f)
                 continue
 
+            resolved = client.trace[attempt_mark:]
+
             # A co-located `.torrent` is a second retrieval channel on the same entry,
             # not a separate resolve. Attach it (or leave the ISO untouched) before
             # the change token is computed -- these sources all carry an ISO checksum,
@@ -407,6 +476,20 @@ def main(argv: list[str] | None = None) -> int:
             if params.get("torrent"):
                 try:
                     release = attach_torrent(client, release, params)
+                except TorrentMissing as exc:
+                    # The ISO publishes regardless: a bad torrent never holds back a good download.
+                    release = exc.release
+                    cause = (
+                        escalate.CAUSE_SIDECAR_TAMPERED
+                        if exc.tampered
+                        else escalate.CAUSE_SIDECAR_MISSING
+                    )
+                    f = _sidecar_failure(
+                        strategy, variant, params, client, release, exc.reason, exc.url,
+                        exc.status, cause,
+                    )  # fmt: skip
+                    log.warning("%s: %s", variant.key, f.reason)
+                    failures.append(_enrich(f, variant, state))
                 except SumsUnavailable as exc:
                     # This call sits OUTSIDE the resolver try/except above, so an escaping
                     # exception would take the whole run down. The torrent's own sums file is
@@ -463,6 +546,12 @@ def main(argv: list[str] | None = None) -> int:
                         )
                     )
 
+            missing = _missing_proof(client, release, params, signing, resolved)
+            if missing:
+                f = _sidecar_failure(strategy, variant, params, client, release, *missing)
+                log.warning("%s: %s", variant.key, f.reason)
+                failures.append(_enrich(f, variant, state))
+
             if kept is not None:
                 # The record stays exactly as it is. Only a *new* release left unpublished makes
                 # the feed stale on purpose, so only that is worth a line in the run's receipt.
@@ -480,6 +569,15 @@ def main(argv: list[str] | None = None) -> int:
                     print(_row(variant.key, kept.release))
                 continue
 
+            if missing:
+                # A new release publishes anyway. The same release keeps what it has: replacing it
+                # would strip a good checksum and re-notify subscribers about nothing new.
+                current = state.records.get(variant.key)
+                if current and current.version == release.version and current.release.checksum:
+                    if args.dry_run:
+                        print(_row(variant.key, current.release))
+                    continue
+
             if args.dry_run:
                 # Print the artifact, never a status code: a 200 is what misled the
                 # design of this project four separate times.
@@ -489,7 +587,7 @@ def main(argv: list[str] | None = None) -> int:
             if state.update(release, payload):
                 changed.append(f"{variant.key} → {release.version}")
                 log.info("%s: %s", variant.key, release.version)
-            elif state.enrich(release):
+            elif state.enrich(release, keep_torrent=bool(params.get("torrent"))):
                 # Same release, new metadata (a torrent attached to a known ISO).
                 # `seen` is preserved, so no feed timestamp moves and no reader
                 # re-notifies; state.save/feed.render below always run.

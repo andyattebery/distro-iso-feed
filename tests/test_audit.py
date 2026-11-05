@@ -119,9 +119,8 @@ def test_unresolvable_is_signal_so_it_escapes_the_collapsed_fold():
 
 # ---------------------------------------------------------------------------- no checksum
 #
-# A sidecar that 404s deliberately still resolves (see `SumsUnavailable`), so the entry publishes
-# with no checksum and every other check passes. `endeavouros:default` sat like that from
-# 2026-08-28, because the config asked for `.sha512` and that release shipped `.sha512sum`.
+# The push-time half of "a file the config names must arrive". The refresh raises it for a tracked
+# variant; a variant that never resolved has no record to regress from, so this has to.
 
 _ISO = "thing-1.2-amd64.iso"
 _SIDECAR = f"{_IDX}{_ISO}.sha256"
@@ -156,6 +155,22 @@ def test_a_timed_out_sidecar_is_not_no_checksum():
     """Stale, not wrong: the same line `UNRESOLVABLE` draws, and the refresh leaves it untouched."""
     client = FakeClient({_IDX: autoindex_html([_ISO])}, fail={_SIDECAR: "ReadTimeout"})
     assert resolve_findings(_di_source(sums="{filename}.sha256"), client) == []
+
+
+def test_a_configured_torrent_that_404s_is_no_torrent():
+    """The push-time check: a variant never resolved before has no record to regress from, so the
+    refresh will not raise this, and `config-audit` has to."""
+    client = FakeClient({_IDX: autoindex_html([_ISO])})
+    found = resolve_findings(_di_source(torrent="{filename}.torrent"), client)
+    assert [(f.reason, f.subject) for f in found] == [(Reason.NO_TORRENT, "v")]
+    assert f"{_IDX}{_ISO}.torrent" in found[0].detail
+
+
+def test_a_timed_out_torrent_is_not_no_torrent():
+    client = FakeClient(
+        {_IDX: autoindex_html([_ISO])}, fail={f"{_IDX}{_ISO}.torrent": "ReadTimeout"}
+    )
+    assert resolve_findings(_di_source(torrent="{filename}.torrent"), client) == []
 
 
 def test_no_checksum_is_signal_and_reaches_the_report():

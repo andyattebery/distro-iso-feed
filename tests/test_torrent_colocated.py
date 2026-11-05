@@ -16,6 +16,7 @@ from conftest import FakeClient
 from distro_iso_feed import feed
 from distro_iso_feed.models import VERIFY_GPG, Release
 from distro_iso_feed.state import State
+from distro_iso_feed.strategies import torrent as torrent_mod
 from distro_iso_feed.strategies.integrity import SumsUnavailable
 from distro_iso_feed.strategies.torrent import attach_torrent
 from test_torrents import benc
@@ -96,10 +97,35 @@ def test_an_unsigned_torrent_is_attached_without_a_torrent_checksum():
     assert r.verify == VERIFY_GPG
 
 
-def test_a_missing_torrent_leaves_the_entry_a_pure_direct_download():
-    r = attach_torrent(FakeClient({}), _release(), DEBIAN_PARAMS)  # nothing mapped -> 404
-    assert r.torrent_url is None and r.info_hash is None and r.magnet_uri is None
-    assert r.download_url == ISO_DIR + ISO  # untouched
+def test_a_404_torrent_raises_torrent_missing():
+    """The config named it, so a 404 is a wrong name or a rename. `.release` is the ISO, untouched:
+    the direct download is fine and still publishes."""
+    with pytest.raises(torrent_mod.TorrentMissing) as exc:
+        attach_torrent(FakeClient({}), _release(), DEBIAN_PARAMS)  # nothing mapped -> 404
+    assert exc.value.status == 404
+    assert exc.value.url == BT_DIR + TORRENT
+    assert exc.value.release.torrent_url is None
+    assert exc.value.release.download_url == ISO_DIR + ISO
+
+
+def test_a_page_served_as_a_torrent_raises_torrent_missing():
+    with pytest.raises(torrent_mod.TorrentMissing) as exc:
+        attach_torrent(_client(**{BT_DIR + TORRENT: "<html>moved</html>"}), _release(), DEBIAN_PARAMS)
+    assert exc.value.status == 200
+    assert "not a torrent" in exc.value.reason
+
+
+def test_a_truncated_torrent_is_not_a_crash():
+    """`attach_torrent` sits outside the resolver's try/except, so a raw ValueError from the parser
+    would take down the whole run, for every distro, over one bad file."""
+    with pytest.raises(torrent_mod.TorrentMissing):
+        attach_torrent(_client(**{BT_DIR + TORRENT: b"d4:infoi12"}), _release(), DEBIAN_PARAMS)
+
+
+def test_a_timed_out_torrent_does_not_raise():
+    """Retried next run. A sick mirror says nothing about the config."""
+    client = FakeClient(fail={BT_DIR + TORRENT: "ReadTimeout"})
+    assert attach_torrent(client, _release(), DEBIAN_PARAMS).torrent_url is None
 
 
 def test_a_wrong_release_torrent_is_not_attached():
@@ -121,12 +147,14 @@ def test_a_wrong_release_torrent_is_not_attached():
     assert r.download_url == iso
 
 
-def test_a_tampered_signed_torrent_is_not_attached_but_the_direct_download_survives():
+def test_a_tampered_signed_torrent_raises():
+    """A signed hash that disagrees with the bytes in hand must not pass quietly. The ISO still
+    publishes, without the torrent."""
     tampered = TORRENT_BYTES.replace(b"announce", b"annnunce")
-    assert hashlib.sha512(tampered).hexdigest() != TORRENT_SHA
-    r = attach_torrent(_client(**{BT_DIR + TORRENT: tampered}), _release(), DEBIAN_PARAMS)
-    assert r.torrent_url is None  # signed-but-tampered -> omitted
-    assert r.download_url == ISO_DIR + ISO and r.verify == VERIFY_GPG
+    with pytest.raises(torrent_mod.TorrentMissing) as exc:
+        attach_torrent(_client(**{BT_DIR + TORRENT: tampered}), _release(), DEBIAN_PARAMS)
+    assert "signed checksum" in exc.value.reason
+    assert exc.value.release.torrent_url is None
 
 
 def test_a_transient_torrent_sums_failure_raises_rather_than_shipping_an_unverified_infohash():
@@ -143,12 +171,14 @@ def test_a_transient_torrent_sums_failure_raises_rather_than_shipping_an_unverif
         attach_torrent(client, _release(), DEBIAN_PARAMS)
 
 
-def test_a_404_torrent_sums_keeps_the_torrent_unverified_as_before():
-    """The same deliberate asymmetry as the ISO path: structural-absent is not a mirror blip."""
+def test_a_404_torrent_sums_raises_but_keeps_the_torrent():
+    """`torrent_sums` is configured because the torrent should be vouched for, so losing it is an
+    error, but the torrent itself is still good to publish."""
     client = FakeClient({BT_DIR + TORRENT: TORRENT_BYTES})  # SHA512SUMS unmapped -> 404
-    r = attach_torrent(client, _release(), DEBIAN_PARAMS)
-    assert r.torrent_url == BT_DIR + TORRENT
-    assert r.torrent_checksum is None
+    with pytest.raises(torrent_mod.TorrentMissing) as exc:
+        attach_torrent(client, _release(), DEBIAN_PARAMS)
+    assert exc.value.release.torrent_url == BT_DIR + TORRENT
+    assert exc.value.release.torrent_checksum is None
 
 
 def test_a_torrent_only_release_is_left_alone():

@@ -50,7 +50,7 @@ def _report(**kw) -> dict:
 # ------------------------------------------------------------------------- audit issues
 
 
-def _finding(reason="NO_CHECKSUM", subject="default", distro="endeavouros", detail="`x.iso` no sum"):
+def _finding(reason="SKIPPED_RELEASE", subject="default", distro="leap", detail="`x.iso` no sum"):
     return {"distro": distro, "reason": reason, "subject": subject, "detail": detail}
 
 
@@ -62,28 +62,28 @@ def test_audit_issues_open_one_per_finding_with_what_to_do():
     plan = escalate.plan_audit_issues(
         [
             _finding(),
-            _finding("SKIPPED_RELEASE", "leap-dvd", "opensuse", "`16.1` serves nothing"),
+            _finding("SKIPPED_RELEASE", "iso", "tails", "`7.15.1` serves nothing"),
             _finding("UNEXPLAINED", "bigscreen", "kde-neon", "`bigscreen`"),
         ],
         [],
     )
     by_title = {i["title"]: i for i in plan["to_open"]}
     assert set(by_title) == {
-        "audit NO_CHECKSUM: endeavouros:default",
-        "audit SKIPPED_RELEASE: opensuse:leap-dvd",
+        "audit SKIPPED_RELEASE: leap:default",
+        "audit SKIPPED_RELEASE: tails:iso",
         "audit UNEXPLAINED: kde-neon:bigscreen",
     }
     assert {i["label"] for i in plan["to_open"]} == {"audit-finding"}
-    body = by_title["audit NO_CHECKSUM: endeavouros:default"]["body"]
+    body = by_title["audit SKIPPED_RELEASE: leap:default"]["body"]
     assert "`x.iso` no sum" in body
     assert "## To resolve" in body
-    assert "`sums`" in body  # says what to change, for this finding
-    assert "distro-iso-feed-audit --only endeavouros" in body
+    assert "`index`" in body  # says what to change, for this finding
+    assert "distro-iso-feed-audit --only leap" in body
     assert plan["to_close"] == []
 
 
 def test_audit_issues_stay_open_and_close_when_the_finding_clears():
-    title = "audit NO_CHECKSUM: endeavouros:default"
+    title = "audit SKIPPED_RELEASE: leap:default"
     still = escalate.plan_audit_issues([_finding()], [_issue(7, title)])
     assert still == {"to_open": [], "to_close": []}
     cleared = escalate.plan_audit_issues([], [_issue(7, title)])
@@ -92,7 +92,7 @@ def test_audit_issues_stay_open_and_close_when_the_finding_clears():
 
 def test_audit_gate_ignores_refresh_issues_and_the_refresh_gate_ignores_audit_ones():
     refresh = _issue(1, "refresh failure: a:b", "refresh-failure")
-    audit = _issue(2, "audit NO_CHECKSUM: a:b")
+    audit = _issue(2, "audit SKIPPED_RELEASE: a:b")
     assert escalate.plan_audit_issues([], [refresh])["to_close"] == []
     assert plan_escalation(_report(total=1), [audit])["to_close"] == []
 
@@ -101,9 +101,9 @@ def test_audit_issues_collapse_above_the_mass_threshold():
     """A broken parser must not open fifty issues. The count is in the title, so a seventh finding
     replaces the issue and pings, rather than leaving a stale list open."""
     many = [_finding(subject=f"v{i}") for i in range(escalate.MASS_OUTAGE_THRESHOLD + 1)]
-    plan = escalate.plan_audit_issues(many, [_issue(9, "audit NO_CHECKSUM: endeavouros:default")])
+    plan = escalate.plan_audit_issues(many, [_issue(9, "audit SKIPPED_RELEASE: leap:default")])
     assert len(plan["to_open"]) == 1
-    assert "endeavouros:v0" in plan["to_open"][0]["body"]
+    assert "leap:v0" in plan["to_open"][0]["body"]
     assert [i["number"] for i in plan["to_close"]] == [9]
 
     opened = _issue(10, plan["to_open"][0]["title"])
@@ -111,7 +111,7 @@ def test_audit_issues_collapse_above_the_mass_threshold():
 
     more = many + [_finding(subject="v99")]
     moved = escalate.plan_audit_issues(more, [opened])
-    assert len(moved["to_open"]) == 1 and "endeavouros:v99" in moved["to_open"][0]["body"]
+    assert len(moved["to_open"]) == 1 and "leap:v99" in moved["to_open"][0]["body"]
     assert [i["number"] for i in moved["to_close"]] == [10]
 
 
@@ -143,7 +143,7 @@ def test_gate_plans_audit_issues_from_an_audit_report(tmp_path, capsys):
     report.write_text(json.dumps({"findings": [_finding()]}))
     assert run_gate.main(["--audit", "--report", str(report)]) == 0
     plan = json.loads(capsys.readouterr().out)
-    assert [i["title"] for i in plan["to_open"]] == ["audit NO_CHECKSUM: endeavouros:default"]
+    assert [i["title"] for i in plan["to_open"]] == ["audit SKIPPED_RELEASE: leap:default"]
     assert "exit_code" not in plan  # audit issues never decide a job's result
 
 
@@ -539,6 +539,223 @@ def test_a_transient_torrent_sums_failure_does_not_take_the_whole_run_down(tmp_p
     assert data["resolved"] == 1 and data["failures"] == []  # the run survived; ISO still resolved
 
 
+# ------------------------------------------------- a configured file that does not arrive
+#
+# Anything the config names must arrive, or the run fails. These run `main()` for real, without
+# --dry-run, because what happens to the entry is half of what is under test.
+
+SIDE_IDX = "https://m.example/"
+SIDE_ISO = "thing-2.0-amd64.iso"
+SIDE_SHA = "c" * 64
+SIDE_TORRENT = benc(
+    {"info": {"name": SIDE_ISO, "length": 9, "piece length": 1, "pieces": b"\0" * 20}}
+)
+
+
+def _sidecar_run(
+    tmp_path, monkeypatch, *, params, pages=None, listed=(), fail=None, record=None, **extra
+):
+    """One variant, its record from yesterday, one real run. Returns report, plan, today's record."""
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "distros:\n  thing:\n    strategy: directory_index\n"
+        "    discover: {enumerable: false, reason: fixture}\n"
+        "    params:\n"
+        f'      index: "{SIDE_IDX}"\n'
+        "      match: '^thing-[0-9.]+-amd64\\.iso$'\n"
+        "      version_pattern: 'thing-([0-9.]+)-amd64'\n"
+        + "".join(f"      {line}\n" for line in params)
+        + "    variants:\n      iso: {label: Thing}\n"
+    )
+    state_path = tmp_path / "state.json"
+    s = State()
+    version, checksum = record or ("1.0", "b" * 64)
+    s.update(
+        Release(
+            distro="thing", variant="iso", version=version, title="t",
+            filename=f"thing-{version}-amd64.iso", checksum=checksum, **extra,
+        ),  # fmt: skip
+        checksum,
+    )
+    s.save(state_path)
+    client = FakeClient(
+        {SIDE_IDX: autoindex_html([SIDE_ISO, *listed]), **(pages or {})}, fail=fail or {}
+    )
+    monkeypatch.setattr(run_refresh, "CONFIG", cfg)
+    monkeypatch.setattr(run_refresh, "STATE", state_path)
+    monkeypatch.setattr(run_refresh, "FEED_DIR", tmp_path / "feed")
+    monkeypatch.setattr(run_refresh, "CATALOG", tmp_path / "catalog.md")
+    monkeypatch.setattr(run_refresh, "Client", lambda *a, **k: client)
+    report = tmp_path / "report.json"
+    run_refresh.main(["--report", str(report)])
+    data = json.loads(report.read_text())
+    return data, plan_escalation(data, []), State.load(state_path).records["thing:iso"]
+
+
+SUMS = ['sums: "{filename}.sha256"']
+GOOD_SUMS = {f"{SIDE_IDX}{SIDE_ISO}.sha256": f"{SIDE_SHA}  {SIDE_ISO}"}
+
+
+def test_a_new_release_without_its_checksum_publishes_and_fails(tmp_path, monkeypatch):
+    """Your feed gets the new ISO, and you get told. EndeavourOS sat like this for 69 days."""
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=SUMS)
+    assert rec.version == "2.0" and rec.release.checksum is None
+    [f] = data["failures"]
+    assert f["cause"] == escalate.CAUSE_SIDECAR_MISSING
+    assert f["failure_class"] == "structural" and f["regression"] is True
+    assert f["endpoint"] == f"{SIDE_IDX}{SIDE_ISO}.sha256" and f["status"] == 404
+    assert plan["exit_code"] == 1
+    assert [i["title"] for i in plan["to_open"]] == ["refresh failure: thing:iso"]
+
+
+def test_a_sidecar_that_omits_the_artifact_is_an_error_too(tmp_path, monkeypatch):
+    pages = {f"{SIDE_IDX}{SIDE_ISO}.sha256": f"{SIDE_SHA}  other.iso"}
+    data, plan, _ = _sidecar_run(tmp_path, monkeypatch, params=SUMS, pages=pages)
+    assert plan["exit_code"] == 1
+    [f] = data["failures"]
+    assert f["cause"] == escalate.CAUSE_SIDECAR_MISSING
+    assert f["endpoint"] == f"{SIDE_IDX}{SIDE_ISO}.sha256" and f["status"] == 200
+    assert "does not list" in f["reason"]
+
+
+def test_a_blip_elsewhere_does_not_hide_a_missing_checksum(tmp_path, monkeypatch):
+    """A timeout on some other file says nothing about this one. Reading it as "transient" would
+    close the open issue, and the next run would reopen it."""
+    params = [*SUMS, 'torrent: "{filename}.torrent"']
+    fail = {f"{SIDE_IDX}{SIDE_ISO}.torrent": "ReadTimeout"}
+    data, plan, _ = _sidecar_run(tmp_path, monkeypatch, params=params, fail=fail)
+    assert data["failures"][0]["failure_class"] == "structural"
+    assert plan["exit_code"] == 1
+
+
+def test_the_same_release_keeps_its_checksum(tmp_path, monkeypatch):
+    """Clonezilla's CDN bounced four times. Replacing the record would strip a good checksum and
+    re-notify subscribers about a release they already have."""
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=SUMS, record=("2.0", "b" * 64))
+    assert rec.release.checksum == "b" * 64
+    assert rec.hash == "b" * 64  # nothing moved, so nobody is re-notified
+    assert plan["exit_code"] == 1  # and it is still an error
+    assert data["failures"][0]["cause"] == escalate.CAUSE_SIDECAR_MISSING
+
+
+def test_a_missing_torrent_publishes_the_iso_and_fails(tmp_path, monkeypatch):
+    """The Qubes bug. The direct download is verified, so a bad torrent must not hold it back."""
+    params = [*SUMS, 'torrent: "{filename}.torrent"']
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=params, pages=GOOD_SUMS)
+    assert rec.version == "2.0" and rec.release.checksum == SIDE_SHA
+    assert rec.release.torrent_url is None
+    assert plan["exit_code"] == 1
+    assert data["failures"][0]["endpoint"] == f"{SIDE_IDX}{SIDE_ISO}.torrent"
+
+
+def test_a_tampered_torrent_issue_does_not_suggest_a_rename(tmp_path, monkeypatch):
+    """A signed checksum that disagrees with the bytes is not a filename problem, and "remove the
+    param" is the worst possible advice for it."""
+    params = [*SUMS, 'torrent: "{filename}.torrent"', 'torrent_sums: "TORRENTSUMS"']
+    pages = {
+        **GOOD_SUMS,
+        f"{SIDE_IDX}{SIDE_ISO}.torrent": SIDE_TORRENT,
+        f"{SIDE_IDX}TORRENTSUMS": f"{'d' * 64}  {SIDE_ISO}.torrent",
+    }
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=params, pages=pages)
+    assert rec.version == "2.0" and rec.release.torrent_url is None
+    assert data["failures"][0]["cause"] == escalate.CAUSE_SIDECAR_TAMPERED
+    body = plan["to_open"][0]["body"]
+    assert "signed checksum" in body
+    assert "renamed" not in body and "remove the param" not in body
+
+
+def test_a_torrent_no_longer_configured_leaves_the_record(tmp_path, monkeypatch):
+    """Following the issue's "remove the param" must actually remove it."""
+    _, _, rec = _sidecar_run(
+        tmp_path, monkeypatch, params=SUMS, pages=GOOD_SUMS, record=("2.0", SIDE_SHA),
+        torrent_url="https://dead.example/x.torrent", info_hash="d" * 40,
+    )  # fmt: skip
+    assert rec.release.torrent_url is None and rec.release.info_hash is None
+
+
+def test_a_torrent_miss_on_the_same_release_keeps_the_torrent_and_its_checksum(tmp_path, monkeypatch):
+    """Debian's `bt-cd/SHA512SUMS` 404ing must not strip `torrent_checksum` from 14 records."""
+    params = [*SUMS, 'torrent: "{filename}.torrent"', 'torrent_sums: "TORRENTSUMS"']
+    pages = {**GOOD_SUMS, f"{SIDE_IDX}{SIDE_ISO}.torrent": SIDE_TORRENT}
+    data, plan, rec = _sidecar_run(
+        tmp_path, monkeypatch, params=params, pages=pages, record=("2.0", SIDE_SHA),
+        torrent_url=f"{SIDE_IDX}{SIDE_ISO}.torrent", info_hash="d" * 40,
+        torrent_checksum="e" * 64, torrent_checksum_algo="sha256",
+    )  # fmt: skip
+    assert rec.release.torrent_checksum == "e" * 64
+    assert plan["exit_code"] == 1
+
+
+def test_a_lagging_torrent_stays_quiet(tmp_path, monkeypatch):
+    """Tumbleweed's `-Current` torrent names the previous snapshot for a while. It exists, it is
+    just behind, so that is not a wrong name and not an error."""
+    stale = benc({"info": {"name": "thing-1.0-amd64.iso", "length": 9, "piece length": 1, "pieces": b"\0" * 20}})
+    params = [*SUMS, 'torrent: "{filename}.torrent"']
+    pages = {**GOOD_SUMS, f"{SIDE_IDX}{SIDE_ISO}.torrent": stale}
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=params, pages=pages)
+    assert rec.version == "2.0" and data["failures"] == [] and plan["exit_code"] == 0
+
+
+def test_a_timed_out_torrent_stays_quiet(tmp_path, monkeypatch):
+    params = [*SUMS, 'torrent: "{filename}.torrent"']
+    fail = {f"{SIDE_IDX}{SIDE_ISO}.torrent": "ReadTimeout"}
+    data, plan, _ = _sidecar_run(tmp_path, monkeypatch, params=params, pages=GOOD_SUMS, fail=fail)
+    assert plan["exit_code"] == 0 and plan["to_open"] == []
+
+
+def test_an_unpinned_signature_that_404s_fails(tmp_path, monkeypatch):
+    """MX: `sig` with no pin, so nothing ever fetched the URL the feed publishes."""
+    params = [*SUMS, 'sig: "{filename}.sig"']
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=params, pages=GOOD_SUMS)
+    assert rec.version == "2.0"
+    assert plan["exit_code"] == 1
+    assert data["failures"][0]["endpoint"] == f"{SIDE_IDX}{SIDE_ISO}.sig"
+
+
+def test_a_good_unpinned_signature_is_fine(tmp_path, monkeypatch):
+    params = [*SUMS, 'sig: "{filename}.sig"']
+    pages = {**GOOD_SUMS, f"{SIDE_IDX}{SIDE_ISO}.sig": "signature"}
+    data, plan, _ = _sidecar_run(tmp_path, monkeypatch, params=params, pages=pages)
+    assert data["failures"] == [] and plan["exit_code"] == 0
+
+
+def test_a_pinned_checksum_file_opens_one_issue_not_two(tmp_path, monkeypatch):
+    """The signing gate already rejects a missing signed file, so the rule must not add a second."""
+    params = [
+        'sums: "SHA256SUMS"',
+        'sig: "SHA256SUMS.asc"',
+        f"signing_key: {{url: 'https://k.example/', fingerprint: {PIN}, covers: checksums}}",
+    ]
+    monkeypatch.setattr(
+        run_refresh,
+        "verify_signing_key",
+        lambda _c, release, _p: SigningOutcome(release, REJECTED, "gone", cause="checksum-absent"),
+    )
+    data, plan, _ = _sidecar_run(tmp_path, monkeypatch, params=params)
+    assert data["failures"] == []
+    assert [i["title"] for i in plan["to_open"]] == ["refresh signing-key: thing:iso"]
+
+
+def test_a_variant_that_promises_nothing_raises_nothing(tmp_path, monkeypatch):
+    """Tails ships no checksum, and its config says so by leaving `sums` out."""
+    data, plan, rec = _sidecar_run(tmp_path, monkeypatch, params=[])
+    assert rec.version == "2.0" and data["failures"] == [] and plan["exit_code"] == 0
+
+
+def test_a_sidecar_issue_says_what_to_do_and_shows_what_is_listed(tmp_path, monkeypatch):
+    """EndeavourOS's `.sha512sum` sat beside the ISO for 69 days. It should be the first thing read."""
+    params = ['sums: "{filename}.sha512"']
+    listed = [f"{SIDE_ISO}.sha512sum", f"{SIDE_ISO}.sig", "unrelated.iso"]
+    _, plan, _ = _sidecar_run(tmp_path, monkeypatch, params=params, listed=listed)
+    body = plan["to_open"][0]["body"]
+    assert f"{SIDE_IDX}{SIDE_ISO}.sha512" in body and "`404`" in body
+    assert f"{SIDE_ISO}.sha512sum" in body
+    assert "unrelated.iso" not in body
+    assert "renamed" in body and "has not published" in body and "as Tails does" in body
+    assert "stopped resolving" not in body
+
+
 # ------------------------------------------- never replace a gpg-verified record with less
 #
 # The signing gate's verdict is stubbed (gpg is covered in test_signing_key); what is under test is
@@ -618,6 +835,24 @@ def _staged_74():
             IDX + "signed-hashes.txt": f"Parrot OS 7.4\n\nmd5\n{'6' * 32}  {ISO_74}\n",
         }
     )
+
+
+def test_a_pinned_release_its_signed_file_omits_is_held_and_fails(tmp_path, monkeypatch):
+    """The signed file is fine and just does not list the ISO. There is nothing to check, so the
+    gate defers, and a verified entry holds. A timeout raises before this, so waiting is wrong:
+    nothing here will fix itself, and the release used to sit held with the job passing."""
+    _verified_73(tmp_path / "state.json")
+    client = FakeClient(
+        {
+            IDX: autoindex_html([ISO_74, "signed-hashes.txt"]),
+            IDX + "signed-hashes.txt": f"Parrot OS 7.4\n\nsha512\n{'6' * 128}  another.iso\n",
+        }
+    )
+    data, state = _run(tmp_path, monkeypatch, client, DEFERRED)
+    assert state.records["parrot:home"].version == "7.3"  # a verified entry still holds
+    [f] = data["failures"]
+    assert f["cause"] == escalate.CAUSE_SIDECAR_MISSING and f["failure_class"] == "structural"
+    assert plan_escalation(data, [])["exit_code"] == 1
 
 
 def test_a_rejected_new_release_is_held_at_the_verified_one(tmp_path, monkeypatch):

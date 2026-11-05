@@ -1,11 +1,12 @@
 """What does each upstream publish that we don't track, and why don't we?
 
-Five findings are signal:
+Six findings are signal:
 
   UNEXPLAINED      an edition upstream publishes that no variant tracks
   PINNED           a source frozen to a literal release
   UNRESOLVABLE     a configured variant that names nothing real
   NO_CHECKSUM      a variant that resolves, but without the checksum its config asks for
+  NO_TORRENT       a variant that resolves, but without the torrent its config asks for
   SKIPPED_RELEASE  a newer release upstream lists that a variant fell back past
 
 `PINNED` is the more dangerous, and the one no other check in this repo can see.
@@ -40,6 +41,8 @@ from .escalate import endpoint_of
 from .models import Source
 from .propose_variants import selected
 from .strategies import REGISTRY
+from .strategies.integrity import SumsUnavailable, expects_checksum
+from .strategies.torrent import TorrentMissing, attach_torrent
 
 # Params that name *what gets fetched*. A release literal here freezes the source.
 # `version_pattern` is excluded on purpose: EndeavourOS's `(\d{4}\.\d{2}\.\d{2})`
@@ -61,16 +64,13 @@ _RELEASE_LITERAL = re.compile(
 # The variant discovers its release some other way, so a literal cannot freeze it.
 _DYNAMIC = ("version_dir", "version_page", "probe_versions")
 
-# Params saying the variant's ISO has a published checksum. `torrent_sums` is not one of them: it
-# describes the `.torrent` file, not the ISO.
-_CHECKSUM_PARAMS = ("sums", "sums_suffix", "sums_asset")
-
 
 class Reason(StrEnum):
     UNEXPLAINED = "UNEXPLAINED"
     PINNED = "PINNED"
     UNRESOLVABLE = "UNRESOLVABLE"
     NO_CHECKSUM = "NO_CHECKSUM"
+    NO_TORRENT = "NO_TORRENT"
     SKIPPED_RELEASE = "SKIPPED_RELEASE"
     NOT_ENUMERABLE = "NOT_ENUMERABLE"
     LISTER_FAILED = "LISTER_FAILED"
@@ -82,15 +82,17 @@ class Reason(StrEnum):
             Reason.PINNED,
             Reason.UNRESOLVABLE,
             Reason.NO_CHECKSUM,
+            Reason.NO_TORRENT,
             Reason.SKIPPED_RELEASE,
         )
 
     @property
     def opens_issue(self) -> bool:
-        """Signal the weekly audit tickets. PINNED has its own daily ticket, and a tracked variant
-        that stops resolving already has a `refresh failure` one, so `UNRESOLVABLE` is left out
-        too: one break, one ping. A never-resolved variant fails `config-audit` on its push."""
-        return self in (Reason.UNEXPLAINED, Reason.NO_CHECKSUM, Reason.SKIPPED_RELEASE)
+        """Signal the weekly audit tickets: what the refresh cannot see, because everything
+        resolves. PINNED has its own daily ticket, and a tracked variant that stops resolving or
+        loses a file has a `refresh failure` one: one break, one ping. A variant that never
+        resolved has no record to regress from, so those fail `config-audit` on its push."""
+        return self in (Reason.UNEXPLAINED, Reason.SKIPPED_RELEASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -138,11 +140,10 @@ def resolve_findings(source: Source, client: Client) -> list[Finding]:
     wrong -- reporting it would turn a bad night at cdimage into a wall of false findings. The
     `trace` slice is marked per variant, exactly as `run_refresh.diagnose` does it.
 
-    **NO_CHECKSUM comes from the same resolve**, because a second pass would fetch everything twice.
-    A sidecar that 404s or does not list the artifact resolves on purpose (see `SumsUnavailable`:
-    failing it would freeze the entry), so the entry publishes without a checksum and nothing else
-    notices. `endeavouros:default` sat like that from 2026-08-28. A timed-out sidecar never reaches
-    this check: it raises `SumsUnavailable`, which the transient branch below skips.
+    **NO_CHECKSUM and NO_TORRENT come from the same resolve**, because a second pass would fetch
+    everything twice. They are the push-time half of the refresh's rule that a file the config
+    names must arrive: the refresh raises it for a tracked variant, and a variant that never
+    resolved has no record to regress from. A timed-out file never reaches either check.
     """
     out: list[Finding] = []
     for variant in source.variants:
@@ -164,7 +165,7 @@ def resolve_findings(source: Source, client: Client) -> list[Finding]:
             )
             continue
         if release is not None:
-            if not release.checksum and any(params.get(k) for k in _CHECKSUM_PARAMS):
+            if not release.checksum and expects_checksum(params):
                 out.append(
                     Finding(
                         source.name,
@@ -173,6 +174,14 @@ def resolve_findings(source: Source, client: Client) -> list[Finding]:
                         f"`{release.filename}` resolved without its configured checksum",
                     )
                 )
+            if params.get("torrent"):
+                try:
+                    attach_torrent(client, release, params)
+                except TorrentMissing as exc:
+                    detail = f"{exc.reason}: {exc.url} (status `{exc.status}`)"
+                    out.append(Finding(source.name, Reason.NO_TORRENT, variant.name, detail))
+                except SumsUnavailable:
+                    pass  # a sick mirror, not a dead variant
             continue
         outcomes = [o for _, o in client.trace[mark:]]
         if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:

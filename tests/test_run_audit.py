@@ -94,11 +94,12 @@ def audit_env(tmp_path, monkeypatch):
 
 
 def test_audit_report_keeps_only_findings_that_open_issues():
-    """PINNED has its own daily ticket, and a tracked variant that stops resolving already has a
-    `refresh failure` one. Ticketing those here would ping twice for one break."""
+    """Everything else has its own daily ticket: PINNED, and a `refresh failure` for a tracked
+    variant that stops resolving or loses a file. Ticketing those here would ping twice for one
+    break."""
     findings = [Finding("a", reason, "x", "detail") for reason in Reason]
     kept = {f["reason"] for f in run_audit.issue_findings(findings)}
-    assert kept == {"UNEXPLAINED", "NO_CHECKSUM", "SKIPPED_RELEASE"}
+    assert kept == {"UNEXPLAINED", "SKIPPED_RELEASE"}
 
 
 def test_the_count_line_covers_every_signal_finding(audit_env, monkeypatch, caplog):

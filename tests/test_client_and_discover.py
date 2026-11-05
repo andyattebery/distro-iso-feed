@@ -248,8 +248,8 @@ def test_budget_is_per_host_so_a_healthy_mirror_is_untouched():
 
 
 def test_404s_never_consume_the_budget():
-    """A 404 means the host is fine and the file is gone. Several sources carry optional per-file
-    sidecars that legitimately 404 -- charging those would skip a perfectly healthy mirror."""
+    """A 404 means the host is fine and one file is gone. Charging that against the host would
+    skip a perfectly healthy mirror."""
     calls: list = []
 
     def handler(request: httpx.Request) -> httpx.Response:

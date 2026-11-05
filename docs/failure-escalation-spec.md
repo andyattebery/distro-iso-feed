@@ -89,8 +89,10 @@ evidence is one of:
 - a required fetch (key, signature, and for `covers: checksums` the signed body) was *answered*
   structurally: a 4xx other than 429, or an empty 200.
 Couldn't-check — gpg absent or unable to read the signature, a network failure on one of those
-fetches, or no checksum to check against — is DEFERRED and never reaches the report. **The verdict
-IS the classification: DEFERRED is transient, REJECTED is structural.** `cause` says *which*
+fetches, or no checksum to check against — is DEFERRED and never reaches the report as a signing
+failure. **The verdict IS the classification: DEFERRED is transient, REJECTED is structural.** The
+one exception is no checksum to check against: a timeout raises before signing runs, so a release
+with no checksum means the file is missing or omits it, which `sidecar-missing` reports. `cause` says *which*
 evidence, and only `foreign-signer` can be a key rotation. Reading every REJECTED as a rotation is
 how #17 sent the reader after a Parrot key that did not exist: the 7.4 file was simply unsigned.
 
@@ -115,18 +117,21 @@ REJECTED, and against a new release DEFERRED at a new URL. The one exception is 
 DEFERRED at an *unchanged* URL (a stable symlink, a respin): it is published unpinned, because the
 kept checksum would no longer match the bytes behind that URL.
 
-### 1b. A configured sidecar that did not arrive is TRANSIENT, not a checksum-less entry
+### 1b. A configured sidecar that timed out is TRANSIENT, not a checksum-less entry
 
 Resolving one variant is a multi-fetch operation (index, sums, torrent, torrent-sums, key, sig).
 Against a flaky host each fetch independently succeeds or fails, and without care the published
-`Release` is an arbitrary combination of survivors. `fetch_sums` returning `None` must mean
-**no sums configured** (tails ships none — a design choice). A *configured* sidecar that failed
+`Release` is an arbitrary combination of survivors. A *configured* sidecar that failed
 transiently raises `SumsUnavailable`, which routes through the existing resolver `except` as
 TRANSIENT: entry untouched, retried next run, no issue.
 
-Deliberate asymmetry: a **404** sidecar keeps resolving with `checksum=None`. Failing the resolve
-on a structurally-absent sidecar would freeze every source with an optional per-file sidecar,
-trading silent degradation for a silent stall.
+A **404** sidecar still resolves with `checksum=None`, so a new release publishes, but the run fails
+with a `sidecar-missing` regression: a file the config names must arrive. Nothing configured is
+optional. A variant with no sidecar says so by leaving the param out, as Tails does. This used to pass
+silently, on the claim that sources carry optional sidecars; a census found none, and EndeavourOS had
+shipped without a checksum for 69 days behind it. A release that already has its checksum keeps it, so
+a bad day never strips proof or re-notifies subscribers. Torrents follow the same rule, and the ISO
+always publishes. The exception is a torrent that lags and names an older release, which is quiet.
 
 ### 1c. Per-host failure budget
 
@@ -134,8 +139,8 @@ A host that fails `client.DEFAULT_HOST_BUDGET` fetches *transiently* in one run 
 its URLs skipped, recording a `BUDGET_EXHAUSTED` trace entry (a `str`, so it classifies TRANSIENT
 — skipping must never read as a content regression). Counting rules that matter:
 
-- **Only transient failures count.** A 4xx means the host answered and the file is gone; charging
-  those would skip a healthy mirror serving optional sidecars that legitimately 404.
+- **Only transient failures count.** A 4xx means the host answered and one file is gone; charging
+  those would skip a healthy mirror.
 - **Cumulative, never consecutive.** In the incident that motivated this, successes were
   interleaved among the failures, so a consecutive counter — what every off-the-shelf circuit
   breaker implements — would have reset constantly and never tripped.
@@ -329,8 +334,8 @@ once: **feed committed, job red, issue opened.**
 - No paging/webhook integrations (issue + failing check is the surface; a webhook can consume the issue
   later if wanted).
 - No committed health/metrics file, no `schema` change, no per-run timestamps in the tree.
-- No change to feed isolation — a regression still degrades to stale-not-empty; escalation is
-  purely additive signal.
+- No change to feed isolation — a regression still degrades to stale-not-empty, and a missing
+  sidecar still publishes; escalation is purely additive signal.
 - No N-day threshold logic — the structural/transient classification replaces it. (If a
   persistently-*transient* source ever needs catching, revisit; today the reachable-empty→structural
   refinement already routes "moved endpoint" into the escalating class.)

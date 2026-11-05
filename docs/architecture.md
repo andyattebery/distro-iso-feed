@@ -99,7 +99,8 @@ timestamp feels natural on a docs page.
 
 **Failure isolation.** A resolver returns `None` rather than raising. The variant's
 record is left untouched, so the feed degrades to **stale, never empty**. Turning a
-*structural* regression (was resolving, now isn't) into a red job and a GitHub issue is
+*structural* regression (was resolving, now isn't, or a file the config names did not
+arrive) into a red job and a GitHub issue is
 a separate operational layer that never touches this isolation — see
 [`operations.md`](operations.md).
 
@@ -287,8 +288,9 @@ one channel is always present. `verify` is the strongest: `gpg` > `checksum` >
 already-resolved ISO. The check is `release.version in info.name`, not equality:
 openSUSE resolves the `-Current.iso` symlink while its torrent names the dated
 snapshot, so equality would reject a good torrent. It is a *right-release* test;
-integrity is the checksum's job. Any doubt returns the release **unchanged** — a bad
-torrent never costs an entry its direct download.
+integrity is the checksum's job. A bad torrent never costs an entry its direct download,
+but the config named it, so one that is missing or fails its signed checksum fails the run.
+Only a timeout, or a torrent that lags and names an older release, returns quietly.
 
 **Enrichment adds a field without a re-notify.** `state.update()` keys on `version`
 and `hash`; attaching a torrent moves neither, so it would never persist.

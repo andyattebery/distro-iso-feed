@@ -10,7 +10,7 @@ import hashlib
 from dataclasses import dataclass, replace
 from urllib.parse import urljoin
 
-from .. import checksums, torrents
+from .. import checksums, escalate, torrents
 from ..client import Client
 from ..models import Release
 from ..tokens import from_filename
@@ -47,11 +47,36 @@ class TorrentRef:
         return hashlib.new(algo, self.data).hexdigest() == expected.lower()
 
 
+class TorrentMissing(Exception):
+    """A configured torrent did not arrive, or did not check out.
+
+    Raised, not returned, so the caller cannot mistake it for "nothing to do": the config named this
+    file, so its absence is a wrong name or an upstream change, and the run must say so. `release`
+    is what to publish anyway, because a bad torrent never holds back a good direct download.
+    """
+
+    def __init__(
+        self,
+        url: str,
+        reason: str,
+        *,
+        release: Release,
+        status: int | str | None = None,
+        tampered: bool = False,
+    ):
+        super().__init__(f"{reason}: {url}")
+        self.url = url
+        self.reason = reason
+        self.release = release
+        self.status = status
+        self.tampered = tampered
+
+
 def fetch_torrent(client: Client, *, url: str) -> TorrentRef | None:
     """Fetch and parse a `.torrent`. None when it is not one.
 
-    A variant without a torrent is normal, not an error -- so this returns None
-    rather than raising, like every other resolver path.
+    Returns None rather than raising, like every other resolver path. What that means is the
+    caller's call: for a configured torrent it is an error, see `attach_torrent`.
 
     Nothing is downloaded or seeded here; a `.torrent` is a small metadata file.
     """
@@ -156,16 +181,19 @@ def resolve_torrent_only(
 
 
 def attach_torrent(client: Client, release: Release, params: dict) -> Release:
-    """Enrich a resolved ISO with a co-located `.torrent`, or leave it untouched.
+    """Enrich a resolved ISO with a co-located `.torrent`.
 
     The mirror image of `resolve_torrent_only`: there the torrent *is* the artifact;
     here the ISO is, and the torrent is a second retrieval channel on the same entry
     so a consumer can pick. Debian, Ubuntu, Arch and openSUSE Tumbleweed all publish
     `{filename}.torrent` beside (or a sibling dir over from) the ISO.
 
-    Every path returns the release **unchanged** rather than failing. A bad torrent
-    must never break an entry whose direct download is fine -- integrity for that
-    consumer already came from the ISO's own signed checksum.
+    A bad torrent must never hold back an entry whose direct download is fine: integrity
+    for that consumer already came from the ISO's own signed checksum. But the config named
+    this file, so a torrent that is missing, is not a torrent, or fails its signed checksum
+    raises `TorrentMissing`, which carries the release to publish anyway. Only two things
+    return quietly: a transient failure, and a torrent that lags. Tumbleweed's `-Current`
+    torrent names the previous snapshot for a while, which is upstream being late.
 
     The one non-obvious check is `version in info.name`, not `info.name == filename`.
     openSUSE resolves the `-Current.iso` symlink while its torrent names the dated
@@ -183,11 +211,18 @@ def attach_torrent(client: Client, release: Release, params: dict) -> Release:
         release.download_url,
         _expand(torrent, filename=release.filename, version=release.version),
     )
+    mark = len(client.trace)
     ref = fetch_torrent(client, url=url)
-    if not ref:  # not published, or not a torrent -- the direct download still works
-        return release
+    if not ref:
+        outcomes = [o for _, o in client.trace[mark:]]
+        if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
+            return release  # a sick mirror says nothing about the config; retried next run
+        status = outcomes[-1] if outcomes else None
+        what = "is not a torrent" if status == 200 else "did not arrive"
+        reason = f"configured torrent {what}"
+        raise TorrentMissing(url, reason, release=release, status=status)
     if not (release.version and release.version in ref.payload_name):
-        return release  # a stale or wrong-release torrent
+        return release  # upstream's torrent lags: it exists and names an older release
 
     torrent_algo = torrent_checksum = None
     if tsums := params.get("torrent_sums"):
@@ -205,11 +240,12 @@ def attach_torrent(client: Client, release: Release, params: dict) -> Release:
         )
         if text and (found := checksums.lookup(text, url.rsplit("/", 1)[-1])):
             torrent_algo, torrent_checksum = found
-            # Signed but tampered: omit the torrent, keep the direct download.
+            # Signed but tampered: omit the torrent, keep the direct download, and say so.
             if not ref.verified_by(torrent_algo, torrent_checksum):
-                return release
+                reason = "torrent fails its signed checksum"
+                raise TorrentMissing(url, reason, release=release, status=200, tampered=True)
 
-    return replace(
+    attached = replace(
         release,
         torrent_url=ref.url,
         torrent_size=ref.size,
@@ -218,3 +254,7 @@ def attach_torrent(client: Client, release: Release, params: dict) -> Release:
         info_hash=ref.info_hash,
         magnet_uri=ref.magnet,
     )
+    if params.get("torrent_sums") and not torrent_checksum:
+        reason = "configured `torrent_sums` does not vouch for the torrent"
+        raise TorrentMissing(url, reason, release=attached, status=200)
+    return attached

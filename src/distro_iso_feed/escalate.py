@@ -48,6 +48,11 @@ CAUSE_BAD_SIGNATURE = "bad-signature"  # the pin's own signature no longer match
 CAUSE_KEY_URL = "key-url"  # the key URL no longer serves the pin (another key, or a 4xx)
 CAUSE_CHECKSUM_ABSENT = "checksum-absent"  # the pin's signed file doesn't list this artifact
 
+# A file the config names did not arrive: wrong name, upstream rename, or not published.
+CAUSE_SIDECAR_MISSING = "sidecar-missing"
+# A file arrived, and its signed checksum disagrees with it. Not a naming problem.
+CAUSE_SIDECAR_TAMPERED = "sidecar-tampered"
+
 
 def exc_class(exc: Exception) -> str:
     """Classify an exception that escaped a resolver.
@@ -151,7 +156,48 @@ class Report:
 # --------------------------------------------------------------------------- the gate
 
 
+def _sidecar_body(f: dict) -> str:
+    cands = f.get("observed_candidates") or []
+    listed = "\n".join(f"- `{c}`" for c in cands[:30]) if cands else "_(nothing, or no listing)_"
+    return (
+        f"`{f['key']}` resolved, but a file its config names did not arrive.\n\n"
+        f"- **cause**: {f['reason']}\n"
+        f"- **url**: {f.get('endpoint') or '?'} (status `{f.get('status')}`)\n\n"
+        f"A new release publishes anyway. A release that already had its checksum keeps it.\n\n"
+        f"## To resolve\n"
+        f"Reproduce: `{f.get('repro')}`, then look at what upstream lists beside the artifact,"
+        f" below. A checksum shared across files will not show there, so read that file directly."
+        f" The cause is one of these, and only the fix differs:\n"
+        f"- **Another name is listed:** the config is wrong, or upstream renamed it. Fix"
+        f" `config/sources.yaml`. `sums` can list alternatives for an upstream that changes the"
+        f" name between releases.\n"
+        f"- **It is not there at all:** upstream has not published it. If it arrives, this closes"
+        f" by itself.\n"
+        f"- **Upstream stopped for good:** remove the param, so the config says there is none,"
+        f" as Tails does.\n\n"
+        f"**Listed beside the artifact:**\n{listed}\n"
+    )
+
+
+def _tampered_body(f: dict) -> str:
+    return (
+        f"`{f['key']}`: a signed checksum disagrees with the file it vouches for.\n\n"
+        f"- **cause**: {f['reason']}\n"
+        f"- **url**: {f.get('endpoint') or '?'}\n\n"
+        f"The ISO still publishes, without the torrent.\n\n"
+        f"## To resolve\n"
+        f"Do not change the config to make this pass. Either upstream regenerated the torrent and"
+        f" has not updated its signed file, in which case this closes by itself, or the torrent"
+        f" is not the one upstream signed. Compare the two, and check upstream's announcements.\n"
+        f"\nReproduce: `{f.get('repro')}`\n"
+    )
+
+
 def _resolve_body(f: dict) -> str:
+    if f.get("cause") == CAUSE_SIDECAR_MISSING:
+        return _sidecar_body(f)
+    if f.get("cause") == CAUSE_SIDECAR_TAMPERED:
+        return _tampered_body(f)
     cands = f.get("observed_candidates") or []
     listed = "\n".join(f"- `{c}`" for c in cands[:30]) if cands else "_(endpoint listed nothing)_"
     return (
@@ -297,11 +343,6 @@ _AUDIT_RESOLVE = {
         "Upstream publishes an edition no variant tracks. The weekly discovery PR proposes it when"
         " it can, so merge that. Otherwise add the variant by hand, or add it to `discover.ignore`"
         " if it is left out on purpose."
-    ),
-    "NO_CHECKSUM": (
-        "The variant resolves, but the checksum its config asks for never arrived, so the entry"
-        " publishes without one. Compare what upstream publishes now with `sums`. If upstream"
-        " renames the sidecar between releases, `sums` can list the alternatives."
     ),
     "SKIPPED_RELEASE": (
         "Upstream lists a newer release this variant fell back past, so the feed is serving an"

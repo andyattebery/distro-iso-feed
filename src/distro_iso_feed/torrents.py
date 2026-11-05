@@ -80,12 +80,15 @@ def _info_span(data: bytes) -> tuple[int, int]:
     if not data or data[0:1] != b"d":
         raise BencodeError("not a bencoded dict")
     i = 1
-    while data[i : i + 1] != b"e":
-        key, i = _decode(data, i)
-        start = i
-        _, i = _decode(data, i)
-        if key == b"info":
-            return start, i
+    try:
+        while data[i : i + 1] != b"e":
+            key, i = _decode(data, i)
+            start = i
+            _, i = _decode(data, i)
+            if key == b"info":
+                return start, i
+    except (ValueError, IndexError) as exc:
+        raise BencodeError(str(exc)) from exc
     raise BencodeError("no `info` dict")
 
 

@@ -109,6 +109,20 @@ def test_prune_drops_only_keys_outside_the_config():
     assert list(s.records) == [kept.state_key]
 
 
+def test_enrich_never_removes_a_torrent():
+    """A miss on the same release must not strip what the record already has. On 2026-07-17 a
+    transient failure took the torrent off four `debian:netinst` entries for a day."""
+    s = state_with(
+        make_release(
+            torrent_url="https://x/w.iso.torrent", info_hash="d" * 40, torrent_checksum="e" * 64
+        )
+    )
+    assert s.enrich(make_release(), keep_torrent=True) is False
+    unvouched = make_release(torrent_url="https://x/w.iso.torrent", info_hash="d" * 40)
+    assert s.enrich(unvouched, keep_torrent=True) is False
+    assert s.records["fedora:workstation"].release.torrent_checksum == "e" * 64
+
+
 def test_enrich_adds_metadata_without_moving_seen_or_version():
     """The migration: a torrent attached to a known ISO must rewrite the record while
     keeping `version`, `hash`, and `seen` -- so no feed timestamp moves and no reader

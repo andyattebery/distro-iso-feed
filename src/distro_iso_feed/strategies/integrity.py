@@ -12,6 +12,14 @@ from urllib.parse import urljoin
 from .. import checksums, escalate
 from ..client import Client
 
+# Params saying a variant's ISO has a published checksum. `torrent_sums` is not one of them: it
+# describes the `.torrent` file, not the ISO.
+CHECKSUM_PARAMS = ("sums", "sums_suffix", "sums_asset")
+
+
+def expects_checksum(params: dict) -> bool:
+    return any(params.get(k) for k in CHECKSUM_PARAMS)
+
 
 class SumsUnavailable(Exception):
     """A checksum sidecar IS configured and the fetch failed *transiently*.
@@ -26,9 +34,11 @@ class SumsUnavailable(Exception):
     None instead would route through `diagnose`, which hardcodes STRUCTURAL and would file a
     bogus regression per variant.
 
-    **Only transient.** A 404 keeps the old behaviour (checksum=None, still resolves): several
-    sources carry optional per-file sidecars, and failing the resolve on a structurally-absent
-    one would freeze those entries forever -- trading silent degradation for a silent stall.
+    **Only transient.** A 404 returns None, so the release still resolves and a new one still
+    publishes. `run_refresh` then fails the run over it, because a file the config names must
+    arrive: nothing configured is optional, and a variant with no sidecar says so by leaving `sums`
+    out, as Tails does. This used to be silent, on the claim that sources carry optional sidecars.
+    None does, and EndeavourOS shipped without a checksum for 69 days behind that claim.
     """
 
     def __init__(self, url: str, failure_class: str = escalate.TRANSIENT) -> None:
@@ -91,7 +101,7 @@ def fetch_sums(
         outcomes = [o for _, o in client.trace[mark:]]
         if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
             raise SumsUnavailable(url)
-    return None  # 404/structural: deliberately still resolves, checksum-less. See the class.
+    return None  # 404/structural: resolves, and `run_refresh` fails the run. See the class.
 
 
 def fetch_integrity(

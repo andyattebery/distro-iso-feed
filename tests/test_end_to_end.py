@@ -106,6 +106,7 @@ PAGES = {
         ["debian-13.5.0-amd64-netinst.iso", "debian-edu-13.5.0-amd64-netinst.iso"]
     ),
     "https://cdimage.example/SHA512SUMS": f"{'b' * 128}  debian-13.5.0-amd64-netinst.iso",
+    "https://cdimage.example/SHA512SUMS.sign": "signature",  # named by `sig`, so it must exist
     "https://mirror.example/": autoindex_html(["batocera-x86_64-43.1-20260529.img.gz"]),
     "https://mirror.example/batocera-x86_64-43.1-20260529.img.gz.md5": MD5,
 }

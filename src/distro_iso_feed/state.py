@@ -79,7 +79,7 @@ class State:
         self.records[release.state_key] = Record(release.version, payload_hash, seen, release)
         return True
 
-    def enrich(self, release: Release) -> bool:
+    def enrich(self, release: Release, *, keep_torrent: bool = False) -> bool:
         """Same artifact, richer metadata. Rewrite in place, preserving `seen`.
 
         Adding a field to `Release` -- a torrent URL beside an existing ISO -- moves
@@ -90,12 +90,21 @@ class State:
         Preserving `seen` is the whole point: it feeds every feed timestamp, so an
         enriched entry gains its new enclosure without a single `<updated>` moving,
         and no subscriber re-notifies. Returns True only when it actually rewrote.
+
+        `keep_torrent` says the config still names a torrent, so a run that came back with less
+        of one had a bad day, and must not strip what this release already has. With the param
+        gone, the torrent goes too.
         """
         current = self.records.get(release.state_key)
         if current is None or current.version != release.version:
             return False  # a genuinely new or moved release is `update()`'s job
         if current.release.to_json() == release.to_json():
             return False  # nothing new to record
+        if keep_torrent and (
+            (current.release.torrent_url and not release.torrent_url)
+            or (current.release.torrent_checksum and not release.torrent_checksum)
+        ):
+            return False
         self.records[release.state_key] = Record(
             current.version, current.hash, current.seen, release
         )

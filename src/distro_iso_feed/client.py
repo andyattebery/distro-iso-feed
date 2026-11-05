@@ -145,8 +145,8 @@ class Client:
 
             if r.status_code >= 400:
                 # STRUCTURAL: the host answered, the file is gone. Deliberately does NOT count
-                # against the budget -- several sources carry optional per-file sidecars that
-                # legitimately 404, and charging those would skip a perfectly healthy mirror.
+                # against the budget: that says one file is missing, not that the host is sick,
+                # and charging it would skip a perfectly healthy mirror.
                 level = logging.DEBUG if probe else logging.INFO
                 log.log(level, "GET %s -> %s", url, r.status_code)
                 return None

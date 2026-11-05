@@ -78,9 +78,8 @@ def test_a_transient_sums_failure_fails_the_resolve_instead_of_publishing_no_che
 
 
 def test_a_404_sums_still_resolves_without_a_checksum():
-    """Deliberate asymmetry: a structurally-absent sidecar keeps the old behaviour. Failing the
-    resolve on a 404 would freeze every source with an optional per-file sidecar -- trading
-    silent degradation for a silent stall."""
+    """Resolving is the strategy's half: a new release still publishes. `run_refresh` then fails
+    the run, which `test_a_new_release_without_its_checksum_publishes_and_fails` pins."""
     client = FakeClient(_DI_INDEX)  # SHA512SUMS unmapped -> 404
     rel = REGISTRY["directory_index"]().resolve("debian", "netinst", dict(_DI_PARAMS), client)
     assert rel is not None
