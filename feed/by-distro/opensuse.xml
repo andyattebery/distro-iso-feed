@@ -4,7 +4,143 @@
   <title>Distro ISO Feed — opensuse</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/opensuse.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-11-05T14:44:44+00:00</updated>
+  <updated>2026-11-05T22:41:51+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:s390x/16.1-60.2</id>
+    <title>openSUSE Leap Online Installer 16.1-60.2 (s390x)</title>
+    <updated>2026-11-05T22:41:51+00:00</updated>
+    <published>2026-11-05T22:41:51+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-s390x-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap Online Installer 16.1-60.2 (s390x)
+Filename: Leap-16.1-online-installer-s390x-Build60.2.install.iso
+sha512: ddd278cb431f47ad8d32cd9ba2da1b1dbc57246a44ca993f17cd9bb00ef04f5729616b099f0a70acc515aae6005d565029b2170096c1325b8f26d5342ec9a695
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-s390x-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:ppc64le/16.1-60.2</id>
+    <title>openSUSE Leap Online Installer 16.1-60.2 (ppc64le)</title>
+    <updated>2026-11-05T22:41:51+00:00</updated>
+    <published>2026-11-05T22:41:51+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-ppc64le-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap Online Installer 16.1-60.2 (ppc64le)
+Filename: Leap-16.1-online-installer-ppc64le-Build60.2.install.iso
+sha512: d80e038ca311a8f4c505e9246bcebf781f9ae2c71604049b85978681f58c5c047ffd6043468a31a5f1314b90d0157b00910b2acd32f6c9d08e20566c4f1e3afd
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-ppc64le-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:aarch64/16.1-60.2</id>
+    <title>openSUSE Leap Online Installer 16.1-60.2 (aarch64)</title>
+    <updated>2026-11-05T22:41:50+00:00</updated>
+    <published>2026-11-05T22:41:50+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-aarch64-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap Online Installer 16.1-60.2 (aarch64)
+Filename: Leap-16.1-online-installer-aarch64-Build60.2.install.iso
+sha512: e324cc6b418b2586d4def9fb8eae14e354a8aa07ed58d5c56a1f2c3d894ac477603a8c73bc2cc38ced0306064de5cfe596aa74e29c56eec0ed938ba578075282
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-aarch64-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net/16.1-60.2</id>
+    <title>openSUSE Leap Online Installer 16.1-60.2 (x86_64)</title>
+    <updated>2026-11-05T22:41:49+00:00</updated>
+    <published>2026-11-05T22:41:49+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-x86_64-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-net" label="variant" />
+    <summary type="text">openSUSE Leap Online Installer 16.1-60.2 (x86_64)
+Filename: Leap-16.1-online-installer-x86_64-Build60.2.install.iso
+sha512: dd3605a3be177497d71b998bb608d7a276717f0f6670f53a6047067c9551cc665f38430e8e72b6ad5f6e181f0f9294502209991da738d04547a1a32a68471f89
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-online-installer-x86_64-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:s390x/16.1-60.2</id>
+    <title>openSUSE Leap Offline Installer 16.1-60.2 (s390x)</title>
+    <updated>2026-11-05T22:41:49+00:00</updated>
+    <published>2026-11-05T22:41:49+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-s390x-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap Offline Installer 16.1-60.2 (s390x)
+Filename: Leap-16.1-offline-installer-s390x-Build60.2.install.iso
+sha512: 1430cbd58730faa5c8f055d23ec82f600fc6f8243d5fb1886e06681cac11a0e4c539400023a6c169dfbfb303013ccf9ade09912ca607554008130d88a86e9e5a
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-s390x-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:ppc64le/16.1-60.2</id>
+    <title>openSUSE Leap Offline Installer 16.1-60.2 (ppc64le)</title>
+    <updated>2026-11-05T22:41:48+00:00</updated>
+    <published>2026-11-05T22:41:48+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-ppc64le-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap Offline Installer 16.1-60.2 (ppc64le)
+Filename: Leap-16.1-offline-installer-ppc64le-Build60.2.install.iso
+sha512: 3238232b0653f607df98b8a3150a4b2d075518e192da0ab45d80c83b6d8c0f07d5d8d6fc8a2d79dd1eddfb4f19b3f28f3638480087849ed83b47bda00d81bb15
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-ppc64le-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:aarch64/16.1-60.2</id>
+    <title>openSUSE Leap Offline Installer 16.1-60.2 (aarch64)</title>
+    <updated>2026-11-05T22:41:47+00:00</updated>
+    <published>2026-11-05T22:41:47+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-aarch64-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap Offline Installer 16.1-60.2 (aarch64)
+Filename: Leap-16.1-offline-installer-aarch64-Build60.2.install.iso
+sha512: 3f8f2cc57de61d250b71a9e808e934b62dff5d77987eab55f756277d4120b6ae24bbdae9deff38472f50318b2e3bcae828d71525e7c7448e562acca113a55f0f
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-aarch64-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd/16.1-60.2</id>
+    <title>openSUSE Leap Offline Installer 16.1-60.2 (x86_64)</title>
+    <updated>2026-11-05T22:41:47+00:00</updated>
+    <published>2026-11-05T22:41:47+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-x86_64-Build60.2.install.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="leap-dvd" label="variant" />
+    <summary type="text">openSUSE Leap Offline Installer 16.1-60.2 (x86_64)
+Filename: Leap-16.1-offline-installer-x86_64-Build60.2.install.iso
+sha512: c95738ba232a36eb31dfdf3e5f663beb672232410894ab04b1bfe0c7a803a622868a90fe631fc6c89418eca9ad181979b8817a52fdec3c203a9a5b7b997ba051
+Signature: https://download.opensuse.org/distribution/leap/16.1/offline/Leap-16.1-offline-installer-x86_64-Build60.2.install.iso.sha512.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd:aarch64/Snapshot20261103</id>
     <title>openSUSE Tumbleweed Rescue CD Snapshot20261103 (aarch64)</title>
@@ -245,7 +381,7 @@ Verify: gpg</summary>
     <published>2026-10-22T11:59:48+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20834" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20828" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20261020 (aarch64)
@@ -257,142 +393,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
 Infohash: 02ce6b9e80e3e9289d24c73eb42cf6465f8fd30e
 Magnet: magnet:?xt=urn:btih:02ce6b9e80e3e9289d24c73eb42cf6465f8fd30e&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:s390x/15.6-710.3</id>
-    <title>openSUSE Leap NET 15.6-710.3 (s390x)</title>
-    <updated>2026-07-12T21:46:58+00:00</updated>
-    <published>2026-07-12T21:46:58+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-net" label="variant" />
-    <summary type="text">openSUSE Leap NET 15.6-710.3 (s390x)
-Filename: openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso
-sha256: 9649be14ffde9aeb5cc5915e703237a417e33d9c3800fc4f71a3d6bb48addf0a
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-s390x-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:ppc64le/15.6-710.3</id>
-    <title>openSUSE Leap NET 15.6-710.3 (ppc64le)</title>
-    <updated>2026-07-12T21:46:57+00:00</updated>
-    <published>2026-07-12T21:46:57+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-net" label="variant" />
-    <summary type="text">openSUSE Leap NET 15.6-710.3 (ppc64le)
-Filename: openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso
-sha256: 032ba016087b725bb26bc0d2cce76e5b7eb67152c984ce4c10e803f1644c4b03
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-ppc64le-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net:aarch64/15.6-710.3</id>
-    <title>openSUSE Leap NET 15.6-710.3 (aarch64)</title>
-    <updated>2026-07-12T21:46:56+00:00</updated>
-    <published>2026-07-12T21:46:56+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-net" label="variant" />
-    <summary type="text">openSUSE Leap NET 15.6-710.3 (aarch64)
-Filename: openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso
-sha256: 1ae50c465460e3cf7131567d37ea02952b5a31339b8c06521a51080be6f491f7
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-aarch64-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:s390x/15.6-710.3</id>
-    <title>openSUSE Leap DVD 15.6-710.3 (s390x)</title>
-    <updated>2026-07-12T21:46:54+00:00</updated>
-    <published>2026-07-12T21:46:54+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-dvd" label="variant" />
-    <summary type="text">openSUSE Leap DVD 15.6-710.3 (s390x)
-Filename: openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso
-sha256: 5dd1bec7c2bf386f9eb80b0d73740949f8ea2cfb4336d02697410ebc4e737e45
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-s390x-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:ppc64le/15.6-710.3</id>
-    <title>openSUSE Leap DVD 15.6-710.3 (ppc64le)</title>
-    <updated>2026-07-12T21:46:53+00:00</updated>
-    <published>2026-07-12T21:46:53+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-dvd" label="variant" />
-    <summary type="text">openSUSE Leap DVD 15.6-710.3 (ppc64le)
-Filename: openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso
-sha256: 6f9504a6710d59ce20f3c16294fe3738be6b08c1b51e1dfd8d6f4a2f6eb8af5e
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-ppc64le-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd:aarch64/15.6-710.3</id>
-    <title>openSUSE Leap DVD 15.6-710.3 (aarch64)</title>
-    <updated>2026-07-12T21:46:53+00:00</updated>
-    <published>2026-07-12T21:46:53+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-dvd" label="variant" />
-    <summary type="text">openSUSE Leap DVD 15.6-710.3 (aarch64)
-Filename: openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso
-sha256: 6ecade658ef3e4dd7175176781f80fcd070250fe7e922f6240224ff810755ac6
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-aarch64-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-net/15.6-710.3</id>
-    <title>openSUSE Leap NET 15.6-710.3 (x86_64)</title>
-    <updated>2026-07-09T23:40:17+00:00</updated>
-    <published>2026-07-09T23:40:17+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-net" label="variant" />
-    <summary type="text">openSUSE Leap NET 15.6-710.3 (x86_64)
-Filename: openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso
-sha256: 0984b36d0f420487f2766733ff8f9d779ade81d432b08e40e852a675313750bb
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-NET-x86_64-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/leap-dvd/15.6-710.3</id>
-    <title>openSUSE Leap DVD 15.6-710.3 (x86_64)</title>
-    <updated>2026-07-09T23:40:16+00:00</updated>
-    <published>2026-07-09T23:40:16+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="leap-dvd" label="variant" />
-    <summary type="text">openSUSE Leap DVD 15.6-710.3 (x86_64)
-Filename: openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso
-sha256: a74d4072e639c75ca127df3d869c1e57bcc44a093a969550f348a3ead561fe4f
-Signature: https://download.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
   </entry>
 </feed>
