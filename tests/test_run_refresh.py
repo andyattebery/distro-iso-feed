@@ -12,7 +12,8 @@ import json
 from dataclasses import replace
 
 from conftest import FakeClient, autoindex_html
-from distro_iso_feed import run_refresh
+from distro_iso_feed import escalate, run_gate, run_refresh
+from distro_iso_feed.audit import Reason
 from distro_iso_feed.escalate import (
     Failure,
     Pin,
@@ -44,6 +45,107 @@ def test_classify_outcomes_transient_only_on_a_failed_request():
 
 def _report(**kw) -> dict:
     return Report(**kw).to_json()
+
+
+# ------------------------------------------------------------------------- audit issues
+
+
+def _finding(reason="NO_CHECKSUM", subject="default", distro="endeavouros", detail="`x.iso` no sum"):
+    return {"distro": distro, "reason": reason, "subject": subject, "detail": detail}
+
+
+def _issue(number, title, label="audit-finding"):
+    return {"number": number, "title": title, "labels": [{"name": label}]}
+
+
+def test_audit_issues_open_one_per_finding_with_what_to_do():
+    plan = escalate.plan_audit_issues(
+        [
+            _finding(),
+            _finding("SKIPPED_RELEASE", "leap-dvd", "opensuse", "`16.1` serves nothing"),
+            _finding("UNEXPLAINED", "bigscreen", "kde-neon", "`bigscreen`"),
+        ],
+        [],
+    )
+    by_title = {i["title"]: i for i in plan["to_open"]}
+    assert set(by_title) == {
+        "audit NO_CHECKSUM: endeavouros:default",
+        "audit SKIPPED_RELEASE: opensuse:leap-dvd",
+        "audit UNEXPLAINED: kde-neon:bigscreen",
+    }
+    assert {i["label"] for i in plan["to_open"]} == {"audit-finding"}
+    body = by_title["audit NO_CHECKSUM: endeavouros:default"]["body"]
+    assert "`x.iso` no sum" in body
+    assert "## To resolve" in body
+    assert "`sums`" in body  # says what to change, for this finding
+    assert "distro-iso-feed-audit --only endeavouros" in body
+    assert plan["to_close"] == []
+
+
+def test_audit_issues_stay_open_and_close_when_the_finding_clears():
+    title = "audit NO_CHECKSUM: endeavouros:default"
+    still = escalate.plan_audit_issues([_finding()], [_issue(7, title)])
+    assert still == {"to_open": [], "to_close": []}
+    cleared = escalate.plan_audit_issues([], [_issue(7, title)])
+    assert cleared == {"to_open": [], "to_close": [{"number": 7, "title": title}]}
+
+
+def test_audit_gate_ignores_refresh_issues_and_the_refresh_gate_ignores_audit_ones():
+    refresh = _issue(1, "refresh failure: a:b", "refresh-failure")
+    audit = _issue(2, "audit NO_CHECKSUM: a:b")
+    assert escalate.plan_audit_issues([], [refresh])["to_close"] == []
+    assert plan_escalation(_report(total=1), [audit])["to_close"] == []
+
+
+def test_audit_issues_collapse_above_the_mass_threshold():
+    """A broken parser must not open fifty issues. The count is in the title, so a seventh finding
+    replaces the issue and pings, rather than leaving a stale list open."""
+    many = [_finding(subject=f"v{i}") for i in range(escalate.MASS_OUTAGE_THRESHOLD + 1)]
+    plan = escalate.plan_audit_issues(many, [_issue(9, "audit NO_CHECKSUM: endeavouros:default")])
+    assert len(plan["to_open"]) == 1
+    assert "endeavouros:v0" in plan["to_open"][0]["body"]
+    assert [i["number"] for i in plan["to_close"]] == [9]
+
+    opened = _issue(10, plan["to_open"][0]["title"])
+    assert escalate.plan_audit_issues(many, [opened]) == {"to_open": [], "to_close": []}
+
+    more = many + [_finding(subject="v99")]
+    moved = escalate.plan_audit_issues(more, [opened])
+    assert len(moved["to_open"]) == 1 and "endeavouros:v99" in moved["to_open"][0]["body"]
+    assert [i["number"] for i in moved["to_close"]] == [10]
+
+
+def test_audit_issues_count_issues_not_arches():
+    """A finding carries the variant, not the arch, so one Rocky rename is 15 findings and 3 titles:
+    three real issues, not a "broken check" that closes everything else."""
+    findings = [_finding(subject=s) for s in ("boot", "dvd", "minimal") for _ in range(5)]
+    plan = escalate.plan_audit_issues(findings, [])
+    assert len(plan["to_open"]) == 3
+
+
+def test_every_finding_that_opens_an_issue_says_what_to_do():
+    assert {r.value for r in Reason if r.opens_issue} == set(escalate._AUDIT_RESOLVE)
+
+
+def test_gate_plans_audit_issues_from_an_audit_report(tmp_path, capsys):
+    report = tmp_path / "audit.json"
+    report.write_text(json.dumps({"findings": [_finding()]}))
+    assert run_gate.main(["--audit", "--report", str(report)]) == 0
+    plan = json.loads(capsys.readouterr().out)
+    assert [i["title"] for i in plan["to_open"]] == ["audit NO_CHECKSUM: endeavouros:default"]
+    assert "exit_code" not in plan  # audit issues never decide a job's result
+
+
+def test_a_regression_issue_says_when_the_version_appeared():
+    """`seen` only moves on a change, so it dates the version, not the last good resolve: #29 said
+    "last resolved 2026-09-05" about a variant that went on resolving until November."""
+    f = Failure(
+        "a:b", "none matched", "structural", "none-matched", regression=True,
+        last_good_version="1.0", last_good_seen="2026-09-05T10:42:09+00:00",
+    )  # fmt: skip
+    body = plan_escalation(_report(total=1, failures=[f]), [])["to_open"][0]["body"]
+    assert "first seen 2026-09-05" in body
+    assert "last resolved" not in body
 
 
 def test_gate_opens_only_structural_regressions_signing_and_pins():
@@ -358,7 +460,7 @@ def test_a_listing_blip_that_heals_by_the_re_listing_opens_no_issue(tmp_path, mo
     class BlipThenFine(FakeClient):
         """Fails the index once, then serves it -- resolve loses the wire, diagnose does not."""
 
-        def get(self, url, headers=None):
+        def get(self, url, headers=None, probe=False):
             r = super().get(url, headers)
             self.fail.pop(url, None)  # the blip cleared before the next fetch
             return r

@@ -8,12 +8,21 @@ Two of them shipped. So the pin check runs offline, over the real config, as a t
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
 
 from conftest import FakeClient, autoindex_html
-from distro_iso_feed.audit import Finding, Reason, audit_source, pins, report, resolve_findings
+from distro_iso_feed.audit import (
+    Finding,
+    Reason,
+    audit_source,
+    pins,
+    report,
+    resolve_findings,
+    skipped_releases,
+)
 from distro_iso_feed.config import (
     ConfigError,
     _validate_discover,
@@ -153,6 +162,147 @@ def test_no_checksum_is_signal_and_reaches_the_report():
     assert Reason.NO_CHECKSUM.is_signal
     body = report([Finding("d", Reason.NO_CHECKSUM, "v", "`x.iso`")])
     assert "**NO_CHECKSUM**" in body
+
+
+_GH_API = "https://api.github.com/repos/o/r/releases"
+_GH_ISO = "thing-1.2-amd64.iso"
+
+
+def _gh_source(**params) -> Source:
+    base = {
+        "repo": "o/r",
+        "honor_prerelease_flag": True,
+        "match": r"^thing-[0-9.]+-amd64\.iso$",
+        "version_pattern": r"thing-([0-9.]+)-",
+        **params,
+    }
+    return Source(
+        name="d", variants=(Variant("d", "v", "github_releases", base),)
+    )
+
+
+def _gh_releases(*assets: str) -> str:
+    rows = [{"name": a, "browser_download_url": f"https://x/{a}"} for a in (_GH_ISO, *assets)]
+    return json.dumps(
+        [{"tag_name": "v1.2", "prerelease": False, "published_at": "2026-01-01T00:00:00Z", "assets": rows}]
+    )
+
+
+@pytest.mark.parametrize(
+    "params", [{"sums_suffix": ".sha256"}, {"sums_asset": "sha256sum.txt"}], ids=["suffix", "asset"]
+)
+def test_a_github_release_missing_its_checksum_asset_is_no_checksum(params):
+    client = FakeClient({_GH_API: _gh_releases()})
+    found = resolve_findings(_gh_source(**params), client)
+    assert [f.reason for f in found] == [Reason.NO_CHECKSUM]
+
+
+def test_a_timed_out_github_checksum_asset_is_not_no_checksum():
+    client = FakeClient(
+        {_GH_API: _gh_releases("sha256sum.txt")}, fail={"https://x/sha256sum.txt": "ReadTimeout"}
+    )
+    assert resolve_findings(_gh_source(sums_asset="sha256sum.txt"), client) == []
+
+
+# ------------------------------------------------------------------------ skipped releases
+#
+# `version_dir` takes the highest dir holding an artifact, so a release upstream moved falls back
+# to the last one that still fits, with no failure. Leap sat on 15.6 under a `16.1/` with no `iso/`.
+# Tails walked back to 7.14 when 7.15.1 stopped serving.
+
+_VD = "https://mirror.example/rel/"
+
+
+def _vd_source(index: str = "{version}/", variants: tuple[str, ...] = ("v",), **over) -> Source:
+    params = {
+        "version_dir": _VD,
+        "version_dir_match": r"^\d+\.\d+$",
+        "index": index,
+        "match": r"^thing-[0-9.]+-amd64\.iso$",
+        "version_pattern": r"thing-([0-9.]+)-",
+        **over,
+    }
+    return Source(
+        name="d", variants=tuple(Variant("d", n, _DI, dict(params)) for n in variants)
+    )
+
+
+def _vd_pages(extra: dict | None = None, index: str = "1.0/") -> dict:
+    return {
+        _VD: autoindex_html(["1.0/", "2.0/"]),
+        f"{_VD}{index}": autoindex_html(["thing-1.0-amd64.iso"]),
+        **(extra or {}),
+    }
+
+
+def test_a_newer_dir_that_serves_nothing_is_skipped_release():
+    found = skipped_releases(_vd_source(), FakeClient(_vd_pages()))
+    assert [(f.reason, f.subject) for f in found] == [(Reason.SKIPPED_RELEASE, "v")]
+    assert "2.0" in found[0].detail
+
+
+def test_a_newer_release_that_moved_its_files_is_skipped_release():
+    """The Leap shape: the version dir has real content, just not where the config looks."""
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["offline/", "repo/"])}, index="1.0/iso/")
+    found = skipped_releases(_vd_source(index="{version}/iso/"), FakeClient(pages))
+    assert [f.reason for f in found] == [Reason.SKIPPED_RELEASE]
+
+
+def test_a_newer_dir_holding_only_milestones_is_not_reported():
+    """The Ubuntu development cycle: `27.04/release/` 404s for weeks, and that is expected."""
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["beta/", "snapshot-1/"])}, index="1.0/release/")
+    assert skipped_releases(_vd_source(index="{version}/release/"), FakeClient(pages)) == []
+
+
+def test_a_newer_dir_with_only_non_matching_files_is_not_reported():
+    """The OPNsense shape: `26.7/` holds only `-26.7.r1-` files while 26.7 is in RC."""
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["thing-2.0.r1-amd64-rc.iso"])})
+    assert skipped_releases(_vd_source(), FakeClient(pages)) == []
+
+
+def test_a_timed_out_newer_dir_is_not_skipped_release():
+    client = FakeClient(_vd_pages(), fail={f"{_VD}2.0/": "ReadTimeout"})
+    assert skipped_releases(_vd_source(), client) == []
+
+
+def test_each_listing_is_walked_once():
+    client = FakeClient(_vd_pages())
+    found = skipped_releases(_vd_source(variants=("a", "b")), client)
+    assert [f.subject for f in found] == ["a"]
+    assert client.requested.count(_VD) == 1
+
+
+def test_variants_on_different_channels_are_walked_separately():
+    """Ubuntu lists `-lts` first, on the same listing as `-latest`. Keyed without `channel`, the
+    `latest` variants were never walked and a moved 26.10 would have fallen back unseen."""
+    pages = {
+        _VD: autoindex_html(["24.04/", "26.10/"]),
+        f"{_VD}24.04/": autoindex_html(["thing-24.04-amd64.iso"]),
+    }
+    source = Source(
+        name="d",
+        variants=(
+            Variant("d", "lts", _DI, {**_vd_source().variants[0].params, "channel": "lts"}),
+            Variant("d", "latest", _DI, {**_vd_source().variants[0].params, "channel": "latest"}),
+        ),
+    )
+    found = skipped_releases(source, FakeClient(pages))
+    assert [f.subject for f in found] == ["latest"]
+
+
+def test_a_timed_out_parent_dir_is_not_skipped_release():
+    """`release/` 404s and the check on its parent times out: nothing shows the dir is real."""
+    pages = _vd_pages(index="1.0/release/")
+    client = FakeClient(pages, fail={f"{_VD}2.0/": "ReadTimeout"})
+    assert skipped_releases(_vd_source(index="{version}/release/"), client) == []
+
+
+def test_a_variant_with_no_version_dir_has_nothing_to_skip():
+    assert skipped_releases(_di_source(), FakeClient()) == []
+
+
+def test_skipped_release_is_signal():
+    assert Reason.SKIPPED_RELEASE.is_signal
 
 
 def test_an_edition_tracked_under_another_name_is_not_unexplained():

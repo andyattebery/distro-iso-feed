@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
   pull-requests: write
 
 jobs:
@@ -40,7 +41,38 @@ jobs:
       - name: Audit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: uv run distro-iso-feed-audit --summary "$GITHUB_STEP_SUMMARY"
+        run: uv run distro-iso-feed-audit --summary "$GITHUB_STEP_SUMMARY" --report "$RUNNER_TEMP/audit.json"
+
+      # One issue per finding, closed when it clears, so a finding reaches someone rather than
+      # sitting in a job summary. Best-effort: nothing here may stop the PR below. The gate only
+      # reads `audit-finding` issues, so the daily refresh's `refresh-*` issues are safe.
+      - name: Audit issues
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          gh issue list --state open --json number,title,labels --limit 500 \
+            > "$RUNNER_TEMP/open.json"
+          uv run distro-iso-feed-refresh-gate --audit \
+            --report "$RUNNER_TEMP/audit.json" --open-issues "$RUNNER_TEMP/open.json" \
+            > "$RUNNER_TEMP/plan.json"
+
+          gh label create audit-finding --force >/dev/null 2>&1 || true
+
+          jq -c '.to_open[]' "$RUNNER_TEMP/plan.json" | while read -r item; do
+            title=$(jq -r '.title' <<<"$item")
+            label=$(jq -r '.label' <<<"$item")
+            jq -r '.body' <<<"$item" > "$RUNNER_TEMP/body.md"
+            gh issue create --title "$title" --label "$label" --body-file "$RUNNER_TEMP/body.md" \
+              || echo "::warning::could not open issue: $title"
+          done
+          jq -c '.to_close[]' "$RUNNER_TEMP/plan.json" | while read -r item; do
+            num=$(jq -r '.number' <<<"$item")
+            gh issue close "$num" --comment "Cleared as of this run: $RUN_URL" \
+              || echo "::warning::could not close issue #$num"
+          done
 
       # Written outside the tree: `create-pull-request` commits what it finds, and
       # the PR body is not part of the config change it is opening.

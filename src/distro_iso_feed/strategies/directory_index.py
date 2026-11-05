@@ -2,7 +2,7 @@
 
 Four capabilities §7 never mentions, all forced by real upstreams:
 
-* a **version-dir listing** (FreeBSD, Leap, Tails, Batocera, Ubuntu, Mint)
+* a **version-dir listing** (FreeBSD, Leap, Batocera, Ubuntu, Mint)
 * an **announced release** instead (`version_page`, Parrot): the release the project's own
   download page links, because the newest version dir can be a staged, unannounced one
 * a **templated `sums`** -- FreeBSD's is ``CHECKSUM.SHA256-FreeBSD-{version}-RELEASE-amd64``
@@ -15,10 +15,11 @@ from __future__ import annotations
 import re
 from urllib.parse import urljoin
 
+from .. import escalate
 from ..client import Client
 from ..listers import Candidate, autoindex, page_index, version_dir
 from ..models import Release
-from ..select import by_channel, matching, version_key
+from ..select import by_channel, is_prerelease, matching, version_key
 from ..tokens import from_filename
 from .base import Strategy
 from .build import build_release, choose_artifact
@@ -37,11 +38,18 @@ class DirectoryIndex(Strategy):
         if not parent:
             return params["index"], params.get("version", "")
 
+        url, version, _ = self._walk_versions(parent, params, client)
+        return url, version
+
+    def _walk_versions(
+        self, parent: str, params: dict, client: Client
+    ) -> tuple[str, str, list[str]]:
+        """The ``(index_url, version)`` to use, plus the newer dirs that served nothing."""
         versions = version_dir(client, parent, params.get("version_dir_match", r"^\d+(\.\d+)*$"))
         if channel := params.get("channel"):
             versions = by_channel(versions, channel)
         if not versions:
-            return "", ""
+            return "", "", []
 
         # Highest dir that actually contains a *matching* artifact, not merely the highest
         # number. A dir with content but nothing matching `match` is a release-candidate-only
@@ -49,15 +57,49 @@ class DirectoryIndex(Strategy):
         # skipping it falls through to the newest stable dir (26.1.6).
         template = params.get("index", "{version}/")
         match = params.get("match")
+        empty: list[str] = []
         for version in sorted(versions, key=version_key, reverse=True):
             url = urljoin(parent, template.format(version=version))
+            mark = len(client.trace)
             names = [c.name for c in autoindex(client, url)]
             if not names:
+                outcomes = [o for _, o in client.trace[mark:]]
+                if escalate.classify_outcomes(outcomes) == escalate.STRUCTURAL:
+                    empty.append(version)
                 continue
             if match and not matching(names, match):
                 continue
-            return url, version
-        return "", ""
+            return url, version, empty
+        return "", "", empty
+
+    def skipped_releases(self, params: dict, client: Client) -> list[str]:
+        """Newer version dirs that serve nothing, so the feed fell back past them without a word.
+
+        A dir with content but no match is not one: that is OPNsense's RC-only `26.7/`. Nor is a dir
+        holding only milestones, which is Ubuntu's `27.04/` while `27.04/release/` 404s for weeks.
+        That second check costs a fetch, so it lives here and not in the walk the refresh runs.
+        """
+        parent = params.get("version_dir")
+        if not parent or params.get("version_page"):
+            return []
+        _, version, empty = self._walk_versions(parent, params, client)
+        if not version:
+            return []  # nothing resolved at all, which `UNRESOLVABLE` reports
+        return [v for v in empty if not self._expected_gap(urljoin(parent, f"{v}/"), client)]
+
+    def _expected_gap(self, url: str, client: Client) -> bool:
+        """Does this version dir hold only milestones, or fail to answer at all? A dir that timed
+        out shows nothing either way, and a sick mirror is stale, not wrong."""
+        mark = len(client.trace)
+        children = [
+            c.name
+            for c in autoindex(client, url)
+            if c.url and c.url.startswith(url) and c.url.endswith("/")
+        ]
+        outcomes = [o for _, o in client.trace[mark:]]
+        if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
+            return True
+        return bool(children) and all(is_prerelease(name) for name in children)
 
     def _announced_index(self, page: str, params: dict, client: Client) -> tuple[str, str]:
         """The directory of the newest release a product page links: the release the project has

@@ -36,6 +36,7 @@ LABEL_RESOLVE = "refresh-failure"
 LABEL_SIGNING = "refresh-signing-key"
 LABEL_PIN = "refresh-pin"
 LABEL_MASS = "refresh-mass-outage"
+LABEL_AUDIT = "audit-finding"
 
 # Why a pinned key did not verify: `SigningFailure.cause`, set by `signing.verify_signing_key`.
 # Defined once, here, because the gate matches on them: two files naming the set separately is how
@@ -104,7 +105,7 @@ class Failure:
     status: int | str | None = None
     observed_candidates: list[str] = field(default_factory=list)
     last_good_version: str | None = None
-    last_resolved: str | None = None
+    last_good_seen: str | None = None  # when that version appeared; `seen` moves only on a change
     repro: str = ""
 
 
@@ -158,7 +159,7 @@ def _resolve_body(f: dict) -> str:
         f"- **cause**: {f['reason']}\n"
         f"- **endpoint**: {f.get('endpoint') or '?'} (status `{f.get('status')}`)\n"
         f"- **last good**: `{f.get('last_good_version')}`"
-        f" — last resolved {f.get('last_resolved')}\n\n"
+        f" — first seen {f.get('last_good_seen')}\n\n"
         f"## To resolve\n"
         f"1. Reproduce: `{f.get('repro')}`\n"
         f"2. Fetch the endpoint and compare what it lists now against this variant's"
@@ -289,6 +290,84 @@ def _pin_body(p: dict) -> str:
         f" `version_dir`/`version_page`/`probe_versions`. If the pin is genuinely intentional, add"
         f" `pinned_ok: true` with a reason instead.\n"
     )
+
+
+_AUDIT_RESOLVE = {
+    "UNEXPLAINED": (
+        "Upstream publishes an edition no variant tracks. The weekly discovery PR proposes it when"
+        " it can, so merge that. Otherwise add the variant by hand, or add it to `discover.ignore`"
+        " if it is left out on purpose."
+    ),
+    "NO_CHECKSUM": (
+        "The variant resolves, but the checksum its config asks for never arrived, so the entry"
+        " publishes without one. Compare what upstream publishes now with `sums`. If upstream"
+        " renames the sidecar between releases, `sums` can list the alternatives."
+    ),
+    "SKIPPED_RELEASE": (
+        "Upstream lists a newer release this variant fell back past, so the feed is serving an"
+        " older one with no failure. Find where upstream put it. A moved layout needs"
+        " `index`/`match`/`version_pattern`; a listing that lags needs the announced release"
+        " (`page_index` or `version_page`). If upstream pulled the release, this clears by itself."
+    ),
+}
+
+
+def _audit_title(f: dict) -> str:
+    return f"audit {f['reason']}: {f['distro']}:{f['subject']}"
+
+
+def _audit_body(f: dict) -> str:
+    return (
+        f"`{f['distro']}:{f['subject']}`: {f['detail']}\n\n"
+        f"## To resolve\n"
+        f"{_AUDIT_RESOLVE[f['reason']]}\n\n"
+        f"Reproduce: `uv run distro-iso-feed-audit --only {f['distro']}`\n"
+    )
+
+
+def _audit_mass_body(findings: list[dict]) -> str:
+    lines = "".join(
+        f"- `{f['distro']}:{f['subject']}` {f['reason']}: {f['detail']}\n" for f in findings
+    )
+    return (
+        f"{len(findings)} audit findings in one run. That many at once is more likely one broken"
+        f" check or parser than {len(findings)} separate problems, so start there.\n\n"
+        f"## Findings\n{lines}\n"
+        f"Reproduce: `uv run distro-iso-feed-audit`\n"
+    )
+
+
+def plan_audit_issues(findings: list[dict], open_issues: list[dict]) -> dict:
+    """What the weekly audit should open and close, purely. Returns `{to_open, to_close}`.
+
+    The audit's own half of `plan_escalation`, with no exit code: a finding never fails `discover`,
+    which still has a PR to open. Each gate only reads issues carrying its own labels, so neither
+    can close the other's. The threshold counts issues, not findings: a finding names a variant,
+    not an arch, so one Rocky rename is 15 findings and 3 issues. Above it they collapse into one
+    issue with the count in its title, so a new finding replaces it and pings rather than leaving a
+    stale list open.
+    """
+    desired = {_audit_title(f): _audit_body(f) for f in findings}
+    if len(desired) > MASS_OUTAGE_THRESHOLD:
+        desired = {f"audit: {len(desired)} findings": _audit_mass_body(findings)}
+
+    open_by_title = {
+        i["title"]: i
+        for i in open_issues
+        if LABEL_AUDIT in {label["name"] for label in i.get("labels", [])}
+    }
+    return {
+        "to_open": [
+            {"label": LABEL_AUDIT, "title": title, "body": body}
+            for title, body in desired.items()
+            if title not in open_by_title
+        ],
+        "to_close": [
+            {"number": i["number"], "title": title}
+            for title, i in open_by_title.items()
+            if title not in desired
+        ],
+    }
 
 
 def plan_escalation(report: dict, open_issues: list[dict]) -> dict:

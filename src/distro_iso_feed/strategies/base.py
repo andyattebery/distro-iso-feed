@@ -97,6 +97,13 @@ class Strategy(ABC):
         """
         return []
 
+    def skipped_releases(self, params: dict, client: Client) -> list[str]:
+        """Releases upstream lists that this variant silently fell back past. Default: none, and
+        only `directory_index` overrides it: everything else reads one release, so it has nothing
+        to fall back to. The audit asks, not the refresh, because answering costs extra fetches.
+        """
+        return []
+
     # ---------------------------------------------------------------- enumeration
 
     def enumerate_all(

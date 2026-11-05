@@ -569,7 +569,7 @@ def test_reachable_empty_names_the_page_it_was_served():
     class Redirected(FakeClient):
         """The real client follows the 301; `Response.url` is where it landed."""
 
-        def get(self, url, headers=None):
+        def get(self, url, headers=None, probe=False):
             r = super().get(url, headers)
             if r is not None and url == parent:
                 r.url = final
@@ -638,6 +638,18 @@ def test_summary_reports_no_commit_when_nothing_moved(tmp_path):
     body = p.read_text()
     assert "82/82" in body
     assert "no commit" in body
+
+
+def test_summary_lists_what_retired(tmp_path):
+    """A retire-only day commits, so a summary saying "no commit" would be wrong."""
+    from distro_iso_feed.run_refresh import write_summary
+
+    p = tmp_path / "s.md"
+    write_summary(p, changed=[], failed=[], total=82, retired=["ghostbsd:gershwin"])
+    body = p.read_text()
+    assert "### Retired" in body
+    assert "`ghostbsd:gershwin`" in body
+    assert "no commit" not in body
 
 
 def test_summary_makes_failures_actionable(tmp_path):

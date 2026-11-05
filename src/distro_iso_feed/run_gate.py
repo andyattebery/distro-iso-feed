@@ -7,6 +7,9 @@ exit code the job should end with. It **always exits 0 itself** -- the emitted `
 the workflow ends with, AFTER it has run the (best-effort) `gh issue` calls, so a GitHub API hiccup
 can neither mask a real regression nor invent one. All the policy is in `escalate` and unit-tested;
 this is just I/O.
+
+`--audit` reads a `distro-iso-feed-audit --report` file instead and prints only the issues to open
+and close: audit findings never decide a job's result.
 """
 
 from __future__ import annotations
@@ -16,7 +19,7 @@ import json
 import sys
 from pathlib import Path
 
-from .escalate import plan_escalation
+from .escalate import plan_audit_issues, plan_escalation
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -27,13 +30,20 @@ def main(argv: list[str] | None = None) -> int:
         metavar="FILE",
         help="JSON array from `gh issue list --json number,title,labels` (default: none open)",
     )
+    parser.add_argument(
+        "--audit", action="store_true", help="the report is an audit report: plan its issues"
+    )
     args = parser.parse_args(argv)
 
     report = json.loads(Path(args.report).read_text(encoding="utf-8"))
     open_issues = (
         json.loads(Path(args.open_issues).read_text(encoding="utf-8")) if args.open_issues else []
     )
-    plan = plan_escalation(report, open_issues)
+    plan = (
+        plan_audit_issues(report["findings"], open_issues)
+        if args.audit
+        else plan_escalation(report, open_issues)
+    )
     print(json.dumps(plan, indent=2, ensure_ascii=False))
     return 0
 

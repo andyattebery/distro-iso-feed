@@ -10,10 +10,13 @@ test fails.
 
 from __future__ import annotations
 
+import json
+
 import pytest
 
 from conftest import FakeClient, autoindex_html
 from distro_iso_feed import run_audit
+from distro_iso_feed.audit import Finding, Reason
 from distro_iso_feed.signing import REJECTED, VERIFIED, SigningOutcome
 
 FPR = "A" * 40
@@ -87,6 +90,20 @@ def audit_env(tmp_path, monkeypatch):
 
     monkeypatch.setattr(run_audit, "verify_signing_key", fake_verify)
     return cfg
+
+
+def test_audit_report_keeps_only_findings_that_open_issues():
+    """PINNED has its own daily ticket, and a tracked variant that stops resolving already has a
+    `refresh failure` one. Ticketing those here would ping twice for one break."""
+    findings = [Finding("a", reason, "x", "detail") for reason in Reason]
+    kept = {f["reason"] for f in run_audit.issue_findings(findings)}
+    assert kept == {"UNEXPLAINED", "NO_CHECKSUM", "SKIPPED_RELEASE"}
+
+
+def test_audit_writes_a_report_for_the_gate(audit_env, tmp_path):
+    report = tmp_path / "audit.json"
+    assert run_audit.main(["--config", str(audit_env), "--report", str(report)]) == 0
+    assert isinstance(json.loads(report.read_text())["findings"], list)
 
 
 def test_audit_reports_the_bad_distro_and_strict_exits_one(audit_env, capsys):

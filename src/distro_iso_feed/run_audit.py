@@ -6,16 +6,21 @@ the job summary, where it is read alongside the proposals it explains.
 
 `--strict` exits 1 on any signal finding (`Reason.is_signal`); a strict mode that ignored
 some of them would be theatre.
+
+`--report` writes what the weekly run turns into issues (`Reason.opens_issue`), through
+`distro-iso-feed-refresh-gate --audit`. A finding reaches nobody from a job summary.
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
-from .audit import Reason, audit_source, report
+from .audit import Finding, Reason, audit_source, report
 from .client import Client
 from .config import load
 from .signing import REJECTED, verify_signing_key
@@ -58,12 +63,18 @@ def verify_signing_keys(sources, client) -> list[tuple[str, str | None]]:
     return failures
 
 
+def issue_findings(findings: list[Finding]) -> list[dict]:
+    """The findings the audit gate turns into issues, as the JSON it reads."""
+    return [{**asdict(f), "reason": f.reason.value} for f in findings if f.reason.opens_issue]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="distro-iso-feed-audit")
     parser.add_argument("--only", metavar="DISTRO", help="restrict to one distro")
     parser.add_argument("--strict", action="store_true", help="exit 1 on any signal finding")
     parser.add_argument("--summary", metavar="FILE", help="append the markdown report")
     parser.add_argument("--config", metavar="FILE", help="audit this config instead")
+    parser.add_argument("--report", metavar="FILE", help="write findings that open issues as JSON")
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -92,6 +103,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.summary:
         with Path(args.summary).open("a", encoding="utf-8") as fh:
             fh.write(text)
+
+    if args.report:
+        payload = json.dumps({"findings": issue_findings(findings)}, indent=2, ensure_ascii=False)
+        Path(args.report).write_text(payload + "\n", encoding="utf-8")
 
     signal = [f for f in findings if f.reason.is_signal]
     unexplained = sum(1 for f in signal if f.reason is Reason.UNEXPLAINED)

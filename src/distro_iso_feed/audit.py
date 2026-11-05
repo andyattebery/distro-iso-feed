@@ -1,11 +1,12 @@
 """What does each upstream publish that we don't track, and why don't we?
 
-Four findings are signal:
+Five findings are signal:
 
-  UNEXPLAINED   an edition upstream publishes that no variant tracks
-  PINNED        a source frozen to a literal release
-  UNRESOLVABLE  a configured variant that names nothing real
-  NO_CHECKSUM   a variant that resolves, but without the checksum its config asks for
+  UNEXPLAINED      an edition upstream publishes that no variant tracks
+  PINNED           a source frozen to a literal release
+  UNRESOLVABLE     a configured variant that names nothing real
+  NO_CHECKSUM      a variant that resolves, but without the checksum its config asks for
+  SKIPPED_RELEASE  a newer release upstream lists that a variant fell back past
 
 `PINNED` is the more dangerous, and the one no other check in this repo can see.
 A missing variant is visible -- nothing appears in the feed. A pinned one resolves
@@ -70,6 +71,7 @@ class Reason(StrEnum):
     PINNED = "PINNED"
     UNRESOLVABLE = "UNRESOLVABLE"
     NO_CHECKSUM = "NO_CHECKSUM"
+    SKIPPED_RELEASE = "SKIPPED_RELEASE"
     NOT_ENUMERABLE = "NOT_ENUMERABLE"
     LISTER_FAILED = "LISTER_FAILED"
 
@@ -80,7 +82,15 @@ class Reason(StrEnum):
             Reason.PINNED,
             Reason.UNRESOLVABLE,
             Reason.NO_CHECKSUM,
+            Reason.SKIPPED_RELEASE,
         )
+
+    @property
+    def opens_issue(self) -> bool:
+        """Signal the weekly audit tickets. PINNED has its own daily ticket, and a tracked variant
+        that stops resolving already has a `refresh failure` one, so `UNRESOLVABLE` is left out
+        too: one break, one ping. A never-resolved variant fails `config-audit` on its push."""
+        return self in (Reason.UNEXPLAINED, Reason.NO_CHECKSUM, Reason.SKIPPED_RELEASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -178,9 +188,31 @@ def resolve_findings(source: Source, client: Client) -> list[Finding]:
     return out
 
 
+def skipped_releases(source: Source, client: Client) -> list[Finding]:
+    """Newer version dirs a variant fell back past. Resolving succeeds, so nothing else sees this:
+    Leap sat on 15.6 for months beneath a `16.1/` with no `iso/`. Variants sharing a listing are
+    walked once. Transient failures are left out, by the same rule `resolve_findings` applies.
+    """
+    out: list[Finding] = []
+    walked: set[tuple[str, ...]] = set()
+    for variant in source.variants:
+        params = variant.params
+        parent = params.get("version_dir")
+        # `channel` too: Ubuntu's `-lts` and `-latest` share a listing, and read different dirs.
+        listing = (str(parent), str(params.get("index")), str(params.get("channel")))
+        if not parent or listing in walked:
+            continue
+        walked.add(listing)
+        if skipped := REGISTRY[variant.strategy]().skipped_releases(dict(params), client):
+            dirs = ", ".join(f"`{name}`" for name in skipped)
+            detail = f"{dirs} under {parent} serve nothing this variant can use"
+            out.append(Finding(source.name, Reason.SKIPPED_RELEASE, variant.name, detail))
+    return out
+
+
 def audit_source(source: Source, client: Client) -> list[Finding]:
     """Pins, what resolving each variant turns up, and every edition no variant tracks."""
-    findings = pins(source) + resolve_findings(source, client)
+    findings = pins(source) + resolve_findings(source, client) + skipped_releases(source, client)
     discover = source.discover or {}
 
     # A source that cannot be enumerated has nothing to diff. Its variants are still

@@ -176,7 +176,7 @@ def _enrich(f: Failure, variant: Variant, state: State) -> Failure:
     f.regression = rec is not None
     if rec:
         f.last_good_version = rec.version
-        f.last_resolved = rec.seen
+        f.last_good_seen = rec.seen
     return f
 
 
@@ -224,6 +224,7 @@ def write_summary(
     total: int,
     held: Sequence[tuple[str, str, str, str | None]] = (),
     dry_run: bool = False,
+    retired: Sequence[str] = (),
 ) -> None:
     """A run that commits nothing must still leave evidence of what it saw.
 
@@ -245,6 +246,10 @@ def write_summary(
 
     if changed:
         lines += ["### Changed", ""] + [f"- `{c}`" for c in sorted(changed)] + [""]
+
+    if retired:
+        lines += ["### Retired", "", "No longer configured, so dropped from the feed.", ""]
+        lines += [f"- `{key}`" for key in sorted(retired)] + [""]
 
     if failed:
         lines += [
@@ -279,7 +284,7 @@ def write_summary(
 
     if dry_run:
         lines += ["_Dry run: nothing written, nothing committed._", ""]
-    elif not changed and not failed and not held:
+    elif not changed and not failed and not held and not retired:
         lines += ["_Nothing moved upstream; no commit._", ""]
 
     with path.open("a", encoding="utf-8") as fh:
@@ -344,7 +349,8 @@ def main(argv: list[str] | None = None) -> int:
     state = State.load(STATE)
     # Against every configured variant, not the `--only` selection: narrowing what resolves must
     # not read as retiring everything else.
-    if retired := state.prune({v.key for v in all_variants}):
+    retired = state.prune({v.key for v in all_variants})
+    if retired:
         log.info("retired, no longer configured: %s", ", ".join(retired))
     failures: list[Failure] = []
     signing_failures: list[SigningFailure] = []
@@ -511,6 +517,7 @@ def main(argv: list[str] | None = None) -> int:
                 total=len(variants),
                 held=held,
                 dry_run=True,
+                retired=retired,
             )
         return 1 if failures and len(failures) == len(variants) else 0
 
@@ -521,7 +528,12 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.summary:
         write_summary(
-            Path(args.summary), changed=changed, failed=failures, total=len(variants), held=held
+            Path(args.summary),
+            changed=changed,
+            failed=failures,
+            total=len(variants),
+            held=held,
+            retired=retired,
         )
 
     # Individual failures are normal and must never fail the run -- that is what
