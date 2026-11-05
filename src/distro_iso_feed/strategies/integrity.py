@@ -53,7 +53,7 @@ def fetch_sums(
     base: str,
     filename: str,
     version: str,
-    sums: str | None,
+    sums: str | list[str] | None,
     sums_url: str | None = None,
 ) -> str | None:
     """The raw checksum file, fetched once.
@@ -66,23 +66,32 @@ def fetch_sums(
     raises `SumsUnavailable` instead -- the two used to collapse into the same `None`, which is
     the bug that let a timed-out mirror publish a checksum-less entry.
 
+    `sums` may list alternative names, tried in order, for an upstream that renames its sidecar
+    between releases. The first that exists wins. A transient failure on any of them raises rather
+    than moving on, because a name that timed out has not been shown to be absent.
+
     Goes through `get_cached`: `signing` reads the same SHA*SUMS again to verify it, and one
     fetch for both closes that TOCTOU.
     """
     if not (sums or sums_url):
         return None  # not configured -- tails et al. Unchanged.
-    url = sums_url or urljoin(base, _expand(sums, filename=filename, version=version))
-    mark = len(client.trace)
-    r = client.get_cached(url)
-    if r is None:
+    if sums_url:
+        urls = [sums_url]
+    else:
+        templates = [sums] if isinstance(sums, str) else sums
+        urls = [urljoin(base, _expand(t, filename=filename, version=version)) for t in templates]
+    for url in urls:
+        mark = len(client.trace)
+        r = client.get_cached(url)
+        if r is not None:
+            return r.text
         # The slice covers exactly the fetch just performed, in this call, with nothing
         # interleaved -- the one place `client.trace` can be read without the mark/slice
         # discipline `diagnose` needs.
         outcomes = [o for _, o in client.trace[mark:]]
         if escalate.classify_outcomes(outcomes) == escalate.TRANSIENT:
             raise SumsUnavailable(url)
-        return None  # 404/structural: deliberately still resolves, checksum-less. See the class.
-    return r.text
+    return None  # 404/structural: deliberately still resolves, checksum-less. See the class.
 
 
 def fetch_integrity(
@@ -91,7 +100,7 @@ def fetch_integrity(
     base: str,
     filename: str,
     version: str,
-    sums: str | None = None,
+    sums: str | list[str] | None = None,
     sig: str | None = None,
     sums_url: str | None = None,
     sig_url: str | None = None,

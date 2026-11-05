@@ -246,6 +246,53 @@ def write(tmp_path, body: str):
     return p
 
 
+@pytest.mark.parametrize(
+    ("strategy", "sums"),
+    [
+        ("sourceforge", '["a", "b"]'),  # both format `sums` as a string at resolve time
+        ("stable_symlink", '["a", "b"]'),
+        ("directory_index", "[]"),
+        ("directory_index", "[1]"),
+    ],
+)
+def test_sums_list_is_a_load_error_where_it_cannot_work(tmp_path, strategy, sums):
+    p = write(
+        tmp_path,
+        f"distros:\n  d:\n    strategy: {strategy}\n"
+        + NOT_ENUMERABLE
+        + f"    variants:\n      v: {{params: {{sums: {sums}}}}}\n",
+    )
+    with pytest.raises(ConfigError, match="sums"):
+        load(p, set(REGISTRY))
+
+
+def test_sums_list_is_a_load_error_in_an_arch_override(tmp_path):
+    p = write(
+        tmp_path,
+        "distros:\n  d:\n    strategy: stable_symlink\n"
+        + NOT_ENUMERABLE
+        + "    variants:\n      v: {arches: {aarch64: {token: arm64, sums: [a, b]}}}\n",
+    )
+    with pytest.raises(ConfigError, match="sums"):
+        load(p, set(REGISTRY))
+
+
+@pytest.mark.parametrize("covers", ["checksums", "clearsigned"])
+def test_sums_list_is_a_load_error_when_the_signature_covers_it(tmp_path, covers):
+    """`signing` derives the signed file from `sig`, which names one sidecar. If the second name
+    won, it would fetch the first, get a 404 and report a false REJECTED."""
+    p = write(
+        tmp_path,
+        "distros:\n  d:\n    strategy: directory_index\n"
+        + NOT_ENUMERABLE
+        + "    params:\n      sig: x.asc\n      signing_key: "
+        + f"{{url: 'https://k.example/', fingerprint: {'A' * 40}, covers: {covers}}}\n"
+        + "    variants:\n      v: {params: {sums: [a, b]}}\n",
+    )
+    with pytest.raises(ConfigError, match="sums"):
+        load(p, set(REGISTRY))
+
+
 def test_variant_inherits_distro_strategy(tmp_path):
     p = write(
         tmp_path,

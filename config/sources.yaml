@@ -773,7 +773,9 @@ distros:
     page_url: "https://endeavouros.com/"
     params:
       index: "https://ftp.belnet.be/mirror/endeavouros/iso/"
-      sums: "{filename}.sha512"
+      # Upstream renames this between releases: Mercury `.sha512sum`, Titan and Titan-Neo
+      # `.sha512`, Titan-Nova `.sha512sum`. `.sha512sum` first, as the common one.
+      sums: ["{filename}.sha512sum", "{filename}.sha512"]
       sig: "{filename}.sig"
       # The index holds EVERY release ever: Gemini, Mercury, Ganymede, Titan...
       # Codenames do not sort. Key max-version on the embedded date or ship Gemini

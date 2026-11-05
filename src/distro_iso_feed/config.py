@@ -255,6 +255,37 @@ def _validate_signing_surface(distro: str, variant: str, params: dict) -> None:
         )
 
 
+# The strategies that hand `sums` straight to `integrity.fetch_sums`.
+_SUMS_LIST_STRATEGIES = frozenset({"directory_index", "page_index"})
+
+
+def _validate_sums(distro: str, variant: str, strategy: str, params: dict) -> None:
+    """A `sums` list names alternatives, and only `fetch_sums` knows how to try them.
+
+    `sourceforge` and `stable_symlink` format `sums` as a string themselves, so a list there would
+    otherwise surface as an AttributeError at resolve time. An empty list would read as "no
+    checksum configured", which is a different statement from the one its author meant. A signature
+    over the checksum file is out too: `signing` derives that file from `sig`, which names one
+    sidecar, so if the second alternative won it would report a false REJECTED.
+    """
+    sums = params.get("sums")
+    if not isinstance(sums, list):
+        return
+    if strategy not in _SUMS_LIST_STRATEGIES:
+        raise ConfigError(
+            f"{distro}:{variant}: a `sums` list needs one of "
+            f"{', '.join(sorted(_SUMS_LIST_STRATEGIES))}; {strategy} takes a single name"
+        )
+    if not sums or not all(isinstance(name, str) and name for name in sums):
+        raise ConfigError(f"{distro}:{variant}: a `sums` list needs one or more non-empty names")
+    covers = (params.get("signing_key") or {}).get("covers")
+    if covers and covers != "image":
+        raise ConfigError(
+            f"{distro}:{variant}: a `sums` list cannot be signed (`covers: {covers}`): "
+            "`sig` names one sidecar"
+        )
+
+
 def _validate_token(distro: str, variant: str, params: dict) -> None:
     """A `token:` block names where a `stable_symlink` variant reads its change-token.
 
@@ -409,6 +440,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
             arches = vraw.pop("arches", None)
             params = _merge(default_params, distro_params, vraw.pop("params", None), vraw)
             _validate_torrent_only(distro, name, params)
+            _validate_sums(distro, name, strategy, params)
             _validate_token(distro, name, params)
             _validate_channel(distro, name, params)
             _validate_version_page(distro, name, params)
@@ -428,6 +460,7 @@ def load(path: Path, known_strategies: set[str]) -> tuple[dict, list[Source]]:
                     else:
                         per = substitute_token(params, str(value))
                     per["arch"] = canonical
+                    _validate_sums(distro, name, strategy, per)
                     variants.append(
                         Variant(distro, name, strategy, per, label, mirror, arch=canonical)
                     )

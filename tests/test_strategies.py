@@ -87,6 +87,30 @@ def test_a_404_sums_still_resolves_without_a_checksum():
     assert rel.checksum is None
 
 
+_DI_ISO = "debian-13.5.0-amd64-netinst.iso"
+_DI_ALTERNATIVES = {**_DI_PARAMS, "sums": ["{filename}.sha512sum", "{filename}.sha512"]}
+
+
+def test_sums_list_takes_the_first_name_that_exists():
+    """EndeavourOS moves between `.sha512` and `.sha512sum` from one release to the next."""
+    sidecar = f"https://mirror.example/current/{_DI_ISO}.sha512"
+    client = FakeClient({**_DI_INDEX, sidecar: f"{'b' * 128}  {_DI_ISO}"})
+    rel = REGISTRY["directory_index"]().resolve("debian", "netinst", dict(_DI_ALTERNATIVES), client)
+    assert rel.checksum == "b" * 128
+    assert rel.checksum_algo == "sha512"
+
+
+def test_sums_list_stops_at_a_transient_failure():
+    """A name that timed out is not a name that is absent, so the entry waits for the next run."""
+    base = "https://mirror.example/current/"
+    client = FakeClient(
+        {**_DI_INDEX, f"{base}{_DI_ISO}.sha512": f"{'b' * 128}  {_DI_ISO}"},
+        fail={f"{base}{_DI_ISO}.sha512sum": "ConnectTimeout"},
+    )
+    with pytest.raises(SumsUnavailable):
+        REGISTRY["directory_index"]().resolve("debian", "netinst", dict(_DI_ALTERNATIVES), client)
+
+
 def test_no_sums_configured_resolves_cleanly_and_never_fetches():
     """The legitimate `None`: tails et al. ship no sidecar at all. This must stay a no-op."""
     client = FakeClient(_DI_INDEX)

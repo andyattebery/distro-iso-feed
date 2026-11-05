@@ -319,6 +319,27 @@ def test_shipped_parrot_config_resolves_the_announced_release():
     assert not any(u.startswith(real + "7.4/") for u in client.requested)
 
 
+# ------------------------------------------------------------------------------- EndeavourOS
+
+EOS_INDEX = "https://ftp.belnet.be/mirror/endeavouros/iso/"
+EOS_ISO = "EndeavourOS_Titan-Nova-2026.08.15.iso"
+
+
+@pytest.mark.parametrize("suffix", [".sha512sum", ".sha512"])
+def test_endeavouros_takes_either_sidecar_name(suffix):
+    """Upstream has moved each way: Mercury `.sha512sum`, Titan `.sha512`, Titan-Nova `.sha512sum`."""
+    v = _variants("endeavouros")["endeavouros:default"]
+    client = FakeClient(
+        {
+            EOS_INDEX: autoindex_html([EOS_ISO]),
+            f"{EOS_INDEX}{EOS_ISO}{suffix}": f"{'a' * 128}  {EOS_ISO}",
+        }
+    )
+    rel = DI().resolve("endeavouros", v.name, dict(v.params), client)
+    assert rel.checksum == "a" * 128
+    assert rel.checksum_algo == "sha512"
+
+
 # ------------------------------------------------------------------------------ Fedora Atomic
 #
 # A captured shape of releases.json after Fedora 45: `-ostree-` ISOs became `-Installer-` ones,
