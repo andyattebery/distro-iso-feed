@@ -23,6 +23,7 @@ GhostBSD/XCP-ng/Qubes/Gentoo/ChimeraOS (resolve the shipped config's own expande
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -35,6 +36,7 @@ from distro_iso_feed.models import Release, Variant
 from distro_iso_feed.propose_variants import propose_for
 from distro_iso_feed.run_refresh import diagnose
 from distro_iso_feed.strategies import REGISTRY
+from distro_iso_feed.strategies.base import variant_key
 from distro_iso_feed.strategies.torrent import attach_torrent
 from test_torrents import benc
 
@@ -454,6 +456,42 @@ def test_qubes_torrent_is_named_after_the_stem():
     assert attach_torrent(client, release, dict(v.params)).torrent_url == (
         f"{base}Qubes-R4.3.2-x86_64.torrent"
     )
+
+
+AURORA_ATOM = "https://github.com/ublue-os/aurora/releases.atom"
+
+
+@pytest.mark.parametrize(
+    ("key", "iso"),
+    [
+        ("aurora:stable", "aurora-stable-x86_64.iso"),
+        ("aurora:nvidia-open", "aurora-nvidia-open-stable-x86_64.iso"),
+    ],
+)
+def test_aurora_follows_the_webui_rename(key, iso):
+    """Aurora dropped `-webui` from its filenames. The old ISO and its checksum both went 404."""
+    v = _variants("aurora")[key]
+    client = FakeClient(
+        {
+            AURORA_ATOM: atom_feed(["stable-20261103.1: Stable (F44.20261103, #b1b2d87)"]),
+            f"https://dl.getaurora.dev/{iso}-CHECKSUM": f"{'a' * 64}  {iso}",
+        }
+    )
+    rel = REGISTRY[v.strategy]().resolve("aurora", v.name, dict(v.params), client)
+    assert rel.filename == iso
+    assert rel.checksum == "a" * 64
+
+
+@pytest.mark.parametrize(
+    ("name", "key"),
+    [
+        ("aurora-nvidia-open-stable-x86_64.iso", "nvidia-open"),
+        ("aurora-dx-stable-webui-x86_64.iso", "dx"),  # the old shape must not go blind either
+    ],
+)
+def test_aurora_discovery_sees_either_filename_shape(name, key):
+    m = re.search(_source("aurora").discover["group"], name)
+    assert m and variant_key(m) == key
 
 
 # ------------------------------------------------------------------------------------- Tails

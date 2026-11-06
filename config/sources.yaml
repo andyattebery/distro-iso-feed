@@ -1102,13 +1102,14 @@ distros:
       sums: "{filename}-CHECKSUM"
       token: {from: atom_tag, repo: "ublue-os/aurora"}
     variants:
-      stable: {label: "Aurora", params: {url: "https://dl.getaurora.dev/aurora-stable-webui-x86_64.iso"}}
-      nvidia-open: {label: "Aurora NVIDIA Open", params: {url: "https://dl.getaurora.dev/aurora-nvidia-open-stable-webui-x86_64.iso"}}
+      # `-webui` left the filenames in November 2026, and the old URLs went 404.
+      stable: {label: "Aurora", params: {url: "https://dl.getaurora.dev/aurora-stable-x86_64.iso"}}
+      nvidia-open: {label: "Aurora NVIDIA Open", params: {url: "https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso"}}
     discover:
       # Aurora resolves a fixed URL, but its download host IS a plain index.
       index: "https://dl.getaurora.dev/"
       match: '\.iso$'
-      group: '^aurora-(?:(.+)-)?stable-webui-x86_64\.iso$'
+      group: '^aurora-(?:(.+)-)?stable(?:-webui)?-x86_64\.iso$'
 
   # --------------------------------------------------------------- sourceforge (8)
   # Every RSS <item> appears TWICE, and <title> is a CDATA full path, not a filename.
