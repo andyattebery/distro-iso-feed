@@ -12,6 +12,7 @@
     <published>2026-10-02T12:44:59+00:00</published>
     <link href="https://www.qubes-os.org/downloads/" rel="alternate" type="text/html" />
     <link href="https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.torrent" rel="enclosure" type="application/x-bittorrent" length="161917" />
     <category term="qubes" label="distro" />
     <category term="iso" label="variant" />
     <summary type="text">Qubes OS 4.3.2 (x86_64)
@@ -20,6 +21,9 @@ sha512: 1d604388e1bb9cb004adc9b7375aeb22eaf3ae6d5b5a043444d4322c89cc2fac85cc0f65
 Signature: https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.iso.DIGESTS.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
 Key-fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Torrent: https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.torrent
+Infohash: 467ce2defdd0417f6141a08a85dde6a70db086eb
+Magnet: magnet:?xt=urn:btih:467ce2defdd0417f6141a08a85dde6a70db086eb&amp;dn=Qubes-R4.3.2-x86_64&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce
 Verify: gpg</summary>
   </entry>
 </feed>

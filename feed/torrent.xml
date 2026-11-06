@@ -4,7 +4,27 @@
   <title>Distro ISO Feed — torrents</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-11-05T14:44:38+00:00</updated>
+  <updated>2026-11-06T14:21:59+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261104</id>
+    <title>openSUSE Tumbleweed NET Snapshot20261104 (x86_64)</title>
+    <updated>2026-11-06T14:21:59+00:00</updated>
+    <published>2026-11-06T14:21:59+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2615" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20261104 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: 9c86ed814329c8772ce8e07a292389df5df0f08a004f8f1bde61c2381a54e193
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: b784253348c95960bd8a1ae44c42c6c07c2a49af
+Magnet: magnet:?xt=urn:btih:b784253348c95960bd8a1ae44c42c6c07c2a49af&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261104-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20261103</id>
     <title>openSUSE Tumbleweed NET Snapshot20261103 (aarch64)</title>
@@ -23,26 +43,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
 Infohash: 818894804c0950d6e6a4c580b6501b0621dcb2c7
 Magnet: magnet:?xt=urn:btih:818894804c0950d6e6a4c580b6501b0621dcb2c7&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261103-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261103</id>
-    <title>openSUSE Tumbleweed NET Snapshot20261103 (x86_64)</title>
-    <updated>2026-11-05T14:44:37+00:00</updated>
-    <published>2026-11-05T14:44:37+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2608" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20261103 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: e6ef6e0962e6ad02031b5d997c15d3c75f8b448bde9e067ecf6c2026190cfa4a
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 903836db030d8a3b2d5a5e7b51583417ca97c92f
-Magnet: magnet:?xt=urn:btih:903836db030d8a3b2d5a5e7b51583417ca97c92f&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261103-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -163,7 +163,7 @@ NOTE: infohash is unsigned — trust on first use</summary>
     <updated>2026-10-22T11:59:48+00:00</updated>
     <published>2026-10-22T11:59:48+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20828" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20834" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20261020 (aarch64)
@@ -543,6 +543,26 @@ Key-fingerprint: 843938DF228D22F7B3742BC0D94AA3F0EFE21092
 Torrent: https://releases.ubuntu.com/26.10/ubuntu-26.10-desktop-amd64.iso.torrent
 Infohash: def7006974f228ca39c44c806a0fb839a0469c97
 Magnet: magnet:?xt=urn:btih:def7006974f228ca39c44c806a0fb839a0469c97&amp;dn=ubuntu-26.10-desktop-amd64.iso&amp;tr=https%3A%2F%2Ftorrent.ubuntu.com%2Fannounce&amp;tr=https%3A%2F%2Fipv6.torrent.ubuntu.com%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/qubes/iso/4.3.2</id>
+    <title>Qubes OS 4.3.2 (x86_64)</title>
+    <updated>2026-10-02T12:44:59+00:00</updated>
+    <published>2026-10-02T12:44:59+00:00</published>
+    <link href="https://www.qubes-os.org/downloads/" rel="alternate" type="text/html" />
+    <link href="https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.torrent" rel="enclosure" type="application/x-bittorrent" length="161917" />
+    <category term="qubes" label="distro" />
+    <category term="iso" label="variant" />
+    <summary type="text">Qubes OS 4.3.2 (x86_64)
+Filename: Qubes-R4.3.2-x86_64.iso
+sha512: 1d604388e1bb9cb004adc9b7375aeb22eaf3ae6d5b5a043444d4322c89cc2fac85cc0f65a402f9649870d84f83863a87857e2083658c5627bd9b0807cc17f81a
+Signature: https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.iso.DIGESTS.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xF3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Key-fingerprint: F3FA3F99D6281F7B3A3E5E871C3D9B627F3FADA4
+Torrent: https://ftp.qubes-os.org/iso/Qubes-R4.3.2-x86_64.torrent
+Infohash: 467ce2defdd0417f6141a08a85dde6a70db086eb
+Magnet: magnet:?xt=urn:btih:467ce2defdd0417f6141a08a85dde6a70db086eb&amp;dn=Qubes-R4.3.2-x86_64&amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
