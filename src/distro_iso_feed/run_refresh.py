@@ -21,7 +21,7 @@ from .client import Client
 from .config import load
 from .escalate import Failure, Pin, Report, SigningFailure
 from .gpgverify import gpg_available
-from .listers import _HREF
+from .listers import _HREF, autoindex
 from .models import Release, Variant
 from .signing import REJECTED, VERIFIED, SigningOutcome, pinned_fingerprint, verify_signing_key
 from .state import Record, State
@@ -170,16 +170,34 @@ def diagnose(
     )  # fmt: skip
 
 
-def _beside(strategy, variant: Variant, params: dict, client: Client, filename: str) -> list[str]:
-    """What upstream lists beside the artifact, so a rename shows at a glance. Costs one listing,
-    only for a variant already short of something."""
+def _last_miss(attempt: list) -> tuple[str, int] | None:
+    """The last `(url, status)` in a trace slice that came back 4xx or worse."""
+    return next((e for e in reversed(attempt) if isinstance(e[1], int) and e[1] >= 400), None)
+
+
+def _beside(
+    strategy, variant: Variant, params: dict, client: Client, release: Release
+) -> list[str]:
+    """What upstream lists beside the artifact, so a rename shows at a glance. Costs a listing or
+    two, only for a variant already short of something.
+
+    Files sharing the artifact's stem first. If there are none, the artifact itself may have been
+    renamed, or the strategy lists no files at all (a fixed URL), so read the directory it lives
+    in and show its ISOs: Aurora's new names shared nothing with the old one.
+    """
+    filename = release.filename
     stem = filename.rsplit(".", 1)[0]
     try:
         listed = strategy.candidates(variant.distro, params, client)
+        names = {c.name.rsplit("/", 1)[-1] for c in listed}
+        if beside := sorted({n for n in names if stem in n} - {filename}):
+            return beside
+        if release.download_url:
+            parent = release.download_url.rsplit("/", 1)[0] + "/"
+            names |= {c.name for c in autoindex(client, parent)}
     except Exception:  # a courtesy for the issue body; never a reason to lose the failure itself
         return []
-    names = {c.name.rsplit("/", 1)[-1] for c in listed}
-    return sorted({n for n in names if stem in n} - {filename})
+    return sorted(n for n in names if ".iso" in n.lower() and n != filename)
 
 
 def _sidecar_failure(
@@ -202,7 +220,7 @@ def _sidecar_failure(
         cause=cause,
         endpoint=url or endpoint_of(params),
         status=status,
-        observed_candidates=_beside(strategy, variant, params, client, release.filename),
+        observed_candidates=_beside(strategy, variant, params, client, release),
         repro=f"uv run distro-iso-feed-refresh --dry-run --only {variant.key} -v",
     )
 
@@ -457,12 +475,15 @@ def main(argv: list[str] | None = None) -> int:
 
             if release is None:
                 # Costs one extra listing, and only for variants that already failed.
-                attempt_class = escalate.classify_outcomes(
-                    [o for _, o in client.trace[attempt_mark:]]
-                )
+                attempt = client.trace[attempt_mark:]
+                attempt_class = escalate.classify_outcomes([o for _, o in attempt])
                 f = _enrich(
                     diagnose(strategy, variant, params, client, attempt_class), variant, state
                 )
+                # diagnose re-lists, which for a fixed URL proves nothing. The attempt knows which
+                # file actually failed: #30 named a directory, status None, over a 404'd sidecar.
+                if f.cause == "resolver-none" and (miss := _last_miss(attempt)):
+                    f.endpoint, f.status = miss
                 log.warning("%s: %s (entry left untouched)", variant.key, f.reason)
                 failures.append(f)
                 continue

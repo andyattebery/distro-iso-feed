@@ -22,7 +22,7 @@ from distro_iso_feed.escalate import (
     classify_outcomes,
     plan_escalation,
 )
-from distro_iso_feed.models import Release
+from distro_iso_feed.models import Release, Variant
 from distro_iso_feed.signing import DEFERRED, REJECTED, SigningOutcome
 from distro_iso_feed.state import State
 from test_torrents import benc
@@ -754,6 +754,73 @@ def test_a_sidecar_issue_says_what_to_do_and_shows_what_is_listed(tmp_path, monk
     assert "unrelated.iso" not in body
     assert "renamed" in body and "has not published" in body and "as Tails does" in body
     assert "stopped resolving" not in body
+
+
+def _fixed_url_run(tmp_path, monkeypatch, pages, *, params=""):
+    """A `stable_symlink` variant with yesterday's record, the Aurora and Tumbleweed shape."""
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "distros:\n  thing:\n    strategy: stable_symlink\n"
+        "    discover: {enumerable: false, reason: fixture}\n"
+        "    params:\n"
+        f"{params}"
+        '      url: "https://m.example/iso/thing-old.iso"\n'
+        '      sums: "{filename}-CHECKSUM"\n'
+        "      token: {from: sidecar_filename, pattern: '(Snapshot\\d{8})'}\n"
+        "    variants:\n      iso: {label: Thing}\n"
+    )
+    state_path = tmp_path / "state.json"
+    s = State()
+    s.update(
+        Release(
+            distro="thing", variant="iso", version="Snapshot20261103", title="t",
+            filename="thing-old.iso", checksum="b" * 64,
+        ),  # fmt: skip
+        "b" * 64,
+    )
+    s.save(state_path)
+    monkeypatch.setattr(run_refresh, "CONFIG", cfg)
+    monkeypatch.setattr(run_refresh, "STATE", state_path)
+    monkeypatch.setattr(run_refresh, "FEED_DIR", tmp_path / "feed")
+    monkeypatch.setattr(run_refresh, "CATALOG", tmp_path / "catalog.md")
+    monkeypatch.setattr(run_refresh, "Client", lambda *a, **k: FakeClient(pages))
+    report = tmp_path / "report.json"
+    run_refresh.main(["--report", str(report)])
+    return json.loads(report.read_text())
+
+
+def test_a_fixed_url_that_vanished_names_the_file_that_404d(tmp_path, monkeypatch):
+    """#30 said "resolver returned None" at the Leap directory, status None, for a Tumbleweed
+    sidecar that had 404d. The issue should send you to the file."""
+    data = _fixed_url_run(
+        tmp_path, monkeypatch, {},
+        params='      version_dir: "https://m.example/leap/"\n',
+    )  # fmt: skip
+    [f] = data["failures"]
+    assert f["endpoint"] == "https://m.example/iso/thing-old.iso-CHECKSUM"
+    assert f["status"] == 404
+
+
+def test_a_renamed_artifact_shows_what_replaced_it():
+    """Aurora's issue said "nothing, or no listing" while its host listed the new names, because
+    nothing shares the old stem. A rename is exactly when that list matters most."""
+    client = FakeClient(
+        {
+            "https://m.example/iso/": autoindex_html(
+                ["thing-new.iso", "thing-new.iso-CHECKSUM", "README.txt"]
+            )
+        }
+    )
+    variant = Variant("thing", "iso", "stable_symlink", {"url": "https://m.example/iso/thing-old.iso"})
+    release = Release(
+        distro="thing", variant="iso", version="1", title="t", filename="thing-old.iso",
+        download_url="https://m.example/iso/thing-old.iso",
+    )  # fmt: skip
+    strategy = run_refresh.REGISTRY["stable_symlink"]()
+    assert run_refresh._beside(strategy, variant, variant.params, client, release) == [
+        "thing-new.iso",
+        "thing-new.iso-CHECKSUM",
+    ]
 
 
 # ------------------------------------------- never replace a gpg-verified record with less

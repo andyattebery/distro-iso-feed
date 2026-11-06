@@ -75,12 +75,14 @@ def endpoint_of(params: dict) -> str:
 
     `version_dir` comes before `index`, because for those sources `index` is a
     template like ``{version}/`` -- printing it tells the reader nothing. `version_page` comes
-    first of all: where a product page names the release, that page is what broke first.
+    first of all: where a product page names the release, that page is what broke first. `url`
+    comes before `version_dir` because a variant with a fixed URL only has a `version_dir` by
+    inheritance: Tumbleweed's sit in a block of Leap params they ignore.
 
     Lives here rather than in `run_refresh` because it fills `Failure.endpoint`, and because
     `audit` needs it too -- and `run_refresh` imports `audit`, so the other direction would cycle.
     """
-    for key in ("version_page", "version_dir", "index", "url", "repo", "project"):
+    for key in ("version_page", "url", "version_dir", "index", "repo", "project"):
         if value := params.get(key):
             return str(value)
     return "?"

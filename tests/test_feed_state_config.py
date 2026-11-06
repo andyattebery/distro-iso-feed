@@ -686,6 +686,15 @@ def test_summary_makes_failures_actionable(tmp_path):
     assert "--dry-run --only tails:iso -v" in body  # copy-pasteable repro
 
 
+def test_endpoint_of_prefers_a_fixed_url_over_an_inherited_version_dir():
+    """Tumbleweed's variants sit in a block whose Leap `version_dir` they ignore. #30 sent the
+    reader to the Leap directory over a Tumbleweed file."""
+    from distro_iso_feed.escalate import endpoint_of
+
+    url = "https://dl.example/tumbleweed/x-Current.iso"
+    assert endpoint_of({"url": url, "version_dir": "https://dl.example/leap/"}) == url
+
+
 def test_endpoint_of_prefers_the_parent_over_a_template():
     """`index` is `{version}/` for version-dir sources; printing that helps nobody."""
     from distro_iso_feed.run_refresh import endpoint_of
