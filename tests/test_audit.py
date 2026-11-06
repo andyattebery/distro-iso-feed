@@ -263,6 +263,14 @@ def test_a_newer_release_that_moved_its_files_is_skipped_release():
     assert [f.reason for f in found] == [Reason.SKIPPED_RELEASE]
 
 
+def test_a_newer_dir_that_is_empty_is_not_reported():
+    """FreeBSD's `15.2/` answered 200 with nothing in it while 15.2-BETA1 reached the CDN, and
+    failed `config-audit` on an unrelated push. Nothing is published there yet, so nothing was
+    skipped. A 404 is different: the release is listed and is not where we look."""
+    pages = _vd_pages({f"{_VD}2.0/": autoindex_html([])})
+    assert skipped_releases(_vd_source(), FakeClient(pages)) == []
+
+
 def test_a_newer_dir_holding_only_milestones_is_not_reported():
     """The Ubuntu development cycle: `27.04/release/` 404s for weeks, and that is expected."""
     pages = _vd_pages({f"{_VD}2.0/": autoindex_html(["beta/", "snapshot-1/"])}, index="1.0/release/")

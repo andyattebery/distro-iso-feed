@@ -75,8 +75,9 @@ class DirectoryIndex(Strategy):
             mark = len(client.trace)
             names = [c.name for c in autoindex(client, url)]
             if not names:
-                outcomes = [o for _, o in client.trace[mark:]]
-                if escalate.classify_outcomes(outcomes) == escalate.STRUCTURAL:
+                # A 4xx only. A dir that answers 200 and lists nothing has nothing published yet,
+                # as FreeBSD's `15.2/` did while a BETA reached the CDN, so nothing was skipped.
+                if any(isinstance(o, int) and 400 <= o < 500 for _, o in client.trace[mark:]):
                     passed.append((version, []))
                 continue
             if match and not matching(names, match):
@@ -88,8 +89,8 @@ class DirectoryIndex(Strategy):
     def skipped_releases(self, params: dict, client: Client) -> list[str]:
         """Newer version dirs this variant fell back past, so the feed went stale without a word.
 
-        Two shapes. A dir that serves nothing, unless it is expected to: Ubuntu's `27.04/` holds
-        only milestones while `27.04/release/` 404s for weeks. And a dir with real artifacts, none
+        Two shapes. A dir that 404s, unless it is expected to: Ubuntu's `27.04/` holds only
+        milestones while `27.04/release/` 404s for weeks. And a dir with real artifacts, none
         of them ours: a rename, or an edition dropped from that release. An RC-only dir is not that,
         so `ignore` must cover a marker `is_prerelease` cannot, as OPNsense's does. Telling the two
         apart costs a fetch, so it lives here and not in the walk the refresh runs.
