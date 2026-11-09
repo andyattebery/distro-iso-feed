@@ -21,8 +21,8 @@ from packaging.version import InvalidVersion, Version
 #
 # The markers that can carry an ordinal all take `\d*` -- Ubuntu's milestone images are
 # `ubuntu-26.10-snapshot2-desktop-amd64.iso`, and a bare `snapshot` failed the trailing
-# boundary on the `2` and let them through. openSUSE is unaffected: its `Snapshot20260714`
-# is a *version* read from a sidecar, never a name this filter sees.
+# boundary on the `2` and let them through. openSUSE's `Snapshot20260714` is a release, not
+# a milestone, so the one variant that selects on that name sets `allow_prerelease`.
 PRERELEASE = re.compile(
     r"(?<![A-Za-z0-9])"
     r"(?:pre|alpha\d*|beta\d*|rc\d*|nightly|daily|testing|unstable|snapshot\d*)"

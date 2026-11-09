@@ -16,7 +16,7 @@ from ..select import choose
 
 
 def choose_artifact(names: Iterable[str], params: dict) -> str | None:
-    """The `choose` call every listing strategy makes, reading the same four selection params.
+    """The `choose` call every listing strategy makes, reading the same selection params.
 
     The version/torrent/path handling that follows genuinely differs per strategy (SourceForge
     selects on paths, directory_index/github interleave a torrent branch), so only this identical
@@ -28,6 +28,8 @@ def choose_artifact(names: Iterable[str], params: dict) -> str | None:
         ignore=params.get("ignore", ()),
         version_pattern=params.get("version_pattern"),
         sort_pattern=params.get("sort_pattern"),
+        # Tumbleweed names every release `Snapshot<date>`, which reads as a milestone.
+        allow_prerelease=bool(params.get("allow_prerelease")),
     )
 
 

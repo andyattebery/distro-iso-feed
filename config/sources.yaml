@@ -681,19 +681,25 @@ distros:
       leap-net: {label: "openSUSE Leap Online Installer", arches: {x86_64: x86_64, aarch64: aarch64, ppc64le: ppc64le, s390x: s390x}, params: {match: '^Leap-[0-9.]+-online-installer-{token}-Build[0-9.]+\.install\.iso$'}}
       tumbleweed-dvd:
         label: "openSUSE Tumbleweed DVD"
-        strategy: stable_symlink
-        # aarch64 lives under a separate `/ports/` tree, so its full URL is overridden by hand
-        # (no `{token}` -- the x86_64 URL keeps its literal spelling and discovery can't reach ports).
-        arches: {x86_64: x86_64, aarch64: {url: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso"}}
+        # The newest dated build, not `-Current.iso`: the DVD lags the rest of a snapshot, and
+        # while it does `-Current.iso` 404s though the last dated build sits beside it. That
+        # failed the job on 2026-11-06 and 2026-11-08 and left the feed's link dead. A dated
+        # file is deleted when a newer DVD builds, so its link can 404 until the next refresh.
+        # The empty `version_dir` drops the Leap walk this block's params would otherwise give
+        # it. `allow_prerelease`: every Tumbleweed release is a `Snapshot<date>`, which the
+        # prerelease filter reads as Ubuntu's milestone `snapshot2`.
+        strategy: directory_index
+        # aarch64 lives under a separate `/ports/` tree, so its index is overridden by hand.
+        arches: {x86_64: x86_64, aarch64: {token: aarch64, index: "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/"}}
         params:
-          url: "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso"
+          version_dir:
+          allow_prerelease: true
+          index: "https://download.opensuse.org/tumbleweed/iso/"
+          match: '^openSUSE-Tumbleweed-DVD-{token}-Snapshot\d{8}-Media\.iso$'
+          version_pattern: '(Snapshot\d{8})'
           sums: "{filename}.sha256"
           sig: "{filename}.sha256.asc"
-          token: {from: sidecar_filename, pattern: '(Snapshot\d{8})'}
-          # The `.torrent` sits beside the `-Current.iso` symlink but names the dated
-          # snapshot inside it. `attach_torrent` ties them by `version in info.name`
-          # (version is `Snapshot<date>`), not by filename equality. No checksum for
-          # the torrent; the ISO stays GPG-signed.
+          # No checksum for the torrent; the ISO stays GPG-signed.
           torrent: "{filename}.torrent"
       tumbleweed-net:
         label: "openSUSE Tumbleweed NET"
@@ -1464,17 +1470,19 @@ distros:
       index: "https://download.ghostbsd.org/releases/amd64/latest/"
       sums: "{filename}.sha256"        # per-ISO BSD-format sidecar: "SHA256 (name) = hash"
       torrent: "{filename}.torrent"    # no torrent checksum -> trust-on-first-use; ISO stays verified
-      version_pattern: 'GhostBSD-([0-9.]+-R[0-9.]+(?:p[0-9]+)?)'
+      # 26.3 is `26.3.R15.1p6`; every release before it was `26.2-R15.1p6`. Either separator, so
+      # neither shape goes blind if the next release changes back.
+      version_pattern: 'GhostBSD-([0-9.]+[-.]R[0-9.]+(?:p[0-9]+)?)'
     variants:
       # The bare .iso is the MATE (default) flavor; its name carries no DE token.
       # Gershwin stopped at 26.1: 26.2 shipped only these two. Upstream said nothing either
       # way, so this records what was published, not a decision. `discover.group` still
       # matches `-GERSHWIN.iso`, so if it returns the weekly PR proposes it.
-      mate: {label: "GhostBSD MATE", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?\.iso$'}}
-      xfce: {label: "GhostBSD XFCE", params: {match: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-XFCE\.iso$'}}
+      mate: {label: "GhostBSD MATE", params: {match: '^GhostBSD-[0-9.]+[-.]R[0-9.]+(?:p[0-9]+)?\.iso$'}}
+      xfce: {label: "GhostBSD XFCE", params: {match: '^GhostBSD-[0-9.]+[-.]R[0-9.]+(?:p[0-9]+)?-XFCE\.iso$'}}
     discover:
       match: '\.iso$'
-      group: '^GhostBSD-[0-9.]+-R[0-9.]+(?:p[0-9]+)?-([A-Za-z]+)\.iso$'
+      group: '^GhostBSD-[0-9.]+[-.]R[0-9.]+(?:p[0-9]+)?-([A-Za-z]+)\.iso$'
 
   xcp-ng:
     strategy: directory_index

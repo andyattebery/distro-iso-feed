@@ -494,6 +494,40 @@ def test_aurora_discovery_sees_either_filename_shape(name, key):
     assert m and variant_key(m) == key
 
 
+TW = "https://download.opensuse.org/tumbleweed/iso/"
+TW_PORTS = "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/"
+
+
+@pytest.mark.parametrize(
+    ("key", "index", "iso"),
+    [
+        ("opensuse:tumbleweed-dvd", TW, "openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261105-Media.iso"),
+        (
+            "opensuse:tumbleweed-dvd:aarch64",
+            TW_PORTS,
+            "openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso",
+        ),
+    ],
+)
+def test_tumbleweed_dvd_reads_the_newest_dated_build(key, index, iso):
+    """The DVD lags the rest of a snapshot, and while it does `-Current.iso` 404s although the last
+    dated build sits beside it. That failed the job on 2026-11-06 and 2026-11-08 and left the feed's
+    link dead. This block's Leap `version_dir` must not be walked either."""
+    v = _variants("opensuse")[key]
+    others = ["openSUSE-Tumbleweed-NET-x86_64-Current.iso", "openSUSE-Tumbleweed-NET-x86_64-Snapshot20261107-Media.iso"]
+    client = FakeClient(
+        {
+            index: autoindex_html([iso, f"{iso}.sha256", f"{iso}.torrent", *others]),
+            f"{index}{iso}.sha256": f"{'a' * 64}  {iso}",
+        }
+    )
+    rel = DI().resolve("opensuse", v.name, dict(v.params), client)
+    assert rel.filename == iso
+    assert rel.version == iso.split("-")[-2]
+    assert rel.checksum == "a" * 64
+    assert not any("/leap/" in u for u in client.requested)
+
+
 # ------------------------------------------------------------------------------------- Tails
 
 TAILS_PAGE = "https://tails.net/install/download/index.en.html"
@@ -659,6 +693,45 @@ def test_sourceforge_groups_can_match_a_full_path():
 #
 # Resolve tests drive the SHIPPED config's own expanded params against fixture bytes at the real
 # URLs, so a regression in the block itself (not just a hand-built dict) fails here.
+
+
+GHOSTBSD_LATEST = "https://download.ghostbsd.org/releases/amd64/latest/"
+
+
+@pytest.mark.parametrize(
+    ("key", "iso"),
+    [
+        ("ghostbsd:mate", "GhostBSD-26.3.R15.1p6.iso"),
+        ("ghostbsd:xfce", "GhostBSD-26.3.R15.1p6-XFCE.iso"),
+    ],
+)
+def test_ghostbsd_takes_either_separator_before_the_base(key, iso):
+    """26.3 is `26.3.R15.1p6`; every release before it was `26.2-R15.1p6`. The dir, the files,
+    the download page and the announcement all agree, so this is the name, not a slip."""
+    v = _variants("ghostbsd")[key]
+    isos = ["GhostBSD-26.3.R15.1p6.iso", "GhostBSD-26.3.R15.1p6-XFCE.iso"]
+    client = FakeClient(
+        {
+            GHOSTBSD_LATEST: autoindex_html(isos + [f"{i}.sha256" for i in isos]),
+            **{f"{GHOSTBSD_LATEST}{i}.sha256": f"SHA256 ({i}) = {'f' * 64}" for i in isos},
+        }
+    )
+    rel = DI().resolve("ghostbsd", v.name, dict(v.params), client)
+    assert rel.filename == iso
+    assert rel.version == "26.3.R15.1p6"
+
+
+@pytest.mark.parametrize(
+    ("name", "key"),
+    [
+        ("GhostBSD-26.3.R15.1p6-XFCE.iso", "xfce"),
+        ("GhostBSD-26.3.R15.1p6-GERSHWIN.iso", "gershwin"),
+        ("GhostBSD-26.2-R15.1p6-XFCE.iso", "xfce"),
+    ],
+)
+def test_ghostbsd_discovery_sees_either_separator(name, key):
+    m = re.search(_source("ghostbsd").discover["group"], name)
+    assert m and variant_key(m) == key
 
 
 def test_ghostbsd_gershwin_is_reproposed_if_upstream_publishes_it():
