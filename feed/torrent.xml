@@ -4,25 +4,81 @@
   <title>Distro ISO Feed — torrents</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-11-08T13:32:03+00:00</updated>
+  <updated>2026-11-09T16:31:37+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261106</id>
-    <title>openSUSE Tumbleweed NET Snapshot20261106 (x86_64)</title>
-    <updated>2026-11-08T13:32:03+00:00</updated>
-    <published>2026-11-08T13:32:03+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ghostbsd/xfce/26.3.R15.1p6</id>
+    <title>GhostBSD XFCE 26.3.R15.1p6 (x86_64)</title>
+    <updated>2026-11-09T16:31:37+00:00</updated>
+    <published>2026-11-09T16:31:37+00:00</published>
+    <link href="https://www.ghostbsd.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.3.R15.1p6-XFCE.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="18162" />
+    <category term="ghostbsd" label="distro" />
+    <category term="xfce" label="variant" />
+    <summary type="text">GhostBSD XFCE 26.3.R15.1p6 (x86_64)
+Filename: GhostBSD-26.3.R15.1p6-XFCE.iso
+sha256: 0852ad540f595b6c45306446236e253921d4a2720bb21c75a31e55c37f99afc0
+Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.3.R15.1p6-XFCE.iso.torrent
+Infohash: b6b8f0e82a29bb773ea943493efa03d600e037c2
+Magnet: magnet:?xt=urn:btih:b6b8f0e82a29bb773ea943493efa03d600e037c2&amp;dn=GhostBSD-26.3.R15.1p6-XFCE.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/ghostbsd/mate/26.3.R15.1p6</id>
+    <title>GhostBSD MATE 26.3.R15.1p6 (x86_64)</title>
+    <updated>2026-11-09T16:31:37+00:00</updated>
+    <published>2026-11-09T16:31:37+00:00</published>
+    <link href="https://www.ghostbsd.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.3.R15.1p6.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20057" />
+    <category term="ghostbsd" label="distro" />
+    <category term="mate" label="variant" />
+    <summary type="text">GhostBSD MATE 26.3.R15.1p6 (x86_64)
+Filename: GhostBSD-26.3.R15.1p6.iso
+sha256: 2d1b46e7d0d9339ef04d2ee386783a2431f43eecb873b8f11b7109a43c577f7f
+Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.3.R15.1p6.iso.torrent
+Infohash: 9e044475c0eb2744358502842ee5b363f143bdde
+Magnet: magnet:?xt=urn:btih:9e044475c0eb2744358502842ee5b363f143bdde&amp;dn=GhostBSD-26.3.R15.1p6.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
+Verify: checksum
+NOTE: infohash is unsigned — trust on first use</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261107</id>
+    <title>openSUSE Tumbleweed NET Snapshot20261107 (x86_64)</title>
+    <updated>2026-11-09T16:29:58+00:00</updated>
+    <published>2026-11-09T16:29:58+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2608" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20261106 (x86_64)
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20261107 (x86_64)
 Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 5fda9f4070ae0d692db693b5ee359d995419b57066263daddf417251357ab134
+sha256: 24f030bc950d6dd2c057821e69342ebf9216f19fd98a6e71aa95ede34cfa5ba1
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: ab2be30e7ee8f731add810918c8de38c6e05ddaf
-Magnet: magnet:?xt=urn:btih:ab2be30e7ee8f731add810918c8de38c6e05ddaf&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261106-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Infohash: e6a54f5166f6a04c17e55c7858d55afb81e1287b
+Magnet: magnet:?xt=urn:btih:e6a54f5166f6a04c17e55c7858d55afb81e1287b&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261107-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20261107</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20261107 (x86_64)</title>
+    <updated>2026-11-09T16:29:57+00:00</updated>
+    <published>2026-11-09T16:29:57+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261107-Media.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22790" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20261107 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261107-Media.iso
+sha256: b563a55978d8c27d5a3a5eda355790f116136406ccba21b4bc3e8cc73eb0ffd8
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261107-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261107-Media.iso.torrent
+Infohash: 7bb90b13b09d2159bcda6f3a67566beaf1f64f4c
+Magnet: magnet:?xt=urn:btih:7bb90b13b09d2159bcda6f3a67566beaf1f64f4c&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261107-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -43,26 +99,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
 Infohash: 027377329f40f0cc7d50dfcdc4f1b41817480b26
 Magnet: magnet:?xt=urn:btih:027377329f40f0cc7d50dfcdc4f1b41817480b26&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261105-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd/Snapshot20261105</id>
-    <title>openSUSE Tumbleweed DVD Snapshot20261105 (x86_64)</title>
-    <updated>2026-11-07T13:10:19+00:00</updated>
-    <published>2026-11-07T13:10:19+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22730" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-dvd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed DVD Snapshot20261105 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Current.iso
-sha256: eb1af503bf8984a0b7af754ff226e5041bfd674a2efea0e9bd95f74ba2d8522f
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso.torrent
-Infohash: c78f9a6a147588ea1696b12e8b0b03a848a5242a
-Magnet: magnet:?xt=urn:btih:c78f9a6a147588ea1696b12e8b0b03a848a5242a&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261105-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -122,57 +158,21 @@ Magnet: magnet:?xt=urn:btih:ed0f013475535f19b5410d68fd20f627e4950b1f&amp;dn=arch
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ghostbsd/xfce/26.2-R15.1p6</id>
-    <title>GhostBSD XFCE 26.2-R15.1p6 (x86_64)</title>
-    <updated>2026-10-28T13:04:01+00:00</updated>
-    <published>2026-10-28T13:04:01+00:00</published>
-    <link href="https://www.ghostbsd.org/download" rel="alternate" type="text/html" />
-    <link href="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.2-R15.1p6-XFCE.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="18162" />
-    <category term="ghostbsd" label="distro" />
-    <category term="xfce" label="variant" />
-    <summary type="text">GhostBSD XFCE 26.2-R15.1p6 (x86_64)
-Filename: GhostBSD-26.2-R15.1p6-XFCE.iso
-sha256: b7de4847ab88a931e7cab9174e3930d66bb07f53e105a848129da448c8b8e1b9
-Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.2-R15.1p6-XFCE.iso.torrent
-Infohash: 1e17c48576b2bcf41980db945d98a2f4b74c7ea6
-Magnet: magnet:?xt=urn:btih:1e17c48576b2bcf41980db945d98a2f4b74c7ea6&amp;dn=GhostBSD-26.2-R15.1p6-XFCE.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
-Verify: checksum
-NOTE: infohash is unsigned — trust on first use</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/ghostbsd/mate/26.2-R15.1p6</id>
-    <title>GhostBSD MATE 26.2-R15.1p6 (x86_64)</title>
-    <updated>2026-10-28T13:04:01+00:00</updated>
-    <published>2026-10-28T13:04:01+00:00</published>
-    <link href="https://www.ghostbsd.org/download" rel="alternate" type="text/html" />
-    <link href="https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.2-R15.1p6.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20057" />
-    <category term="ghostbsd" label="distro" />
-    <category term="mate" label="variant" />
-    <summary type="text">GhostBSD MATE 26.2-R15.1p6 (x86_64)
-Filename: GhostBSD-26.2-R15.1p6.iso
-sha256: 477ff4c7f042ec7e5a6fe5c2b8894b6b805b14738c2d086e9b0163ba6034cff9
-Torrent: https://download.ghostbsd.org/releases/amd64/latest/GhostBSD-26.2-R15.1p6.iso.torrent
-Infohash: 824c1dfaed9b1fdad0bf2bccba41aa23c35dd350
-Magnet: magnet:?xt=urn:btih:824c1dfaed9b1fdad0bf2bccba41aa23c35dd350&amp;dn=GhostBSD-26.2-R15.1p6.iso&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969
-Verify: checksum
-NOTE: infohash is unsigned — trust on first use</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd:aarch64/Snapshot20261020</id>
     <title>openSUSE Tumbleweed DVD Snapshot20261020 (aarch64)</title>
     <updated>2026-10-22T11:59:48+00:00</updated>
     <published>2026-10-22T11:59:48+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20828" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20834" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20261020 (aarch64)
-Filename: openSUSE-Tumbleweed-DVD-aarch64-Current.iso
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso
 sha256: 3276133a3f691997f27e628531f959091c666fb37632675e54e64e84804d53ed
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.sha256.asc
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Current.iso.torrent
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso.torrent
 Infohash: 02ce6b9e80e3e9289d24c73eb42cf6465f8fd30e
 Magnet: magnet:?xt=urn:btih:02ce6b9e80e3e9289d24c73eb42cf6465f8fd30e&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261020-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
