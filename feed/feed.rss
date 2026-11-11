@@ -4,8 +4,164 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Tue, 10 Nov 2026 14:59:25 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 14:33:56 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Bazzite NVIDIA Open 45.20261111 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:nvidia-open:45.20261111</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:56 +0000</pubDate>
+      <description>Bazzite NVIDIA Open 45.20261111 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Desktop 45.20261111 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:desktop:45.20261111</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:56 +0000</pubDate>
+      <description>Bazzite Desktop 45.20261111 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Deck 45.20261111 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:deck:45.20261111</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:56 +0000</pubDate>
+      <description>Bazzite Deck 45.20261111 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Tails 7.17 (x86_64)</title>
+      <link>https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.iso</link>
+      <guid isPermaLink="false">tails:iso:7.17</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:24 +0000</pubDate>
+      <description>Tails 7.17 (x86_64)
+Filename: tails-amd64-7.17.iso
+Signature: https://tails.net/torrents/files/tails-amd64-7.17.iso.sig
+Signing-key: https://tails.net/tails-signing.key
+Key-fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
+Verify: gpg
+WARNING: no published checksum — integrity unverifiable</description>
+      <enclosure url="https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.iso" type="application/x-iso9660-image" length="0" />
+      <category>tails</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20261109 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261109</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:22 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20261109 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: ca5a086526dfdbb8bff42423bcfba21fe70ae0a62a40913125c20a1c579c0dab
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20261109 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261109</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:22 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20261109 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: 85c32dbf1d5f7715abf679a4929c071bb3cd7f5f923b295de5a126fe24684e36
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20261109 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261109</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:21 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20261109 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: 757c4a83b356435106d481f01615d3065d558f4165cbb1c254a755413a4b14ef
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20261109 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261109</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:21 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20261109 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: 8a3d9a0df59215be5cf200076556a74af372ba9d94b4b1aee7f7b172eae53b51
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20261109 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261109</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:20 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20261109 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: b6dad814dc2331d4a59fe7cf51fd98bf55e823cf697e8ab2b0e7b8035a83bcb3
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20261109 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261109</guid>
+      <pubDate>Wed, 11 Nov 2026 14:33:19 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20261109 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: 757bd8d636a576b719888ece07fdb8561fbb84c876da6938c36842deda135c26
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: 8048c96491599b087c84ccf1d4dcff49c15dbb82
+Magnet: magnet:?xt=urn:btih:8048c96491599b087c84ccf1d4dcff49c15dbb82&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261109-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>Bluestar Linux SonicDE 7.2.15-1-2026.11.10 (x86_64)</title>
+      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso/download</link>
+      <guid isPermaLink="false">bluestar:sonicde:7.2.15-1-2026.11.10</guid>
+      <pubDate>Wed, 11 Nov 2026 05:49:43 +0000</pubDate>
+      <description>Bluestar Linux SonicDE 7.2.15-1-2026.11.10 (x86_64)
+Filename: bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso
+md5: d90de653a169ea64724a621c73e68d81
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>bluestar</category>
+    </item>
+    <item>
+      <title>Bluestar Linux Plasma 7.2.15-1-2026.11.10 (x86_64)</title>
+      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.2.15-1-2026.11.10-x86_64.iso/download</link>
+      <guid isPermaLink="false">bluestar:default:7.2.15-1-2026.11.10</guid>
+      <pubDate>Wed, 11 Nov 2026 05:39:39 +0000</pubDate>
+      <description>Bluestar Linux Plasma 7.2.15-1-2026.11.10 (x86_64)
+Filename: bslx-plasma-7.2.15-1-2026.11.10-x86_64.iso
+md5: bbc19e66834afdfab3dc2420638d403f
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.2.15-1-2026.11.10-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>bluestar</category>
+    </item>
     <item>
       <title>Aurora stable-20261110.1 (x86_64)</title>
       <link>https://dl.getaurora.dev/aurora-stable-x86_64.iso</link>
@@ -190,21 +346,6 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20261108 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:27 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20261108 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: 27c062fd2698d4836e40f098f915e4c4cea833ec2c830429f9b93ab16c70f8bd
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
       <title>openSUSE Tumbleweed XFCE Live Snapshot20261108 (aarch64)</title>
       <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso</link>
       <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:aarch64:Snapshot20261108</guid>
@@ -217,21 +358,6 @@ Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD48566
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20261108 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:26 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20261108 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 87404b53f5a9c2bfb530aa96c44bf13d7f2839eb7e9a02834fec4b60f60cc9e3
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
@@ -250,21 +376,6 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20261108 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:25 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20261108 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: f7bb1f7aa446d447809e5dc3730b9fe1ed7c75ae04551f1211909842a53d1447
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
       <title>openSUSE Tumbleweed GNOME Live Snapshot20261108 (aarch64)</title>
       <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso</link>
       <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:aarch64:Snapshot20261108</guid>
@@ -277,21 +388,6 @@ Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD48566
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20261108 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:23 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20261108 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: 03721c61fdbc782edec92f2a36da028b5e2cf4c453dedf3595a6e211896fa008
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
@@ -325,39 +421,6 @@ Infohash: ad892428f374c37521ff5f8297a562b14585872f
 Magnet: magnet:?xt=urn:btih:ad892428f374c37521ff5f8297a562b14585872f&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261108-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20261108 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:22 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20261108 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: 5b28e3b21c40c9b158a496a7d7f9e2627b39d86e150f13bb4809d528622355a9
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed NET Snapshot20261108 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:21 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20261108 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 440b168ced7a92fc0a101d0e50fc303305b5af6680663b706694abacb78c4360
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: ae5e082ce5ef1d6907f2cd53cb9ffcd40038a092
-Magnet: magnet:?xt=urn:btih:ae5e082ce5ef1d6907f2cd53cb9ffcd40038a092&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261108-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
@@ -459,42 +522,6 @@ NOTE: infohash is unsigned — trust on first use</description>
       <category>ghostbsd</category>
     </item>
     <item>
-      <title>Bazzite NVIDIA Open 45.20261105 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:45.20261105</guid>
-      <pubDate>Fri, 06 Nov 2026 14:23:04 +0000</pubDate>
-      <description>Bazzite NVIDIA Open 45.20261105 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Deck 45.20261105 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:45.20261105</guid>
-      <pubDate>Fri, 06 Nov 2026 14:23:04 +0000</pubDate>
-      <description>Bazzite Deck 45.20261105 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Desktop 45.20261105 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:45.20261105</guid>
-      <pubDate>Fri, 06 Nov 2026 14:23:03 +0000</pubDate>
-      <description>Bazzite Desktop 45.20261105 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
       <title>TrueNAS SCALE 25.10.8 (x86_64)</title>
       <link>https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.8/TrueNAS-SCALE-25.10.8.iso</link>
       <guid isPermaLink="false">truenas:scale:25.10.8</guid>
@@ -508,21 +535,6 @@ Key-fingerprint: C8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946
 Verify: gpg</description>
       <enclosure url="https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.8/TrueNAS-SCALE-25.10.8.iso" type="application/x-iso9660-image" length="0" />
       <category>truenas</category>
-    </item>
-    <item>
-      <title>Tails 7.16 (x86_64)</title>
-      <link>https://download.tails.net/tails/stable/tails-amd64-7.16/tails-amd64-7.16.iso</link>
-      <guid isPermaLink="false">tails:iso:7.16</guid>
-      <pubDate>Thu, 05 Nov 2026 22:42:01 +0000</pubDate>
-      <description>Tails 7.16 (x86_64)
-Filename: tails-amd64-7.16.iso
-Signature: https://tails.net/torrents/files/tails-amd64-7.16.iso.sig
-Signing-key: https://tails.net/tails-signing.key
-Key-fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
-Verify: gpg
-WARNING: no published checksum — integrity unverifiable</description>
-      <enclosure url="https://download.tails.net/tails/stable/tails-amd64-7.16/tails-amd64-7.16.iso" type="application/x-iso9660-image" length="0" />
-      <category>tails</category>
     </item>
     <item>
       <title>EndeavourOS 2026.08.15 (x86_64)</title>
@@ -1133,30 +1145,6 @@ sha256: a1e916f139a05955b943cf183b020780cca9c399b02b8f5ec4354c9e5c1dff1a
 Verify: checksum</description>
       <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/45/Server/x86_64/iso/Fedora-Server-netinst-x86_64-45-1.4.iso" type="application/x-iso9660-image" length="1272281088" />
       <category>fedora</category>
-    </item>
-    <item>
-      <title>Bluestar Linux Plasma 7.2.14-1-2026.11.01 (x86_64)</title>
-      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.2.14-1-2026.11.01-x86_64.iso/download</link>
-      <guid isPermaLink="false">bluestar:default:7.2.14-1-2026.11.01</guid>
-      <pubDate>Mon, 02 Nov 2026 03:32:41 +0000</pubDate>
-      <description>Bluestar Linux Plasma 7.2.14-1-2026.11.01 (x86_64)
-Filename: bslx-plasma-7.2.14-1-2026.11.01-x86_64.iso
-md5: 67ef56c78f894cb68b8fa29f0c86b387
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.2.14-1-2026.11.01-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>bluestar</category>
-    </item>
-    <item>
-      <title>Bluestar Linux SonicDE 7.2.14-1-2026.11.01 (x86_64)</title>
-      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.14-1-2026.11.01-x86_64.iso/download</link>
-      <guid isPermaLink="false">bluestar:sonicde:7.2.14-1-2026.11.01</guid>
-      <pubDate>Mon, 02 Nov 2026 03:10:25 +0000</pubDate>
-      <description>Bluestar Linux SonicDE 7.2.14-1-2026.11.01 (x86_64)
-Filename: bslx-sonicde-7.2.14-1-2026.11.01-x86_64.iso
-md5: 372282bdace86a318961c190c205cd81
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.14-1-2026.11.01-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>bluestar</category>
     </item>
     <item>
       <title>Arch Linux 2026.11.01 (x86_64)</title>
