@@ -4,78 +4,78 @@
     <title>Distro ISO Feed — torrents</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed — torrents</description>
-    <lastBuildDate>Thu, 12 Nov 2026 15:21:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 14:42:57 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/torrent.xml</docs>
     <item>
-      <title>openSUSE Tumbleweed NET Snapshot20261110 (x86_64)</title>
+      <title>openSUSE Tumbleweed NET Snapshot20261111 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20261111</guid>
+      <pubDate>Fri, 13 Nov 2026 14:42:57 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20261111 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: e5391cde53c7637bfdadd3079347803aa28ff256aea52908d0fc492ae073da61
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
+Infohash: 0c36565a78f26d781c15ee115bd6b127fd2399cc
+Magnet: magnet:?xt=urn:btih:0c36565a78f26d781c15ee115bd6b127fd2399cc&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" type="application/x-bittorrent" length="2812" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20261111 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261110</guid>
-      <pubDate>Thu, 12 Nov 2026 15:21:35 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20261110 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261111</guid>
+      <pubDate>Fri, 13 Nov 2026 14:42:56 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20261111 (x86_64)
 Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 0880f9d52dfd1562e1188664f5a9d6f2319256a8c584ada1dde5bad7e3f86305
+sha256: 8cf4356064dfcc4c199fef95c3eff16c270f41a934e75896363768753de800ea
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: fc4a656c73e1a5a4e2420c67112e7bb518fceb84
-Magnet: magnet:?xt=urn:btih:fc4a656c73e1a5a4e2420c67112e7bb518fceb84&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261110-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Infohash: ef8b5e60df1dbb08ac9e8e5ac4abfc8a786af439
+Magnet: magnet:?xt=urn:btih:ef8b5e60df1dbb08ac9e8e5ac4abfc8a786af439&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" type="application/x-bittorrent" length="2608" />
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20261110 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261110-Media.iso.torrent</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261110</guid>
-      <pubDate>Thu, 12 Nov 2026 15:21:34 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20261110 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261110-Media.iso
-sha256: af7f05571d7ff7cefbe37efaa708fd838d78e0b4ed1d09a37fca850285623021
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261110-Media.iso.sha256.asc
+      <title>openSUSE Tumbleweed DVD Snapshot20261111 (aarch64)</title>
+      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso.torrent</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20261111</guid>
+      <pubDate>Fri, 13 Nov 2026 14:42:55 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20261111 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso
+sha256: 5f6eccff01779489f1066b99ac08d8b977bdac4e046e0abc05f68a1da5bf7054
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261110-Media.iso.torrent
-Infohash: 15562a8d51394bde0695c1e87d08a309e927f18e
-Magnet: magnet:?xt=urn:btih:15562a8d51394bde0695c1e87d08a309e927f18e&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261110-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso.torrent
+Infohash: 89eed68360efbe0ea91102bc461a8b9693d6210f
+Magnet: magnet:?xt=urn:btih:89eed68360efbe0ea91102bc461a8b9693d6210f&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261110-Media.iso.torrent" type="application/x-bittorrent" length="22810" />
+      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso.torrent" type="application/x-bittorrent" length="20754" />
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed NET Snapshot20261108 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:aarch64:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:22 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20261108 (aarch64)
-Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
-sha256: 4cec13710aa0617742007b6e4629812bcdb1842df5cf3dc48a02fe55c8671525
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+      <title>openSUSE Tumbleweed DVD Snapshot20261111 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.torrent</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261111</guid>
+      <pubDate>Fri, 13 Nov 2026 14:42:54 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20261111 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso
+sha256: 5a824aa28c99ad0293e339f22d1fa1af52bff50d2636ec440f43afdddbc4c7b7
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
-Infohash: ad892428f374c37521ff5f8297a562b14585872f
-Magnet: magnet:?xt=urn:btih:ad892428f374c37521ff5f8297a562b14585872f&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261108-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.torrent
+Infohash: 04f80f75d0807973940048d69c2df1c3fdefe775
+Magnet: magnet:?xt=urn:btih:04f80f75d0807973940048d69c2df1c3fdefe775&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" type="application/x-bittorrent" length="2817" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20261108 (aarch64)</title>
-      <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261108-Media.iso.torrent</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20261108</guid>
-      <pubDate>Tue, 10 Nov 2026 14:58:20 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20261108 (aarch64)
-Filename: openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261108-Media.iso
-sha256: fc5c5aa237d1195c43d644700505c09b0903ec63180071316b33bd2990bef249
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261108-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261108-Media.iso.torrent
-Infohash: 32f26ddabf924072bee1eeaa6a9216078e76351c
-Magnet: magnet:?xt=urn:btih:32f26ddabf924072bee1eeaa6a9216078e76351c&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261108-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261108-Media.iso.torrent" type="application/x-bittorrent" length="20759" />
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.torrent" type="application/x-bittorrent" length="22810" />
       <category>opensuse</category>
     </item>
     <item>
