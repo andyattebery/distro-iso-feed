@@ -4,8 +4,105 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Fri, 13 Nov 2026 14:43:04 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 13:38:20 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Aurora stable-20261113.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20261113.1</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:20 +0000</pubDate>
+      <description>Aurora stable-20261113.1 (x86_64)
+Filename: aurora-stable-x86_64.iso
+sha256: 1b21c48be5c3ed300880b730b000c7408cc3b510aaa6aa4482d7901334198070
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora NVIDIA Open stable-20261113.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20261113.1</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:20 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20261113.1 (x86_64)
+Filename: aurora-nvidia-open-stable-x86_64.iso
+sha256: 79205a26f58ba68e712e38ff849630bc41874c7e5590250be9d570abf4a923fc
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Bluefin stable-20261111 (x86_64)</title>
+      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
+      <guid isPermaLink="false">bluefin:stable:stable-20261111</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:19 +0000</pubDate>
+      <description>Bluefin stable-20261111 (x86_64)
+Filename: bluefin-stable-x86_64.iso
+sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
+Verify: checksum</description>
+      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bluefin</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.14234.f1e5c356f35d (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.14234.f1e5c356f35d</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:17 +0000</pubDate>
+      <description>NixOS Graphical 26.05.14234.f1e5c356f35d (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 075badc9456bdc1b5db64ca2c43eb9b6dd54e831ecbc979e3580dc03632ad75a
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.14234.f1e5c356f35d (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.14234.f1e5c356f35d</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:16 +0000</pubDate>
+      <description>NixOS Minimal 26.05.14234.f1e5c356f35d (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 0a76b55998657c320070804a611af9b2b7ce35d30c93c86b79d5c24e7c510752
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.14234.f1e5c356f35d (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.14234.f1e5c356f35d</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:16 +0000</pubDate>
+      <description>NixOS Minimal 26.05.14234.f1e5c356f35d (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 24a8a462db3e08dd403a80031d6a151645dfe8eff4c3459e9acaf2d98b796a00
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.14234.f1e5c356f35d (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.14234.f1e5c356f35d</guid>
+      <pubDate>Sat, 14 Nov 2026 13:38:16 +0000</pubDate>
+      <description>NixOS Graphical 26.05.14234.f1e5c356f35d (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: d398586b303965d1646c0c0926d30d21dc2ae7250845f5d3ed19cad41b398ace
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>Pop!_OS (NVIDIA) 24.04-29 (x86_64)</title>
+      <link>https://iso.pop-os.org/24.04/amd64/nvidia/29/pop-os_24.04_amd64_nvidia_29.iso</link>
+      <guid isPermaLink="false">pop-os:nvidia:24.04-29</guid>
+      <pubDate>Sat, 14 Nov 2026 13:36:25 +0000</pubDate>
+      <description>Pop!_OS (NVIDIA) 24.04-29 (x86_64)
+Filename: pop-os_24.04_amd64_nvidia_29.iso
+Size: 3674210304
+sha256: e0e5644c274976f7c66314d6c3d20d5d33f3d3bdf420cd0c7c98b3a4c1d5c214
+Verify: checksum</description>
+      <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/29/pop-os_24.04_amd64_nvidia_29.iso" type="application/x-iso9660-image" length="3674210304" />
+      <category>pop-os</category>
+    </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20261111 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
@@ -317,78 +414,6 @@ md5: bbc19e66834afdfab3dc2420638d403f
 Verify: checksum</description>
       <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.2.15-1-2026.11.10-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>bluestar</category>
-    </item>
-    <item>
-      <title>Aurora stable-20261110.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20261110.1</guid>
-      <pubDate>Tue, 10 Nov 2026 14:59:25 +0000</pubDate>
-      <description>Aurora stable-20261110.1 (x86_64)
-Filename: aurora-stable-x86_64.iso
-sha256: 1b21c48be5c3ed300880b730b000c7408cc3b510aaa6aa4482d7901334198070
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Aurora NVIDIA Open stable-20261110.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20261110.1</guid>
-      <pubDate>Tue, 10 Nov 2026 14:59:25 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20261110.1 (x86_64)
-Filename: aurora-nvidia-open-stable-x86_64.iso
-sha256: 79205a26f58ba68e712e38ff849630bc41874c7e5590250be9d570abf4a923fc
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.13936.ac588ef1c914 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.13936.ac588ef1c914</guid>
-      <pubDate>Tue, 10 Nov 2026 14:59:21 +0000</pubDate>
-      <description>NixOS Minimal 26.05.13936.ac588ef1c914 (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 4244322fb3de8e1775ba070e577c1e2960a22b6bdf32b9b74c7eb309d38bee62
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.13936.ac588ef1c914 (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.13936.ac588ef1c914</guid>
-      <pubDate>Tue, 10 Nov 2026 14:59:21 +0000</pubDate>
-      <description>NixOS Graphical 26.05.13936.ac588ef1c914 (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 842d1f91b1a404492dd34c50b45c8a58318a102fcd0e47c7cd890f7463bb8962
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.13936.ac588ef1c914 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.13936.ac588ef1c914</guid>
-      <pubDate>Tue, 10 Nov 2026 14:59:21 +0000</pubDate>
-      <description>NixOS Graphical 26.05.13936.ac588ef1c914 (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: a41159c20b92ae323f1ac705a6d476b9c197091fe95435585ad34074b3ef55fe
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.13936.ac588ef1c914 (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.13936.ac588ef1c914</guid>
-      <pubDate>Tue, 10 Nov 2026 14:59:20 +0000</pubDate>
-      <description>NixOS Minimal 26.05.13936.ac588ef1c914 (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 1beb3e006ad420f351fdcb5449ce6dc0504c37ef64b85f418e2bc0884249ac8f
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>CentOS Stream DVD 20261106.0 (s390x)</title>
@@ -801,18 +826,6 @@ sha256: a8c0aecb9debfa7273c94c05bc36d75f73751ea203e3f8c5eff7fb355a18980e
 Verify: checksum</description>
       <enclosure url="https://download.fedoraproject.org/pub/fedora/linux/releases/45/COSMIC-Atomic/x86_64/iso/Fedora-CosmicAtomic-Installer-45-1.4.x86_64.iso" type="application/x-iso9660-image" length="2996602880" />
       <category>fedora</category>
-    </item>
-    <item>
-      <title>Bluefin stable-20261103 (x86_64)</title>
-      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
-      <guid isPermaLink="false">bluefin:stable:stable-20261103</guid>
-      <pubDate>Tue, 03 Nov 2026 14:31:17 +0000</pubDate>
-      <description>Bluefin stable-20261103 (x86_64)
-Filename: bluefin-stable-x86_64.iso
-sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</description>
-      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bluefin</category>
     </item>
     <item>
       <title>NetBSD install 11.1 (aarch64)</title>
@@ -1988,19 +2001,6 @@ Signature: https://sourceforge.net/projects/mx-linux/files/Final/KDE/MX-25.3_KDE
 Verify: gpg</description>
       <enclosure url="https://sourceforge.net/projects/mx-linux/files/Final/KDE/MX-25.3_KDE_x64.iso/download" type="application/x-iso9660-image" length="0" />
       <category>mx</category>
-    </item>
-    <item>
-      <title>Pop!_OS (NVIDIA) 24.04-28 (x86_64)</title>
-      <link>https://iso.pop-os.org/24.04/amd64/nvidia/28/pop-os_24.04_amd64_nvidia_28.iso</link>
-      <guid isPermaLink="false">pop-os:nvidia:24.04-28</guid>
-      <pubDate>Fri, 18 Sep 2026 11:21:11 +0000</pubDate>
-      <description>Pop!_OS (NVIDIA) 24.04-28 (x86_64)
-Filename: pop-os_24.04_amd64_nvidia_28.iso
-Size: 3934945280
-sha256: bd867a6b93810769b2189471cfc2d7b6b9c642213c7bf827de511be5f42ce666
-Verify: checksum</description>
-      <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/28/pop-os_24.04_amd64_nvidia_28.iso" type="application/x-iso9660-image" length="3934945280" />
-      <category>pop-os</category>
     </item>
     <item>
       <title>Gentoo LiveGUI 20260913T163055Z (x86_64)</title>
