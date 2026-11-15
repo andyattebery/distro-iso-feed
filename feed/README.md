@@ -34,7 +34,7 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | bazzite | desktop | x86_64 | 45.20261112 | checksum | — |
 | bazzite | nvidia-open | x86_64 | 45.20261112 | checksum | — |
 | bluefin | stable | x86_64 | stable-20261111 | checksum | — |
-| bluestar | default | x86_64 | 7.2.15-1-2026.11.10 | checksum | — |
+| bluestar | default | x86_64 | 7.3.4-1-2026.11.14 | checksum | — |
 | bluestar | sonicde | x86_64 | 7.2.15-1-2026.11.10 | checksum | — |
 | bluestar | sonicde-580xx | x86_64 | 7.2.11-4-2026.10.26 | checksum | — |
 | cachyos | desktop | x86_64 | 260809 | gpg | — |
