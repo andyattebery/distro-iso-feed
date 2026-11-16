@@ -4,257 +4,257 @@
   <title>Distro ISO Feed — almalinux</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/almalinux.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T21:47:34+00:00</updated>
+  <updated>2026-11-16T15:55:51+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:x86_64_v2/10.2</id>
-    <title>AlmaLinux DVD 10.2 (x86_64_v2)</title>
-    <updated>2026-07-12T21:47:34+00:00</updated>
-    <published>2026-07-12T21:47:34+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:x86_64_v2/10.3</id>
+    <title>AlmaLinux minimal 10.3 (x86_64_v2)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.3-x86_64_v2-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">AlmaLinux DVD 10.2 (x86_64_v2)
-Filename: AlmaLinux-10.2-x86_64_v2-dvd.iso
-sha256: 320a10d3195ece72d99a10ae8316f78124ae6228a5f542b6f5870126d5708b91
+    <category term="minimal" label="variant" />
+    <summary type="text">AlmaLinux minimal 10.3 (x86_64_v2)
+Filename: AlmaLinux-10.3-x86_64_v2-minimal.iso
+sha256: c14b9bc0411b5053ba11c9f95ffe0076ca5d2f17f6a06ace18b8922cb19db51a
 Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:s390x/10.2</id>
-    <title>AlmaLinux DVD 10.2 (s390x)</title>
-    <updated>2026-07-12T21:47:34+00:00</updated>
-    <published>2026-07-12T21:47:34+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:s390x/10.3</id>
+    <title>AlmaLinux minimal 10.3 (s390x)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.3-s390x-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">AlmaLinux DVD 10.2 (s390x)
-Filename: AlmaLinux-10.2-s390x-dvd.iso
-sha256: fba6a4088db5b835572c5a978b8e7e7dd795d9a782b6907d64b32a12e3864258
+    <category term="minimal" label="variant" />
+    <summary type="text">AlmaLinux minimal 10.3 (s390x)
+Filename: AlmaLinux-10.3-s390x-minimal.iso
+sha256: 551c35ebfe29034f91f97422d5d16a819e3c23c05ce71683a7052a3e297924d4
 Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:x86_64_v2/10.2</id>
-    <title>AlmaLinux minimal 10.2 (x86_64_v2)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:ppc64le/10.3</id>
+    <title>AlmaLinux minimal 10.3 (ppc64le)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.3-ppc64le-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">AlmaLinux minimal 10.2 (x86_64_v2)
-Filename: AlmaLinux-10.2-x86_64_v2-minimal.iso
-sha256: c75ee2e209dcb4ec6fde01e421074edddf5d19bb7388fa12a102edb40fc47eb0
-Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:s390x/10.2</id>
-    <title>AlmaLinux minimal 10.2 (s390x)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">AlmaLinux minimal 10.2 (s390x)
-Filename: AlmaLinux-10.2-s390x-minimal.iso
-sha256: bc4ab16b8501222da9af41f543b7b702b0dd5759aeeeabb5d20e90d63082fea6
-Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:ppc64le/10.2</id>
-    <title>AlmaLinux minimal 10.2 (ppc64le)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">AlmaLinux minimal 10.2 (ppc64le)
-Filename: AlmaLinux-10.2-ppc64le-minimal.iso
-sha256: ce8618654c90af07725026b40adbfde761149ab0bd1df58e5fd1a1a495b3b291
+    <summary type="text">AlmaLinux minimal 10.3 (ppc64le)
+Filename: AlmaLinux-10.3-ppc64le-minimal.iso
+sha256: 0d56b06937afbf84ce2a048843189b6312c79dbc16b56871ba8d96f054509f15
 Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:aarch64/10.2</id>
-    <title>AlmaLinux minimal 10.2 (aarch64)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal:aarch64/10.3</id>
+    <title>AlmaLinux minimal 10.3 (aarch64)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.3-aarch64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">AlmaLinux minimal 10.2 (aarch64)
-Filename: AlmaLinux-10.2-aarch64-minimal.iso
-sha256: ca5dd9b7e1193de5881df850a93b611c6ba0ba8c5860f54ee822c53585b3014d
+    <summary type="text">AlmaLinux minimal 10.3 (aarch64)
+Filename: AlmaLinux-10.3-aarch64-minimal.iso
+sha256: fa25507cac880a89906aceb1fd7c6449663f725437431d074a4716a97c0dd403
 Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:ppc64le/10.2</id>
-    <title>AlmaLinux DVD 10.2 (ppc64le)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal/10.3</id>
+    <title>AlmaLinux minimal 10.3 (x86_64)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">AlmaLinux DVD 10.2 (ppc64le)
-Filename: AlmaLinux-10.2-ppc64le-dvd.iso
-sha256: 6a9de2f07d4cfc171c6f5bc6609662b993d04554f5591e203c6d8167d079d3b0
-Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:aarch64/10.2</id>
-    <title>AlmaLinux DVD 10.2 (aarch64)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="dvd" label="variant" />
-    <summary type="text">AlmaLinux DVD 10.2 (aarch64)
-Filename: AlmaLinux-10.2-aarch64-dvd.iso
-sha256: bc3790b1200254790e03f1d941162a9f9082d46dcdff841b83f348501625b29e
-Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:x86_64_v2/10.2</id>
-    <title>AlmaLinux boot 10.2 (x86_64_v2)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">AlmaLinux boot 10.2 (x86_64_v2)
-Filename: AlmaLinux-10.2-x86_64_v2-boot.iso
-sha256: 97b38e392dfe51b62a61c7dc400ce730228135e827c214fbaf32efc3a766607f
-Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:s390x/10.2</id>
-    <title>AlmaLinux boot 10.2 (s390x)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">AlmaLinux boot 10.2 (s390x)
-Filename: AlmaLinux-10.2-s390x-boot.iso
-sha256: 31902701a6b50ac227f16992b01e09039c9e86826b3e95ac6f1345d86879e07a
-Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:ppc64le/10.2</id>
-    <title>AlmaLinux boot 10.2 (ppc64le)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">AlmaLinux boot 10.2 (ppc64le)
-Filename: AlmaLinux-10.2-ppc64le-boot.iso
-sha256: a81a74356e90e0f6ad056f64435b2bc892a8d80d4cfcdb8e6753612607d56315
-Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:aarch64/10.2</id>
-    <title>AlmaLinux boot 10.2 (aarch64)</title>
-    <updated>2026-07-12T21:47:33+00:00</updated>
-    <published>2026-07-12T21:47:33+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="almalinux" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">AlmaLinux boot 10.2 (aarch64)
-Filename: AlmaLinux-10.2-aarch64-boot.iso
-sha256: 20807d65338627a0afa3d5fbd3bee222115d66ce34ac1e4647b0af8fc6c4aa23
-Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
-Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
-Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/minimal/10.2</id>
-    <title>AlmaLinux minimal 10.2 (x86_64)</title>
-    <updated>2026-07-12T17:03:30+00:00</updated>
-    <published>2026-07-12T17:03:30+00:00</published>
-    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.3-x86_64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
     <category term="minimal" label="variant" />
-    <summary type="text">AlmaLinux minimal 10.2 (x86_64)
-Filename: AlmaLinux-10.2-x86_64-minimal.iso
-sha256: 1b532f534231da0d1cd0ccae622bea6cd588d8a0d7b259f1f131501a6eed41a4
+    <summary type="text">AlmaLinux minimal 10.3 (x86_64)
+Filename: AlmaLinux-10.3-x86_64-minimal.iso
+sha256: 3fa350594c8b3d8200b5bb4c7bda23a8e05607ea482a06f9cc862f6f477c4965
 Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd/10.2</id>
-    <title>AlmaLinux DVD 10.2 (x86_64)</title>
-    <updated>2026-07-12T17:03:30+00:00</updated>
-    <published>2026-07-12T17:03:30+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:x86_64_v2/10.3</id>
+    <title>AlmaLinux DVD 10.3 (x86_64_v2)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.3-x86_64_v2-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
     <category term="dvd" label="variant" />
-    <summary type="text">AlmaLinux DVD 10.2 (x86_64)
-Filename: AlmaLinux-10.2-x86_64-dvd.iso
-sha256: 90244ac532f67c978831a381b420da8bda363729e1f4cf8fb8991daca70ee287
+    <summary type="text">AlmaLinux DVD 10.3 (x86_64_v2)
+Filename: AlmaLinux-10.3-x86_64_v2-dvd.iso
+sha256: b6e73f2e9a87b440126faeabbc047a131bda964eb25c31faee5cfd43948ab369
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:s390x/10.3</id>
+    <title>AlmaLinux DVD 10.3 (s390x)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.3-s390x-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">AlmaLinux DVD 10.3 (s390x)
+Filename: AlmaLinux-10.3-s390x-dvd.iso
+sha256: 5adec12a466d7feb07a5f42b447c5467e93fbefc4c6daee8d4d19a06fd9d694c
+Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:ppc64le/10.3</id>
+    <title>AlmaLinux DVD 10.3 (ppc64le)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.3-ppc64le-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">AlmaLinux DVD 10.3 (ppc64le)
+Filename: AlmaLinux-10.3-ppc64le-dvd.iso
+sha256: 40c3e6217a8d31f3a7f0b5908a9ec9a2c6e6de403591afc0ecdc7970d570133a
+Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd:aarch64/10.3</id>
+    <title>AlmaLinux DVD 10.3 (aarch64)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.3-aarch64-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">AlmaLinux DVD 10.3 (aarch64)
+Filename: AlmaLinux-10.3-aarch64-dvd.iso
+sha256: 15205de0cadbde2a564284a1f5c688dc3f27a12f691b0bb8403684afcafe51ab
+Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/dvd/10.3</id>
+    <title>AlmaLinux DVD 10.3 (x86_64)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.3-x86_64-dvd.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="dvd" label="variant" />
+    <summary type="text">AlmaLinux DVD 10.3 (x86_64)
+Filename: AlmaLinux-10.3-x86_64-dvd.iso
+sha256: f74ae9c4a8e7e3e70147534856ea276f71649d16c70b7d3ec80d0905a7b93982
 Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot/10.2</id>
-    <title>AlmaLinux boot 10.2 (x86_64)</title>
-    <updated>2026-07-12T17:03:30+00:00</updated>
-    <published>2026-07-12T17:03:30+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:x86_64_v2/10.3</id>
+    <title>AlmaLinux boot 10.3 (x86_64_v2)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
     <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
-    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.3-x86_64_v2-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="almalinux" label="distro" />
     <category term="boot" label="variant" />
-    <summary type="text">AlmaLinux boot 10.2 (x86_64)
-Filename: AlmaLinux-10.2-x86_64-boot.iso
-sha256: b3f865468075bcada8f208d830289302c67529789d668041d24e8d6fc697ba6a
+    <summary type="text">AlmaLinux boot 10.3 (x86_64_v2)
+Filename: AlmaLinux-10.3-x86_64_v2-boot.iso
+sha256: d0523d002e3d9b40b3a812d4bf5972d611f12085ea143a062caf9dfb9ec767e9
+Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:s390x/10.3</id>
+    <title>AlmaLinux boot 10.3 (s390x)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.3-s390x-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">AlmaLinux boot 10.3 (s390x)
+Filename: AlmaLinux-10.3-s390x-boot.iso
+sha256: 5db7ee62a919a2cf9fd99aecdbabfb9f68a332a1c31fca48accd3f809a0f091c
+Signature: https://repo.almalinux.org/almalinux/10/isos/s390x/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:ppc64le/10.3</id>
+    <title>AlmaLinux boot 10.3 (ppc64le)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.3-ppc64le-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">AlmaLinux boot 10.3 (ppc64le)
+Filename: AlmaLinux-10.3-ppc64le-boot.iso
+sha256: 5ded5d03ee37e062eb59185e7d543943e28b9e86107c5d296a26aaaed1ca6ceb
+Signature: https://repo.almalinux.org/almalinux/10/isos/ppc64le/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot:aarch64/10.3</id>
+    <title>AlmaLinux boot 10.3 (aarch64)</title>
+    <updated>2026-11-16T15:55:51+00:00</updated>
+    <published>2026-11-16T15:55:51+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.3-aarch64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">AlmaLinux boot 10.3 (aarch64)
+Filename: AlmaLinux-10.3-aarch64-boot.iso
+sha256: 3bf0f44bd2c9c75eb02a1795c7253c29926d189e13bc53d0f78673ab4929b1fd
+Signature: https://repo.almalinux.org/almalinux/10/isos/aarch64/CHECKSUM
+Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
+Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/almalinux/boot/10.3</id>
+    <title>AlmaLinux boot 10.3 (x86_64)</title>
+    <updated>2026-11-16T15:55:50+00:00</updated>
+    <published>2026-11-16T15:55:50+00:00</published>
+    <link href="https://almalinux.org/get-almalinux/" rel="alternate" type="text/html" />
+    <link href="https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.3-x86_64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="almalinux" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">AlmaLinux boot 10.3 (x86_64)
+Filename: AlmaLinux-10.3-x86_64-boot.iso
+sha256: d842df0dca98a3bf79c84cfcce49505ba7a7f56f03dcb02639b8377410154f4d
 Signature: https://repo.almalinux.org/almalinux/10/isos/x86_64/CHECKSUM
 Signing-key: https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10
 Key-fingerprint: EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572

@@ -1,13 +1,13 @@
 {
   "almalinux:boot": {
-    "hash": "b3f865468075bcada8f208d830289302c67529789d668041d24e8d6fc697ba6a",
+    "hash": "d842df0dca98a3bf79c84cfcce49505ba7a7f56f03dcb02639b8377410154f4d",
     "release": {
       "arch": "x86_64",
-      "checksum": "b3f865468075bcada8f208d830289302c67529789d668041d24e8d6fc697ba6a",
+      "checksum": "d842df0dca98a3bf79c84cfcce49505ba7a7f56f03dcb02639b8377410154f4d",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-boot.iso",
-      "filename": "AlmaLinux-10.2-x86_64-boot.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.3-x86_64-boot.iso",
+      "filename": "AlmaLinux-10.3-x86_64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -18,26 +18,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux boot 10.2 (x86_64)",
+      "title": "AlmaLinux boot 10.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T17:03:30+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:50+00:00",
+    "version": "10.3"
   },
   "almalinux:boot:aarch64": {
-    "hash": "20807d65338627a0afa3d5fbd3bee222115d66ce34ac1e4647b0af8fc6c4aa23",
+    "hash": "3bf0f44bd2c9c75eb02a1795c7253c29926d189e13bc53d0f78673ab4929b1fd",
     "release": {
       "arch": "aarch64",
-      "checksum": "20807d65338627a0afa3d5fbd3bee222115d66ce34ac1e4647b0af8fc6c4aa23",
+      "checksum": "3bf0f44bd2c9c75eb02a1795c7253c29926d189e13bc53d0f78673ab4929b1fd",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-boot.iso",
-      "filename": "AlmaLinux-10.2-aarch64-boot.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.3-aarch64-boot.iso",
+      "filename": "AlmaLinux-10.3-aarch64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -48,26 +48,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux boot 10.2 (aarch64)",
+      "title": "AlmaLinux boot 10.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:boot:ppc64le": {
-    "hash": "a81a74356e90e0f6ad056f64435b2bc892a8d80d4cfcdb8e6753612607d56315",
+    "hash": "5ded5d03ee37e062eb59185e7d543943e28b9e86107c5d296a26aaaed1ca6ceb",
     "release": {
       "arch": "ppc64le",
-      "checksum": "a81a74356e90e0f6ad056f64435b2bc892a8d80d4cfcdb8e6753612607d56315",
+      "checksum": "5ded5d03ee37e062eb59185e7d543943e28b9e86107c5d296a26aaaed1ca6ceb",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-boot.iso",
-      "filename": "AlmaLinux-10.2-ppc64le-boot.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.3-ppc64le-boot.iso",
+      "filename": "AlmaLinux-10.3-ppc64le-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -78,26 +78,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux boot 10.2 (ppc64le)",
+      "title": "AlmaLinux boot 10.3 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:boot:s390x": {
-    "hash": "31902701a6b50ac227f16992b01e09039c9e86826b3e95ac6f1345d86879e07a",
+    "hash": "5db7ee62a919a2cf9fd99aecdbabfb9f68a332a1c31fca48accd3f809a0f091c",
     "release": {
       "arch": "s390x",
-      "checksum": "31902701a6b50ac227f16992b01e09039c9e86826b3e95ac6f1345d86879e07a",
+      "checksum": "5db7ee62a919a2cf9fd99aecdbabfb9f68a332a1c31fca48accd3f809a0f091c",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-boot.iso",
-      "filename": "AlmaLinux-10.2-s390x-boot.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.3-s390x-boot.iso",
+      "filename": "AlmaLinux-10.3-s390x-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -108,26 +108,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux boot 10.2 (s390x)",
+      "title": "AlmaLinux boot 10.3 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:boot:x86_64_v2": {
-    "hash": "97b38e392dfe51b62a61c7dc400ce730228135e827c214fbaf32efc3a766607f",
+    "hash": "d0523d002e3d9b40b3a812d4bf5972d611f12085ea143a062caf9dfb9ec767e9",
     "release": {
       "arch": "x86_64_v2",
-      "checksum": "97b38e392dfe51b62a61c7dc400ce730228135e827c214fbaf32efc3a766607f",
+      "checksum": "d0523d002e3d9b40b3a812d4bf5972d611f12085ea143a062caf9dfb9ec767e9",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-boot.iso",
-      "filename": "AlmaLinux-10.2-x86_64_v2-boot.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.3-x86_64_v2-boot.iso",
+      "filename": "AlmaLinux-10.3-x86_64_v2-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -138,26 +138,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux boot 10.2 (x86_64_v2)",
+      "title": "AlmaLinux boot 10.3 (x86_64_v2)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:dvd": {
-    "hash": "90244ac532f67c978831a381b420da8bda363729e1f4cf8fb8991daca70ee287",
+    "hash": "f74ae9c4a8e7e3e70147534856ea276f71649d16c70b7d3ec80d0905a7b93982",
     "release": {
       "arch": "x86_64",
-      "checksum": "90244ac532f67c978831a381b420da8bda363729e1f4cf8fb8991daca70ee287",
+      "checksum": "f74ae9c4a8e7e3e70147534856ea276f71649d16c70b7d3ec80d0905a7b93982",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-dvd.iso",
-      "filename": "AlmaLinux-10.2-x86_64-dvd.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.3-x86_64-dvd.iso",
+      "filename": "AlmaLinux-10.3-x86_64-dvd.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -168,26 +168,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux DVD 10.2 (x86_64)",
+      "title": "AlmaLinux DVD 10.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T17:03:30+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:dvd:aarch64": {
-    "hash": "bc3790b1200254790e03f1d941162a9f9082d46dcdff841b83f348501625b29e",
+    "hash": "15205de0cadbde2a564284a1f5c688dc3f27a12f691b0bb8403684afcafe51ab",
     "release": {
       "arch": "aarch64",
-      "checksum": "bc3790b1200254790e03f1d941162a9f9082d46dcdff841b83f348501625b29e",
+      "checksum": "15205de0cadbde2a564284a1f5c688dc3f27a12f691b0bb8403684afcafe51ab",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-dvd.iso",
-      "filename": "AlmaLinux-10.2-aarch64-dvd.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.3-aarch64-dvd.iso",
+      "filename": "AlmaLinux-10.3-aarch64-dvd.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -198,26 +198,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux DVD 10.2 (aarch64)",
+      "title": "AlmaLinux DVD 10.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:dvd:ppc64le": {
-    "hash": "6a9de2f07d4cfc171c6f5bc6609662b993d04554f5591e203c6d8167d079d3b0",
+    "hash": "40c3e6217a8d31f3a7f0b5908a9ec9a2c6e6de403591afc0ecdc7970d570133a",
     "release": {
       "arch": "ppc64le",
-      "checksum": "6a9de2f07d4cfc171c6f5bc6609662b993d04554f5591e203c6d8167d079d3b0",
+      "checksum": "40c3e6217a8d31f3a7f0b5908a9ec9a2c6e6de403591afc0ecdc7970d570133a",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-dvd.iso",
-      "filename": "AlmaLinux-10.2-ppc64le-dvd.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.3-ppc64le-dvd.iso",
+      "filename": "AlmaLinux-10.3-ppc64le-dvd.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -228,26 +228,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux DVD 10.2 (ppc64le)",
+      "title": "AlmaLinux DVD 10.3 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:dvd:s390x": {
-    "hash": "fba6a4088db5b835572c5a978b8e7e7dd795d9a782b6907d64b32a12e3864258",
+    "hash": "5adec12a466d7feb07a5f42b447c5467e93fbefc4c6daee8d4d19a06fd9d694c",
     "release": {
       "arch": "s390x",
-      "checksum": "fba6a4088db5b835572c5a978b8e7e7dd795d9a782b6907d64b32a12e3864258",
+      "checksum": "5adec12a466d7feb07a5f42b447c5467e93fbefc4c6daee8d4d19a06fd9d694c",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-dvd.iso",
-      "filename": "AlmaLinux-10.2-s390x-dvd.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.3-s390x-dvd.iso",
+      "filename": "AlmaLinux-10.3-s390x-dvd.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -258,26 +258,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux DVD 10.2 (s390x)",
+      "title": "AlmaLinux DVD 10.3 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:34+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:dvd:x86_64_v2": {
-    "hash": "320a10d3195ece72d99a10ae8316f78124ae6228a5f542b6f5870126d5708b91",
+    "hash": "b6e73f2e9a87b440126faeabbc047a131bda964eb25c31faee5cfd43948ab369",
     "release": {
       "arch": "x86_64_v2",
-      "checksum": "320a10d3195ece72d99a10ae8316f78124ae6228a5f542b6f5870126d5708b91",
+      "checksum": "b6e73f2e9a87b440126faeabbc047a131bda964eb25c31faee5cfd43948ab369",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-dvd.iso",
-      "filename": "AlmaLinux-10.2-x86_64_v2-dvd.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.3-x86_64_v2-dvd.iso",
+      "filename": "AlmaLinux-10.3-x86_64_v2-dvd.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -288,26 +288,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux DVD 10.2 (x86_64_v2)",
+      "title": "AlmaLinux DVD 10.3 (x86_64_v2)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:34+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:minimal": {
-    "hash": "1b532f534231da0d1cd0ccae622bea6cd588d8a0d7b259f1f131501a6eed41a4",
+    "hash": "3fa350594c8b3d8200b5bb4c7bda23a8e05607ea482a06f9cc862f6f477c4965",
     "release": {
       "arch": "x86_64",
-      "checksum": "1b532f534231da0d1cd0ccae622bea6cd588d8a0d7b259f1f131501a6eed41a4",
+      "checksum": "3fa350594c8b3d8200b5bb4c7bda23a8e05607ea482a06f9cc862f6f477c4965",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.2-x86_64-minimal.iso",
-      "filename": "AlmaLinux-10.2-x86_64-minimal.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64/AlmaLinux-10.3-x86_64-minimal.iso",
+      "filename": "AlmaLinux-10.3-x86_64-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -318,26 +318,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux minimal 10.2 (x86_64)",
+      "title": "AlmaLinux minimal 10.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T17:03:30+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:minimal:aarch64": {
-    "hash": "ca5dd9b7e1193de5881df850a93b611c6ba0ba8c5860f54ee822c53585b3014d",
+    "hash": "fa25507cac880a89906aceb1fd7c6449663f725437431d074a4716a97c0dd403",
     "release": {
       "arch": "aarch64",
-      "checksum": "ca5dd9b7e1193de5881df850a93b611c6ba0ba8c5860f54ee822c53585b3014d",
+      "checksum": "fa25507cac880a89906aceb1fd7c6449663f725437431d074a4716a97c0dd403",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.2-aarch64-minimal.iso",
-      "filename": "AlmaLinux-10.2-aarch64-minimal.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/aarch64/AlmaLinux-10.3-aarch64-minimal.iso",
+      "filename": "AlmaLinux-10.3-aarch64-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -348,26 +348,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux minimal 10.2 (aarch64)",
+      "title": "AlmaLinux minimal 10.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:minimal:ppc64le": {
-    "hash": "ce8618654c90af07725026b40adbfde761149ab0bd1df58e5fd1a1a495b3b291",
+    "hash": "0d56b06937afbf84ce2a048843189b6312c79dbc16b56871ba8d96f054509f15",
     "release": {
       "arch": "ppc64le",
-      "checksum": "ce8618654c90af07725026b40adbfde761149ab0bd1df58e5fd1a1a495b3b291",
+      "checksum": "0d56b06937afbf84ce2a048843189b6312c79dbc16b56871ba8d96f054509f15",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.2-ppc64le-minimal.iso",
-      "filename": "AlmaLinux-10.2-ppc64le-minimal.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/ppc64le/AlmaLinux-10.3-ppc64le-minimal.iso",
+      "filename": "AlmaLinux-10.3-ppc64le-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -378,26 +378,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux minimal 10.2 (ppc64le)",
+      "title": "AlmaLinux minimal 10.3 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:minimal:s390x": {
-    "hash": "bc4ab16b8501222da9af41f543b7b702b0dd5759aeeeabb5d20e90d63082fea6",
+    "hash": "551c35ebfe29034f91f97422d5d16a819e3c23c05ce71683a7052a3e297924d4",
     "release": {
       "arch": "s390x",
-      "checksum": "bc4ab16b8501222da9af41f543b7b702b0dd5759aeeeabb5d20e90d63082fea6",
+      "checksum": "551c35ebfe29034f91f97422d5d16a819e3c23c05ce71683a7052a3e297924d4",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.2-s390x-minimal.iso",
-      "filename": "AlmaLinux-10.2-s390x-minimal.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/s390x/AlmaLinux-10.3-s390x-minimal.iso",
+      "filename": "AlmaLinux-10.3-s390x-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -408,26 +408,26 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux minimal 10.2 (s390x)",
+      "title": "AlmaLinux minimal 10.3 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "almalinux:minimal:x86_64_v2": {
-    "hash": "c75ee2e209dcb4ec6fde01e421074edddf5d19bb7388fa12a102edb40fc47eb0",
+    "hash": "c14b9bc0411b5053ba11c9f95ffe0076ca5d2f17f6a06ace18b8922cb19db51a",
     "release": {
       "arch": "x86_64_v2",
-      "checksum": "c75ee2e209dcb4ec6fde01e421074edddf5d19bb7388fa12a102edb40fc47eb0",
+      "checksum": "c14b9bc0411b5053ba11c9f95ffe0076ca5d2f17f6a06ace18b8922cb19db51a",
       "checksum_algo": "sha256",
       "distro": "almalinux",
-      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.2-x86_64_v2-minimal.iso",
-      "filename": "AlmaLinux-10.2-x86_64_v2-minimal.iso",
+      "download_url": "https://repo.almalinux.org/almalinux/10/isos/x86_64_v2/AlmaLinux-10.3-x86_64_v2-minimal.iso",
+      "filename": "AlmaLinux-10.3-x86_64_v2-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -438,16 +438,16 @@
       "signing_key_fingerprint": "EE6DB7B98F5BF5EDD9DA0DE5DEE5C11CC2A1E572",
       "signing_key_url": "https://repo.almalinux.org/almalinux/RPM-GPG-KEY-AlmaLinux-10",
       "size": null,
-      "title": "AlmaLinux minimal 10.2 (x86_64_v2)",
+      "title": "AlmaLinux minimal 10.3 (x86_64_v2)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:33+00:00",
-    "version": "10.2"
+    "seen": "2026-11-16T15:55:51+00:00",
+    "version": "10.3"
   },
   "anduinos:en-us": {
     "hash": "9367e97fa9d2a98cab121eab005f099b717122c8",
@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck 45.20261112 (x86_64)",
+      "title": "Bazzite Deck 45.20261115 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "45.20261112"
+      "version": "45.20261115"
     },
-    "seen": "2026-11-12T15:22:31+00:00",
-    "version": "45.20261112"
+    "seen": "2026-11-16T15:55:56+00:00",
+    "version": "45.20261115"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop 45.20261112 (x86_64)",
+      "title": "Bazzite Desktop 45.20261115 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "45.20261112"
+      "version": "45.20261115"
     },
-    "seen": "2026-11-12T15:22:30+00:00",
-    "version": "45.20261112"
+    "seen": "2026-11-16T15:55:56+00:00",
+    "version": "45.20261115"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open 45.20261112 (x86_64)",
+      "title": "Bazzite NVIDIA Open 45.20261115 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "45.20261112"
+      "version": "45.20261115"
     },
-    "seen": "2026-11-12T15:22:31+00:00",
-    "version": "45.20261112"
+    "seen": "2026-11-16T15:55:57+00:00",
+    "version": "45.20261115"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -3240,64 +3240,64 @@
     "version": "20260913T163055Z"
   },
   "gentoo:minimal": {
-    "hash": "cc228119819d2a3450b635bd1a39364099be6832a82580a2182bde864327777c",
+    "hash": "82f4bd44330c9518e9264b88585c3af8a964a13cd185d867de469e1d6e798f00",
     "release": {
       "arch": "x86_64",
-      "checksum": "cc228119819d2a3450b635bd1a39364099be6832a82580a2182bde864327777c",
+      "checksum": "82f4bd44330c9518e9264b88585c3af8a964a13cd185d867de469e1d6e798f00",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20261108T170107Z.iso",
-      "filename": "install-amd64-minimal-20261108T170107Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20261115T170104Z.iso",
+      "filename": "install-amd64-minimal-20261115T170104Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20261108T170107Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20261115T170104Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20261108T170107Z (x86_64)",
+      "title": "Gentoo Minimal Install CD 20261115T170104Z (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20261108T170107Z"
+      "version": "20261115T170104Z"
     },
-    "seen": "2026-11-09T16:31:45+00:00",
-    "version": "20261108T170107Z"
+    "seen": "2026-11-16T15:56:51+00:00",
+    "version": "20261115T170104Z"
   },
   "gentoo:minimal:aarch64": {
-    "hash": "06d421cd198bc95acbcf4d33fd508861c13d3fd17bd3ecab00f1d3569749ba4f",
+    "hash": "a055e6164c67f3ec4c09750a5317ba0506ef61f0c741b51054d77329cc8abff9",
     "release": {
       "arch": "aarch64",
-      "checksum": "06d421cd198bc95acbcf4d33fd508861c13d3fd17bd3ecab00f1d3569749ba4f",
+      "checksum": "a055e6164c67f3ec4c09750a5317ba0506ef61f0c741b51054d77329cc8abff9",
       "checksum_algo": "sha256",
       "distro": "gentoo",
-      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20261108T230104Z.iso",
-      "filename": "install-arm64-minimal-20261108T230104Z.iso",
+      "download_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20261115T234600Z.iso",
+      "filename": "install-arm64-minimal-20261115T234600Z.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://www.gentoo.org/downloads/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20261108T230104Z.iso.sha256",
+      "signature_url": "https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20261115T234600Z.iso.sha256",
       "signing_key_fingerprint": "13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x13EBBDBEDE7A12775DFDB1BABB572E0E2D182910",
       "size": null,
-      "title": "Gentoo Minimal Install CD 20261108T230104Z (aarch64)",
+      "title": "Gentoo Minimal Install CD 20261115T234600Z (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "20261108T230104Z"
+      "version": "20261115T234600Z"
     },
-    "seen": "2026-11-09T16:31:45+00:00",
-    "version": "20261108T230104Z"
+    "seen": "2026-11-16T15:56:52+00:00",
+    "version": "20261115T234600Z"
   },
   "gentoo:minimal:hppa": {
     "hash": "d5a125fca449a68a0dbc43485e288ca9504364ef96fb2621dcbe395868549fd4",
@@ -5211,7 +5211,7 @@
       "title": "openSUSE Tumbleweed DVD Snapshot20261111 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 20759,
+      "torrent_size": 20748,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso.torrent",
       "variant": "tumbleweed-dvd",
       "version": "Snapshot20261111"
@@ -5391,7 +5391,7 @@
       "title": "openSUSE Tumbleweed NET Snapshot20261111 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 2817,
+      "torrent_size": 2806,
       "torrent_url": "https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent",
       "variant": "tumbleweed-net",
       "version": "Snapshot20261111"
