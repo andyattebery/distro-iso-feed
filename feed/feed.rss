@@ -4,8 +4,503 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Mon, 16 Nov 2026 15:56:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 16:09:15 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
+    <item>
+      <title>Aurora stable-20261117.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-stable-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:stable:stable-20261117.1</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:15 +0000</pubDate>
+      <description>Aurora stable-20261117.1 (x86_64)
+Filename: aurora-stable-x86_64.iso
+sha256: 1b21c48be5c3ed300880b730b000c7408cc3b510aaa6aa4482d7901334198070
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Aurora NVIDIA Open stable-20261117.1 (x86_64)</title>
+      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso</link>
+      <guid isPermaLink="false">aurora:nvidia-open:stable-20261117.1</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:15 +0000</pubDate>
+      <description>Aurora NVIDIA Open stable-20261117.1 (x86_64)
+Filename: aurora-nvidia-open-stable-x86_64.iso
+sha256: 79205a26f58ba68e712e38ff849630bc41874c7e5590250be9d570abf4a923fc
+Verify: checksum</description>
+      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>aurora</category>
+    </item>
+    <item>
+      <title>Bluefin stable-20261117 (x86_64)</title>
+      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
+      <guid isPermaLink="false">bluefin:stable:stable-20261117</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:14 +0000</pubDate>
+      <description>Bluefin stable-20261117 (x86_64)
+Filename: bluefin-stable-x86_64.iso
+sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
+Verify: checksum</description>
+      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bluefin</category>
+    </item>
+    <item>
+      <title>Bazzite NVIDIA Open 45.20261117.1 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:nvidia-open:45.20261117.1</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:13 +0000</pubDate>
+      <description>Bazzite NVIDIA Open 45.20261117.1 (x86_64)
+Filename: bazzite-nvidia-open-stable-amd64.iso
+sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Deck 45.20261117.1 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:deck:45.20261117.1</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:13 +0000</pubDate>
+      <description>Bazzite Deck 45.20261117.1 (x86_64)
+Filename: bazzite-deck-stable-amd64.iso
+sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>Bazzite Desktop 45.20261117.1 (x86_64)</title>
+      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
+      <guid isPermaLink="false">bazzite:desktop:45.20261117.1</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:12 +0000</pubDate>
+      <description>Bazzite Desktop 45.20261117.1 (x86_64)
+Filename: bazzite-stable-amd64.iso
+sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
+Verify: checksum</description>
+      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
+      <category>bazzite</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.14561.b349185bb79c (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.14561.b349185bb79c</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:11 +0000</pubDate>
+      <description>NixOS Minimal 26.05.14561.b349185bb79c (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: 658b7356cc2fd5d6a280f819bdc3a7eececaa9c03b1c67b494a8777bedf303ef
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.14561.b349185bb79c (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.14561.b349185bb79c</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:11 +0000</pubDate>
+      <description>NixOS Graphical 26.05.14561.b349185bb79c (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 1d4a5fc8d7cfacd390d62d437fe9de71de45a46d3998c41b4ba49b3dcac3800c
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.14561.b349185bb79c (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.14561.b349185bb79c</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:11 +0000</pubDate>
+      <description>NixOS Graphical 26.05.14561.b349185bb79c (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: b89d21478e6e6b1bf0e7701a1a2ae9e0146fec389c38e7f070dcc119ee387dc3
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.14561.b349185bb79c (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.14561.b349185bb79c</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:10 +0000</pubDate>
+      <description>NixOS Minimal 26.05.14561.b349185bb79c (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 4f449a9bd68228e2885e898097ea427b167ad78dcca1b04b0e06c9ba451b38cd
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.3 (s390x)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:s390x:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:02 +0000</pubDate>
+      <description>Rocky Linux DVD 10.3 (s390x)
+Filename: Rocky-10.3-s390x-dvd1.iso
+sha256: 3108f5e43c2b9c111d8d7fef0f86a6e0535ac83e02ff077dfaf8720dc8db9149
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.3 (riscv64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:riscv64:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:02 +0000</pubDate>
+      <description>Rocky Linux DVD 10.3 (riscv64)
+Filename: Rocky-10.3-riscv64-dvd1.iso
+sha256: 84ae04509a7512cd9af5b72764a6ee1178ab903e2b2329fc8dcc62fa4d4bdeb8
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.3 (ppc64le)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:ppc64le:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:02 +0000</pubDate>
+      <description>Rocky Linux DVD 10.3 (ppc64le)
+Filename: Rocky-10.3-ppc64le-dvd1.iso
+sha256: 823e48a22cd489ebd55b8a36ea994ae06b2b25eccdaaec5f38b8c64621071934
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.3 (s390x)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:s390x:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:01 +0000</pubDate>
+      <description>Rocky Linux minimal 10.3 (s390x)
+Filename: Rocky-10.3-s390x-minimal.iso
+sha256: b234eeac73eee3d4ad6329592e6590ecfb1d5e430cc06027f39938d9836d79d5
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.3 (aarch64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:aarch64:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:01 +0000</pubDate>
+      <description>Rocky Linux DVD 10.3 (aarch64)
+Filename: Rocky-10.3-aarch64-dvd1.iso
+sha256: a12a68503346e9bf0a513704231821fd539e13d4b1a7afc46f984a2badd81375
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux DVD 10.3 (x86_64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-dvd1.iso</link>
+      <guid isPermaLink="false">rocky:dvd:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:01 +0000</pubDate>
+      <description>Rocky Linux DVD 10.3 (x86_64)
+Filename: Rocky-10.3-x86_64-dvd1.iso
+sha256: de2e4426cd5177ff9f4760bfa2b5b4dea44f771dfef5daeffde1680d6223e1d0
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.3 (riscv64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:riscv64:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:00 +0000</pubDate>
+      <description>Rocky Linux minimal 10.3 (riscv64)
+Filename: Rocky-10.3-riscv64-minimal.iso
+sha256: ef8d29ad7697ffc9e40fe7db7f6cd4d265c0e7ccca2d8ee90097770dbfd7a6a1
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.3 (ppc64le)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:ppc64le:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:00 +0000</pubDate>
+      <description>Rocky Linux minimal 10.3 (ppc64le)
+Filename: Rocky-10.3-ppc64le-minimal.iso
+sha256: 852cd465883086bb37647c99d7d95cd758069f6067c5fde3209362dab671e244
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.3 (aarch64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:aarch64:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:09:00 +0000</pubDate>
+      <description>Rocky Linux minimal 10.3 (aarch64)
+Filename: Rocky-10.3-aarch64-minimal.iso
+sha256: 8d6c133ce49897e2ca5d29bfa223abd392a19e252887bc92c5f18791e73b2668
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux minimal 10.3 (x86_64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-minimal.iso</link>
+      <guid isPermaLink="false">rocky:minimal:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:59 +0000</pubDate>
+      <description>Rocky Linux minimal 10.3 (x86_64)
+Filename: Rocky-10.3-x86_64-minimal.iso
+sha256: 878a3f92281d3eb91ca9d1a195794d47b5bce4e02a85f351c606709e98481cc4
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-minimal.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.3 (s390x)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:s390x:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:59 +0000</pubDate>
+      <description>Rocky Linux boot 10.3 (s390x)
+Filename: Rocky-10.3-s390x-boot.iso
+sha256: edff150bf1504603a95a50d4b67215eb2dbb655de0f1271ad728a22c04743b6b
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.3 (riscv64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:riscv64:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:58 +0000</pubDate>
+      <description>Rocky Linux boot 10.3 (riscv64)
+Filename: Rocky-10.3-riscv64-boot.iso
+sha256: c956cbb2508d2bc4494839eed50df4c2312731096c6b0c024d0263ac7356c8e2
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.3 (ppc64le)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:ppc64le:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:58 +0000</pubDate>
+      <description>Rocky Linux boot 10.3 (ppc64le)
+Filename: Rocky-10.3-ppc64le-boot.iso
+sha256: 5c875fb52136611ba4505536312d9b437767af949734a26a1c5af9c08a15c516
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.3 (aarch64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:aarch64:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:58 +0000</pubDate>
+      <description>Rocky Linux boot 10.3 (aarch64)
+Filename: Rocky-10.3-aarch64-boot.iso
+sha256: 3713f3f4a782c94ecd239c6f756cb18d8a9a287dbf4c5f44e6ad13c8e1b3af6e
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Rocky Linux boot 10.3 (x86_64)</title>
+      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-boot.iso</link>
+      <guid isPermaLink="false">rocky:boot:10.3</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:57 +0000</pubDate>
+      <description>Rocky Linux boot 10.3 (x86_64)
+Filename: Rocky-10.3-x86_64-boot.iso
+sha256: 3018fdb8c0a648dbf3e13798b9afadae4f739b79d817b05d20277cfcb2dd7ada
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</description>
+      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
+      <category>rocky</category>
+    </item>
+    <item>
+      <title>Tails 7.17.1 (x86_64)</title>
+      <link>https://download.tails.net/tails/stable/tails-amd64-7.17.1/tails-amd64-7.17.1.iso</link>
+      <guid isPermaLink="false">tails:iso:7.17.1</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:18 +0000</pubDate>
+      <description>Tails 7.17.1 (x86_64)
+Filename: tails-amd64-7.17.1.iso
+Signature: https://tails.net/torrents/files/tails-amd64-7.17.1.iso.sig
+Signing-key: https://tails.net/tails-signing.key
+Key-fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
+Verify: gpg
+WARNING: no published checksum — integrity unverifiable</description>
+      <enclosure url="https://download.tails.net/tails/stable/tails-amd64-7.17.1/tails-amd64-7.17.1.iso" type="application/x-iso9660-image" length="0" />
+      <category>tails</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:05 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20261116 (x86_64)
+Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
+sha256: bda1d58036e947d09899a350b64779af40a3dbf36821ea77ad5df59f95862743
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:04 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20261116 (x86_64)
+Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
+sha256: 36a0a971addce453212eabed20942f819e74e38187d6342e7539fb94ff5516ab
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:03 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20261116 (x86_64)
+Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
+sha256: 63370b7be0c95a031cfdfab7e27c9077c58a8c8e52ab1a55320f40155a531142
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:02 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20261116 (x86_64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
+sha256: b235c01ae1d85867c51d952608421b86a4e26c5bc4689c39114e4e72b1b7f73e
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE MicroOS DVD Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:08:00 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20261116 (x86_64)
+Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
+sha256: b481f14c22ef1d12b8e40047481e09bc163979e7d4b69c87508e746d513f4ae1
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed NET Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:07:59 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20261116 (x86_64)
+Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
+sha256: a6fdc215aa3da67791ef1ee5169e5359b5f5605df397bca2792a9674479993f7
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: be4a1a2bd62153435d93db8428ea76fbc11a720e
+Magnet: magnet:?xt=urn:btih:be4a1a2bd62153435d93db8428ea76fbc11a720e&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261116-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed DVD Snapshot20261116 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261116</guid>
+      <pubDate>Tue, 17 Nov 2026 16:07:57 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20261116 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso
+sha256: ea297801ccde8eb755eb6dd0855c33f675151925c670e15c3f9974e2ea00296f
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso.torrent
+Infohash: dd6b08ed43219a7090db1113c27b706b618eaa62
+Magnet: magnet:?xt=urn:btih:dd6b08ed43219a7090db1113c27b706b618eaa62&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</description>
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso" type="application/x-iso9660-image" length="0" />
+      <category>opensuse</category>
+    </item>
+    <item>
+      <title>Bluestar Linux SonicDE 7.3.4-2-2026.11.16 (x86_64)</title>
+      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.3.4-2-2026.11.16-x86_64.iso/download</link>
+      <guid isPermaLink="false">bluestar:sonicde:7.3.4-2-2026.11.16</guid>
+      <pubDate>Tue, 17 Nov 2026 05:35:53 +0000</pubDate>
+      <description>Bluestar Linux SonicDE 7.3.4-2-2026.11.16 (x86_64)
+Filename: bslx-sonicde-7.3.4-2-2026.11.16-x86_64.iso
+md5: c5b6e068c18d2985b90dfb9b4eaef6ed
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.3.4-2-2026.11.16-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>bluestar</category>
+    </item>
+    <item>
+      <title>Bluestar Linux Plasma 7.3.4-2-2026.11.16 (x86_64)</title>
+      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.3.4-2-2026.11.16-x86_64.iso/download</link>
+      <guid isPermaLink="false">bluestar:default:7.3.4-2-2026.11.16</guid>
+      <pubDate>Tue, 17 Nov 2026 05:27:59 +0000</pubDate>
+      <description>Bluestar Linux Plasma 7.3.4-2-2026.11.16 (x86_64)
+Filename: bslx-plasma-7.3.4-2-2026.11.16-x86_64.iso
+md5: 68f08530590c78b97bd7b8a9a5de7bd8
+Verify: checksum</description>
+      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.3.4-2-2026.11.16-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>bluestar</category>
+    </item>
     <item>
       <title>Gentoo Minimal Install CD 20261115T234600Z (aarch64)</title>
       <link>https://distfiles.gentoo.org/releases/arm64/autobuilds/current-install-arm64-minimal/install-arm64-minimal-20261115T234600Z.iso</link>
@@ -35,42 +530,6 @@ Key-fingerprint: 13EBBDBEDE7A12775DFDB1BABB572E0E2D182910
 Verify: gpg</description>
       <enclosure url="https://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20261115T170104Z.iso" type="application/x-iso9660-image" length="0" />
       <category>gentoo</category>
-    </item>
-    <item>
-      <title>Bazzite NVIDIA Open 45.20261115 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:nvidia-open:45.20261115</guid>
-      <pubDate>Mon, 16 Nov 2026 15:55:57 +0000</pubDate>
-      <description>Bazzite NVIDIA Open 45.20261115 (x86_64)
-Filename: bazzite-nvidia-open-stable-amd64.iso
-sha256: 85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-nvidia-open-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Desktop 45.20261115 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:desktop:45.20261115</guid>
-      <pubDate>Mon, 16 Nov 2026 15:55:56 +0000</pubDate>
-      <description>Bazzite Desktop 45.20261115 (x86_64)
-Filename: bazzite-stable-amd64.iso
-sha256: 9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
-    </item>
-    <item>
-      <title>Bazzite Deck 45.20261115 (x86_64)</title>
-      <link>https://download.bazzite.gg/bazzite-deck-stable-amd64.iso</link>
-      <guid isPermaLink="false">bazzite:deck:45.20261115</guid>
-      <pubDate>Mon, 16 Nov 2026 15:55:56 +0000</pubDate>
-      <description>Bazzite Deck 45.20261115 (x86_64)
-Filename: bazzite-deck-stable-amd64.iso
-sha256: f710fb32edb6b3ca319a07cd910d2fcaa9c5a088a3093a0d2508daf9dad660c2
-Verify: checksum</description>
-      <enclosure url="https://download.bazzite.gg/bazzite-deck-stable-amd64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bazzite</category>
     </item>
     <item>
       <title>AlmaLinux minimal 10.3 (x86_64_v2)</title>
@@ -298,102 +757,6 @@ Verify: gpg</description>
       <category>almalinux</category>
     </item>
     <item>
-      <title>Bluestar Linux Plasma 7.3.4-1-2026.11.14 (x86_64)</title>
-      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.3.4-1-2026.11.14-x86_64.iso/download</link>
-      <guid isPermaLink="false">bluestar:default:7.3.4-1-2026.11.14</guid>
-      <pubDate>Sun, 15 Nov 2026 03:30:04 +0000</pubDate>
-      <description>Bluestar Linux Plasma 7.3.4-1-2026.11.14 (x86_64)
-Filename: bslx-plasma-7.3.4-1-2026.11.14-x86_64.iso
-md5: 1559c2b954cb4c2ed9a5a5f05c6facd3
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.3.4-1-2026.11.14-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>bluestar</category>
-    </item>
-    <item>
-      <title>Aurora stable-20261113.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-stable-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:stable:stable-20261113.1</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:20 +0000</pubDate>
-      <description>Aurora stable-20261113.1 (x86_64)
-Filename: aurora-stable-x86_64.iso
-sha256: 1b21c48be5c3ed300880b730b000c7408cc3b510aaa6aa4482d7901334198070
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Aurora NVIDIA Open stable-20261113.1 (x86_64)</title>
-      <link>https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso</link>
-      <guid isPermaLink="false">aurora:nvidia-open:stable-20261113.1</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:20 +0000</pubDate>
-      <description>Aurora NVIDIA Open stable-20261113.1 (x86_64)
-Filename: aurora-nvidia-open-stable-x86_64.iso
-sha256: 79205a26f58ba68e712e38ff849630bc41874c7e5590250be9d570abf4a923fc
-Verify: checksum</description>
-      <enclosure url="https://dl.getaurora.dev/aurora-nvidia-open-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>aurora</category>
-    </item>
-    <item>
-      <title>Bluefin stable-20261111 (x86_64)</title>
-      <link>https://download.projectbluefin.io/bluefin-stable-x86_64.iso</link>
-      <guid isPermaLink="false">bluefin:stable:stable-20261111</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:19 +0000</pubDate>
-      <description>Bluefin stable-20261111 (x86_64)
-Filename: bluefin-stable-x86_64.iso
-sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
-Verify: checksum</description>
-      <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
-      <category>bluefin</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.14234.f1e5c356f35d (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.14234.f1e5c356f35d</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:17 +0000</pubDate>
-      <description>NixOS Graphical 26.05.14234.f1e5c356f35d (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: 075badc9456bdc1b5db64ca2c43eb9b6dd54e831ecbc979e3580dc03632ad75a
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.14234.f1e5c356f35d (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.14234.f1e5c356f35d</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:16 +0000</pubDate>
-      <description>NixOS Minimal 26.05.14234.f1e5c356f35d (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 0a76b55998657c320070804a611af9b2b7ce35d30c93c86b79d5c24e7c510752
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.14234.f1e5c356f35d (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.14234.f1e5c356f35d</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:16 +0000</pubDate>
-      <description>NixOS Minimal 26.05.14234.f1e5c356f35d (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 24a8a462db3e08dd403a80031d6a151645dfe8eff4c3459e9acaf2d98b796a00
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.14234.f1e5c356f35d (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.14234.f1e5c356f35d</guid>
-      <pubDate>Sat, 14 Nov 2026 13:38:16 +0000</pubDate>
-      <description>NixOS Graphical 26.05.14234.f1e5c356f35d (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: d398586b303965d1646c0c0926d30d21dc2ae7250845f5d3ed19cad41b398ace
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
       <title>Pop!_OS (NVIDIA) 24.04-29 (x86_64)</title>
       <link>https://iso.pop-os.org/24.04/amd64/nvidia/29/pop-os_24.04_amd64_nvidia_29.iso</link>
       <guid isPermaLink="false">pop-os:nvidia:24.04-29</guid>
@@ -405,66 +768,6 @@ sha256: e0e5644c274976f7c66314d6c3d20d5d33f3d3bdf420cd0c7c98b3a4c1d5c214
 Verify: checksum</description>
       <enclosure url="https://iso.pop-os.org/24.04/amd64/nvidia/29/pop-os_24.04_amd64_nvidia_29.iso" type="application/x-iso9660-image" length="3674210304" />
       <category>pop-os</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:43:04 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20261111 (x86_64)
-Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: 52ee2cb33c05da3333fb671f14128a731aec3abb331c607103cf004a8eebbaf6
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:43:03 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20261111 (x86_64)
-Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 06e2ca497c07030050e14542ee62c638248100286db634ba902db83e97754167
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:43:01 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20261111 (x86_64)
-Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 21288177efd7b6838a9efbc4064efe340ebbbc3c22d96d00b8efc8c429208994
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:43:00 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20261111 (x86_64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: ac506235a84a9b63ac92a8ddc126f19c72f02f28a0e95c269c99e85a856c2b28
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
     </item>
     <item>
       <title>openSUSE MicroOS DVD Snapshot20261111 (aarch64)</title>
@@ -479,21 +782,6 @@ Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD48566
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE MicroOS DVD Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:42:58 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20261111 (x86_64)
-Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: adf1651965771e401ef8e35486d12f0a5a3a0bd918210dc0cb0d539a32eb44d4
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
@@ -515,24 +803,6 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed NET Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:42:56 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20261111 (x86_64)
-Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 8cf4356064dfcc4c199fef95c3eff16c270f41a934e75896363768753de800ea
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: ef8b5e60df1dbb08ac9e8e5ac4abfc8a786af439
-Magnet: magnet:?xt=urn:btih:ef8b5e60df1dbb08ac9e8e5ac4abfc8a786af439&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
       <title>openSUSE Tumbleweed DVD Snapshot20261111 (aarch64)</title>
       <link>https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso</link>
       <guid isPermaLink="false">opensuse:tumbleweed-dvd:aarch64:Snapshot20261111</guid>
@@ -548,24 +818,6 @@ Infohash: 89eed68360efbe0ea91102bc461a8b9693d6210f
 Magnet: magnet:?xt=urn:btih:89eed68360efbe0ea91102bc461a8b9693d6210f&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261111-Media.iso" type="application/x-iso9660-image" length="0" />
-      <category>opensuse</category>
-    </item>
-    <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20261111 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261111</guid>
-      <pubDate>Fri, 13 Nov 2026 14:42:54 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20261111 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso
-sha256: 5a824aa28c99ad0293e339f22d1fa1af52bff50d2636ec440f43afdddbc4c7b7
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.torrent
-Infohash: 04f80f75d0807973940048d69c2df1c3fdefe775
-Magnet: magnet:?xt=urn:btih:04f80f75d0807973940048d69c2df1c3fdefe775&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
@@ -642,33 +894,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
-    </item>
-    <item>
-      <title>Tails 7.17 (x86_64)</title>
-      <link>https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.iso</link>
-      <guid isPermaLink="false">tails:iso:7.17</guid>
-      <pubDate>Wed, 11 Nov 2026 14:33:24 +0000</pubDate>
-      <description>Tails 7.17 (x86_64)
-Filename: tails-amd64-7.17.iso
-Signature: https://tails.net/torrents/files/tails-amd64-7.17.iso.sig
-Signing-key: https://tails.net/tails-signing.key
-Key-fingerprint: A490D0F4D311A4153E2BB7CADBB802B258ACD84F
-Verify: gpg
-WARNING: no published checksum — integrity unverifiable</description>
-      <enclosure url="https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.iso" type="application/x-iso9660-image" length="0" />
-      <category>tails</category>
-    </item>
-    <item>
-      <title>Bluestar Linux SonicDE 7.2.15-1-2026.11.10 (x86_64)</title>
-      <link>https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso/download</link>
-      <guid isPermaLink="false">bluestar:sonicde:7.2.15-1-2026.11.10</guid>
-      <pubDate>Wed, 11 Nov 2026 05:49:43 +0000</pubDate>
-      <description>Bluestar Linux SonicDE 7.2.15-1-2026.11.10 (x86_64)
-Filename: bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso
-md5: d90de653a169ea64724a621c73e68d81
-Verify: checksum</description>
-      <enclosure url="https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>bluestar</category>
     </item>
     <item>
       <title>CentOS Stream DVD 20261106.0 (s390x)</title>
@@ -3077,186 +3302,6 @@ Verify: gpg</description>
       <category>proxmox</category>
     </item>
     <item>
-      <title>Rocky Linux DVD 10.2 (s390x)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-dvd1.iso</link>
-      <guid isPermaLink="false">rocky:dvd:s390x:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
-      <description>Rocky Linux DVD 10.2 (s390x)
-Filename: Rocky-10.2-s390x-dvd1.iso
-sha256: 52e5cab95904d0cc15b4f4c7762d1e31251351d41d96fbb217cb3bb59da424ce
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux DVD 10.2 (riscv64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-dvd1.iso</link>
-      <guid isPermaLink="false">rocky:dvd:riscv64:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:32 +0000</pubDate>
-      <description>Rocky Linux DVD 10.2 (riscv64)
-Filename: Rocky-10.2-riscv64-dvd1.iso
-sha256: 8b4710a427d1c8d17a787d9d59d0f19c384b92140a3d151d26ea030a6158ec50
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux DVD 10.2 (ppc64le)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-dvd1.iso</link>
-      <guid isPermaLink="false">rocky:dvd:ppc64le:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:31 +0000</pubDate>
-      <description>Rocky Linux DVD 10.2 (ppc64le)
-Filename: Rocky-10.2-ppc64le-dvd1.iso
-sha256: fe587686b74a3639402d909b4ff3da410d5f45839606b384860c030cdd97db2f
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux DVD 10.2 (aarch64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-dvd1.iso</link>
-      <guid isPermaLink="false">rocky:dvd:aarch64:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:31 +0000</pubDate>
-      <description>Rocky Linux DVD 10.2 (aarch64)
-Filename: Rocky-10.2-aarch64-dvd1.iso
-sha256: 3b8253987604df1bc5e1c33c838ff3ee9ce4a8f02ed9e27e300ecff58c0c9588
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux minimal 10.2 (s390x)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-minimal.iso</link>
-      <guid isPermaLink="false">rocky:minimal:s390x:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:30 +0000</pubDate>
-      <description>Rocky Linux minimal 10.2 (s390x)
-Filename: Rocky-10.2-s390x-minimal.iso
-sha256: 23db96776c6662a146ebc6af26e8c9ace4ff1ec3b173cf16288b5142bcb290f5
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-minimal.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux minimal 10.2 (riscv64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-minimal.iso</link>
-      <guid isPermaLink="false">rocky:minimal:riscv64:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:30 +0000</pubDate>
-      <description>Rocky Linux minimal 10.2 (riscv64)
-Filename: Rocky-10.2-riscv64-minimal.iso
-sha256: 95d6d9eb18734a34cc2bad046a3f8f64e6aa76837fd186f2a1ca948a79ed6bd1
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-minimal.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux minimal 10.2 (ppc64le)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-minimal.iso</link>
-      <guid isPermaLink="false">rocky:minimal:ppc64le:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:29 +0000</pubDate>
-      <description>Rocky Linux minimal 10.2 (ppc64le)
-Filename: Rocky-10.2-ppc64le-minimal.iso
-sha256: 4fa402c32141d4f11f937932669eabeba0ee2d00c40ea91949f4abf959ef28a3
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-minimal.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux minimal 10.2 (aarch64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-minimal.iso</link>
-      <guid isPermaLink="false">rocky:minimal:aarch64:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:29 +0000</pubDate>
-      <description>Rocky Linux minimal 10.2 (aarch64)
-Filename: Rocky-10.2-aarch64-minimal.iso
-sha256: 1d1c21199df32f6d17eedb4f713ee0d089b49294401a364b640fcf4ffab45f35
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-minimal.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux boot 10.2 (s390x)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-boot.iso</link>
-      <guid isPermaLink="false">rocky:boot:s390x:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:28 +0000</pubDate>
-      <description>Rocky Linux boot 10.2 (s390x)
-Filename: Rocky-10.2-s390x-boot.iso
-sha256: 40cfb90d9a33c5ebe32987f09d2f0f1b6558a80ab7a60f042914839ff3cb55f2
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux boot 10.2 (riscv64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-boot.iso</link>
-      <guid isPermaLink="false">rocky:boot:riscv64:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:28 +0000</pubDate>
-      <description>Rocky Linux boot 10.2 (riscv64)
-Filename: Rocky-10.2-riscv64-boot.iso
-sha256: 5b0bed04197961440be649ccd9f87795c398dad8f36046444353fb8afb811ac4
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux boot 10.2 (ppc64le)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-boot.iso</link>
-      <guid isPermaLink="false">rocky:boot:ppc64le:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:27 +0000</pubDate>
-      <description>Rocky Linux boot 10.2 (ppc64le)
-Filename: Rocky-10.2-ppc64le-boot.iso
-sha256: 2d30723555598a5f60d55d831c7b69065a1c5b310ecce38df4c13fb4f35db045
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux boot 10.2 (aarch64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-boot.iso</link>
-      <guid isPermaLink="false">rocky:boot:aarch64:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 21:47:27 +0000</pubDate>
-      <description>Rocky Linux boot 10.2 (aarch64)
-Filename: Rocky-10.2-aarch64-boot.iso
-sha256: 33c2d3dfd5f947b3201478180b549bb2995bd9573c2776b384e5ec1dd47326c0
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/aarch64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
       <title>Void Linux Xfce 20250202 (i686)</title>
       <link>https://repo-default.voidlinux.org/live/current/void-live-i686-20250202-xfce.iso</link>
       <guid isPermaLink="false">void:xfce:i686:20250202</guid>
@@ -3376,51 +3421,6 @@ sha256: 359136c2af73e03da6f15ad59f0c67bc561ca8b69631d78bfb8f2225e2c9a5ef
 Verify: checksum</description>
       <enclosure url="https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-arm64-aarch64-bootonly.iso" type="application/x-iso9660-image" length="0" />
       <category>freebsd</category>
-    </item>
-    <item>
-      <title>Rocky Linux minimal 10.2 (x86_64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso</link>
-      <guid isPermaLink="false">rocky:minimal:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 17:03:26 +0000</pubDate>
-      <description>Rocky Linux minimal 10.2 (x86_64)
-Filename: Rocky-10.2-x86_64-minimal.iso
-sha256: aac6ac3ce781b91a91ce78463405f66c611a5dca4b3840c79e5e01d97302f6c8
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux DVD 10.2 (x86_64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso</link>
-      <guid isPermaLink="false">rocky:dvd:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 17:03:26 +0000</pubDate>
-      <description>Rocky Linux DVD 10.2 (x86_64)
-Filename: Rocky-10.2-x86_64-dvd1.iso
-sha256: 16ca9c96cdb221ba6e1f68579f21bd69fd8da81c6a921d9068949796f91c8feb
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
-    </item>
-    <item>
-      <title>Rocky Linux boot 10.2 (x86_64)</title>
-      <link>https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso</link>
-      <guid isPermaLink="false">rocky:boot:10.2</guid>
-      <pubDate>Sun, 12 Jul 2026 17:03:25 +0000</pubDate>
-      <description>Rocky Linux boot 10.2 (x86_64)
-Filename: Rocky-10.2-x86_64-boot.iso
-sha256: bf3a75907948563d0c11f3d1b8546ee9216e18a3ea2dc0a67eb4c45452e210f9
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/x86_64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</description>
-      <enclosure url="https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso" type="application/x-iso9660-image" length="0" />
-      <category>rocky</category>
     </item>
     <item>
       <title>Proxmox Backup Server 4.2-1 (x86_64)</title>

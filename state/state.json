@@ -588,16 +588,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Aurora NVIDIA Open stable-20261113.1 (x86_64)",
+      "title": "Aurora NVIDIA Open stable-20261117.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "stable-20261113.1"
+      "version": "stable-20261117.1"
     },
-    "seen": "2026-11-14T13:38:20+00:00",
-    "version": "stable-20261113.1"
+    "seen": "2026-11-17T16:09:15+00:00",
+    "version": "stable-20261117.1"
   },
   "aurora:stable": {
     "hash": "1b21c48be5c3ed300880b730b000c7408cc3b510aaa6aa4482d7901334198070",
@@ -618,16 +618,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Aurora stable-20261113.1 (x86_64)",
+      "title": "Aurora stable-20261117.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "stable",
-      "version": "stable-20261113.1"
+      "version": "stable-20261117.1"
     },
-    "seen": "2026-11-14T13:38:20+00:00",
-    "version": "stable-20261113.1"
+    "seen": "2026-11-17T16:09:15+00:00",
+    "version": "stable-20261117.1"
   },
   "batocera:x86_64": {
     "hash": "0c365dc3c17b05a4b276c579168b01da",
@@ -678,16 +678,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Deck 45.20261115 (x86_64)",
+      "title": "Bazzite Deck 45.20261117.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "deck",
-      "version": "45.20261115"
+      "version": "45.20261117.1"
     },
-    "seen": "2026-11-16T15:55:56+00:00",
-    "version": "45.20261115"
+    "seen": "2026-11-17T16:09:13+00:00",
+    "version": "45.20261117.1"
   },
   "bazzite:desktop": {
     "hash": "9c8d06cd8e57f2274678edeb14b4b13a79b8117c70571a65199919a66305b5c7",
@@ -708,16 +708,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite Desktop 45.20261115 (x86_64)",
+      "title": "Bazzite Desktop 45.20261117.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "desktop",
-      "version": "45.20261115"
+      "version": "45.20261117.1"
     },
-    "seen": "2026-11-16T15:55:56+00:00",
-    "version": "45.20261115"
+    "seen": "2026-11-17T16:09:12+00:00",
+    "version": "45.20261117.1"
   },
   "bazzite:nvidia-open": {
     "hash": "85e701c0f53189b0fa32797ffe8144202dcaa8db6c7692fd4677f615537b24b8",
@@ -738,16 +738,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bazzite NVIDIA Open 45.20261115 (x86_64)",
+      "title": "Bazzite NVIDIA Open 45.20261117.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "nvidia-open",
-      "version": "45.20261115"
+      "version": "45.20261117.1"
     },
-    "seen": "2026-11-16T15:55:57+00:00",
-    "version": "45.20261115"
+    "seen": "2026-11-17T16:09:13+00:00",
+    "version": "45.20261117.1"
   },
   "bluefin:stable": {
     "hash": "fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28",
@@ -768,76 +768,76 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bluefin stable-20261111 (x86_64)",
+      "title": "Bluefin stable-20261117 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "stable",
-      "version": "stable-20261111"
+      "version": "stable-20261117"
     },
-    "seen": "2026-11-14T13:38:19+00:00",
-    "version": "stable-20261111"
+    "seen": "2026-11-17T16:09:14+00:00",
+    "version": "stable-20261117"
   },
   "bluestar:default": {
-    "hash": "1559c2b954cb4c2ed9a5a5f05c6facd3",
+    "hash": "68f08530590c78b97bd7b8a9a5de7bd8",
     "release": {
       "arch": "x86_64",
-      "checksum": "1559c2b954cb4c2ed9a5a5f05c6facd3",
+      "checksum": "68f08530590c78b97bd7b8a9a5de7bd8",
       "checksum_algo": "md5",
       "distro": "bluestar",
-      "download_url": "https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.3.4-1-2026.11.14-x86_64.iso/download",
-      "filename": "bslx-plasma-7.3.4-1-2026.11.14-x86_64.iso",
+      "download_url": "https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-plasma-7.3.4-2-2026.11.16-x86_64.iso/download",
+      "filename": "bslx-plasma-7.3.4-2-2026.11.16-x86_64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://bluestarlinux.sourceforge.net/",
-      "published": "2026-11-15T03:30:04+00:00",
+      "published": "2026-11-17T05:27:59+00:00",
       "signature_target": null,
       "signature_url": null,
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bluestar Linux Plasma 7.3.4-1-2026.11.14 (x86_64)",
+      "title": "Bluestar Linux Plasma 7.3.4-2-2026.11.16 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "default",
-      "version": "7.3.4-1-2026.11.14"
+      "version": "7.3.4-2-2026.11.16"
     },
-    "seen": "2026-11-15T14:01:54+00:00",
-    "version": "7.3.4-1-2026.11.14"
+    "seen": "2026-11-17T16:09:53+00:00",
+    "version": "7.3.4-2-2026.11.16"
   },
   "bluestar:sonicde": {
-    "hash": "d90de653a169ea64724a621c73e68d81",
+    "hash": "c5b6e068c18d2985b90dfb9b4eaef6ed",
     "release": {
       "arch": "x86_64",
-      "checksum": "d90de653a169ea64724a621c73e68d81",
+      "checksum": "c5b6e068c18d2985b90dfb9b4eaef6ed",
       "checksum_algo": "md5",
       "distro": "bluestar",
-      "download_url": "https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso/download",
-      "filename": "bslx-sonicde-7.2.15-1-2026.11.10-x86_64.iso",
+      "download_url": "https://sourceforge.net/projects/bluestarlinux/files/distro/bslx-sonicde-7.3.4-2-2026.11.16-x86_64.iso/download",
+      "filename": "bslx-sonicde-7.3.4-2-2026.11.16-x86_64.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://bluestarlinux.sourceforge.net/",
-      "published": "2026-11-11T05:49:43+00:00",
+      "published": "2026-11-17T05:35:53+00:00",
       "signature_target": null,
       "signature_url": null,
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "Bluestar Linux SonicDE 7.2.15-1-2026.11.10 (x86_64)",
+      "title": "Bluestar Linux SonicDE 7.3.4-2-2026.11.16 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "sonicde",
-      "version": "7.2.15-1-2026.11.10"
+      "version": "7.3.4-2-2026.11.16"
     },
-    "seen": "2026-11-11T14:34:06+00:00",
-    "version": "7.2.15-1-2026.11.10"
+    "seen": "2026-11-17T16:09:54+00:00",
+    "version": "7.3.4-2-2026.11.16"
   },
   "bluestar:sonicde-580xx": {
     "hash": "4f97c14dd92f184634a778d48273fe4e",
@@ -4440,10 +4440,10 @@
     "version": "11.1"
   },
   "nixos:graphical": {
-    "hash": "d398586b303965d1646c0c0926d30d21dc2ae7250845f5d3ed19cad41b398ace",
+    "hash": "b89d21478e6e6b1bf0e7701a1a2ae9e0146fec389c38e7f070dcc119ee387dc3",
     "release": {
       "arch": "x86_64",
-      "checksum": "d398586b303965d1646c0c0926d30d21dc2ae7250845f5d3ed19cad41b398ace",
+      "checksum": "b89d21478e6e6b1bf0e7701a1a2ae9e0146fec389c38e7f070dcc119ee387dc3",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso",
@@ -4458,22 +4458,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.14234.f1e5c356f35d (x86_64)",
+      "title": "NixOS Graphical 26.05.14561.b349185bb79c (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.14234.f1e5c356f35d"
+      "version": "26.05.14561.b349185bb79c"
     },
-    "seen": "2026-11-14T13:38:16+00:00",
-    "version": "26.05.14234.f1e5c356f35d"
+    "seen": "2026-11-17T16:09:11+00:00",
+    "version": "26.05.14561.b349185bb79c"
   },
   "nixos:graphical:aarch64": {
-    "hash": "075badc9456bdc1b5db64ca2c43eb9b6dd54e831ecbc979e3580dc03632ad75a",
+    "hash": "1d4a5fc8d7cfacd390d62d437fe9de71de45a46d3998c41b4ba49b3dcac3800c",
     "release": {
       "arch": "aarch64",
-      "checksum": "075badc9456bdc1b5db64ca2c43eb9b6dd54e831ecbc979e3580dc03632ad75a",
+      "checksum": "1d4a5fc8d7cfacd390d62d437fe9de71de45a46d3998c41b4ba49b3dcac3800c",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso",
@@ -4488,22 +4488,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Graphical 26.05.14234.f1e5c356f35d (aarch64)",
+      "title": "NixOS Graphical 26.05.14561.b349185bb79c (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "graphical",
-      "version": "26.05.14234.f1e5c356f35d"
+      "version": "26.05.14561.b349185bb79c"
     },
-    "seen": "2026-11-14T13:38:17+00:00",
-    "version": "26.05.14234.f1e5c356f35d"
+    "seen": "2026-11-17T16:09:11+00:00",
+    "version": "26.05.14561.b349185bb79c"
   },
   "nixos:minimal": {
-    "hash": "24a8a462db3e08dd403a80031d6a151645dfe8eff4c3459e9acaf2d98b796a00",
+    "hash": "4f449a9bd68228e2885e898097ea427b167ad78dcca1b04b0e06c9ba451b38cd",
     "release": {
       "arch": "x86_64",
-      "checksum": "24a8a462db3e08dd403a80031d6a151645dfe8eff4c3459e9acaf2d98b796a00",
+      "checksum": "4f449a9bd68228e2885e898097ea427b167ad78dcca1b04b0e06c9ba451b38cd",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso",
@@ -4518,22 +4518,22 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.14234.f1e5c356f35d (x86_64)",
+      "title": "NixOS Minimal 26.05.14561.b349185bb79c (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.14234.f1e5c356f35d"
+      "version": "26.05.14561.b349185bb79c"
     },
-    "seen": "2026-11-14T13:38:16+00:00",
-    "version": "26.05.14234.f1e5c356f35d"
+    "seen": "2026-11-17T16:09:10+00:00",
+    "version": "26.05.14561.b349185bb79c"
   },
   "nixos:minimal:aarch64": {
-    "hash": "0a76b55998657c320070804a611af9b2b7ce35d30c93c86b79d5c24e7c510752",
+    "hash": "658b7356cc2fd5d6a280f819bdc3a7eececaa9c03b1c67b494a8777bedf303ef",
     "release": {
       "arch": "aarch64",
-      "checksum": "0a76b55998657c320070804a611af9b2b7ce35d30c93c86b79d5c24e7c510752",
+      "checksum": "658b7356cc2fd5d6a280f819bdc3a7eececaa9c03b1c67b494a8777bedf303ef",
       "checksum_algo": "sha256",
       "distro": "nixos",
       "download_url": "https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso",
@@ -4548,16 +4548,16 @@
       "signing_key_fingerprint": null,
       "signing_key_url": null,
       "size": null,
-      "title": "NixOS Minimal 26.05.14234.f1e5c356f35d (aarch64)",
+      "title": "NixOS Minimal 26.05.14561.b349185bb79c (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "26.05.14234.f1e5c356f35d"
+      "version": "26.05.14561.b349185bb79c"
     },
-    "seen": "2026-11-14T13:38:16+00:00",
-    "version": "26.05.14234.f1e5c356f35d"
+    "seen": "2026-11-17T16:09:11+00:00",
+    "version": "26.05.14561.b349185bb79c"
   },
   "nobara:gnome": {
     "hash": "47087299d03ecedd67fd3fc6d69803118991caeb26faace9f39429f14ffdb2fd",
@@ -5100,10 +5100,10 @@
     "version": "16.1-60.2"
   },
   "opensuse:microos-dvd": {
-    "hash": "adf1651965771e401ef8e35486d12f0a5a3a0bd918210dc0cb0d539a32eb44d4",
+    "hash": "b481f14c22ef1d12b8e40047481e09bc163979e7d4b69c87508e746d513f4ae1",
     "release": {
       "arch": "x86_64",
-      "checksum": "adf1651965771e401ef8e35486d12f0a5a3a0bd918210dc0cb0d539a32eb44d4",
+      "checksum": "b481f14c22ef1d12b8e40047481e09bc163979e7d4b69c87508e746d513f4ae1",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso",
@@ -5118,16 +5118,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE MicroOS DVD Snapshot20261111 (x86_64)",
+      "title": "openSUSE MicroOS DVD Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "microos-dvd",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:42:58+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:08:00+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:microos-dvd:aarch64": {
     "hash": "63b123e679b6fd73763137a996a7dc7f6bc787e2fe59058427847cbbd3e9b104",
@@ -5160,34 +5160,34 @@
     "version": "Snapshot20261111"
   },
   "opensuse:tumbleweed-dvd": {
-    "hash": "5a824aa28c99ad0293e339f22d1fa1af52bff50d2636ec440f43afdddbc4c7b7",
+    "hash": "ea297801ccde8eb755eb6dd0855c33f675151925c670e15c3f9974e2ea00296f",
     "release": {
       "arch": "x86_64",
-      "checksum": "5a824aa28c99ad0293e339f22d1fa1af52bff50d2636ec440f43afdddbc4c7b7",
+      "checksum": "ea297801ccde8eb755eb6dd0855c33f675151925c670e15c3f9974e2ea00296f",
       "checksum_algo": "sha256",
       "distro": "opensuse",
-      "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso",
-      "filename": "openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso",
-      "info_hash": "04f80f75d0807973940048d69c2df1c3fdefe775",
-      "magnet_uri": "magnet:?xt=urn:btih:04f80f75d0807973940048d69c2df1c3fdefe775&dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
+      "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso",
+      "filename": "openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso",
+      "info_hash": "dd6b08ed43219a7090db1113c27b706b618eaa62",
+      "magnet_uri": "magnet:?xt=urn:btih:dd6b08ed43219a7090db1113c27b706b618eaa62&dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
       "signature_target": "checksums",
-      "signature_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.sha256.asc",
+      "signature_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso.sha256.asc",
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed DVD Snapshot20261111 (x86_64)",
+      "title": "openSUSE Tumbleweed DVD Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 22810,
-      "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261111-Media.iso.torrent",
+      "torrent_size": 22877,
+      "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261116-Media.iso.torrent",
       "variant": "tumbleweed-dvd",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:42:54+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:07:57+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:tumbleweed-dvd:aarch64": {
     "hash": "5f6eccff01779489f1066b99ac08d8b977bdac4e046e0abc05f68a1da5bf7054",
@@ -5220,10 +5220,10 @@
     "version": "Snapshot20261111"
   },
   "opensuse:tumbleweed-gnome-live": {
-    "hash": "ac506235a84a9b63ac92a8ddc126f19c72f02f28a0e95c269c99e85a856c2b28",
+    "hash": "b235c01ae1d85867c51d952608421b86a4e26c5bc4689c39114e4e72b1b7f73e",
     "release": {
       "arch": "x86_64",
-      "checksum": "ac506235a84a9b63ac92a8ddc126f19c72f02f28a0e95c269c99e85a856c2b28",
+      "checksum": "b235c01ae1d85867c51d952608421b86a4e26c5bc4689c39114e4e72b1b7f73e",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso",
@@ -5238,16 +5238,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed GNOME Live Snapshot20261111 (x86_64)",
+      "title": "openSUSE Tumbleweed GNOME Live Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-gnome-live",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:43:00+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:08:02+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:tumbleweed-gnome-live:aarch64": {
     "hash": "da2dd0618434ccbe62efe82ce7b958ef4a801f994399d808210fe271055cd972",
@@ -5280,10 +5280,10 @@
     "version": "Snapshot20261111"
   },
   "opensuse:tumbleweed-kde-live": {
-    "hash": "21288177efd7b6838a9efbc4064efe340ebbbc3c22d96d00b8efc8c429208994",
+    "hash": "63370b7be0c95a031cfdfab7e27c9077c58a8c8e52ab1a55320f40155a531142",
     "release": {
       "arch": "x86_64",
-      "checksum": "21288177efd7b6838a9efbc4064efe340ebbbc3c22d96d00b8efc8c429208994",
+      "checksum": "63370b7be0c95a031cfdfab7e27c9077c58a8c8e52ab1a55320f40155a531142",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso",
@@ -5298,16 +5298,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed KDE Live Snapshot20261111 (x86_64)",
+      "title": "openSUSE Tumbleweed KDE Live Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-kde-live",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:43:01+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:08:03+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:tumbleweed-kde-live:aarch64": {
     "hash": "e574fef2b484ba166eedeb6e505b6239a1f5deb3ea92acb96d7a9967ae7c97cf",
@@ -5340,16 +5340,16 @@
     "version": "Snapshot20261111"
   },
   "opensuse:tumbleweed-net": {
-    "hash": "8cf4356064dfcc4c199fef95c3eff16c270f41a934e75896363768753de800ea",
+    "hash": "a6fdc215aa3da67791ef1ee5169e5359b5f5605df397bca2792a9674479993f7",
     "release": {
       "arch": "x86_64",
-      "checksum": "8cf4356064dfcc4c199fef95c3eff16c270f41a934e75896363768753de800ea",
+      "checksum": "a6fdc215aa3da67791ef1ee5169e5359b5f5605df397bca2792a9674479993f7",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
       "filename": "openSUSE-Tumbleweed-NET-x86_64-Current.iso",
-      "info_hash": "ef8b5e60df1dbb08ac9e8e5ac4abfc8a786af439",
-      "magnet_uri": "magnet:?xt=urn:btih:ef8b5e60df1dbb08ac9e8e5ac4abfc8a786af439&dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261111-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
+      "info_hash": "be4a1a2bd62153435d93db8428ea76fbc11a720e",
+      "magnet_uri": "magnet:?xt=urn:btih:be4a1a2bd62153435d93db8428ea76fbc11a720e&dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261116-Media.iso&tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce",
       "notes": null,
       "page_url": "https://get.opensuse.org/",
       "published": null,
@@ -5358,16 +5358,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed NET Snapshot20261111 (x86_64)",
+      "title": "openSUSE Tumbleweed NET Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
-      "torrent_size": 2608,
+      "torrent_size": 2635,
       "torrent_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent",
       "variant": "tumbleweed-net",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:42:56+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:07:59+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:tumbleweed-net:aarch64": {
     "hash": "e5391cde53c7637bfdadd3079347803aa28ff256aea52908d0fc492ae073da61",
@@ -5400,10 +5400,10 @@
     "version": "Snapshot20261111"
   },
   "opensuse:tumbleweed-rescue-cd": {
-    "hash": "52ee2cb33c05da3333fb671f14128a731aec3abb331c607103cf004a8eebbaf6",
+    "hash": "bda1d58036e947d09899a350b64779af40a3dbf36821ea77ad5df59f95862743",
     "release": {
       "arch": "x86_64",
-      "checksum": "52ee2cb33c05da3333fb671f14128a731aec3abb331c607103cf004a8eebbaf6",
+      "checksum": "bda1d58036e947d09899a350b64779af40a3dbf36821ea77ad5df59f95862743",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso",
@@ -5418,16 +5418,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed Rescue CD Snapshot20261111 (x86_64)",
+      "title": "openSUSE Tumbleweed Rescue CD Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-rescue-cd",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:43:04+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:08:05+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:tumbleweed-rescue-cd:aarch64": {
     "hash": "eea43d78f810ef0a7bdb4915ff300c12c21bfe53c936007460e2f981e737489b",
@@ -5460,10 +5460,10 @@
     "version": "Snapshot20261111"
   },
   "opensuse:tumbleweed-xfce-live": {
-    "hash": "06e2ca497c07030050e14542ee62c638248100286db634ba902db83e97754167",
+    "hash": "36a0a971addce453212eabed20942f819e74e38187d6342e7539fb94ff5516ab",
     "release": {
       "arch": "x86_64",
-      "checksum": "06e2ca497c07030050e14542ee62c638248100286db634ba902db83e97754167",
+      "checksum": "36a0a971addce453212eabed20942f819e74e38187d6342e7539fb94ff5516ab",
       "checksum_algo": "sha256",
       "distro": "opensuse",
       "download_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso",
@@ -5478,16 +5478,16 @@
       "signing_key_fingerprint": "AD485664E901B867051AB15F35A2F86E29B700A4",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xAD485664E901B867051AB15F35A2F86E29B700A4",
       "size": null,
-      "title": "openSUSE Tumbleweed XFCE Live Snapshot20261111 (x86_64)",
+      "title": "openSUSE Tumbleweed XFCE Live Snapshot20261116 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "tumbleweed-xfce-live",
-      "version": "Snapshot20261111"
+      "version": "Snapshot20261116"
     },
-    "seen": "2026-11-13T14:43:03+00:00",
-    "version": "Snapshot20261111"
+    "seen": "2026-11-17T16:08:04+00:00",
+    "version": "Snapshot20261116"
   },
   "opensuse:tumbleweed-xfce-live:aarch64": {
     "hash": "81855512e518b55c4d78cfc22317f56f35f79431a6941fb6cba901fbb7e5e408",
@@ -6060,14 +6060,14 @@
     "version": "4.3.2"
   },
   "rocky:boot": {
-    "hash": "bf3a75907948563d0c11f3d1b8546ee9216e18a3ea2dc0a67eb4c45452e210f9",
+    "hash": "3018fdb8c0a648dbf3e13798b9afadae4f739b79d817b05d20277cfcb2dd7ada",
     "release": {
       "arch": "x86_64",
-      "checksum": "bf3a75907948563d0c11f3d1b8546ee9216e18a3ea2dc0a67eb4c45452e210f9",
+      "checksum": "3018fdb8c0a648dbf3e13798b9afadae4f739b79d817b05d20277cfcb2dd7ada",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-boot.iso",
-      "filename": "Rocky-10.2-x86_64-boot.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-boot.iso",
+      "filename": "Rocky-10.3-x86_64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6078,26 +6078,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux boot 10.2 (x86_64)",
+      "title": "Rocky Linux boot 10.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T17:03:25+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:08:57+00:00",
+    "version": "10.3"
   },
   "rocky:boot:aarch64": {
-    "hash": "33c2d3dfd5f947b3201478180b549bb2995bd9573c2776b384e5ec1dd47326c0",
+    "hash": "3713f3f4a782c94ecd239c6f756cb18d8a9a287dbf4c5f44e6ad13c8e1b3af6e",
     "release": {
       "arch": "aarch64",
-      "checksum": "33c2d3dfd5f947b3201478180b549bb2995bd9573c2776b384e5ec1dd47326c0",
+      "checksum": "3713f3f4a782c94ecd239c6f756cb18d8a9a287dbf4c5f44e6ad13c8e1b3af6e",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-boot.iso",
-      "filename": "Rocky-10.2-aarch64-boot.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-boot.iso",
+      "filename": "Rocky-10.3-aarch64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6108,26 +6108,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux boot 10.2 (aarch64)",
+      "title": "Rocky Linux boot 10.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:27+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:08:58+00:00",
+    "version": "10.3"
   },
   "rocky:boot:ppc64le": {
-    "hash": "2d30723555598a5f60d55d831c7b69065a1c5b310ecce38df4c13fb4f35db045",
+    "hash": "5c875fb52136611ba4505536312d9b437767af949734a26a1c5af9c08a15c516",
     "release": {
       "arch": "ppc64le",
-      "checksum": "2d30723555598a5f60d55d831c7b69065a1c5b310ecce38df4c13fb4f35db045",
+      "checksum": "5c875fb52136611ba4505536312d9b437767af949734a26a1c5af9c08a15c516",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-boot.iso",
-      "filename": "Rocky-10.2-ppc64le-boot.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-boot.iso",
+      "filename": "Rocky-10.3-ppc64le-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6138,26 +6138,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux boot 10.2 (ppc64le)",
+      "title": "Rocky Linux boot 10.3 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:27+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:08:58+00:00",
+    "version": "10.3"
   },
   "rocky:boot:riscv64": {
-    "hash": "5b0bed04197961440be649ccd9f87795c398dad8f36046444353fb8afb811ac4",
+    "hash": "c956cbb2508d2bc4494839eed50df4c2312731096c6b0c024d0263ac7356c8e2",
     "release": {
       "arch": "riscv64",
-      "checksum": "5b0bed04197961440be649ccd9f87795c398dad8f36046444353fb8afb811ac4",
+      "checksum": "c956cbb2508d2bc4494839eed50df4c2312731096c6b0c024d0263ac7356c8e2",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-boot.iso",
-      "filename": "Rocky-10.2-riscv64-boot.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-boot.iso",
+      "filename": "Rocky-10.3-riscv64-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6168,26 +6168,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux boot 10.2 (riscv64)",
+      "title": "Rocky Linux boot 10.3 (riscv64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:28+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:08:58+00:00",
+    "version": "10.3"
   },
   "rocky:boot:s390x": {
-    "hash": "40cfb90d9a33c5ebe32987f09d2f0f1b6558a80ab7a60f042914839ff3cb55f2",
+    "hash": "edff150bf1504603a95a50d4b67215eb2dbb655de0f1271ad728a22c04743b6b",
     "release": {
       "arch": "s390x",
-      "checksum": "40cfb90d9a33c5ebe32987f09d2f0f1b6558a80ab7a60f042914839ff3cb55f2",
+      "checksum": "edff150bf1504603a95a50d4b67215eb2dbb655de0f1271ad728a22c04743b6b",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-boot.iso",
-      "filename": "Rocky-10.2-s390x-boot.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-boot.iso",
+      "filename": "Rocky-10.3-s390x-boot.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6198,26 +6198,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux boot 10.2 (s390x)",
+      "title": "Rocky Linux boot 10.3 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "boot",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:28+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:08:59+00:00",
+    "version": "10.3"
   },
   "rocky:dvd": {
-    "hash": "16ca9c96cdb221ba6e1f68579f21bd69fd8da81c6a921d9068949796f91c8feb",
+    "hash": "de2e4426cd5177ff9f4760bfa2b5b4dea44f771dfef5daeffde1680d6223e1d0",
     "release": {
       "arch": "x86_64",
-      "checksum": "16ca9c96cdb221ba6e1f68579f21bd69fd8da81c6a921d9068949796f91c8feb",
+      "checksum": "de2e4426cd5177ff9f4760bfa2b5b4dea44f771dfef5daeffde1680d6223e1d0",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-dvd1.iso",
-      "filename": "Rocky-10.2-x86_64-dvd1.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-dvd1.iso",
+      "filename": "Rocky-10.3-x86_64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6228,26 +6228,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux DVD 10.2 (x86_64)",
+      "title": "Rocky Linux DVD 10.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T17:03:26+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:01+00:00",
+    "version": "10.3"
   },
   "rocky:dvd:aarch64": {
-    "hash": "3b8253987604df1bc5e1c33c838ff3ee9ce4a8f02ed9e27e300ecff58c0c9588",
+    "hash": "a12a68503346e9bf0a513704231821fd539e13d4b1a7afc46f984a2badd81375",
     "release": {
       "arch": "aarch64",
-      "checksum": "3b8253987604df1bc5e1c33c838ff3ee9ce4a8f02ed9e27e300ecff58c0c9588",
+      "checksum": "a12a68503346e9bf0a513704231821fd539e13d4b1a7afc46f984a2badd81375",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-dvd1.iso",
-      "filename": "Rocky-10.2-aarch64-dvd1.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-dvd1.iso",
+      "filename": "Rocky-10.3-aarch64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6258,26 +6258,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux DVD 10.2 (aarch64)",
+      "title": "Rocky Linux DVD 10.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:31+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:01+00:00",
+    "version": "10.3"
   },
   "rocky:dvd:ppc64le": {
-    "hash": "fe587686b74a3639402d909b4ff3da410d5f45839606b384860c030cdd97db2f",
+    "hash": "823e48a22cd489ebd55b8a36ea994ae06b2b25eccdaaec5f38b8c64621071934",
     "release": {
       "arch": "ppc64le",
-      "checksum": "fe587686b74a3639402d909b4ff3da410d5f45839606b384860c030cdd97db2f",
+      "checksum": "823e48a22cd489ebd55b8a36ea994ae06b2b25eccdaaec5f38b8c64621071934",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-dvd1.iso",
-      "filename": "Rocky-10.2-ppc64le-dvd1.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-dvd1.iso",
+      "filename": "Rocky-10.3-ppc64le-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6288,26 +6288,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux DVD 10.2 (ppc64le)",
+      "title": "Rocky Linux DVD 10.3 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:31+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:02+00:00",
+    "version": "10.3"
   },
   "rocky:dvd:riscv64": {
-    "hash": "8b4710a427d1c8d17a787d9d59d0f19c384b92140a3d151d26ea030a6158ec50",
+    "hash": "84ae04509a7512cd9af5b72764a6ee1178ab903e2b2329fc8dcc62fa4d4bdeb8",
     "release": {
       "arch": "riscv64",
-      "checksum": "8b4710a427d1c8d17a787d9d59d0f19c384b92140a3d151d26ea030a6158ec50",
+      "checksum": "84ae04509a7512cd9af5b72764a6ee1178ab903e2b2329fc8dcc62fa4d4bdeb8",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-dvd1.iso",
-      "filename": "Rocky-10.2-riscv64-dvd1.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-dvd1.iso",
+      "filename": "Rocky-10.3-riscv64-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6318,26 +6318,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux DVD 10.2 (riscv64)",
+      "title": "Rocky Linux DVD 10.3 (riscv64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:32+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:02+00:00",
+    "version": "10.3"
   },
   "rocky:dvd:s390x": {
-    "hash": "52e5cab95904d0cc15b4f4c7762d1e31251351d41d96fbb217cb3bb59da424ce",
+    "hash": "3108f5e43c2b9c111d8d7fef0f86a6e0535ac83e02ff077dfaf8720dc8db9149",
     "release": {
       "arch": "s390x",
-      "checksum": "52e5cab95904d0cc15b4f4c7762d1e31251351d41d96fbb217cb3bb59da424ce",
+      "checksum": "3108f5e43c2b9c111d8d7fef0f86a6e0535ac83e02ff077dfaf8720dc8db9149",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-dvd1.iso",
-      "filename": "Rocky-10.2-s390x-dvd1.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-dvd1.iso",
+      "filename": "Rocky-10.3-s390x-dvd1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6348,26 +6348,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux DVD 10.2 (s390x)",
+      "title": "Rocky Linux DVD 10.3 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "dvd",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:32+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:02+00:00",
+    "version": "10.3"
   },
   "rocky:minimal": {
-    "hash": "aac6ac3ce781b91a91ce78463405f66c611a5dca4b3840c79e5e01d97302f6c8",
+    "hash": "878a3f92281d3eb91ca9d1a195794d47b5bce4e02a85f351c606709e98481cc4",
     "release": {
       "arch": "x86_64",
-      "checksum": "aac6ac3ce781b91a91ce78463405f66c611a5dca4b3840c79e5e01d97302f6c8",
+      "checksum": "878a3f92281d3eb91ca9d1a195794d47b5bce4e02a85f351c606709e98481cc4",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.2-x86_64-minimal.iso",
-      "filename": "Rocky-10.2-x86_64-minimal.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/x86_64/Rocky-10.3-x86_64-minimal.iso",
+      "filename": "Rocky-10.3-x86_64-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6378,26 +6378,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux minimal 10.2 (x86_64)",
+      "title": "Rocky Linux minimal 10.3 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T17:03:26+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:08:59+00:00",
+    "version": "10.3"
   },
   "rocky:minimal:aarch64": {
-    "hash": "1d1c21199df32f6d17eedb4f713ee0d089b49294401a364b640fcf4ffab45f35",
+    "hash": "8d6c133ce49897e2ca5d29bfa223abd392a19e252887bc92c5f18791e73b2668",
     "release": {
       "arch": "aarch64",
-      "checksum": "1d1c21199df32f6d17eedb4f713ee0d089b49294401a364b640fcf4ffab45f35",
+      "checksum": "8d6c133ce49897e2ca5d29bfa223abd392a19e252887bc92c5f18791e73b2668",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.2-aarch64-minimal.iso",
-      "filename": "Rocky-10.2-aarch64-minimal.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/aarch64/Rocky-10.3-aarch64-minimal.iso",
+      "filename": "Rocky-10.3-aarch64-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6408,26 +6408,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux minimal 10.2 (aarch64)",
+      "title": "Rocky Linux minimal 10.3 (aarch64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:29+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:00+00:00",
+    "version": "10.3"
   },
   "rocky:minimal:ppc64le": {
-    "hash": "4fa402c32141d4f11f937932669eabeba0ee2d00c40ea91949f4abf959ef28a3",
+    "hash": "852cd465883086bb37647c99d7d95cd758069f6067c5fde3209362dab671e244",
     "release": {
       "arch": "ppc64le",
-      "checksum": "4fa402c32141d4f11f937932669eabeba0ee2d00c40ea91949f4abf959ef28a3",
+      "checksum": "852cd465883086bb37647c99d7d95cd758069f6067c5fde3209362dab671e244",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.2-ppc64le-minimal.iso",
-      "filename": "Rocky-10.2-ppc64le-minimal.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/ppc64le/Rocky-10.3-ppc64le-minimal.iso",
+      "filename": "Rocky-10.3-ppc64le-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6438,26 +6438,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux minimal 10.2 (ppc64le)",
+      "title": "Rocky Linux minimal 10.3 (ppc64le)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:29+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:00+00:00",
+    "version": "10.3"
   },
   "rocky:minimal:riscv64": {
-    "hash": "95d6d9eb18734a34cc2bad046a3f8f64e6aa76837fd186f2a1ca948a79ed6bd1",
+    "hash": "ef8d29ad7697ffc9e40fe7db7f6cd4d265c0e7ccca2d8ee90097770dbfd7a6a1",
     "release": {
       "arch": "riscv64",
-      "checksum": "95d6d9eb18734a34cc2bad046a3f8f64e6aa76837fd186f2a1ca948a79ed6bd1",
+      "checksum": "ef8d29ad7697ffc9e40fe7db7f6cd4d265c0e7ccca2d8ee90097770dbfd7a6a1",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.2-riscv64-minimal.iso",
-      "filename": "Rocky-10.2-riscv64-minimal.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-minimal.iso",
+      "filename": "Rocky-10.3-riscv64-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6468,26 +6468,26 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux minimal 10.2 (riscv64)",
+      "title": "Rocky Linux minimal 10.3 (riscv64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:30+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:00+00:00",
+    "version": "10.3"
   },
   "rocky:minimal:s390x": {
-    "hash": "23db96776c6662a146ebc6af26e8c9ace4ff1ec3b173cf16288b5142bcb290f5",
+    "hash": "b234eeac73eee3d4ad6329592e6590ecfb1d5e430cc06027f39938d9836d79d5",
     "release": {
       "arch": "s390x",
-      "checksum": "23db96776c6662a146ebc6af26e8c9ace4ff1ec3b173cf16288b5142bcb290f5",
+      "checksum": "b234eeac73eee3d4ad6329592e6590ecfb1d5e430cc06027f39938d9836d79d5",
       "checksum_algo": "sha256",
       "distro": "rocky",
-      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.2-s390x-minimal.iso",
-      "filename": "Rocky-10.2-s390x-minimal.iso",
+      "download_url": "https://download.rockylinux.org/pub/rocky/10/isos/s390x/Rocky-10.3-s390x-minimal.iso",
+      "filename": "Rocky-10.3-s390x-minimal.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
@@ -6498,46 +6498,46 @@
       "signing_key_fingerprint": "FC226859C0860BF0DDB95B085B106C736FEDFC85",
       "signing_key_url": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85",
       "size": null,
-      "title": "Rocky Linux minimal 10.2 (s390x)",
+      "title": "Rocky Linux minimal 10.3 (s390x)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "minimal",
-      "version": "10.2"
+      "version": "10.3"
     },
-    "seen": "2026-07-12T21:47:30+00:00",
-    "version": "10.2"
+    "seen": "2026-11-17T16:09:01+00:00",
+    "version": "10.3"
   },
   "tails:iso": {
-    "hash": "b3ce1c18068d522fab6d653c6f7f2236c281a84dd3960668102df23f46b11375",
+    "hash": "f3b60b95a350c3d8b042476e8cde078e8b93d0366ad83a053b6fe177078a660b",
     "release": {
       "arch": "x86_64",
       "checksum": null,
       "checksum_algo": null,
       "distro": "tails",
-      "download_url": "https://download.tails.net/tails/stable/tails-amd64-7.17/tails-amd64-7.17.iso",
-      "filename": "tails-amd64-7.17.iso",
+      "download_url": "https://download.tails.net/tails/stable/tails-amd64-7.17.1/tails-amd64-7.17.1.iso",
+      "filename": "tails-amd64-7.17.1.iso",
       "info_hash": null,
       "magnet_uri": null,
       "notes": null,
       "page_url": "https://tails.net/",
       "published": null,
       "signature_target": "image",
-      "signature_url": "https://tails.net/torrents/files/tails-amd64-7.17.iso.sig",
+      "signature_url": "https://tails.net/torrents/files/tails-amd64-7.17.1.iso.sig",
       "signing_key_fingerprint": "A490D0F4D311A4153E2BB7CADBB802B258ACD84F",
       "signing_key_url": "https://tails.net/tails-signing.key",
       "size": null,
-      "title": "Tails 7.17 (x86_64)",
+      "title": "Tails 7.17.1 (x86_64)",
       "torrent_checksum": null,
       "torrent_checksum_algo": null,
       "torrent_size": null,
       "torrent_url": null,
       "variant": "iso",
-      "version": "7.17"
+      "version": "7.17.1"
     },
-    "seen": "2026-11-11T14:33:24+00:00",
-    "version": "7.17"
+    "seen": "2026-11-17T16:08:18+00:00",
+    "version": "7.17.1"
   },
   "truenas:scale": {
     "hash": "af5c8cea73d6258429aa0cad4b1a30732bd85db36b1ce9ce14a55be8f419d7bc",
