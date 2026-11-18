@@ -4,7 +4,21 @@
   <title>Distro ISO Feed — freebsd</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/freebsd.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-07-12T21:34:50+00:00</updated>
+  <updated>2026-11-18T15:47:59+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/disc1/15.0</id>
+    <title>FreeBSD disc1 15.0 (x86_64)</title>
+    <updated>2026-11-18T15:47:59+00:00</updated>
+    <published>2026-11-18T15:47:59+00:00</published>
+    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
+    <link href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/15.0/FreeBSD-15.0-RELEASE-amd64-disc1.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="freebsd" label="distro" />
+    <category term="disc1" label="variant" />
+    <summary type="text">FreeBSD disc1 15.0 (x86_64)
+Filename: FreeBSD-15.0-RELEASE-amd64-disc1.iso
+sha256: cc73a14d4b1cfada880b78deb0b94ae0f439167418c32a6708f68f79563cb50c
+Verify: checksum</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/dvd1:aarch64/15.1</id>
     <title>FreeBSD dvd1 15.1 (aarch64)</title>
@@ -59,20 +73,6 @@ Verify: checksum</summary>
     <summary type="text">FreeBSD dvd1 15.1 (x86_64)
 Filename: FreeBSD-15.1-RELEASE-amd64-dvd1.iso
 sha256: 027504262c65e096d78bd345d74905a8a7216bbb3c6155d55634ae8328f76c5d
-Verify: checksum</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/freebsd/disc1/15.1</id>
-    <title>FreeBSD disc1 15.1 (x86_64)</title>
-    <updated>2026-07-09T23:40:15+00:00</updated>
-    <published>2026-07-09T23:40:15+00:00</published>
-    <link href="https://www.freebsd.org/where/" rel="alternate" type="text/html" />
-    <link href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/15.1/FreeBSD-15.1-RELEASE-amd64-disc1.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="freebsd" label="distro" />
-    <category term="disc1" label="variant" />
-    <summary type="text">FreeBSD disc1 15.1 (x86_64)
-Filename: FreeBSD-15.1-RELEASE-amd64-disc1.iso
-sha256: fa27646f05a1440fd26ffbb85e06a50bc86e128242a4e9cb7bb3ea76e1aa5fd9
 Verify: checksum</summary>
   </entry>
   <entry>
