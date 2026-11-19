@@ -4,7 +4,41 @@
   <title>Distro ISO Feed — rocky</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/rocky.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-11-17T16:09:02+00:00</updated>
+  <updated>2026-11-19T15:51:04+00:00</updated>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/minimal:riscv64/10.3</id>
+    <title>Rocky Linux minimal 10.3 (riscv64)</title>
+    <updated>2026-11-19T15:51:04+00:00</updated>
+    <published>2026-11-19T15:51:04+00:00</published>
+    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="rocky" label="distro" />
+    <category term="minimal" label="variant" />
+    <summary type="text">Rocky Linux minimal 10.3 (riscv64)
+Filename: Rocky-10.3-riscv64-minimal.iso
+sha256: a43a01f9347ed3d4a6e1057b1afb3308653ba56f02b8b42b03beed1af3694a09
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/boot:riscv64/10.3</id>
+    <title>Rocky Linux boot 10.3 (riscv64)</title>
+    <updated>2026-11-19T15:51:03+00:00</updated>
+    <published>2026-11-19T15:51:03+00:00</published>
+    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
+    <link href="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="rocky" label="distro" />
+    <category term="boot" label="variant" />
+    <summary type="text">Rocky Linux boot 10.3 (riscv64)
+Filename: Rocky-10.3-riscv64-boot.iso
+sha256: 274c0c524faa0ba48bb20ef7e325e2a730d4f876dfee550e2bd04f0e313c9676
+Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
+Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
+Verify: gpg</summary>
+  </entry>
   <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/dvd:s390x/10.3</id>
     <title>Rocky Linux DVD 10.3 (s390x)</title>
@@ -108,23 +142,6 @@ Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/minimal:riscv64/10.3</id>
-    <title>Rocky Linux minimal 10.3 (riscv64)</title>
-    <updated>2026-11-17T16:09:00+00:00</updated>
-    <published>2026-11-17T16:09:00+00:00</published>
-    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
-    <link href="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-minimal.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="rocky" label="distro" />
-    <category term="minimal" label="variant" />
-    <summary type="text">Rocky Linux minimal 10.3 (riscv64)
-Filename: Rocky-10.3-riscv64-minimal.iso
-sha256: ef8d29ad7697ffc9e40fe7db7f6cd4d265c0e7ccca2d8ee90097770dbfd7a6a1
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/minimal:ppc64le/10.3</id>
     <title>Rocky Linux minimal 10.3 (ppc64le)</title>
     <updated>2026-11-17T16:09:00+00:00</updated>
@@ -188,23 +205,6 @@ Verify: gpg</summary>
 Filename: Rocky-10.3-s390x-boot.iso
 sha256: edff150bf1504603a95a50d4b67215eb2dbb655de0f1271ad728a22c04743b6b
 Signature: https://download.rockylinux.org/pub/rocky/10/isos/s390x/CHECKSUM.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
-Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/rocky/boot:riscv64/10.3</id>
-    <title>Rocky Linux boot 10.3 (riscv64)</title>
-    <updated>2026-11-17T16:08:58+00:00</updated>
-    <published>2026-11-17T16:08:58+00:00</published>
-    <link href="https://rockylinux.org/download" rel="alternate" type="text/html" />
-    <link href="https://download.rockylinux.org/pub/rocky/10/isos/riscv64/Rocky-10.3-riscv64-boot.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="rocky" label="distro" />
-    <category term="boot" label="variant" />
-    <summary type="text">Rocky Linux boot 10.3 (riscv64)
-Filename: Rocky-10.3-riscv64-boot.iso
-sha256: c956cbb2508d2bc4494839eed50df4c2312731096c6b0c024d0263ac7356c8e2
-Signature: https://download.rockylinux.org/pub/rocky/10/isos/riscv64/CHECKSUM.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xFC226859C0860BF0DDB95B085B106C736FEDFC85
 Key-fingerprint: FC226859C0860BF0DDB95B085B106C736FEDFC85
 Verify: gpg</summary>
