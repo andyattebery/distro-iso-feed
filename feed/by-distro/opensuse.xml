@@ -4,39 +4,132 @@
   <title>Distro ISO Feed — opensuse</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/opensuse.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-11-19T15:50:20+00:00</updated>
+  <updated>2026-11-20T15:33:05+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd:aarch64/Snapshot20261117</id>
-    <title>openSUSE Tumbleweed Rescue CD Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:20+00:00</updated>
-    <published>2026-11-19T15:50:20+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-rescue-cd:aarch64/Snapshot20261118</id>
+    <title>openSUSE Tumbleweed Rescue CD Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:33:05+00:00</updated>
+    <published>2026-11-20T15:33:05+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-rescue-cd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20261117 (aarch64)
+    <summary type="text">openSUSE Tumbleweed Rescue CD Snapshot20261118 (aarch64)
 Filename: openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso
-sha256: 38720693e230ffe727abb4d5809aa503fa9915a5e686f5f12d34b0a536630107
+sha256: dd925464d72f10f47bd67a2abd4935614356bba047158df8bebdfe2ea30abdc0
 Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-aarch64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live:aarch64/Snapshot20261117</id>
-    <title>openSUSE Tumbleweed XFCE Live Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:19+00:00</updated>
-    <published>2026-11-19T15:50:19+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-xfce-live:aarch64/Snapshot20261118</id>
+    <title>openSUSE Tumbleweed XFCE Live Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:33:03+00:00</updated>
+    <published>2026-11-20T15:33:03+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-xfce-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20261117 (aarch64)
+    <summary type="text">openSUSE Tumbleweed XFCE Live Snapshot20261118 (aarch64)
 Filename: openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso
-sha256: 3542cd8e4b1cfb134666bda26bef9931dcc78cb5e381575f312d24fe93b2f5e3
+sha256: 032e43846cf16d819c70e554d91d60f90abeb0823c94ee90b4aa27b34b1ce7c4
 Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-aarch64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live:aarch64/Snapshot20261118</id>
+    <title>openSUSE Tumbleweed KDE Live Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:33:02+00:00</updated>
+    <published>2026-11-20T15:33:02+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-kde-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20261118 (aarch64)
+Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
+sha256: 9e4bdb049c03c04c1471e5c683b385c6e2f08fde1a08050dba51977193f56e2d
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live:aarch64/Snapshot20261118</id>
+    <title>openSUSE Tumbleweed GNOME Live Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:33:01+00:00</updated>
+    <published>2026-11-20T15:33:01+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-gnome-live" label="variant" />
+    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20261118 (aarch64)
+Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
+sha256: 9f359d6a18d4f91e4aa4aacde372e937b88858a06354cd1fcfd65d4dd6fc6a9d
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd:aarch64/Snapshot20261118</id>
+    <title>openSUSE MicroOS DVD Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:32:59+00:00</updated>
+    <published>2026-11-20T15:32:59+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <category term="opensuse" label="distro" />
+    <category term="microos-dvd" label="variant" />
+    <summary type="text">openSUSE MicroOS DVD Snapshot20261118 (aarch64)
+Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
+sha256: d5afb78f0f00607e6a052d7b5c9f2a945cd5d7eed28994f7212c0e252480a012
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20261118</id>
+    <title>openSUSE Tumbleweed NET Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:32:58+00:00</updated>
+    <published>2026-11-20T15:32:58+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2826" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-net" label="variant" />
+    <summary type="text">openSUSE Tumbleweed NET Snapshot20261118 (aarch64)
+Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
+sha256: ccced72e856a6d0be0c96069a15048b64e520aba9cefd1b1853562f53f267b67
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
+Infohash: 7af27014958e4ed59a994babe0a8b28b38cca08c
+Magnet: magnet:?xt=urn:btih:7af27014958e4ed59a994babe0a8b28b38cca08c&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261118-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd:aarch64/Snapshot20261118</id>
+    <title>openSUSE Tumbleweed DVD Snapshot20261118 (aarch64)</title>
+    <updated>2026-11-20T15:32:56+00:00</updated>
+    <published>2026-11-20T15:32:56+00:00</published>
+    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261118-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261118-Media.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20828" />
+    <category term="opensuse" label="distro" />
+    <category term="tumbleweed-dvd" label="variant" />
+    <summary type="text">openSUSE Tumbleweed DVD Snapshot20261118 (aarch64)
+Filename: openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261118-Media.iso
+sha256: e26507f379f3e4d407eb28165b06e0dbb803e4bf18a61cea9fd82023726244c1
+Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261118-Media.iso.sha256.asc
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
+Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261118-Media.iso.torrent
+Infohash: 69b7b9eaa9f95a0b7906cb4a026e87bb0318e69b
+Magnet: magnet:?xt=urn:btih:69b7b9eaa9f95a0b7906cb4a026e87bb0318e69b&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261118-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -74,23 +167,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live:aarch64/Snapshot20261117</id>
-    <title>openSUSE Tumbleweed KDE Live Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:18+00:00</updated>
-    <published>2026-11-19T15:50:18+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-kde-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed KDE Live Snapshot20261117 (aarch64)
-Filename: openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso
-sha256: 5bd3c2db7a460c551ad0ab411eda3e13f4f9276f5f068681f0a1b391c76ff00b
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-kde-live/Snapshot20261118</id>
     <title>openSUSE Tumbleweed KDE Live Snapshot20261118 (x86_64)</title>
     <updated>2026-11-19T15:50:17+00:00</updated>
@@ -103,23 +179,6 @@ Verify: gpg</summary>
 Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
 sha256: 52c46f160b2e60652442363c036ee26b7af8582fa79268ab93e1d558d453a971
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-gnome-live:aarch64/Snapshot20261117</id>
-    <title>openSUSE Tumbleweed GNOME Live Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:17+00:00</updated>
-    <published>2026-11-19T15:50:17+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-gnome-live" label="variant" />
-    <summary type="text">openSUSE Tumbleweed GNOME Live Snapshot20261117 (aarch64)
-Filename: openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso
-sha256: 6162f667ea08816ef0a0ca08e95bcf6bf325b2f1387d02c74fab685aa0c53280
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-aarch64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
@@ -142,23 +201,6 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd:aarch64/Snapshot20261117</id>
-    <title>openSUSE MicroOS DVD Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:15+00:00</updated>
-    <published>2026-11-19T15:50:15+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <category term="opensuse" label="distro" />
-    <category term="microos-dvd" label="variant" />
-    <summary type="text">openSUSE MicroOS DVD Snapshot20261117 (aarch64)
-Filename: openSUSE-MicroOS-DVD-aarch64-Current.iso
-sha256: d38926c2fc3cf66a1278da3c842bfc65161e0bd02525c3c3459aac444f4291fc
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-MicroOS-DVD-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/microos-dvd/Snapshot20261118</id>
     <title>openSUSE MicroOS DVD Snapshot20261118 (x86_64)</title>
     <updated>2026-11-19T15:50:15+00:00</updated>
@@ -176,33 +218,13 @@ Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net:aarch64/Snapshot20261117</id>
-    <title>openSUSE Tumbleweed NET Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:14+00:00</updated>
-    <published>2026-11-19T15:50:14+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2832" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-net" label="variant" />
-    <summary type="text">openSUSE Tumbleweed NET Snapshot20261117 (aarch64)
-Filename: openSUSE-Tumbleweed-NET-aarch64-Current.iso
-sha256: ccef166aeeb39fea29b50e3c5440aa7258610b833ff293743f713b23ffd727f1
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-NET-aarch64-Current.iso.torrent
-Infohash: 2e270111d31dfbad2220243d5b3fe69d877b5fad
-Magnet: magnet:?xt=urn:btih:2e270111d31dfbad2220243d5b3fe69d877b5fad&amp;dn=openSUSE-Tumbleweed-NET-aarch64-Snapshot20261117-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
     <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-net/Snapshot20261118</id>
     <title>openSUSE Tumbleweed NET Snapshot20261118 (x86_64)</title>
     <updated>2026-11-19T15:50:13+00:00</updated>
     <published>2026-11-19T15:50:13+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="2628" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-net" label="variant" />
     <summary type="text">openSUSE Tumbleweed NET Snapshot20261118 (x86_64)
@@ -211,27 +233,9 @@ sha256: cb58a4307675a8916cabb500fdf17d5d53b0e0ddd4c7b3334c8f05ff1d5431f5
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/opensuse/tumbleweed-dvd:aarch64/Snapshot20261117</id>
-    <title>openSUSE Tumbleweed DVD Snapshot20261117 (aarch64)</title>
-    <updated>2026-11-19T15:50:12+00:00</updated>
-    <published>2026-11-19T15:50:12+00:00</published>
-    <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261117-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261117-Media.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="20834" />
-    <category term="opensuse" label="distro" />
-    <category term="tumbleweed-dvd" label="variant" />
-    <summary type="text">openSUSE Tumbleweed DVD Snapshot20261117 (aarch64)
-Filename: openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261117-Media.iso
-sha256: ff1af3c0f254f33fd9faf4dce0963e4b1380797a158f6ef14b70eda8c7a34637
-Signature: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261117-Media.iso.sha256.asc
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
-Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/ports/aarch64/tumbleweed/iso/openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261117-Media.iso.torrent
-Infohash: e39f1c56d0749cea29f42864f09d82e2ad766ff5
-Magnet: magnet:?xt=urn:btih:e39f1c56d0749cea29f42864f09d82e2ad766ff5&amp;dn=openSUSE-Tumbleweed-DVD-aarch64-Snapshot20261117-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
+Infohash: d343296f507f4367b2c189c4ebe7172957a88c90
+Magnet: magnet:?xt=urn:btih:d343296f507f4367b2c189c4ebe7172957a88c90&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261118-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
@@ -241,6 +245,7 @@ Verify: gpg</summary>
     <published>2026-11-19T15:50:12+00:00</published>
     <link href="https://get.opensuse.org/" rel="alternate" type="text/html" />
     <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261118-Media.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261118-Media.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="22870" />
     <category term="opensuse" label="distro" />
     <category term="tumbleweed-dvd" label="variant" />
     <summary type="text">openSUSE Tumbleweed DVD Snapshot20261118 (x86_64)
@@ -249,6 +254,9 @@ sha256: 1d63042cf3390f452f9d6876bb13e84628175e441c5e443420e9a991aeb7e77d
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261118-Media.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261118-Media.iso.torrent
+Infohash: d613921ae13382816eb59d9e8029d8cb61362280
+Magnet: magnet:?xt=urn:btih:d613921ae13382816eb59d9e8029d8cb61362280&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261118-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
