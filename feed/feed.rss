@@ -4,16 +4,64 @@
     <title>Distro ISO Feed</title>
     <link>https://github.com/andyattebery/distro-iso-feed</link>
     <description>Distro ISO Feed</description>
-    <lastBuildDate>Sat, 21 Nov 2026 14:44:25 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 14:41:05 +0000</lastBuildDate>
     <docs>https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/feed.xml</docs>
     <item>
-      <title>openSUSE Tumbleweed Rescue CD Snapshot20261119 (x86_64)</title>
+      <title>NixOS Graphical 26.05.14979.94c3211b0ee8 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.14979.94c3211b0ee8</guid>
+      <pubDate>Sun, 22 Nov 2026 14:41:05 +0000</pubDate>
+      <description>NixOS Graphical 26.05.14979.94c3211b0ee8 (aarch64)
+Filename: latest-nixos-graphical-aarch64-linux.iso
+sha256: 9f30f592727ae4828d1e7c01705f55588f06c872444f44a4cf0b07731461153b
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.14979.94c3211b0ee8 (aarch64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.14979.94c3211b0ee8</guid>
+      <pubDate>Sun, 22 Nov 2026 14:41:04 +0000</pubDate>
+      <description>NixOS Minimal 26.05.14979.94c3211b0ee8 (aarch64)
+Filename: latest-nixos-minimal-aarch64-linux.iso
+sha256: a64759bc271b8c58c707b20a797856abd1a893bdd9ff006c9ef144491f2a2b7a
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Minimal 26.05.14979.94c3211b0ee8 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:minimal:26.05.14979.94c3211b0ee8</guid>
+      <pubDate>Sun, 22 Nov 2026 14:41:04 +0000</pubDate>
+      <description>NixOS Minimal 26.05.14979.94c3211b0ee8 (x86_64)
+Filename: latest-nixos-minimal-x86_64-linux.iso
+sha256: 54034d71971b8937c8e5d85c252053be1a4e010d613d197ba3587dca7548618e
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>NixOS Graphical 26.05.14979.94c3211b0ee8 (x86_64)</title>
+      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
+      <guid isPermaLink="false">nixos:graphical:26.05.14979.94c3211b0ee8</guid>
+      <pubDate>Sun, 22 Nov 2026 14:41:04 +0000</pubDate>
+      <description>NixOS Graphical 26.05.14979.94c3211b0ee8 (x86_64)
+Filename: latest-nixos-graphical-x86_64-linux.iso
+sha256: 0a61ca7919430bc81481e7a385913da7a2f5d31cec9535f6acaff4982e93f30f
+Verify: checksum</description>
+      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
+      <category>nixos</category>
+    </item>
+    <item>
+      <title>openSUSE Tumbleweed Rescue CD Snapshot20261120 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:25 +0000</pubDate>
-      <description>openSUSE Tumbleweed Rescue CD Snapshot20261119 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-rescue-cd:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:12 +0000</pubDate>
+      <description>openSUSE Tumbleweed Rescue CD Snapshot20261120 (x86_64)
 Filename: openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso
-sha256: c931b0d2c7dd346ce1decec562d21c6500755297354ce1c3606de0150cf4a7f8
+sha256: 9053599adf51008ecb675c200d6fc5f82d8fd17c8970a389a8d6a3c726c906e3
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-Rescue-CD-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -22,13 +70,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed XFCE Live Snapshot20261119 (x86_64)</title>
+      <title>openSUSE Tumbleweed XFCE Live Snapshot20261120 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:24 +0000</pubDate>
-      <description>openSUSE Tumbleweed XFCE Live Snapshot20261119 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-xfce-live:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:11 +0000</pubDate>
+      <description>openSUSE Tumbleweed XFCE Live Snapshot20261120 (x86_64)
 Filename: openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso
-sha256: 8b145b8343b64747dd218fd86319d9c503b7ff0f47528228ab6d7a639eecd6a5
+sha256: 0e07971af4b8b303ebfa8455fed914e8426a3eab1d8d0049bb0beba2adbd07fa
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-XFCE-Live-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -37,13 +85,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed KDE Live Snapshot20261119 (x86_64)</title>
+      <title>openSUSE Tumbleweed KDE Live Snapshot20261120 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:23 +0000</pubDate>
-      <description>openSUSE Tumbleweed KDE Live Snapshot20261119 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-kde-live:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:10 +0000</pubDate>
+      <description>openSUSE Tumbleweed KDE Live Snapshot20261120 (x86_64)
 Filename: openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso
-sha256: 17ca4853ae917f7239f14690b50cb2b9a73beda55029c9333a67123b5b551dbd
+sha256: 19a3769a93b5647fe2daed18108cd12e589c59475f648a70d01c2103dadf1026
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-KDE-Live-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -52,13 +100,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed GNOME Live Snapshot20261119 (x86_64)</title>
+      <title>openSUSE Tumbleweed GNOME Live Snapshot20261120 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:22 +0000</pubDate>
-      <description>openSUSE Tumbleweed GNOME Live Snapshot20261119 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-gnome-live:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:09 +0000</pubDate>
+      <description>openSUSE Tumbleweed GNOME Live Snapshot20261120 (x86_64)
 Filename: openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso
-sha256: b5d5dd440577e028a142b9ca5ab3e050a15e4094b974a416511b60b12f39def1
+sha256: 6ee8c5785e0998523a89664816a8e4843cf61fd34c770cf22abf33fad2d48dff
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-GNOME-Live-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -67,13 +115,13 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE MicroOS DVD Snapshot20261119 (x86_64)</title>
+      <title>openSUSE MicroOS DVD Snapshot20261120 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:20 +0000</pubDate>
-      <description>openSUSE MicroOS DVD Snapshot20261119 (x86_64)
+      <guid isPermaLink="false">opensuse:microos-dvd:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:07 +0000</pubDate>
+      <description>openSUSE MicroOS DVD Snapshot20261120 (x86_64)
 Filename: openSUSE-MicroOS-DVD-x86_64-Current.iso
-sha256: a30e4353a71ae7d8690569e5f82153875c5757d2dbf1334f5a66787c0b3b7181
+sha256: 10089e6c240076934a9eb49b6232c3a4dda280bd9fda978b28b94db331781d61
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-MicroOS-DVD-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
@@ -82,40 +130,55 @@ Verify: gpg</description>
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed NET Snapshot20261119 (x86_64)</title>
+      <title>openSUSE Tumbleweed NET Snapshot20261120 (x86_64)</title>
       <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:19 +0000</pubDate>
-      <description>openSUSE Tumbleweed NET Snapshot20261119 (x86_64)
+      <guid isPermaLink="false">opensuse:tumbleweed-net:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:06 +0000</pubDate>
+      <description>openSUSE Tumbleweed NET Snapshot20261120 (x86_64)
 Filename: openSUSE-Tumbleweed-NET-x86_64-Current.iso
-sha256: 4bb2419244f8459eefc03f3bc07997b8c3b46cea12bc3cc49e8fac81cd0539f3
+sha256: ca5e54b8ce35f110f5309623d076ee5c4e8013f8d59d26e50d6e87baf384eed0
 Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
 Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso.torrent
-Infohash: 08c476b68b93385c8a3f0241737d83b0216afa79
-Magnet: magnet:?xt=urn:btih:08c476b68b93385c8a3f0241737d83b0216afa79&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261119-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Infohash: bac94d42f1410927a7de3d40623f6ff72f9e923c
+Magnet: magnet:?xt=urn:btih:bac94d42f1410927a7de3d40623f6ff72f9e923c&amp;dn=openSUSE-Tumbleweed-NET-x86_64-Snapshot20261120-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
       <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
     </item>
     <item>
-      <title>openSUSE Tumbleweed DVD Snapshot20261119 (x86_64)</title>
-      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261119-Media.iso</link>
-      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261119</guid>
-      <pubDate>Sat, 21 Nov 2026 14:44:17 +0000</pubDate>
-      <description>openSUSE Tumbleweed DVD Snapshot20261119 (x86_64)
-Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261119-Media.iso
-sha256: 604c10b58ebd80ce430084b62f08dc08c93d61039a19f1492f792d4470970891
-Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261119-Media.iso.sha256.asc
+      <title>openSUSE Tumbleweed DVD Snapshot20261120 (x86_64)</title>
+      <link>https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261120-Media.iso</link>
+      <guid isPermaLink="false">opensuse:tumbleweed-dvd:Snapshot20261120</guid>
+      <pubDate>Sun, 22 Nov 2026 14:40:05 +0000</pubDate>
+      <description>openSUSE Tumbleweed DVD Snapshot20261120 (x86_64)
+Filename: openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261120-Media.iso
+sha256: d60d111e1ee2bdfe2501e6bf50167e1e49293c31a69a52ef37ffa75aa2eb1e55
+Signature: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261120-Media.iso.sha256.asc
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xAD485664E901B867051AB15F35A2F86E29B700A4
 Key-fingerprint: AD485664E901B867051AB15F35A2F86E29B700A4
-Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261119-Media.iso.torrent
-Infohash: 27242b68dd4dae3f19b21ca97953980a962b0948
-Magnet: magnet:?xt=urn:btih:27242b68dd4dae3f19b21ca97953980a962b0948&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261119-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
+Torrent: https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261120-Media.iso.torrent
+Infohash: c75b86aad92d37f338f792d852bf307ea5fac3fe
+Magnet: magnet:?xt=urn:btih:c75b86aad92d37f338f792d852bf307ea5fac3fe&amp;dn=openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261120-Media.iso&amp;tr=http%3A%2F%2Ftracker.opensuse.org%3A6969%2Fannounce
 Verify: gpg</description>
-      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261119-Media.iso" type="application/x-iso9660-image" length="0" />
+      <enclosure url="https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Snapshot20261120-Media.iso" type="application/x-iso9660-image" length="0" />
       <category>opensuse</category>
+    </item>
+    <item>
+      <title>CachyOS Desktop 261122 (x86_64)</title>
+      <link>https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/261122/cachyos-desktop-linux-261122.iso/download</link>
+      <guid isPermaLink="false">cachyos:desktop:261122</guid>
+      <pubDate>Sun, 22 Nov 2026 12:37:48 +0000</pubDate>
+      <description>CachyOS Desktop 261122 (x86_64)
+Filename: cachyos-desktop-linux-261122.iso
+sha256: d9472167efbfa45a0600aa03e6e60c3a919092d6ee7a0f256c8b92ae6a767376
+Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/261122/cachyos-desktop-linux-261122.iso.sig/download
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
+Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
+Verify: gpg</description>
+      <enclosure url="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/261122/cachyos-desktop-linux-261122.iso/download" type="application/x-iso9660-image" length="0" />
+      <category>cachyos</category>
     </item>
     <item>
       <title>Bluefin stable-20261120 (x86_64)</title>
@@ -128,54 +191,6 @@ sha256: fd4c3357b93e24c40bda882da8632f3791994dc7f3d4b3dde5e5cb668e726b28
 Verify: checksum</description>
       <enclosure url="https://download.projectbluefin.io/bluefin-stable-x86_64.iso" type="application/x-iso9660-image" length="0" />
       <category>bluefin</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.14894.ab5c18fdedfc (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:aarch64:26.05.14894.ab5c18fdedfc</guid>
-      <pubDate>Fri, 20 Nov 2026 15:33:59 +0000</pubDate>
-      <description>NixOS Graphical 26.05.14894.ab5c18fdedfc (aarch64)
-Filename: latest-nixos-graphical-aarch64-linux.iso
-sha256: caac226e608793ba0416a5ebf984c17790c1ede2ff4fa07898c8b18a0096495c
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Graphical 26.05.14894.ab5c18fdedfc (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:graphical:26.05.14894.ab5c18fdedfc</guid>
-      <pubDate>Fri, 20 Nov 2026 15:33:59 +0000</pubDate>
-      <description>NixOS Graphical 26.05.14894.ab5c18fdedfc (x86_64)
-Filename: latest-nixos-graphical-x86_64-linux.iso
-sha256: f131ab30d59c4afc7f941283964ecec30b82d7ec5538db57fae80e831cef137f
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-graphical-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.14894.ab5c18fdedfc (aarch64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:aarch64:26.05.14894.ab5c18fdedfc</guid>
-      <pubDate>Fri, 20 Nov 2026 15:33:58 +0000</pubDate>
-      <description>NixOS Minimal 26.05.14894.ab5c18fdedfc (aarch64)
-Filename: latest-nixos-minimal-aarch64-linux.iso
-sha256: 99163f2faa8c4480e56d1f48e3f99042688b1ef2b188fc34f40b98eb44422416
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-aarch64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
-    </item>
-    <item>
-      <title>NixOS Minimal 26.05.14894.ab5c18fdedfc (x86_64)</title>
-      <link>https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso</link>
-      <guid isPermaLink="false">nixos:minimal:26.05.14894.ab5c18fdedfc</guid>
-      <pubDate>Fri, 20 Nov 2026 15:33:57 +0000</pubDate>
-      <description>NixOS Minimal 26.05.14894.ab5c18fdedfc (x86_64)
-Filename: latest-nixos-minimal-x86_64-linux.iso
-sha256: 6b411a4191978e9def4419f292ce954549bf3bd952fe53d1acef2db121bdc2ef
-Verify: checksum</description>
-      <enclosure url="https://channels.nixos.org/nixos-26.05/latest-nixos-minimal-x86_64-linux.iso" type="application/x-iso9660-image" length="0" />
-      <category>nixos</category>
     </item>
     <item>
       <title>openSUSE Tumbleweed Rescue CD Snapshot20261118 (aarch64)</title>
@@ -3200,21 +3215,6 @@ Key-fingerprint: 3B794DE6D4320FCE594F4171279E7CF5D8D56EC8
 Verify: gpg</description>
       <enclosure url="https://download.manjaro.org/kde/26.1.0/manjaro-kde-26.1.0-260812-linux71.iso" type="application/x-iso9660-image" length="0" />
       <category>manjaro</category>
-    </item>
-    <item>
-      <title>CachyOS Desktop 260809 (x86_64)</title>
-      <link>https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download</link>
-      <guid isPermaLink="false">cachyos:desktop:260809</guid>
-      <pubDate>Sun, 09 Aug 2026 17:25:54 +0000</pubDate>
-      <description>CachyOS Desktop 260809 (x86_64)
-Filename: cachyos-desktop-linux-260809.iso
-sha256: 959f6577f45e25ee9fd8c220fd221b08e4ea79412c7315c0f922dd6d86d5e33c
-Signature: https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso.sig/download
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x882DCFE48E2051D48E2562ABF3B607488DB35A47
-Key-fingerprint: 882DCFE48E2051D48E2562ABF3B607488DB35A47
-Verify: gpg</description>
-      <enclosure url="https://sourceforge.net/projects/cachyos-arch/files/gui-installer/desktop/260809/cachyos-desktop-linux-260809.iso/download" type="application/x-iso9660-image" length="0" />
-      <category>cachyos</category>
     </item>
     <item>
       <title>Gentoo Minimal Install CD 20240404T093405Z (ia64)</title>
