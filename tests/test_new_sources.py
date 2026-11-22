@@ -29,7 +29,7 @@ from pathlib import Path
 import pytest
 
 from conftest import FakeClient, atom_feed, autoindex_html, sf_rss
-from distro_iso_feed import config
+from distro_iso_feed import config, run_discover
 from distro_iso_feed.audit import skipped_releases
 from distro_iso_feed.config import ConfigError, load, load_raw
 from distro_iso_feed.models import Release, Variant
@@ -616,8 +616,8 @@ def test_fedora_atomic_variants_follow_the_45_installer_rename(key, filename):
 
 # ---------------------------------------------------------------------------------- Bluestar
 #
-# A captured shape of the 2026-11 feed: upstream split into editions, one of them runs an older
-# base, and two names in it belong to nobody.
+# A captured shape of the 2026-11-05 feed: upstream split into editions, and two names in it are
+# not editions at all. `sonicde-580xx` ran an older base and has since been retired.
 
 BS_FEED = "https://sourceforge.net/projects/bluestarlinux/rss?path=/distro"
 BS_MD5 = "0c365dc3c17b05a4b276c579168b01da"
@@ -649,11 +649,6 @@ def _source(distro: str):
     [
         ("bluestar:default", "bslx-plasma-7.2.14-1-2026.11.01-x86_64.iso", "7.2.14-1-2026.11.01"),
         ("bluestar:sonicde", "bslx-sonicde-7.2.14-1-2026.11.01-x86_64.iso", "7.2.14-1-2026.11.01"),
-        (
-            "bluestar:sonicde-580xx",
-            "bslx-sonicde-580xx-7.2.11-4-2026.10.26-x86_64.iso",
-            "7.2.11-4-2026.10.26",
-        ),
     ],
 )
 def test_bluestar_resolves_each_edition_from_a_mixed_feed(key, filename, version):
@@ -671,6 +666,41 @@ def test_bluestar_discovery_sees_every_edition():
         "bluestar", [dict(v.params) for v in source.variants], source.discover, _bluestar_client()
     )
     assert {s.variant for s in found} == {"plasma", "sonicde", "sonicde-580xx"}
+
+
+def test_bluestar_sonicde_580xx_is_reproposed_if_upstream_publishes_it(tmp_path, monkeypatch):
+    """Upstream never said 580xx was dropped: it built none after 2026-10-26 and cleared the old
+    files. Retiring it on that is only safe because a returning `bslx-sonicde-580xx-<ver>` ISO
+    reaches the weekly PR on its own. Through `main`, so `selected()` keeps `plasma` (tracked as
+    `default`) out, as live. The copy drops the variant first, so the discover PR that re-adds
+    it passes here too."""
+    doc = load_raw(CONFIG)
+    doc["distros"]["bluestar"]["variants"].pop("sonicde-580xx", None)
+    cfg = tmp_path / "sources.yaml"
+    with cfg.open("w", encoding="utf-8") as fh:
+        config.yaml_rt().dump(doc, fh)
+    pages = _bluestar_client().pages
+
+    class OneShot(FakeClient):
+        def __init__(self, *a, **k):
+            super().__init__(pages)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return None
+
+    monkeypatch.setattr(run_discover, "Client", OneShot)
+    pr = tmp_path / "pr.md"
+    argv = ["--dry-run", "--only", "bluestar", "--config", str(cfg), "--pr-body", str(pr)]
+    assert run_discover.main(argv) == 0
+
+    body = pr.read_text()
+    assert "| `bluestar:sonicde-580xx` |" in body
+    assert "`bslx-sonicde-580xx-7.2.11-4-2026.10.26-x86_64.iso`" in body
+    assert "bluestar:plasma" not in body
+    assert "## Could not synthesize" not in body
 
 
 def test_sourceforge_groups_can_match_a_full_path():

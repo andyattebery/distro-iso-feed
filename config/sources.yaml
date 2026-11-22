@@ -1200,9 +1200,13 @@ distros:
     variants:
       # The key predates the 2026-09 split into editions, when `bslx-<ver>` became
       # `bslx-plasma-<ver>`. A variant key is permanent; `plasma` is this variant.
+      # SonicDE 580xx stopped at 7.2.11-4-2026.10.26: the builds of 11-01 to 11-19 shipped only
+      # Plasma and SonicDE, and its ISO went when upstream cleared everything before 11-01. Upstream
+      # said nothing either way, so this records what was published, not a decision.
+      # `discover.group` still matches `bslx-sonicde-580xx-<ver>`, so if it returns the weekly PR
+      # proposes it.
       default: {label: "Bluestar Linux Plasma", params: {match: '/bslx-plasma-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'}}
       sonicde: {label: "Bluestar Linux SonicDE", params: {match: '/bslx-sonicde-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'}}
-      sonicde-580xx: {label: "Bluestar Linux SonicDE 580xx", params: {match: '/bslx-sonicde-580xx-[0-9.-]+-\d{4}\.\d{2}\.\d{2}-x86_64\.iso$'}}
     discover:
       # Candidates are full paths (`/distro/bslx-...`), so this cannot be anchored on `^bslx`:
       # that matches nothing and reads as "no new editions". The RSS feed is a fixed 100-item
