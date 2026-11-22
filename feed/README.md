@@ -36,7 +36,6 @@ Torrents only: [`torrent.xml`](https://raw.githubusercontent.com/andyattebery/di
 | bluefin | stable | x86_64 | stable-20261120 | checksum | — |
 | bluestar | default | x86_64 | 7.3.5-1-2026.11.19 | checksum | — |
 | bluestar | sonicde | x86_64 | 7.3.5-1-2026.11.19 | checksum | — |
-| bluestar | sonicde-580xx | x86_64 | 7.2.11-4-2026.10.26 | checksum | — |
 | cachyos | desktop | x86_64 | 261122 | gpg | — |
 | cachyos | handheld | x86_64 | 260628 | gpg | — |
 | centos | boot | x86_64 | 20261118.0 | checksum | — |
