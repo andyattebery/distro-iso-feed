@@ -4,313 +4,313 @@
   <title>Distro ISO Feed — debian</title>
   <link href="https://raw.githubusercontent.com/andyattebery/distro-iso-feed/main/feed/by-distro/debian.xml" rel="self" type="application/atom+xml" />
   <link href="https://github.com/andyattebery/distro-iso-feed" rel="alternate" type="text/html" />
-  <updated>2026-09-13T11:57:36+00:00</updated>
+  <updated>2026-11-23T18:18:09+00:00</updated>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-standard/13.7.0</id>
-    <title>Debian Live Standard 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:36+00:00</updated>
-    <published>2026-09-13T11:57:36+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-standard/13.8.0</id>
+    <title>Debian Live Standard 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:09+00:00</updated>
+    <published>2026-11-23T18:18:09+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-standard.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-standard.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="154648" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-standard.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-standard.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="154948" />
     <category term="debian" label="distro" />
     <category term="live-standard" label="variant" />
-    <summary type="text">Debian Live Standard 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-standard.iso
-sha512: 79549808584a5c3fd8e3bda584652c47a3145f79c06f157ee8f9a3ff98d92fd548d235617e84ddef884ae535f35855e44cff222882cd62fad1898e397e9b2240
+    <summary type="text">Debian Live Standard 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-standard.iso
+sha512: ad6ecd351993f03a5863f73f0cf5a06a43c230a5fa73d6823fe6d11c8dd2eeb6df43da5153a01c6fa1c4356c5c77a22910a81c8d2e47987df5a20138fd31ebcf
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-standard.iso.torrent
-torrent-sha512: d7e08121eb4454d8a3a96d6d3e667cab5388ccb01848b430088abefaeb8af6ed7cc99cedd0f7d2d4c197da0bb858e1703eecf21ff8c63c5b470df25376cbad68
-Infohash: e3da5bd17fb26f462e1d3e01247f38d3df2c4fd0
-Magnet: magnet:?xt=urn:btih:e3da5bd17fb26f462e1d3e01247f38d3df2c4fd0&amp;dn=debian-live-13.7.0-amd64-standard.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-standard.iso.torrent
+torrent-sha512: 65f299c4a28b8c48099d8be1b4340d828d5fd68efad533199e6a9ca1cde2eca69da2ac890ec2e661524e954c7c4788b9d010980f4ac8492207017a6740046d93
+Infohash: e4c8fa2c0076410ce707c785082acccbe870eeda
+Magnet: magnet:?xt=urn:btih:e4c8fa2c0076410ce707c785082acccbe870eeda&amp;dn=debian-live-13.8.0-amd64-standard.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxqt/13.7.0</id>
-    <title>Debian Live LXQt 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:36+00:00</updated>
-    <published>2026-09-13T11:57:36+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxde/13.8.0</id>
+    <title>Debian Live LXDE 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:08+00:00</updated>
+    <published>2026-11-23T18:18:08+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-lxqt.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxqt.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="305236" />
-    <category term="debian" label="distro" />
-    <category term="live-lxqt" label="variant" />
-    <summary type="text">Debian Live LXQt 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-lxqt.iso
-sha512: d001b888c4a64215b3f579f048d4a69d358ccf3f125a7c06abafd1c7d6decbb6078cf922f6c0b102a6d037874575844008ee9923ef3286296d84dfcdd24b9603
-Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxqt.iso.torrent
-torrent-sha512: d393bda8e6aab5ab497dcf6bd8545fc212146f0a954648dca0bc28eb62d735da344cfc7aba099874453e9f9eb20eab51d6b72311c5ef36ce7e2bd72dc7cb01a5
-Infohash: 6261faad35da019e2a44d6e354034dc52ce53d0d
-Magnet: magnet:?xt=urn:btih:6261faad35da019e2a44d6e354034dc52ce53d0d&amp;dn=debian-live-13.7.0-amd64-lxqt.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxde/13.7.0</id>
-    <title>Debian Live LXDE 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:36+00:00</updated>
-    <published>2026-09-13T11:57:36+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-lxde.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="290496" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-lxde.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-lxde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="292056" />
     <category term="debian" label="distro" />
     <category term="live-lxde" label="variant" />
-    <summary type="text">Debian Live LXDE 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-lxde.iso
-sha512: e52012e2d5770a700f5e8db71724ed4eefb3d072af25389997f492d12055bb5379637ae885ac6621162f9c246d4ade2f4d729fd79e2ff40729e94314065759e9
+    <summary type="text">Debian Live LXDE 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-lxde.iso
+sha512: f6d66673926e842c40236ae6afcc5888356d98a2d8da50ada7948992653909f54440492719da8682e10a06af930311b407f80bce3383c310cca2e9f450a85447
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-lxde.iso.torrent
-torrent-sha512: ffaef132b80f6747eafe7841c33cf4f53d59216080c7af33c305105b44d5df21f371aa2d2d35cecef4d8106836a30ae62473e0c953fe2778fcb3b4da7783a215
-Infohash: 78fb2a1b08069f2dd415302b7ab517bb82eb3619
-Magnet: magnet:?xt=urn:btih:78fb2a1b08069f2dd415302b7ab517bb82eb3619&amp;dn=debian-live-13.7.0-amd64-lxde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-lxde.iso.torrent
+torrent-sha512: dfcbc86298bcf632e795ae0e0d357c94b99b928f61a869af5054573416bb488e56f9796910c033cad040a4bdafe787d0d6d986f9c83b9f111923dc5b4ab99683
+Infohash: 45ae5e98b2b669beca88e209d563dd86ff793e81
+Magnet: magnet:?xt=urn:btih:45ae5e98b2b669beca88e209d563dd86ff793e81&amp;dn=debian-live-13.8.0-amd64-lxde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-xfce/13.7.0</id>
-    <title>Debian Live Xfce 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:35+00:00</updated>
-    <published>2026-09-13T11:57:35+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-lxqt/13.8.0</id>
+    <title>Debian Live LXQt 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:06+00:00</updated>
+    <published>2026-11-23T18:18:06+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-xfce.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="292476" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-lxqt.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-lxqt.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="306796" />
     <category term="debian" label="distro" />
-    <category term="live-xfce" label="variant" />
-    <summary type="text">Debian Live Xfce 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-xfce.iso
-sha512: 3fa03343a9868b2afee10adadd8f4ebf0031f222bef0858a3c9a0d9fd74325d17b999cdeba2c88d9a8d0856f3bb0ed0d8a240dfa02651fb15c93f97b3b2ef8e5
+    <category term="live-lxqt" label="variant" />
+    <summary type="text">Debian Live LXQt 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-lxqt.iso
+sha512: 5635aca8a02225c2120c799afc47299d300107b4a5892a81fb56a45d21d58f578f75ffcdb5d14ce372088a7f6241315c1156dd55b4cffd85293df029774a1d25
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-xfce.iso.torrent
-torrent-sha512: 94acfe106424df14cdc006cdb9d28991d18392274b979d6cfc4c430d68b71a1b42b8f2f08a39685bab69eb376b3d0c8830f2d7315f37ee42b2b000238bc21348
-Infohash: 8b3b328db6514130fe3401f029b4076837eedb13
-Magnet: magnet:?xt=urn:btih:8b3b328db6514130fe3401f029b4076837eedb13&amp;dn=debian-live-13.7.0-amd64-xfce.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-lxqt.iso.torrent
+torrent-sha512: 083f817d0e10d9027697394cbef7edb25139a6dbb766e662770c57c850895165c755d830e79a21686bf6ea7f65101023eee830e7decd1e7f9a3d983c152744ed
+Infohash: c18484735fc174e0fc455ca9d5338ce62aaea732
+Magnet: magnet:?xt=urn:btih:c18484735fc174e0fc455ca9d5338ce62aaea732&amp;dn=debian-live-13.8.0-amd64-lxqt.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-mate/13.7.0</id>
-    <title>Debian Live MATE 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:35+00:00</updated>
-    <published>2026-09-13T11:57:35+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-mate/13.8.0</id>
+    <title>Debian Live MATE 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:03+00:00</updated>
+    <published>2026-11-23T18:18:03+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-mate.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-mate.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="302976" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-mate.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-mate.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="304256" />
     <category term="debian" label="distro" />
     <category term="live-mate" label="variant" />
-    <summary type="text">Debian Live MATE 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-mate.iso
-sha512: 02f1103b53643916893ac429541cbfd266541ca46961122c8882bf95f38a82fc90f3aa1ae93071129466d5b54f972521617cb48e0633ed00e0c4753b10fd0615
+    <summary type="text">Debian Live MATE 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-mate.iso
+sha512: 3c3b360a3090be22223f335517fa769e396dfc63a7336ddc9237fa742e383a4b93a9d74a8efbee792fa20d5a13ec76046ddefafca9ad1789b37a367dbdce6448
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-mate.iso.torrent
-torrent-sha512: e056d04bab931e9c337007679ed54b1fe427866ef62fcb45ed1ab52067708f5f003e021c026236d00b2a34670965178010d59d6a8ccdbd3819faed59f5543d7a
-Infohash: 124ebf9b7d7e2881dec9f91d8bd8b2c62cc2b945
-Magnet: magnet:?xt=urn:btih:124ebf9b7d7e2881dec9f91d8bd8b2c62cc2b945&amp;dn=debian-live-13.7.0-amd64-mate.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-mate.iso.torrent
+torrent-sha512: d6afeb9ae90dd97b551c857a8ed81ebb13b97331f56a14d285c9191a73137bd45008fa42e4694090402a82e7778fdc91b4f8694c955382f107788e43020096df
+Infohash: a8cd010f9e3777bace8f67590c1028cf3ea90b49
+Magnet: magnet:?xt=urn:btih:a8cd010f9e3777bace8f67590c1028cf3ea90b49&amp;dn=debian-live-13.8.0-amd64-mate.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-kde/13.7.0</id>
-    <title>Debian Live KDE 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:35+00:00</updated>
-    <published>2026-09-13T11:57:35+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-xfce/13.8.0</id>
+    <title>Debian Live Xfce 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:02+00:00</updated>
+    <published>2026-11-23T18:18:02+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-kde.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-kde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="319873" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-xfce.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-xfce.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="294036" />
+    <category term="debian" label="distro" />
+    <category term="live-xfce" label="variant" />
+    <summary type="text">Debian Live Xfce 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-xfce.iso
+sha512: 71e9088e8ed73828d77c28a2f6da8b0d1885c0fe669ef359beb1aa92316358786e1cf15cfa9fe2fc84f1746dc38275acbe56f1aad67496b8e6be73c716fcbd45
+Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-xfce.iso.torrent
+torrent-sha512: ce027cd7fdc44ca9723071cd7e743c4865dcbf61b162ce55e74f7e6a4d39eb0503e6c9b16fa5c220f852dd219a27d15f8c2cbf1969bc95b0608a9b9a22126986
+Infohash: 399011ce31fdff1b0d46b334167e1c53048332fe
+Magnet: magnet:?xt=urn:btih:399011ce31fdff1b0d46b334167e1c53048332fe&amp;dn=debian-live-13.8.0-amd64-xfce.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-kde/13.8.0</id>
+    <title>Debian Live KDE 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:02+00:00</updated>
+    <published>2026-11-23T18:18:02+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-kde.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-kde.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="321473" />
     <category term="debian" label="distro" />
     <category term="live-kde" label="variant" />
-    <summary type="text">Debian Live KDE 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-kde.iso
-sha512: 079193350497fcbdc04271bf34d7ef26dfc3f21f27d1b6fc61933515fb868987fe313ff205ef98a7f82a5c63e18e259a0a957443d7cb417ebeb93ad961c43342
+    <summary type="text">Debian Live KDE 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-kde.iso
+sha512: 056250e7f1b47a789a1fbbbe518a0532f1087ac52b5c75dbe1707d1f739cf2c2264283e9cf8e5e5fb09b68e815f1c91d31ef5a99ccb8c9d014d423e406d67ce4
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-kde.iso.torrent
-torrent-sha512: 36d85284305ac1e00726916c5972e6871ed38746f1e849d917892de6d79effc967bbf17863db1032a277e307e029ae5761720da17452715ad6961b0ea7369ab7
-Infohash: b3c432c4c2c85a0c41659a4cc2f165703fcc53fe
-Magnet: magnet:?xt=urn:btih:b3c432c4c2c85a0c41659a4cc2f165703fcc53fe&amp;dn=debian-live-13.7.0-amd64-kde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-kde.iso.torrent
+torrent-sha512: 7d070517c0c15aef63a3f7b5c3a02a3dcceee75e5f8a8e01ceaac00c0461aae272e606deb0290aabf775f4204d7daa84ac294324918885a7cb2f5f91a11eaed3
+Infohash: 1047bd92c94ea1270f2d0a2fe2a1d97fb23dbf7d
+Magnet: magnet:?xt=urn:btih:1047bd92c94ea1270f2d0a2fe2a1d97fb23dbf7d&amp;dn=debian-live-13.8.0-amd64-kde.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-cinnamon/13.7.0</id>
-    <title>Debian Live Cinnamon 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:35+00:00</updated>
-    <published>2026-09-13T11:57:35+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-cinnamon/13.8.0</id>
+    <title>Debian Live Cinnamon 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:02+00:00</updated>
+    <published>2026-11-23T18:18:02+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-cinnamon.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-cinnamon.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="314468" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-cinnamon.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-cinnamon.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="316068" />
     <category term="debian" label="distro" />
     <category term="live-cinnamon" label="variant" />
-    <summary type="text">Debian Live Cinnamon 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-cinnamon.iso
-sha512: 4a85cdf7b7b9d693617ae5184b718a6c140a7efbe99fc495ec32b8b7a5ca83fbc910ddcb4f49219c48d27cdce4e40d40c0aed1c298d7f70ec238326455bef094
+    <summary type="text">Debian Live Cinnamon 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-cinnamon.iso
+sha512: d63c0237199241f16cd7776ee20e2316b322814143bd5b90630c8c0b50e58e0a0d82e3c21dc37568aa4b352d2dd73767cd1ed31ccef30cb986ee5d8d36c3e541
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-cinnamon.iso.torrent
-torrent-sha512: c12bb1056eae4ff14d403a741159b21e833e2d1d16c59294a269dac37c0ac77416abab59d9c768fe870741c90a7105ddc1894fded56d3271424e8dfdd84f9c7d
-Infohash: c9aadecd13fbd99d7ffbfdc44c1a6448c0213088
-Magnet: magnet:?xt=urn:btih:c9aadecd13fbd99d7ffbfdc44c1a6448c0213088&amp;dn=debian-live-13.7.0-amd64-cinnamon.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-cinnamon.iso.torrent
+torrent-sha512: 63cb83b01c6a2153e7a5ead90b5ad0bfd9405f82a244eb54e169d289b2f34710c7ee51a13eea9d16fc988e62315332c5844bf134a1f2d6d07f72d48ce5734ea8
+Infohash: e23779c1a508a83aabcf91d85c28b8d5bfb0d5bd
+Magnet: magnet:?xt=urn:btih:e23779c1a508a83aabcf91d85c28b8d5bfb0d5bd&amp;dn=debian-live-13.8.0-amd64-cinnamon.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:s390x/13.7.0</id>
-    <title>Debian netinst 13.7.0 (s390x)</title>
-    <updated>2026-09-13T11:57:32+00:00</updated>
-    <published>2026-09-13T11:57:32+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:s390x/13.8.0</id>
+    <title>Debian netinst 13.8.0 (s390x)</title>
+    <updated>2026-11-23T18:18:01+00:00</updated>
+    <published>2026-11-23T18:18:01+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/debian-13.7.0-s390x-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.7.0-s390x-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="34188" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/debian-13.8.0-s390x-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.8.0-s390x-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="34208" />
     <category term="debian" label="distro" />
     <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.7.0 (s390x)
-Filename: debian-13.7.0-s390x-netinst.iso
-sha512: 76594fcfd3d0ce0e4c3d02689667f4384e2c9846b038b0a2c1a351a61995a3e74ba438368a9464b17be357cee253ee9294050395dcd325b4b5bc8577fcdd0333
+    <summary type="text">Debian netinst 13.8.0 (s390x)
+Filename: debian-13.8.0-s390x-netinst.iso
+sha512: ed3d269dbc3e9dde17b63d584c695a78e4eee4fd0e484c2d8f65ed22867a03667052600b8a39fd87a5f6c76f43dd54f616369073a46a50c13cb14ed3a7e01d43
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/s390x/iso-cd/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.7.0-s390x-netinst.iso.torrent
-torrent-sha512: 67ae8262b79f16822aaeaa4725b56ec9014398317e05a4e97138e24f15865748a341f381a47a5b1e3be781596f56fca176d7b3dcbd7446cdd4719b3c0e4ccd36
-Infohash: 112cc7294b83677269d5b21a5c201f79b9dff20d
-Magnet: magnet:?xt=urn:btih:112cc7294b83677269d5b21a5c201f79b9dff20d&amp;dn=debian-13.7.0-s390x-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/s390x/bt-cd/debian-13.8.0-s390x-netinst.iso.torrent
+torrent-sha512: b5e75b90309a315d2c30afb19222a749f6d09c54a7945cd377ae633cc8a36092e5f4002ef6a9e7b330ca87fd4b797727644498f2a93ac93b46c67a3be383e8c5
+Infohash: 9687612443d5a7cc689aa4b6a7db18a610ec9516
+Magnet: magnet:?xt=urn:btih:9687612443d5a7cc689aa4b6a7db18a610ec9516&amp;dn=debian-13.8.0-s390x-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:riscv64/13.7.0</id>
-    <title>Debian netinst 13.7.0 (riscv64)</title>
-    <updated>2026-09-13T11:57:32+00:00</updated>
-    <published>2026-09-13T11:57:32+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-gnome/13.8.0</id>
+    <title>Debian Live GNOME 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:18:01+00:00</updated>
+    <published>2026-11-23T18:18:01+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/debian-13.7.0-riscv64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.7.0-riscv64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="47398" />
-    <category term="debian" label="distro" />
-    <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.7.0 (riscv64)
-Filename: debian-13.7.0-riscv64-netinst.iso
-sha512: ca639aa0acdd64f6fbef578fd7a5aba064640ef03f180661d2ebbf13a709f13ca2128841e5d8626025cc9d998a52736f8b46470952d3e8e1bf9c73cd2f2b5fbd
-Signature: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
-Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.7.0-riscv64-netinst.iso.torrent
-torrent-sha512: 7b1c3b1e39f43b1db99831afd86bd2a3887ba413f7f80766a445ecc1bbf683521db3771e957498d477fa400a77354cbdd5f005a8c7de6ab0bb2ca2fa4fa6102c
-Infohash: 1c12122d80af9f194e805d369d13bc93e1c07347
-Magnet: magnet:?xt=urn:btih:1c12122d80af9f194e805d369d13bc93e1c07347&amp;dn=debian-13.7.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
-Verify: gpg</summary>
-  </entry>
-  <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/live-gnome/13.7.0</id>
-    <title>Debian Live GNOME 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:32+00:00</updated>
-    <published>2026-09-13T11:57:32+00:00</published>
-    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.7.0-amd64-gnome.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-gnome.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="290779" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-13.8.0-amd64-gnome.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-gnome.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="292059" />
     <category term="debian" label="distro" />
     <category term="live-gnome" label="variant" />
-    <summary type="text">Debian Live GNOME 13.7.0 (x86_64)
-Filename: debian-live-13.7.0-amd64-gnome.iso
-sha512: 5c70c54db8742bb760a6dfbe2f3c208a550938edee22b858dfb2e09a09b87666f1454134f24df3a5a2f8ae6a7c81c9ab8a2500b1eae53927691ffd6e73997380
+    <summary type="text">Debian Live GNOME 13.8.0 (x86_64)
+Filename: debian-live-13.8.0-amd64-gnome.iso
+sha512: c800e01c1d6e769beda4d3c65f2be68a4f01b3c9b29fd21bc29c9a2310344635f8decd6d9612995493c6c86c5da85c38262308ed26655f8f9cf31e4f18052d02
 Signature: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.7.0-amd64-gnome.iso.torrent
-torrent-sha512: 2cb3fe4f8b71d8b03246c411c2c855b95af183ec70f1597c9aca0f57c75d9707cc3fb7db59fab853b45f6ee48c9ad13c5831ed97115619d44079286572f33155
-Infohash: 0697aa4c78e1237966925f250c2189eac36020f2
-Magnet: magnet:?xt=urn:btih:0697aa4c78e1237966925f250c2189eac36020f2&amp;dn=debian-live-13.7.0-amd64-gnome.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current-live/amd64/bt-hybrid/debian-live-13.8.0-amd64-gnome.iso.torrent
+torrent-sha512: f8df24a7e4362c955d5ddb7b5421d1771151f44a079c6cc18f80187ab79aed07670ac46eb023549735d76f87ad06c1db3f32caef893b6e891ddcc7ba73e04875
+Infohash: d17271b128b5a2a3b02c95a64a7bd3299c027a3d
+Magnet: magnet:?xt=urn:btih:d17271b128b5a2a3b02c95a64a7bd3299c027a3d&amp;dn=debian-live-13.8.0-amd64-gnome.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:ppc64le/13.7.0</id>
-    <title>Debian netinst 13.7.0 (ppc64le)</title>
-    <updated>2026-09-13T11:57:31+00:00</updated>
-    <published>2026-09-13T11:57:31+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:riscv64/13.8.0</id>
+    <title>Debian netinst 13.8.0 (riscv64)</title>
+    <updated>2026-11-23T18:18:00+00:00</updated>
+    <published>2026-11-23T18:18:00+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/debian-13.7.0-ppc64el-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.7.0-ppc64el-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="50218" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/debian-13.8.0-riscv64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.8.0-riscv64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="47158" />
     <category term="debian" label="distro" />
     <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.7.0 (ppc64le)
-Filename: debian-13.7.0-ppc64el-netinst.iso
-sha512: c528d1b1d4fd138deeffc02f891878736be303d022dbf643b338ef02c099b1a57d46027dd3e9a89276057848295c8cd79539493dc257853f5cff660038b1c8da
+    <summary type="text">Debian netinst 13.8.0 (riscv64)
+Filename: debian-13.8.0-riscv64-netinst.iso
+sha512: 1fc8d415c7772288173f148e8baad8a2a4e3af18bc08504342ee915fdea2b43837c33b89948c5d2c3ea133e40d3f306d28e22f5fad8ba87ab1e3bd9e0839f0ef
+Signature: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/iso-cd/SHA512SUMS.sign
+Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/riscv64/bt-cd/debian-13.8.0-riscv64-netinst.iso.torrent
+torrent-sha512: 13bf1dd36c19697c1f39503cc09bcc86bc416991b04220651db11acfed4b0e0dae99b33bdc0f8f62ceaccca586141bd4e7011090cb9768635ddb13d8f746dc21
+Infohash: 37c827f94c0242534582a45fce263bdeef354695
+Magnet: magnet:?xt=urn:btih:37c827f94c0242534582a45fce263bdeef354695&amp;dn=debian-13.8.0-riscv64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Verify: gpg</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:ppc64le/13.8.0</id>
+    <title>Debian netinst 13.8.0 (ppc64le)</title>
+    <updated>2026-11-23T18:18:00+00:00</updated>
+    <published>2026-11-23T18:18:00+00:00</published>
+    <link href="https://www.debian.org/" rel="alternate" type="text/html" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/debian-13.8.0-ppc64el-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.8.0-ppc64el-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="50278" />
+    <category term="debian" label="distro" />
+    <category term="netinst" label="variant" />
+    <summary type="text">Debian netinst 13.8.0 (ppc64le)
+Filename: debian-13.8.0-ppc64el-netinst.iso
+sha512: 158c53443da2245a0bd84e5ff03875f4afe0f18b3342d09c21bef30e6a00b1659c43ba5e6c01a2fed93a2e056708013f75dc834449157707ed94432bf51f2410
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/iso-cd/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.7.0-ppc64el-netinst.iso.torrent
-torrent-sha512: 26b81db63870ef41b91e067f82cf0debdb79691e498d0d52b8938594adeb0e7ff2ae4e767a66102b1524f55bbd89e39025f020cd06baf01e6499f354f190876c
-Infohash: 7bc06aa26dadac4e4e2d5f35251d2072fb8c8032
-Magnet: magnet:?xt=urn:btih:7bc06aa26dadac4e4e2d5f35251d2072fb8c8032&amp;dn=debian-13.7.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/ppc64el/bt-cd/debian-13.8.0-ppc64el-netinst.iso.torrent
+torrent-sha512: fddd043d9063aada110bf9cca8cfc1b498e137e55ee24d8e9f169c9464edd5fcbed34834406c83f7154bbdecf4afe1537aa262ace0e06c7b113b20098b00ebe0
+Infohash: 4aac7c1655008a0742327e4ff0bf68c39780778a
+Magnet: magnet:?xt=urn:btih:4aac7c1655008a0742327e4ff0bf68c39780778a&amp;dn=debian-13.8.0-ppc64el-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:armhf/13.7.0</id>
-    <title>Debian netinst 13.7.0 (armhf)</title>
-    <updated>2026-09-13T11:57:31+00:00</updated>
-    <published>2026-09-13T11:57:31+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:armhf/13.8.0</id>
+    <title>Debian netinst 13.8.0 (armhf)</title>
+    <updated>2026-11-23T18:17:56+00:00</updated>
+    <published>2026-11-23T18:17:56+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/debian-13.7.0-armhf-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.7.0-armhf-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="72188" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/debian-13.8.0-armhf-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.8.0-armhf-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="72268" />
     <category term="debian" label="distro" />
     <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.7.0 (armhf)
-Filename: debian-13.7.0-armhf-netinst.iso
-sha512: 3db55920a176bb90775cca1425d8dd8e28c637aec7d6aae644ff083d0140a3ebe99c8e0e8d6f6f5022b9c0df2c7a7e3708268f2d399a32edf551b26ad7952d9a
+    <summary type="text">Debian netinst 13.8.0 (armhf)
+Filename: debian-13.8.0-armhf-netinst.iso
+sha512: 2667e7fd64e05a717a956b580566e2f3b42c9f57917688674afbe216a40204bda90d4ba5cf4546ff090a2b7fae033ce91ba9d680147e971bea092f1c93550309
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/armhf/iso-cd/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.7.0-armhf-netinst.iso.torrent
-torrent-sha512: d4bed7048a404b97003e279fa7d550e1b4cbf1332a1959bb2045865fff2fb3ee9534fe69bb570bfdf8e282a4a7a2ad4c5de2f5ee32da70f5c256fbd64241832b
-Infohash: cc6464617ff7af0b9e598ca2244717cea8b899d9
-Magnet: magnet:?xt=urn:btih:cc6464617ff7af0b9e598ca2244717cea8b899d9&amp;dn=debian-13.7.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/armhf/bt-cd/debian-13.8.0-armhf-netinst.iso.torrent
+torrent-sha512: 23f84fa4e4f417333bca6fbf6bd62f93ee7480cedb1eed0d1aa13a8f8d2be426353b22ecdd3a7d8d0b2edbeaad86d51133ebcf6f1e8c0c881c7979bebd09f061
+Infohash: c81df08d1edcad212ea93eedc575460450de5a2f
+Magnet: magnet:?xt=urn:btih:c81df08d1edcad212ea93eedc575460450de5a2f&amp;dn=debian-13.8.0-armhf-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:aarch64/13.7.0</id>
-    <title>Debian netinst 13.7.0 (aarch64)</title>
-    <updated>2026-09-13T11:57:29+00:00</updated>
-    <published>2026-09-13T11:57:29+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst:aarch64/13.8.0</id>
+    <title>Debian netinst 13.8.0 (aarch64)</title>
+    <updated>2026-11-23T18:17:55+00:00</updated>
+    <published>2026-11-23T18:17:55+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/debian-13.7.0-arm64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.7.0-arm64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="56588" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/debian-13.8.0-arm64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.8.0-arm64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="56748" />
     <category term="debian" label="distro" />
     <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.7.0 (aarch64)
-Filename: debian-13.7.0-arm64-netinst.iso
-sha512: cff08e2f29c2846f0503fe57ad1085b5067f29acab444acdf7cdf5b10f2a11140a0e87828e4ffeb9828d188053690467ebe50151c142551d6053fc3288808b86
+    <summary type="text">Debian netinst 13.8.0 (aarch64)
+Filename: debian-13.8.0-arm64-netinst.iso
+sha512: ae2dde2547b19238bab6f44e348c6e19880d9b4919a51839c488e63951170d3f50aaa6301e3e2c175664a9847c01d1a0f6374599449e6cbd712c755934b2766b
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/arm64/iso-cd/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.7.0-arm64-netinst.iso.torrent
-torrent-sha512: 88ae35f565d02ffe671f41770bed85d18e11dfa88546ff5c3a2d87177cf0ea2e4d26af05da8fe912c8251cae5a418be802dd62838988c31f982d9070533d17cb
-Infohash: bf7ed99351f7b08f0916b7b3e49cfa574d206879
-Magnet: magnet:?xt=urn:btih:bf7ed99351f7b08f0916b7b3e49cfa574d206879&amp;dn=debian-13.7.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/arm64/bt-cd/debian-13.8.0-arm64-netinst.iso.torrent
+torrent-sha512: bf12aedb789b7486d77814bd02296a3dc0a9fc35036aeee57026e5edf6a2a0f86babeba0dc26813257de999499bf507f309f92b6df90226af73d6ecb5ad2611b
+Infohash: 44f71fbaab6c1d4293944613b83e93da21e7a92e
+Magnet: magnet:?xt=urn:btih:44f71fbaab6c1d4293944613b83e93da21e7a92e&amp;dn=debian-13.8.0-arm64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
   <entry>
-    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst/13.7.0</id>
-    <title>Debian netinst 13.7.0 (x86_64)</title>
-    <updated>2026-09-13T11:57:24+00:00</updated>
-    <published>2026-09-13T11:57:24+00:00</published>
+    <id>https://github.com/andyattebery/distro-iso-feed/id/debian/netinst/13.8.0</id>
+    <title>Debian netinst 13.8.0 (x86_64)</title>
+    <updated>2026-11-23T18:17:55+00:00</updated>
+    <published>2026-11-23T18:17:55+00:00</published>
     <link href="https://www.debian.org/" rel="alternate" type="text/html" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/debian-13.7.0-amd64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
-    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.7.0-amd64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="60948" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/debian-13.8.0-amd64-netinst.iso" rel="enclosure" type="application/x-iso9660-image" />
+    <link href="https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.8.0-amd64-netinst.iso.torrent" rel="enclosure" type="application/x-bittorrent" length="61108" />
     <category term="debian" label="distro" />
     <category term="netinst" label="variant" />
-    <summary type="text">Debian netinst 13.7.0 (x86_64)
-Filename: debian-13.7.0-amd64-netinst.iso
-sha512: ef04d0276850d70e4aaec0b55003628660e9631b26e35215a70ab3c8c707294a4b12731bc73c75a932902f703a7c278310ca99df28d6b36fb06d5618d8d0f678
+    <summary type="text">Debian netinst 13.8.0 (x86_64)
+Filename: debian-13.8.0-amd64-netinst.iso
+sha512: 825d85a068532854f81c2d99a1890d8dfa969beeafd2ace976d86fb22ca5a3b0e4012f8b681682e668db3b883bd5f4e3dcdbdb2685f945a27aef0230558eaadb
 Signature: https://mirrors.edge.kernel.org/debian-cd/current/amd64/iso-cd/SHA512SUMS.sign
 Signing-key: https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xDF9B9C49EAA9298432589D76DA87E80D6294BE9B
 Key-fingerprint: DF9B9C49EAA9298432589D76DA87E80D6294BE9B
-Torrent: https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.7.0-amd64-netinst.iso.torrent
-torrent-sha512: 668f759e6454e5400ca1c34ab7b0e63b4e671b07a8838427e76af8e8c22f359befb4391aa1f8f09bde88957349f632247748f74de8b82bfafb7495a6f89839d3
-Infohash: 7acf8fb590b2060dd9c3146ef770169d593433b0
-Magnet: magnet:?xt=urn:btih:7acf8fb590b2060dd9c3146ef770169d593433b0&amp;dn=debian-13.7.0-amd64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
+Torrent: https://mirrors.edge.kernel.org/debian-cd/current/amd64/bt-cd/debian-13.8.0-amd64-netinst.iso.torrent
+torrent-sha512: f824af093895ef0e5da288499a7bd728fc537db5c9839bbff4e8dc735d3cc6429f9ad54139d253883b3f4d67aa32e51af3f57c8ab90d53d7ebf8f598c3d1005c
+Infohash: e75a1a6b922815d64cfa9b8904208d3a85143495
+Magnet: magnet:?xt=urn:btih:e75a1a6b922815d64cfa9b8904208d3a85143495&amp;dn=debian-13.8.0-amd64-netinst.iso&amp;tr=http%3A%2F%2Fbttracker.debian.org%3A6969%2Fannounce
 Verify: gpg</summary>
   </entry>
 </feed>
